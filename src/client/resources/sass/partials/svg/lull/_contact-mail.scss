@@ -1,0 +1,5 @@
+// icon-contact-mail.svg
+@mixin contact-mail($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2078.32%2056.13%22%3E%3Cpath%20d%3D%22M0%2C0V56.12H78.3V0Zm47.8%2C28.8-7.11%2C7.14a2.25%2C2.25%2C0%2C0%2C1-3%2C0L30.5%2C28.79l.06-.06L4.74%2C2.6H73.56L47.73%2C28.73Zm-21%2C0L2.6%2C52V4.46Zm1.84%2C1.85%2C7.21%2C7.24a4.75%2C4.75%2C0%2C0%2C0%2C3.3%2C1.3%2C4.9%2C4.9%2C0%2C0%2C0%2C3.37-1.33l7.17-7.21%2C23.8%2C22.91H4.8Zm22.9-1.85L75.69%2C4.46V52Z%22%20transform%3D%22translate(0.01%200.01)%22%20fill%3D%22#{$color-rgb}%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+}

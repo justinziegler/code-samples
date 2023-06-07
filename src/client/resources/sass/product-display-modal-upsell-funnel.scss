@@ -1,0 +1,334 @@
+/* When editing, use the source file for this page in client/resources/sass */
+@import 'compass';
+@import 'bootstrap/variables';
+
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/svg';
+@import 'partials/layout';
+
+$imgixDefaults: '?auto=format,compress&q=50';
+
+// Upsell modal
+#upsell {
+  text-align: center;
+  .modal-dialog {
+    text-align: center;
+  }
+  .modal-header {
+    @include mq(sm) {
+      width: 75%;
+    }
+  }
+  .modal-body {
+    flex: 1;
+  }
+  .modal-content {
+    overflow: hidden;
+    position: relative;
+  }
+  .offer-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: 0.3s;
+    &[data-offer='1'] {
+      transform: translate3d(0%, 0, 0);
+    }
+    &[data-offer='2'] {
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+  .offer {
+    width: 100%;
+    // height: 100%;
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    &[data-name='delay-message'] {
+      h2 {
+        position: relative;
+        @include mq(sm) {
+          margin-bottom: 15px;
+        }
+      }
+      p {
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: 500;
+        @include mq(xsm) {
+          font-size: vwl(13px);
+        }
+        @include mq(xxs) {
+          font-size: vwp(13px);
+        }
+        @include mq(sm) {
+          font-size: 1.6rem;
+        }
+        &:last-of-type {
+          margin-bottom: 20px;
+          @include mq(xsm) {
+            margin-bottom: vwl(20px);
+          }
+          @include mq(xxs) {
+            margin-bottom: vwp(20px);
+          }
+        }
+      }
+      .btn {
+        display: block;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        overflow: hidden;
+        transition: 0.2s;
+        margin: 0 auto;
+        @include mq(xxs) {
+          width: calc(100% - 30px);
+        }
+        @include mq(xssm) {
+          width: 80%;
+        }
+        + p {
+          text-align: center;
+          margin: 15px 0 10px 0;
+          font-size: 1.21rem;
+          @include mq(xsm) {
+            margin: vwl(15px) 0 vwl(10px) 0;
+            font-size: vwl(11px);
+          }
+          @include mq(xxs) {
+            margin: vwp(15px) 0 vwp(10px) 0;
+            font-size: vwp(11px);
+          }
+          @include mq(sm) {
+            font-size: 1.3rem;
+            margin: 20px 0 0 0;
+          }
+        }
+      }
+      .modal-header {
+        @include mq(xsm) {
+          padding-bottom: vwl(10px) !important;
+        }
+        @include mq(xxs) {
+          padding-bottom: vwp(10px) !important;
+        }
+        @include mq(sm) {
+          padding-bottom: 30px;
+        }
+        h2 {
+          position: relative;
+          @include mq(xxs) {
+            font-size: vwp(26px);
+          }
+          &::before {
+            content: '';
+            @include truck-outline($teal);
+            @extend %svg;
+            display: inline-block;
+            width: 45px;
+            height: 38px;
+            position: relative;
+            top: 10px;
+            margin: 0 5px 0 0;
+            @include mq(xsm) {
+              width: vwl(45px);
+              height: vwl(38px);
+              top: vwl(10px);
+              margin: 0 vwl(5px) 0 0;
+            }
+            @include mq(xxs) {
+              width: vwp(45px);
+              height: vwp(38px);
+              top: vwp(10px);
+              margin: 0 vwp(5px) 0 0;
+              left: 0;
+            }
+            @include mq(sm) {
+              display: inline-block;
+              width: 65px;
+              height: 46px;
+              margin: 0 10px 0 0;
+            }
+          }
+        }
+        p {
+          &:first-of-type {
+            margin-bottom: 5px;
+            @include mq(xsm) {
+              margin-bottom: vwl(5px);
+            }
+            @include mq(xxs) {
+              margin-bottom: vwp(5px);
+            }
+          }
+        }
+      }
+      .modal-body {
+        background-color: #4f9595;
+        padding-bottom: 30px !important;
+        border-radius: 0 0 6px 6px;
+        @include mq(sm) {
+          padding-bottom: 45px !important;
+        }
+        h2 {
+          @include mq(xxs) {
+            font-size: vwp(20px);
+          }
+        }
+        h2,
+        p {
+          color: $white;
+        }
+      }
+    }
+  }
+  // Protector modal / general styles
+  h4 {
+    color: $navy;
+  }
+  p {
+    text-align: left;
+    a {
+      border-bottom: solid 1px $navy;
+      color: $navy;
+      position: relative;
+      &:hover,
+      &:focus {
+        color: $navy;
+        border-bottom-color: transparent;
+        outline-offset: 0;
+      }
+    }
+  }
+  .upsell-value-props {
+    @include mq(xssm) {
+      width: 75%;
+    }
+  }
+  ul {
+    text-align: left;
+    padding: 0;
+    margin: 0 0 10px 0;
+    @include mq(xsm) {
+      margin: 0 0 vwl(10px) 0;
+    }
+    @include mq(xxs) {
+      margin: 0 0 vwp(10px) 0;
+    }
+    li {
+      list-style-type: none;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: $navy;
+      position: relative;
+      line-height: 1;
+      margin: 0 0 15px 0;
+      padding-left: 25px;
+      display: inline-block;
+      width: 49%;
+      @include mq(xsm) {
+        font-size: vwl(11px);
+      }
+      @include mq(xxs) {
+        font-size: vwp(11px);
+      }
+      @include mq(sm) {
+        font-size: 1.6rem;
+        padding-left: 35px;
+        width: 43%;
+        @include edge {
+          width: 44%;
+        }
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        @extend %svg;
+        width: 20px;
+        height: 20px;
+        top: -5px;
+        left: 0px;
+        @include mq(sm) {
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+  }
+  .modal-header {
+    padding-bottom: 0;
+    .upsell-image {
+      @include mq(xssm) {
+        display: none;
+      }
+    }
+  }
+  .upsell-price {
+    padding-right: 0;
+    h4 {
+      text-align: right;
+      font-size: 2.4rem;
+      margin-top: 0;
+      @include mq(sm) {
+        font-size: 3rem;
+      }
+      &.original-price {
+        color: #999;
+        font-weight: 500;
+        text-decoration: line-through;
+      }
+    }
+  }
+  .upsell-image {
+    width: 100%;
+    height: 0;
+    padding-bottom: 45%;
+    background-image: url('https://lull-media.imgix.net/shop/mattress-protector-cta2x.png#{$imgixDefaults}&w=580');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    @include mq(xssm) {
+      background-image: url('https://lull-media.imgix.net/shop/mattress-protector.png#{$imgixDefaults}&w=328');
+      padding-bottom: 48%;
+    }
+    @include mq(sm) {
+      background-image: url('https://lull-media.imgix.net/shop/mattress-protector-cta2x.png#{$imgixDefaults}&w=656');
+      background-size: 328px;
+    }
+  }
+  .modal-body {
+    background-color: #f7f6f4;
+    text-align: center;
+    border-radius: 0 0 6px 6px;
+  }
+  .btn {
+    @include mq(xmd) {
+      display: block;
+      width: 100%;
+    }
+    @include mq(xssm) {
+      width: 50%;
+      margin: 0 auto;
+    }
+    + p {
+      text-align: center;
+      margin: 10px 0;
+      font-size: 1.1rem;
+      @include mq(xsm) {
+        margin: vwl(10px) 0;
+        font-size: vwl(11px);
+      }
+      @include mq(xxs) {
+        margin: vwp(10px) 0;
+        font-size: vwp(11px);
+      }
+    }
+  }
+}
+#shipping-delay .modal-header h2::before {
+  @include truck-outline($teal);
+}

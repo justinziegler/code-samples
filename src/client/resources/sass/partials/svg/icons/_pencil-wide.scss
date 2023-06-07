@@ -1,0 +1,5 @@
+// pencil-wide.svg 
+@mixin pencil-wide($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2012.23%2012.23%22%3E%3Cpath%20d%3D%22M11.76%2C4.61l.73-.73a.9.9%2C0%2C0%2C0%2C0-1.28l-2-2a.9.9%2C0%2C0%2C0-1.28%2C0l-.74.73Z%22%20transform%3D%22translate(-0.54%20-0.37)%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3Cpath%20d%3D%22M7.78%2C2.13%2C2.34%2C7.57l-1.8%2C5%2C5-1.81L11%2C5.36ZM2.51%2C11.21l-.57-.57.91-2.56%2C2.21%2C2.21Z%22%20transform%3D%22translate(-0.54%20-0.37)%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3C%2Fsvg%3E');
+}

@@ -1,0 +1,43 @@
+.visible-xxs {
+	@include mq(xs) {
+		display: none!important;
+	}
+}
+.hidden-xxs {
+	@include mq(xxs) {
+		display: none!important;
+	}
+}
+.visible-xssm {
+	@include mq(xxs) {
+		display: none!important;
+	}
+	@include mq(xssm) {
+		display: block!important;
+	}
+	@include mq(sm) {
+		display: none!important;
+	}
+}
+.hidden-xssm {
+	@include mq(xssm) {
+		display: none!important;
+	}
+}
+.hidden-xs-up {
+	@include mq(xs) {
+		display: none!important;
+	}
+}
+.hidden-sm-up {
+	@include mq(sm) {
+		display: none!important;
+	}
+}
+.visible-md-up {
+	display: none!important;
+	@include mq(md) {
+		display: block!important;
+	}
+}
+.text-right { text-align: right; }

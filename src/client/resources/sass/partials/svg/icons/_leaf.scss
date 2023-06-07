@@ -1,0 +1,5 @@
+// iconLeaf.svg 
+@mixin leaf($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2029.46%2037.92%22%3E%3Cpath%20d%3D%22M21%2C9C15.35%2C11.26%2C8%2C13%2C4%2C22c-1.38%2C3.11-.59%2C5.24.37%2C6.52A23.37%2C23.37%2C0%2C0%2C0%2C.54%2C37.66c-.08.52%2C1.83.19%2C1.91-.32a22%2C22%2C0%2C0%2C1%2C3-7.75h0a8.7%2C8.7%2C0%2C0%2C0%2C2.29.63C30%2C32.64%2C30%2C5.85%2C30%2C0%2C27%2C6%2C26%2C7%2C21%2C9Z%22%20transform%3D%22translate(-0.54)%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3C%2Fsvg%3E');
+}

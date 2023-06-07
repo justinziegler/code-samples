@@ -1,0 +1,133 @@
+// INDEX OF ANIMATIONS
+// This is a port of Den Eden's Animate.css, converted for SASS.
+// Source: https://daneden.me/animate/ (follow link for animation demos)
+//
+// @import this index into your project.
+// Comment out categories below to remove them from your project.
+// Or, @import specific partials (e.g. @import "_attention/_bounce.scss";
+//
+//-----------------------------------------------------------------------
+// USAGE - see animate/_properties for more on variables
+//	.class {
+//		@include bounceIn(
+//			$duration: 1s,
+//			$delay: .2s,
+//			$function: ease,
+//			$fill-mode: both
+//		);
+//	}
+//-----------------------------------------------------------------------
+
+// Always required
+@import
+  "animate/_properties";
+
+// Import individual animations
+// Attention seekers 
+@import "animate/attention-seekers/bounce.scss";
+@import "animate/attention-seekers/flash.scss";
+@import "animate/attention-seekers/jello.scss";
+@import "animate/attention-seekers/pulse.scss";
+@import "animate/attention-seekers/rubberBand.scss";
+@import "animate/attention-seekers/shake.scss";
+@import "animate/attention-seekers/swing.scss";
+@import "animate/attention-seekers/tada.scss";
+@import "animate/attention-seekers/wobble.scss";
+
+// Bouncing Entrances
+@import "animate/bouncing-entrances/bounceIn.scss";
+@import "animate/bouncing-entrances/bounceInDown.scss";
+@import "animate/bouncing-entrances/bounceInLeft.scss";
+@import "animate/bouncing-entrances/bounceInRight.scss";
+@import "animate/bouncing-entrances/bounceInUp.scss";
+
+// Bouncing Exits
+@import "animate/bouncing-exits/bounceOut.scss";
+@import "animate/bouncing-exits/bounceOutDown.scss";
+@import "animate/bouncing-exits/bounceOutLeft.scss";
+@import "animate/bouncing-exits/bounceOutRight.scss";
+@import "animate/bouncing-exits/bounceOutUp.scss";
+
+// Fading Entrances 
+@import "animate/fading-entrances/fadeIn.scss";
+@import "animate/fading-entrances/fadeInDown.scss";
+@import "animate/fading-entrances/fadeInDownBig.scss";
+@import "animate/fading-entrances/fadeInLeft.scss";
+@import "animate/fading-entrances/fadeInLeftBig.scss";
+@import "animate/fading-entrances/fadeInOut.scss";
+@import "animate/fading-entrances/fadeInRight.scss";
+@import "animate/fading-entrances/fadeInRightBig.scss";
+@import "animate/fading-entrances/fadeInUp.scss";
+@import "animate/fading-entrances/fadeInUpBig.scss";
+
+// Fading Exits 
+@import "animate/fading-exits/fadeOut.scss";
+@import "animate/fading-exits/fadeOutDown.scss";
+@import "animate/fading-exits/fadeOutDownBig.scss";
+@import "animate/fading-exits/fadeOutLeft.scss";
+@import "animate/fading-exits/fadeOutLeftBig.scss";
+@import "animate/fading-exits/fadeOutRight.scss";
+@import "animate/fading-exits/fadeOutRightBig.scss";
+@import "animate/fading-exits/fadeOutUp.scss";
+@import "animate/fading-exits/fadeOutUpBig.scss";
+
+// Flippers
+@import "animate/flippers/flip.scss";
+@import "animate/flippers/flipInX.scss";
+@import "animate/flippers/flipInY.scss";
+@import "animate/flippers/flipOutX.scss";
+@import "animate/flippers/flipOutY.scss";
+
+// Lightspeed
+@import "animate/lightspeed/lightSpeedIn.scss";
+@import "animate/lightspeed/lightSpeedOut.scss";
+
+// Rotating Entrances
+@import "animate/rotating-entrances/rotateIn.scss";
+@import "animate/rotating-entrances/rotateInDownLeft.scss";
+@import "animate/rotating-entrances/rotateInDownRight.scss";
+@import "animate/rotating-entrances/rotateInUpLeft.scss";
+@import "animate/rotating-entrances/rotateInUpRight.scss";
+
+// Rotating Exits
+@import "animate/rotating-exits/rotateOut.scss";
+@import "animate/rotating-exits/rotateOutDownLeft.scss";
+@import "animate/rotating-exits/rotateOutDownRight.scss";
+@import "animate/rotating-exits/rotateOutUpLeft.scss";
+@import "animate/rotating-exits/rotateOutUpRight.scss";
+
+// Sliding Entrances
+@import "animate/sliding-entrances/slideInDown.scss";
+@import "animate/sliding-entrances/slideInLeft.scss";
+@import "animate/sliding-entrances/slideInRight.scss";
+@import "animate/sliding-entrances/slideInUp.scss";
+@import "animate/sliding-entrances/slideInUpSubtle.scss";
+
+// Sliding Exits
+@import "animate/sliding-exits/slideOutDown.scss";
+@import "animate/sliding-exits/slideOutLeft.scss";
+@import "animate/sliding-exits/slideOutRight.scss";
+@import "animate/sliding-exits/slideOutUp.scss";
+
+// Special
+@import "animate/specials/hinge.scss";
+@import "animate/specials/rollIn.scss";
+@import "animate/specials/rollOut.scss";
+
+// Zooming Entrances
+@import "animate/zooming-entrances/zoomIn.scss";
+@import "animate/zooming-entrances/zoomInDown.scss";
+@import "animate/zooming-entrances/zoomInLeft.scss";
+@import "animate/zooming-entrances/zoomInRight.scss";
+@import "animate/zooming-entrances/zoomInUp.scss";
+
+// Zooming Exits
+@import "animate/zooming-exits/zoomOut.scss";
+@import "animate/zooming-exits/zoomOutDown.scss";
+@import "animate/zooming-exits/zoomOutLeft.scss";
+@import "animate/zooming-exits/zoomOutRight.scss";
+@import "animate/zooming-exits/zoomOutUp.scss";
+
+// Additionally
+@import "animate/_animated";
+// shows the default animation settings from animate.css

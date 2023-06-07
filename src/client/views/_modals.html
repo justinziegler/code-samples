@@ -1,0 +1,356 @@
+{% macro sizeGuideModal(p) %}
+  {% for sizeGuide in p.sizeGuide %}
+    <div class="modal fade content-modal" 
+      {% if sizeGuide.mattressModal %}
+        id="mattress-size-guide-modal"
+        aria-labelledby="mattress-size-guide-modal" 
+      {% else %}
+        id="size-guide-modal"
+        aria-labelledby="size-guide-modal" 
+      {% endif %}
+      tabindex="-1" role="dialog">
+      <div class="modal-dialog {% if sizeGuide.mattressModal %}modal-lg{% endif %}" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>
+          </div>
+          <div class="modal-body">
+            {% if sizeGuide.mattressModal %}
+            <ul class="mattress-sizes">
+              {% set defaultType = '' %}
+              {% for product in p.skus %}
+                {% set size = product.size %}
+                {% if product.size.length > 2 %}
+                  {% set size = product.size.slice(9, limit) %}
+                  {% if defaultType == '' %}
+                    {% set defaultType = product.size.slice(3, -6) %}
+                  {% endif %}
+                {% endif %}
+                  <li data-size="{{ size }}" 
+                    {%- if product.size.length > 2 -%}
+                      {% set type = product.size.slice(3, -6) %}
+                      data-toggle-visibility="true" data-product-id="{{ type }}"
+                      {% if type !== defaultType -%}
+                        style="display: none;"
+                      {% endif %}
+                    {%- endif -%}>
+                    <span class="title">
+                      {{- product.sizeName -}}
+                    </span>
+                    <span class="dimensions">{{ product.w }} x {{ product.l }}</span>
+                    <div class="bed" data-size="{{ size }}"></span>
+                  </li>
+                {% endfor %}
+              </ul>
+              <p>Not sure which size?<br class="visible-xxs"> See our guide to <a href="#" data-dismiss="modal">mattress sizes and dimensions.</a></p>
+            {% else %}
+              <h2>{{ sizeGuide.productName | safe }} Size Guide</h2>
+              <div class="row">
+                <div class="col-xs-12 col-sm-7">
+                  <div class="mattress-size-guide"></div>
+                </div>
+                <div class="col-xs-12 col-sm-5">
+                  <ul>
+                    {% for item in p.skus %}
+                      {% if item.catId == p.defaultCatId %}
+                        {% for product in p.dimensions %}
+                          {% if product.size == item.size and (product.color == item.color or product.color == undefined) %}
+                            <li data-size="{{ product.size }}">
+                              <span {% if sizeGuide.longSizeNames %}class="wide"{% endif %}>
+                                {{ item.sizeName }}
+                              </span>{{ product.w }} x {{ product.l }}
+                              {% if product.h !== '' %} x {{ product.h }}{% endif %} 
+                            </li>
+                          {% endif %}
+                        {% endfor %}
+                      {% endif %}
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  {% if sizeGuide.dimensionsLink %}
+                    <p>For more, see our full guide to <a href="/href="#" data-dismiss="modal">mattress sizes and dimensions.</a></p>
+                  {% else %}
+                    {# Adds a spacer #}
+                    <p></p>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>		
+  {% endfor %}
+{% endmacro %}
+
+{% macro cartModal(p) %}
+  
+{% endmacro %}
+
+{% macro financingModal(p) %}
+  <div role="dialog" aria-modal="true" class="modal fade content-modal" id="financing-modal" tabindex="-1" aria-labelledby="financing-modal">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>
+          <h2>Easy Monthly Payments <span class="hidden-xxs">Available</span></h2>
+          <h3>As low as 0% APR Financing Available with Affirm</h3>
+          <h3>
+            {% set maxQty = 1 %}
+            {% set style = '' %}
+              {% if p.skus.length > 1 %}
+                {% set style = 'display:none;' %}
+              {% endif %}
+            {%- for s in p.skus -%}
+              <span class="price" 
+                data-sku="{{ s.sku }}" 
+                data-quantity="1" 
+                style="{{ style }}">
+                $<span class="monthly-payment">{{- s.monthlyPayment | round }}</span>{#
+                #}<span class="current-monthly-payment"></span>/mo. 
+                based on a purchase price of $<span class="item-price">{{- s.salePrice | round }}</span><span class="current-price"></span> at 0% APR for
+                <span class="term">{{ s.paymentTerm }}</span><span class="current-term"></span>
+                months.
+              </span>
+            {%- endfor -%}
+            <br class="visible-md visible-lg">A down payment may be required.
+          </h3>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="icon-calendar"></div>
+              <p><strong>Easy Monthly Payments</strong><br>
+                Provide your basic information. Get instantly approved. Pay over 6 to
+                {%- for s in p.skus -%}
+                  <span class="price" 
+                    data-sku="{{ s.sku }}" 
+                    data-quantity="1" 
+                    style="{{ style }}">
+                    <span class="term">{{ s.paymentTerm }}</span><span class="current-term"></span>
+                  </span>
+                {%- endfor -%}
+                months with as low as 0% APR for qualified applicants.
+              </p>
+            </div>
+            <div class="col-md-6">
+              <div class="icon-payment"></div>
+              <p><strong>Flexible Payments</strong><br>
+              Easily pay your monthly bill using a bank transfer check, or debit card at <a href="http://affirm.com" target="_blank" rel="noopener noreferrer">affirm.com</a>.</p>
+            </div>
+            <div class="clearfix"></div>
+            <h3>Select <strong>'Affirm Monthly Payments'</strong><br class="visible-xxs"> at Checkout</h3>
+            <a href="#" class="btn-primary btn" role="button" tabindex="0">Tell Me More</a>
+          </div>
+          <div class="qualified">
+            <p>0% APR financing over 6, 12
+              {%- for s in p.skus -%}
+                <span class="price" data-sku="{{ s.sku }}" data-quantity="1" style="{{ style }}">
+                  or <span class="term">{{ s.paymentTerm }}</span><span class="current-term"></span>
+                </span>
+              {%- endfor -%}
+              months available to qualified applicants.</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="row">
+            <div class="col-md-12">
+              <p>
+                Your rate will be 0% APR or 10-30% APR based on credit, is subject to an eligibility check, and may not be available in all states. Restrictions may apply. For purchases under $100 limited payment options are available. Payment options through Affirm are provided by these lending partners: <a href="http://www.affirm.com/lenders" target="_blank" rel="noopener noreferrer">affirm.com/lenders</a>. Options depend on your purchase amount, and a down payment may be required. Paid interest is non-refundable.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function updateFinancing(sku, qty) {
+      $('#financing-modal .price').hide();
+      if (qty == undefined) {
+        qty = 1;
+      }
+      $(`#financing-modal .price[data-sku="${sku}"][data-quantity="${qty}"]`).show();
+    }
+  </script>
+{% endmacro %}
+
+
+
+{% macro upsellListModal(p) %}
+  {% for u in p.upsells %}
+    {% set type = '' %}
+    {% for item in u.skus %}
+      {% if item.catId == u.defaultCatId and type == '' %}
+        {% set type = item.type %}
+      {% endif %}
+    {% endfor %}
+    <div class="modal fade content-modal upsell-modal" id="upsell-modal-{{ type }}" tabindex="-1" role="dialog" aria-labelledby="upsell-modal" data-x-bundle="{{ u.bundle }}" role="dialog" aria-modal="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>
+            <div class="row">
+              <div class="swiper-container col-xs-12 col-sm-6 col-sm-push-6">
+                <div class="swiper-wrapper">
+                  {% set fixedHeight = true %}
+                  {% if u.showReview %}
+                    {% set fixedHeight = false %}
+                  {% endif %}
+                  {% for i in range(1, (u.gallerySlides + 1)) %}
+                    <div class="swiper-slide slide-{{ i }} lazyload {% if fixedHeight %}fixed{% endif %}"
+                    {% if u.colorSelection %}
+                      data-color="{{ u.colorDisplayOrder[i - 1].color }}"
+                    {% endif %}															
+                    >
+                    </div>
+                  {% endfor %}
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-sm-pull-6">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <h2>{{ u.title }}</h2>
+                      <div class="star-rating">
+                        <div class="reviews-star-gauge">
+                          <div class="reviews-star-average" style="width: {{ u.reviewsAverage * 20 }}%;">
+                          </div>
+                        </div>
+                        <p>{{ u.reviewsAverage }} <span>({{ u.reviewsTotal }})*</span></p>
+                      </div>
+                    <h3>Ships in 1-4 Business Days</h3>
+                    <p>{{ u.subtitle }}</p>
+
+                    <ul class="details">
+                      {% for item in u.details %}
+                        <li>{{ item.detail }}</li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      {% if u.colorSelection %}
+        var colors = [];
+        {% for item in u.colorDisplayOrder %}
+          colors.push('{{ item.color }}');
+        {% endfor %}
+      {% endif %}
+      $('#upsell-modal-{{ type }}').on('shown.bs.modal', function () {
+        var upsell{{ type }} = new Swiper ('#upsell-modal-{{ type }} .swiper-container', {
+        {% if u.colorSelection %}
+        loop: false,
+        {% else %}
+        loop: true,
+        {% endif %}
+        grabCursor: true,
+        breakpointsInverse: true,
+        centeredSlides: true,
+        pagination: {
+          el: '#upsell-modal-{{ type }} .swiper-pagination',
+          clickable: true,
+          {% if u.colorSelection %}
+            renderBullet: function (index, className) {
+              return '<span class="' + className + '" data-color="' + colors[index] + '"></span>';
+              },
+          {% endif %}
+          },
+        })
+        {% if u.colorSelection %}
+          upsell{{ type }}.on('slideChange', function () {
+            var current = (upsell{{ type }}.activeIndex);
+            var type = '{{ type }}';
+            var item = $('.upsells .item[data-type="' + type + '"]');
+            item.attr('data-default-state', false);
+            setActive($(item).find('.color-select li[data-color="' + colors[current] + '"]'));
+            showUpsells(false);
+          });
+        {% endif %}
+      });
+      
+      $('#upsell-modal-{{ type }}').on('hidden.bs.modal', function () {
+        var accessory{{ type }} = document.querySelector('#upsell-modal-{{ type }} .swiper-container').swiper;
+        accessory{{ type }}.destroy();
+      });
+    </script>
+  {% endfor %}
+{% endmacro %}
+
+{% macro upsellModal(p) %}
+  <div role="dialog" aria-modal="true" class="modal fade content-modal" id="upsell" tabindex="-1" aria-labelledby="upsell">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">					
+        <button type="button" class="close" id="btn-close-upsell" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="modal-header">
+          <div class="row">
+            <div class="col-xs-12">
+              <h2>Protect Your Mattress</h2>
+            </div>
+            <div class="col-xs-10 col-xs-offset-1">
+              <div class="upsell-image"></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="upsell-details row">
+            <div class="col-xs-12">
+              <h4><span class="hidden-xs">The </span>Lull Mattress Protector</h4>
+            </div>
+            <div class="upsell-price col-xs-3 col-sm-2">
+              {% for item in p.upsellModalSkus %}
+                
+                <h4 class="item" 
+                  data-sku="{{ item.sku }}" 
+                  data-name="{{ item.name }}"
+                  data-size-name="{{ item.sizeName }}"
+                  data-out-of-stock="{{ item.outOfStock }}" 
+                  data-price="{{ item.price }}" style="display: none;">
+                  <span>${{ item.price | round }}</span>
+                </h4>
+                {% if upsellDiscountActual > 0 %}
+                  <h4 class="item original-price" data-sku="{{ item.sku }}" data-price="{{ item.price }}" style="display: none;">${{ item.price }}</h4>
+                {% endif %}
+              {% endfor %}
+              <div class="upsell-image visible-xssm"></div>
+            </div>
+            <div class="col-xs-9 col-sm-8">
+              <p>Extend the life of your Lull Mattress and keep it safe from spills, stains and allergens.</p>
+            </div>
+            <div class="upsell-value-props col-xs-11 col-xs-offset-1 col-sm-10 col-sm-offset-2">
+              <ul>
+                <li class="waterproof">100% Waterproof</li>
+                <li class="hypoallergenic">Hypoallergenic</li>
+                <li class="stain">Stain Resistant</li>
+                <li class="quality">High Quality</li>
+              </ul>
+            </div>
+            <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
+              <button class="btn" id="btn-add-upsell">Add to Cart</button>
+              <p><a href="#"  data-dismiss="modal" id="btn-checkout">No thanks, take me to checkout</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+  <script>
+    $('#btn-add-upsell').on('keypress click', function(e) {
+      if (e.which === 13 || e.type === 'click') {
+        this.disabled = true;
+        $('.modal').modal('hide');
+        addToCart();
+      }
+    });
+  </script>
+{% endmacro %}
+

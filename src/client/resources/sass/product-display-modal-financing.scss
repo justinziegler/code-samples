@@ -1,0 +1,352 @@
+/* When editing, use the source file for this page in client/resources/sass */
+@import 'compass';
+@import 'bootstrap/variables';
+
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/svg';
+@import 'partials/layout';
+
+#financing-modal {
+  .modal-dialog {
+    text-align: center;
+  }
+  .modal-header {
+    padding: 15px 15px 0 15px;
+    @include mq(xsm) {
+      padding: 15px 15px 0 15px;
+      padding: vwl(15px) vwl(15px) 0 vwl(15px);
+    }
+    @include mq(xxs) {
+      padding: vwp(15px) vwp(15px) 0 vwp(15px);
+    }
+    h3 {
+      @include mq(xsm) {
+        font-size: 1.4rem;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+  h2 {
+    text-align: center;
+    font-weight: 700;
+    color: $navy;
+    font-size: 2.25rem;
+    font-size: vwp(22.5px);
+    margin: 15px 0;
+    margin: vwp(15px) 0;
+    @include mq(xs) {
+      font-size: vwl(22.5px);
+      margin: vwl(15px) 0;
+    }
+    @include mq(sm) {
+      font-size: 3rem;
+      margin: 15px 0;
+    }
+    @include mq(md) {
+      font-size: 3.6rem;
+    }
+    @include mq(lg) {
+      font-size: 4rem;
+      margin: 15px 0 20px 0;
+    }
+  }
+  h3 {
+    font-size: 1.4rem;
+    font-size: vwp(14px);
+    font-weight: 500;
+    line-height: 1.4;
+    color: #666;
+    text-align: center;
+    margin: 10px;
+    margin: vwp(10px);
+    @include mq(xs) {
+      font-size: vwl(14px);
+      margin: vwl(10px);
+    }
+    @include mq(sm) {
+      font-size: 1.6rem;
+      margin: 10px;
+    }
+    @include mq(md) {
+      font-size: 1.8rem;
+    }
+    @include mq(lg) {
+      font-size: 2rem;
+    }
+  }
+  p {
+    font-size: 1.5rem;
+    text-align: left;
+    margin-left: 55px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    color: #666;
+    @include mq(xsm) {
+      font-size: 1.2rem;
+      line-height: 1.4;
+    }
+    @include mq(sm) {
+      margin-left: 75px;
+    }
+    strong {
+      color: $navy;
+    }
+    a {
+      color: $navy;
+      &:hover {
+        color: $navy;
+      }
+    }
+  }
+  .price {
+    &[data-upsell-selected='false'] {
+      .current-price, .current-monthly-payment, .current-term {
+        display: none !important;
+      }
+    }
+    &[data-upsell-selected='true'] {
+      .item-price, .monthly-payment, .term {
+        display: none !important;
+      }
+    }
+  }
+  .btn {
+    margin: 10px auto 30px auto;
+    background: $pink;
+    @include mq(xsm) {
+      margin: 0 15% 20px 15%;
+      margin: 0 15% vwl(20px) 15%;
+    }
+    @include mq(xxs) {
+      margin: 0 15% vwp(20px) 15%;
+    }
+    &::after {
+      @include mq(sm) {
+        content: ' About Affirm';
+      }
+    }
+  }
+  .qualified,
+  .modal-footer {
+    p {
+      font-size: 1.2rem;
+      text-align: center;
+      margin: 0;
+      @include mq(xsm) {
+        font-size: 1rem !important;
+      }
+    }
+  }
+  .qualified {
+    .price {
+      &.term {
+        &::after {
+          content: attr(data-term);
+        }
+        &[data-term='18'] {
+          &::before {
+            content: ' or ';
+          }
+        }
+        &[data-term='24'] {
+          &::before {
+            content: ', 18 or ';
+          }
+        }
+      }
+    }
+  }
+  .modal-footer {
+    background: #f2f4f6;
+    color: #666;
+    border-radius: 0 0 6px 6px;
+    padding-top: 10px;
+    padding-top: vwp(10px);
+    @include mq(xs) {
+      padding-top: vwl(10px);
+    }
+    @include mq(sm) {
+      padding-top: 10px;
+    }
+  }
+  .icon-calendar {
+    @extend %svg;
+    width: 40px;
+    height: 44px;
+    float: left;
+    @include mq(sm) {
+      width: 56px;
+      height: 53px;
+    }
+  }
+  .icon-payment {
+    @extend %svg;
+    width: 40px;
+    height: 29px;
+    float: left;
+    @include mq(sm) {
+      width: 56px;
+      height: 40px;
+    }
+  }
+  &.klarna {
+    .modal-header {
+      background-color: #053a5c;
+      height: 50px;
+      border-radius: 6px 6px 0 0;
+      @include mq(xsm) {
+        height: vwl(50px);
+      }
+      @include mq(xxs) {
+        height: vwp(50px);
+      }
+    }
+    .modal-content {
+      .close {
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(241deg) brightness(101%) contrast(103%);
+        background-size: 18px;
+        background-position: top 15px right 15px;
+        height: 35px;
+        @include mq(xsm) {
+          background-size: vwl(18px);
+          background-position: top vwl(15px) right vwl(15px);
+          height: vwl(35px);
+        }
+        @include mq(xxs) {
+          background-size: vwp(18px);
+          background-position: top vwp(15px) right vwp(15px);
+          height: vwp(35px);
+        }
+      }
+    }
+    h2 { 
+      font-weight: 900;
+      @include mq(sm) {
+        font-size: 3.6rem;
+      }
+    }
+    h3 {
+      margin-left: 0;
+      margin-right: 0;
+      @include mq(xsm) {
+        font-size: vwl(12px);
+      }
+      @include mq(xxs) {
+        font-size: vwp(12px);
+      }
+    }
+    .logo-klarna {
+      width: 100px;
+      height: 22px;
+      @extend %svg;
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(241deg) brightness(101%) contrast(103%);
+      margin: 0 auto;
+    }
+    .payment-schedule-info {
+      background-color: #ecf1f5;
+      border-radius: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+      color: $navy;
+      font-weight: 500;
+      line-height: 2.1;
+      padding: 15px 15px 10px 15px;
+      text-align: left;
+      @include mq(xsm) {
+        margin-top: vwl(5px);
+        margin-bottom: vwl(15px);
+        font-size: vwl(12px);
+        padding: vwl(15px) vwl(15px) vwl(10px) vwl(15px);
+      }
+      @include mq(xxs) {
+        margin-top: vwp(5px);
+        margin-bottom: vwp(15px);
+        font-size: vwp(12px);
+        padding: vwp(15px) vwp(15px) vwp(10px) vwp(15px);
+      }
+      @include mq(sm) {
+        font-size: 1.6rem;
+        padding: 20px 30px;
+      }
+      > .row > div:nth-of-type(odd) {
+        padding-right: 0;
+      }
+      > .row > div:nth-of-type(even) {
+        text-align: right;
+        padding-left: 0;
+      }
+    }
+    .klarna-details {
+      padding: 0;
+      @include mq(sm) {
+        padding-bottom: 15px;
+      }
+    }
+    ul {
+      list-style-type: none;
+      text-align: left;
+      margin: 5px 0 10px 0;
+      padding: 0;
+      border-left: dashed 2px #819cad;
+      @include mq(sm) {
+        margin: 5px 10px;
+      }
+    }
+    li {
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 0 0 10px 15px;
+      position: relative;
+      color: $navy;
+      @include mq(sm) {
+        font-size: 1.6rem;
+      }
+      &::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        background-color: #053a5c;
+        border-radius: 50%;
+        position: absolute;
+        left: -5px;
+        top: 3px;
+        z-index: 2;
+        @include mq(sm) {
+          width: 10px;
+          height: 10px;
+          left: -6px;
+          top: 5px;
+        }
+      }
+      &:first-of-type {
+        &::after {
+          content: '';
+          width: 6px;
+          height: 6px;
+          background: $white;
+          position: absolute;
+          left: -2px;
+          top: 0;
+          z-index: 1;
+        }
+      }
+      &:last-of-type {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+// svg
+.icon-calendar {
+  @include calendar($navy);
+}
+.icon-payment {
+  @include payment($navy);
+}
+.logo-klarna {
+  @include logo-klarna(#000);
+}

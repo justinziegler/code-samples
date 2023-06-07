@@ -1,0 +1,5 @@
+// icon-magnifying-glass.svg 
+@mixin magnifying-glass($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%3E%3Cpath%20d%3D%22M31%2C28H29.41l-.55-.55a12.91%2C12.91%2C0%2C1%2C0-1.41%2C1.42l.55.55V31L38%2C41l3-3ZM19%2C28a9%2C9%2C0%2C1%2C1%2C9-9A9%2C9%2C0%2C0%2C1%2C19%2C28Z%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3C%2Fsvg%3E');
+}

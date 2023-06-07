@@ -1,0 +1,97 @@
+@mixin sprite-dimensions($map, $sprite) {
+  height: image-height(sprite-file($map, $sprite));
+  width: image-width(sprite-file($map, $sprite));
+}
+@mixin mq($canvas) {
+	@if $canvas == xxs {
+		@media (max-width: $xs - 1) { @content }
+	}
+	@else if $canvas == xs {
+		@media (min-width: $xs) { @content }
+	}
+	@else if $canvas == xssm {
+		@media (min-width: $xs) and (max-width: $sm - 1) { @content }
+	}
+	@else if $canvas == xsmd {
+		@media (min-width: $xs) and (max-width: $md - 1) { @content }
+	}
+	@else if $canvas == xslg {
+		@media (min-width: $xs) and (max-width: $lg - 1) { @content }
+	}
+	@else if $canvas == xsm {
+		@media (max-width: $sm - 1) { @content }
+	}
+	@else if $canvas == xsml {
+		@media (max-width: $sm - 1) and (orientation: landscape) { @content }
+	}
+	@else if $canvas == sm {
+		@media (min-width: $sm) { @content }
+	}
+	@else if $canvas == smmd {
+		@media (min-width: $sm) and (max-width: $md - 1) { @content }
+	}
+	@else if $canvas == xmd {
+		@media (max-width: $md - 1) { @content }
+	}
+	@else if $canvas == md {
+		@media (min-width: $md) { @content }
+	}
+	@else if $canvas == smlg {
+		@media (min-width: $sm) and (max-width: $lg - 1) { @content }
+	}
+	@else if $canvas == mdlg {
+		@media (min-width: $md) and (max-width: $lg - 1) { @content }
+	}
+	@else if $canvas == xlg {
+		@media (max-width: $lg - 1) { @content }
+	}
+	@else if $canvas == lg {
+		@media (min-width: $lg) { @content }
+	}
+}
+
+// Browser-specific rules
+@mixin firefox {
+	@-moz-document url-prefix() { @content }
+}
+@mixin edge {
+	@supports (-ms-ime-align:auto) { @content }
+}
+@mixin ie {
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { @content }
+}
+@mixin webkit {
+	@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { @content }
+}
+@mixin safari {
+	@media not all and (min-resolution:.001dpcm) { @supports (-webkit-appearance:none) and (stroke-color:transparent) { @content } }
+}
+
+// Retina images
+@mixin retina {
+	@media
+		(min-device-pixel-ratio: 1.25),
+		(min-resolution: 192dpi),
+		(min-resolution: 1.25dppx)
+		{ @content }
+}
+
+// Convert fonts from px to vw
+$vwp-viewport: 320;
+$vwl-viewport: 568;
+$vw-enable: true;
+
+@function vwp($font) {
+  @if $vw-enable {
+    $vw-context: $vwp-viewport * 0.01 * 1px;
+    @return $font / $vw-context * 1vw;
+	}
+	@return $font;
+}
+@function vwl($font) {
+  @if $vw-enable {
+    $vw-context: $vwl-viewport * 0.01 * 1px;
+    @return $font / $vw-context * 1vw;
+	}
+	@return $font;
+}

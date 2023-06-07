@@ -1,0 +1,5 @@
+// star-reviews-filled.svg 
+@mixin star-reviews-filled($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20629%20600%22%3E%3Cpolygon%20points%3D%22312%200%20407%20214%20629%20225%20468%20378%20511%20596%20317%20475%20123%20600%20163%20382%200%20232%20220%20216%20312%200%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3C%2Fsvg%3E');
+}

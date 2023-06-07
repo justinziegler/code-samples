@@ -1,0 +1,20 @@
+.visible-xxs {
+	@include mq(xs) {
+		display: none;
+	}
+}
+.hidden-xxs {
+	@include mq(xxs) {
+		display: none;
+	}
+}
+.hidden-xssm {
+	@include mq(xssm) {
+		display: none;
+	}
+}
+.hidden-xs-up {
+	@include mq(xs) {
+		display: none;
+	}
+}

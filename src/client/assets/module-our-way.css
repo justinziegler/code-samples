@@ -1,0 +1,224 @@
+/* When editing, use the source file for this page in client/resources/sass */
+.our-way, .our-way .modal-content {
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #4b6574), color-stop(50%, #0f3c51), to(#0f3c51));
+  background-image: -o-linear-gradient(bottom, #4b6574 0, #0f3c51 50%, #0f3c51 100%);
+  background-image: linear-gradient(to top, #4b6574 0, #0f3c51 50%, #0f3c51 100%);
+}
+
+.our-way {
+  position: relative;
+  background-color: #f7f5f3;
+  color: #ffffff;
+  padding: 30px 0;
+}
+@media (max-width: 767px) {
+  .our-way {
+    padding: 0 22% 5.2816901408vw 22%;
+    background-image: none;
+  }
+}
+@media (max-width: 543px) {
+  .our-way {
+    padding: 0 0 9.375vw 0;
+  }
+}
+@media (min-width: 768px) {
+  .our-way::before {
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80%;
+    background-size: 50%;
+    position: absolute;
+    background-repeat: repeat;
+    background-position: 50% 0;
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20viewBox%3D%220%200%20164.64%20336.5%22%3E%3Cdefs%3E%3Csymbol%20id%3D%22a%22%20viewBox%3D%220%200%203%202.9%22%3E%3Cpolygon%20points%3D%222%200.9%201.5%200%201.1%200.9%200%201.1%200.8%201.8%200.7%202.9%201.6%202.4%202.6%202.8%202.3%201.8%203%201%202%200.9%22%20fill%3D%22rgb(92%2C115%2C128)%22%20opacity%3D%220.4%22%20style%3D%22isolation%3Aisolate%22%2F%3E%3C%2Fsymbol%3E%3C%2Fdefs%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(40.51)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(110.92%204.83)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(25.67%2013.17)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(147.76%202.08)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(81.42%2023.58)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(93.76%2035.77)%20scale(0.88)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(162.01%2048.19)%20scale(0.88)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(104.01%2083.49)%20scale(0.88)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(89.71%20109.54)%20scale(0.88)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(67.41%20130.64)%20scale(0.88)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(155.36%20130.59)%20scale(0.88)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(141.46%20142.59)%20scale(0.88)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(45.06%20225.74)%20scale(0.88)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(31.05%20224.14)%20scale(0.88)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(16.96%20226.64)%20scale(0.88)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(111.16%20227.09)%20scale(0.88)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(83.46%20273.84)%20scale(0.88)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(108.96%20324.44)%20scale(0.88)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(53.47%20313.49)%20scale(0.88)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(53.61%20291.29)%20scale(0.88)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(0%20273.87)%20scale(0.68)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(67.15%20328.28)%20scale(0.68)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(40.2%20308.58)%20scale(0.68)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(25.85%20334.53)%20scale(0.68)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(66.2%20312.63)%20scale(0.68)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(152.81%20227.09)%20scale(0.88)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(131.51%20103.24)%20scale(0.88)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(145.59%2064.5)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(117.82%2088.62)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(158.32%20139.62)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(112.67%20150.12)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(59.12%20204.97)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(17.57%20130.42)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(46.87%20220.12)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(8.07%20140.12)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(22.77%20147.22)%20scale(0.78)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(118.26%2064.25)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(76.59%2051.33)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(61.02%2050.87)%20scale(0.6)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(50.52%20141.44)%20scale(0.6)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(16.47%20183.39)%20scale(0.6)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(98.27%20194.44)%20scale(0.6)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(85.42%20139.59)%20scale(0.6)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(32.97%2050.94)%20scale(0.6)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(17.37%2053.79)%20scale(0.82)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(53.01%2045.33)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(2.57%2053.54)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(125.05%20224.42)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(124.57%20250.67)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(139.17%20298.97)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(97.37%20297.17)%20scale(1.33)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%223%22%20height%3D%222.9%22%20transform%3D%22translate(123.12%20299.03)%20scale(1.33)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3C%2Fsvg%3E");
+    background-size: 20%;
+  }
+}
+.our-way .item {
+  font-size: 1.2rem;
+  font-size: 3.75vw;
+  line-height: 1.1;
+  color: #0b2836;
+  font-weight: 500;
+  text-align: center;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  color: #0b2836;
+  position: relative;
+  padding: 12.5vw 3.125vw 0 3.125vw;
+}
+@media (min-width: 544px) {
+  .our-way .item {
+    font-size: 2.1126760563vw;
+    padding: 7.0422535211vw 1.7605633803vw 0 1.7605633803vw;
+  }
+}
+@media (min-width: 768px) {
+  .our-way .item {
+    color: #fff;
+    font-size: 1.6rem;
+    padding: 60px 0 0 0;
+  }
+}
+@media (min-width: 992px) {
+  .our-way .item {
+    padding: 75px 0 0 0;
+  }
+}
+.our-way .item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  height: 11.25vw;
+  background-size: 28px;
+  background-size: 8.75vw;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  -webkit-filter: invert(73%) sepia(43%) saturate(504%) hue-rotate(128deg) brightness(98%) contrast(89%);
+          filter: invert(73%) sepia(43%) saturate(504%) hue-rotate(128deg) brightness(98%) contrast(89%);
+}
+@media (min-width: 544px) {
+  .our-way .item::before {
+    height: 6.338028169vw;
+    background-size: 4.9295774648vw;
+  }
+}
+@media (min-width: 992px) {
+  .our-way .item::before {
+    height: 62px;
+    background-size: 48px;
+  }
+}
+.our-way .item[data-content=shipping]::before {
+  background-size: auto 8.75vw;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20viewBox%3D%220%200%20139.66%2079.16%22%3E%3Cdefs%3E%3Csymbol%20id%3D%22a%22%20viewBox%3D%220%200%2023.08%2023.08%22%3E%3Cpath%20d%3D%22M11.54%2C23.08A11.54%2C11.54%2C0%2C1%2C1%2C23.08%2C11.54h0A11.56%2C11.56%2C0%2C0%2C1%2C11.54%2C23.08Zm0-19.83a8.25%2C8.25%2C0%2C1%2C0%2C8.25%2C8.25A8.25%2C8.25%2C0%2C0%2C0%2C11.54%2C3.25Z%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3C%2Fsymbol%3E%3C%2Fdefs%3E%3Cuse%20width%3D%2223.08%22%20height%3D%2223.08%22%20transform%3D%22translate(46.32%2058.77)%20scale(0.88)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cuse%20width%3D%2223.08%22%20height%3D%2223.08%22%20transform%3D%22translate(100.43%2058.77)%20scale(0.88)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%3Cpath%20d%3D%22M70.19%2C69.49a1.75%2C1.75%2C0%2C0%2C1-1.75-1.75%2C12.5%2C12.5%2C0%2C0%2C0-25%2C0%2C1.75%2C1.75%2C0%2C0%2C1-1.75%2C1.75H33.27a1.74%2C1.74%2C0%2C0%2C1-1.75-1.75%2C1.64%2C1.64%2C0%2C0%2C1%2C0-.38l.36-1.61h-2.8a1.75%2C1.75%2C0%2C0%2C1-1.24-.52%2C1.69%2C1.69%2C0%2C0%2C1-.5-1.24%2C1.84%2C1.84%2C0%2C0%2C1%2C0-.33l1.66-8.52a1.75%2C1.75%2C0%2C0%2C1%2C1.71-1.4H33.5L36.24%2C40h-18A1.82%2C1.82%2C0%2C0%2C1%2C17%2C39.35a1.73%2C1.73%2C0%2C0%2C1-.39-1.26%2C1.75%2C1.75%2C0%2C0%2C1%2C1.59-1.59H36.94l1-4.87H1.2A1.74%2C1.74%2C0%2C0%2C1-.5%2C30.05a1.71%2C1.71%2C0%2C0%2C1%2C.39-1.28%2C1.78%2C1.78%2C0%2C0%2C1%2C1.18-.63H38.6l1-5.18H31l-.34%2C0a1.77%2C1.77%2C0%2C0%2C1-1.71-1.38%2C1.73%2C1.73%2C0%2C0%2C1%2C.24-1.31%2C1.71%2C1.71%2C0%2C0%2C1%2C1.1-.77%2C1.55%2C1.55%2C0%2C0%2C1%2C.37%2C0h9.71L44%2C.89a1.75%2C1.75%2C0%2C0%2C1%2C1.71-1.4h63.1a1.75%2C1.75%2C0%2C0%2C1%2C1.24.52%2C1.69%2C1.69%2C0%2C0%2C1%2C.5%2C1.24%2C2%2C2%2C0%2C0%2C1%2C0%2C.34l-2.81%2C13.49H118a1.78%2C1.78%2C0%2C0%2C1%2C1.41.74l9.84%2C14.06a16.08%2C16.08%2C0%2C0%2C1%2C2.88%2C9.6v.19l.18.06a6.32%2C6.32%2C0%2C0%2C1%2C4.35%2C6%2C6.48%2C6.48%2C0%2C0%2C1-.1%2C1.08l-1.2%2C6.92h2.08a1.75%2C1.75%2C0%2C0%2C1%2C1.24.52%2C1.69%2C1.69%2C0%2C0%2C1%2C.5%2C1.24%2C1.66%2C1.66%2C0%2C0%2C1%2C0%2C.32l-1.66%2C8.53a1.75%2C1.75%2C0%2C0%2C1-1.71%2C1.4H133l-.52%2C2.34a1.76%2C1.76%2C0%2C0%2C1-1.71%2C1.39h-6.39a1.76%2C1.76%2C0%2C0%2C1-1.75-1.71%2C12.5%2C12.5%2C0%2C1%2C0-25%2C0%2C1.75%2C1.75%2C0%2C0%2C1-1.71%2C1.74Zm40-17.7c.45%2C0%2C.9%2C0%2C1.36.06A15.86%2C15.86%2C0%2C0%2C1%2C126%2C65.78l0%2C.22h3.31l.52-2.37a1.76%2C1.76%2C0%2C0%2C1%2C1.71-1.39h2.72l1-5h-2a1.71%2C1.71%2C0%2C0%2C1-1.24-.52%2C1.73%2C1.73%2C0%2C0%2C1-.51-1.23%2C1.53%2C1.53%2C0%2C0%2C1%2C0-.3l1.56-9a2.83%2C2.83%2C0%2C0%2C0-.48-2.13%2C2.86%2C2.86%2C0%2C0%2C0-1.85-1.17c-.1%2C0-.21%2C0-.31%2C0l-.27%2C0H100.13v-.08l-.17-.06a1.72%2C1.72%2C0%2C0%2C1-1.17-1.66%2C2%2C2%2C0%2C0%2C1%2C0-.34L106.7%2C3H47.18L36.68%2C55.84A1.75%2C1.75%2C0%2C0%2C1%2C35%2C57.24H32.21l-1%2C5h2.89A1.76%2C1.76%2C0%2C0%2C1%2C35.87%2C64a1.64%2C1.64%2C0%2C0%2C1%2C0%2C.38L35.47%2C66h4.6l0-.22a16%2C16%2C0%2C0%2C1%2C15.85-14c.45%2C0%2C.9%2C0%2C1.36.06A15.87%2C15.87%2C0%2C0%2C1%2C71.82%2C65.76l0%2C.22H94.26l0-.22A16%2C16%2C0%2C0%2C1%2C110.14%2C51.79ZM102.67%2C39.4h26v-.25a12.61%2C12.61%2C0%2C0%2C0-2.26-7.26l-9.32-13.32H107Z%22%20transform%3D%22translate(0.51%200.51)%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3Cpath%20d%3D%22M12.62%2C39.49H11.38a1.25%2C1.25%2C0%2C0%2C1%2C0-2.49h1.25a1.25%2C1.25%2C0%2C0%2C1%2C0%2C2.49Z%22%20transform%3D%22translate(0.51%200.51)%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3Cpath%20d%3D%22M25.19%2C22.46H17.65A1.25%2C1.25%2C0%2C0%2C1%2C17.11%2C20a1.73%2C1.73%2C0%2C0%2C1%2C.32%2C0h7.76a1.25%2C1.25%2C0%2C0%2C1%2C.26%2C2.49h0Z%22%20transform%3D%22translate(0.51%200.51)%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3C%2Fsvg%3E");
+}
+@media (min-width: 544px) {
+  .our-way .item[data-content=shipping]::before {
+    background-size: auto 4.9295774648vw;
+  }
+}
+@media (min-width: 992px) {
+  .our-way .item[data-content=shipping]::before {
+    background-size: auto 48px;
+  }
+}
+.our-way .item[data-content=trial]::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20145.98%20145.54%22%3E%3Cpath%20d%3D%22M72.31%2C144.82A73.09%2C73.09%2C0%2C0%2C1%2C2.06%2C91.21%2C74%2C74%2C0%2C0%2C1-.44%2C75.15L-.87%2C65.3l5.49%2C8.23a44.55%2C44.55%2C0%2C1%2C0%2C50.91-67l-9.33-3%2C9.61-2.24A72.76%2C72.76%2C0%2C1%2C1%2C72.45%2C144.82ZM6.09%2C84c.34%2C1.94.78%2C3.86%2C1.29%2C5.75a67.51%2C67.51%2C0%2C0%2C0%2C64.91%2C49.55h0A67.29%2C67.29%2C0%2C0%2C0%2C72.49%2C4.74q-3.26%2C0-6.53.31A50%2C50%2C0%2C0%2C1%2C54.87%2C97.1%2C50%2C50%2C0%2C0%2C1%2C6.09%2C84Z%22%20transform%3D%22translate(0.87%200.72)%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3Cpath%20d%3D%22M38%2C6.18l2.6%2C6%2C6.47%2C1-4.91%2C4.33%2C1.1%2C6.45-5.63-3.34-5.8%2C3%2C1.43-6.39-4.67-4.57L35.1%2C12%2C38%2C6.18M38.16.23l-2.4%2C4.84L33.48%2C9.68l-5.13.48L23%2C10.67l3.86%2C3.77L30.52%2C18l-1.13%2C5-1.18%2C5.27L33%2C25.82l4.56-2.39L42%2C26.06l4.65%2C2.75-.91-5.32-.86-5.08L48.72%2C15l4.05-3.57-5.34-.78-5.09-.75-2-4.72-2.14-5Z%22%20transform%3D%22translate(0.87%200.72)%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3Cpath%20d%3D%22M47.5%2C49.06l2.23%2C5.17L55.3%2C55l-4.23%2C3.72%2C1%2C5.55-4.84-2.87-5%2C2.61%2C1.24-5.49-4-3.93L45%2C54.1l2.5-5m.16-5.94L45.26%2C48l-1.88%2C3.79-4.21.4-5.37.5%2C3.86%2C3.78%2C3%2C2.95-.92%2C4.13-1.19%2C5.27%2C4.78-2.51%2C3.75-2%2C3.64%2C2.16%2C4.65%2C2.75-.91-5.32-.71-4.17L57%2C56.92l4-3.57-5.34-.78L51.47%2C52%2C49.8%2C48.07l-2.14-5Z%22%20transform%3D%22translate(0.87%200.72)%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3Cpath%20d%3D%22M19.37%2C48l1.45%2C3.38%2C3.63.54-2.76%2C2.42.6%2C3.63-3.15-1.88-3.26%2C1.69.81-3.58-2.62-2.58%2C3.66-.33L19.37%2C48m.17-5.94-2.41%2C4.83-1%2C2-2.27.21-5.38.48%2C3.85%2C3.79L14%2C55l-.51%2C2.22-1.19%2C5.26L17%2C60l2-1.05%2C2%2C1.16%2C4.64%2C2.77-.89-5.33-.38-2.24%2C1.72-1.51%2C4.06-3.55-5.34-.8-2.25-.34-.9-2.09-2.13-5Z%22%20transform%3D%22translate(0.87%200.72)%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3C%2Fsvg%3E");
+}
+.our-way .item[data-content=returns]::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2079.8%2076%22%3E%3Cpath%20d%3D%22M51.32%2C52.69V51.31c.39-.32.77-.66%2C1.13-1a20.47%2C20.47%2C0%2C0%2C0%2C5.23-11.44A10.19%2C10.19%2C0%2C0%2C0%2C64.23%2C35c2.19-3.08%2C2.39-7.51.56-13.06a1.46%2C1.46%2C0%2C0%2C0-.6-.78l-.83-.56A20.35%2C20.35%2C0%2C0%2C0%2C58.47%2C6.87C54.4%2C2.33%2C48.17%2C0%2C39.9%2C0h0C31.66%2C0%2C25.4%2C2.33%2C21.34%2C6.81a20.3%2C20.3%2C0%2C0%2C0-4.89%2C13.71l-.83.56a1.41%2C1.41%2C0%2C0%2C0-.6.78c-1.83%2C5.58-1.64%2C10%2C.55%2C13.06a10.24%2C10.24%2C0%2C0%2C0%2C6.56%2C3.91%2C20.45%2C20.45%2C0%2C0%2C0%2C5.24%2C11.46c.36.36.74.7%2C1.13%2C1v1.38C22.72%2C53.8-.37%2C59.19%2C0%2C74.5A1.5%2C1.5%2C0%2C0%2C0%2C1.52%2C76H78.3a1.5%2C1.5%2C0%2C0%2C0%2C1.51-1.49h0C80.19%2C59.19%2C57.11%2C53.8%2C51.32%2C52.69ZM18.09%2C33.17c-1.51-2.19-1.65-5.5-.3-9.89l1.1-.73a1.5%2C1.5%2C0%2C0%2C0%2C.66-1.4A17.68%2C17.68%2C0%2C0%2C1%2C23.66%2C8.8C27.07%2C5%2C32.56%2C3%2C39.9%2C3S52.72%2C5%2C56.2%2C8.8a17.68%2C17.68%2C0%2C0%2C1%2C4.11%2C12.35%2C1.5%2C1.5%2C0%2C0%2C0%2C.66%2C1.4l1.1.73c1.34%2C4.37%2C1.25%2C7.7-.3%2C9.89a6.61%2C6.61%2C0%2C0%2C1-3.22%2C2.33A9.94%2C9.94%2C0%2C0%2C0%2C61%2C28a7%2C7%2C0%2C0%2C0-2.43-4.21C57.93%2C8.78%2C47.35%2C7.1%2C42.78%2C7.1a19.83%2C19.83%2C0%2C0%2C0-2.88.21A20%2C20%2C0%2C0%2C0%2C37%2C7.1c-4.53%2C0-15.1%2C1.65-15.8%2C16.69A7%2C7%2C0%2C0%2C0%2C18.75%2C28a10%2C10%2C0%2C0%2C0%2C2.46%2C7.51A6.64%2C6.64%2C0%2C0%2C1%2C18%2C33.16Zm37.49-10a31.28%2C31.28%2C0%2C0%2C1-18-4.51%2C1.54%2C1.54%2C0%2C0%2C0-2%2C.2c-3%2C3.23-8.53%2C4-11.19%2C4.14.82-10.61%2C7.28-12.92%2C12.72-12.92a14%2C14%2C0%2C0%2C1%2C2.58.21%2C1.52%2C1.52%2C0%2C0%2C0%2C.6%2C0%2C14%2C14%2C0%2C0%2C1%2C2.59-.21c5.39%2C0%2C11.88%2C2.37%2C12.64%2C13.07ZM25%2C35.79a1.51%2C1.51%2C0%2C0%2C0-.38-1c-2.07-2.36-3-4.5-2.76-6.27A3.94%2C3.94%2C0%2C0%2C1%2C23.19%2C26c2%2C0%2C9.06-.38%2C13.6-4.26a34.34%2C34.34%2C0%2C0%2C0%2C16.76%2C4.5A19%2C19%2C0%2C0%2C0%2C56.66%2C26%2C4%2C4%2C0%2C0%2C1%2C58%2C28.51c.26%2C1.74-.7%2C3.91-2.76%2C6.27a1.51%2C1.51%2C0%2C0%2C0-.38%2C1v.78l-8.79%2C4.68a4.37%2C4.37%2C0%2C0%2C0-6.15.17%2C4.3%2C4.3%2C0%2C0%2C0%2C.14%2C6.08l0%2C0a4.37%2C4.37%2C0%2C0%2C0%2C6.15-.17%2C4.31%2C4.31%2C0%2C0%2C0%2C1.19-3%2C2.81%2C2.81%2C0%2C0%2C0%2C0-.41l6.93-3.69a16.34%2C16.34%2C0%2C0%2C1-4.05%2C7.92%2C13.46%2C13.46%2C0%2C0%2C1-10%2C3.73h-.75a13.56%2C13.56%2C0%2C0%2C1-10-3.71C24.79%2C43.5%2C24.9%2C35.85%2C24.9%2C35.77Zm19.47%2C8.6a1.35%2C1.35%2C0%2C1%2C1-1.35-1.34h0a1.34%2C1.34%2C0%2C0%2C1%2C1.35%2C1.34Zm-6%2C28.52H3.08c1.19-11.28%2C19.63-16%2C25.4-17.2v2.68c0%2C3.41%2C4.16%2C6%2C9.9%2C6.44v8.08ZM31.5%2C58.35V53.21a18.18%2C18.18%2C0%2C0%2C0%2C8%2C1.68h.76a18.21%2C18.21%2C0%2C0%2C0%2C8-1.68v5.18c0%2C1.43-3.28%2C3.49-8.4%2C3.49s-8.4-2.06-8.4-3.49v0ZM41.41%2C73V64.82c5.74-.39%2C9.91-3%2C9.91-6.44V55.75C57.13%2C57%2C75.48%2C61.67%2C76.72%2C73Z%22%20transform%3D%22translate(-0.01)%22%20fill%3D%22rgb(0%2C0%2C0)%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E");
+}
+.our-way .item[data-content=warranty]::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2075.02%2096.92%22%3E%3Ctitle%3Ebadge-lock-outline%3C%2Ftitle%3E%3Cpath%20d%3D%22M37.5%2C37.4a4.8%2C4.8%2C0%2C1%2C0%2C4.8%2C4.8h0A4.8%2C4.8%2C0%2C0%2C0%2C37.5%2C37.4Zm0%2C7.9a3.27%2C3.27%2C0%2C0%2C1-3.1-3.2A3.12%2C3.12%2C0%2C0%2C1%2C37.5%2C39h.3a3%2C3%2C0%2C0%2C1%2C2.8%2C3.2h0A3.05%2C3.05%2C0%2C0%2C1%2C37.5%2C45.3Z%22%20transform%3D%22translate(-0.01%200.02)%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3Cpath%20d%3D%22M37.5%2C23.2h0a6.44%2C6.44%2C0%2C0%2C0-6.4%2C6.4v4h.1a10.81%2C10.81%2C0%2C0%2C1%2C12.6%2C0h.1v-4A6.32%2C6.32%2C0%2C0%2C0%2C37.5%2C23.2Z%22%20transform%3D%22translate(-0.01%200.02)%22%20fill%3D%22none%22%20stroke%3D%22rgb(0%2C0%2C0)%22%20stroke-miterlimit%3D%2210%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M37.5%2C11.5A25.4%2C25.4%2C0%2C1%2C0%2C62.9%2C36.9%2C25.44%2C25.44%2C0%2C0%2C0%2C37.5%2C11.5Zm0%2C41.4A10.69%2C10.69%2C0%2C0%2C1%2C26.8%2C42.3a11.39%2C11.39%2C0%2C0%2C1%2C1.6-5.7V29.7a9.1%2C9.1%2C0%2C0%2C1%2C18.2%2C0v6.9a10.62%2C10.62%2C0%2C0%2C1-3.5%2C14.7A9.9%2C9.9%2C0%2C0%2C1%2C37.5%2C52.9Z%22%20transform%3D%22translate(-0.01%200.02)%22%20fill%3D%22none%22%20stroke%3D%22rgb(0%2C0%2C0)%22%20stroke-miterlimit%3D%2210%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M37.5%2C66.7c-1%2C0-2.1-.1-3.1-.2l.2-1.6a28.1%2C28.1%2C0%2C0%2C0%2C2.9.1Zm6.3-.6-.4-1.6c.9-.2%2C1.9-.5%2C2.8-.8l.5%2C1.6A15.68%2C15.68%2C0%2C0%2C1%2C43.8%2C66.1Zm-15.4-.8a24.88%2C24.88%2C0%2C0%2C1-2.9-1.1l.7-1.5c.9.4%2C1.8.7%2C2.8%2C1.1Zm24.1-2.6-.8-1.4a21.28%2C21.28%2C0%2C0%2C0%2C2.5-1.6l1%2C1.3C54.2%2C61.6%2C53.4%2C62.2%2C52.5%2C62.7ZM20.1%2C61.1c-.8-.6-1.6-1.3-2.4-2l1.1-1.2a21.1%2C21.1%2C0%2C0%2C0%2C2.3%2C1.9Zm39.6-4.2-1.2-1.1a21.1%2C21.1%2C0%2C0%2C0%2C1.9-2.3l1.3%2C1C61.1%2C55.3%2C60.4%2C56.1%2C59.7%2C56.9ZM13.5%2C54.5a23.26%2C23.26%2C0%2C0%2C1-1.7-2.6l1.4-.8a21.28%2C21.28%2C0%2C0%2C0%2C1.6%2C2.5ZM64.8%2C49l-1.5-.7a23.29%2C23.29%2C0%2C0%2C0%2C1.1-2.8L66%2C46Q65.4%2C47.65%2C64.8%2C49ZM9.2%2C46.2c-.3-1-.6-2-.8-3l1.6-.4c.2.9.5%2C1.9.8%2C2.8Zm58-6.2-1.7-.1a14.08%2C14.08%2C0%2C0%2C0%2C.1-2.9v-.1h1.7v.2A28.1%2C28.1%2C0%2C0%2C1%2C67.2%2C40ZM7.7%2C37h0c0-1%2C0-2%2C.1-3.1l1.6.2A28.1%2C28.1%2C0%2C0%2C0%2C9.3%2C37Zm57.4-6c-.2-.9-.5-1.9-.8-2.8l1.6-.5c.3%2C1%2C.6%2C2%2C.8%2C3ZM10.8%2C28.3l-1.6-.5a24.88%2C24.88%2C0%2C0%2C1%2C1.1-2.9l1.5.7a9.87%2C9.87%2C0%2C0%2C0-1%2C2.7Zm51.1-5.5c-.5-.8-1-1.7-1.6-2.5l1.3-1a23.26%2C23.26%2C0%2C0%2C1%2C1.7%2C2.6ZM14.7%2C20.4l-1.4-1c.6-.8%2C1.3-1.6%2C2-2.4l1.2%2C1.1c-.6.7-1.2%2C1.5-1.8%2C2.3ZM56.3%2C16A21.1%2C21.1%2C0%2C0%2C0%2C54%2C14.1l1-1.4c.8.6%2C1.6%2C1.3%2C2.4%2C2ZM20.9%2C14.2l-1-1.3a23.26%2C23.26%2C0%2C0%2C1%2C2.6-1.7l.8%2C1.4c-.8.5-1.6%2C1-2.4%2C1.6Zm28-3a23.07%2C23.07%2C0%2C0%2C0-2.8-1l.5-1.6a24.88%2C24.88%2C0%2C0%2C1%2C2.9%2C1.1Zm-20.1-1-.5-1.6c1-.3%2C2-.6%2C3-.8l.4%2C1.6a24.54%2C24.54%2C0%2C0%2C0-2.9.8ZM40.4%2C9a28.1%2C28.1%2C0%2C0%2C0-2.9-.1l-.1-1.2V7.1h0c1%2C0%2C2%2C.1%2C3%2C.1Z%22%20transform%3D%22translate(-0.01%200.02)%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3Cpath%20d%3D%22M73.3%2C33a4.77%2C4.77%2C0%2C0%2C1-1.2-2.2%2C6.9%2C6.9%2C0%2C0%2C1%2C.4-2.5%2C6.7%2C6.7%2C0%2C0%2C0%2C.3-4.2%2C6.91%2C6.91%2C0%2C0%2C0-3-3.1%2C3.66%2C3.66%2C0%2C0%2C1-2.4-4.1c0-.2.1-.4.1-.7a5.13%2C5.13%2C0%2C0%2C0-4.9-5.3h-.2a3.65%2C3.65%2C0%2C0%2C1-3.6-3%2C1.42%2C1.42%2C0%2C0%2C0-.2-.6A5.26%2C5.26%2C0%2C0%2C0%2C52%2C4a3.67%2C3.67%2C0%2C0%2C1-4.4-1.6A6.79%2C6.79%2C0%2C0%2C0%2C44%2C0a6.61%2C6.61%2C0%2C0%2C0-4.1%2C1A4.05%2C4.05%2C0%2C0%2C1%2C35%2C1a6.61%2C6.61%2C0%2C0%2C0-4.1-1%2C6.79%2C6.79%2C0%2C0%2C0-3.6%2C2.4A3.39%2C3.39%2C0%2C0%2C1%2C23%2C3.9c-.2-.1-.4-.1-.6-.2a5.17%2C5.17%2C0%2C0%2C0-6.1%2C3.9v.2a3.65%2C3.65%2C0%2C0%2C1-3.6%2C3%2C1.7%2C1.7%2C0%2C0%2C0-.7.1%2C5.09%2C5.09%2C0%2C0%2C0-4.3%2C5.8h0v.1a3.66%2C3.66%2C0%2C0%2C1-2.4%2C4.1l-.6.3a5.1%2C5.1%2C0%2C0%2C0-2.1%2C7h0A7.83%2C7.83%2C0%2C0%2C1%2C3%2C30.8%2C9.41%2C9.41%2C0%2C0%2C1%2C1.8%2C33l-.4.4a5.22%2C5.22%2C0%2C0%2C0%2C.3%2C7.4l.1.1A5.49%2C5.49%2C0%2C0%2C1%2C3%2C43a6.9%2C6.9%2C0%2C0%2C1-.4%2C2.5l-.3.6a5.25%2C5.25%2C0%2C0%2C0%2C2.9%2C6.7%2C3.66%2C3.66%2C0%2C0%2C1%2C2.4%2C4.1c0%2C.2-.1.4-.1.7a5.21%2C5.21%2C0%2C0%2C0%2C5%2C5.3h.1A3.65%2C3.65%2C0%2C0%2C1%2C16.2%2C66a1.42%2C1.42%2C0%2C0%2C0%2C.2.6A5.26%2C5.26%2C0%2C0%2C0%2C23%2C69.9h.2L18.8%2C88.3a.78.78%2C0%2C0%2C0%2C.2.8%2C1.14%2C1.14%2C0%2C0%2C0%2C.8.3L27.7%2C88l5.2%2C3.9.2%2C4.1a1.06%2C1.06%2C0%2C0%2C0%2C1%2C.9.9.9%2C0%2C0%2C0%2C.5-.1l8.5-4.3%2C9%2C3.2c.1%2C0%2C.2.1.4.1a.9.9%2C0%2C0%2C0%2C.9-.9h0v-.2L51.9%2C69.9h.2c.2.1.4.1.6.2a5.1%2C5.1%2C0%2C0%2C0%2C6-3.9V66a3.65%2C3.65%2C0%2C0%2C1%2C3.6-3%2C1.7%2C1.7%2C0%2C0%2C0%2C.7-.1%2C5.09%2C5.09%2C0%2C0%2C0%2C4.3-5.8h0V57a3.66%2C3.66%2C0%2C0%2C1%2C2.4-4.1%2C6.91%2C6.91%2C0%2C0%2C0%2C3-3.1%2C7.49%2C7.49%2C0%2C0%2C0-.3-4.2%2C10.05%2C10.05%2C0%2C0%2C1-.4-2.5A7.19%2C7.19%2C0%2C0%2C1%2C73.2%2C41l.4-.4a5.37%2C5.37%2C0%2C0%2C0-.3-7.6ZM28.4%2C86.3a.76.76%2C0%2C0%2C0-.5-.2h-.2l-7%2C1.2%2C4.2-17.6c.2%2C0%2C.4.1.6.1a5.81%2C5.81%2C0%2C0%2C1%2C1.9%2C1.6A6.79%2C6.79%2C0%2C0%2C0%2C31%2C73.8c.2%2C0%2C.4.1.6%2C0h.1l1%2C15.7Zm15%2C4.1a1.1%2C1.1%2C0%2C0%2C0-.8%2C0L35%2C94.2%2C33.7%2C73.5c.5-.2.9-.4%2C1.3-.6a4.05%2C4.05%2C0%2C0%2C1%2C4.9%2C0%2C6.61%2C6.61%2C0%2C0%2C0%2C4.1%2C1%2C7.42%2C7.42%2C0%2C0%2C0%2C3.6-2.4%2C3.33%2C3.33%2C0%2C0%2C1%2C2.3-1.7l1.4%2C23.5ZM61.8%2C60.6a6%2C6%2C0%2C0%2C0-5.3%2C4.5%2C1.69%2C1.69%2C0%2C0%2C1-.3%2C1%2C2.82%2C2.82%2C0%2C0%2C1-3.8%2C1.4h-.1a7.75%2C7.75%2C0%2C0%2C0-3.7.2%2C8.93%2C8.93%2C0%2C0%2C0-2.9%2C2.2%2C1.8%2C1.8%2C0%2C0%2C1-.6.9%2C3%2C3%2C0%2C0%2C1-4.1%2C0%2C6.16%2C6.16%2C0%2C0%2C0-7.1%2C0%2C1.8%2C1.8%2C0%2C0%2C1-.9.6A3%2C3%2C0%2C0%2C1%2C29.1%2C70h0a8.93%2C8.93%2C0%2C0%2C0-2.9-2.2%2C5.66%2C5.66%2C0%2C0%2C0-1.8-.3h0c-.6%2C0-1.2.1-1.8.1a3.81%2C3.81%2C0%2C0%2C1-1%2C.3%2C2.91%2C2.91%2C0%2C0%2C1-3.1-2.7%2C6%2C6%2C0%2C0%2C0-5.3-4.5%2C3.4%2C3.4%2C0%2C0%2C1-1-.1%2C2.86%2C2.86%2C0%2C0%2C1-2.1-3.5V57h0a6.15%2C6.15%2C0%2C0%2C0-3.5-6c-.8-.6-1.8-1.2-2-1.9A5%2C5%2C0%2C0%2C1%2C5%2C46.4a9%2C9%2C0%2C0%2C0%2C.5-3.6%2C7.63%2C7.63%2C0%2C0%2C0-1.7-3.2A6.82%2C6.82%2C0%2C0%2C1%2C2.6%2C37a5%2C5%2C0%2C0%2C1%2C1.3-2.5%2C7.63%2C7.63%2C0%2C0%2C0%2C1.7-3.2%2C9.23%2C9.23%2C0%2C0%2C0-.5-3.7%2C5%2C5%2C0%2C0%2C1-.4-2.7c.2-.7%2C1.1-1.3%2C2-1.9a6.15%2C6.15%2C0%2C0%2C0%2C3.5-6%2C6.26%2C6.26%2C0%2C0%2C1%2C.6-2.7%2C5.51%2C5.51%2C0%2C0%2C1%2C2.5-1%2C6%2C6%2C0%2C0%2C0%2C5.3-4.5%2C1.69%2C1.69%2C0%2C0%2C1%2C.3-1%2C2.82%2C2.82%2C0%2C0%2C1%2C3.8-1.4h.1a7.75%2C7.75%2C0%2C0%2C0%2C3.7-.2A8.93%2C8.93%2C0%2C0%2C0%2C29.4%2C4a6.2%2C6.2%2C0%2C0%2C1%2C2.2-1.7%2C4.38%2C4.38%2C0%2C0%2C1%2C2.5.8%2C6.16%2C6.16%2C0%2C0%2C0%2C7.1%2C0c.1.1.4-.1.8-.3a2.93%2C2.93%2C0%2C0%2C1%2C3.9%2C1.5h0a8.93%2C8.93%2C0%2C0%2C0%2C2.9%2C2.2%2C9.26%2C9.26%2C0%2C0%2C0%2C3.7.2%2C3.81%2C3.81%2C0%2C0%2C1%2C1-.3%2C2.91%2C2.91%2C0%2C0%2C1%2C3.1%2C2.7h0a6%2C6%2C0%2C0%2C0%2C5.3%2C4.5%2C4.59%2C4.59%2C0%2C0%2C1%2C2.5%2C1%2C6.26%2C6.26%2C0%2C0%2C1%2C.6%2C2.7%2C6.15%2C6.15%2C0%2C0%2C0%2C3.5%2C6c.9.6%2C1.8%2C1.2%2C2%2C1.9a5%2C5%2C0%2C0%2C1-.4%2C2.7%2C9.23%2C9.23%2C0%2C0%2C0-.5%2C3.7%2C7.63%2C7.63%2C0%2C0%2C0%2C1.7%2C3.2%2C6%2C6%2C0%2C0%2C1%2C1.3%2C2.5%2C6.36%2C6.36%2C0%2C0%2C1-1.4%2C2.2%2C7.63%2C7.63%2C0%2C0%2C0-1.7%2C3.2%2C9.23%2C9.23%2C0%2C0%2C0%2C.5%2C3.7%2C5%2C5%2C0%2C0%2C1%2C.4%2C2.7c-.2.7-1.1%2C1.3-2%2C1.9a6.15%2C6.15%2C0%2C0%2C0-3.5%2C6%2C3.4%2C3.4%2C0%2C0%2C1%2C.1%2C1%2C3.65%2C3.65%2C0%2C0%2C1-3.2%2C2.6Z%22%20transform%3D%22translate(-0.01%200.02)%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3C%2Fsvg%3E");
+}
+.our-way .item:hover, .our-way .item:focus {
+  color: rgba(11, 40, 54, 0.7);
+  outline: 0;
+}
+@media (min-width: 768px) {
+  .our-way .item:hover, .our-way .item:focus {
+    color: #56dbd6;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .our-way .page-content {
+    padding: 0 30px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .our-way .page-content {
+    padding: 0 60px;
+  }
+}
+.our-way .page-content .item {
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .our-way .page-content .item::before {
+    -webkit-filter: invert(11%) sepia(8%) saturate(6162%) hue-rotate(157deg) brightness(92%) contrast(92%);
+            filter: invert(11%) sepia(8%) saturate(6162%) hue-rotate(157deg) brightness(92%) contrast(92%);
+  }
+}
+.our-way .modal-content .close {
+  -webkit-filter: invert(100%) sepia(82%) saturate(2%) hue-rotate(346deg) brightness(111%) contrast(101%);
+          filter: invert(100%) sepia(82%) saturate(2%) hue-rotate(346deg) brightness(111%) contrast(101%);
+}
+.our-way .modal-content .close:hover, .our-way .modal-content .close:focus {
+  -webkit-filter: invert(73%) sepia(43%) saturate(504%) hue-rotate(128deg) brightness(98%) contrast(89%);
+          filter: invert(73%) sepia(43%) saturate(504%) hue-rotate(128deg) brightness(98%) contrast(89%);
+}
+.our-way .modal-content h2, .our-way .modal-content p {
+  color: #ffffff;
+  margin-top: 0;
+}
+.our-way .modal-content p {
+  text-align: left;
+}
+@media (min-width: 768px) {
+  .our-way .modal-content p:not(.footnote) {
+    font-size: 1.6rem;
+  }
+}
+.our-way .modal-content p.footnote {
+  padding-top: 0;
+}
+.our-way .modal-content p a {
+  border-bottom: solid 1px #56dbd6;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+.our-way .modal-content p a:hover, .our-way .modal-content p a:focus {
+  border-color: transparent;
+  outline-offset: 0;
+}
+.our-way .modal-content .item {
+  padding: 18.75vw 4.6875vw 0 4.6875vw;
+}
+@media (min-width: 544px) {
+  .our-way .modal-content .item {
+    padding: 10.5633802817vw 2.6408450704vw 0 2.6408450704vw;
+  }
+}
+@media (min-width: 768px) {
+  .our-way .modal-content .item {
+    padding: 90px 45px 15px 45px;
+  }
+}
+.our-way .modal-content .item::before {
+  height: 15.625vw;
+  background-size: 12.5vw;
+}
+@media (min-width: 544px) {
+  .our-way .modal-content .item::before {
+    height: 8.8028169014vw;
+    background-size: 7.0422535211vw;
+  }
+}
+@media (min-width: 768px) {
+  .our-way .modal-content .item::before {
+    height: 72px;
+    background-size: 56px;
+  }
+}
+.our-way .modal-content .item[data-content=shipping]::before {
+  background-size: auto 12.5vw;
+}
+@media (min-width: 544px) {
+  .our-way .modal-content .item[data-content=shipping]::before {
+    background-size: auto 7.0422535211vw;
+  }
+}
+@media (min-width: 768px) {
+  .our-way .modal-content .item[data-content=shipping]::before {
+    background-size: auto 56px;
+  }
+}

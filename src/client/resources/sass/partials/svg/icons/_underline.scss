@@ -1,0 +1,5 @@
+// icon-underline.svg
+@mixin underline($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20182.01%207.99%22%3E%3Cpath%20d%3D%22M.1%2C5.73S16.76%2C1.15%2C90%2C.29C136.8-.77%2C182%2C1.53%2C182%2C1.53l-.1%2C2.27S136.7%2C1.5%2C89.86%2C2.56C18.72%2C4.21%2C0%2C8%2C0%2C8Z%22%20transform%3D%22translate(-0.01%20-0.01)%22%20fill%3D%22#{$color-rgb}%22%20fill-rule%3D%22#{$color-rgb}%22%2F%3E%3C%2Fsvg%3E');
+}

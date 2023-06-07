@@ -1,0 +1,5 @@
+// iconReuse.svg
+@mixin reuse($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2080.01%2063.35%22%3E%3Cpath%20d%3D%22M79.83%2C30.53h0L70%2C21.4l-7.48-7L52.7%2C23.54l-7.46%2C7h0a.61.61%2C0%2C0%2C0%2C.08.86.67.67%2C0%2C0%2C0%2C.36.14h8.88V33A25.12%2C25.12%2C0%2C0%2C1%2C20%2C56.25%2C31.71%2C31.71%2C0%2C0%2C0%2C71.74%2C31.67v-.19h7.7a.61.61%2C0%2C0%2C0%2C.41-1Z%22%20transform%3D%22translate(0.01%20-0.04)%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3Cpath%20d%3D%22M.17%2C32.93h0L10%2C42.06l7.48%2C7%2C9.83-9.14%2C7.47-7h0a.61.61%2C0%2C0%2C0-.08-.86.67.67%2C0%2C0%2C0-.36-.14H25.45V30.46A25.12%2C25.12%2C0%2C0%2C1%2C60%2C7.21%2C31.71%2C31.71%2C0%2C0%2C0%2C8.24%2C31.72v.19H.54a.61.61%2C0%2C0%2C0-.41%2C1Z%22%20transform%3D%22translate(0.01%20-0.04)%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3C%2Fsvg%3E');
+}

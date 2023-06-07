@@ -1,0 +1,5 @@
+// icon-heart-2022.svg 
+@mixin heart-icon($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20id%3D%22a%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20202.06%20183.65%22%3E%3Cpath%20d%3D%22M193.23%2C29c-21.26-41.53-75.2-34.55-92.2-3.69C84.03-5.54%2C30.09-12.52%2C8.83%2C29c-26.31%2C51.39%2C14.05%2C84.96%2C19.68%2C91.6%2C14.96%2C17.68%2C51.85%2C48.77%2C66.44%2C60.85%2C3.53%2C2.92%2C8.64%2C2.92%2C12.17%2C0%2C14.59-12.08%2C51.48-43.16%2C66.44-60.85%2C5.63-6.65%2C45.99-40.21%2C19.68-91.6Z%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3C%2Fsvg%3E');
+}

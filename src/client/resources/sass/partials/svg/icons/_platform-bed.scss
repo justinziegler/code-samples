@@ -1,0 +1,5 @@
+// icon-platform-bed.svg
+@mixin platform-bed($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2081%2039%22%3E%3Cpath%20d%3D%22M78.35%2C29.9H75.69V39H69.05V29.9H12V39H5.31V29.9H2.65A2.64%2C2.64%2C0%2C0%2C1%2C0%2C27.31H0v-13a2.62%2C2.62%2C0%2C0%2C1%2C2.64-2.6h0V3.9a4%2C4%2C0%2C0%2C1%2C4-3.9H74.36a3.94%2C3.94%2C0%2C0%2C1%2C4%2C3.88V11.7A2.64%2C2.64%2C0%2C0%2C1%2C81%2C14.3h0v13A2.63%2C2.63%2C0%2C0%2C1%2C78.35%2C29.9Zm-4-27.3H6.64A1.31%2C1.31%2C0%2C0%2C0%2C5.31%2C3.89H75.69a1.31%2C1.31%2C0%2C0%2C0-1.33-1.3Zm1.33%2C2.6H19.92V8.8H14.6V5.2H5.31v6.5H75.69V9.1h0Zm2.66%2C9.1H2.65v13h75.7Z%22%20transform%3D%22translate(0%200)%22%20fill%3D%22#{$color-rgb}%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+}

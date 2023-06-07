@@ -1,0 +1,9 @@
+main, nav, footer {
+	max-width: 1920px;
+	margin: 0 auto;
+	@media (min-width: 1922px) {
+		max-width: 1922px;
+		border-left: solid 1px #efede9;
+		border-right: solid 1px #efede9;
+	}
+}

@@ -1,0 +1,94 @@
+{%- macro ourWay(ow) -%}
+  <section class="our-way module">
+    <div class="container">
+      <div class="page-content row">
+        {%- for item in ow -%}
+          <div class="item col-xs-3 col-lg-2 {% if loop.index == 1 %}col-lg-offset-2{% endif %}" data-content="{{ item.titleClass }}" role="button" tabindex="0">
+            {{- item.title -}}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+    <div role="dialog" aria-modal="true" class="modal fade content-modal" tabindex="-1" aria-labelledby="our-way">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" tabindex="0"><span aria-hidden="true"></span></button>
+          </div>
+          <div class="modal-body">
+            {%- for item in ow -%}
+              <div class="item" data-content="{{ item.titleClass }}" style="display: none;">
+                <h2>{{- item.title -}}</h2>
+                <p>{{- item.content | safe -}}</p>
+                {% if item.footnote !== undefined %}
+                  <p class="footnote">{{ item.footnote }}</p>
+                {% endif %}
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>		
+  </section>
+
+  <script>
+    $('.our-way .item').on('keypress click', function(e) {
+      if (e.which === 13 || e.type === 'click') {
+        var content = $(this).data('content');
+        $(`.our-way .modal div[data-content="${content}"]`).show().siblings().hide();
+        $('.our-way .modal').modal('show');
+      }
+    });
+  </script>
+{%- endmacro -%}
+
+{% macro header(p) %}
+	<nav data-collapsed="false">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="header-nav prev">
+          {% if p.pageUrl !== '/' %}
+            <a href="{{ p.prevPage }}">
+              <span>Back</span>
+            </a>
+          {% endif %}
+        </div>
+        <div class="header-title">
+          
+          <div class="header-nav collapse">
+            <a href="#">
+              <span>&nbsp;Description</span>
+            </a>
+          </div>
+        </div>
+        
+        <div class="header-nav next">
+          {% if p.pageUrl !== 'frame' %}
+            <a href="{{ p.nextPage }}">
+              <span>Next</span>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="header-content">
+      <div>
+        <h2>
+          <span>Case Study:</span>
+          {{ p.headerTitle }}
+        </h2>
+        <p>{{ p.headerContent | safe }}</p>
+      </div>
+    </div>
+	</nav>
+  <script>
+    let headerCollapsed = false;
+    const nav = document.querySelector('nav');
+    const collapseBtn = document.querySelector('.header-nav.collapse');
+    collapseBtn.addEventListener('click', event => {
+      event.preventDefault();
+      headerCollapsed = !headerCollapsed;
+      nav.setAttribute('data-collapsed', headerCollapsed);
+    });
+  </script>
+{% endmacro %}

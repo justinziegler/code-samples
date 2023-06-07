@@ -1,0 +1,5 @@
+// icon-play-outline.svg
+@mixin play-outline($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2022.86%2030.45%22%3E%3Cpath%20d%3D%22M22.45%2C14.45%2C1.49.16A1%2C1%2C0%2C0%2C0%2C.13.54.83.83%2C0%2C0%2C0%2C0%2C1V29.52a1%2C1%2C0%2C0%2C0%2C.51.84.89.89%2C0%2C0%2C0%2C.45.12.93.93%2C0%2C0%2C0%2C.53-.17L22.45%2C16a.93.93%2C0%2C0%2C0%2C.41-.78A1%2C1%2C0%2C0%2C0%2C22.45%2C14.45ZM1.91%2C27.72v-25L20.22%2C15.24Z%22%20transform%3D%22translate(0%20-0.03)%22%20fill%3D%22#{$color-rgb}%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+}

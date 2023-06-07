@@ -1,0 +1,5 @@
+//icon-foldable.svg
+@mixin origami($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20409.35%20340.5%22%3E%3Cpath%20d%3D%22M209.6%2C344.5%2C122.5%2C200.4V97.5H3L125.87%2C4h73.27l38.5%2C87.5H412.33L291.15%2C254.76%2C393.09%2C344.5Zm109.31-28-44.28-39-29.17%2C39ZM218.69%2C305.41l138-185.91H234.25l-80.06%2C79.2ZM150.5%2C163l61.31-60.64L180.86%2C32H150.5Zm-28-93.46V41.74L86%2C69.5Z%22%20transform%3D%22translate(-2.98%20-4)%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3C%2Fsvg%3E');
+}

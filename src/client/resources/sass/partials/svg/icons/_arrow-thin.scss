@@ -1,0 +1,5 @@
+// icon-arrow-thin.svg
+@mixin arrow-thin($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2023.2%2013.15%22%3E%3Cpath%20d%3D%22M12.74%2C12.65a1.62%2C1.62%2C0%2C0%2C1-2.3%2C0L.47%2C2.74A1.61%2C1.61%2C0%2C0%2C1%2C.46.46h0a1.64%2C1.64%2C0%2C0%2C1%2C2.3%2C0l8.82%2C8.78L20.41.45a1.64%2C1.64%2C0%2C0%2C1%2C2.3%2C0%2C1.61%2C1.61%2C0%2C0%2C1%2C0%2C2.28h0Z%22%20transform%3D%22translate(0.01%200.02)%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3C%2Fsvg%3E');
+}

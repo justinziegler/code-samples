@@ -1,0 +1,5 @@
+//star-sharp.svg
+@mixin star-padded($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Cpolygon%20points%3D%22150%2052.45%20161.8%2088.78%20200%2088.78%20169.1%20111.22%20180.9%20147.56%20150%20125.09%20119.1%20147.56%20130.9%20111.22%20100%2088.78%20138.2%2088.78%20150%2052.45%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3Crect%20width%3D%22300%22%20height%3D%22200%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E');
+}

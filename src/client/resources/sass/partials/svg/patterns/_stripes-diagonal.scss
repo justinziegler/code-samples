@@ -1,0 +1,5 @@
+// pattern-stripe-diagonal.svg
+@mixin stripes-diagonal($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2015.36%2015.36%22%3E%3Cpolygon%20points%3D%2215.36%208.27%208.27%2015.36%2015.34%2015.36%2015.36%2015.34%2015.36%208.27%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3Cpolygon%20points%3D%228.28%200%200%208.28%200%2015.35%2015.35%200%208.28%200%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3C%2Fsvg%3E');
+}

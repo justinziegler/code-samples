@@ -1,0 +1,5 @@
+// quote-angled-right.svg
+@mixin quote-angled-right($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%202.5%205.18%22%3E%3Cpath%20d%3D%22M497%2C372.25l-.74-.49%2C1.4-2.1-1.41-2.1.74-.49%2C1.75%2C2.59Z%22%20transform%3D%22translate(-496.23%20-367.07)%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3C%2Fsvg%3E');
+}

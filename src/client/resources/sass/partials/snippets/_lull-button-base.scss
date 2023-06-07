@@ -1,0 +1,81 @@
+.btn {
+	display: inline-block;
+	vertical-align: top;
+	font-weight: 900;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 30px;
+	padding-right: 30px;
+	cursor: pointer;
+	transition: .2s;
+	font-size: 16px;
+	color: #fff;
+	background-color: #f72351;
+	outline: 0;
+	border: none;
+	border-radius: 4px;
+	@media (min-width: 768px) {
+		letter-spacing: 1px;
+		font-size: 18px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	&:hover, &:focus {
+		background-color: #ef224e;
+		text-decoration: none;
+		outline: 0;
+		color: #fff;
+	}
+	&:hover {
+		color: #fff;
+		-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.2) inset;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.2) inset;
+	}
+	&:focus {
+		padding-top: 16px;
+		padding-bottom: 14px;
+		@media (min-width: 768px) {
+			padding-top: 21px;
+			padding-bottom: 19px;
+		}
+	}
+	&:active {
+		color: #fff;
+		-webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.2) inset;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.2) inset;
+	}
+}
+.btn-dark {
+	background-color: #0b2836;
+	&:hover, &:focus {
+		background-color: #143e4a;
+	}
+}
+.btn-outline {
+	background-color: #fff;
+	border: solid 2px #0b2836;
+	color: #0b2836;
+	&:hover, &:focus {
+		background-color: #fff;
+		color: #0b2836;
+	}
+}
+.btn-green {
+	background-color: #3ec286;
+	&:hover, &:focus {
+		background-color: shade(#3ec286, 10%);
+	}
+}
+
+.btn-transparent {
+	background-color: transparent;
+	border: solid 1px #0b2836;
+	color: #0b2836;
+	&:hover, &:focus {
+		background-color: #0b2836;
+		color: #fff;
+	}
+}

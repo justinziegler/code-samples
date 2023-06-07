@@ -1,0 +1,5 @@
+// x-narrow.svg
+@mixin x-thin($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2030.64%2030.64%22%3E%3Ctitle%3Ex-narrow%3C%2Ftitle%3E%3Cpath%20d%3D%22M19.45%2C15.56%2C30.59%2C4.43a1%2C1%2C0%2C0%2C0%2C0-1.42L28.11.54a1%2C1%2C0%2C0%2C0-1.41%2C0L15.56%2C11.67%2C4.43.54A1%2C1%2C0%2C0%2C0%2C3%2C.54L.54%2C3a1%2C1%2C0%2C0%2C0%2C0%2C1.42L11.67%2C15.56.54%2C26.7a1%2C1%2C0%2C0%2C0%2C0%2C1.41L3%2C30.59a1%2C1%2C0%2C0%2C0%2C1.42%2C0L15.56%2C19.45%2C26.7%2C30.59a1%2C1%2C0%2C0%2C0%2C1.41%2C0l2.48-2.48a1%2C1%2C0%2C0%2C0%2C0-1.41Z%22%20transform%3D%22translate(-0.24%20-0.24)%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3C%2Fsvg%3E');
+}

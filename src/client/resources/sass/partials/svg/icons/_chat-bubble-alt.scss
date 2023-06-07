@@ -1,0 +1,5 @@
+// icon-chat.svg  
+@mixin chat-bubble-alt($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024.52%2022.97%22%3E%3Cpath%20d%3D%22M24.52%2C10C24.52%2C4.45%2C19%2C0%2C12.26%2C0S0%2C4.45%2C0%2C10A9.53%2C9.53%2C0%2C0%2C0%2C5.05%2C18a7.6%2C7.6%2C0%2C0%2C1-1.84%2C4.08.61.61%2C0%2C0%2C0-.12.57.54.54%2C0%2C0%2C0%2C.49.31c3%2C0%2C5.33-1.93%2C6.61-3.21a15.27%2C15.27%2C0%2C0%2C0%2C2.07.15c6.78%2C0%2C12.26-4.46%2C12.26-10Z%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3C%2Fsvg%3E');
+}

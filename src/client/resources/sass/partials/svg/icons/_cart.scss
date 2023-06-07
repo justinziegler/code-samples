@@ -1,0 +1,5 @@
+// cart.svg 
+@mixin cart($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2051%2047.04%22%3E%3Cpath%20d%3D%22M51%2C11.43c0-1.88-.4-2.54-2.39-2.54H14.31l-1-6.35C13.15.69%2C12.21%2C0%2C10.21%2C0H2.55C.66%2C0%2C0%2C.62%2C0%2C2.54V3.81c0%2C2%2C.66%2C2.54%2C2.55%2C2.54H7.3l4.18%2C24.13A3.87%2C3.87%2C0%2C0%2C0%2C15.31%2C33H43.38c2.23%2C0%2C3.28-.46%2C3.83-2.54ZM42%2C26.67H16.83L15%2C15.24H44.21ZM16.58%2C41.92a5.1%2C5.1%2C0%2C1%2C0%2C5.12-5.08h0a5.09%2C5.09%2C0%2C0%2C0-5.1%2C5.08Zm16.58%2C0a5.1%2C5.1%2C0%2C1%2C0%2C5.12-5.08h0a5.09%2C5.09%2C0%2C0%2C0-5.1%2C5.08Z%22%20transform%3D%22translate(0%200)%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3C%2Fsvg%3E');
+}

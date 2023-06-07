@@ -1,0 +1,5 @@
+// icon-like.svg
+@mixin like($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2033.02%2033.02%22%3E%3Ctitle%3Eicon-like%3C%2Ftitle%3E%3Cellipse%20cx%3D%22239.36%22%20cy%3D%22-162.43%22%20rx%3D%2216.13%22%20ry%3D%2216.66%22%20transform%3D%22translate(-37.89%20300.62)%20rotate(-45)%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3Crect%20x%3D%227.32%22%20y%3D%2214.63%22%20width%3D%224.75%22%20height%3D%229.49%22%20rx%3D%220.79%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M246.78-163.12a1.72%2C1.72%2C0%2C0%2C0%2C1-1.59%2C1.43%2C1.43%2C0%2C0%2C0-1.58-1.58h-4.35a9.65%2C9.65%2C0%2C0%2C0%2C1-4.35c0-.79-.59-2.37-1.78-2.37s-1.38.79-1.38.79.29%2C2.08%2C0%2C2.37-3.76%2C4.35-3.76%2C5.14v1.78h0v6.13a1%2C1%2C0%2C0%2C0%2C1%2C1h7.56c1.8-.05%2C2.53-.63%2C2.53-1.38a1%2C1%2C0%2C0%2C0-.59-1%2C1.15%2C1.15%2C0%2C0%2C0%2C.79-1.19c0-1-.59-1.18-.59-1.18a1.42%2C1.42%2C0%2C0%2C0%2C1.18-1.39A1%2C1%2C0%2C0%2C0%2C246.78-163.12Z%22%20transform%3D%22translate(-222.86%20178.94)%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E');
+}

@@ -1,0 +1,33 @@
+{% import "./../views/_css.html" as _m_css %}
+{% import "./../views/_js.html" as _m_js %}
+{% import "./../views/_macros.html" as _m_macros %}
+{% import "./../views/_modals.html" as _m_modals %}
+{% import "./../views/_modules.html" as _modules %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="../assets/autohidenavbar.bootstrap.js"></script>
+  {{ _css.common() }}
+  {% block styles %}
+  {% endblock %}
+</head>
+
+<body ontouchstart>
+  {{ _modules.header(p) }}
+  <main>	
+    {% block content %}
+      <p>Missing content block</p>
+    {% endblock %}
+  </main>
+  
+  {% block scripts %}
+  {% endblock %}
+  
+  <script>
+    $('nav').autoHidingNavbar();
+  </script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+.btn {
+	display: inline-block;
+	vertical-align: top;
+	font-weight: 700;
+	text-align: center;
+	padding-top: 16px;
+	padding-bottom: 14px;
+	padding-left: 30px;
+	padding-right: 30px;
+	cursor: pointer;
+	// font-size: 16px;
+	font-size: 5vW;
+	color: #fff;
+	background-color: #f72351;
+	background-color: shade(#f72351, 7.25%);
+	outline: 0;
+	border: none;
+	border-radius: 6px;
+	text-decoration: none;
+	letter-spacing: 0;
+	user-select: none;
+	@include mq(xs) {
+		font-size: 2.8169vW;
+	}
+	@media (min-width: 768px) {
+		font-size: 16px;
+	}
+	@media (min-width: 992px) {
+		border-radius: 8px;
+		font-size: 18px;
+		padding-top: 19px;
+		padding-bottom: 17px;
+	}
+	@media (min-width: 1200px) {
+		font-size: 22px;
+	}
+	&:hover, &:focus {
+		background-color: #ef224e;
+		text-decoration: none;
+		// outline: 0;
+		color: #fff;
+	}
+	&:hover {
+		color: #fff;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.2) inset;
+	}
+	&:focus {
+		outline: none;
+		padding-top: 17px;
+		padding-bottom: 13px;
+		box-shadow: 0 0 0 2px rgba(255, 255, 255, .35) inset;
+		// @media (min-width: 768px) {
+		// 	padding-top: 17px;
+		// 	padding-bottom: 15px;
+		// }
+		@media (min-width: 992px) {
+			padding-top: 20px;
+			padding-bottom: 16px;
+		}
+	}
+	&:active {
+		color: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.2) inset;
+	}
+	&.disabled {
+		pointer-events: none;
+	}
+}
+.btn-dark {
+	background-color: #0b2836;
+	&.disabled {
+		background-color: tint(#0b2836, 20%);
+		border-color: tint(#0b2836, 20%);
+		color: #d9d8d6;
+	}
+	&:hover, &:focus {
+		background-color: #143e4a;
+	}
+}
+.btn-outline {
+	background-color: #fff;
+	border: solid 2px #0b2836;
+	color: #0b2836;
+	&:hover, &:focus {
+		background-color: #fff;
+		color: #0b2836;
+	}
+}
+.btn-teal {
+	background-color: #6ac9ca;
+	&:hover, &:focus {
+		background-color: $teal;
+	}
+}
+.btn-green {
+	background-color: #3ec286;
+	&:hover, &:focus {
+		background-color: shade(#3ec286, 10%);
+	}
+}
+.btn-transparent {
+	background-color: transparent;
+	box-shadow: 0 0 0 1px #0b2836 inset;
+	color: #0b2836;
+	&:hover, &:focus {
+		background-color: #0b2836;
+		color: #fff;
+	}
+}
+.btn-semi-transparent {
+	background-color: rgba($navy, .3);
+	border: solid 2px $white;
+	color: $white;
+	text-shadow: 0 0 6px $navy;
+	&:hover, &:focus {
+		background-color: rgba($navy, .4);
+	}
+}
+.btn-white {
+	background-color: $white;
+	border-color: #d9d8d6;
+	color: $navy;
+	&:hover, &:focus, &:active {
+		background-color: $white;
+		color: $navy;
+		box-shadow: none;
+	}
+}
+.btn-sm {
+	font-size: 13px;
+	border-radius: 4px;
+	padding: 4px 0 1px 0;
+	border: solid 1px $pink;
+	font-weight: 500;
+	@include mq(xsm) {
+		font-size: vwl(13px);
+		padding: vwl(4px) 0 vwl(1px) 0;
+	}
+	@include mq(xxs) {
+		font-size: vwp(13px);
+		padding: vwp(4px) 0 vwp(1px) 0;
+	}
+	@include mq(sm) {
+		font-size: 1.4rem;
+		// border-radius: 6px;
+		padding: 5px 0 3px 0;
+	}
+	@include mq(md) {
+		font-size: 1.6rem;
+		border-radius: 6px;
+	}
+	@include mq(lg) {
+		padding: 7px 0 5px 0;
+	}
+	&:focus {
+		padding: 4px 0 1px 0;
+		@include mq(xsm) {
+			padding: vwl(4px) 0 vwl(1px) 0;
+		}
+		@include mq(xxs) {
+			padding: vwp(4px) 0 vwp(1px) 0;
+		}
+		@include mq(md) {
+			padding: 5px 0 3px 0;
+		}
+	}
+	&.btn-dark {
+		border-color: $navy;
+		&:hover, &:focus, &:active {
+			background-color: tint($navy, 20%);
+			box-shadow: none;
+		}
+	}
+	&.btn-white {
+		background-color: $white;
+		border-color: #d9d8d6;
+		color: $navy;
+		&:hover, &:focus, &:active {
+			background-color: $white;
+			color: $navy;
+		}
+		&:focus:not([aria-expanded="true"]) {
+			border-color: shade(#d9d8d6, 30%);
+		}
+	}
+}
+.btn-md {
+	border-radius: 4px;
+	padding: 10px 0 8px 0;
+	@include mq(xsm) {
+		padding: vwl(10px) 0 vwl(8px) 0;
+	}
+	@include mq(xxs) {
+		padding: vwp(10px) 0 vwp(8px) 0;
+	}
+
+	// this has only been used on mobile so far
+	// @include mq(md) {
+	// 	border-radius: 6px;
+	// }
+	// @include mq(lg) {
+	// 	padding: 7px 0 5px 0;
+	// }
+	&:focus {
+		padding: 11px 0 9px 0;
+		@include mq(xsm) {
+			padding: vwl(11px) 0 vwl(9px) 0;
+		}
+		@include mq(xxs) {
+			padding: vwp(11px) 0 vwp(9px) 0;
+		}
+	}
+}
+.block {
+	display: block;
+}

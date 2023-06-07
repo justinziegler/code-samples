@@ -1,0 +1,457 @@
+/* When editing, use the source file for this page in client/resources/sass */
+#financing-modal .icon-calendar, #financing-modal .icon-payment, #financing-modal.klarna .logo-klarna {
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#financing-modal .modal-dialog {
+  text-align: center;
+}
+
+#financing-modal .modal-header {
+  padding: 15px 15px 0 15px;
+}
+
+@media (max-width: 767px) {
+  #financing-modal .modal-header {
+    padding: 15px 15px 0 15px;
+    padding: 2.64085vw 2.64085vw 0 2.64085vw;
+  }
+}
+
+@media (max-width: 543px) {
+  #financing-modal .modal-header {
+    padding: 4.6875vw 4.6875vw 0 4.6875vw;
+  }
+}
+
+@media (max-width: 767px) {
+  #financing-modal .modal-header h3 {
+    font-size: 1.4rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+#financing-modal h2 {
+  text-align: center;
+  font-weight: 700;
+  color: #0b2836;
+  font-size: 2.25rem;
+  font-size: 7.03125vw;
+  margin: 15px 0;
+  margin: 4.6875vw 0;
+}
+
+@media (min-width: 544px) {
+  #financing-modal h2 {
+    font-size: 3.96127vw;
+    margin: 2.64085vw 0;
+  }
+}
+
+@media (min-width: 768px) {
+  #financing-modal h2 {
+    font-size: 3rem;
+    margin: 15px 0;
+  }
+}
+
+@media (min-width: 992px) {
+  #financing-modal h2 {
+    font-size: 3.6rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  #financing-modal h2 {
+    font-size: 4rem;
+    margin: 15px 0 20px 0;
+  }
+}
+
+#financing-modal h3 {
+  font-size: 1.4rem;
+  font-size: 4.375vw;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #666;
+  text-align: center;
+  margin: 10px;
+  margin: 3.125vw;
+}
+
+@media (min-width: 544px) {
+  #financing-modal h3 {
+    font-size: 2.46479vw;
+    margin: 1.76056vw;
+  }
+}
+
+@media (min-width: 768px) {
+  #financing-modal h3 {
+    font-size: 1.6rem;
+    margin: 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  #financing-modal h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  #financing-modal h3 {
+    font-size: 2rem;
+  }
+}
+
+#financing-modal p {
+  font-size: 1.5rem;
+  text-align: left;
+  margin-left: 55px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+@media (max-width: 767px) {
+  #financing-modal p {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+}
+
+@media (min-width: 768px) {
+  #financing-modal p {
+    margin-left: 75px;
+  }
+}
+
+#financing-modal p strong {
+  color: #0b2836;
+}
+
+#financing-modal p a {
+  color: #0b2836;
+}
+
+#financing-modal p a:hover {
+  color: #0b2836;
+}
+
+#financing-modal .price[data-upsell-selected='false'] .current-price, #financing-modal .price[data-upsell-selected='false'] .current-monthly-payment, #financing-modal .price[data-upsell-selected='false'] .current-term {
+  display: none !important;
+}
+
+#financing-modal .price[data-upsell-selected='true'] .item-price, #financing-modal .price[data-upsell-selected='true'] .monthly-payment, #financing-modal .price[data-upsell-selected='true'] .term {
+  display: none !important;
+}
+
+#financing-modal .btn {
+  margin: 10px auto 30px auto;
+  background: #f72351;
+}
+
+@media (max-width: 767px) {
+  #financing-modal .btn {
+    margin: 0 15% 20px 15%;
+    margin: 0 15% 3.52113vw 15%;
+  }
+}
+
+@media (max-width: 543px) {
+  #financing-modal .btn {
+    margin: 0 15% 6.25vw 15%;
+  }
+}
+
+@media (min-width: 768px) {
+  #financing-modal .btn::after {
+    content: ' About Affirm';
+  }
+}
+
+#financing-modal .qualified p,
+#financing-modal .modal-footer p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  #financing-modal .qualified p,
+  #financing-modal .modal-footer p {
+    font-size: 1rem !important;
+  }
+}
+
+#financing-modal .qualified .price.term::after {
+  content: attr(data-term);
+}
+
+#financing-modal .qualified .price.term[data-term='18']::before {
+  content: ' or ';
+}
+
+#financing-modal .qualified .price.term[data-term='24']::before {
+  content: ', 18 or ';
+}
+
+#financing-modal .modal-footer {
+  background: #f2f4f6;
+  color: #666;
+  border-radius: 0 0 6px 6px;
+  padding-top: 10px;
+  padding-top: 3.125vw;
+}
+
+@media (min-width: 544px) {
+  #financing-modal .modal-footer {
+    padding-top: 1.76056vw;
+  }
+}
+
+@media (min-width: 768px) {
+  #financing-modal .modal-footer {
+    padding-top: 10px;
+  }
+}
+
+#financing-modal .icon-calendar {
+  width: 40px;
+  height: 44px;
+  float: left;
+}
+
+@media (min-width: 768px) {
+  #financing-modal .icon-calendar {
+    width: 56px;
+    height: 53px;
+  }
+}
+
+#financing-modal .icon-payment {
+  width: 40px;
+  height: 29px;
+  float: left;
+}
+
+@media (min-width: 768px) {
+  #financing-modal .icon-payment {
+    width: 56px;
+    height: 40px;
+  }
+}
+
+#financing-modal.klarna .modal-header {
+  background-color: #053a5c;
+  height: 50px;
+  border-radius: 6px 6px 0 0;
+}
+
+@media (max-width: 767px) {
+  #financing-modal.klarna .modal-header {
+    height: 8.80282vw;
+  }
+}
+
+@media (max-width: 543px) {
+  #financing-modal.klarna .modal-header {
+    height: 15.625vw;
+  }
+}
+
+#financing-modal.klarna .modal-content .close {
+  -webkit-filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(241deg) brightness(101%) contrast(103%);
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(241deg) brightness(101%) contrast(103%);
+  background-size: 18px;
+  background-position: top 15px right 15px;
+  height: 35px;
+}
+
+@media (max-width: 767px) {
+  #financing-modal.klarna .modal-content .close {
+    background-size: 3.16901vw;
+    background-position: top 2.64085vw right 2.64085vw;
+    height: 6.16197vw;
+  }
+}
+
+@media (max-width: 543px) {
+  #financing-modal.klarna .modal-content .close {
+    background-size: 5.625vw;
+    background-position: top 4.6875vw right 4.6875vw;
+    height: 10.9375vw;
+  }
+}
+
+#financing-modal.klarna h2 {
+  font-weight: 900;
+}
+
+@media (min-width: 768px) {
+  #financing-modal.klarna h2 {
+    font-size: 3.6rem;
+  }
+}
+
+#financing-modal.klarna h3 {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media (max-width: 767px) {
+  #financing-modal.klarna h3 {
+    font-size: 2.11268vw;
+  }
+}
+
+@media (max-width: 543px) {
+  #financing-modal.klarna h3 {
+    font-size: 3.75vw;
+  }
+}
+
+#financing-modal.klarna .logo-klarna {
+  width: 100px;
+  height: 22px;
+  -webkit-filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(241deg) brightness(101%) contrast(103%);
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(241deg) brightness(101%) contrast(103%);
+  margin: 0 auto;
+}
+
+#financing-modal.klarna .payment-schedule-info {
+  background-color: #ecf1f5;
+  border-radius: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #0b2836;
+  font-weight: 500;
+  line-height: 2.1;
+  padding: 15px 15px 10px 15px;
+  text-align: left;
+}
+
+@media (max-width: 767px) {
+  #financing-modal.klarna .payment-schedule-info {
+    margin-top: 0.88028vw;
+    margin-bottom: 2.64085vw;
+    font-size: 2.11268vw;
+    padding: 2.64085vw 2.64085vw 1.76056vw 2.64085vw;
+  }
+}
+
+@media (max-width: 543px) {
+  #financing-modal.klarna .payment-schedule-info {
+    margin-top: 1.5625vw;
+    margin-bottom: 4.6875vw;
+    font-size: 3.75vw;
+    padding: 4.6875vw 4.6875vw 3.125vw 4.6875vw;
+  }
+}
+
+@media (min-width: 768px) {
+  #financing-modal.klarna .payment-schedule-info {
+    font-size: 1.6rem;
+    padding: 20px 30px;
+  }
+}
+
+#financing-modal.klarna .payment-schedule-info > .row > div:nth-of-type(odd) {
+  padding-right: 0;
+}
+
+#financing-modal.klarna .payment-schedule-info > .row > div:nth-of-type(even) {
+  text-align: right;
+  padding-left: 0;
+}
+
+#financing-modal.klarna .klarna-details {
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  #financing-modal.klarna .klarna-details {
+    padding-bottom: 15px;
+  }
+}
+
+#financing-modal.klarna ul {
+  list-style-type: none;
+  text-align: left;
+  margin: 5px 0 10px 0;
+  padding: 0;
+  border-left: dashed 2px #819cad;
+}
+
+@media (min-width: 768px) {
+  #financing-modal.klarna ul {
+    margin: 5px 10px;
+  }
+}
+
+#financing-modal.klarna li {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0 0 10px 15px;
+  position: relative;
+  color: #0b2836;
+}
+
+@media (min-width: 768px) {
+  #financing-modal.klarna li {
+    font-size: 1.6rem;
+  }
+}
+
+#financing-modal.klarna li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #053a5c;
+  border-radius: 50%;
+  position: absolute;
+  left: -5px;
+  top: 3px;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  #financing-modal.klarna li::before {
+    width: 10px;
+    height: 10px;
+    left: -6px;
+    top: 5px;
+  }
+}
+
+#financing-modal.klarna li:first-of-type::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #ffffff;
+  position: absolute;
+  left: -2px;
+  top: 0;
+  z-index: 1;
+}
+
+#financing-modal.klarna li:last-of-type {
+  padding-bottom: 0;
+}
+
+.icon-calendar {
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20viewBox%3D%220%200%2047.8%2052.1%22%20enable-background%3D%22new%200%200%2047.8%2052.1%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cpath%20fill%3D%22rgb(11%2C40%2C54)%22%20d%3D%22M43.3%2C4.2h-2.6v3.5c0%2C2.4-1.9%2C4.3-4.3%2C4.3c-2.4%2C0-4.3-1.9-4.3-4.3V4.2H15.6v3.5c0%2C2.4-1.9%2C4.3-4.3%2C4.3%0A%09C9%2C11.9%2C7.1%2C10%2C7.1%2C7.7V4.2H4.5C2%2C4.2%2C0%2C6.2%2C0%2C8.7v38.9c0%2C2.5%2C2%2C4.5%2C4.5%2C4.5l0%2C0h38.8c2.5%2C0%2C4.5-2%2C4.5-4.5l0%2C0V8.7%0A%09C47.8%2C6.2%2C45.8%2C4.2%2C43.3%2C4.2L43.3%2C4.2z%20M42.9%2C46.1c0%2C0.6-0.4%2C1-1%2C1H6c-0.6%2C0-1-0.4-1-1V17.3c0-0.6%2C0.4-1%2C1-1h35.9c0.6%2C0%2C1%2C0.4%2C1%2C1%0A%09V46.1z%22%2F%3E%0A%3Cpath%20fill%3D%22rgb(11%2C40%2C54)%22%20d%3D%22M36.5%2C9.9c1.3%2C0%2C2.3-1%2C2.3-2.3V4.2h-4.6v3.5C34.2%2C8.9%2C35.2%2C9.9%2C36.5%2C9.9z%22%2F%3E%0A%3Cpath%20fill%3D%22rgb(11%2C40%2C54)%22%20d%3D%22M38.8%2C7.7V2.3c0-1.3-1-2.3-2.3-2.3c-1.3%2C0-2.3%2C1-2.3%2C2.3v5.4c0%2C1.3%2C1%2C2.3%2C2.3%2C2.3%0A%09C37.7%2C9.9%2C38.8%2C8.9%2C38.8%2C7.7L38.8%2C7.7z%22%2F%3E%0A%3Cpath%20fill%3D%22rgb(11%2C40%2C54)%22%20d%3D%22M13.6%2C7.7V2.3c0-1.3-1-2.3-2.3-2.3c-1.3%2C0-2.3%2C1-2.3%2C2.3v5.4c0%2C1.3%2C1%2C2.3%2C2.3%2C2.3%0A%09C12.6%2C9.9%2C13.6%2C8.9%2C13.6%2C7.7L13.6%2C7.7z%22%2F%3E%0A%3Cpolygon%20fill%3D%22rgb(11%2C40%2C54)%22%20points%3D%2216.4%2C29.7%2013.6%2C32%2021.3%2C39.7%2034%2C27%2031.2%2C24.2%2020.9%2C34.4%20%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+
+.icon-payment {
+  background-image: url("data:image/svg+xml,%3Csvg%20data-name%3D%22Layer%202%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2056%2040%22%3E%3Cpath%20d%3D%22M705.41%2C364.85h-47a4.5%2C4.5%2C0%2C0%2C0-4.5%2C4.5v31a4.5%2C4.5%2C0%2C0%2C0%2C4.5%2C4.5h47a4.5%2C4.5%2C0%2C0%2C0%2C4.5-4.5v-31A4.5%2C4.5%2C0%2C0%2C0%2C705.41%2C364.85Zm-4%2C35s0%2C0%2C0%2C0h-39s0%2C0%2C0%2C0a3.5%2C3.5%2C0%2C0%2C0-3.5-3.5h0v-23h0a3.5%2C3.5%2C0%2C0%2C0%2C3.5-3.5h39a3.5%2C3.5%2C0%2C0%2C0%2C3.5%2C3.5v23A3.5%2C3.5%2C0%2C0%2C0%2C701.42%2C399.81Z%22%20transform%3D%22translate(-653.91%20-364.85)%22%20fill%3D%22rgb(11%2C40%2C54)%22%20%2F%3E%3Cpath%20fill%3D%22rgb(11%2C40%2C54)%22%20d%3D%22M678.43%2C391.73a8.76%2C8.76%2C0%2C0%2C1-2.33-1.6l1.91-2.55a10.51%2C10.51%2C0%2C0%2C0%2C2%2C1.3%2C4.53%2C4.53%2C0%2C0%2C0%2C1.94.43%2C3.5%2C3.5%2C0%2C0%2C0%2C1-.14%2C2.18%2C2.18%2C0%2C0%2C0%2C.71-.35%2C1.44%2C1.44%2C0%2C0%2C0%2C.41-.49%2C1.16%2C1.16%2C0%2C0%2C0%2C.14-.52%2C1%2C1%2C0%2C0%2C0-.4-.78%2C3.77%2C3.77%2C0%2C0%2C0-1-.52%2C7.3%2C7.3%2C0%2C0%2C0-1.17-.34l-1-.22a10.11%2C10.11%2C0%2C0%2C1-1.26-.39%2C4.05%2C4.05%2C0%2C0%2C1-1.24-.74%2C3.89%2C3.89%2C0%2C0%2C1-.94-1.25%2C4.74%2C4.74%2C0%2C0%2C1%2C.72-4.88%2C5.16%2C5.16%2C0%2C0%2C1%2C2.91-1.57V375h2.21v2a7.47%2C7.47%2C0%2C0%2C1%2C2.18.55%2C11.76%2C11.76%2C0%2C0%2C1%2C2.25%2C1.32l-1.86%2C2.71a6.4%2C6.4%2C0%2C0%2C0-1.8-1.09%2C4.86%2C4.86%2C0%2C0%2C0-1.66-.3%2C2.31%2C2.31%2C0%2C0%2C0-1.34.38%2C1.19%2C1.19%2C0%2C0%2C0-.54%2C1%2C.88.88%2C0%2C0%2C0%2C.43.75%2C4.27%2C4.27%2C0%2C0%2C0%2C1%2C.5%2C8.34%2C8.34%2C0%2C0%2C0%2C1.19.32l.92.18a7.38%2C7.38%2C0%2C0%2C1%2C1.24.43%2C4.65%2C4.65%2C0%2C0%2C1%2C1.24.81%2C4.28%2C4.28%2C0%2C0%2C1%2C1%2C1.28%2C4.13%2C4.13%2C0%2C0%2C1%2C.39%2C1.86%2C4.28%2C4.28%2C0%2C0%2C1-.35%2C1.75%2C4.23%2C4.23%2C0%2C0%2C1-1%2C1.38%2C5.14%2C5.14%2C0%2C0%2C1-1.46%2C1%2C6.72%2C6.72%2C0%2C0%2C1-1.84.51V395H680.9v-2.61A7.61%2C7.61%2C0%2C0%2C1%2C678.43%2C391.73Z%22%20transform%3D%22translate(-653.91%20-364.85)%22%2F%3E%3C%2Fsvg%3E");
+}
+
+.logo-klarna {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2080.63%2018%22%3E%3Cpath%20d%3D%22M78.34%2C14.33a2.3%2C2.3%2C0%2C1%2C0%2C2.29%2C2.29%2C2.3%2C2.3%2C0%2C0%2C0-2.29-2.29%22%20transform%3D%22translate(0%20-1)%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3Cpath%20d%3D%22M70.8%2C7.23V6.45h3.65V18.66H70.8v-.78a6.45%2C6.45%2C0%2C1%2C1%2C0-10.65ZM67.47%2C15.7a3.23%2C3.23%2C0%2C0%2C0%2C3.31-3.15%2C3.31%2C3.31%2C0%2C0%2C0-6.62%2C0A3.23%2C3.23%2C0%2C0%2C0%2C67.47%2C15.7Z%22%20transform%3D%22translate(0%20-1)%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3Cpath%20d%3D%22M54.23%2C6.12a4.44%2C4.44%2C0%2C0%2C0-3.77%2C1.7V6.45H46.82V18.66H50.5V12.24a2.58%2C2.58%2C0%2C0%2C1%2C2.75-2.76c1.61%2C0%2C2.53%2C1%2C2.53%2C2.74v6.44h3.65V10.89c0-2.84-2.26-4.77-5.2-4.77%22%20transform%3D%22translate(0%20-1)%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3Cpath%20d%3D%22M41.53%2C8V6.45H37.78V18.66h3.76V13c0-1.93%2C2.08-3%2C3.53-3h0V6.45A4.54%2C4.54%2C0%2C0%2C0%2C41.53%2C8%22%20transform%3D%22translate(0%20-1)%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3Cpath%20d%3D%22M32.21%2C7.23V6.45h3.66V18.66H32.21v-.78A6.36%2C6.36%2C0%2C0%2C1%2C28.59%2C19a6.45%2C6.45%2C0%2C1%2C1%2C0-12.89A6.36%2C6.36%2C0%2C0%2C1%2C32.21%2C7.23ZM28.89%2C15.7a3.23%2C3.23%2C0%2C0%2C0%2C3.31-3.15%2C3.32%2C3.32%2C0%2C0%2C0-6.63%2C0A3.24%2C3.24%2C0%2C0%2C0%2C28.89%2C15.7Z%22%20transform%3D%22translate(0%20-1)%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3Cpath%20d%3D%22M16.82%2C18.66h3.82V1H16.82Z%22%20transform%3D%22translate(0%20-1)%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3Cpath%20d%3D%22M14.18%2C1h-4a10.14%2C10.14%2C0%2C0%2C1-4.1%2C8.19L4.54%2C10.36l6.09%2C8.31h5L10%2C11A14.06%2C14.06%2C0%2C0%2C0%2C14.18%2C1%22%20transform%3D%22translate(0%20-1)%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3Cpath%20d%3D%22M0%2C18.67H4.05V1H0Z%22%20transform%3D%22translate(0%20-1)%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3C%2Fsvg%3E");
+}

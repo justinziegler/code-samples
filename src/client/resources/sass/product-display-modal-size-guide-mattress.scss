@@ -1,0 +1,459 @@
+/* When editing, use the source file for this page in client/resources/sass */
+@import 'compass';
+@import 'bootstrap/variables';
+
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/svg';
+@import 'partials/layout';
+
+// Variables for icon height
+$twinRatio: 1.9736;
+$twinXLRatio: 2.10526316;
+$fullRatio: 1.388888888888889;
+$queenRatio: 1.333333333333333;
+$kingRatio: 1.052631578947368;
+$calKingRatio: 1.166666666666667;
+
+@function mattressWidth($bedSize, $kingWidth) {
+  @if $bedSize == tw {
+    @return $kingWidth * 0.5;
+  }
+  @if $bedSize == tx {
+    @return $kingWidth * 0.5;
+  } @else if $bedSize == fl {
+    @return $kingWidth * 0.71052632;
+  } @else if $bedSize == qu {
+    // 60/76
+    @return $kingWidth * 0.78947368;
+  } @else if $bedSize == kg {
+    // 76/76
+    @return $kingWidth * 1;
+  } @else if $bedSize == ck {
+    // 72/76
+    @return $kingWidth * 0.94736842;
+  }
+}
+#mattress-size-guide-modal {
+  p {
+    font-size: 1.6rem;
+    text-align: center;
+    margin: 10px 0;
+    @include mq(xsm) {
+      font-size: 1.6rem;
+      text-align: left;
+      line-height: 1.2;
+      margin: 10px;
+    }
+  }
+  a {
+    border-bottom: solid 1px #56dbd6;
+    &:hover,
+    &:focus {
+      color: $navy;
+      border-bottom-width: 2px;
+    }
+    &:focus {
+      border-bottom-color: transparent;
+      outline-offset: 0px;
+    }
+  }
+  .modal-content {
+    background-color: $navy !important;
+    .close {
+      @include x($white);
+    }
+  }
+  .modal-body {
+    @include mq(md) {
+      padding: 15px 45px 30px 45px !important;
+    }
+  }
+  p {
+    color: $white;
+    margin: 0;
+    @include mq(xsm) {
+      font-size: vwl(11px);
+    }
+    @include mq(xxs) {
+      font-size: vwp(11px);
+    }
+    a {
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+// ul
+.mattress-sizes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  @include mq(sm) {
+    justify-content: space-between;
+  }
+  @include mq(sm) {
+    padding-bottom: 10px;
+    flex-wrap: nowrap;
+  }
+  li {
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+    @include mq(xsm) {
+      padding-bottom: 10px;
+    }
+    @include mq(xssm) {
+      margin: 0 vwl(2.5px);
+    }
+    @include mq(sm) {
+      margin: 0 !important;
+    }
+    &:nth-of-type(odd) {
+      @include mq(xxs) {
+        margin: 0 vwp(2.5px) 0 0;
+      }
+    }
+    &:nth-of-type(even) {
+      @include mq(xxs) {
+        margin: 0 0 0 vwp(2.5px);
+      }
+    }
+    &[data-size='TW'] {
+      $x: mattressWidth(tw, 128px);
+      @include mq(xsm) {
+        padding-left: calc(50% - (#{$x} + 5px));
+      }
+    }
+    &[data-size='TX'] {
+      $x: mattressWidth(tx, 128px);
+      @include mq(xsm) {
+        padding-right: calc(50% - (#{$x} + 5px));
+      }
+    }
+    &[data-size='FL'] {
+      $x: mattressWidth(fl, 128px);
+      @include mq(xsm) {
+        padding-left: calc(50% - (#{$x} + 5px));
+      }
+    }
+    &[data-size='QU'] {
+      $x: mattressWidth(qu, 128px);
+      @include mq(xsm) {
+        padding-right: calc(50% - (#{$x} + 5px));
+      }
+    }
+    &[data-size='KG'] {
+      $x: mattressWidth(kg, 128px);
+      @include mq(xsm) {
+        padding-left: calc(50% - (#{$x} + 5px));
+      }
+    }
+    &[data-size='CK'] {
+      $x: mattressWidth(ck, 128px);
+      @include mq(xsm) {
+        padding-right: calc(50% - (#{$x} + 5px));
+      }
+    }
+    span {
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.1;
+      display: block;
+      width: auto;
+      margin: 0 auto;
+      @include mq(lg) {
+        font-size: 1.2rem;
+      }
+      &.title {
+        font-weight: 700;
+        color: $teal;
+        margin: 0 auto;
+      }
+      &.dimensions {
+        color: $white;
+      }
+    }
+  }
+  // Mattress icons
+  .bed {
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    border: 2px solid $teal;
+    position: relative;
+    margin: 5px auto 0 auto;
+    display: inline-block;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      box-sizing: content-box;
+      border-radius: 6px;
+      z-index: -2;
+    }
+    &[data-size='TW'] {
+      background-position: 50% 15px;
+      $x: mattressWidth(tw, 128px);
+      $y: $x * $twinRatio;
+      width: #{$x};
+      height: #{$y};
+      background-size: 40px 95px;
+      @include mq(xs) {
+        $z: 0.8;
+        width: $x * $z;
+        height: $y * $z;
+        background-position: 50% (15px * $z);
+        background-size: (40px * $z) (95px * $z);
+      }
+      @include mq(sm) {
+        $z: 0.9;
+        width: $x * $z;
+        height: $y * $z;
+        background-position: 50% (15px * $z);
+        background-size: (40px * $z) (95px * $z);
+      }
+      @include mq(lg) {
+        $z: 1.1;
+        width: $x * $z;
+        height: $y * $z;
+        background-position: 50% (15px * $z);
+        background-size: (40px * $z) (95px * $z);
+      }
+    }
+    &[data-size='TX'] {
+      $x: mattressWidth(tx, 128px);
+      $y: $x * $twinXLRatio;
+      width: #{$x};
+      height: #{$y};
+      background-size: 40px 95px;
+      background-position: 50% 15px;
+      @include mq(xs) {
+        $z: 0.8;
+        width: $x * $z;
+        height: $y * $z;
+        background-position: 50% (15px * $z);
+        background-size: (40px * $z) (95px * $z);
+      }
+      @include mq(sm) {
+        $z: 0.9;
+        width: $x * $z;
+        height: $y * $z;
+        background-position: 50% (15px * $z);
+        background-size: (40px * $z) (95px * $z);
+      }
+      @include mq(lg) {
+        $z: 1.1;
+        width: $x * $z;
+        height: $y * $z;
+        background-position: 50% (15px * $z);
+        background-size: (40px * $z) (95px * $z);
+      }
+    }
+    &[data-size='FL'] {
+      $x: mattressWidth(fl, 128px);
+      $y: $x * $fullRatio;
+      width: #{$x};
+      height: #{$y};
+      background-size: 40px 95px;
+      background-position: 50% 15px;
+      @include mq(xs) {
+        $z: 0.8;
+        width: $x * $z;
+        height: $y * $z;
+        background-position: 50% (15px * $z);
+        background-size: (40px * $z) (95px * $z);
+      }
+      @include mq(sm) {
+        $z: 0.9;
+        width: $x * $z;
+        height: $y * $z;
+        background-position: 50% (15px * $z);
+        background-size: (40px * $z) (95px * $z);
+      }
+      @include mq(lg) {
+        $z: 1.1;
+        width: $x * $z;
+        height: $y * $z;
+        background-position: 50% (15px * $z);
+        background-size: (40px * $z) (95px * $z);
+      }
+    }
+    &[data-size='QU'] {
+      background-repeat: repeat-x;
+      background-position: 8% 15px;
+      $x: mattressWidth(qu, 128px);
+      $y: $x * $queenRatio;
+      width: #{$x};
+      height: #{$y};
+      background-size: 45px 95px;
+      @include mq(xs) {
+        $z: 0.8;
+        width: $x * $z;
+        height: $y * $z;
+        background-size: (45px * $z) (95px * $z);
+        background-position: 5.5% (15px * $z);
+      }
+      @include mq(sm) {
+        $z: 0.9;
+        width: $x * $z;
+        height: $y * $z;
+        background-size: (45px * $z) (95px * $z);
+        background-position: 5.5% (15px * $z);
+      }
+      @include mq(lg) {
+        $z: 1.1;
+        width: $x * $z;
+        height: $y * $z;
+        background-size: (45px * $z) (95px * $z);
+        background-position: 5.5% (15px * $z);
+      }
+    }
+    &[data-size='KG'] {
+      $x: mattressWidth(kg, 128px);
+      $y: $x * $kingRatio;
+      width: #{$x};
+      height: #{$y};
+      background-size: 55px 95px;
+      background-repeat: repeat-x;
+      background-position: 10% 15px;
+      @include mq(xs) {
+        $z: 0.8;
+        width: $x * $z;
+        height: $y * $z;
+        background-size: (55px * $z) (95px * $z);
+        background-position: 10% (15px * $z);
+      }
+      @include mq(sm) {
+        $z: 0.9;
+        width: $x * $z;
+        height: $y * $z;
+        background-size: (55px * $z) (95px * $z);
+        background-position: 10% (15px * $z);
+      }
+      @include mq(lg) {
+        $z: 1.1;
+        width: $x * $z;
+        height: $y * $z;
+        background-size: (55px * $z) (95px * $z);
+        background-position: 10% (15px * $z);
+      }
+    }
+    &[data-size='CK'] {
+      background-repeat: repeat-x;
+      background-position: 6.5% 15px;
+      $x: mattressWidth(ck, 128px);
+      $y: $x * $calKingRatio;
+      width: #{$x};
+      height: #{$y};
+      background-size: 55px 95px;
+      @include mq(xs) {
+        $z: 0.8;
+        width: $x * $z;
+        height: $y * $z;
+        background-size: (55px * $z) (95px * $z);
+        background-position: 8.5% (15px * $z);
+      }
+      @include mq(sm) {
+        $z: 0.9;
+        width: $x * $z;
+        height: $y * $z;
+        background-size: (55px * $z) (95px * $z);
+        background-position: 8.5% (15px * $z);
+      }
+      @include mq(lg) {
+        $z: 1.1;
+        width: $x * $z;
+        height: $y * $z;
+        background-size: (55px * $z) (95px * $z);
+        background-position: 8.5% (15px * $z);
+      }
+    }
+  }
+}
+#mattress-size-guide-modal {
+  .mattress-sizes {
+    @include mq(xssm) {
+      justify-content: space-between;
+      li {
+        padding: 0;
+      }
+    }
+  }
+  .bed {
+    &[data-size='TW'] {
+      $x: mattressWidth(tw, 128px);
+      $y: $x * $twinRatio;
+      @include mq(md) {
+        $z: 1.3;
+        width: $x * $z;
+        height: $y * $z;
+        background-position: 50% (15px * $z);
+        background-size: (40px * $z) (95px * $z);
+      }
+    }
+    &[data-size='TX'] {
+      $x: mattressWidth(tx, 128px);
+      $y: $x * $twinXLRatio;
+      @include mq(md) {
+        $z: 1.3;
+        width: $x * $z;
+        height: $y * $z;
+        background-position: 50% (15px * $z);
+        background-size: (40px * $z) (95px * $z);
+      }
+    }
+    &[data-size='FL'] {
+      $x: mattressWidth(fl, 128px);
+      $y: $x * $fullRatio;
+      @include mq(md) {
+        $z: 1.3;
+        width: $x * $z;
+        height: $y * $z;
+        background-position: 50% (15px * $z);
+        background-size: (40px * $z) (95px * $z);
+      }
+    }
+    &[data-size='QU'] {
+      $x: mattressWidth(qu, 128px);
+      $y: $x * $queenRatio;
+      @include mq(md) {
+        $z: 1.3;
+        width: $x * $z;
+        height: $y * $z;
+        background-size: (45px * $z) (95px * $z);
+        background-position: 5.5% (15px * $z);
+      }
+    }
+    &[data-size='KG'] {
+      $x: mattressWidth(kg, 128px);
+      $y: $x * $kingRatio;
+      @include mq(md) {
+        $z: 1.3;
+        width: $x * $z;
+        height: $y * $z;
+        background-size: (55px * $z) (95px * $z);
+        background-position: 10% (15px * $z);
+      }
+    }
+    &[data-size='CK'] {
+      $x: mattressWidth(ck, 128px);
+      $y: $x * $calKingRatio;
+      @include mq(md) {
+        $z: 1.3;
+        width: $x * $z;
+        height: $y * $z;
+        background-size: (55px * $z) (95px * $z);
+        background-position: 8.5% (15px * $z);
+      }
+    }
+  }
+}
+.bed {
+  @include person(#566c78);
+}

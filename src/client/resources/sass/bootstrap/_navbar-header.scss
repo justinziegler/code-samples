@@ -1,0 +1,805 @@
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/svg";
+//
+// Navbars
+// --------------------------------------------------
+
+
+// Wrapper and base class
+//
+// Provide a static navbar from which we expand to create full-width, fixed, and
+// other navbar variations.
+body {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	transition: .2s;
+  margin: 50px 0 0 0!important;
+  &.banner-margin {
+    margin: 77px 0 0 0!important;
+    transition: .1s;
+    @media (min-width: $screen-md-min) {
+      margin: 82px 0 0 0!important;
+    }
+    @media (min-width: $screen-lg-min) {
+      margin: 85px 0 0 0!important;
+    }
+  }
+  &.sticky-button {
+    @include mq(sm) {
+      margin: 115px 0 0 0!important;
+    }
+  }
+  &.banner-margin {
+    &.sticky-button {
+      @include mq(sm) {
+        margin: 142px 0 0 0!important;
+      }
+      @include mq(md) {
+        margin: 147px 0 0 0!important;
+      }
+      @include mq(lg) {
+        margin: 150px 0 0 0!important;
+      }
+    }
+  }
+}
+
+
+
+.container {
+  @include container-fixed;
+
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
+}
+
+.navbar {
+  position: relative;
+  margin-bottom: $navbar-margin-bottom;
+
+  // Prevent floats from breaking the navbar
+  @include clearfix;
+
+  @media (min-width: $grid-float-breakpoint) {
+    border-radius: $navbar-border-radius;
+  }
+	// #banner-box {
+  //   display: none;
+  //   background: #fff;
+  //   text-align: center;
+  //   width: 100%;
+	// }
+	// #banner-text {
+  //   color: #0b2836;
+  //   font-weight: 700;
+  //   margin: 0;
+  //   padding-top: 5px;
+	// 	text-transform: uppercase;
+	// 	font-size: 13px!important; 
+	// 	line-height: 18px;
+	// 	@media (min-width: $grid-float-breakpoint) {
+	// 		font-size: 14px!important;
+	// 	}
+	// 	@media (min-width: 992px) {
+	// 		font-size: 18px!important;
+	// 	}
+	// }
+	.container {
+		position: relative;
+  } 
+}
+#header-experiment {
+  .navbar {
+    min-height: $navbar-height-experiment; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
+  } 
+}
+
+// Navbar heading
+//
+// Groups `.navbar-brand` and `.navbar-toggle` into a single component for easy
+// styling of responsive aspects.
+
+.navbar-header {
+  @include clearfix;
+	text-align: right;
+	.nav {
+		display: inline-block;
+		margin: 0;
+		@media (min-width: $grid-float-breakpoint) {
+			float: left;
+		}
+		li {
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
+
+#header-experiment {
+  .navbar-header {
+    line-height: 0;
+    // @include mq(xsm) {
+    //   box-shadow: 0 5px 10px 0 rgba(11, 40, 54, 0.15);
+    // }
+    .nav {
+      li {
+        a {
+          height: $navbar-height-experiment;
+          &.phone {
+            width: 36px;
+            @include phone-handset(#05395c);
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: 19px;
+            @include mq(xsm) {
+              width: 40px;
+            }
+            @include mq(sm) {
+              @include phone-handset(#56dbd6);
+              width: auto;
+              background-position: 15px 50%;
+              padding-left: 35px;
+              background-size: 16px 17px;
+            }
+            &::after {
+                @include mq(xsm) {
+                    content: "Contact" !important;
+                    font-size: 10px !important;
+                    position: absolute !important;
+                    bottom: -2px !important;
+                    left: 0 !important;
+                    right: 0 !important;
+                    text-align: center !important;
+                    text-transform: none !important;
+                }
+            }
+            .number {
+              @include mq(xmd) {
+                display: none;
+              }
+            }
+          }
+          &.cart {
+            width: 40px;
+            @include cart-open(#05395c);
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: 25px 22px;
+            position: relative;
+            transition: 0s;
+            @include mq(xsm) {
+              width: 50px;
+            }
+            @include mq(sm) {
+              @include cart-open(#56dbd6);
+              background-size: 28px 26px;
+              width: 52px;
+              padding-top: 11px;
+              &:hover, &:focus {
+                .cart-total {
+                  color: #fff;
+                }
+              }
+            }
+            &::after {
+                @include mq(xsm) {
+                    content: "Cart" !important;
+                    font-size: 10px !important;
+                    position: absolute !important;
+                    bottom: -2px !important;
+                    left: 2px !important;
+                    right: 0 !important;
+                    text-align: center !important;
+                    text-transform: none !important;
+                }
+            }
+            .cart-total {
+              position: absolute;
+              left: 57%;
+              transform: translateX(-57%);
+              text-align: center;
+              font-size: 12px;
+              font-weight: 900;
+              color: #05395c;
+              letter-spacing: -1px;
+              @include mq(sm) {
+                color: #56dbd6;
+                line-height: 1;
+                font-size: 14px;
+                left: 55%;
+                transform: translateX(-55%);
+                &:hover {
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// Navbar collapse (body)
+//
+// Group your navbar content into this for easy collapsing and expanding across
+// various device sizes. By default, this content is collapsed when <768px, but
+// will expand past that for a horizontal display.
+//
+// To start (on mobile devices) the navbar links, forms, and buttons are stacked
+// vertically and include a `max-height` to overflow in case you have too much
+// content for the user's viewport.
+
+// #header-experiment {
+  // .navbar-collapse {
+    // background-color: #f7f6f4;
+//   }
+// }
+
+.navbar-collapse {
+  overflow-x: visible;
+	padding-bottom: 5px;
+  @include clearfix;
+  -webkit-overflow-scrolling: touch;
+
+  &.in {
+    overflow-y: auto;
+  }
+
+  @media (min-width: $grid-float-breakpoint) {
+    width: auto;
+    border-top: 0;
+    box-shadow: none;
+
+    &.collapse {
+      display: block !important;
+      height: auto !important;
+      padding-bottom: 0; // Override default setting
+      overflow: visible !important;
+    }
+
+    &.in {
+      overflow-y: visible;
+    }
+
+    // Undo the collapse side padding for navbars with containers to ensure
+    // alignment of right-aligned contents.
+    .navbar-fixed-top &,
+    .navbar-static-top &,
+    .navbar-fixed-bottom & {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  .navbar-collapse {
+    max-height: 540px;
+
+    @media (max-device-width: $screen-xs-min) and (orientation: landscape) {
+      max-height: 200px;
+    }
+  }
+}
+
+
+// Both navbar header and collapse
+//
+// When a container is present, change the behavior of the header and collapse.
+
+.container,
+.container-fluid {
+  > .navbar-header,
+  > .navbar-collapse {
+    margin-right: -$navbar-padding-horizontal;
+    margin-left:  -$navbar-padding-horizontal;
+
+    @media (min-width: $grid-float-breakpoint) {
+      margin-right: 0;
+      margin-left:  0;
+    }
+  }
+}
+
+
+//
+// Navbar alignment options
+//
+// Display the navbar across the entirety of the page or fixed it to the top or
+// bottom of the page.
+
+// Static top (unfixed, but 100% wide) navbar
+//.navbar-static-top {
+//  z-index: $zindex-navbar;
+//  border-width: 0 0 1px;
+
+//  @media (min-width: $grid-float-breakpoint) {
+//    border-radius: 0;
+//  }
+//}
+
+// Fix the top/bottom navbars when screen real estate supports it
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: $zindex-navbar-fixed;
+	margin: 0 auto;
+
+  // Undo the rounded corners
+  @media (min-width: $grid-float-breakpoint) {
+    border-radius: 0;
+  }
+}
+.navbar-fixed-top {
+  top: 0;
+}
+//.navbar-fixed-bottom {
+//  bottom: 0;
+//  margin-bottom: 0; // override .navbar defaults
+//  border-width: 1px 0 0;
+//}
+
+
+// Brand/project name
+
+.navbar-brand {
+	@include logo-lull(#fff);
+	background-repeat: no-repeat;
+	float: left;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+#header-experiment {
+  .navbar-brand {
+    height: $navbar-height-experiment;
+    background-size: 39px 36px;
+    background-position: 7px;
+    background-color: #05395c;
+    width: 50px;
+    font-size: 0;
+    @media (min-width: 768px) {
+      width: 74px;
+      background-position: 14px 7px;
+      background-color: $navy;
+    }
+  }
+}
+
+
+// Navbar toggle
+//
+// Custom button for toggling the `.navbar-collapse`, powered by the collapse
+// JavaScript plugin.
+
+.navbar-toggle {
+  position: relative;
+  margin: 0 15px 0 0;
+	font-weight: 500;
+  background-color: transparent;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214 
+  // We remove the `outline` here, but later compensate by attaching `:hover`
+  // styles to `:focus`.
+  &:focus {
+    outline: 0;
+  }
+}
+
+#header-experiment {
+  .navbar-toggle {
+    color: #0b2836;
+    font-size: 18px;
+    float: left;
+    margin: 0 10px 0 0;
+    @media (max-width: 767px) {
+      height: 50px;
+      float: right;
+      padding: 6px 18px 0px 2px;
+      margin: 0px 0px 0px 0px;
+    }
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.navbar-toggle, .navbar-default .navbar-nav {
+	span, &>li>a {
+		&.more {
+			position: relative;
+			transition: .3s;
+			line-height: $line-height-computed;		
+			border: none;
+			@media (min-width: $grid-float-breakpoint) {
+				padding-right: 33px;
+			}
+		}
+	}
+}
+
+// Hamburger Nav on mobile
+.burger-wrapper {
+    display: none;
+    @include mq(xsm) {
+        line-height: 10px !important;
+        display: block !important;
+    }
+    .burger {
+        @include mq(xsm) {
+            width: 22px !important;
+            height: 3px !important;
+            background-color: #0b2836 !important;
+            margin: 5px 2px !important;
+        }
+    }
+    #burger-text {
+        @include mq(xsm) {
+            font-size: 10px !important;
+            text-align: center !important;
+            font-weight: 600 !important;
+        }
+    }
+}
+
+// Navbar nav links
+//
+// Builds on top of the `.nav` components with its own modifier class to make
+// the nav the full height of the horizontal nav (above 768px).
+
+#header-experiment {
+  .navbar-nav {
+    margin: 0;
+    &.navbar-right {
+      padding-right: 8px;
+    }
+    @media (max-width: $grid-float-breakpoint-max) {
+       //Dropdowns get custom display when collapsed
+      .open .dropdown-menu {
+        position: static;
+        float: none;
+        width: auto;
+         margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        box-shadow: none;
+        > li > a,
+        .dropdown-header {
+          padding: 9px 57px;
+        }
+        > li.category a {
+          padding: 15px 0;
+        }
+        > li > a {
+          line-height: $line-height-computed;
+          &:hover,
+          &:focus {
+            background-image: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.navbar-nav {
+  // Uncollapse the nav
+  @media (min-width: $grid-float-breakpoint) {
+    float: left;
+    margin: 0;
+
+    > li {
+      float: left;
+    }
+  }
+  @media (min-width: 992px) {
+    > li {
+      > a {
+        padding-top: 44px;
+        padding-bottom: 34px;
+      }
+    }
+  }
+}
+
+
+// Dropdown menus
+
+// Menu position and menu carets
+.navbar-nav > li > .dropdown-menu {
+  margin-top: 0;
+  @include border-top-radius(0);
+}
+// Menu position and menu caret support for dropups via extra dropup class
+.navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
+  margin-bottom: 0;
+  @include border-top-radius($navbar-border-radius);
+  @include border-bottom-radius(0);
+}
+
+// Component alignment
+//
+// Repurpose the pull utilities as their own navbar utilities to avoid specificity
+// issues with parents and chaining. Only do this when the navbar is uncollapsed
+// though so that navbar contents properly stack and align in mobile.
+//
+// Declared after the navbar components to ensure more specificity on the margins.
+
+@media (min-width: $grid-float-breakpoint) {
+  .navbar-left {
+    float: left !important;
+  }
+  .navbar-right {
+    float: right !important;
+  margin-right: -$navbar-padding-horizontal;
+
+    ~ .navbar-right {
+      margin-right: 0;
+    }
+  }
+}
+
+
+// Alternate navbars
+// --------------------------------------------------
+
+// Default navbar
+.navbar-default {
+  .navbar-brand {
+    color: $navbar-default-brand-color;
+  }
+}
+
+#header-experiment {
+  &.navbar-default {
+    background-color: $navbar-default-bg-experiment;
+    @include mq(sm) {
+      background-color: $navy;
+    }
+  }
+}
+
+.navbar-default {
+  .navbar-nav {
+    > li > a {
+			line-height: $line-height-computed;
+			transition: .3s;
+			text-decoration: none;
+    }
+  }
+}
+
+#header-experiment {
+  &.navbar-default {
+    .navbar-nav {
+      > li > a {
+        color: #0b2836;
+        font-size: 18px;
+        font-weight: 900;
+        text-transform: uppercase;
+        user-select: none;
+        @media (min-width: $grid-float-breakpoint) {
+          padding: 17px 12px 0 16px;
+          color: #8096a4;
+          text-transform: none;
+          font-weight: 500;
+          font-size: 16px;
+        }
+        &:hover,
+        &:focus {
+          color: $navbar-default-link-hover-color-experiment;
+          @include mq(sm) {
+            color: #fff;
+          }
+        }
+        &.dropdown-toggle {
+          @include mq(sm) {
+            padding: 17px 14px 0 20px;
+            position: relative;
+            &::after {
+              content: '';
+              @include arrow-thin(#8096a4);
+              background-position: 50% 50%;
+              background-repeat: no-repeat;
+              background-size: contain;
+              width: 10px;
+              height: 10px;
+              position: absolute;
+              right: 0;
+              top: 23px;
+              transition: .3s;
+            }
+          }
+          &:hover, &:focus {
+            &::after {
+              @include arrow-thin(#fff);
+              @include mq(lg) {
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .mattress-btn {
+    display: inline-block;
+    float: left;
+    height: 50px;
+    padding: 6px 0px 0px 18px;
+    color: $navy;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    line-height: 2.45;
+    text-decoration: none;
+    &:hover, &:focus {
+      color: $navy;
+      text-decoration: none;
+    }
+  }
+  #navbar-collapse-exp {
+		box-shadow: 0 10px 10px 0 rgba(11,40,54, .25);
+		@include mq(sm) {
+			display: none!important;
+		}
+  	.navbar-nav {
+  		> li {
+  			padding-bottom: 17px;
+        border-bottom: solid 1px #ccc;
+        transition: background-color .2s;
+				&:last-of-type {
+					border-bottom: none;
+				}
+				@include mq(xssm) {
+					width: 50%;
+					float: left;
+				}
+	  		> a {
+					padding: 20px 30px 0 30px;
+					position: relative;
+					&.dropdown-toggle {
+						&::after {
+							content: '';
+							@include plus(#82949d);
+							width: 13px;
+							height: 13px;
+							position: absolute;
+							right: 45px;
+							bottom: 4px;
+							@extend %svg;
+							background-size: 13px;
+						}
+					}
+	  		}
+	  		&.open {
+          padding-bottom: 0;
+          background-color: #f7f6f4;
+					> a {
+						&.dropdown-toggle {
+							&::after {
+								background-image: none;
+								background-color: #82949d;
+								width: 13px;
+								height: 2px;
+								bottom: 9px;
+							}
+						}
+					}
+				}
+				&.nav-more {
+					@include mq(xssm) {
+						border-bottom: none;
+					}
+				}
+				&.nav-phone {
+					// @include mq(xs) {
+					// 	display: none;
+					// }
+					> a {
+						padding-left: 64px;
+						&::after {
+							content: '';
+							@include phone-handset(#56dbd6);
+							position: absolute;
+							@extend %svg;
+							background-size: 19px;
+							width: 19px;
+							height: 19px;
+							left: 35px;
+						}
+					}
+				}
+	  	}
+	  	.clearfix {
+	  		@include mq(sm) {
+	  			display: none;
+	  		}
+	  	}
+  	}
+  }
+  #desktop-nav {
+  	@include mq(xsm) {
+  		display: none;
+  	}
+  }
+}
+
+.navbar-default {
+  .navbar-toggle {
+    border: none;
+  }
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $navbar-default-border;
+  }
+}
+
+#header-experiment {
+  &.navbar-default {
+    .navbar-toggle {
+      &:hover,
+      &:focus {
+        background-color: $navbar-default-toggle-hover-bg-experiment;
+      }
+    }
+  }
+  .navbar-nav {
+    > .open > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $navbar-default-link-active-color-experiment;
+        @include mq(sm) {
+        	color: #fff;
+        }
+      }
+    }
+    @media (max-width: $grid-float-breakpoint-max) {
+      // Dropdowns get custom display when collapsed
+      .open .dropdown-menu {
+        > li > a {
+          color: $navbar-default-link-color;
+          &.mattress {
+            color: $navy;
+          }
+          &:hover,
+          &:focus {
+            color: $navbar-default-link-hover-color-experiment;
+            //background-color: $navbar-default-link-hover-bg;
+          }
+        }
+        > .active > a {
+          &,
+          &:hover,
+          &:focus {
+            color: $navbar-default-link-active-color-experiment;
+            //background-color: $navbar-default-link-active-bg;
+          }
+        }
+        > .disabled > a {
+          &,
+          &:hover,
+          &:focus {
+            color: $navbar-default-link-disabled-color;
+            background-color: $navbar-default-link-disabled-bg;
+          }
+        }
+      }
+    }
+  }
+}

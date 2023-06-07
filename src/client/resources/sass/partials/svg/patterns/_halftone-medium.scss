@@ -1,0 +1,5 @@
+// pattern-halftone-medium.svg
+@mixin halftone-medium($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2012%2012%22%3E%3Crect%20width%3D%2212%22%20height%3D%2212%22%20fill%3D%22%23ed1c24%22%20opacity%3D%220%22%2F%3E%3Cpath%20d%3D%22M677.09%2C378.44v3.15a1.92%2C1.92%2C0%2C0%2C0%2C0-3.15Z%22%20transform%3D%22translate(-677.09%20-378.1)%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3Ccircle%20cx%3D%224.91%22%20cy%3D%221.91%22%20r%3D%221.91%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3Cpath%20d%3D%22M689.09%2C378.44a2%2C2%2C0%2C0%2C0-1.09-.34%2C1.92%2C1.92%2C0%2C0%2C0%2C0%2C3.83%2C2%2C2%2C0%2C0%2C0%2C1.09-.34Z%22%20transform%3D%22translate(-677.09%20-378.1)%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3Ccircle%20cx%3D%221.91%22%20cy%3D%227.9%22%20r%3D%221.91%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3Ccircle%20cx%3D%227.91%22%20cy%3D%227.9%22%20r%3D%221.91%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3C%2Fsvg%3E');
+}

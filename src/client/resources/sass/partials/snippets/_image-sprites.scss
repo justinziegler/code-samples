@@ -1,0 +1,27 @@
+// Image Sprites
+// (Does not work as a mixin due to the @import rules)
+// Usage: create a folder in resources/svg with subfolders icon and icon2x
+// Save 1x and 2x versions of your images to each subfolder
+// Copy the script below to your scss file and replace '$folder' with your new folder name
+// Once you get the desired output, copy from the css file and delete the script from your scss file 
+
+	$icon-layout: horizontal;
+	$icon2x-layout: horizontal;
+	$icon-sprite-dimensions: true;
+	$icon-spacing: 6px;
+	$icon2x-spacing: 12px;
+	@import "$folder/icon/*.png"; 
+	@import "$folder/icon2x/*.png"; 
+	@include all-icon-sprites;
+
+
+// Once the sprites are created, re-appropriate the below css: 
+
+.logo-memoryfoamtalk, .logo-sleepopolis, .logo-sleepsherpa, .logo-mattressguides {
+  background-image: url('__________.png');
+  background-repeat: no-repeat;
+	@media (min--moz-device-pixel-ratio: 1.3),(-o-min-device-pixel-ratio: 2.6/2),(-webkit-min-device-pixel-ratio: 1.3),(min-device-pixel-ratio: 1.3),(min-resolution: 1.3dppx) {
+		background-image: url('__________2x.png');
+		background-size: 570px; /* width of 1x file */
+	}
+}

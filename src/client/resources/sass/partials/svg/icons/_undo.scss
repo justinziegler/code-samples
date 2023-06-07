@@ -1,0 +1,5 @@
+// icon-undo.svg
+@mixin undo($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20356.12%20437.52%22%3E%3Cpath%20d%3D%22M253.6%2C98.4a178.62%2C178.62%2C0%2C0%2C0-68.1-16.7V0L39.5%2C121.5%2C185.5%2C243V157.8A102%2C102%2C0%2C1%2C1%2C76%2C259.7H-.1A178.12%2C178.12%2C0%2C0%2C0%2C102.3%2C420.6c89%2C41.8%2C195%2C3.5%2C236.8-85.5S342.6%2C140.2%2C253.6%2C98.4Z%22%20transform%3D%22translate(0.1)%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3C%2Fsvg%3E');
+}

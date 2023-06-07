@@ -1,0 +1,694 @@
+/* When editing, use the source file for this page in client/resources/sass */
+@import 'compass';
+@import 'bootstrap/variables';
+
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/svg';
+@import 'partials/layout';
+
+$imgixDefaults: '?auto=format,compress&q=50';
+$imgixCrop: '&fit=crop&crop=focalpoint';
+
+.quantity-select,
+.color-select,
+.product-selection .type-select {
+  position: relative;
+  padding: 0 0 15px 0;
+  text-align: center;
+  border-bottom: solid 1px #dfdcd7;
+  vertical-align: top;
+  margin: 0 0 20px 0;
+  display: flex;
+  justify-content: center;
+  flex: auto;
+  @include mq(xsm) {
+    padding: 0 0 vwl(15px) 0;
+    margin: 0 0 vwl(20px) 0;
+  }
+  @include mq(xxs) {
+    padding: 0 0 vwp(15px) 0;
+    margin: 0 0 vwp(20px) 0;
+  }
+  &::after {
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0;
+    text-align: center;
+    line-height: 1;
+    font-size: 1.3rem;
+    background-color: #f7f5f3;
+    padding: 0 5px;
+    white-space: nowrap;
+    @include mq(xsm) {
+      font-size: vwl(13px);
+      bottom: vwl(-7px);
+    }
+    @include mq(xxs) {
+      font-size: vwp(13px);
+      bottom: vwp(-7px);
+    }
+  }
+}
+
+.quantity-select, .type-select {
+  display: inline-flex;
+  &.inline {
+    width: calc(66.6666667% - 4px);
+    margin-left: 11px;
+  }
+}
+.product-selection .type-select.inline {
+  display: inline-flex;
+}
+.quantity-select {
+  &::after {
+    content: 'Qty.';
+  }
+  li {
+    display: inline-block;
+    list-style: none;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: $navy;
+    line-height: 30px;
+    width: 30px;
+    padding: 0 0 28px 0;
+    background-color: #fff;
+    margin: 0 10px 0 0;
+    height: 0;
+    border-radius: 4px;
+    border: solid 1px #dfdcd7;
+    transition: 0.2s;
+    position: relative;
+    @include mq(xsm) {
+      font-size: vwl(15px);
+      width: vwl(30px);
+      padding-bottom: vwl(28px);
+      margin: 0 vwl(10px) 0 0;
+      line-height: vwl(30px);
+    }
+    @include mq(xxs) {
+      font-size: vwp(15px);
+      width: vwp(30px);
+      padding-bottom: vwp(28px);
+      margin: 0 vwp(10px) 0 0;
+      line-height: vwp(30px);
+    }
+    @include mq(md) {
+      margin: 0 10px 0 0;
+      width: 40px;
+      padding-bottom: 38px;
+      line-height: 40px;
+    }
+    @include mq(lg) {
+      font-size: 1.8rem;
+    }
+    &:last-of-type {
+      margin-right: 0;
+    }
+    &[data-active='true'] {
+      background-color: $navy;
+      color: $white;
+      span {
+        background: $navy;
+        border-color: $navy;
+        color: $white;
+        &::after {
+          border: 3px solid $navy;
+          width: 42px;
+          width: vwp(42px);
+          height: 42px;
+          height: vwp(42px);
+          top: -2px;
+          top: vwp(-2px);
+          left: -2px;
+          left: vwp(-2px);
+          @include mq(xs) {
+            width: 38px;
+            height: 38px;
+          }
+          @include mq(xssm) {
+            width: vwl(38px);
+            height: vwl(38px);
+          }
+          @include mq(md) {
+            width: 44px;
+            height: 44px;
+          }
+        }
+      }
+    }
+    &:hover,
+    &:focus {
+      color: $white;
+      background-color: $navy;
+      outline-color: $teal;
+      outline-offset: 1px;
+    }
+    &::before {
+      border-radius: 4px;
+    }
+    &[data-active='true'],
+    &:hover,
+    &:focus {
+      &::before {
+        border-radius: 6px;
+      }
+    }
+  }
+}
+
+.color-select {
+  justify-content: space-between;
+  padding-left: 5px;
+  padding-right: 5px;
+  &::after {
+    content: attr(data-active-color);
+  }
+  &.inline {
+    width: calc(33.3333333% - 7px);
+    display: inline-flex;
+    padding-left: 8px;
+    padding-right: 8px;
+    @include mq(xsm) {
+      padding-left: vwl(8px);
+      padding-right: vwl(8px);
+    }
+    @include mq(xxs) {
+      padding-left: vwp(8px);
+      padding-right: vwp(8px);
+    }
+    @include mq(md) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .color {
+      width: 30px;
+      height: 30px;
+      @include mq(xsm) {
+        width: vwl(30px);
+        height: vwl(30px);
+      }
+      @include mq(xxs) {
+        width: vwp(30px);
+        height: vwp(30px);
+      }
+      @include mq(sm) {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+  label {
+    width: calc(33.3333333% + 3px);
+  }
+}
+
+li.color,
+.quantity-select li,
+.product-selection .type-select li {
+  user-select: none;
+  &::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border: solid 2px #f7f5f3;
+    transition: 0.2s;
+  }
+  &[data-active='true'],
+  &:hover,
+  &:focus {
+    &::before {
+      border-color: #dfdcd7;
+      border-color: shade(#ccc, 20%);
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+    }
+  }
+}
+.color {
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  list-style-type: none;
+  border: solid 1px #ccc;
+  @include mq(xsm) {
+    width: vwl(32px);
+    height: vwl(32px);
+  }
+  @include mq(xxs) {
+    width: vwp(32px);
+    height: vwp(32px);
+  }
+  @include mq(sm) {
+    width: 38px;
+    height: 38px;
+  }
+  @include mq(md) {
+    width: 46px;
+    height: 46px;
+  }
+  &::before {
+    border-radius: 50%;
+  }
+  &[data-active='true'],
+  &:hover,
+  &:focus {
+    &::before {
+      border-radius: 50%;
+    }
+  }
+  &[data-color='BW'] {
+    // Brilliant White
+    background-color: #edf1ff;
+    border-color: shade(#edf1ff, 20%);
+  }
+  &[data-color='CS'] {
+    background-color: #615f5f;
+    border-color: shade(#615f5f, 20%);
+  }
+  &[data-color='CD'] {
+    // Cool Dot
+    background-color: $white;
+    @include polkadot(shade(#f0f2f5, 20%));
+    @extend %svg;
+    border-color: shade(#f0f2f5, 40%);
+    background-size: 105%;
+  }
+  &[data-color='DS'] {
+    background-color: #cdc6bd;
+    border-color: shade(#cdc6bd, 20%);
+  }
+  &[data-color='GG'] {
+    // Granite Grey
+    background-color: #615f5f;
+    border-color: shade(#615f5f, 20%);
+  }
+  &[data-color='GR'] {
+    // Grey
+    background-color: #ccc;
+    border-color: shade(#ccc, 20%);
+  }
+  &[data-color='MB'] {
+    // Moon Beam
+    background-color: #cdc6bd;
+    border-color: shade(#cdc6bd, 20%);
+  }
+  &[data-color='PA'] {
+    // Plein Air
+    background-color: #bfcad6;
+    border-color: shade(#bfcad6, 20%);
+  }
+  &[data-color='QG'] {
+    // Quiet Grey
+    background-color: #babbbd;
+    border-color: shade(#babbbd, 20%);
+  }
+  &[data-color='WH'] {
+    background-color: $white;
+    border: solid 1px #dfdcd7;
+  }
+  &[data-color='WP'] {
+    // Window Pane
+    background-color: $white;
+    @include windowpane(#000);
+    @extend %svg;
+    border-color: tint(#000, 30%);
+    background-size: 105%;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px #a3a3a3;
+  }
+}
+.product-selection {
+  .type-select {
+    justify-content: space-between;
+    &[data-label='true'] {
+      &::after {
+        content: attr(data-active-type);
+      }
+    }
+    &[data-label='false'] {
+      border: none;
+    }
+    li {
+      width: calc(50% - 6px);
+      position: relative;
+      list-style-type: none;
+      background-size: 100%;
+      background-position: 50% 50%;
+      border-radius: 6px;
+      border: solid 1px #ccc;
+      &:focus {
+        outline: none;
+      }
+      &::before {
+        border-radius: 8px;
+      }
+      span, label {
+        line-height: 1.15;
+        font-weight: 700;
+      }
+      span {
+        font-size: 1.4rem;
+        display: block;
+        color: $navy;
+        @include mq(xsm) {
+          font-size: vwl(14px);
+        }
+        @include mq(xxs) {
+          font-size: vwp(14px);
+        }
+        @include mq(md) {
+          font-size: 1.6rem;
+        }
+        @include mq(lg) {
+          font-size: 1.8rem;
+        }
+      }
+      label {
+        font-size: 1.2rem;
+        color: #666;
+        @include mq(xsm) {
+          font-size: vwl(12px);
+        }
+        @include mq(xxs) {
+          font-size: vwp(12px);
+        }
+        @include mq(md) {
+          font-size: 1.4rem;
+        }
+      }
+      &[data-type='MA'], &[data-type='PM'], &[data-type='HY'] {
+        background-size: 70%;
+        background-position: 50% 15px;
+        background-repeat: no-repeat;
+        padding: 65px 0 10px 0;
+        background-color: rgba(#000, .025);
+        transition: .2s;
+        @include mq(xsm) {
+          background-position: 50% vwl(15px);
+          padding: vwl(60px) 0 vwl(15px) 0;
+        }
+        @include mq(xxs) {
+          background-position: 50% vwp(15px);
+          padding: vwp(60px) 0 vwp(15px) 0;
+        }
+        @include mq(md) {
+          background-size: 60%;
+          padding: 70px 0 15px 0;
+        }
+        &[data-active='true'],
+        &:focus {
+          &::before {
+            border-color: $navy;
+          }
+        }
+        &[data-active='true'] {
+          // background-color: tint(#23527c, 95%);
+          background-color: $white;
+          border-color: $navy;
+        }
+      }
+      &[data-type='MA'] {
+        background-image: url('https://lull-media.imgix.net/shop/mattress-no-shadow.png#{$imgixDefaults}&w=350');
+        background-position: 50% 20px;
+        @include mq(xsm) {
+          background-position: 50% vwl(18px);
+        }
+        @include mq(xxs) {
+          background-position: 50% vwp(18px);
+        }
+      }
+      &[data-type='PM'] {
+        background-image: url('https://lull-media.imgix.net/shop/original-premium-label-side-v2.png#{$imgixDefaults}&w=350');
+      }
+    }
+    &.inline {
+      li {
+        height: 30px;
+        @include mq(xsm) {
+          height: vwl(30px);
+        }
+        @include mq(xxs) {
+          height: vwp(30px);
+        }
+        @include mq(sm) {
+          height: 40px;
+        }
+      }
+    }
+    &[data-product-types='3'] {
+      justify-content: space-evenly;
+      li {
+        width: 33.33333333%;
+        &[data-type='MA'], &[data-type='PM'], &[data-type='HY'] {
+          padding: 42.5px 0 5px 0;
+          background-position: 50% 10px;
+          @include mq(xsm) {
+            padding: vwl(42.5px) 0 vwl(5px) 0;
+            background-position: 50% vwl(10px);
+          }
+          @include mq(xxs) {
+            padding: vwp(42.5px) 0 vwp(5px) 0;
+            background-position: 50% vwp(10px);
+          }
+          @include mq(md) {
+            padding: 50px 0 10px 0;
+            background-position: 50% 12.5px;
+          }
+          @include mq(lg) {
+            padding-top: 60px;
+            background-size: 73%;
+          }
+        }
+        &[data-type='MA'] {
+          background-position: 50% 13px;
+          @include mq(xsm) {
+            background-position: 50% vwl(13px);
+          }
+          @include mq(xxs) {
+            background-position: 50% vwp(13px);
+          }
+          @include mq(md) {
+            background-position: 50% 16px;
+          }
+        }
+        &[data-type='HY'] {
+          background-image: url('https://lull-media.imgix.net/checkout/luxe-hybrid-profile-logo-full.png#{$imgixDefaults}#{$imgixCrop}&w=350&h=150');
+          background-size: 72.5%;
+          background-position: 50% 7px;
+          @include mq(xsm) {
+            background-position: 50% vwl(7px);
+          }
+          @include mq(xxs) {
+            background-position: 50% vwp(7px);
+          }
+          @include mq(md) {
+            background-position: 50% 10px;
+          }
+        }
+        &::before {
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border-radius: 5px;
+          // border-color: #ccc; 
+        }
+        &:first-of-type, &:first-of-type::before {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        &:nth-of-type(even), &:nth-of-type(even)::before {
+          border-radius: 0;
+        }
+        &:last-of-type, &:last-of-type::before {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+        span {
+          font-size: 1.1rem;
+          @include mq(xsm) {
+            font-size: vwl(10px);
+          }
+          @include mq(xxs) {
+            font-size: vwp(10px);
+          }
+          @include mq(md) {
+            font-size: 1.3rem;
+          }
+          @include mq(lg) {
+            font-size: 1.4rem;
+          }
+        }
+        label {
+          font-size: 1rem;
+          @include mq(xsm) {
+            font-size: vwl(9px);
+          }
+          @include mq(xxs) {
+            font-size: vwp(9px);
+          }
+          @include mq(md) {
+            font-size: 1.2rem;
+          }
+          @include mq(lg) {
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+  &[data-order='reverse'] {
+    .type-select {
+      margin-bottom: 5px;
+      @include mq(xsm) {
+        margin-bottom: vwl(5px);
+      }
+      @include mq(xxs) {
+        margin-bottom: vwp(5px);
+      }
+      @include mq(lg) {
+        margin-bottom: 10px;
+      }
+    }
+    &[data-comparison-accordion='true'] {
+      .type-select {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    &[data-comparison-accordion-active='true'] {
+      .type-select {
+        li {
+          &::after {
+            content: '';
+            $size: 4px;
+            width: $size;
+            height: $size;
+            background-color: transparent;
+            border: solid 3px transparent;
+            border-top: none;
+            border-right: none;
+            position: absolute;
+            left: 50%;
+            bottom: 5px;
+            transform: rotate(-45deg) translateX(-50%);
+            z-index: 1;
+            transition: .2s;
+          }
+          &[data-active='true'] {
+            &::after {
+              // content: '';
+              $size: 16px;
+              width: $size;
+              height: $size;
+              background-color: $white;
+              border-color: $navy;
+              // border-top: none;
+              // border-right: none;
+              // position: absolute;
+              // left: 50%;
+              bottom: -3px;
+              // transform: rotate(-45deg) translateX(-50%);
+              // z-index: 1;
+            }
+          }
+          &:first-of-type {
+            border-bottom-left-radius: 0;
+            &::before {
+              border-bottom-left-radius: 0;
+            }
+          }
+          &:last-of-type {
+            border-bottom-right-radius: 0;
+            &::before {
+              border-bottom-right-radius: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+$imgixUrl: 'https://lull-media.imgix.net/upholstered-bed-frame';
+$imgixDefaults: '?auto=format,compress&q=50';
+$imgixCrop: '&fit=crop&crop=focalpoint';
+
+// Type select li backgrounds
+.product-selection {
+  .color-select {
+    &[data-active-color='Cold Stone'] {
+      + .type-select {
+        li {
+          &[data-type='UU'] {
+            background-image: url('#{$imgixUrl}/swatch-UU-CS.jpg#{$imgixDefaults}#{$imgixCrop}&w=286&h=84&fp-y=0');
+          }
+          &[data-type='TU'] {
+            background-image: url('#{$imgixUrl}/swatch-TU-CS.jpg#{$imgixDefaults}#{$imgixCrop}&w=286&h=84&fp-y=0');
+          }
+        }
+      }
+    }
+    &[data-active-color='Desert Sand'] {
+      + .type-select {
+        li {
+          &[data-type='UU'] {
+            background-image: url('#{$imgixUrl}/swatch-UU-DS.jpg#{$imgixDefaults}#{$imgixCrop}&w=286&h=84&fp-y=0');
+          }
+          &[data-type='TU'] {
+            background-image: url('#{$imgixUrl}/swatch-TU-DS.jpg#{$imgixDefaults}#{$imgixCrop}&w=286&h=84&fp-y=0');
+          }
+        }
+      }
+    }
+  }
+}
+main {
+  &[data-active-size='TW'] {
+    .type-select label:not([data-active-size='TW']) {
+      display: none;
+    }
+  }
+  &[data-active-size='TX'] {
+    .type-select label:not([data-active-size='TX']) {
+      display: none;
+    }
+  }
+  &[data-active-size='FL'] {
+    .type-select label:not([data-active-size='FL']) {
+      display: none;
+    }
+  }
+  &[data-active-size='QU'] {
+    .type-select label:not([data-active-size='QU']) {
+      display: none;
+    }
+  }
+  &[data-active-size='KG'] {
+    .type-select label:not([data-active-size='KG']) {
+      display: none;
+    }
+  }
+  &[data-active-size='CK'] {
+    .type-select label:not([data-active-size='CK']) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,580 @@
+{% macro gallery(p) %}
+<div class="product-gallery col-xs-12 col-sm-6 gallery-left"
+  {% if p.colorSelection -%}
+    data-color="{{- p.defaultColor | upper -}}"
+  {%- endif %}
+  data-type="{{ p.defaultProductType }}"
+  data-upsell-selected="false">
+  <div class="swiper-container carousel">
+    <div class="swiper-wrapper">
+      {% for i in range(1, (p.gallerySlides + 1)) %}
+        <div class="swiper-slide slide-{{ i }} {% if i !== 1 %}lazyload{% endif %} {% if i == p.galleryDimensions %}dimensions{% endif %} " role="img" aria-label="Image: {{ p.heading | safe }} image {{ i }}">
+
+          {%- if i == p.galleryDimensions -%}
+            {% for item in p.skus %}
+              {%- for product in p.dimensions -%}
+                {% if product.size == item.size %}
+                  <span data-sku="{{ item.sku }}" style="display: none;">
+                    <span class="length" data-length="{{ product.l }}"></span>
+                    <span class="width" data-width="{{ product.w }}"></span>
+                    <span class="height" data-height="{{ product.h }}"></span>
+                    {% if product.totalHeight !== '' %}
+                      <span class="total-height" data-totalheight="{{ product.totalHeight }}"></span>
+                    {% endif %}
+                  </span>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          {% endif %}
+
+          {% if p.galleryVideo %}
+            {% if i == p.galleryVideoSlide %}
+              {% if p.galleryVideoSource == 'vimeo' %}
+                <iframe src="{{ p.galleryVideoUrl }}&autoplay=true&title=false&portrait=false&playsinline=true&byline=false" class="lazyload" width="100%" height="100%" frameborder="0" title="{{ p.heading | safe }} video" webkitallowfullscreen mozallowfullscreen allowfullscreen autoplay></iframe>
+              {% else %}
+                {% for video in p.galleryVideoUrl %}
+                  <video id="galleryVideo{{ loop.index }}" poster="{{ p.galleryVideoPoster }}" class="lazyload" role="img" aria-label="Image: {{ p.heading | safe }} video" autoplay playsinline loop muted>
+                    <source src="{{ video }}" type="video/mp4">
+                  </video>
+                {% endfor %}
+              {% endif %}
+
+            {% endif %}
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro reviewsTooltip(p) %}
+  {% for r in p.ratings %}
+    <div class="lull">
+      <div class="logo-lull"></div>
+      <div class="clearfix"></div>
+      <div class="star-rating">
+        <div class="reviews-breakdown">
+          <div class="reviews-star-gauge">
+            <div class="reviews-star-average" style="width: {{ r.average * 20 }}%;"></div>
+          </div>
+          <label><span>{{ r.average }} Stars</span> ({{ r.total }})</label>
+        </div>
+      </div>
+    </div>
+    <div class="gcr">
+      <div class="logo-gcr"></div>
+      <div class="clearfix"></div>
+      <div class="star-rating">
+        <div class="reviews-breakdown">
+          <div class="reviews-star-gauge">
+            <div class="reviews-star-average" style="width: {{ r.googleAverage * 20 }}%;"></div>
+          </div>
+          <label><span>{{ r.googleAverage }} Stars</span> ({{ r.googleTotal }})</label>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endmacro %}
+
+{% macro ratings(p) %}
+  {% for ratings in p.ratings %}
+    {% if ratings.stars %}
+      <div class="star-ratings">
+        <div class="star-rating {% if ratings.tooltip %}popup{% endif %}">
+          <div class="reviews-star-gauge">
+            <div class="reviews-star-average" style="width: {{ ratings.average * 20 }}%;">
+            </div>
+          </div>
+          <p>{{- ratings.average | round(1) }} 
+            <span>({{- ratings.total -}})
+              {%- if ratings.tooltip %}*{% endif -%}
+            </span>
+          </p>
+        </div>
+        {% if p.comboPage and p.defaultCatId == 1 %}
+          {% for c in p.comboProduct %}
+            <div class="combo-tooltip-trigger-{{ c.comboProductType }} popup" 
+              data-toggle-visibility="true" 
+              data-product-id="{{ c.comboProductType }}" style="display: none;">
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+
+      {%- if ratings.tooltip -%}
+        {# Ratings tooltip on Mattress pages #}
+        <div id="reviews-tooltip" style="display: none;">
+          {%- if ratings.mattressTooltip -%}
+            {{- reviewsTooltip(p) -}}
+          {%- endif -%}
+          {%- if ratings.tooltipFootnote !== '' -%}
+            <p class="footnote">{{ ratings.tooltipFootnote }}</p>
+          {%- endif -%}
+        </div>
+        {%- if p.comboPage -%}
+          {%- for c in p.comboProduct -%}
+            <div id="combo-tooltip-{{ c.comboProductType }}" style="display: none;">
+              {{- reviewsTooltip(p) -}}
+              <p class="footnote">*Reviews based on all Lull mattresses</p>
+            </div>
+          {%- endfor -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endif -%}
+
+  {% endfor %}
+{% endmacro %}
+
+{% macro sizeSelect(p) %}
+  <div class="product-details row">
+    {% for sizeGuide in p.sizeGuide %}
+      {% if sizeGuide.show %}
+        {% if p.productDimensions %}
+          <div class="dimensions left-col col-xs-8">
+            <p><strong>Dimensions:</strong>
+              {% for item in p.skus %}
+                <span data-sku="{{ item.sku }}" style="display: none;">
+                  {{ item.w | safe }} x {{ item.l | safe }} 
+                  {%- if item.h !== undefined %} x {{ item.h }}{%- endif -%}
+                </span>
+              {% endfor %}
+            </p>
+          </div>
+        {% else %}
+          <div class="delivery-window left-col col-xs-8">
+            <p>{{ p.deliveryWindowText | safe }}
+            </p>
+          </div>
+        {% endif %}
+        <div class="size-guide right-col col-xs-4">
+          <p><a data-toggle="modal" role="button" tabindex="0" 
+            {% if sizeGuide.mattressModal %}
+              data-target="#mattress-size-guide-modal"
+            {% else %}
+              data-target="#size-guide-modal"
+            {% endif %}
+            href="#">Size Guide</a></p>
+        </div>
+      {% else %}
+        <div class="delivery-window left-col col-xs-12">
+          <p>{{ p.deliveryWindowText | safe }}
+          </p>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>	
+
+  <ul class="size-select grid {% if p.longTitle %}long-title{% endif %} clearfix">
+    {% for item in p.skus %}
+      {% for i in range(0, p.maxQty) %}
+        <li 
+          data-sku="{{ item.sku }}"
+          data-name="{{ item.name }}"
+          data-type="{{ item.type }}"
+          data-color="{{ item.color }}"
+          data-color-name="{{ item.colorName }}"
+          data-color-selection="{{ p.colorSelection }}"
+          data-size="{{ item.size }}"
+          data-size-name="{{ item.sizeName }}"
+          data-product-cat-sizes="{{ p.catSizes }}"
+          data-price="{{ item.salePrice * (i + 1) }}" 
+          data-out-of-stock="{{ item.outOfStock }}"
+          data-quantity="{{ i + 1 }}" 
+          data-bundle="{{ p.bundle }}"
+          data-discount="{{ item.discount }}"
+          class="{% if p.colorSelection %}product-color{% endif %}"
+          {% if not item.outOfStock %} 
+            role="button" tabindex="0" 
+          {% endif %}
+          style="display: none;"
+          >
+          {% set originalPrice = item.price %}
+          {% set salePrice = item.salePrice %}
+          {%- if p.bundle -%}
+            {% for b in item.bundleSkus %}
+              <input type="hidden"																		 
+              data-sku="{{ b.sku }}" 
+              data-type="{{ b.type }}" 
+              data-color="{{ b.color }}" 
+              data-size="{{ b.size }}" 
+              data-qty="{{ b.quantity }}" 
+              data-price="{{ b.price }}">
+            {% endfor %}
+          {% endif %}
+              
+          {# end bundle #}
+        
+          <div class="selected-item">
+            {{- item.sizeName -}}
+          </div>
+
+          <div class="selected-price">
+            <span>
+              <span class="sr-only">Now Priced at</span>
+              ${{ salePrice * (i + 1) }}
+            </span>
+            {% if item.discount !== 0 %}
+              <span class="original-price">
+                <span class="sr-only">Originally Priced at</span>
+                ${{ originalPrice * (i + 1) }}
+              </span>
+            {% endif %}
+          </div>															
+        </li>
+      {% endfor %}
+    {% endfor %}
+  </ul>
+  <div class="clearfix"></div>
+{% endmacro %}
+
+{% macro colorSelect(p) %}
+  <ul class="color-select 
+  {%- if (p.colorSelection and p.qtySelection) or (p.colorSelection and p.catIds.length > 1) %} inline{%- endif -%}" 
+  data-active-color="{{- p.defaultColorName -}}">
+    {% for c in p.colorDisplayOrder %}
+      {% set goToSlide = 0 %}
+      {% if p.colorSelectionSlideControl %}
+        {% for map in p.colorSelectionSlideControlMap %}
+          {% if map.color == c.color %}
+            {% set goToSlide = map.slide %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      <li class="color" role="button" tabindex="0" 
+        data-color="{{- c.color -}}"
+        data-color-name="{{- c.colorName -}}"
+        {% if goToSlide !== 0 -%}data-go-to-slide="{{ goToSlide }}"{%- endif -%}>
+        <span class="sr-only">{{- c.colorName -}}</span>
+      </li>
+    {% endfor %}
+  </ul>
+{% endmacro %}
+
+{% macro typeSelect(p) %}
+  <ul class="type-select{%- if p.colorSelection %} inline{%- endif -%}" 
+    data-active-type="{{ p.defaultProductType }}"
+    data-label="{{ p.comboProductButtonLabels }}"
+    data-product-types="{{ p.catIds.length }}">
+
+  {% for catId in p.catIds %}
+    {% set type = '' %}
+    {% set typeName = '' %}
+    {% set active = false %}
+    {% if catId == p.defaultCatId and type == '' %}
+      {% set type = p.defaultProductType %}
+      {% set typeName = p.shortName %}
+      {% set active = true %}
+    {% else %}
+      {%- for c in p.comboProduct -%}
+        {% if catId == c.comboProductId %}
+          {% set type = c.comboProductType %}
+          {% set typeName = c.shortName %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    <li data-type="{{- type -}}"
+      data-type-name="{{- typeName -}}" 
+      data-active="{{ active }}"
+      role="button" tabindex="0">
+      <span {% if not p.comboProductButtonTitles -%}class="sr-only"{%- endif -%}>
+        {{- typeName -}}
+      </span>
+
+      {% set showLabelOnDefaultCatId = true %}
+      {% for item in p.skus %}
+        {% if catId == item.catId %}
+          {% set mainPrice = 0 %}
+          {% set difference = item.discount %}
+          {% set showLabel = true %}
+          {% if p.catType !== 'mattress' %}
+            {% set showLabel = false %}
+          {% elif catId == p.defaultCatId and not showLabelOnDefaultCatId %}
+            {% set showLabel = false %}
+          {% elif catId !== p.defaultCatId %}
+            {%- for main in p.skus -%}
+              {% if main.catId == p.defaultCatId and main.size == item.size %}
+                {% set mainPrice = main.salePrice %}
+              {% endif %}
+            {% endfor %}
+            {% set difference = item.salePrice - mainPrice %}
+            {%- if difference <= 0 and not showLabelOnDefaultCatId -%}
+              {% set showLabel = false %}
+            {% endif %}
+          {% endif %}
+          {%- if showLabel -%}
+            <label data-active-size="{{ item.size }}">
+              {%- if showLabelOnDefaultCatId -%}
+                {{ discountDisplay(item.discount) }} Off
+              {%- else -%}
+                Upgrade for +${{ difference | round }}
+              {%- endif -%}
+            </label>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </li>
+  {% endfor %}
+  </ul>
+{% endmacro %}
+
+{% macro qtySelect(p) %}
+  <ul class="quantity-select {% if p.colorSelection and p.qtySelection %}inline{% endif %}">
+    {%- for i in range(0, p.maxQty) -%}
+      <li data-quantity="{{ i + 1 }}" role="button" tabindex="0">{{ i + 1 }}</li>
+    {%- endfor -%}
+  </ul>
+{% endmacro %}
+
+{% macro financing(p) %}
+  <div class="col-xs-12">
+    <div class="financing {% if (discountActual > 0) %}discounted{% endif %}">
+      
+      {%- for item in p.skus -%}
+        {%- for i in range(1, p.maxQty + 1) -%}
+        {# Affirm #}
+          <p class="price" data-sku="{{ item.sku }}" data-quantity="{{ i }}" style="display: none;">
+              0% APR financing as low as 
+              <span>
+                $<span class="monthly-payment">{{ item.monthlyPayment | round() }}</span>
+                {%- if p.upsell -%}
+                  <span class="current-monthly-payment"></span>
+                {%- endif -%}/month
+              </span>
+              <span class="tooltip question" data-sku="{{ item.sku }}" data-quantity="{{ i }}"></span>
+          </p>
+          {# Tooltip #}
+          <div class="monthly-apr" data-sku="{{ item.sku }}" data-quantity="{{ i }}" style="display: none;">
+            APR as Low as 0% for {{ item.paymentTerm }} months.<br>
+            <a href="#" class="financing-modal-link" data-toggle="modal" data-sku="{{ item.sku }}" data-quantity="{{ i }}" data-target="#financing-modal" onClick="updateFinancing('{{ item.sku }}', {{ i }})">Learn more</a>.
+          </div>
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro upsells(p) %}
+  <div class="col-xs-12">
+    {% set singleUpsell = true %}
+    {% for u in p.upsells %}
+      {% if u.catIds.length > 1 %}
+        {% set singleUpsell = false %}
+      {% endif %}
+    {% endfor %}
+    {% if p.upsells.length > 1 %}
+      {% set singleUpsell = false %}
+    {% endif %}
+    <div class="upsell-list{% if singleUpsell %} single{% else %} multiple{% endif %}" id="{{ pageVariant }}">
+      {% if p.upsellListTitle !== '' %}
+        <h2><span>{{ p.upsellListTitle }}</span></h2>
+      {% endif %}
+      {% if p.upsellListSubtitle !== '' %}
+        <p>{{ p.upsellListSubtitle }}</p>
+      {% endif %}
+      <ul class="upsells">
+        {%- for u in p.upsells -%}
+          {% set xType = '' %}
+          {% for item in u.skus %}
+            {% if item.catId == u.defaultCatId %}
+              {% set xType = item.type %}
+            {% endif %}
+          {% endfor %}
+          
+          <li class="item" 
+            data-type="{{ xType }}" 
+            data-product-cat-sizes="{{ u.catSizes }}"
+            data-bundle="{{ u.bundle }}" 
+            data-match-color="{{ u.matchColor }}" 
+            data-color-selection="{{ u.colorSelection }}"
+            data-slug="{{ u.slug }}"
+            data-default-state="true">
+            <ul class="inventory">
+              {% for item in u.skus %}
+                {% for catId in u.catIds %}
+                  {%- if item.catId == catId -%}
+                    <li data-sku="{{ item.sku }}" 
+                        data-name="{{ item.name }}" 
+                        data-type="{{ item.type }}" 
+                        data-color="{{ item.color }}"
+                        data-color-name="{{ item.colorName }}"
+                        data-size="{{ item.size }}"
+                        data-size-name="{{ item.sizeName }}"
+                        data-bundle="{{ u.bundle }}"
+                        data-out-of-stock="{{ item.outOfStock }}"
+                        data-price="{{ item.salePrice }}"
+                        role="button" tabindex="0"
+                        aria-label="{{ u.name | safe }}"
+                        {% if u.bundle %}data-item-price="{{ item.price }}"{% endif %} style="display: none;">
+                        &nbsp;
+                        {% if singleUpsell %}				
+                          <span class="price">
+                            {%- if u.subtitle !== '' -%}
+                              {{ u.subtitle }}
+                            {%- else -%}
+                              {{- item.colorName -}}
+                            {%- endif %}	&bull; 
+                            {% if item.discount !== 0 -%}
+                                {{- item.salePrice -}}
+                              <span class="original price">${{ item.price -}}</span>
+                            {% else %}
+                              ${{ item.price -}}
+                            {%- endif -%}
+                          </span>
+                        {% else %}
+                          {%- if item.discount !== 0 -%}
+                            <span class="original price">${{- item.price -}}</span>
+                          {% endif %}
+                          <span class="price">
+                            ${{- item.salePrice -}}
+                          </span>
+                        {% endif %}
+
+                      {% for sku in bSkus %}
+                        <input type="hidden" data-bundle-sku="{{ sku }}">
+                      {% endfor %}
+                    </li>
+                  {% endif %}
+                {% endfor %}																		
+              {% endfor %}																		
+
+              <label {% if u.longtitle %}class="longtitle"{% endif %}>
+                {% if not singleUpsell %}
+                  <a data-toggle="modal" data-target="#upsell-modal-{{ xType }}" role="button" tabindex="0" href="#">
+                    <span>{{ u.name | safe }}</span>
+                  </a>
+                {% else %}
+                  <span>{{ u.name | safe }}</span>
+                {% endif %}
+              </label>
+            </ul>
+            {% if u.colorSelection %}
+              <div class="options" style="display: none;">
+                <ul class="color-select">
+                  {% for c in u.colorDisplayOrder %}
+                    <li data-color="{{ c.color }}" role="button" tabindex="0" 
+                      class="color {% if loop.index == 1 -%}active{% endif %}" {% if loop.index == 1 -%}data-active="true"{% endif %}>
+                    </li>
+                  {% endfor %}
+                </ul>
+                {% if u.catIds.length > 1 %}
+                  <ul class="type-select">
+                    {% for catId in u.catIds %}
+                      {% for item in u.skus %}
+                        {% if item.catId == catId %}
+                          {% set active = false %}
+                          {% if catId == u.defaultCatId and item.color == u.defaultColor %}
+                            {% set active = true %}
+                          {% endif %}
+                          
+                          <li data-sku="{{ item.sku }}"
+                              data-type="{{ item.type }}" 
+                              data-color="{{ item.color }}" 
+                              data-size="{{ item.sku.slice(9, limit) }}"
+                              data-active="{{ active }}" role="button" tabindex="0"
+                              style="display: none;">
+                            <div class="selected-item">
+                              {{- item.shortName -}}
+                            </div>
+                            <div class="selected-price">
+                                <span class="price">
+                                  ${{- item.salePrice -}}
+                                </span>
+                              {%- if item.discount !== 0 -%}
+                                <span class="original-price"> ${{- item.price -}}</span>
+                              {% endif %}
+                            </div>
+                          </li>
+                        {% endif %}
+                      {% endfor %}
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div>
+            {% endif %}
+
+          </li>		
+        {%- endfor -%}
+      </ul>
+      {%- for u in p.upsells -%}
+        {%- if singleUpsell and u.details.length -%}
+        <div class="description">
+          {% for item in u.details %}
+            <p>{{ item.detail | safe }}</p>
+          {% endfor %}
+        </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro tooltips(p) %}
+  {%- set colorSelection = false -%}
+  {%- for u in p.upsells -%}
+    {%- if u.colorSelection -%}
+      {%- set colorSelection = true -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {% if p.colorSelection or colorSelection %}
+    {% if p.colorSelection %}
+      {% for c in p.colorDisplayOrder %}
+        <div class="tooltip-{{ c.color }}" style="display: none;">{{ c.colorName }}</div>
+      {% endfor %}
+    {% elif colorSelection and not p.colorSelection %}
+      {% set colors = [] %}
+      {% for u in p.upsells %}
+        {% if u.colorSelection %}
+          {% for c in u.colorDisplayOrder %}
+            <div class="tooltip-{{c.color }}" style="display: none;">{{ c.colorName }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endif %}
+
+  {%- if p.comboPage and not p.comboProductButtonTitles -%}
+    {%- for catId in p.catIds -%}
+      {%- set type = p.defaultProductType -%}
+      {%- set typeName = p.shortName -%}
+      {% if catId !== p.defaultCatId %}
+        {% for c in p.comboProduct %}
+          {% if catId == c.comboProductId %}
+            {% set type = c.comboProductType %}
+            {%- set typeName = c.shortName -%}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      <div class="tooltip-{{- type -}}" style="display: none;">{{- typeName -}}</div>
+    {% endfor %}
+  {%- endif -%}
+{% endmacro %}
+
+
+{% macro richtext(p) %}
+  <div id="richtext" style="display: none;">
+    {% for item in p.skus %}
+      <div itemscope itemtype="http://schema.org/Product">
+        Brand: <span itemprop="brand">Lull</span><br>
+        Item: <span itemprop="name">{{ item.sizeName  }}</span><br>
+        <img itemprop="image" src="{{ p.productImage }}" alt="{{ item.description }}" class="lazyload" /><br>
+        <span itemprop="description">{{ item.description }}<br>
+        Dimensions:{{ item.dimensions }}</span><br>
+        SKU: <span itemprop="sku">{{ item.sku }}</span><br>
+        <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+          Price: <span itemprop="price" content="{{ item.salePrice | round(2) }}.00">{{ item.salePrice | round(2)  }}</span><br>
+          Valid From: <span itemprop="validFrom" content="2018-01-01T00:00:00-0800">Jan. 01, 2018</span><br>
+          Valid To: <span itemprop="validThrough" content="2025-12-31T00:00:00-0800">Dec. 31, 2025</span><br>
+          <meta itemprop="priceCurrency" content="USD" />
+          <link itemprop="availability" itemtype="http://schema.org/InStock"/>
+          {% if item.outOfStock %}
+            OutOfStock      
+          {% else %}
+            InStock
+          {% endif %}
+        </span> 
+      </div>
+    {% endfor %}
+  </div>
+{% endmacro %}

@@ -1,0 +1,5 @@
+// cart-open.svg 
+@mixin cart-open($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2049.05%2042%22%3E%3Cpath%20d%3D%22M47.54%2C7.94H45.2a1.5%2C1.5%2C0%2C0%2C0-1.47%2C1.2l-3%2C14.69H15.55L11.83%2C2.26C11.7.61%2C10.86%2C0%2C9.08%2C0H2.26C.58%2C0%2C0%2C.55%2C0%2C2.26V3.4C0%2C5.16.58%2C5.67%2C2.26%2C5.67H6.49l3.72%2C21.56a3.46%2C3.46%2C0%2C0%2C0%2C3.41%2C2.28H42.11c2%2C0%2C2.92-.41%2C3.41-2.28L49%2C9.73A1.49%2C1.49%2C0%2C0%2C0%2C47.54%2C7.94Z%22%20transform%3D%22translate(0.01%200.01)%22%20fill%3D%22#{$color-rgb}%22%20fill-rule%3D%22evenodd%22%2F%3E%3Cpath%20d%3D%22M14.76%2C37.45a4.55%2C4.55%2C0%2C1%2C0%2C4.55-4.54h0a4.55%2C4.55%2C0%2C0%2C0-4.55%2C4.54Z%22%20transform%3D%22translate(0.01%200.01)%22%20fill%3D%22#{$color-rgb}%22%20fill-rule%3D%22evenodd%22%2F%3E%3Cpath%20d%3D%22M33%2C37.45a4.55%2C4.55%2C0%2C1%2C0%2C4.55-4.54h0A4.55%2C4.55%2C0%2C0%2C0%2C33%2C37.44h0Z%22%20transform%3D%22translate(0.01%200.01)%22%20fill%3D%22#{$color-rgb}%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+}

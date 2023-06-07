@@ -1,0 +1,5 @@
+// icon-heart.svg
+@mixin heart($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2033.02%2033.02%22%3E%3Ctitle%3Eicon-heart%3C%2Ftitle%3E%3Cellipse%20cx%3D%22289.39%22%20cy%3D%22-162.43%22%20rx%3D%2216.13%22%20ry%3D%2216.66%22%20transform%3D%22translate(-73.26%20335.99)%20rotate(-45)%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3Cpath%20d%3D%22M293.68-170.24s-2.42-.37-4.37%2C2.67c-1.95-3-4.37-2.67-4.37-2.67s-5.34%2C0-5.34%2C5.53%2C9.69%2C11.27%2C9.69%2C11.27%2C9.73-5.73%2C9.73-11.27S293.68-170.24%2C293.68-170.24Z%22%20transform%3D%22translate(-272.88%20178.94)%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E');
+}

@@ -1,0 +1,5 @@
+// trapezoid-bottom-right.svg 
+@mixin trapezoid-bottom-right($color) {
+  $color-rgb: "rgb(" + red($color) + "%2C" + green($color) + "%2C" + blue($color) + ")";
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%202716.75%20253%22%3E%3Cpath%20d%3D%22M226.46%2C230.54-2%2C459H2714.75V206h-2429A83.79%2C83.79%2C0%2C0%2C0%2C226.46%2C230.54Z%22%20transform%3D%22translate(2%20-206)%22%20fill%3D%22#{$color-rgb}%22%2F%3E%3C%2Fsvg%3E');
+}

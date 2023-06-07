@@ -1,0 +1,1771 @@
+/* When editing, use the source file for this page in client/resources/sass */
+@import 'compass';
+
+// Core variables and mixins
+@import 'bootstrap/variables';
+@import 'bootstrap/mixins';
+
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/layout';
+@import 'partials/svg';
+
+$imgixUrl: 'https://lull-media.imgix.net/sheets';
+$imgixDefaults: '?auto=format,compress&q=50';
+$imgixCrop: '&fit=crop&crop=focalpoint';
+
+video {
+  width: 100%;
+  &:focus {
+    outline: none;
+  }
+}
+
+// Gallery
+.product-gallery {
+  .swiper-container .swiper-slide {
+    padding-bottom: 66.66666667%;
+    &.slide-5 {
+      padding-bottom: 56.25%;
+    }
+  }
+  &[data-color='BW'] {
+    .slide-1 {
+      background-image: url('#{$imgixUrl}/sheets-01-hero-BW.jpg#{$imgixDefaults}&w=840');
+    }
+    .slide-1,
+    .swiper-pagination-bullet:nth-of-type(1) {
+      @include mq(md) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-BW.jpg#{$imgixDefaults}&w=1200');
+      }
+      @include mq(lg) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-BW.jpg#{$imgixDefaults}&w=720');
+      }
+      @media (min-width: 1440px) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-BW.jpg#{$imgixDefaults}&w=800');
+      }
+      @media (min-width: 1600px) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-BW.jpg#{$imgixDefaults}&w=960');
+      }
+      @include retina {
+        @include mq(lg) {
+          background-image: url('#{$imgixUrl}/sheets-01-hero-BW.jpg#{$imgixDefaults}&w=1440');
+        }
+        @media (min-width: 1440px) {
+          background-image: url('#{$imgixUrl}/sheets-01-hero-BW.jpg#{$imgixDefaults}&w=1600');
+        }
+        @media (min-width: 1600px) {
+          background-image: url('#{$imgixUrl}/sheets-01-hero-BW.jpg#{$imgixDefaults}&w=1920');
+        }
+      }
+    }
+    .slide-2 {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-duvet-BW.jpg#{$imgixDefaults}&w=840');
+      }
+    }
+    .slide-2,
+    .swiper-pagination-bullet:nth-of-type(2) {
+      &.lazyloaded {
+        @include mq(md) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-BW.jpg#{$imgixDefaults}&w=1200');
+        }
+        @include mq(lg) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-BW.jpg#{$imgixDefaults}&w=720');
+        }
+        @media (min-width: 1440px) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-BW.jpg#{$imgixDefaults}&w=800');
+        }
+        @media (min-width: 1600px) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-BW.jpg#{$imgixDefaults}&w=960');
+        }
+        @include retina {
+          @include mq(lg) {
+            background-image: url('#{$imgixUrl}/sheets-duvet-BW.jpg#{$imgixDefaults}&w=1440');
+          }
+          @media (min-width: 1440px) {
+            background-image: url('#{$imgixUrl}/sheets-duvet-BW.jpg#{$imgixDefaults}&w=1600');
+          }
+          @media (min-width: 1600px) {
+            background-image: url('#{$imgixUrl}/sheets-duvet-BW.jpg#{$imgixDefaults}&w=1920');
+          }
+        }
+      }
+    }
+    .slide-3 {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-corner-BW.jpg#{$imgixDefaults}&w=840');
+      }
+    }
+    .slide-3,
+    .swiper-pagination-bullet:nth-of-type(3) {
+      &.lazyloaded {
+        @include mq(md) {
+          background-image: url('#{$imgixUrl}/sheets-corner-BW.jpg#{$imgixDefaults}&w=1200');
+        }
+        @include mq(lg) {
+          background-image: url('#{$imgixUrl}/sheets-corner-BW.jpg#{$imgixDefaults}&w=720');
+        }
+        @media (min-width: 1440px) {
+          background-image: url('#{$imgixUrl}/sheets-corner-BW.jpg#{$imgixDefaults}&w=800');
+        }
+        @media (min-width: 1600px) {
+          background-image: url('#{$imgixUrl}/sheets-corner-BW.jpg#{$imgixDefaults}&w=960');
+        }
+        @include retina {
+          @include mq(lg) {
+            background-image: url('#{$imgixUrl}/sheets-corner-BW.jpg#{$imgixDefaults}&w=1440');
+          }
+          @media (min-width: 1440px) {
+            background-image: url('#{$imgixUrl}/sheets-corner-BW.jpg#{$imgixDefaults}&w=1600');
+          }
+          @media (min-width: 1600px) {
+            background-image: url('#{$imgixUrl}/sheets-corner-BW.jpg#{$imgixDefaults}&w=1920');
+          }
+        }
+      }
+    }
+    .slide-4 {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-detail-BW.jpg#{$imgixDefaults}&w=840');
+      }
+    }
+    .slide-4,
+    .swiper-pagination-bullet:nth-of-type(4) {
+      &.lazyloaded {
+        @include mq(md) {
+          background-image: url('#{$imgixUrl}/sheets-detail-BW.jpg#{$imgixDefaults}&w=1200');
+        }
+        @include mq(lg) {
+          background-image: url('#{$imgixUrl}/sheets-detail-BW.jpg#{$imgixDefaults}&w=720');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-detail-BW.jpg#{$imgixDefaults}&w=1440');
+          }
+        }
+        @media (min-width: 1440px) {
+          background-image: url('#{$imgixUrl}/sheets-detail-BW.jpg#{$imgixDefaults}&w=800');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-detail-BW.jpg#{$imgixDefaults}&w=1600');
+          }
+        }
+        @media (min-width: 1600px) {
+          background-image: url('#{$imgixUrl}/sheets-detail-BW.jpg#{$imgixDefaults}&w=960');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-detail-BW.jpg#{$imgixDefaults}&w=1920');
+          }
+        }
+      }
+    }
+  }
+  &[data-color='QG'] {
+    .slide-1 {
+      background-image: url('#{$imgixUrl}/sheets-01-hero-QG.jpg#{$imgixDefaults}&w=840');
+    }
+    .slide-1,
+    .swiper-pagination-bullet:nth-of-type(1) {
+      @include mq(md) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-QG.jpg#{$imgixDefaults}&w=1200');
+      }
+      @include mq(lg) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-QG.jpg#{$imgixDefaults}&w=720');
+        @include retina {
+          background-image: url('#{$imgixUrl}/sheets-01-hero-QG.jpg#{$imgixDefaults}&w=1440');
+        }
+      }
+      @media (min-width: 1440px) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-QG.jpg#{$imgixDefaults}&w=800');
+        @include retina {
+          background-image: url('#{$imgixUrl}/sheets-01-hero-QG.jpg#{$imgixDefaults}&w=1600');
+        }
+      }
+      @media (min-width: 1600px) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-QG.jpg#{$imgixDefaults}&w=960');
+        @include retina {
+          background-image: url('#{$imgixUrl}/sheets-01-hero-QG.jpg#{$imgixDefaults}&w=1920');
+        }
+      }
+    }
+    .slide-2 {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-duvet-QG.jpg#{$imgixDefaults}&w=840');
+      }
+    }
+    .slide-2,
+    .swiper-pagination-bullet:nth-of-type(2) {
+      &.lazyloaded {
+        @include mq(md) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-QG.jpg#{$imgixDefaults}&w=1200');
+        }
+        @include mq(lg) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-QG.jpg#{$imgixDefaults}&w=720');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-duvet-QG.jpg#{$imgixDefaults}&w=1440');
+          }
+        }
+        @media (min-width: 1440px) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-QG.jpg#{$imgixDefaults}&w=800');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-duvet-QG.jpg#{$imgixDefaults}&w=1600');
+          }
+        }
+        @media (min-width: 1600px) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-QG.jpg#{$imgixDefaults}&w=960');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-duvet-QG.jpg#{$imgixDefaults}&w=1920');
+          }
+        }
+      }
+    }
+    .slide-3 {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-corner-QG.jpg#{$imgixDefaults}&w=840');
+      }
+    }
+    .slide-3,
+    .swiper-pagination-bullet:nth-of-type(3) {
+      &.lazyloaded {
+        @include mq(md) {
+          background-image: url('#{$imgixUrl}/sheets-corner-QG.jpg#{$imgixDefaults}&w=1200');
+        }
+        @include mq(lg) {
+          background-image: url('#{$imgixUrl}/sheets-corner-QG.jpg#{$imgixDefaults}&w=720');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-corner-QG.jpg#{$imgixDefaults}&w=1440');
+          }
+        }
+        @media (min-width: 1440px) {
+          background-image: url('#{$imgixUrl}/sheets-corner-QG.jpg#{$imgixDefaults}&w=800');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-corner-QG.jpg#{$imgixDefaults}&w=1600');
+          }
+        }
+        @media (min-width: 1600px) {
+          background-image: url('#{$imgixUrl}/sheets-corner-QG.jpg#{$imgixDefaults}&w=960');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-corner-QG.jpg#{$imgixDefaults}&w=1920');
+          }
+        }
+      }
+    }
+    .slide-4 {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-detail-QG.jpg#{$imgixDefaults}&w=840');
+      }
+    }
+    .slide-4,
+    .swiper-pagination-bullet:nth-of-type(4) {
+      &.lazyloaded {
+        @include mq(md) {
+          background-image: url('#{$imgixUrl}/sheets-detail-QG.jpg#{$imgixDefaults}&w=1200');
+        }
+        @include mq(lg) {
+          background-image: url('#{$imgixUrl}/sheets-detail-QG.jpg#{$imgixDefaults}&w=720');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-detail-QG.jpg#{$imgixDefaults}&w=1440');
+          }
+        }
+        @media (min-width: 1440px) {
+          background-image: url('#{$imgixUrl}/sheets-detail-QG.jpg#{$imgixDefaults}&w=800');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-detail-QG.jpg#{$imgixDefaults}&w=1600');
+          }
+        }
+        @media (min-width: 1600px) {
+          background-image: url('#{$imgixUrl}/sheets-detail-QG.jpg#{$imgixDefaults}&w=960');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-detail-QG.jpg#{$imgixDefaults}&w=1920');
+          }
+        }
+      }
+    }
+  }
+  &[data-color='GG'] {
+    .slide-1 {
+      background-image: url('#{$imgixUrl}/sheets-01-hero-GG.jpg#{$imgixDefaults}&w=840');
+    }
+    .slide-1,
+    .swiper-pagination-bullet:nth-of-type(1) {
+      @include mq(md) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-GG.jpg#{$imgixDefaults}&w=1200');
+      }
+      @include mq(lg) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-GG.jpg#{$imgixDefaults}&w=720');
+        @include retina {
+          background-image: url('#{$imgixUrl}/sheets-01-hero-GG.jpg#{$imgixDefaults}&w=1440');
+        }
+      }
+      @media (min-width: 1440px) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-GG.jpg#{$imgixDefaults}&w=800');
+        @include retina {
+          background-image: url('#{$imgixUrl}/sheets-01-hero-GG.jpg#{$imgixDefaults}&w=1600');
+        }
+      }
+      @media (min-width: 1600px) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-GG.jpg#{$imgixDefaults}&w=960');
+        @include retina {
+          background-image: url('#{$imgixUrl}/sheets-01-hero-GG.jpg#{$imgixDefaults}&w=1920');
+        }
+      }
+    }
+    .slide-2 {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-duvet-GG.jpg#{$imgixDefaults}&w=840');
+      }
+    }
+    .slide-2,
+    .swiper-pagination-bullet:nth-of-type(2) {
+      &.lazyloaded {
+        @include mq(md) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-GG.jpg#{$imgixDefaults}&w=1200');
+        }
+        @include mq(lg) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-GG.jpg#{$imgixDefaults}&w=720');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-duvet-GG.jpg#{$imgixDefaults}&w=1440');
+          }
+        }
+        @media (min-width: 1440px) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-GG.jpg#{$imgixDefaults}&w=800');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-duvet-GG.jpg#{$imgixDefaults}&w=1600');
+          }
+        }
+        @media (min-width: 1600px) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-GG.jpg#{$imgixDefaults}&w=960');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-duvet-GG.jpg#{$imgixDefaults}&w=1920');
+          }
+        }
+      }
+    }
+    .slide-3 {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-corner-GG.jpg#{$imgixDefaults}&w=840');
+      }
+    }
+    .slide-3,
+    .swiper-pagination-bullet:nth-of-type(3) {
+      &.lazyloaded {
+        @include mq(md) {
+          background-image: url('#{$imgixUrl}/sheets-corner-GG.jpg#{$imgixDefaults}&w=1200');
+        }
+        @include mq(lg) {
+          background-image: url('#{$imgixUrl}/sheets-corner-GG.jpg#{$imgixDefaults}&w=720');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-corner-GG.jpg#{$imgixDefaults}&w=1440');
+          }
+        }
+        @media (min-width: 1440px) {
+          background-image: url('#{$imgixUrl}/sheets-corner-GG.jpg#{$imgixDefaults}&w=800');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-corner-GG.jpg#{$imgixDefaults}&w=1600');
+          }
+        }
+        @media (min-width: 1600px) {
+          background-image: url('#{$imgixUrl}/sheets-corner-GG.jpg#{$imgixDefaults}&w=960');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-corner-GG.jpg#{$imgixDefaults}&w=1920');
+          }
+        }
+      }
+    }
+    .slide-4 {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-detail-GG.jpg#{$imgixDefaults}&w=840');
+      }
+    }
+    .slide-4,
+    .swiper-pagination-bullet:nth-of-type(4) {
+      &.lazyloaded {
+        @include mq(md) {
+          background-image: url('#{$imgixUrl}/sheets-detail-GG.jpg#{$imgixDefaults}&w=1200');
+        }
+        @include mq(lg) {
+          background-image: url('#{$imgixUrl}/sheets-detail-GG.jpg#{$imgixDefaults}&w=720');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-detail-GG.jpg#{$imgixDefaults}&w=1440');
+          }
+        }
+        @media (min-width: 1440px) {
+          background-image: url('#{$imgixUrl}/sheets-detail-GG.jpg#{$imgixDefaults}&w=800');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-detail-GG.jpg#{$imgixDefaults}&w=1600');
+          }
+        }
+        @media (min-width: 1600px) {
+          background-image: url('#{$imgixUrl}/sheets-detail-GG.jpg#{$imgixDefaults}&w=960');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-detail-GG.jpg#{$imgixDefaults}&w=1920');
+          }
+        }
+      }
+    }
+  }
+  &[data-color='MB'] {
+    .slide-1 {
+      background-image: url('#{$imgixUrl}/sheets-01-hero-MB.jpg#{$imgixDefaults}&w=840');
+    }
+    .slide-1,
+    .swiper-pagination-bullet:nth-of-type(1) {
+      @include mq(md) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-MB.jpg#{$imgixDefaults}&w=1200');
+      }
+      @include mq(lg) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-MB.jpg#{$imgixDefaults}&w=720');
+        @include retina {
+          background-image: url('#{$imgixUrl}/sheets-01-hero-MB.jpg#{$imgixDefaults}&w=1440');
+        }
+      }
+      @media (min-width: 1440px) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-MB.jpg#{$imgixDefaults}&w=800');
+        @include retina {
+          background-image: url('#{$imgixUrl}/sheets-01-hero-MB.jpg#{$imgixDefaults}&w=1600');
+        }
+      }
+      @media (min-width: 1600px) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-MB.jpg#{$imgixDefaults}&w=960');
+        @include retina {
+          background-image: url('#{$imgixUrl}/sheets-01-hero-MB.jpg#{$imgixDefaults}&w=1920');
+        }
+      }
+    }
+    .slide-2 {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-duvet-MB.jpg#{$imgixDefaults}&w=840');
+      }
+    }
+    .slide-2,
+    .swiper-pagination-bullet:nth-of-type(2) {
+      &.lazyloaded {
+        @include mq(md) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-MB.jpg#{$imgixDefaults}&w=1200');
+        }
+        @include mq(lg) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-MB.jpg#{$imgixDefaults}&w=720');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-duvet-MB.jpg#{$imgixDefaults}&w=1440');
+          }
+        }
+        @media (min-width: 1440px) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-MB.jpg#{$imgixDefaults}&w=800');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-duvet-MB.jpg#{$imgixDefaults}&w=1600');
+          }
+        }
+        @media (min-width: 1600px) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-MB.jpg#{$imgixDefaults}&w=960');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-duvet-MB.jpg#{$imgixDefaults}&w=1920');
+          }
+        }
+      }
+    }
+    .slide-3 {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-corner-MB.jpg#{$imgixDefaults}&w=840');
+      }
+    }
+    .slide-3,
+    .swiper-pagination-bullet:nth-of-type(3) {
+      &.lazyloaded {
+        @include mq(md) {
+          background-image: url('#{$imgixUrl}/sheets-corner-MB.jpg#{$imgixDefaults}&w=1200');
+        }
+        @include mq(lg) {
+          background-image: url('#{$imgixUrl}/sheets-corner-MB.jpg#{$imgixDefaults}&w=720');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-corner-MB.jpg#{$imgixDefaults}&w=1440');
+          }
+        }
+        @media (min-width: 1440px) {
+          background-image: url('#{$imgixUrl}/sheets-corner-MB.jpg#{$imgixDefaults}&w=800');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-corner-MB.jpg#{$imgixDefaults}&w=1600');
+          }
+        }
+        @media (min-width: 1600px) {
+          background-image: url('#{$imgixUrl}/sheets-corner-MB.jpg#{$imgixDefaults}&w=960');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-corner-MB.jpg#{$imgixDefaults}&w=1920');
+          }
+        }
+      }
+    }
+    .slide-4 {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-detail-MB.jpg#{$imgixDefaults}&w=840');
+      }
+    }
+    .slide-4,
+    .swiper-pagination-bullet:nth-of-type(4) {
+      &.lazyloaded {
+        @include mq(md) {
+          background-image: url('#{$imgixUrl}/sheets-detail-MB.jpg#{$imgixDefaults}&w=1200');
+        }
+        @include mq(lg) {
+          background-image: url('#{$imgixUrl}/sheets-detail-MB.jpg#{$imgixDefaults}&w=720');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-detail-MB.jpg#{$imgixDefaults}&w=1440');
+          }
+        }
+        @media (min-width: 1440px) {
+          background-image: url('#{$imgixUrl}/sheets-detail-MB.jpg#{$imgixDefaults}&w=800');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-detail-MB.jpg#{$imgixDefaults}&w=1600');
+          }
+        }
+        @media (min-width: 1600px) {
+          background-image: url('#{$imgixUrl}/sheets-detail-MB.jpg#{$imgixDefaults}&w=960');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-detail-MB.jpg#{$imgixDefaults}&w=1920');
+          }
+        }
+      }
+    }
+  }
+  &[data-color='PA'] {
+    .slide-1 {
+      background-image: url('#{$imgixUrl}/sheets-01-hero-PA.jpg#{$imgixDefaults}&w=840');
+    }
+    .slide-1,
+    .swiper-pagination-bullet:nth-of-type(1) {
+      @include mq(md) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-PA.jpg#{$imgixDefaults}&w=1200');
+      }
+      @include mq(lg) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-PA.jpg#{$imgixDefaults}&w=720');
+        @include retina {
+          background-image: url('#{$imgixUrl}/sheets-01-hero-PA.jpg#{$imgixDefaults}&w=1440');
+        }
+      }
+      @media (min-width: 1440px) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-PA.jpg#{$imgixDefaults}&w=800');
+        @include retina {
+          background-image: url('#{$imgixUrl}/sheets-01-hero-PA.jpg#{$imgixDefaults}&w=1600');
+        }
+      }
+      @media (min-width: 1600px) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-PA.jpg#{$imgixDefaults}&w=960');
+        @include retina {
+          background-image: url('#{$imgixUrl}/sheets-01-hero-PA.jpg#{$imgixDefaults}&w=1920');
+        }
+      }
+    }
+    .slide-2 {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-duvet-PA.jpg#{$imgixDefaults}&w=840');
+      }
+    }
+    .slide-2,
+    .swiper-pagination-bullet:nth-of-type(2) {
+      &.lazyloaded {
+        @include mq(md) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-PA.jpg#{$imgixDefaults}&w=1200');
+        }
+        @include mq(lg) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-PA.jpg#{$imgixDefaults}&w=720');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-duvet-PA.jpg#{$imgixDefaults}&w=1440');
+          }
+        }
+        @media (min-width: 1440px) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-PA.jpg#{$imgixDefaults}&w=800');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-duvet-PA.jpg#{$imgixDefaults}&w=1600');
+          }
+        }
+        @media (min-width: 1600px) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-PA.jpg#{$imgixDefaults}&w=960');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-duvet-PA.jpg#{$imgixDefaults}&w=1920');
+          }
+        }
+      }
+    }
+    .slide-3 {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-corner-PA.jpg#{$imgixDefaults}&w=840');
+      }
+    }
+    .slide-3,
+    .swiper-pagination-bullet:nth-of-type(3) {
+      &.lazyloaded {
+        @include mq(md) {
+          background-image: url('#{$imgixUrl}/sheets-corner-PA.jpg#{$imgixDefaults}&w=1200');
+        }
+        @include mq(lg) {
+          background-image: url('#{$imgixUrl}/sheets-corner-PA.jpg#{$imgixDefaults}&w=720');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-corner-PA.jpg#{$imgixDefaults}&w=1440');
+          }
+        }
+        @media (min-width: 1440px) {
+          background-image: url('#{$imgixUrl}/sheets-corner-PA.jpg#{$imgixDefaults}&w=800');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-corner-PA.jpg#{$imgixDefaults}&w=1600');
+          }
+        }
+        @media (min-width: 1600px) {
+          background-image: url('#{$imgixUrl}/sheets-corner-PA.jpg#{$imgixDefaults}&w=960');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-corner-PA.jpg#{$imgixDefaults}&w=1920');
+          }
+        }
+      }
+    }
+    .slide-4 {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-detail-PA.jpg#{$imgixDefaults}&w=840');
+      }
+    }
+    .slide-4,
+    .swiper-pagination-bullet:nth-of-type(4) {
+      &.lazyloaded {
+        @include mq(md) {
+          background-image: url('#{$imgixUrl}/sheets-detail-PA.jpg#{$imgixDefaults}&w=1200');
+        }
+        @include mq(lg) {
+          background-image: url('#{$imgixUrl}/sheets-detail-PA.jpg#{$imgixDefaults}&w=720');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-detail-PA.jpg#{$imgixDefaults}&w=1440');
+          }
+        }
+        @media (min-width: 1440px) {
+          background-image: url('#{$imgixUrl}/sheets-detail-PA.jpg#{$imgixDefaults}&w=800');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-detail-PA.jpg#{$imgixDefaults}&w=1600');
+          }
+        }
+        @media (min-width: 1600px) {
+          background-image: url('#{$imgixUrl}/sheets-detail-PA.jpg#{$imgixDefaults}&w=960');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-detail-PA.jpg#{$imgixDefaults}&w=1920');
+          }
+        }
+      }
+    }
+  }
+  &[data-color='WP'] {
+    .slide-1 {
+      background-image: url('#{$imgixUrl}/sheets-01-hero-WP.jpg#{$imgixDefaults}&w=840');
+    }
+    .slide-1,
+    .swiper-pagination-bullet:nth-of-type(1) {
+      @include mq(md) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-WP.jpg#{$imgixDefaults}&w=1200');
+      }
+      @include mq(lg) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-WP.jpg#{$imgixDefaults}&w=720');
+        @include retina {
+          background-image: url('#{$imgixUrl}/sheets-01-hero-WP.jpg#{$imgixDefaults}&w=1440');
+        }
+      }
+      @media (min-width: 1440px) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-WP.jpg#{$imgixDefaults}&w=800');
+        @include retina {
+          background-image: url('#{$imgixUrl}/sheets-01-hero-WP.jpg#{$imgixDefaults}&w=1600');
+        }
+      }
+      @media (min-width: 1600px) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-WP.jpg#{$imgixDefaults}&w=960');
+        @include retina {
+          background-image: url('#{$imgixUrl}/sheets-01-hero-WP.jpg#{$imgixDefaults}&w=1920');
+        }
+      }
+    }
+    .slide-2 {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-duvet-WP.jpg#{$imgixDefaults}&w=840');
+      }
+    }
+    .slide-2,
+    .swiper-pagination-bullet:nth-of-type(2) {
+      &.lazyloaded {
+        @include mq(md) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-WP.jpg#{$imgixDefaults}&w=1200');
+        }
+        @include mq(lg) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-WP.jpg#{$imgixDefaults}&w=720');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-duvet-WP.jpg#{$imgixDefaults}&w=1440');
+          }
+        }
+        @media (min-width: 1440px) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-WP.jpg#{$imgixDefaults}&w=800');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-duvet-WP.jpg#{$imgixDefaults}&w=1600');
+          }
+        }
+        @media (min-width: 1600px) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-WP.jpg#{$imgixDefaults}&w=960');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-duvet-WP.jpg#{$imgixDefaults}&w=1920');
+          }
+        }
+      }
+    }
+    .slide-3 {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-corner-WP.jpg#{$imgixDefaults}&w=840');
+      }
+    }
+    .slide-3,
+    .swiper-pagination-bullet:nth-of-type(3) {
+      &.lazyloaded {
+        @include mq(md) {
+          background-image: url('#{$imgixUrl}/sheets-corner-WP.jpg#{$imgixDefaults}&w=1200');
+        }
+        @include mq(lg) {
+          background-image: url('#{$imgixUrl}/sheets-corner-WP.jpg#{$imgixDefaults}&w=720');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-corner-WP.jpg#{$imgixDefaults}&w=1440');
+          }
+        }
+        @media (min-width: 1440px) {
+          background-image: url('#{$imgixUrl}/sheets-corner-WP.jpg#{$imgixDefaults}&w=800');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-corner-WP.jpg#{$imgixDefaults}&w=1600');
+          }
+        }
+        @media (min-width: 1600px) {
+          background-image: url('#{$imgixUrl}/sheets-corner-WP.jpg#{$imgixDefaults}&w=960');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-corner-WP.jpg#{$imgixDefaults}&w=1920');
+          }
+        }
+      }
+    }
+    .slide-4 {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-detail-WP.jpg#{$imgixDefaults}&w=840');
+      }
+    }
+    .slide-4,
+    .swiper-pagination-bullet:nth-of-type(4) {
+      &.lazyloaded {
+        @include mq(md) {
+          background-image: url('#{$imgixUrl}/sheets-detail-WP.jpg#{$imgixDefaults}&w=1200');
+        }
+        @include mq(lg) {
+          background-image: url('#{$imgixUrl}/sheets-detail-WP.jpg#{$imgixDefaults}&w=720');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-detail-WP.jpg#{$imgixDefaults}&w=1440');
+          }
+        }
+        @media (min-width: 1440px) {
+          background-image: url('#{$imgixUrl}/sheets-detail-WP.jpg#{$imgixDefaults}&w=800');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-detail-WP.jpg#{$imgixDefaults}&w=1600');
+          }
+        }
+        @media (min-width: 1600px) {
+          background-image: url('#{$imgixUrl}/sheets-detail-WP.jpg#{$imgixDefaults}&w=960');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-detail-WP.jpg#{$imgixDefaults}&w=1920');
+          }
+        }
+      }
+    }
+  }
+  &[data-color='CD'] {
+    .slide-1 {
+      background-image: url('#{$imgixUrl}/sheets-01-hero-CD.jpg#{$imgixDefaults}&w=840');
+    }
+    .slide-1,
+    .swiper-pagination-bullet:nth-of-type(1) {
+      @include mq(md) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-CD.jpg#{$imgixDefaults}&w=1200');
+      }
+      @include mq(lg) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-CD.jpg#{$imgixDefaults}&w=720');
+        @include retina {
+          background-image: url('#{$imgixUrl}/sheets-01-hero-CD.jpg#{$imgixDefaults}&w=1440');
+        }
+      }
+      @media (min-width: 1440px) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-CD.jpg#{$imgixDefaults}&w=800');
+        @include retina {
+          background-image: url('#{$imgixUrl}/sheets-01-hero-CD.jpg#{$imgixDefaults}&w=1600');
+        }
+      }
+      @media (min-width: 1600px) {
+        background-image: url('#{$imgixUrl}/sheets-01-hero-CD.jpg#{$imgixDefaults}&w=960');
+        @include retina {
+          background-image: url('#{$imgixUrl}/sheets-01-hero-CD.jpg#{$imgixDefaults}&w=1920');
+        }
+      }
+    }
+    .slide-2 {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-duvet-CD.jpg#{$imgixDefaults}&w=840');
+      }
+    }
+    .slide-2,
+    .swiper-pagination-bullet:nth-of-type(2) {
+      &.lazyloaded {
+        @include mq(md) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-CD.jpg#{$imgixDefaults}&w=1200');
+        }
+        @include mq(lg) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-CD.jpg#{$imgixDefaults}&w=720');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-duvet-CD.jpg#{$imgixDefaults}&w=1440');
+          }
+        }
+        @media (min-width: 1440px) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-CD.jpg#{$imgixDefaults}&w=800');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-duvet-CD.jpg#{$imgixDefaults}&w=1600');
+          }
+        }
+        @media (min-width: 1600px) {
+          background-image: url('#{$imgixUrl}/sheets-duvet-CD.jpg#{$imgixDefaults}&w=960');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-duvet-CD.jpg#{$imgixDefaults}&w=1920');
+          }
+        }
+      }
+    }
+    .slide-3 {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-corner-CD.jpg#{$imgixDefaults}&w=840');
+      }
+    }
+    .slide-3,
+    .swiper-pagination-bullet:nth-of-type(3) {
+      &.lazyloaded {
+        @include mq(md) {
+          background-image: url('#{$imgixUrl}/sheets-corner-CD.jpg#{$imgixDefaults}&w=1200');
+        }
+        @include mq(lg) {
+          background-image: url('#{$imgixUrl}/sheets-corner-CD.jpg#{$imgixDefaults}&w=720');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-corner-CD.jpg#{$imgixDefaults}&w=1440');
+          }
+        }
+        @media (min-width: 1440px) {
+          background-image: url('#{$imgixUrl}/sheets-corner-CD.jpg#{$imgixDefaults}&w=800');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-corner-CD.jpg#{$imgixDefaults}&w=1600');
+          }
+        }
+        @media (min-width: 1600px) {
+          background-image: url('#{$imgixUrl}/sheets-corner-CD.jpg#{$imgixDefaults}&w=960');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-corner-CD.jpg#{$imgixDefaults}&w=1920');
+          }
+        }
+      }
+    }
+    .slide-4 {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-detail-CD.jpg#{$imgixDefaults}&w=840');
+      }
+    }
+    .slide-4,
+    .swiper-pagination-bullet:nth-of-type(4) {
+      &.lazyloaded {
+        @include mq(md) {
+          background-image: url('#{$imgixUrl}/sheets-detail-CD.jpg#{$imgixDefaults}&w=1200');
+        }
+        @include mq(lg) {
+          background-image: url('#{$imgixUrl}/sheets-detail-CD.jpg#{$imgixDefaults}&w=720');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-detail-CD.jpg#{$imgixDefaults}&w=1440');
+          }
+        }
+        @media (min-width: 1440px) {
+          background-image: url('#{$imgixUrl}/sheets-detail-CD.jpg#{$imgixDefaults}&w=800');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-detail-CD.jpg#{$imgixDefaults}&w=1600');
+          }
+        }
+        @media (min-width: 1600px) {
+          background-image: url('#{$imgixUrl}/sheets-detail-CD.jpg#{$imgixDefaults}&w=960');
+          @include retina {
+            background-image: url('#{$imgixUrl}/sheets-detail-CD.jpg#{$imgixDefaults}&w=1920');
+          }
+        }
+      }
+    }
+  }
+  .swiper-pagination-bullet:nth-of-type(5) {
+    // same for all sizes
+    &::before {
+      content: '';
+      @include play-filled(#fff);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      position: absolute;
+      top: 8px;
+      left: 5px;
+      right: 5px;
+      bottom: 8px;
+      opacity: 0.35;
+    }
+    &.lazyloaded {
+      @include mq(md) {
+        background-image: url('#{$imgixUrl}/photo-bedroom-windowpane.jpg#{$imgixDefaults}&w=120');
+      }
+    }
+  }
+}
+h2 {
+  font-weight: 700;
+  @include mq(md) {
+    font-size: 3.4rem;
+  }
+  @include mq(lg) {
+    font-size: 3.8rem;
+  }
+  strong {
+    font-weight: 900;
+  }
+}
+
+main {
+  &[data-active-size='FL'],
+  &[data-active-size='QU'],
+  &[data-active-size='KG'],
+  &[data-active-size='CK'] {
+    .delivery-window {
+      .pillowcase-qty {
+        &::before {
+          content: 'two';
+        }
+      }
+      .pillowcase {
+        &::after {
+          content: 's';
+        }
+      }
+    }
+  }
+}
+
+.logo {
+  @extend %svg;
+  height: 0;
+  padding-bottom: 85%;
+  background-position: 0 50%;
+}
+.logo-col {
+  padding-right: 0;
+}
+.photo-module {
+  @include mq(md) {
+    padding: 45px 0;
+  }
+  @include mq(lg) {
+    padding: 75px 0;
+  }
+  .container-fluid {
+    > .row {
+      @include mq(md) {
+        display: flex;
+        flex-direction: row;
+        > div {
+          flex: -1;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+  .photo-frame {
+    @include mq(xmd) {
+      padding: 0;
+    }
+    @include mq(smmd) {
+      float: none;
+    }
+  }
+  .photo {
+    background-color: #fff;
+    position: relative;
+    transition: 0.2s;
+    opacity: 0;
+    @include mq(xsm) {
+      height: 0;
+      padding-bottom: 45%;
+    }
+    @include mq(xxs) {
+      padding-bottom: 82.5%;
+    }
+    @include mq(sm) {
+      height: 400px;
+    }
+    @include mq(md) {
+      min-height: 400px;
+      height: 100%;
+      flex: 1;
+    }
+    @include mq(lg) {
+      min-height: 450px;
+    }
+    @media (min-width: 1660px) {
+      min-height: 500px;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: solid 1px rgba(0, 0, 0, 0.025);
+    }
+    &.lazyloaded {
+      opacity: 1;
+    }
+  }
+  .content {
+    @include mq(xssm) {
+      padding: vwl(30px) 20%;
+    }
+    @include mq(xxs) {
+      padding-top: vwp(30px);
+      padding-bottom: vwp(30px);
+    }
+    @include mq(smmd) {
+      width: 750px;
+      margin: 0 auto;
+      float: none;
+    }
+    @include mq(md) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &.photo-left {
+    // photo on left, content on right
+    .photo-frame {
+      @include mq(md) {
+        padding-left: 0;
+      }
+    }
+    .content {
+      @include mq(md) {
+        width: 485px;
+        padding: 0 15px 0 30px;
+      }
+      @include mq(lg) {
+        width: 585px;
+        padding: 0 45px 0 60px;
+      }
+    }
+    &.sustainable {
+      @include mq(lg) {
+        padding-top: 15px;
+      }
+      .content {
+        @include mq(lg) {
+          padding-right: 75px;
+        }
+      }
+    }
+  }
+  &.photo-right {
+    // photo on right, content on left
+    .photo-frame {
+      @include mq(md) {
+        padding: 0 0 0 30px;
+      }
+      @include mq(lg) {
+        padding: 0 0 0 60px;
+      }
+    }
+    .content {
+      @include mq(md) {
+        padding: 0 15px 0 calc(50% - 440px);
+      }
+      @include mq(lg) {
+        padding: 0 15px 0 calc(50% - 525px);
+      }
+    }
+  }
+}
+
+.sustainable {
+  background-color: #f7f6f4;
+  h2 {
+    @include mq(md) {
+      margin-top: 0;
+    }
+  }
+  h3 {
+    @include mq(xmd) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  p {
+    &.last {
+      @include mq(md) {
+        margin: 0;
+      }
+    }
+  }
+  .photo {
+    &.lazyloaded {
+      background-image: url('#{$imgixUrl}/photo-parachute.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=694');
+      background-size: cover;
+      @include mq(xs) {
+        background-image: url('#{$imgixUrl}/photo-parachute.jpg#{$imgixDefaults}#{$imgixCrop}&w=1534&h=690&fp-x=.42&fp-y=.5');
+      }
+      @include mq(sm) {
+        background-image: url('#{$imgixUrl}/photo-parachute.jpg#{$imgixDefaults}#{$imgixCrop}&w=1984&h=800&fp-x=.42&fp-y=.5');
+        background-size: 992px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+      }
+      @include mq(md) {
+        background-image: url('#{$imgixUrl}/photo-parachute.jpg#{$imgixDefaults}#{$imgixCrop}&w=1200&h=960&fp-x=.38&fp-y=.5');
+        background-size: 600px;
+        background-position: 100% 50%;
+        background-repeat: no-repeat;
+      }
+      @include mq(lg) {
+        background-image: url('#{$imgixUrl}/photo-parachute.jpg#{$imgixDefaults}#{$imgixCrop}&w=1440&h=1100&fp-x=0.38&fp-y=.5');
+        background-size: 720px;
+      }
+      @media (min-width: 1440px) {
+        background-image: url('#{$imgixUrl}/photo-parachute.jpg#{$imgixDefaults}#{$imgixCrop}&w=1660&h=1100&fp-x=.38&fp-y=.5');
+        background-size: 830px;
+      }
+      @media (min-width: 1660px) {
+        background-image: url('#{$imgixUrl}/photo-parachute.jpg#{$imgixDefaults}#{$imgixCrop}&w=1880&h=1080&fp-x=.55&fp-y=.5');
+        background-size: 960px;
+      }
+    }
+  }
+  .content {
+    @include mq(xssm) {
+      padding: vwl(30px) 20%;
+    }
+    @include mq(xxs) {
+      padding-top: vwp(30px);
+      padding-bottom: vwp(30px);
+    }
+    @include mq(smmd) {
+      padding: 30px 195px;
+    }
+  }
+  .logo {
+    @include mq(xsm) {
+      background-position: 50% 50%;
+      margin-bottom: 15px;
+      margin-bottom: vwl(15px);
+      @include mq(xxs) {
+        margin-bottom: vwp(15px);
+      }
+    }
+    &.oeko-tex {
+      @include mq(xsm) {
+        padding-bottom: 32%;
+      }
+    }
+  }
+}
+.comfort {
+  @include mq(md) {
+    padding: 45px 0;
+  }
+  @include mq(lg) {
+    padding: 75px 0;
+  }
+  h2 {
+    @include mq(md) {
+      margin-top: 0;
+    }
+  }
+  p {
+    &:last-of-type {
+      @include mq(md) {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .photo {
+    &.lazyloaded {
+      background-image: url('#{$imgixUrl}/closeup-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=694');
+      background-size: cover;
+      @include mq(xs) {
+        background-image: url('#{$imgixUrl}/closeup-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1534&h=690&fp-x=.42&fp-y=.5');
+      }
+      @include mq(sm) {
+        background-image: url('#{$imgixUrl}/closeup-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1984&h=800&fp-x=1&fp-y=.4');
+        background-size: 992px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+      }
+      @include mq(md) {
+        background-image: url('#{$imgixUrl}/closeup-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1140&h=800&fp-x=.55&fp-y=0');
+        background-size: 570px;
+        background-position: 100% 50%;
+        background-repeat: no-repeat;
+      }
+      @include mq(lg) {
+        background-image: url('#{$imgixUrl}/closeup-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1350&h=900&fp-x=.55&fp-y=0');
+        background-size: 675px;
+      }
+      @media (min-width: 1440px) {
+        background-image: url('#{$imgixUrl}/closeup-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1560&h=900&fp-x=.55&fp-y=0');
+        background-size: 830px;
+      }
+      @media (min-width: 1660px) {
+        background-image: url('#{$imgixUrl}/closeup-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1800&h=1000&fp-x=.55&fp-y=0');
+        background-size: 960px;
+      }
+    }
+  }
+  .content {
+    padding: 30px 192px;
+    @include mq(xssm) {
+      padding: vwl(30px) 20%;
+    }
+    @include mq(xxs) {
+      padding: vwp(30px) 30px;
+    }
+  }
+}
+
+.responsibly-grown {
+  background-color: #f7f5f3;
+  h2 {
+    @include mq(md) {
+      margin-top: 0;
+    }
+  }
+  .content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @include mq(xssm) {
+      padding: vwl(30px) 20%;
+    }
+    @include mq(xxs) {
+      padding-top: vwp(30px);
+      padding-bottom: vwp(30px);
+    }
+    @include mq(smmd) {
+      padding-left: 180px;
+      padding-right: 180px;
+    }
+  }
+  .photo {
+    &.lazyloaded {
+      background-image: url('#{$imgixUrl}/photo-clothesline.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=694');
+      background-size: cover;
+      @include mq(xs) {
+        background-image: url('#{$imgixUrl}/photo-clothesline.jpg#{$imgixDefaults}#{$imgixCrop}&w=1534&h=690&fp-x=.42&fp-y=.5');
+      }
+      @include mq(sm) {
+        background-image: url('#{$imgixUrl}/photo-clothesline.jpg#{$imgixDefaults}#{$imgixCrop}&w=1984&h=800&fp-x=.42&fp-y=.5');
+        background-size: 992px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+      }
+      @include mq(md) {
+        background-image: url('#{$imgixUrl}/photo-clothesline.jpg#{$imgixDefaults}#{$imgixCrop}&w=1190&h=1060&fp-x=.55&fp-y=.5');
+        background-size: 595px;
+        background-position: 100% 50%;
+        background-repeat: no-repeat;
+      }
+      @include mq(lg) {
+        background-image: url('#{$imgixUrl}/photo-clothesline.jpg#{$imgixDefaults}#{$imgixCrop}&w=1440&h=1240&fp-x=.55&fp-y=.5');
+        background-size: 720px;
+      }
+      @media (min-width: 1440px) {
+        background-image: url('#{$imgixUrl}/photo-clothesline.jpg#{$imgixDefaults}#{$imgixCrop}&w=1660&h=1240&fp-x=.55&fp-y=.5');
+        background-size: 830px;
+      }
+      @media (min-width: 1660px) {
+        background-image: url('#{$imgixUrl}/photo-clothesline.jpg#{$imgixDefaults}#{$imgixCrop}&w=1920&h=1240&fp-x=.55&fp-y=.5');
+        background-size: 960px;
+      }
+    }
+  }
+  h2 {
+    @media (max-width: 359px) {
+      font-size: vwp(22px);
+    }
+  }
+  p {
+    margin-right: 15px;
+    @include mq(xmd) {
+      margin-left: 15px;
+    }
+    &:last-of-type {
+      @include mq(md) {
+        margin-bottom: 0;
+      }
+    }
+  }
+  ul {
+    margin: 30px 0 0 15px;
+    padding: 0;
+    @include mq(xsm) {
+      margin-top: vwl(30px);
+    }
+    @include mq(xxs) {
+      margin-top: vwp(30px);
+    }
+    @include mq(md) {
+      display: flex;
+      flex-direction: row;
+      margin: 30px 0 0 0;
+    }
+  }
+  li {
+    list-style-type: none;
+    font-size: 1.4rem;
+    color: $navy;
+    padding-left: 24%;
+    position: relative;
+    font-weight: 700;
+    margin: 0 0 30px 0;
+    @include mq(xsm) {
+      margin: 0 0 vwl(30px) 0;
+      font-size: vwl(14px);
+    }
+    @include mq(xxs) {
+      margin: 0 0 vwp(30px) 0;
+      font-size: vwp(14px);
+    }
+    @include mq(md) {
+      font-size: 1.6rem;
+      padding: 0 15px 0 10%;
+      width: 50%;
+    }
+    @include mq(lg) {
+      font-size: 1.8rem;
+      padding: 0 7% 0 12.5%;
+    }
+    &:last-of-type {
+      @include mq(md) {
+        padding-right: 0;
+      }
+    }
+    &::before {
+      content: '';
+      width: 20%;
+      height: 0;
+      padding-bottom: 15%;
+      position: absolute;
+      left: 0;
+      top: -2px;
+      @extend %svg;
+      @include mq(xsm) {
+        top: vwl(-2px);
+      }
+      @include mq(xxs) {
+        top: vwp(-2px);
+      }
+      @include mq(lg) {
+        width: 42px;
+        height: 54px;
+        top: 11px;
+      }
+    }
+    &.water {
+      &::before {
+        @include water-drops($navy);
+      }
+    }
+    &.energy {
+      @include mq(lg) {
+        padding: 0 0 0 17.5%;
+      }
+      &::before {
+        @include energy-saving($navy);
+        padding-bottom: 16%;
+        top: -5px;
+        @include mq(xsm) {
+          top: vwl(-5px);
+        }
+        @include mq(xxs) {
+          top: vwp(-5px);
+        }
+        @include mq(lg) {
+          width: 48px;
+          height: 60px;
+          top: 7px;
+          left: 18px;
+        }
+      }
+    }
+  }
+}
+
+.mission {
+  background-color: #f7f5f3;
+  .photo {
+    &.lazyloaded {
+      background-image: url('#{$imgixUrl}/sheets-field-mobile.jpeg#{$imgixDefaults}#{$imgixCrop}&w=840&h=694&fp-x=.5');
+      background-size: cover;
+      @include mq(xs) {
+        background-image: url('#{$imgixUrl}/sheets-field-mobile.jpeg#{$imgixDefaults}#{$imgixCrop}&w=1534&h=690&fp-x=.5&fp-y=.5');
+      }
+      @include mq(sm) {
+        background-image: url('#{$imgixUrl}/sheets-field-mobile.jpeg#{$imgixDefaults}#{$imgixCrop}&w=1984&h=800');
+        background-size: 992px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+      }
+      @include mq(md) {
+        background-image: url('#{$imgixUrl}/sheets-field-mobile.jpeg#{$imgixDefaults}#{$imgixCrop}&w=1190&h=800');
+        background-size: 595px;
+        background-position: 100% 50%;
+      }
+      @include mq(lg) {
+        background-image: url('#{$imgixUrl}/sheets-field-mobile.jpeg#{$imgixDefaults}#{$imgixCrop}&w=1440&h=900');
+        background-size: 720px;
+      }
+      @media (min-width: 1440px) {
+        background-image: url('#{$imgixUrl}/sheets-field-mobile.jpeg#{$imgixDefaults}#{$imgixCrop}&w=1660&h=900');
+        background-size: 830px;
+      }
+      @media (min-width: 1660px) {
+        background-image: url('#{$imgixUrl}/sheets-field-mobile.jpeg#{$imgixDefaults}#{$imgixCrop}&w=1920&h=1000');
+        background-size: 960px;
+      }
+    }
+  }
+  .content {
+    padding: 30px 200px;
+    @include mq(xsm) {
+      padding: vwl(30px) 20%;
+    }
+    @include mq(xxs) {
+      padding: vwp(30px) 30px;
+    }
+    @include mq(md) {
+      width: 485px;
+      padding: 0 15px 0 30px;
+    }
+    @include mq(lg) {
+      width: 585px;
+      padding: 0 45px 0 60px;
+    }
+  }
+}
+
+.ethical {
+  padding: 30px 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  @include mq(xsm) {
+    padding: vwl(30px) 0;
+  }
+  @include mq(xxs) {
+    padding: vwp(30px) 0;
+  }
+  &.lazyloaded {
+    background-image: url('#{$imgixUrl}/sheets-texture.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=1200&fp-x=0&fp-y=0');
+    @include mq(sm) {
+      background-image: url('#{$imgixUrl}/sheets-texture.jpg#{$imgixDefaults}#{$imgixCrop}&w=992&h=750&fp-x=0&fp-y=0');
+      background-size: 992px;
+    }
+    @include mq(md) {
+      background-image: url('#{$imgixUrl}/sheets-texture.jpg#{$imgixDefaults}#{$imgixCrop}&w=1200&h=800&fp-x=0&fp-y=0');
+      background-size: 1200px;
+    }
+    @include mq(lg) {
+      background-image: url('#{$imgixUrl}/sheets-texture.jpg#{$imgixDefaults}#{$imgixCrop}&w=1920&h=870&fp-x=0&fp-y=0');
+      background-size: 1920px;
+      padding: 60px 0 75px 0;
+    }
+  }
+  .content {
+    @include mq(xssm) {
+      padding: 0 20%;
+    }
+    @include mq(sm) {
+      margin-top: 15px;
+    }
+    @include mq(md) {
+      display: flex;
+      flex-wrap: wrap;
+      > div {
+        display: flex;
+        align-items: center;
+      }
+    }
+    .row {
+      @include mq(sm) {
+        display: flex;
+        flex-direction: row;
+        > div {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+  .logo {
+    margin: 15px auto;
+    @include mq(xssm) {
+      margin: vwl(15px) auto;
+    }
+    @include mq(xxs) {
+      margin: vwp(15px) auto;
+    }
+    @include mq(sm) {
+      width: 100%;
+      padding-bottom: 100%;
+    }
+    &.oeko-tex {
+      @include mq(xsm) {
+        padding-bottom: 50%;
+      }
+      @include mq(sm) {
+        padding-bottom: 33%;
+      }
+    }
+    &.newsweek {
+      padding-bottom: 117%;
+    }
+  }
+  p {
+    @include mq(sm) {
+      margin: 0;
+    }
+    @include mq(lg) {
+      margin: 0 15px;
+    }
+  }
+}
+
+// Cotton Blend Sheets
+.perfect-blend {
+  .content {
+    padding: 30px 200px;
+    @include mq(xsm) {
+      padding: vwl(30px) 20%;
+    }
+    @include mq(xxs) {
+      padding: vwp(30px) 30px;
+    }
+  }
+  .photo {
+    &.lazyloaded {
+      background-image: url('#{$imgixUrl}/photo-bedroom-windowpane.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=694&fp-x=.42');
+      background-size: cover;
+      @include mq(xs) {
+        background-image: url('#{$imgixUrl}/photo-bedroom-windowpane.jpg#{$imgixDefaults}#{$imgixCrop}&w=1534&h=690&fp-x=.42&fp-y=.38');
+      }
+      @include mq(sm) {
+        background-image: url('#{$imgixUrl}/photo-bedroom-windowpane.jpg#{$imgixDefaults}#{$imgixCrop}&w=1984&h=800&fp-x=.42&fp-y=.45');
+        background-size: 992px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+      }
+      @include mq(md) {
+        background-image: url('#{$imgixUrl}/photo-bedroom-windowpane.jpg#{$imgixDefaults}#{$imgixCrop}&w=1200&h=840&fp-x=0&fp-y=0');
+        background-size: 600px;
+      }
+      @include mq(lg) {
+        background-image: url('#{$imgixUrl}/photo-bedroom-windowpane.jpg#{$imgixDefaults}#{$imgixCrop}&w=1420&h=900&fp-x=0&fp-y=0&fp-z=1.05');
+        background-size: 710px;
+      }
+      @media (min-width: 1440px) {
+        background-image: url('#{$imgixUrl}/photo-bedroom-windowpane.jpg#{$imgixDefaults}#{$imgixCrop}&w=1630&h=900&fp-x=0&fp-y=0.5');
+        background-size: 815px;
+      }
+      @media (min-width: 1660px) {
+        background-image: url('#{$imgixUrl}/photo-bedroom-windowpane.jpg#{$imgixDefaults}#{$imgixCrop}&w=1880&h=1000&fp-x=0&fp-y=.5');
+        background-size: 940px;
+      }
+    }
+  }
+}
+
+.year-round-comfort {
+  background-color: #f7f5f3;
+  .content {
+    padding: 30px 200px;
+    @include mq(xsm) {
+      padding: vwl(30px) 20%;
+    }
+    @include mq(xxs) {
+      padding: vwp(30px) 30px;
+    }
+  }
+  .photo {
+    &.lazyloaded {
+      background-image: url('#{$imgixUrl}/photo-couple-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=694&fp-x=.5');
+      background-size: cover;
+      @include mq(xs) {
+        background-image: url('#{$imgixUrl}/photo-couple-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1534&h=690&fp-x=.5&fp-y=.45');
+      }
+      @include mq(sm) {
+        background-image: url('#{$imgixUrl}/photo-couple-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1984&h=800&fp-x=.5&fp-y=.5');
+        background-size: 992px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+      }
+      @include mq(md) {
+        background-image: url('#{$imgixUrl}/photo-couple-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1200&h=840&fp-x=0&fp-y=0');
+        background-size: 600px;
+      }
+      @include mq(lg) {
+        background-image: url('#{$imgixUrl}/photo-couple-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1320&h=900&fp-x=0&fp-y=0');
+        background-size: 660px;
+      }
+      @media (min-width: 1440px) {
+        background-image: url('#{$imgixUrl}/photo-couple-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1540&h=900&fp-x=0&fp-y=1');
+        background-size: 770px;
+      }
+      @media (min-width: 1660px) {
+        background-image: url('#{$imgixUrl}/photo-couple-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1800&h=1000&fp-x=0.5&fp-y=.55');
+        background-size: 900px;
+      }
+    }
+  }
+}
+
+.perfect-night {
+  background-color: #f7f5f3;
+  .content {
+    padding: 30px 200px;
+    @include mq(xsm) {
+      padding: vwl(30px) 20%;
+    }
+    @include mq(xxs) {
+      padding: vwp(30px) 30px;
+    }
+  }
+  .photo {
+    &.lazyloaded {
+      background-image: url('#{$imgixUrl}/photo-couple-prone.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=694&fp-x=.5');
+      background-size: cover;
+      @include mq(xs) {
+        background-image: url('#{$imgixUrl}/photo-couple-prone.jpg#{$imgixDefaults}#{$imgixCrop}&w=1534&h=690&fp-x=.5&fp-y=.5');
+      }
+      @include mq(sm) {
+        background-image: url('#{$imgixUrl}/photo-couple-prone.jpg#{$imgixDefaults}#{$imgixCrop}&w=1984&h=800&fp-x=.5&fp-y=.5');
+        background-size: 992px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+      }
+      @include mq(md) {
+        background-image: url('#{$imgixUrl}/photo-couple-prone.jpg#{$imgixDefaults}#{$imgixCrop}&w=1170&h=800&fp-x=0.5&fp-y=0.5');
+        background-size: 585px;
+      }
+      @include mq(lg) {
+        background-image: url('#{$imgixUrl}/photo-couple-prone.jpg#{$imgixDefaults}#{$imgixCrop}&w=1410&h=900&fp-x=0.5&fp-y=0.45');
+        background-size: 705px;
+      }
+      @media (min-width: 1440px) {
+        background-image: url('#{$imgixUrl}/photo-couple-prone.jpg#{$imgixDefaults}#{$imgixCrop}&w=1630&h=900&fp-x=0.5&fp-y=0.48');
+        background-size: 815px;
+      }
+      @media (min-width: 1660px) {
+        background-image: url('#{$imgixUrl}/photo-couple-prone.jpg#{$imgixDefaults}#{$imgixCrop}&w=1890&h=1000&fp-x=.5&fp-y=.45');
+        background-size: 960px;
+      }
+    }
+  }
+}
+
+.hypoallergenic {
+  .content {
+    padding: 30px 200px;
+    @include mq(xsm) {
+      padding: vwl(30px) 20%;
+    }
+    @include mq(xxs) {
+      padding: vwp(30px) 30px;
+    }
+  }
+  .photo {
+    &.lazyloaded {
+      background-image: url('#{$imgixUrl}/photo-clothesline-candid.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=694&fp-x=.7');
+      background-size: cover;
+      background-repeat: no-repeat;
+      @include mq(xs) {
+        background-image: url('#{$imgixUrl}/photo-clothesline-candid.jpg#{$imgixDefaults}#{$imgixCrop}&w=1534&h=690&fp-x=.7&fp-y=.4');
+      }
+      @include mq(sm) {
+        background-image: url('#{$imgixUrl}/photo-clothesline-candid.jpg#{$imgixDefaults}#{$imgixCrop}&w=1984&h=800&fp-x=.7&fp-y=.4');
+        background-size: 992px;
+        background-position: 50% 50%;
+      }
+      @include mq(md) {
+        background-image: url('#{$imgixUrl}/photo-clothesline-candid.jpg#{$imgixDefaults}#{$imgixCrop}&w=1140&h=800&fp-x=0.7&fp-y=0.4');
+        background-size: 600px;
+        background-position: 100% 50%;
+      }
+      @include mq(lg) {
+        background-image: url('#{$imgixUrl}/photo-clothesline-candid.jpg#{$imgixDefaults}#{$imgixCrop}&w=1440&h=1040&fp-x=0.7&fp-y=0.4');
+        background-size: 720px;
+      }
+      @media (min-width: 1440px) {
+        background-image: url('#{$imgixUrl}/photo-clothesline-candid.jpg#{$imgixDefaults}#{$imgixCrop}&w=1540&h=900&fp-x=0.7&fp-y=0.4');
+        background-size: 770px;
+      }
+      @media (min-width: 1660px) {
+        background-image: url('#{$imgixUrl}/photo-clothesline-candid.jpg#{$imgixDefaults}#{$imgixCrop}&w=1800&h=1000&fp-x=0.7&fp-y=.4');
+        background-size: 960px;
+      }
+    }
+  }
+}
+
+.crafted {
+  background-color: #f7f5f3;
+  .content {
+    padding: 30px 200px;
+    @include mq(xsm) {
+      padding: vwl(30px) 20%;
+    }
+    @include mq(xxs) {
+      padding: vwp(30px) 30px;
+    }
+  }
+  .photo {
+    &.lazyloaded {
+      background-image: url('#{$imgixUrl}/photo-bedroom-grey.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=694&fp-x=.5');
+      background-size: cover;
+      @include mq(xs) {
+        background-image: url('#{$imgixUrl}/photo-bedroom-grey.jpg#{$imgixDefaults}#{$imgixCrop}&w=1534&h=690&fp-x=.5&fp-y=.6');
+      }
+      @include mq(sm) {
+        background-image: url('#{$imgixUrl}/photo-bedroom-grey.jpg#{$imgixDefaults}#{$imgixCrop}&w=1984&h=800&fp-x=.5&fp-y=.6');
+        background-size: 992px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+      }
+      @include mq(md) {
+        background-image: url('#{$imgixUrl}/photo-bedroom-grey.jpg#{$imgixDefaults}#{$imgixCrop}&w=1170&h=800&fp-x=.5&fp-y=.5');
+        background-size: 585px;
+      }
+      @include mq(lg) {
+        background-image: url('#{$imgixUrl}/photo-bedroom-grey.jpg#{$imgixDefaults}#{$imgixCrop}&w=1410&h=900&fp-x=.5&fp-y=.5');
+        background-size: 705px;
+      }
+      @media (min-width: 1440px) {
+        background-image: url('#{$imgixUrl}/photo-bedroom-grey.jpg#{$imgixDefaults}#{$imgixCrop}&w=1630&h=900&fp-x=.5&fp-y=.525');
+        background-size: 815px;
+      }
+      @media (min-width: 1660px) {
+        background-image: url('#{$imgixUrl}/photo-bedroom-grey.jpg#{$imgixDefaults}#{$imgixCrop}&w=1890&h=1040&fp-x=0.5&fp-y=.525');
+        background-size: 945px;
+      }
+    }
+  }
+}
+
+.gots {
+  @include logo-GOTS();
+}
+.oeko-tex {
+  @include logo-oeko();
+}
+.sfc {
+  @include logo-sustainable-furnishings-council(#8cc543);
+}
+.newsweek {
+  @include logo-newsweek-award-2021-vertical();
+}

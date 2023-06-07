@@ -1,0 +1,525 @@
+{% macro productUtilities(p) %}
+  function getProductSize(x) {
+    switch(x.toUpperCase()) {
+      {%- if p.catSizes == 2 -%}
+        case 'STANDARD': return 'ST';
+        case 'KING': return 'KG';
+        default: return 'ST';
+      {%- elif p.catSizes == 3 -%}
+        case 'TWIN-TWIN-XL':
+        case 'TWIN-TWIN-XL-FASTSHIP': return 'TT';
+        case 'FULL-QUEEN':
+        case 'FULL-QUEEN-FASTSHIP': return 'FQ';
+        case 'KING-CAL-KING':
+        case 'KING-CAL-KING-FASTSHIP': return 'KC';
+        default: return 'TT';
+      {%- else -%}
+        case 'TWIN': 
+        case 'TWIN-FASTSHIP': return 'TW';
+        case 'TWINXL':
+        case 'TWIN-XL':
+        case 'TWIN-XL-FASTSHIP': return 'TX';
+        case 'FULL':
+        case 'FULL-FASTSHIP': return 'FL';
+        case 'QUEEN':
+        case 'QUEEN-FASTSHIP': return 'QU';
+        case 'KING':
+        case 'KING-FASTSHIP': return 'KG';
+        case 'CALIFORNIA-KING':
+        case 'CALIFORNIA-KING-FASTSHIP': return 'CK';
+        case 'CALKING':
+        case 'CAL-KING':
+        case 'CAL-KING-FASTSHIP': return 'CK';
+        default: return 'TW';
+      {%- endif -%}
+    }
+  }
+
+  function getColorCode(x) {
+    switch(x.toUpperCase()) {
+      {%- if (p.defaultCatId == 40) or (p.defaultCatId == 41) -%}
+        {# islay frames #}
+        case 'DESERT-SAND':
+        case 'DESERTSAND':
+        case 'SAND': return 'DS';
+        case 'COLD-STONE':
+        case 'COLDSTONE':
+        case 'STONE': return 'CS';
+      {%- else %}
+        case 'BRILLIANT-WHITE':
+        case 'WHITE':
+        case 'BRILLIANTWHITE': return 'BW';
+        case 'QUIET-GREY':
+        case 'QUIETGREY': return 'QG';
+        case 'GRANITE-GREY':
+        case 'GRANITEGREY': return 'GG';
+        case 'MOON-BEAM':
+        case 'MOONBEAM': return 'MB';
+        case 'PLEIN-AIR':
+        case 'PLEINAIR': return 'PA';
+        case 'WINDOW-PANE':
+        case 'WINDOWPANE': return 'WP';
+        case 'COOL-DOT':
+        case 'COOLDOT': return 'CD';
+      {%- endif %}
+        default: return '{{ p.defaultColor }}';
+    }
+  }
+  function setActive(x) {
+    $(x).attr('data-active', true).siblings().attr('data-active', false);
+  }
+  function getTypeCode(x) {
+    switch(x.toUpperCase()) {
+      case 'CLASSIC': return 'UU';
+      case 'TUFTED': return 'TU';
+      default: return '{{ p.defaultProductType }}';
+    }
+  }
+  function checkInventory(type, color, catSizes) {
+    const items = document.querySelectorAll(`.size-select li[data-type="${type}"][data-color="${color}"]`);
+    let totalOutOfStock = 0;
+    items.forEach(item => {
+      let oos = item.getAttribute('data-out-of-stock') === 'true';
+      if (oos) {
+        totalOutOfStock ++;
+      }
+    })    
+    if (totalOutOfStock === catSizes) {
+      $('#btn-addtocart').slideUp(200);
+    } else {
+      $('#btn-addtocart').slideDown(200);
+    }
+  }
+  
+  
+{% endmacro %}
+{% macro processUpsells(p) %}
+  function getUpsellSize(pSize) {
+    switch(pSize) {
+      case 'TW': 
+      case 'TX': 
+        uSize = 'TT';
+        break;
+      case 'FL':
+      case 'QU': 
+        uSize = 'FQ';
+        break;
+      case 'KG':
+      case 'CK': 
+        uSize = 'KC';
+        break;
+    }
+  }
+
+  function showUpsells() {
+    function updateFinancing(items) {
+      items.forEach(item => {
+        const f = document.querySelector(item);
+        const priceItem = f.querySelector(`.price[data-sku="${pSku}"`);
+        priceItem.setAttribute('data-upsell-selected', uSelected);
+        priceItem.querySelector('.current-monthly-payment').innerHTML = uMprice;
+        const cp = priceItem.querySelector('.current-price');
+        if (typeof(cp) !== 'undefined' && cp !== null ) {
+          cp.innerHTML = oTotal;
+        }
+        const ct = priceItem.querySelector('.current-term');
+        if (typeof(ct) !== 'undefined' && ct !== null ) {
+          ct.innerHTML = term;
+        }
+        document.querySelector('.product-gallery').setAttribute('data-upsell-selected', uSelected);
+      });
+    }
+
+    const u = document.querySelectorAll('.upsell-list .item');
+    oTotal = pPrice;
+    uTotal = 0;
+    oQty = pQty;
+    
+    u.forEach(item => {
+      let uType = item.dataset.type;
+      const setActive = item.dataset.setActive === 'true';
+      const inventory = item.querySelectorAll('.inventory li');
+      let active = false;
+      inventory.forEach(product => {
+        if (product.classList.contains('active')) { active = true; }
+        console.log('active??', active)
+        product.style.display = 'none';
+        product.classList.remove('active');
+      })
+      const matchColor = item.dataset.matchColor === 'true';
+      const colorSelection = item.dataset.colorSelection === 'true';
+      if (colorSelection) {
+        uColor = item.querySelector('.color-select li[data-active="true"]').dataset.color;
+      } else {
+        uColor = item.querySelector('.inventory li:first-of-type').data('color');
+      }
+      let modalItems = document.querySelectorAll(`#upsell-modal-${uType}.item li`);
+      modalItems.forEach(modalItem => { modalItem.style.display = 'none'; });
+      const catSizes = Number(item.dataset.productCatSizes);
+
+      if (catSizes == 2) {
+        if ((pSize == 'KG') || (pSize == 'CK')) {
+          uSize = 'KG';
+        } else {
+          uSize = 'ST';
+        }
+      } else {
+        getUpsellSize(pSize);
+      }
+      let typeBtnContainer = item.querySelector('.type-select');
+      let typeSelection = false;
+      if (typeof(typeBtnContainer) !== 'undefined' && typeBtnContainer !== null ) {
+        uType = item.querySelector('.type-select li[data-active="true"]').dataset.type;
+        typeSelection = true;
+      }
+      console.log('typeSelection', typeSelection)
+
+      let l = '.inventory li[data-type="' + uType + '"][data-size="' + uSize + '"]';
+      if (colorSelection) {
+        l = l + '[data-color="' + uColor + '"]';
+      } 
+      const oos = item.querySelector(l).dataset.outOfStock === 'true';
+      item.querySelector('label').setAttribute('data-out-of-stock', oos);
+      item.querySelector(l).style.display = 'block';
+      if (typeSelection) {
+        const typeItems = item.querySelectorAll('.type-select li');
+        typeItems.forEach(typeItem => {
+          typeItem.style.display = 'none';
+          typeItem.setAttribute('data-active', false);
+        })
+        const n = 'li[data-color="' + uColor + '"][data-size="' + uSize + '"]';
+        const activeItems = typeBtnContainer.querySelectorAll(n);
+        const activeItem = typeBtnContainer.querySelector(n + '[data-type="' + uType + '"]');
+        activeItem.setAttribute('data-active', true);
+        activeItems.forEach(item => {
+          item.style.display = 'flex';
+        })
+      }
+      if ((active && !oos) || (setActive && !oos)) {
+        const m = l + '[data-out-of-stock="false"]';
+        console.log('m', m)
+        item.querySelector(m).classList.add('active');
+        oQty = (oQty + 1);
+        item.setAttribute('data-set-active', false);
+      } 
+
+      const btnText = document.querySelector('#btn-addtocart span');
+      btnText.setAttribute('data-quantity', oQty);
+      if (oQty == 1) {
+        btnText.style.display = 'none';
+      } else {
+        btnText.style.display = 'inline-block';
+      }
+
+      modalItems = document.querySelectorAll(`#upsell-modal-${uType} .item ${l}`);
+      modalItems.forEach(modalItem => { item.style.display = 'none'; });
+      if (matchColor) {
+        document.querySelector(`#upsell-modal-${uType} .product-gallery`).setAttribute('data-color', pColor);
+      }
+        
+      {# Financing #}
+      if (active) {
+        uTotal += document.querySelector(`.inventory li[data-sku="LU-${uType}-${uColor}-${uSize}"]`).dataset.price;
+        oTotal = Number(uTotal) + Number(pPrice);
+      }
+    });
+
+    let uSelected = false;
+    let term = 18;
+    let uMprice = 0;
+    console.log('oTotal', oTotal)
+    if (oTotal > pPrice) {
+      uSelected = true;
+      if (oTotal > 799) {
+        term = 24;
+      }
+      uMprice = Math.round(oTotal / term);
+    }
+    const financeItems = ['.financing', '#financing-modal'];
+    updateFinancing(financeItems);
+    const financeModal = document.querySelector('#financing-modal');
+  }
+{% endmacro %}
+
+{% macro tooltips(p) %}
+  {% set colorSelection = false %}
+  {%- for u in p.upsells -%}
+    {%- if u.colorSelection -%}
+      {% set colorSelection = true %}
+    {% endif %}
+  {% endfor %}
+  {%- if p.colorSelection or colorSelection -%}
+    {%- if p.colorSelection -%}
+      if (window.innerWidth > 767) {
+      {% for c in p.colorDisplayOrder %}
+        tippy(
+          'li.color[data-color="{{ c.color }}"]', { 
+            html: '.tooltip-{{ c.color }}',
+            arrow: 'true', 
+            position: 'bottom',
+            theme: 'lull',
+            zIndex: '1040'
+        })
+      {% endfor %}
+      }
+    {%- elif colorSelection and not p.colorSelection -%}
+      {%- set colors = [] -%}
+      {%- for u in p.upsells -%}
+        {%- if u.colorSelection -%}
+          if (window.innerWidth > 767) {
+          {% for c in u.colorDisplayOrder %}
+            tippy(
+              'li.color[data-color="{{ color }}"]', { 
+                html: '.tooltip-{{ color }}',
+                arrow: 'true', 
+                position: 'bottom',
+                theme: 'lull',
+                zIndex: '1040'
+            })
+          {% endfor %}
+          }
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endif -%}
+
+  {%- if p.comboPage and not p.comboProductButtonTitles -%}
+    {% for item in p.skus %}
+      {% set open = true %}
+      {%- if item.catId == catId and open -%}
+        if (window.innerWidth > 767) {
+          tippy(
+          '.type-select li[data-type="{{ item.type }}"]', { 
+            html: '.tooltip-{{ item.type }}',
+            arrow: 'true', 
+            position: 'bottom',
+            theme: 'lull',
+            zIndex: '1040'
+          })
+        }
+        {% set open = false %}
+      {% endif -%}
+    {%- endfor -%}
+
+    {%- for catId in p.catIds -%}
+      {%- set open = true -%}
+      {%- for item in p.skus -%}
+        {%- if item.catId == catId and open %}
+          if (window.innerWidth > 767) {
+            tippy(
+            '.type-select li[data-type="{{ item.type }}"]', { 
+              html: '.tooltip-{{ item.type }}',
+              arrow: 'true', 
+              position: 'bottom',
+              theme: 'lull',
+              zIndex: '1040'
+            })
+          }
+          {% set open = false %}
+        {% endif -%}
+      {%- endfor -%}
+    {%- endfor -%}
+  {%- endif -%}
+  
+  {%- for item in p.skus -%}
+    {%- for i in range(1, p.maxQty + 1) -%}
+      tippy( 
+        '.financing .question[data-sku="{{ item.sku }}"][data-quantity="{{ i }}"]', {
+          html: '.monthly-apr[data-sku="{{ item.sku }}"][data-quantity="{{ i }}"]',
+          arrow: 'true',
+          position: 'bottom',
+          theme: 'lull',
+          interactive: 'true',
+          hideOnClick: 'true',
+          zIndex: '1040'
+      })
+    {% endfor -%}
+  {%- endfor %}
+  
+  {% for ratings in p.ratings %}
+    {% if ratings.tooltip %}
+      tippy( 
+        '.product-display .star-rating', { 
+          html: '#reviews-tooltip',
+          arrow: 'true', 
+          position: 'bottom',
+          theme: 'lull'
+      })
+      {% if p.comboPage %}
+        {% for c in p.comboProduct %}
+          tippy( 
+            '.product-display .combo-tooltip-trigger-{{ c.comboProductType }}', { 
+              html: '#combo-tooltip-{{ c.comboProductType }}',
+              arrow: 'true', 
+              position: 'bottom',
+              theme: 'lull'
+          })
+        {% endfor %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endmacro %}
+
+{% macro addToCart() %}
+  <script>
+    function addToCart() {
+      if (showUpsellModal) {
+        {#
+        // console.log('Total Price', pPrice + uTotal + uModalPrice);
+        // console.log('Unit Price', uModalPrice);
+        // console.log('Products', uModalSku);
+        // console.log('Total Upsell', uTotal + uModalPrice);
+        #}
+        items = [];
+        items.push({ 'sku': uModalSku, 'quantity': 1 });
+        dataLayer.push({
+          'event': 'custom_event',
+          'eventCategory': 'add-to-cart',
+          'eventAction': 'button-click',
+          'eventLabel': 'protector-upsell-add-to-cart',
+          'eventName': 'Shop - Protector Upsell - Add to Cart - Custom',
+          'eventData': {
+            'Total Price': pPrice + uTotal + uModalPrice, // total of primary product and upsells
+            'Unit Price': uModalPrice, // Unit price of primary product
+            'Products': uModalSku, // all products being added to cart
+            'Total Upsell': uTotal + uModalPrice // upsell total
+          }
+        });
+      }
+      else {
+        items.push({ 'sku': pSku, 'quantity': pQty });
+        allItems.push(pSku);
+
+        {% if p.upsellModal %}
+          $('#upsell .item').hide();
+          var uCurrent = $('#upsell .item[data-sku$="' + pSize + '"]');
+          uModalSku = $(uCurrent).data('sku');
+          uModalOos = $(uCurrent).data('out-of-stock');
+          uModalPrice = $(uCurrent).data('price');
+          $(uCurrent).show();
+        {% endif %}
+        
+        {% if p.bundle %}
+          var bundleItem = $('.size-select li[data-active="true"] input');
+          jQuery.each(bundleItem, function(i) {
+            var bSku = $(this).data('sku');
+            var q = $(this).data('qty');
+            var bQty = (q * pQty);
+            items.push({ 'sku': bSku, 'quantity': bQty });
+            allItems.push(bSku);
+          });
+        {% endif %}
+
+        {% if p.upsell %}
+          var x = $('.upsell-list .item');
+          jQuery.each(x, function(i) {
+            var bundle = $(this).data('bundle') || false;
+            if ($(this).find('.inventory li').hasClass('active')) {
+              uSku = $(this).find('.inventory li.active').data('sku');
+              items.push({ 'sku': uSku, 'quantity': 1 });
+              allItems.push(uSku);
+              if (bundle) {
+                var b = $(this).find('.inventory li.active').find('input');
+                jQuery.each(b, function(i) {
+                  var bSku = $(this).data('bundle-sku');
+                  items.push({ 'sku': bSku, 'quantity': 1 });
+                  allItems.push(bSku);
+                });
+              }
+            }
+          });
+        {% endif %}
+
+        if (oTotal == null) {
+          oTotal = pPrice;
+        }
+
+        {#
+        // console.log('Total Price', oTotal);
+        // console.log('Unit Price', pPrice);
+        // console.log('Products', allItems.join(","));
+        // console.log('Total Upsell', uTotal);
+        #}
+        dataLayer.push({
+          'event':'custom_event',
+          'eventCategory':'add-to-cart',
+          'eventAction': 'button-click',
+          'eventLabel': 'shop-page-add-to-cart',
+          'eventName': 'Shop - Click - Add to Cart - Custom',
+          'eventData': {
+            'Total Price': oTotal, // total of primary product and upsells
+            'Unit Price': pPrice, // Unit price of primary product
+            'Products': allItems.join(","), // all products being added to cart
+            'Total Upsell': uTotal // upsell total
+          }
+        });
+      }
+
+      {% set bundledDiscount = false %}
+      {% if p.bundle %}
+        {% set bundledDiscount = true %}
+      {% endif %}
+      
+      pushToDataLayer({
+        'event': 'add_to_cart',
+        'eventCallback': function(containerId) {
+          if (containerId === '{{state.config.GTM_CONTAINER}}') {
+            $.ajax("/api/addCartItems", {
+              contentType: "application/x-www-form-urlencoded",
+              data: { items: items, bundledDiscount: {{ bundledDiscount }} },
+              type: "POST",
+              success: function(result, status, xhr) {
+                if (result.ok !== true) {
+                  console.log("FAIL addCartItem: " + result.debug);
+                  displayErrorBox(result.message);
+                }
+
+                {% if p.upsellModal %}
+                  else if (uModalOos) {
+                    window.location.href = "/cart";
+                  } else if (!uModalOos && !showUpsellModal) {
+                    showUpsellModal = true;
+                    $('.modal').modal('hide');
+                    $("#upsell").modal({show: true, backdrop: "static", keyboard: false});											
+                    // push modal shown event
+                    pushToDataLayer({
+                      'event':'custom_event',
+                      'eventCategory':'upsell',
+                      'eventAction': 'modal-shown',
+                      'eventLabel': 'protector-upsell-modal',
+                      'eventName': 'Shop - Protector Upsell Modal Shown - Custom',
+                    });
+                    pushToDataLayer({
+                      'event': 'product_view',
+                      'added_sku': uModalSku,
+                      'eventTimeout': 2000
+                    });
+                    $('#upsell .modal-dialog').on('keypress click', function(e) {
+                      e.stopPropagation();
+                    })
+                    $(document).on('keypress click', function(e) {
+                      window.location.href = "/cart";
+                    });
+                  }
+                {% endif %}
+                
+                else {
+                  {% if p.bundle %}
+                    if (result.campaignId && result.campaignId > 0)
+                      window.location.href = "/cart?c=" + result.campaignId;
+                    else
+                  {% endif %}
+                  window.location.href = "/cart";
+                }									
+              },
+              error: function(xhr, status, error) {
+                displayGenericError();
+              }
+            });
+          }
+        },
+        'eventTimeout': 2000
+      });
+    }
+  </script>
+{% endmacro %}

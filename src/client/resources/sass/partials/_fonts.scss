@@ -1,0 +1,54 @@
+@font-face {
+	font-family: 'Avenir';
+	font-weight: 400;
+	font-style: normal;
+	src: url(Avenir400Roman.svg#Avenir400Roman) format('svg'),
+       url(Avenir400Roman.ttf) format('truetype'), 
+       url(Avenir400Roman.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Avenir';
+	font-weight: 500;
+	font-style: normal;
+	src: url(Avenir500Medium.svg#Avenir500Medium) format('svg'),
+       url(Avenir500Medium.ttf) format('truetype'),
+       url(Avenir500Medium.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Avenir';
+	font-weight: 700;
+	font-style: normal;
+	src: url(Avenir700Heavy.svg#Avenir700Heavy) format('svg'),
+       url(Avenir700Heavy.ttf) format('truetype'),
+       url(Avenir700Heavy.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Avenir';
+	font-weight: 900;
+	font-style: normal;
+	src: url(Avenir900Black.svg#Avenir900Black) format('svg'),
+       url(Avenir900Black.ttf) format('truetype'), 
+       url(Avenir900Black.woff) format('woff');
+}
+
+/* Manrope Font */
+@font-face {
+	font-family: 'Manrope';
+	font-weight: 400;
+	src: url(Manrope-Regular.ttf) format("truetype");
+}
+
+body {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Avenir", "Trebuchet MS", Helvetica, Arial, sans-serif;
+}
+
+input {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Manrope", "Trebuchet MS", Helvetica, Arial, sans-serif;
+}
