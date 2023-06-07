@@ -15,7 +15,7 @@ body {
 }
 
 nav {
-  background-color: #fff;
+  background-color: #0b2836;
   position: fixed;
   top: 0;
   left: 0;
@@ -23,14 +23,6 @@ nav {
   height: 50px;
   z-index: 1060;
   margin: 0 auto;
-}
-@media (min-width: 768px) {
-  nav {
-    background-color: #0b2836;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-  }
 }
 nav h2, nav p {
   color: #ffffff;
@@ -41,12 +33,32 @@ nav h2 {
   line-height: 1.4;
   text-align: left;
 }
+@media (max-width: 767px) {
+  nav h2 {
+    font-size: 3.1690140845vw;
+  }
+}
+@media (max-width: 543px) {
+  nav h2 {
+    font-size: 5.625vw;
+  }
+}
 nav h2 span {
   color: #56dbd6;
 }
 nav p {
   font-size: 16px;
   line-height: 1.4;
+}
+@media (max-width: 767px) {
+  nav p {
+    font-size: 2.1126760563vw;
+  }
+}
+@media (max-width: 543px) {
+  nav p {
+    font-size: 3.75vw;
+  }
 }
 nav .container-fluid {
   position: relative;
@@ -184,9 +196,25 @@ nav .header-content {
   background-image: linear-gradient(top, rgb(11, 40, 54) 0, rgb(11, 40, 54) 100px, rgba(11, 40, 54, 0.75) 150px, rgba(11, 40, 54, 0.75) 100%);
   background-image: -webkit-linear-gradient(top, rgb(11, 40, 54) 0, rgb(11, 40, 54) 100px, rgba(11, 40, 54, 0.75) 150px, rgba(11, 40, 54, 0.75) 100%);
 }
+@media (max-width: 767px) {
+  nav .header-content {
+    right: 0;
+  }
+}
 nav .header-content > div {
   padding: 90px 45px 0 45px;
   width: 600px;
+}
+@media (max-width: 767px) {
+  nav .header-content > div {
+    width: 100vw;
+    padding: 75px 20% 0 20%;
+  }
+}
+@media (max-width: 543px) {
+  nav .header-content > div {
+    padding: 75px 15px 0 15px;
+  }
 }
 nav[data-collapsed=true] .header-nav.collapse a::before {
   content: "Show";

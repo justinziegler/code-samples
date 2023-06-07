@@ -58,12 +58,8 @@ async function mattress(ctx, next) {
         comboProductButtonTitles: true,
         comboProductButtonLabels: false,
         pageUrl: 'mattress',
-        gallerySlides: 5,
+        gallerySlides: 4,
         galleryDimensions: 0,
-        galleryVideo: true,
-        galleryVideoSlide: 5,
-        galleryVideoUrl: ['https://lull-media.imgix.net/original-premium/original-premium.m4v?auto=format,compress', 'https://lull-media.imgix.net/shop-luxe/Lull_Video01_FHD_2VBR.mp4?auto=format,compress'],
-        galleryVideoPoster: 'https://lull-media.imgix.net/original-premium/original-premium.m4v?fm=jpg&w=840&frame=1',
         longTitle: false,
         heading: 'The Original Mattress',
         subheading: 'Ships in 1-<span>4</span> business days',
@@ -88,26 +84,6 @@ async function mattress(ctx, next) {
           }
         ],
         productDimensions: true,
-        dimensions: [
-          { size: 'LU-MA-WH-TW', w: '38"', l: '75"', h: '10"', weight: '50 lbs' },
-          { size: 'LU-MA-WH-TX', w: '38"', l: '80"', h: '10"', weight: '53 lbs' },
-          { size: 'LU-MA-WH-FL', w: '54"', l: '75"', h: '10"', weight: '63 lbs' },
-          { size: 'LU-MA-WH-QU', w: '60"', l: '80"', h: '10"', weight: '74 lbs' },
-          { size: 'LU-MA-WH-KG', w: '76"', l: '80"', h: '10"', weight: '93 lbs' },
-          { size: 'LU-MA-WH-CK', w: '72"', l: '84"', h: '10"', weight: '93 lbs' },
-          { size: 'LU-PM-WH-TW', w: '38"', l: '75"', h: '12"', weight: '65 lbs' },
-          { size: 'LU-PM-WH-TX', w: '38"', l: '80"', h: '12"', weight: '68 lbs' },
-          { size: 'LU-PM-WH-FL', w: '54"', l: '75"', h: '12"', weight: '91 lbs' },
-          { size: 'LU-PM-WH-QU', w: '60"', l: '80"', h: '12"', weight: '108 lbs' },
-          { size: 'LU-PM-WH-KG', w: '76"', l: '80"', h: '12"', weight: '142 lbs' },
-          { size: 'LU-PM-WH-CK', w: '72"', l: '84"', h: '12"', weight: '141 lbs' },
-          { size: 'LU-HY-WH-TW', w: '38"', l: '75"', h: '13"', weight: '65 lbs' },
-          { size: 'LU-HY-WH-TX', w: '38"', l: '80"', h: '13"', weight: '68 lbs' },
-          { size: 'LU-HY-WH-FL', w: '54"', l: '75"', h: '13"', weight: '91 lbs' },
-          { size: 'LU-HY-WH-QU', w: '60"', l: '80"', h: '13"', weight: '108 lbs' },
-          { size: 'LU-HY-WH-KG', w: '76"', l: '80"', h: '13"', weight: '142 lbs' },
-          { size: 'LU-HY-WH-CK', w: '72"', l: '84"', h: '13"', weight: '141 lbs' }
-        ],
         colorSelection: false,
         qtySelection: false,
         maxQty: 1,
@@ -121,6 +97,7 @@ async function mattress(ctx, next) {
         headerTitle: 'Product Template Example with Upsell Modal',
         headerContent: 'This page illustrates some of the core features of the versatile product template I developed. (Add bullets'
       },
+    title: 'Product Page example',
     discountActual: discountActual,
     upsellDiscountActual: upsellDiscountActual,
     scripts: [
@@ -192,15 +169,6 @@ async function sheets(ctx, next) {
           }
         ],
         productDimensions: false,
-        dimensions: [
-          { size: 'TW', color: 'BW', fitted: '39" x 75" x 15"', flat: '71 x 98"', pillowcase: '20" x 27"' },
-          { size: 'TX', color: 'BW', fitted: '39" x 80" x 15"', flat: '71" x 104"', pillowcase: '20" x 27"' },
-          { size: 'FL', color: 'BW', fitted: '54" x 75" x 15"', flat: '86" x 98"', pillowcase: '20" x 27"' },
-          { size: 'QU', color: 'BW', fitted: '60" x 80" x 15"', flat: '92" x 104"', pillowcase: '20" x 27"' },
-          { size: 'KG', color: 'BW', fitted: '78" x 80" x 15"', flat: '110" x 104"', pillowcase: '20" x 37"' },
-          { size: 'CK', color: 'BW', fitted: '72" x 84" x 15"', flat: '110" x 104"', pillowcase: '20" x 37"' },
-          { size: 'BOX', dimensions: '13" x 9" x 2.5"' }
-        ],
         colorSelection: true,
         colorDisplayOrder: [ 
           { color: 'BW', colorName: utils.getColorName('BW') }, 
@@ -323,6 +291,7 @@ async function sheets(ctx, next) {
         headerTitle: 'Product Template Example with Color Selection & Upsells',
         headerContent: 'This page sorts through 42 product skus and over 100 upsell skus. The gallery updates when the main product color selection changes, and the upsells update when the main product size selection changes. In this case, all 3 product lines have differing numbers of sizes that need to be matched (6, 3 & 2, respectively). Each upsell has an associated modal containing product details.'
       },
+    title: 'Product Page example',
     discountActual: discountActual,
     scripts: [
       'nav',
@@ -374,7 +343,7 @@ async function frame(ctx, next) {
         subheading: 'Elevate your bedroom with a modern classic.',
         ratings: [
           { stars: true,
-            total: 3500,
+            total: utils.numberWithCommas(3500),
             average: 4.3,
             tooltip: true,
             tooltipFootnote: '*Reviews based on all Bed Frames'
@@ -391,14 +360,6 @@ async function frame(ctx, next) {
           }
         ],
         productDimensions: false,
-        dimensions: [
-          { size: 'TW', color: 'DS', w: '42.5"', l: '81"', h: '53"', weight: '80.9 lbs.' },
-          { size: 'TX', color: 'DS', w: '42.5"', l: '86"', h: '53"', weight: '82.9 lbs.' },
-          { size: 'FL', color: 'DS', w: '57.5"', l: '81"', h: '53"', weight: '107 lbs.' },
-          { size: 'QU', color: 'DS', w: '64.5"', l: '86"', h: '53"', weight: '113.3 lbs.' },
-          { size: 'KG', color: 'DS', w: '80.5"', l: '86"', h: '53"', weight: '127 lbs.' },
-          { size: 'CK', color: 'DS', w: '76.5"', l: '90"', h: '53"', weight: '126.6 lbs.' }
-        ],
         colorSelection: true,
         colorDisplayOrder: [ 
           { color: 'CS', colorName: utils.getColorName('CS') }, 
@@ -414,6 +375,7 @@ async function frame(ctx, next) {
         headerTitle: 'Product Template Example with Product Type Selection and Color Selection',
         headerContent: 'This page illustrates some of the core features of the versatile product template I developed. (Add bullets'
     },
+    title: 'Product Page example',
     discountActual: discountActual,
     scripts: [
       'nav',

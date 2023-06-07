@@ -22,7 +22,7 @@ body {
 }
 
 nav {
-  background-color: #fff;
+  background-color: $navy;
   position: fixed;
   top: 0;
   left: 0;
@@ -30,11 +30,6 @@ nav {
   height: $height;
   z-index: 1060;
   margin: 0 auto;
-  // transition: .4s;
-  @include mq(sm) {
-    background-color: $navy;
-    justify-content: flex-start;
-  }
   h2, p {
     color: $white;
   }
@@ -43,6 +38,12 @@ nav {
     margin: 0;
     line-height: 1.4;
     text-align: left;
+    @include mq(xsm) {
+      font-size: vwl(18px);
+    }
+    @include mq(xxs) {
+      font-size: vwp(18px);
+    }
     span {
       color: $teal;
     }
@@ -50,6 +51,12 @@ nav {
   p {
     font-size: 16px;
     line-height: 1.4;
+    @include mq(xsm) {
+      font-size: vwl(12px);
+    }
+    @include mq(xxs) {
+      font-size: vwp(12px);
+    }
   }
   .container-fluid {
     position: relative;
@@ -166,7 +173,6 @@ nav {
     // padding: 0 30px 0 30px;
     overflow: hidden;
     transition: .4s;
-    
     background-image: linear-gradient(top, rgba(11,40,54,1) 0,
       rgba(11,40,54,1) 100px,
       rgba(11,40,54,0.75) 150px,
@@ -175,9 +181,19 @@ nav {
       rgba(11,40,54,1) 100px,
       rgba(11,40,54,0.75) 150px,
       rgba(11,40,54,0.75) 100%);
+    @include mq(xsm) {
+      right: 0;
+    }
     > div {
       padding: 90px 45px 0 45px;
       width: 600px;
+      @include mq(xsm) {
+        width: 100vw;
+        padding: 75px 20% 0 20%;
+      }
+      @include mq(xxs) {
+        padding: 75px 15px 0 15px;
+      }
     }
 
   }

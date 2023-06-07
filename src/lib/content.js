@@ -48,7 +48,7 @@ module.exports.getProducts = async function (ctx) {
     },
     { 
       catId: 1, sku: 'LU-MA-WH-CK', price: '1050', w: '72"', 
-      l: '84"', h: '10"', weight: '93 lbs', outOfStock: false
+      l: '84"', h: '10"', weight: '93 lbs', outOfStock: true
     },
     
     { catId: 8, sku: 'LU-PR-WH-TW', price: '75', outOfStock: false },
@@ -211,12 +211,18 @@ module.exports.getProducts = async function (ctx) {
     { catId: 36, sku: 'LU-OP-WP-ST', price: '75', outOfStock: false },
     { catId: 36, sku: 'LU-OP-WP-KG', price: '85', outOfStock: false },
 
-    { catId: 40, sku: 'LU-UU-CS-TW', price: '1150', outOfStock: false },
-    { catId: 40, sku: 'LU-UU-CS-TX', price: '1150', outOfStock: false },
-    { catId: 40, sku: 'LU-UU-CS-FL', price: '1200', outOfStock: true },
-    { catId: 40, sku: 'LU-UU-CS-QU', price: '1250', outOfStock: false },
-    { catId: 40, sku: 'LU-UU-CS-KG', price: '1350', outOfStock: false },
-    { catId: 40, sku: 'LU-UU-CS-CK', price: '1350', outOfStock: false },
+    { catId: 40, sku: 'LU-UU-CS-TW', price: '1150',
+      w: '42.5"', l: '81"', h: '53"', outOfStock: false },
+    { catId: 40, sku: 'LU-UU-CS-TX', price: '1150',
+      w: '42.5"', l: '86"', h: '53"', outOfStock: false },
+    { catId: 40, sku: 'LU-UU-CS-FL', price: '1200',
+      w: '57.5"', l: '81"', h: '53"', outOfStock: false },
+    { catId: 40, sku: 'LU-UU-CS-QU', price: '1250',
+      w: '64.5"', l: '86"', h: '53"', outOfStock: true },
+    { catId: 40, sku: 'LU-UU-CS-KG', price: '1350',
+      w: '80.5"', l: '86"', h: '53"', outOfStock: false },
+    { catId: 40, sku: 'LU-UU-CS-CK', price: '1350',
+      w: '76.5"', l: '90"', h: '53"', outOfStock: false },
 
     { catId: 40, sku: 'LU-UU-DS-TW', price: '1150', outOfStock: false },
     { catId: 40, sku: 'LU-UU-DS-TX', price: '1150', outOfStock: false },

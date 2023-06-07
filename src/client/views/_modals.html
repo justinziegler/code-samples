@@ -52,17 +52,13 @@
                 <div class="col-xs-12 col-sm-5">
                   <ul>
                     {% for item in p.skus %}
-                      {% if item.catId == p.defaultCatId %}
-                        {% for product in p.dimensions %}
-                          {% if product.size == item.size and (product.color == item.color or product.color == undefined) %}
-                            <li data-size="{{ product.size }}">
-                              <span {% if sizeGuide.longSizeNames %}class="wide"{% endif %}>
-                                {{ item.sizeName }}
-                              </span>{{ product.w }} x {{ product.l }}
-                              {% if product.h !== '' %} x {{ product.h }}{% endif %} 
-                            </li>
-                          {% endif %}
-                        {% endfor %}
+                      {% if item.catId == p.defaultCatId and item.color == p.defaultColor %}
+                        <li data-size="{{ item.size }}">
+                          <span {% if sizeGuide.longSizeNames %}class="wide"{% endif %}>
+                            {{ item.sizeName }}
+                          </span>{{ item.w }} x {{ item.l }}
+                          {% if item.h !== '' %} x {{ item.h }}{% endif %} 
+                        </li>
                       {% endif %}
                     {% endfor %}
                   </ul>

@@ -8,6 +8,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <title>{% block title %}{% endblock %}</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript" src="../assets/autohidenavbar.bootstrap.js"></script>
   {{ _css.common() }}
@@ -322,6 +323,8 @@
         } else {
           pType = '{{ p.defaultProductType }}';
         }
+        
+      
       {% else %}
         var typeSelection = false;
         pType = $('.product-selection .size-select li:first-of-type').data('type');
@@ -333,6 +336,7 @@
           return !outOfStock;
         });
       }
+      console.log('pType', pType)
 
       if (slug.match(regex)) {
         const s = params.get('size');
@@ -388,6 +392,7 @@
       {% if p.catIds.length > 1 %}
         {# product type selection at page load - the default may be overridden by search params #}
         var initialTypeSelection = $(`.product-selection .type-select li[data-type="${pType}"]`);
+        console.log('pType', pType);
         var initialTypeName = initialTypeSelection.data('type-name');
         setActive(initialTypeSelection);
         $('.type-select').attr('data-active-type', initialTypeName);
