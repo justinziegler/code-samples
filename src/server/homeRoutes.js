@@ -1,6 +1,7 @@
 const nunjucks = require('nunjucks');
 const utils = require('./../lib/utils');
-const content = require('./../lib/content');
+const content = require('../lib/content');
+const productDetails = require('../lib/product-config');
 // const ourWay = require { ourWay } from 
 
 const render = function (path, params = {}) {
@@ -30,85 +31,70 @@ async function home(ctx, next) {
       p: {
         pageUrl: '/',
         nextPage: 'mattress',
-        headerTitle: 'Welcome',
-        headerContent: 'Description'
-      }
+      },
+      caseStudies: [
+        {
+          title: 'Product Display Template',
+          intro: 'The following pages highlight the features of a Product Display template that I developed to support a line of bedding products. This project came about from a desire to:',
+          bullets: [ 
+            'Unify diverging styles among the company\'s various product pages',
+            'Create a semantically consistent structural system that would allow for easy re-styling',
+            'Speed up development time for future product launches'
+          ],
+          details: 'The template was developed using the Nunjucks templating language, Sass and jQuery, though I\'ve converted some of the scripts to ES6 over time. Additionally, there are a number of node modules developed to aid in setting product details, like discounted prices and monthly payments.  It\'s made to be fully functional once the relevant variables are set, allowing more time for the development of page content.',
+          thumbnails: [
+            {
+              title: 'Default Config',
+              link: '../mattress'
+            },
+            {
+              title: 'Advanced Features',
+              link: '../frame'
+            },
+            {
+              title: 'Flexible Upsells',
+              link: '../sheets'
+            }
+          ]
+        }
+      ]
   });
 }
 
 async function mattress(ctx, next) {
-  
-  const discountActual = 200;
-  const upsellDiscountActual = 0;
-  const skus = await utils.getProductSkus(ctx, 1, discountActual);
-  const upsellSkus = await utils.getProductSkus(ctx, 8, upsellDiscountActual);
+  ctx.discountActual = 200;
+  ctx.upsellDiscountActual = 0;
+  ctx.skus = await utils.getProductSkus(ctx, 1, ctx.discountActual);
+  ctx.upsellSkus = await utils.getProductSkus(ctx, 8, ctx.upsellDiscountActual);
+  const p = await productDetails.mattress(ctx);
   const ourWay = await content.ourWay(ctx);
+
   ctx.body = await render('product_mattress', {
-    p:
-      {
-        skus: skus,
-        catIds: [1],
-        defaultCatId: 1,
-        defaultProductType: 'MA',
-        catSizes: 6,
-        catType: 'mattress',
-        comboPage: false,
-        comboProductModal: false,
-        comboProductAccordion: false,
-        comboProductButtonTitles: true,
-        comboProductButtonLabels: false,
-        pageUrl: 'mattress',
-        gallerySlides: 4,
-        galleryDimensions: 0,
-        longTitle: false,
-        heading: 'The Original Mattress',
-        subheading: 'Ships in 1-<span>4</span> business days',
-        deliveryWindowText: 'Ships in 1-4 business days',
-        ratings: [
-          { 
-            stars: true,
-            total: utils.numberWithCommas(5555),
-            average: 4.7,
-            googleTotal: utils.numberWithCommas(2345),
-            googleAverage: 4.2,
-            tooltip: true,
-            mattressTooltip: true
-          }
-        ],
-        sizeGuide: [
-          {
-            show: true,
-            productName: 'Mattress',
-            mattressModal: true,
-            dimensionsLink: true
-          }
-        ],
-        productDimensions: true,
-        colorSelection: false,
-        qtySelection: false,
-        maxQty: 1,
-        productImage: 'https://lull.imgix.net/gallery-3.jpg?auto=format',
-        financingSection: true,
-        upsellModal: true,
-        upsellModalCatId: 8,
-        upsellModalSkus: upsellSkus,
-        prevPage: '../',
-        nextPage: '../sheets',
-        headerTitle: 'Product Template Example with Upsell Modal',
-        headerContent: 'This page illustrates some of the core features of the versatile product template I developed. (Add bullets'
-      },
+    p: p[0],
     title: 'Product Page example',
-    discountActual: discountActual,
-    upsellDiscountActual: upsellDiscountActual,
-    scripts: [
-      'nav',
-      'modal.bootstrap',
-      'swiper-lite',
-      'tippy',
-      'lazysizes.min'
-    ],
-    ourWay: ourWay
+    discountActual: ctx.discountActual,
+    upsellDiscountActual: ctx.upsellDiscountActual,
+    ourWay: ourWay,
+    prevPage: '../',
+    nextPage: '../frame',
+    headerTitle: 'Product Template Example with Upsell Modal',
+    headerContent: 'This page illustrates some of the core features of the versatile product template I developed. (Add bullets'
   });
+}
+
+async function frame(ctx, next) {
+  const discountActual = 200;
+  ctx.discountActual = discountActual;
+  const upholsteredSkus = await utils.getProductSkus(ctx, 40, discountActual);
+  const tuftedSkus = await utils.getProductSkus(ctx, 41, discountActual);
+	ctx.skus = upholsteredSkus.concat(tuftedSkus);
+  const p = await productDetails.frame(ctx);
+
+  ctx.body = await render('product_frame', {
+    p: p[0],      
+    title: 'Product Page example',
+    discountActual: discountActual
+  })
 }
 
 async function sheets(ctx, next) {
@@ -124,267 +110,16 @@ async function sheets(ctx, next) {
 	const skus36 = await utils.getProductSkus(ctx, 36, pcDiscountActual);
 	const duvetCoverSkus = skus31.concat(skus32).concat(skus33);
 	const pillowcaseSkus = skus34.concat(skus35).concat(skus36);
-	ctx.state.skus = skus;
-	ctx.state.duvetCoverSkus = duvetCoverSkus;
-	ctx.state.pillowcaseSkus = pillowcaseSkus;
-  console.log('skus', skus);
+	ctx.skus = skus;
+	ctx.duvetCoverSkus = duvetCoverSkus;
+	ctx.pillowcaseSkus = pillowcaseSkus;
+  const p = await productDetails.sheets(ctx);
 
   ctx.body = await render('product_sheets', {
-    p:
-      {
-        skus: skus,
-        catIds: [31],
-        defaultCatId: 31,
-        defaultProductType: 'OC',
-        catSizes: 6,
-        pageUrl: 'sheets',
-        productType: 'sheets',
-        gallerySlides: 5,
-        galleryDimensions: 0,
-        galleryVideo: true,
-        galleryVideoSlide: 5,
-        galleryVideoSource: '',
-        galleryVideoUrl: ['https://lull-media.imgix.net/sheets/organic-sheets-16x9-web.mp4?auto=format,compress'],
-        galleryVideoPoster: 'https://lull-media.imgix.net/sheets/organic-sheets-16x9-web.mp4?fm=jpg&w=840&frame=1',
-        longTitle: false,
-        heading: 'The Organic Cotton Sheets',
-        subheading: '100% organic cotton sheets crafted with comfort, wellness, and luxury in mind.',
-        ratings: [
-          { 
-            stars: true,
-            total: utils.numberWithCommas(6543),
-            average: 4.5,
-            tooltip: true,
-            tooltipFootnote: '*Reviews based on the Original Sheets set'
-          }
-        ],
-        deliveryWindowText: 'Included:<br>Fitted sheet, top sheet and <span class="hidden-xs">matching</span> <span class="pillowcase">pillowcase</span>',
-        readyToShipMessage: true,
-        sizeGuide: [
-          {
-            show: false,
-            productName: '',
-            mattressModal: false,
-            dimensionsLink: false
-          }
-        ],
-        productDimensions: false,
-        colorSelection: true,
-        colorDisplayOrder: [ 
-          { color: 'BW', colorName: utils.getColorName('BW') }, 
-          { color: 'QG', colorName: utils.getColorName('QG') }, 
-          { color: 'GG', colorName: utils.getColorName('GG') }, 
-          { color: 'MB', colorName: utils.getColorName('MB') }, 
-          { color: 'PA', colorName: utils.getColorName('PA') }, 
-          { color: 'WP', colorName: utils.getColorName('WP') }, 
-          { color: 'CD', colorName: utils.getColorName('CD') }
-        ],
-        defaultColor: 'MB',
-        defaultColorName: utils.getColorName('MB'),
-        qtySelection: false,
-        maxQty: 1,
-        productImage: 'https://lull-media.imgix.net/sheets/sheets-wh-01.jpg?auto=format,compress&w=1200',
-        financingSection: false,
-        upsellModal: false,
-        upsellModalCatId: 0,
-        upsell: true,
-        upsellListTitle: 'Complete Your Bed',
-        upsellListSubtitle: 'Everything you need for great sleep',
-        upsellMinimum: 1,
-        upsells: [
-          {
-            skus: duvetCoverSkus,
-            catIds: [31, 32, 33],
-            catSizes: 3,
-            defaultCatId: 33,
-            category: 'bedding',
-            slug: 'duvet-cover',
-            name: 'Add a Duvet Cover',
-            title: 'The Lull Duvet Cover',
-            longtitle: false,
-            subtitle: '',
-            colorFilter: false,
-            filteredColor: '',
-            matchColor: false,
-            colorSelection: true,
-            colorDisplayOrder: [ 
-              { color: 'BW', colorName: utils.getColorName('BW') }, 
-              { color: 'QG', colorName: utils.getColorName('QG') }, 
-              { color: 'GG', colorName: utils.getColorName('GG') }, 
-              { color: 'MB', colorName: utils.getColorName('MB') }, 
-              { color: 'PA', colorName: utils.getColorName('PA') }, 
-              { color: 'WP', colorName: utils.getColorName('WP') }, 
-              { color: 'CD', colorName: utils.getColorName('CD') }
-            ],
-            defaultColor: 'MB',
-            details: [
-              {
-                detail: 'Lorem ipsum dolor'
-              },
-              {
-                detail: 'Integer ullamcorper facilisis'
-              },
-              {
-                detail: 'Cras vel eleifend sem'
-              }
-            ],
-            reviewsTotal: 600,
-            reviewsAverage: 4.5,
-            gallerySlides: 7 
-          },
-          {
-            skus: pillowcaseSkus,
-            catIds: [34, 35, 36],
-            catSizes: 2,
-            defaultCatId: 35,
-            category: 'bedding',
-            slug: 'pillowcase',
-            name: 'Add a Pillowcase Set',
-            title: 'The Lull Pillowcase',
-            longtitle: false,
-            subtitle: '',
-            colorFilter: false,
-            filteredColor: '',
-            matchColor: false,
-            colorSelection: true,
-            colorDisplayOrder: [ 
-              { color: 'BW', colorName: utils.getColorName('BW') }, 
-              { color: 'QG', colorName: utils.getColorName('QG') }, 
-              { color: 'GG', colorName: utils.getColorName('GG') }, 
-              { color: 'MB', colorName: utils.getColorName('MB') }, 
-              { color: 'PA', colorName: utils.getColorName('PA') }, 
-              { color: 'WP', colorName: utils.getColorName('WP') }, 
-              { color: 'CD', colorName: utils.getColorName('CD') }
-            ],
-            defaultColor: 'MB',
-            bundle: false,
-            bundleItems: [
-              {
-                catId: 22
-              }
-            ],
-            details: [
-              {
-                detail: 'Lorem ipsum dolor'
-              },
-              {
-                detail: 'Integer ullamcorper facilisis'
-              },
-              {
-                detail: 'Cras vel eleifend sem'
-              }
-            ],
-            showReview: false,
-            review: [
-              {
-                starTotal: '5',
-                title: '',
-                content: '',
-                reviewer: ''
-              }
-            ],
-            gallerySlides: 7
-          }
-        ],
-        prevPage: '../mattress',
-        nextPage: '../frame',
-        headerTitle: 'Product Template Example with Color Selection & Upsells',
-        headerContent: 'This page sorts through 42 product skus and over 100 upsell skus. The gallery updates when the main product color selection changes, and the upsells update when the main product size selection changes. In this case, all 3 product lines have differing numbers of sizes that need to be matched (6, 3 & 2, respectively). Each upsell has an associated modal containing product details.'
-      },
+    p: p[0],
     title: 'Product Page example',
     discountActual: discountActual,
-    scripts: [
-      'nav',
-      'modal.bootstrap',
-      'swiper-lite',
-      'tippy',
-      'lazysizes.min',
-    ]
   });
-}
-
-async function frame(ctx, next) {
-  const discountActual = 200;
-  const upholsteredSkus = await utils.getProductSkus(ctx, 40, discountActual);
-  const tuftedSkus = await utils.getProductSkus(ctx, 41, discountActual);
-	const skus = upholsteredSkus.concat(tuftedSkus);
-
-  ctx.body = await render('product_frame', {
-    p:
-      {
-        skus: skus,
-        catIds: [40, 41],
-        defaultCatId: 40,
-        defaultProductType: 'UU',
-        shortName: utils.getShortName('UU'),
-        catSizes: 6,
-        bundle: false,
-        bundleIds: [],
-        comboPage: true,
-        comboProductModal: false,
-        comboProductButtonTitles: false,
-        comboProductButtonLabels: true,
-        comboProduct: [
-          {
-            toggleTitle: false,
-            comboProductTitle: '',
-            comboProductId: 41,
-            comboProductType: 'TU',
-            shortName: utils.getShortName('TU'),
-            discount: discountActual
-          }
-        ],
-        pageUrl: 'frame',
-        productType: 'frame',
-        gallerySlides: 5,
-        galleryDimensions: 5,
-        longTitle: false,
-        heading: utils.getProductName('UU'),
-        subheading: 'Elevate your bedroom with a modern classic.',
-        ratings: [
-          { stars: true,
-            total: utils.numberWithCommas(3500),
-            average: 4.3,
-            tooltip: true,
-            tooltipFootnote: '*Reviews based on all Bed Frames'
-          }
-        ],
-        deliveryWindowText: 'Ships in 1&ndash;4 business days',
-        readyToShipMessage: true,
-        sizeGuide: [
-          {
-            show: true,
-            productName: utils.getProductName('UU'),
-            mattressModal: false,
-            dimensionsLink: false
-          }
-        ],
-        productDimensions: false,
-        colorSelection: true,
-        colorDisplayOrder: [ 
-          { color: 'CS', colorName: utils.getColorName('CS') }, 
-          { color: 'DS', colorName: utils.getColorName('DS') },
-        ],
-        defaultColor: 'CS',
-        defaultColorName: utils.getColorName('CS'),
-        qtySelection: false,
-        maxQty: 1,
-        productImage: 'https://lull-media.imgix.net/upholstered-bed-frame/gallery-straighton-withluxe-TU-CS.jpg?auto=format,compress&w=1200',
-        financingSection: true,
-        prevPage: '../sheets',
-        headerTitle: 'Product Template Example with Product Type Selection and Color Selection',
-        headerContent: 'This page illustrates some of the core features of the versatile product template I developed. (Add bullets'
-    },
-    title: 'Product Page example',
-    discountActual: discountActual,
-    scripts: [
-      'nav',
-      'modal.bootstrap',
-      'swiper-lite',
-      'tippy',
-      'lazysizes.min'
-    ]
-  })
 }
 
 const router = new Router();

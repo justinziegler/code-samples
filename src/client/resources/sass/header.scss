@@ -1,5 +1,3 @@
-
-/* When editing, use the source file for this page in client/resources/sass */
 @import "compass";
 
 // Core variables and mixins
@@ -30,32 +28,65 @@ nav {
   height: $height;
   z-index: 1060;
   margin: 0 auto;
-  h2, p {
+  h2, p, li {
     color: $white;
   }
   h2 {
-    font-size: 22px;
-    margin: 0;
-    line-height: 1.4;
+    font-size: 26px;
+    margin: 0 0 15px 0;
+    line-height: 1;
     text-align: left;
+    border-bottom: 1px solid $teal;
+    padding-bottom: 5px;
     @include mq(xsm) {
       font-size: vwl(18px);
+      padding-bottom: vwl(5px);
     }
     @include mq(xxs) {
-      font-size: vwp(18px);
+      font-size: vwp(20px);
+      padding-bottom: vwp(5px);
     }
     span {
       color: $teal;
+      font-weight: 500;
+      font-size: 75%;
     }
   }
-  p {
-    font-size: 16px;
+  p, li {
+    font-size: 18px;
     line-height: 1.4;
     @include mq(xsm) {
       font-size: vwl(12px);
     }
     @include mq(xxs) {
       font-size: vwp(12px);
+    }
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    margin-bottom: 10px;
+    list-style-type: none;
+    padding-left: 30px;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border: solid 2px $teal;
+      top: 6px;
+      left: 6px;
+    }
+    a {
+      color: $teal;
+      border-bottom: dotted 1px $teal;
+      &:hover, &:focus {
+        color: tint($teal, 20%);
+        border-bottom-color: tint($teal, 20%);
+      }
     }
   }
   .container-fluid {
@@ -68,134 +99,6 @@ nav {
     align-items: center;
     justify-content: space-between;
     height: $height;
-  }
-  .header-nav, .header-title {
-    height: 100%;
-    display: flex;
-  }
-  .header-nav {
-    padding: 8px 15px;
-    width: 195px;
-    a {
-      display: flex;
-      width: 100%;
-      height: 100%;
-      color: $teal;
-      font-size: 16px;
-      position: relative;
-      align-items: flex-end;
-      border-radius: 8px;
-      transition: .2s;
-      padding-bottom: 4px;
-      // span {
-      //   width: 100%;
-      // }
-      &::after {
-        content: '';
-        position: absolute;
-        @include triangle(#000);
-        @extend %svg;
-        top: 2px;
-        width: 30px;
-        height: 30px;
-        filter: invert(76%) sepia(29%) saturate(668%) hue-rotate(128deg) brightness(92%) contrast(101%);
-        transition: .2s;
-        opacity: .75;
-      }
-      &:hover, &:focus {
-        color: $white;
-        outline: none;
-        &::after {
-          opacity: 1;
-        }
-      }
-    }
-    $px: 35px;
-    &.prev {
-      a {
-        text-align: left;
-        padding-left: $px;
-        &::after {
-          left: 0;
-          transform: rotate(180deg);
-        }
-      }
-    }
-    &.next {
-      a {
-        // text-align: right;
-        padding-right: $px;
-        justify-content: flex-end;
-        &::after {
-          right: 0;
-        }
-      }
-    }
-    &.collapse {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      width: 210px;
-      a {
-        width: 100%;
-        // padding-left: 15px;
-        padding-right: 35px;
-        justify-content: flex-end;
-        background: tint($navy, 10%);
-        border: solid 1px tint($navy, 20%);
-        &::after {
-          transform: rotate(90deg);
-          right: 15px;
-          width: 15px;
-          transition: .2s;
-        }
-        &:hover, &:focus {
-          border: solid 1px $teal;
-          outline: none;
-        }
-      }
-    }
-  }
-  .header-title {
-    flex-grow: 1;
-    justify-content: center;
-    padding: 10px 100px;
-    position: relative;
-  }
-  .header-content {
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: calc(100% - 600px);
-    z-index: 1;
-    // padding: 0 30px 0 30px;
-    overflow: hidden;
-    transition: .4s;
-    background-image: linear-gradient(top, rgba(11,40,54,1) 0,
-      rgba(11,40,54,1) 100px,
-      rgba(11,40,54,0.75) 150px,
-      rgba(11,40,54,0.75) 100%);
-    background-image: -webkit-linear-gradient(top, rgba(11,40,54,1) 0,
-      rgba(11,40,54,1) 100px,
-      rgba(11,40,54,0.75) 150px,
-      rgba(11,40,54,0.75) 100%);
-    @include mq(xsm) {
-      right: 0;
-    }
-    > div {
-      padding: 90px 45px 0 45px;
-      width: 600px;
-      @include mq(xsm) {
-        width: 100vw;
-        padding: 75px 20% 0 20%;
-      }
-      @include mq(xxs) {
-        padding: 75px 15px 0 15px;
-      }
-    }
-
   }
   &[data-collapsed='true'] {
     .header-nav.collapse {
@@ -222,5 +125,185 @@ nav {
       }
     }
   }
+  .case-study-nav {
+    margin-top: 30px;
+    .collapse {
+      a {
+        // padding-right: 60px;
+        color: $navy;
+        background-color: $teal;
+        font-weight: 500;
+        &::after {
+          // right: 38px;
+          filter: invert(14%) sepia(22%) saturate(1296%) hue-rotate(155deg) brightness(92%) contrast(100%);
+        }
+      }
+    }
+  }
+}
+.header-nav, .header-title {
+  height: 100%;
+  display: flex;
+}
+.header-nav {
+  padding: 8px 15px;
+  width: 30%;
+  @include mq(sm) {
+    width: 195px;
+  }
+  a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    color: $teal;
+    font-size: 16px;
+    position: relative;
+    align-items: flex-end;
+    border-radius: 8px;
+    transition: .2s;
+    padding-bottom: 4px;
+    // span {
+    //   width: 100%;
+    // }
+    &::after {
+      content: '';
+      @include triangle(#000);
+      @extend %svg;
+      top: 2px;
+      width: 30px;
+      height: 30px;
+      filter: invert(76%) sepia(29%) saturate(668%) hue-rotate(128deg) brightness(92%) contrast(101%);
+      transition: .2s;
+      opacity: .75;
+      @include mq(sm) {
+       position: absolute;
+      }
+    }
+    &:hover, &:focus {
+      color: $white;
+      outline: none;
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  $px: 35px;
+  &.prev, &.next {
+    a {
+      &::after {
+        position: absolute;
+      }
+    }
+  }
+  &.prev {
+    @include mq(xsm) {
+      padding-left: 0;
+    }
+    a {
+      text-align: left;
+      padding-left: $px;
+      &::after {
+        left: 0;
+        transform: rotate(180deg);
+      }
+    }
+  }
+  &.next {
+    @include mq(xsm) {
+      padding-right: 0;
+    }
+    a {
+      // text-align: right;
+      padding-right: $px;
+      justify-content: flex-end;
+      &::after {
+        right: 0;
+      }
+    }
+  }
+  &.collapse {
+    width: 100%;
+    flex: 1;
+    padding: 0;
+    // @include mq(sm) {
+    //   width: 210px;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   bottom: 0;
+    // }
+    a {
+      width: 100%;
+      // padding-left: 15px;
+      justify-content: center;
+      background: tint($navy, 10%);
+      border: solid 1px tint($navy, 20%);
+      padding-bottom: 2px;
+      @include mq(sm) {
+        // padding-right: 35px;
+        // justify-content: flex-end;
+        width: 180px;
+      }
+      &::after {
+        transform: rotate(90deg);
+        right: 15px;
+        width: 15px;
+        transition: .2s;
+        position: relative;
+        top: 3px;
+        right: auto;
+        // margin: 5px 5px 0 0;
+      }
+      &:hover, &:focus {
+        border: solid 1px $teal;
+        outline: none;
+      }
+    }
+  }
+}
+.header-title {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 10px;
+}
+.header-content {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  // padding: 0 30px 0 30px;
+  overflow: hidden;
+  transition: .4s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-image: linear-gradient(top, rgba(11,40,54,1) 0,
+    rgba(11,40,54,1) 50px,
+    rgba(11,40,54,0.85) 100px,
+    rgba(11,40,54,0.85) 100%);
+  background-image: -webkit-linear-gradient(top, rgba(11,40,54,1) 0,
+    rgba(11,40,54,1) 50px,
+    rgba(11,40,54,0.85) 100px,
+    rgba(11,40,54,0.85) 100%);
+  @include mq(sm) {
+    right: calc(100% - 600px);
+    justify-content: center;
+  }
+  > div {
+    padding: 90px 45px 0 45px;
+    width: 600px;
+    flex-shrink: 0;
+    @include mq(xsm) {
+      width: 100vw;
+      padding: 75px 30px 0 15px;
+    }
+    @include mq(xxs) {
+    }
+  }
+
 }
 

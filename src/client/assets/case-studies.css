@@ -1,0 +1,329 @@
+main {
+  padding-top: 30px;
+}
+@media (min-width: 992px) {
+  main {
+    padding-top: 100px;
+  }
+}
+
+.case-studies {
+  background: #f3f4f5;
+  padding: 30px 0;
+  position: relative;
+  background-image: -owg-linear-gradient(top, #e7eaeb 0%, #f3f4f5 5%, #f3f4f5 95%, #e7eaeb 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e7eaeb), color-stop(5%, #f3f4f5), color-stop(95%, #f3f4f5), to(#e7eaeb));
+  background-image: linear-gradient(top, #e7eaeb 0%, #f3f4f5 5%, #f3f4f5 95%, #e7eaeb 100%);
+  border-top: solid 1px #dadfe1;
+  border-bottom: solid 1px #dadfe1;
+}
+@media (min-width: 544px) and (max-width: 767px) {
+  .case-studies {
+    padding: 30px calc((100% - 390px) / 2);
+  }
+}
+@media (min-width: 992px) {
+  .case-studies {
+    padding: 60px 0;
+  }
+}
+.case-studies::before, .case-studies::after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  left: 0;
+  right: 0;
+  background-color: #abedeb;
+}
+.case-studies::before {
+  top: -10px;
+}
+.case-studies::after {
+  bottom: -10px;
+}
+
+.case-study h2 {
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+  border-bottom: solid 2px #56dbd6;
+  line-height: 1;
+  padding-bottom: 6px;
+}
+@media (min-width: 768px) {
+  .case-study h2 {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 992px) {
+  .case-study h2 {
+    font-size: 3.4rem;
+  }
+}
+.case-study h2 span {
+  color: #45afab;
+}
+.case-study h3 {
+  font-size: 1.6rem;
+  line-height: 1.3;
+  margin: 0;
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  .case-study h3 {
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 992px) {
+  .case-study h3 {
+    font-size: 2.2rem;
+  }
+}
+.case-study ul {
+  padding: 0;
+}
+.case-study li {
+  font-size: 1.6rem;
+  padding: 0 0 0 24px;
+  list-style-type: none;
+  margin-top: 10px;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .case-study li {
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 992px) {
+  .case-study li {
+    font-size: 2rem;
+    padding: 0 0 0 30px;
+  }
+}
+.case-study li::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: solid 2px #56dbd6;
+  top: 6px;
+  left: 8px;
+}
+@media (min-width: 992px) {
+  .case-study li::before {
+    width: 12px;
+    height: 12px;
+    border: solid 3px #56dbd6;
+    top: 8px;
+    left: 8px;
+  }
+}
+.case-study li a {
+  color: #56dbd6;
+  border-bottom: dotted 1px #56dbd6;
+}
+.case-study li a:hover, .case-study li a:focus {
+  color: #78e2de;
+  border-bottom-color: #78e2de;
+}
+.case-study p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .case-study p {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+}
+.case-study .thumbnails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-image: -owg-radial-gradient(center, ellipse cover, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+  background-image: radial-gradient(center, ellipse cover, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+}
+@media (max-width: 767px) {
+  .case-study .thumbnails {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+@media (min-width: 768px) {
+  .case-study .thumbnails {
+    padding-left: 15px;
+  }
+}
+@media (min-width: 992px) {
+  .case-study .thumbnails {
+    padding-left: 30px;
+  }
+}
+@media (max-width: 991px) {
+  .case-study .thumbnails > div {
+    padding: 0 7px;
+  }
+}
+.case-study .thumbnails .header-nav {
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+}
+@media (max-width: 767px) {
+  .case-study .thumbnails .header-nav {
+    margin-top: 15px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .case-study .thumbnails .header-nav {
+    padding-right: 15px;
+  }
+}
+.case-study .thumbnails .header-nav a {
+  height: 34px;
+  color: #45afab;
+  line-height: 1;
+  font-weight: 500;
+}
+@media (min-width: 992px) {
+  .case-study .thumbnails .header-nav a {
+    height: 60px;
+    font-size: 2rem;
+    padding-bottom: 18px;
+    padding-right: 48px;
+  }
+}
+@media (max-width: 543px) {
+  .case-study .thumbnails .header-nav a {
+    height: 10.625vw;
+    padding-right: 9.375vw;
+    font-size: 4.375vw;
+    padding-bottom: 2.5vw;
+  }
+}
+@media (min-width: 992px) {
+  .case-study .thumbnails .header-nav a::after {
+    width: 50px;
+    height: 60px;
+    top: 0;
+  }
+}
+@media (max-width: 543px) {
+  .case-study .thumbnails .header-nav a::after {
+    width: 9.375vw;
+    height: 9.375vw;
+    top: 0.625vw;
+  }
+}
+.case-study .thumbnails .header-nav a span {
+  border-bottom: solid 2px transparent;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.case-study .thumbnails .header-nav a:hover, .case-study .thumbnails .header-nav a:focus {
+  color: #388e8b;
+}
+.case-study .thumbnails .header-nav a:hover span, .case-study .thumbnails .header-nav a:focus span {
+  border-bottom: solid 2px #ccf4f3;
+}
+.case-study .thumbnail {
+  width: 100%;
+  height: 0;
+  padding-bottom: 85%;
+  position: relative;
+  background-color: rgb(254, 255, 255);
+  border-radius: 16px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr="#FFFFFFFF", endColorstr="#FF56DBD6");
+  background-image: -owg-linear-gradient(top, rgb(254, 255, 255) 0%, #f7fdfd 35%, #e6faf9 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(254, 255, 255)), color-stop(35%, #f7fdfd), to(#e6faf9));
+  background-image: linear-gradient(top, rgb(254, 255, 255) 0%, #f7fdfd 35%, #e6faf9 100%);
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+@media (max-width: 767px) {
+  .case-study .thumbnail:last-of-type {
+    margin-top: 15px;
+  }
+}
+.case-study .thumbnail a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.7rem;
+  text-align: right;
+  line-height: 1;
+  padding: 10px;
+  font-weight: 500;
+  border-radius: 16px;
+  border: solid 3px #56dbd6;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  background-color: rgba(255, 255, 255, 0);
+}
+@media (max-width: 543px) {
+  .case-study .thumbnail a {
+    font-size: 4.375vw;
+    padding: 3.125vw;
+  }
+}
+@media (min-width: 992px) {
+  .case-study .thumbnail a {
+    font-size: 2rem;
+    padding: 15px;
+  }
+}
+@media (min-width: 1200px) {
+  .case-study .thumbnail a {
+    font-size: 2.45rem;
+    padding: 20px;
+  }
+}
+.case-study .thumbnail a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  border: solid 4px transparent;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.case-study .thumbnail a:hover, .case-study .thumbnail a:focus {
+  background-color: rgb(255, 255, 255);
+  -webkit-box-shadow: inset 0 0 30px 30px rgba(86, 219, 214, 0.1);
+          box-shadow: inset 0 0 30px 30px rgba(86, 219, 214, 0.1);
+}
+.case-study .thumbnail a:hover::before, .case-study .thumbnail a:focus::before {
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border: solid 3px #ccf4f3;
+}
+.case-study .thumbnail a span::before {
+  content: attr(data-number);
+  color: #45afab;
+}

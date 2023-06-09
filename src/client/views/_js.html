@@ -142,7 +142,6 @@
       let active = false;
       inventory.forEach(product => {
         if (product.classList.contains('active')) { active = true; }
-        console.log('active??', active)
         product.style.display = 'none';
         product.classList.remove('active');
       })
@@ -172,7 +171,6 @@
         uType = item.querySelector('.type-select li[data-active="true"]').dataset.type;
         typeSelection = true;
       }
-      console.log('typeSelection', typeSelection)
 
       let l = '.inventory li[data-type="' + uType + '"][data-size="' + uSize + '"]';
       if (colorSelection) {
@@ -197,7 +195,6 @@
       }
       if ((active && !oos) || (setActive && !oos)) {
         const m = l + '[data-out-of-stock="false"]';
-        console.log('m', m)
         item.querySelector(m).classList.add('active');
         oQty = (oQty + 1);
         item.setAttribute('data-set-active', false);
@@ -227,7 +224,6 @@
     let uSelected = false;
     let term = 18;
     let uMprice = 0;
-    console.log('oTotal', oTotal)
     if (oTotal > pPrice) {
       uSelected = true;
       if (oTotal > 799) {

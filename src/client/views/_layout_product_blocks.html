@@ -327,10 +327,9 @@
   </ul>
 {% endmacro %}
 
-{% macro financing(p) %}
+{% macro financing(p, discountActual) %}
   <div class="col-xs-12">
-    <div class="financing {% if (discountActual > 0) %}discounted{% endif %}">
-      
+    <div class="financing {% if (discountActual > 0) %}discounted{% endif %}">    
       {%- for item in p.skus -%}
         {%- for i in range(1, p.maxQty + 1) -%}
         {# Affirm #}

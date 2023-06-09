@@ -54,41 +54,91 @@
           {% endif %}
         </div>
         <div class="header-title">
-          
-          <div class="header-nav collapse">
-            <a href="#">
-              <span>&nbsp;Description</span>
-            </a>
-          </div>
+          {%- if p.pageUrl !== '/' -%}
+            <div class="header-nav collapse">
+              <a href="#">
+                &nbsp;<span class="hidden-xs">Description</span>&nbsp;
+              </a>
+            </div>
+          {%- endif -%}
         </div>
         
         <div class="header-nav next">
-          {% if p.pageUrl !== 'frame' %}
+          {% if p.nextPage !== undefined %}
             <a href="{{ p.nextPage }}">
-              <span>Next</span>
+              {% if p.pageUrl == '/' %}
+                <span>Start</span>
+              {% else %}
+                <span>Next</span>
+              {% endif %}
             </a>
           {% endif %}
         </div>
       </div>
     </div>
-    <div class="header-content">
-      <div>
-        <h2>
-          <span>Case Study:</span>
-          {{ p.headerTitle }}
-        </h2>
-        <p>{{ p.headerContent | safe }}</p>
+    {% if p.pageUrl !== '/' %}
+      <div class="header-content">
+        <div>
+          <h2>
+            <span>Case Study</span><br>
+            {{ p.headerTitle }}
+          </h2>
+          <p>{{ p.headerIntro | safe }}</p>
+          <ul>
+            {% for bullet in p.headerBullets %}
+              <li>{{ bullet | safe }}</li>
+            {% endfor %}
+          </ul>
+          <div class="case-study-nav container-fluid">
+            <div class="row">
+              <div class="header-nav prev">
+                {% if p.pageUrl !== '/' %}
+                  <a href="{{ p.prevPage }}">
+                    <span>Back</span>
+                  </a>
+                {% endif %}
+              </div>
+              <div class="header-title">
+                {%- if p.pageUrl !== '/' -%}
+                  <div class="header-nav collapse">
+                    <a href="#">
+                      &nbsp;<span>This</span>&nbsp;
+                    </a>
+                  </div>
+                {%- endif -%}
+              </div>
+              
+              <div class="header-nav next">
+                {% if p.nextPage !== undefined %}
+                  <a href="{{ p.nextPage }}">
+                    {% if p.pageUrl == '/' %}
+                      <span>Start</span>
+                    {% else %}
+                      <span>Next</span>
+                    {% endif %}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          
+        </div>
       </div>
-    </div>
+      <script>
+        let headerCollapsed = false;
+        const nav = document.querySelector('nav');
+        const collapseBtns = document.querySelectorAll('.header-nav.collapse');
+        collapseBtns.forEach(btn => {
+          btn.addEventListener('click', event => {
+            event.preventDefault();
+            headerCollapsed = !headerCollapsed;
+            nav.setAttribute('data-collapsed', headerCollapsed);
+          });
+        })
+        
+      </script>
+    {% endif %}
 	</nav>
-  <script>
-    let headerCollapsed = false;
-    const nav = document.querySelector('nav');
-    const collapseBtn = document.querySelector('.header-nav.collapse');
-    collapseBtn.addEventListener('click', event => {
-      event.preventDefault();
-      headerCollapsed = !headerCollapsed;
-      nav.setAttribute('data-collapsed', headerCollapsed);
-    });
-  </script>
 {% endmacro %}

@@ -1,5 +1,4 @@
-/* When editing, use the source file for this page in client/resources/sass */
-nav .header-nav a::after {
+.header-nav a::after {
   background-position: 50% 50%;
   background-size: contain;
   background-repeat: no-repeat;
@@ -24,41 +23,74 @@ nav {
   z-index: 1060;
   margin: 0 auto;
 }
-nav h2, nav p {
+nav h2, nav p, nav li {
   color: #ffffff;
 }
 nav h2 {
-  font-size: 22px;
-  margin: 0;
-  line-height: 1.4;
+  font-size: 26px;
+  margin: 0 0 15px 0;
+  line-height: 1;
   text-align: left;
+  border-bottom: 1px solid #56dbd6;
+  padding-bottom: 5px;
 }
 @media (max-width: 767px) {
   nav h2 {
     font-size: 3.1690140845vw;
+    padding-bottom: 0.8802816901vw;
   }
 }
 @media (max-width: 543px) {
   nav h2 {
-    font-size: 5.625vw;
+    font-size: 6.25vw;
+    padding-bottom: 1.5625vw;
   }
 }
 nav h2 span {
   color: #56dbd6;
+  font-weight: 500;
+  font-size: 75%;
 }
-nav p {
-  font-size: 16px;
+nav p, nav li {
+  font-size: 18px;
   line-height: 1.4;
 }
 @media (max-width: 767px) {
-  nav p {
+  nav p, nav li {
     font-size: 2.1126760563vw;
   }
 }
 @media (max-width: 543px) {
-  nav p {
+  nav p, nav li {
     font-size: 3.75vw;
   }
+}
+nav ul {
+  padding: 0;
+  margin: 0;
+}
+nav li {
+  margin-bottom: 10px;
+  list-style-type: none;
+  padding-left: 30px;
+  position: relative;
+}
+nav li::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: solid 2px #56dbd6;
+  top: 6px;
+  left: 6px;
+}
+nav li a {
+  color: #56dbd6;
+  border-bottom: dotted 1px #56dbd6;
+}
+nav li a:hover, nav li a:focus {
+  color: #78e2de;
+  border-bottom-color: #78e2de;
 }
 nav .container-fluid {
   position: relative;
@@ -80,17 +112,52 @@ nav .row {
           justify-content: space-between;
   height: 50px;
 }
-nav .header-nav, nav .header-title {
+nav[data-collapsed=true] .header-nav.collapse a::before {
+  content: "Show";
+}
+nav[data-collapsed=true] .header-content {
+  right: 100%;
+}
+nav[data-collapsed=false] {
+  bottom: 0;
+}
+nav[data-collapsed=false] .header-nav.collapse a::before {
+  content: "Hide";
+}
+nav[data-collapsed=false] .header-nav.collapse a::after {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+nav .case-study-nav {
+  margin-top: 30px;
+}
+nav .case-study-nav .collapse a {
+  color: #0b2836;
+  background-color: #56dbd6;
+  font-weight: 500;
+}
+nav .case-study-nav .collapse a::after {
+  -webkit-filter: invert(14%) sepia(22%) saturate(1296%) hue-rotate(155deg) brightness(92%) contrast(100%);
+          filter: invert(14%) sepia(22%) saturate(1296%) hue-rotate(155deg) brightness(92%) contrast(100%);
+}
+
+.header-nav, .header-title {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-nav .header-nav {
+
+.header-nav {
   padding: 8px 15px;
-  width: 195px;
+  width: 30%;
 }
-nav .header-nav a {
+@media (min-width: 768px) {
+  .header-nav {
+    width: 195px;
+  }
+}
+.header-nav a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -107,9 +174,8 @@ nav .header-nav a {
   transition: 0.2s;
   padding-bottom: 4px;
 }
-nav .header-nav a::after {
+.header-nav a::after {
   content: "";
-  position: absolute;
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2014.15%2014.12%22%3E%3Cpath%20d%3D%22M14.14%2C3.77v0Z%22%20transform%3D%22translate(0.01)%22%20fill%3D%22lime%22%2F%3E%3Cpath%20d%3D%22M0%2C3.77H0V3.63A.33.33%2C0%2C0%2C0%2C0%2C3.77Z%22%20transform%3D%22translate(0.01)%22%20fill%3D%22lime%22%2F%3E%3Cpath%20d%3D%22M3.69%2C0a.48.48%2C0%2C0%2C0-.41.48V13.64a.48.48%2C0%2C0%2C0%2C.41.48h.14a1%2C1%2C0%2C0%2C0%2C.66-.27l6.09-6.09a1%2C1%2C0%2C0%2C0%2C0-1.41L4.48.27A1%2C1%2C0%2C0%2C0%2C3.82%2C0Z%22%20transform%3D%22translate(0.01)%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3C%2Fsvg%3E");
   top: 2px;
   width: 30px;
@@ -120,115 +186,140 @@ nav .header-nav a::after {
   transition: 0.2s;
   opacity: 0.75;
 }
-nav .header-nav a:hover, nav .header-nav a:focus {
+@media (min-width: 768px) {
+  .header-nav a::after {
+    position: absolute;
+  }
+}
+.header-nav a:hover, .header-nav a:focus {
   color: #ffffff;
   outline: none;
 }
-nav .header-nav a:hover::after, nav .header-nav a:focus::after {
+.header-nav a:hover::after, .header-nav a:focus::after {
   opacity: 1;
 }
-nav .header-nav.prev a {
+.header-nav.prev a::after, .header-nav.next a::after {
+  position: absolute;
+}
+@media (max-width: 767px) {
+  .header-nav.prev {
+    padding-left: 0;
+  }
+}
+.header-nav.prev a {
   text-align: left;
   padding-left: 35px;
 }
-nav .header-nav.prev a::after {
+.header-nav.prev a::after {
   left: 0;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
-nav .header-nav.next a {
+@media (max-width: 767px) {
+  .header-nav.next {
+    padding-right: 0;
+  }
+}
+.header-nav.next a {
   padding-right: 35px;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
-nav .header-nav.next a::after {
+.header-nav.next a::after {
   right: 0;
 }
-nav .header-nav.collapse {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 210px;
-}
-nav .header-nav.collapse a {
+.header-nav.collapse {
   width: 100%;
-  padding-right: 35px;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 0;
+}
+.header-nav.collapse a {
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background: #233e4a;
   border: solid 1px #3c535e;
+  padding-bottom: 2px;
 }
-nav .header-nav.collapse a::after {
+@media (min-width: 768px) {
+  .header-nav.collapse a {
+    width: 180px;
+  }
+}
+.header-nav.collapse a::after {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   right: 15px;
   width: 15px;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  position: relative;
+  top: 3px;
+  right: auto;
 }
-nav .header-nav.collapse a:hover, nav .header-nav.collapse a:focus {
+.header-nav.collapse a:hover, .header-nav.collapse a:focus {
   border: solid 1px #56dbd6;
   outline: none;
 }
-nav .header-title {
+
+.header-title {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 10px 100px;
   position: relative;
+  padding: 10px;
 }
-nav .header-content {
+
+.header-content {
   position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
-  right: calc(100% - 600px);
+  right: 0;
   z-index: 1;
   overflow: hidden;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  background-image: linear-gradient(top, rgb(11, 40, 54) 0, rgb(11, 40, 54) 100px, rgba(11, 40, 54, 0.75) 150px, rgba(11, 40, 54, 0.75) 100%);
-  background-image: -webkit-linear-gradient(top, rgb(11, 40, 54) 0, rgb(11, 40, 54) 100px, rgba(11, 40, 54, 0.75) 150px, rgba(11, 40, 54, 0.75) 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  background-image: linear-gradient(top, rgb(11, 40, 54) 0, rgb(11, 40, 54) 50px, rgba(11, 40, 54, 0.85) 100px, rgba(11, 40, 54, 0.85) 100%);
+  background-image: -webkit-linear-gradient(top, rgb(11, 40, 54) 0, rgb(11, 40, 54) 50px, rgba(11, 40, 54, 0.85) 100px, rgba(11, 40, 54, 0.85) 100%);
 }
-@media (max-width: 767px) {
-  nav .header-content {
-    right: 0;
+@media (min-width: 768px) {
+  .header-content {
+    right: calc(100% - 600px);
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
-nav .header-content > div {
+.header-content > div {
   padding: 90px 45px 0 45px;
   width: 600px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 @media (max-width: 767px) {
-  nav .header-content > div {
+  .header-content > div {
     width: 100vw;
-    padding: 75px 20% 0 20%;
+    padding: 75px 30px 0 15px;
   }
-}
-@media (max-width: 543px) {
-  nav .header-content > div {
-    padding: 75px 15px 0 15px;
-  }
-}
-nav[data-collapsed=true] .header-nav.collapse a::before {
-  content: "Show";
-}
-nav[data-collapsed=true] .header-content {
-  right: 100%;
-}
-nav[data-collapsed=false] {
-  bottom: 0;
-}
-nav[data-collapsed=false] .header-nav.collapse a::before {
-  content: "Hide";
-}
-nav[data-collapsed=false] .header-nav.collapse a::after {
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
 }

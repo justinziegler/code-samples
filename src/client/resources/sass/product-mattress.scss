@@ -1,0 +1,65 @@
+/* When editing, use the source file for this page in client/resources/sass */
+@import 'compass';
+
+// Core variables and mixins
+@import 'bootstrap/variables';
+@import 'bootstrap/mixins';
+
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/layout';
+@import 'partials/svg';
+
+.tippy-tooltip.lull-theme {
+  .lull {
+    border-bottom: solid 1px #d9d8d6;
+    padding-bottom: 15px;
+  }
+  .logo-lull {
+    @include logo-lull-box($navy);
+    @extend %svg;
+    width: 48px;
+    height: 48px;
+    display: block;
+    margin: 0 auto 5px auto;
+  }
+  .gcr {
+    padding-top: 15px;
+  }
+  .logo-gcr {
+    @include logo-google-customer-reviews-color(#767676);
+    @extend %svg;
+    width: 137px;
+    height: 32px;
+    display: block;
+    margin: 0 auto 5px auto;
+  }
+  .reviews-breakdown {
+    padding: 0 10px;
+  }
+  .reviews-star-gauge {
+    width: 90px;
+    margin-top: 4px;
+    height: 16px;
+    &::after {
+      background-size: 18px 16px;
+      background-position: 0 50%;
+      background-repeat: repeat-x;
+    }
+  }
+  .reviews-star-average {
+    height: 16px;
+    background-size: 18px 16px;
+    background-position: 0 50%;
+    background-repeat: repeat-x;
+  }
+  label {
+    color: $navy;
+    line-height: 1;
+    vertical-align: text-top;
+    margin-left: 5px;
+    span {
+      font-weight: 700;
+    }
+  }
+}

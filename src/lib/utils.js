@@ -1,5 +1,5 @@
 
-const content = require('./content');
+const content = require('./product-data');
 
 module.exports.calculateDiscount = function _calculateDiscount(price, discount) {
   let discountActual = discount;
@@ -66,7 +66,7 @@ module.exports.getProductName = function _getProductName(type) {
 	case 'OD': return 'Organic Cotton Duvet Cover';
 	case 'OP': return 'Organic Cotton Pillowcase Set';
 	case 'TU':
-	case 'UU': return 'Islay Bed Frame';
+	case 'UU': return 'Upholstered Bed Frame';
 	case 'PM': return 'Original Premium Mattress';
 	case 'AF': return 'Anacapa Wood Bed Frame';
 	case 'SF': return 'Chapala Metal Bed Frame';
@@ -155,7 +155,6 @@ module.exports.getProductSkus = async function (ctx, catId, discount) {
   const products = await content.getProducts(ctx);
   const items = [];
   products.forEach(p => p.catId === catId && items.push(p));
-  console.log(items); 
 	let skus = [];
 	items.forEach(item => { 
     let price = item.price;
@@ -168,12 +167,6 @@ module.exports.getProductSkus = async function (ctx, catId, discount) {
     const size = item.sku.slice(9);
     const sizeName = module.exports.getSizeName(size);
     let maxQty = 1;
-    // const multipleItemCatIds = [9, 24, 25, 27];
-    // multipleItemCatIds.forEach(mCatId => {
-    //   if (catId == mCatId) {
-    //     maxQty = 4;
-    //   }
-    // })
     skus.push(
       {
         catId: item.catId,

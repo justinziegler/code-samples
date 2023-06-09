@@ -70,7 +70,7 @@
                   </div>                
                 
                   {{- _blocks.tooltips(p) -}}                
-                  {{- _blocks.financing(p) -}}
+                  {{- _blocks.financing(p, discountActual) -}}
 
                   {% if p.upsell %}
                     {{- _blocks.upsells(p) -}}
@@ -126,7 +126,7 @@
     {{- _modals.upsellListModal(p) -}}
   {% endif %}
 
-  {% for script in scripts %}
+  {% for script in p.scripts %}
     <script src="../assets/{{ script }}.js"></script>
   {% endfor %}
 
@@ -166,7 +166,6 @@
       let uName, uSizeName;
       if (showUpsellModal) {
         const uCurrent = $('#upsell .item[data-sku$="' + pSize + '"]');
-        console.log('pSize', pSize)
         uName = $(uCurrent).data('name');
         uSizeName = $(uCurrent).data('size-name');
         uTypeName = $(uCurrent).data('type-name');
@@ -219,7 +218,6 @@
               uSizeName = item.data('size-name')
               let uColorName = item.data('color-name');
               let uColorSelection = $(this).data('color-selection');
-              console.log('uColorSelection', uColorSelection)
               items.push({ 
                 'sku': uSku, 
                 'quantity': 1, 
@@ -304,7 +302,6 @@
       
       {%- if p.colorSelection -%}
         const color = params.get('color');
-        console.log('color', color)
         if (color !== null) {
           pColor = getColorCode(color);
         } else {
@@ -336,7 +333,6 @@
           return !outOfStock;
         });
       }
-      console.log('pType', pType)
 
       if (slug.match(regex)) {
         const s = params.get('size');
@@ -392,7 +388,6 @@
       {% if p.catIds.length > 1 %}
         {# product type selection at page load - the default may be overridden by search params #}
         var initialTypeSelection = $(`.product-selection .type-select li[data-type="${pType}"]`);
-        console.log('pType', pType);
         var initialTypeName = initialTypeSelection.data('type-name');
         setActive(initialTypeSelection);
         $('.type-select').attr('data-active-type', initialTypeName);
