@@ -1,6 +1,6 @@
-# justinziegler.com
+# Code Examples
 
-This is the code for my portfolio site, built in React. 
+This is a site that walks users through a few code examples from previous positions. More on the way!
  
 ## Dev environment
 
