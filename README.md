@@ -1,4 +1,4 @@
-# Code Examples
+# Code Samples
 
 This is a site that walks users through a few code examples from previous positions. More on the way!
  
