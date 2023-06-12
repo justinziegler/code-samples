@@ -40,20 +40,20 @@ module.exports.calculatePaymentTerm = function _calculatePaymentTerm(price, disc
 
 module.exports.getProductName = function _getProductName(type) {
 	switch (type) {
-	case 'MA': return 'Original Lull Mattress';
-	case 'PR': return 'Lull Mattress Protector';
-	case 'PW': return 'Original Lull Pillow';
+	case 'MA': return 'Original Mattress';
+	case 'PR': return 'Mattress Protector';
+	case 'PW': return 'Original Pillow';
 	case 'FP': return 'Memory Foam Pillow';
 	case 'DP': return 'Down Pillow';
-	case 'PC': return 'Lull Pillowcase Set';
-	case 'SH': return 'Lull Sheet Set';
-	case 'DV': return 'Original Lull Duvet';
+	case 'PC': return 'Pillowcase Set';
+	case 'SH': return 'Sheet Set';
+	case 'DV': return 'Original Duvet';
 	case 'DD': return 'Down Duvet';
-	case 'DC': return 'Lull Duvet Cover';
-	case 'WF': return 'Lull Gaviota Platform Bed Frame';
-	case 'MF': return 'Lull Arrellaga Folding Bed Frame';
-	case 'FO': return 'Lull Mattress Foundation';
-	case 'FL': return 'Lull Foundation Legs';
+	case 'DC': return 'Duvet Cover';
+	case 'WF': return 'Gaviota Platform Bed Frame';
+	case 'MF': return 'Arrellaga Folding Bed Frame';
+	case 'FO': return 'Mattress Foundation';
+	case 'FL': return 'Foundation Legs';
 	case 'HY': return 'Luxe Hybrid Mattress';
 	case 'PP': return '10 Year Protection Plan';
 	case 'CB': return 'Cotton Blend Sheets';
@@ -70,7 +70,7 @@ module.exports.getProductName = function _getProductName(type) {
 	case 'PM': return 'Original Premium Mattress';
 	case 'AF': return 'Anacapa Wood Bed Frame';
 	case 'SF': return 'Chapala Metal Bed Frame';
-	default: return 'Original Lull Mattress';
+	default: return 'Original Mattress';
 	}
 };
 
