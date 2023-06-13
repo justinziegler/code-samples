@@ -15,7 +15,7 @@
 {% endblock %}
 
 {% block content %}
-  <section class="op-mattress-3d" data-current="1">
+  <section class="mattress-3d" data-current="1">
     <div class="container-fluid">
       <div class="row visible-xs visible-sm">
         <div class="heading col-xs-12">
@@ -79,106 +79,130 @@
   const speed = .2;
 
   function nextSlide(slideshow) {
-    var current = Number(slideshow.attr('data-current'));
+    const current = Number(slideshow.dataset.current);
     if (isNaN(current))  current = 1;
-    var stage = slideshow.find('.stage');
-    var max = stage.children().length;
-    var next = current + 1;
+    const stage = slideshow.querySelector('.stage');
+    const slides = slideshow.querySelectorAll('.stage > div');
+    const max = slides.length;
+    let next = current + 1;
     if (current < max) {
-      slideshow.attr('data-current', next);
-      slideshow.closest('section').attr('data-current', next);
-      stage.attr('style', 'transition: ' + speed + 's ease-in-out;');
+      slideshow.setAttribute('data-current', next);
+      slideshow.closest('section').setAttribute('data-current', next);
+      stage.setAttribute('style', 'transition: ' + speed + 's ease-in-out;');
     } else { // at max
       next = 1;
-      slideshow.attr('data-current', 1);
-      slideshow.closest('section').attr('data-current', 1);
-      var transition = ((max - 1) * speed);
-      stage.attr('style', `transition: ${transition}s ease-in-out;`);
+      slideshow.setAttribute('data-current', 1);
+      slideshow.closest('section').setAttribute('data-current', 1);
+      const transition = ((max - 1) * speed);
+      stage.setAttribute('style', `transition: ${transition}s ease-in-out;`);
     }
-    slideshow.find(`.stage div[data-slide="${next}"]`).attr('data-active', true).siblings().attr('data-active', false);
-    if (slideshow.find('.dots').length) {
-      slideshow.find(`.dots button[data-slide="${next}"]`).attr('data-active', true).siblings().attr('data-active', false);
-      slideshow.find('.dots button').blur();
-    }
+    setActive(slideshow, slides, next);
   }
 
   function prevSlide(slideshow) {
-    var current = Number(slideshow.attr('data-current'));
+    const current = Number(slideshow.dataset.current);
     if (isNaN(current)) current = 1;
-    var stage = slideshow.find('.stage');
+    const stage = slideshow.querySelector('.stage');
+    const slides = slideshow.querySelectorAll('.stage > div');
     if (current > 1) {
-      var next = (current - 1);
-      slideshow.attr('data-current', next);
-      slideshow.closest('section').attr('data-current', next);
-      stage.attr('style', `transition: ${speed}s ease-in-out;`);
-      slideshow.find(`.stage div[data-slide="${next}"]`).attr('data-active', true).siblings().attr('data-active', false);
-      if (slideshow.find('.dots').length) {
-        slideshow.find(`.dots button[data-slide="${next}"]`).attr('data-active', true).siblings().attr('data-active', false);
-        slideshow.find('.dots button').blur();
-      }
+      const next = (current - 1);
+      slideshow.setAttribute('data-current', next);
+      slideshow.closest('section').setAttribute('data-current', next);
+      stage.setAttribute('style', `transition: ${speed}s ease-in-out;`);
+      setActive(slideshow, slides, next);
     }
     return current;
   }
 
-  function slideshowDots(dot) {
-    dot.attr('data-active', true).siblings().attr('data-active', false);
-    var current = Number(dot.closest('.frame').attr('data-current'));
-    var slide = Number(dot.data('slide'));
-    var transition = speed;
+  function setActive(slideshow, slides, next) {
+    slides.forEach(slide => { slide.setAttribute('data-active', false) });
+    slideshow.querySelector(`.stage div[data-slide="${next}"]`).setAttribute('data-active', true);
+    const dots = document.querySelectorAll('.dots button');
+    if (dots.length) {
+      dots.forEach(dot => { 
+        dot.setAttribute('data-active', false);
+        dot.blur();
+      });
+      document.querySelector(`.dots button[data-slide="${next}"]`).setAttribute('data-active', true);
+    }
+  }
+
+  function slideshowDots(dot, dotsContainer) {
+    const dots = dotsContainer.querySelectorAll('button');
+    dots.forEach(dot => { 
+      dot.setAttribute('data-active', false);
+    });
+    dot.setAttribute('data-active', true);
+    const frame = dot.closest('.frame');
+    const current = frame.dataset.current;
+    const slide = Number(dot.dataset.slide);
+    let transition = speed;
     if (current < slide) {
       transition = (speed * (slide - current));
     } else if (current > slide) {
       transition = (speed * (current - slide));
     }
-    dot.closest('section').attr('data-current', slide);
-    dot.closest('.frame').attr('data-current', slide).find('.stage').attr('style', `transition: ${transition}s ease-in-out`);
-    dot.closest('.frame').find(`.stage div[data-slide="${slide}"]`).attr('data-active', true).siblings().attr('data-active', false);
+    dot.closest('section').setAttribute('data-current', slide);
+    frame.setAttribute('data-current', slide);
+    frame.querySelector('.stage').setAttribute('style', `transition: ${transition}s ease-in-out`);
+    const layers = frame.querySelectorAll('.stage > div');
+    layers.forEach(layer => { layer.setAttribute('data-active', false) });
+    console.log('layer', layers)
+    frame.querySelector(`.stage div[data-slide="${slide}"]`).setAttribute('data-active', true);
   }
 
-  var details = new SwipeIt('.op-mattress-3d .details .frame');
-  var layersNav = $('.layers .dots button');
-  $(layersNav).click(function(e) {
-    slideshowDots($(this));
-    var current = $(this).data('slide');
-    $('.op-mattress-3d .details .frame').attr('data-current', current);
-  });
+  const details = new SwipeIt('.mattress-3d .details .frame');
+  const layersNav = document.querySelectorAll('.layers .dots button');
+  layersNav.forEach(btn => {
+    btn.addEventListener('click', event => {
+      const dotsContainer = event.target.closest('div');
+      slideshowDots(event.target, dotsContainer);
+      const current = event.target.dataset.slide;
+      document.querySelector('.mattress-3d .details .frame').setAttribute('data-current', current);
+    })
+  })
 
-  details.on('swipeLeft',function() {
-    nextSlide($(this));
-    var current = $(this).find('.stage div[data-active="true"]').attr('data-slide');
-    $('.layers .frame').attr('data-current', current);
-    $('.layer[data-slide="' + current + '"]').attr('data-active', true).siblings().attr('data-active', false);
-    $('.layers .dots button[data-slide="' + current + '"]').attr('data-active', true).siblings().attr('data-active', false);
+  function swipe(slide) {
+    const current = slide.querySelector('.stage div[data-active="true"]').dataset.slide;
+    document.querySelector('.layers .frame').setAttribute('data-current', current);
+    const layers = document.querySelectorAll('.layer');
+    layers.forEach(layer => {
+      layer.setAttribute('data-active', false);
+    })
+    document.querySelector(`.layer[data-slide="${current}"]`).setAttribute('data-active', true);
+  }
+  details.on('swipeLeft',function(e) {
+    nextSlide(e.target);
+    swipe(e.target);
   })
   .on('swipeRight',function(e){
-    prevSlide($(this));
-    var current = $(this).find('.stage div[data-active="true"]').attr('data-slide');
-    $('.layers .frame').attr('data-current', current);
-    $('.layer[data-slide="' + current + '"]').attr('data-active', true).siblings().attr('data-active', false);
-    $('.layers .dots button[data-slide="' + current + '"]').attr('data-active', true).siblings().attr('data-active', false);
+    prevSlide(e.target);
+    swipe(e.target);
   });
 
-  var opAnimated = false;
-  var opAnimation = (function() {
-    $('.op-mattress-3d .photo-anchor').inViewport(function(px) {
-      if (px && !opAnimated) {
-        opAnimated = true;
-        $('.op-mattress-3d .layer[data-slide="1"]').addClass("bounce1");
-        $('.op-mattress-3d .layer[data-slide="2"]').addClass("bounce2");
-        $('.op-mattress-3d .layer[data-slide="3"]').addClass("bounce3");
-        $('.op-mattress-3d .layer[data-slide="4"]').addClass("bounce4");
-        $('.op-mattress-3d .layer[data-slide="5"]').addClass("bounce5");
-        $('.op-mattress-3d .layers .dots button').addClass("animate");
+  let animated = false;
+  const anchor = document.querySelector('.mattress-3d .photo-anchor');
+  const animation = (function() {
+    $(anchor).inViewport(function(px) {
+      if (px && !animated) {
+        animated = true;
+        const layers = document.querySelectorAll('.mattress-3d .layer');
+        for (let i = 1; i < layers.length + 1; i++) {
+          document.querySelector(`.mattress-3d .layer[data-slide="${i}"]`).classList.add(`bounce${i}`);
+        }
+        const btns = document.querySelectorAll('.mattress-3d .layers .dots button');
+        btns.forEach(btn => { btn.classList.add('animate')});
         setTimeout(function() {
-          $('.op-mattress-3d .layer[data-slide="1"]').removeClass("bounce1").attr('style', 'opacity: 1;');
-          $('.op-mattress-3d .layer[data-slide="2"]').removeClass("bounce2").attr('style', 'opacity: 1;');
-          $('.op-mattress-3d .layer[data-slide="3"]').removeClass("bounce3").attr('style', 'opacity: 1;');
-          $('.op-mattress-3d .layer[data-slide="4"]').removeClass("bounce4").attr('style', 'opacity: 1;');
-          $('.op-mattress-3d .layer[data-slide="5"]').removeClass("bounce5").attr('style', 'opacity: 1;');
+          for (let i = 1; i < layers.length + 1; i++) {
+            console.log('i', i)
+            let layer = document.querySelector(`.mattress-3d .layer[data-slide="${i}"]`);
+            layer.classList.remove(`bounce${i}`);
+            layer.setAttribute('style', 'opacity: 1;');
+          }
         }, 2500);
       }
     });  
   })
-  opAnimation();
+  animation();
 </script>
 {% endblock %}
