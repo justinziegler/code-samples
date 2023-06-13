@@ -124,7 +124,6 @@ async function sheets(ctx, next) {
 
 async function mattressAnimation(ctx, next) {
   ctx.body = await render('promotion_mattress_animation', {
-    title: 'Product Page example',
     layers: [
       {
         title: 'Quilted Memory Foam Cover',
@@ -141,6 +140,29 @@ async function mattressAnimation(ctx, next) {
       {
         title: 'Durable Base Layer',
         details: 'The foundation for better sleep<br class="hidden-md hidden-lg"> starts here. <br class="visible-md visible-lg">7" of sink-resistant, <br class="hidden-md hidden-lg">high-density, foam maintains the appearance and feel of your mattress.  Unrivaled durability makes it the<br class="visible-md"> perfect foundation for the comfort layers above.'
+      }
+    ]
+  });
+}
+
+async function valueProps(ctx, next) {
+  ctx.body = await render('promotion_value_propositions', {
+    items: [
+      {
+        title: 'Free Shipping & Easy Returns',
+        details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultricies nisi a euismod bibendum. Sed congue sem at aliquet interdum.'
+      },
+      {
+        title: '365 Night Trial',
+        details: 'Donec vehicula porta metus, id malesuada massa ornare in. Vivamus vitae nisi aliquet, luctus urna sed, viverra leo.'
+      },
+      {
+        title: 'Lifetime Warranty',
+        details: 'Ut pellentesque id nisi vitae bibendum. Proin a consectetur magna. Nam sit amet metus ac metus condimentum aliquet.'
+      },
+      {
+        title: 'Easy Financing Available',
+        details: 'Aliquam erat volutpat. Suspendisse vitae lectus id massa tristique mattis. Nunc consectetur luctus augue sed'
       }
     ]
   });
@@ -176,5 +198,6 @@ router.get('/frame/cal-king', frame);
 router.get('/frame/california-king', frame);
 
 router.get('/mattress-animation', mattressAnimation);
+router.get('/value-props', valueProps);
 
 module.exports = router;
