@@ -74,11 +74,7 @@ async function mattress(ctx, next) {
     title: 'Product Page example',
     discountActual: ctx.discountActual,
     upsellDiscountActual: ctx.upsellDiscountActual,
-    ourWay: ourWay,
-    prevPage: '../',
-    nextPage: '../frame',
-    headerTitle: 'Product Template Example with Upsell Modal',
-    headerContent: 'This page illustrates some of the core features of the versatile product template I developed. (Add bullets'
+    ourWay: ourWay
   });
 }
 
