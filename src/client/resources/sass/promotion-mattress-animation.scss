@@ -1,0 +1,95 @@
+/* When editing, use the source file for this page in client/resources/sass */
+@import 'compass';
+
+// Core variables and mixins
+@import 'bootstrap/variables';
+@import 'bootstrap/mixins';
+
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/layout';
+@import 'partials/svg';
+// @import 'partials/snippets/video-embed';
+// @import 'animate/properties';
+// @import 'animate/bouncing-entrances/bounceInDown';
+
+$imgixUrl: 'https://lull-media.imgix.net/original-premium';
+$imgixDefaults: '?auto=format,compress&q=50';
+$imgixCrop: '&fit=crop&crop=focalpoint';
+
+h1 {
+  @include mq(xsm) {
+    font-size: vwl(19.5px);
+  }
+  @include mq(xxs) {
+    font-size: vwp(19.5px);
+  }
+}
+
+// slideshow stuff
+.frame {
+  position: relative;
+  overflow: hidden;
+  .dots {
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    @include mq(xsm) {
+      height: vwl(20px);
+    }
+    @include mq(xxs) {
+      height: vwp(20px);
+    }
+    > button {
+      width: 10px;
+      height: 10px;
+      margin: 0 7px;
+      z-index: 2;
+      background-color: $white;
+      opacity: 0.6;
+      border-radius: 50%;
+      transition: 0.2s;
+      cursor: pointer;
+      display: block;
+      border: none;
+      position: relative;
+      @include mq(xsm) {
+        width: vwl(10px);
+        height: vwl(10px);
+        margin: 0 vwl(7px);
+      }
+      @include mq(xxs) {
+        width: vwp(10px);
+        height: vwp(10px);
+        margin: 0 vwp(7px);
+      }
+      &[data-active='true'] {
+        opacity: 1;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+.stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  transition: 0.2s ease-in-out;
+  box-sizing: content-box;
+  > div {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    transition: 0.2s;
+    transition-delay: 0.1s;
+  }
+}
