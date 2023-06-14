@@ -367,7 +367,7 @@
     const slides = slideshow.querySelectorAll('.stage > div');
     const max = slides.length;
     let next = current + 1;
-    if (current < max) {00
+    if (current < max) {
       slideshow.setAttribute('data-current', next);
       slideshow.closest('section').setAttribute('data-current', next);
       stage.setAttribute('style', 'transition: ' + speed + 's ease-in-out;');
@@ -603,18 +603,29 @@
 {% endmacro %}
 
 {% macro inViewport() %}
-<script>
-  ;(function($, win) {		
-    $.fn.inViewport = function(cb) {		
-      return this.each(function(i,el){		
-          function visPx(){		
-              var H = $(this).height(),		
-              r = el.getBoundingClientRect(), t=r.top, b=r.bottom;		
-              return cb.call(el, Math.max(0, t>0? H-t : (b<H?b:H)));  		
-          } visPx();		
-          $(win).on("resize scroll", visPx);		
-      });		
-    };		
-  }(jQuery, window));
+<script> {# found on StackOverflow #}
+  function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /* or $(window).height() */
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
+    );
+  }
+
+  function onVisibilityChange(el, callback) {
+    var old_visible;
+    return function () {
+      var visible = isElementInViewport(el);
+      if (visible != old_visible) {
+        old_visible = visible;
+        if (typeof callback == 'function') {
+          callback();
+        }
+      }
+    }
+  }
 </script>
 {% endmacro %}

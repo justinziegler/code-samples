@@ -107,26 +107,34 @@
 
   let animated = false;
   const anchor = document.querySelector('.mattress-3d .photo-anchor');
-  const animation = (function() {
-    $(anchor).inViewport(function(px) {
-      if (px && !animated) {
-        animated = true;
-        const layers = document.querySelectorAll('.mattress-3d .layer');
-        for (let i = 1; i < layers.length + 1; i++) {
-          document.querySelector(`.mattress-3d .layer[data-slide="${i}"]`).classList.add(`bounce${i}`);
-        }
-        const btns = document.querySelectorAll('.mattress-3d .layers .dots button');
-        btns.forEach(btn => { btn.classList.add('animate')});
-        setTimeout(function() {
-          for (let i = 1; i < layers.length + 1; i++) {
-            let layer = document.querySelector(`.mattress-3d .layer[data-slide="${i}"]`);
-            layer.classList.remove(`bounce${i}`);
-            layer.setAttribute('style', 'opacity: 1;');
-          }
-        }, 2500);
+  var handler = onVisibilityChange(anchor, function() {
+    if (!animated) {
+      animated = true;
+      const layers = document.querySelectorAll('.mattress-3d .layer');
+      for (let i = 1; i < layers.length + 1; i++) {
+        document.querySelector(`.mattress-3d .layer[data-slide="${i}"]`).classList.add(`bounce${i}`);
       }
-    });  
-  })
-  animation();
+      const btns = document.querySelectorAll('.mattress-3d .layers .dots button');
+      btns.forEach(btn => { btn.classList.add('animate')});
+      setTimeout(function() {
+        for (let i = 1; i < layers.length + 1; i++) {
+          let layer = document.querySelector(`.mattress-3d .layer[data-slide="${i}"]`);
+          layer.classList.remove(`bounce${i}`);
+          layer.setAttribute('style', 'opacity: 1;');
+        }
+      }, 2500);
+    }
+  });
+  if (window.addEventListener) {
+    addEventListener('DOMContentLoaded', handler, false);
+    addEventListener('load', handler, false);
+    addEventListener('scroll', handler, false);
+    addEventListener('resize', handler, false);
+  } else if (window.attachEvent)  {
+    attachEvent('onDOMContentLoaded', handler); // Internet Explorer 9+ :(
+    attachEvent('onload', handler);
+    attachEvent('onscroll', handler);
+    attachEvent('onresize', handler);
+  }
 </script>
 {% endblock %}

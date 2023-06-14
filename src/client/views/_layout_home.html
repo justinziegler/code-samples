@@ -22,9 +22,10 @@
     {% endblock %}
   </main>
   
-  {% for script in scripts %}
+  <script src="../assets/nav.js"></script>
+  {%- for script in scripts -%}
     <script src="../assets/{{ script }}.js"></script>
-  {% endfor %}
+  {%- endfor -%}
   <script>
     $('nav').autoHidingNavbar();
   </script>

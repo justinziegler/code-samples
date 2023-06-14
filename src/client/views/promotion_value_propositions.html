@@ -68,11 +68,20 @@
   const frame = document.querySelector('.made-simple .frame');
   const dotsContainer = document.querySelector('.made-simple .dots');
 
-  $(frame).inViewport(function(px) {
-    if(px) {
-      frame.classList.add('autoplay');
-    }
+  var handler = onVisibilityChange(frame, function() {
+    frame.classList.add('autoplay');
   });
+  if (window.addEventListener) {
+    addEventListener('DOMContentLoaded', handler, false);
+    addEventListener('load', handler, false);
+    addEventListener('scroll', handler, false);
+    addEventListener('resize', handler, false);
+  } else if (window.attachEvent)  {
+    attachEvent('onDOMContentLoaded', handler); // Internet Explorer 9+ :(
+    attachEvent('onload', handler);
+    attachEvent('onscroll', handler);
+    attachEvent('onresize', handler);
+  }
 
   const madeSimple = new SwipeIt('.made-simple .frame');
 

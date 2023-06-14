@@ -34,10 +34,7 @@ async function home(ctx, next) {
       pageUrl: '/',
       nextPage: 'value-props',
     },
-    caseStudies: caseStudies,
-    scripts: [
-      'nav',
-    ],
+    caseStudies: caseStudies
   });
 }
 
@@ -49,15 +46,14 @@ async function valueProps(ctx, next) {
       prevPage: '../',
       nextPage: 'mattress-animation',
       headerTitle: 'Lightweight Multi-use Slideshow',
-      headerIntro: 'This example illustrates one of the more common use cases that lead me to develop this script. In this case, the section is a swipe-able slideshow on mobile screens and an accordion on larger screens. In addition, I did the Photoshop work required to provide a suitable backdrop to the text content.',
+      headerIntro: 'This example illustrates one of the more common use cases that lead me to develop this script. In addition, I did the Photoshop work required to provide a suitable backdrop to the text content. Features on display here include:',
       headerBullets: [
+        'An auto-playing swipe-able slideshow on mobile screens',
+        'A content accordion on larger screens',
         '<a href="https://lull.com/luxe-hybrid" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
       ]
     },
-    items: items,
-    scripts: [
-      'nav',
-    ],
+    items: items
   });
 }
 
@@ -70,8 +66,11 @@ async function mattressAnimation(ctx, next) {
       prevPage: 'value-props',
       nextPage: 'tiktok',
       headerTitle: 'Lightweight Multi-use Slideshow',
-      headerIntro: 'This is another example of the slideshow script highlighted on the previous page. In this instance, navigating between slides also steps through an animation that showcases each layer of a mattress.',
+      headerIntro: 'This is another example of the slideshow script highlighted on the previous page. In this instance, . Features on display here include:',
       headerBullets: [
+        'Swipe-able slideshow of text content',
+        'Navigating between slides also steps through an animation that showcases each layer of a mattress',
+        'Alternate mobile layout',
         '<a href="https://lull.com/original-premium-mattress" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
       ]
     },
@@ -89,7 +88,7 @@ async function tiktok(ctx, next) {
       pageUrl: 'tiktok',
       prevPage: 'mattress-animation',
       nextPage: 'mattress',
-      headerTitle: 'Tiktok Marketing Mimic',
+      headerTitle: 'Tiktok Mimic',
       headerIntro: 'Most marketing campaigns I\'ve worked on would get refined over time to increase their overall chances of success, but that wasn\'t the case here. Very early after this page launched, engagement and sales data showed that the campaign was a hit with users. The features on display include:',
       headerBullets: [
         'Slideshow of a dozen short videos that auto-advance when complete',
@@ -103,7 +102,6 @@ async function tiktok(ctx, next) {
     faqs: faqs,
     mattressDiscount: 200,
     scripts: [
-      'nav',
       'modal.bootstrap',
       'swiper-lite',
       'lazysizes.min',
