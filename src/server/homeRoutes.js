@@ -125,7 +125,7 @@ async function mattress(ctx, next) {
     title: 'Product Page example',
     discountActual: ctx.discountActual,
     upsellDiscountActual: ctx.upsellDiscountActual,
-    ourWay: ourWay,
+    ourWay: ourWay
   });
 }
 
