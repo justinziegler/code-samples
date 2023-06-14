@@ -65,7 +65,7 @@ async function mattressAnimation(ctx, next) {
       prevPage: 'value-props',
       nextPage: 'tiktok',
       headerTitle: 'Lightweight Multi-use Slideshow',
-      headerIntro: 'This is another example of the slideshow script highlighted on the previous page. In this instance, navigating between slides also steps through a simple animation that showcases each layer of a mattress.',
+      headerIntro: 'This is another example of the slideshow script highlighted on the previous page. In this instance, navigating between slides also steps through an animation that showcases each layer of a mattress.',
       headerBullets: [
         '<a href="https://lull.com/original-premium-mattress" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
       ]
@@ -117,10 +117,6 @@ async function mattress(ctx, next) {
     discountActual: ctx.discountActual,
     upsellDiscountActual: ctx.upsellDiscountActual,
     ourWay: ourWay,
-    prevPage: '../tiktok',
-    nextPage: '../frame',
-    headerTitle: 'Product Template Example with Upsell Modal',
-    headerContent: 'This page illustrates some of the core features of the versatile product template I developed. (Add bullets'
   });
 }
 

@@ -24,10 +24,10 @@
   
   {% for script in scripts %}
     <script src="../assets/{{ script }}.js"></script>
-    <script>
-      $('nav').autoHidingNavbar();
-    </script>
   {% endfor %}
+  <script>
+    $('nav').autoHidingNavbar();
+  </script>
   {% block scripts %}
   {% endblock %}
 </body>
