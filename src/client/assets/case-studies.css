@@ -1,5 +1,6 @@
 main {
   padding-top: 30px;
+  background-color: #e7eaeb;
 }
 @media (min-width: 992px) {
   main {
@@ -11,15 +12,20 @@ main {
   background: #f3f4f5;
   padding: 30px 0;
   position: relative;
-  background-image: -owg-linear-gradient(top, #e7eaeb 0%, #f3f4f5 5%, #f3f4f5 95%, #e7eaeb 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e7eaeb), color-stop(5%, #f3f4f5), color-stop(95%, #f3f4f5), to(#e7eaeb));
-  background-image: linear-gradient(top, #e7eaeb 0%, #f3f4f5 5%, #f3f4f5 95%, #e7eaeb 100%);
-  border-top: solid 1px #dadfe1;
-  border-bottom: solid 1px #dadfe1;
+  background-color: #fff;
+  border-top: solid 1px #89e6e2;
+  border-bottom: solid 1px #89e6e2;
+  margin-bottom: 9.375vw;
 }
 @media (min-width: 544px) and (max-width: 767px) {
   .case-studies {
     padding: 30px calc((100% - 390px) / 2);
+    margin-bottom: 30px;
+  }
+}
+@media (min-width: 768px) {
+  .case-studies {
+    margin-bottom: 45px;
   }
 }
 @media (min-width: 992px) {
@@ -30,16 +36,31 @@ main {
 .case-studies::before, .case-studies::after {
   content: "";
   position: absolute;
-  height: 5px;
+  height: 3px;
   left: 0;
   right: 0;
-  background-color: #abedeb;
+  background-color: #89e6e2;
+}
+@media (min-width: 992px) {
+  .case-studies::before, .case-studies::after {
+    height: 4px;
+  }
 }
 .case-studies::before {
-  top: -10px;
+  top: -6px;
+}
+@media (min-width: 992px) {
+  .case-studies::before {
+    top: -8px;
+  }
 }
 .case-studies::after {
-  bottom: -10px;
+  bottom: -6px;
+}
+@media (min-width: 992px) {
+  .case-studies::after {
+    bottom: -8px;
+  }
 }
 
 .case-study h2 {
@@ -146,6 +167,9 @@ main {
           flex-direction: row;
   background-image: -owg-radial-gradient(center, ellipse cover, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
   background-image: radial-gradient(center, ellipse cover, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 @media (max-width: 767px) {
   .case-study .thumbnails {
@@ -193,6 +217,9 @@ main {
   color: #45afab;
   line-height: 1;
   font-weight: 500;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 @media (min-width: 992px) {
   .case-study .thumbnails .header-nav a {
@@ -210,18 +237,37 @@ main {
     padding-bottom: 2.5vw;
   }
 }
-@media (min-width: 992px) {
-  .case-study .thumbnails .header-nav a::after {
-    width: 50px;
-    height: 60px;
-    top: 0;
-  }
+.case-study .thumbnails .header-nav a::after {
+  right: 9.375vw;
 }
 @media (max-width: 543px) {
   .case-study .thumbnails .header-nav a::after {
     width: 9.375vw;
     height: 9.375vw;
     top: 0.625vw;
+  }
+}
+@media (min-width: 544px) {
+  .case-study .thumbnails .header-nav a::after {
+    right: 50px;
+  }
+}
+@media (min-width: 768px) {
+  .case-study .thumbnails .header-nav a::after {
+    right: 35px;
+  }
+}
+@media (min-width: 992px) {
+  .case-study .thumbnails .header-nav a::after {
+    width: 50px;
+    height: 60px;
+    top: 0;
+    right: 45px;
+  }
+}
+@media (min-width: 1200px) {
+  .case-study .thumbnails .header-nav a::after {
+    right: 30px;
   }
 }
 .case-study .thumbnails .header-nav a span {

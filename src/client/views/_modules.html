@@ -56,8 +56,11 @@
         <div class="header-title">
           {%- if p.pageUrl !== '/' -%}
             <div class="header-nav collapse">
-              <a href="#">
+              <a href="#" class="toggle-description">
                 &nbsp;<span class="hidden-xs">Description</span>&nbsp;
+              </a>
+              <a class="home" href="../">
+                <span class="sr-only">Home</span>
               </a>
             </div>
           {%- endif -%}
@@ -101,7 +104,7 @@
               <div class="header-title">
                 {%- if p.pageUrl !== '/' -%}
                   <div class="header-nav collapse">
-                    <a href="#">
+                    <a href="#" class="toggle-description">
                       &nbsp;<span>This</span>&nbsp;
                     </a>
                   </div>
@@ -129,7 +132,7 @@
       <script>
         let headerCollapsed = false;
         const nav = document.querySelector('nav');
-        const collapseBtns = document.querySelectorAll('.header-nav.collapse');
+        const collapseBtns = document.querySelectorAll('.header-nav.collapse .toggle-description');
         collapseBtns.forEach(btn => {
           btn.addEventListener('click', event => {
             event.preventDefault();

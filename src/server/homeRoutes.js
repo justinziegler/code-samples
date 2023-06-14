@@ -34,18 +34,22 @@ async function home(ctx, next) {
       pageUrl: '/',
       nextPage: 'value-props',
     },
-    caseStudies: caseStudies
+    caseStudies: caseStudies,
+    scripts: [
+      'nav',
+    ],
   });
 }
 
 async function valueProps(ctx, next) {
   const items = await pageConfig.valueProps(ctx);
   ctx.body = await render('promotion_value_propositions', {
+    title: title,
     p: {
       prevPage: '../',
       nextPage: 'mattress-animation',
       headerTitle: 'Lightweight Multi-use Slideshow',
-      headerIntro: 'In my previous position, I would often be required to develop page sections that looked and functioned differently depending if users were on mobile vs. a larger screen. This project came about from a desire to build something lightweight that can function like a slideshow, but, while using the same markup, can have alternate functionality on different screen sizes. In this case, the section is a swipe-able slideshow on mobile screens and an accordion on larger screens.',
+      headerIntro: 'This example illustrates one of the more common use cases that lead me to develop this script. In this case, the section is a swipe-able slideshow on mobile screens and an accordion on larger screens. In addition, I did the Photoshop work required to provide a suitable backdrop to the text content.',
       headerBullets: [
         '<a href="https://lull.com/luxe-hybrid" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
       ]
@@ -60,6 +64,7 @@ async function valueProps(ctx, next) {
 async function mattressAnimation(ctx, next) {
   const layers = await pageConfig.mattressAnimation(ctx);
   ctx.body = await render('promotion_mattress_animation', {
+    title: title,
     p: {
       pageUrl: 'mattress-animation',
       prevPage: 'value-props',
@@ -79,13 +84,17 @@ async function tiktok(ctx, next) {
   const tweets = await pageConfig.tkTweets(ctx);
   const faqs = await pageConfig.tkFaqs(ctx);
   ctx.body = await render('promotion_tiktok', {
+    title: title,
     p: {
       pageUrl: 'tiktok',
       prevPage: 'mattress-animation',
       nextPage: 'mattress',
       headerTitle: 'Tiktok Marketing Mimic',
-      headerIntro: 'This was an interesting project developed for a social media marketing campaign. The intent was to mimic the look and feel of Tiktok and provide an engaging experience that would hopefully lead to sales. Most marketing campaigns I\'ve worked on would get refined over time to increase their overall chances of success, but that wasn\'t the case here. Very early after this page launched, sales data showed that the campaign was a hit with users.',
+      headerIntro: 'Most marketing campaigns I\'ve worked on would get refined over time to increase their overall chances of success, but that wasn\'t the case here. Very early after this page launched, engagement and sales data showed that the campaign was a hit with users. The features on display include:',
       headerBullets: [
+        'Slideshow of a dozen short videos that auto-advance when complete',
+        'Popup overlays of user reviews and FAQs',
+        'Email capture redirect to main website',
         '<a href="https://lull.com/tksale" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
       ]
     },
@@ -162,6 +171,11 @@ async function sheets(ctx, next) {
 
 const router = new Router();
 router.get('/', home);
+
+router.get('/value-props', valueProps);
+router.get('/mattress-animation', mattressAnimation);
+router.get('/tiktok', tiktok);
+
 router.get('/mattress', mattress);
 router.get('/mattress/twin', mattress);
 router.get('/mattress/twin-xl', mattress);
@@ -188,9 +202,5 @@ router.get('/frame/queen', frame);
 router.get('/frame/king', frame);
 router.get('/frame/cal-king', frame);
 router.get('/frame/california-king', frame);
-
-router.get('/mattress-animation', mattressAnimation);
-router.get('/value-props', valueProps);
-router.get('/tiktok', tiktok);
 
 module.exports = router;

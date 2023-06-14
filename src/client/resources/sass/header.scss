@@ -102,7 +102,7 @@ nav {
   }
   &[data-collapsed='true'] {
     .header-nav.collapse {
-      a {
+      a.toggle-description {
         &::before {
           content: 'Show';
         }
@@ -115,7 +115,7 @@ nav {
   &[data-collapsed='false'] {
     bottom: 0;
     .header-nav.collapse {
-      a {
+      a.toggle-description {
         &::before {
           content: 'Hide';
         }
@@ -225,38 +225,45 @@ nav {
     width: 100%;
     flex: 1;
     padding: 0;
-    // @include mq(sm) {
-    //   width: 210px;
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   bottom: 0;
-    // }
+    column-gap: 15px;
+    @include mq(sm) {
+      column-gap: 165px;
+    }
     a {
-      width: 100%;
-      // padding-left: 15px;
       justify-content: center;
       background: tint($navy, 10%);
       border: solid 1px tint($navy, 20%);
       padding-bottom: 2px;
-      @include mq(sm) {
-        // padding-right: 35px;
-        // justify-content: flex-end;
-        width: 180px;
-      }
-      &::after {
-        transform: rotate(90deg);
-        right: 15px;
-        width: 15px;
-        transition: .2s;
-        position: relative;
-        top: 3px;
-        right: auto;
-        // margin: 5px 5px 0 0;
-      }
+      
       &:hover, &:focus {
         border: solid 1px $teal;
         outline: none;
+      }
+      &.toggle-description {
+        width: 100%;
+        @include mq(sm) {
+          width: 180px;
+        }
+        &::after {
+          transform: rotate(90deg);
+          right: 15px;
+          width: 15px;
+          transition: .2s;
+          position: relative;
+          top: 3px;
+          right: auto;
+        }
+      }
+      &.home {
+        width: 40px;
+        height: 30px;
+        // position: absolute;
+        // left: 560px;
+        &::after {
+          @include new-home(#000);
+          width: 45px;
+          height: 23px;
+        }
       }
     }
   }

@@ -22,7 +22,7 @@ module.exports.home = async function (ctx) {
       ]
     },
     {
-      title: 'Tiktok Marketing Mimic',
+      title: 'Tiktok Mimic',
       intro: 'In my previous position, I would often be required to develop page sections that looked and functioned differently depending if users were on mobile vs. a larger screen. This project came about from a desire to:',
       bullets: [ 
         'Mimic the look and feel of Tiktok for users that are referred from mobile-targeted links on social media',
@@ -30,7 +30,7 @@ module.exports.home = async function (ctx) {
       ],
       thumbnails: [
         {
-          title: 'Tiktok Marketing Mimic',
+          title: 'Tiktok Mimic',
           link: '../tiktok'
         }
       ]

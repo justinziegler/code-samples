@@ -112,7 +112,7 @@ nav .row {
           justify-content: space-between;
   height: 50px;
 }
-nav[data-collapsed=true] .header-nav.collapse a::before {
+nav[data-collapsed=true] .header-nav.collapse a.toggle-description::before {
   content: "Show";
 }
 nav[data-collapsed=true] .header-content {
@@ -121,10 +121,10 @@ nav[data-collapsed=true] .header-content {
 nav[data-collapsed=false] {
   bottom: 0;
 }
-nav[data-collapsed=false] .header-nav.collapse a::before {
+nav[data-collapsed=false] .header-nav.collapse a.toggle-description::before {
   content: "Hide";
 }
-nav[data-collapsed=false] .header-nav.collapse a::after {
+nav[data-collapsed=false] .header-nav.collapse a.toggle-description::after {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
 }
@@ -235,9 +235,18 @@ nav .case-study-nav .collapse a::after {
       -ms-flex: 1;
           flex: 1;
   padding: 0;
+  -webkit-column-gap: 15px;
+     -moz-column-gap: 15px;
+          column-gap: 15px;
+}
+@media (min-width: 768px) {
+  .header-nav.collapse {
+    -webkit-column-gap: 165px;
+       -moz-column-gap: 165px;
+            column-gap: 165px;
+  }
 }
 .header-nav.collapse a {
-  width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -245,12 +254,19 @@ nav .case-study-nav .collapse a::after {
   border: solid 1px #3c535e;
   padding-bottom: 2px;
 }
+.header-nav.collapse a:hover, .header-nav.collapse a:focus {
+  border: solid 1px #56dbd6;
+  outline: none;
+}
+.header-nav.collapse a.toggle-description {
+  width: 100%;
+}
 @media (min-width: 768px) {
-  .header-nav.collapse a {
+  .header-nav.collapse a.toggle-description {
     width: 180px;
   }
 }
-.header-nav.collapse a::after {
+.header-nav.collapse a.toggle-description::after {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   right: 15px;
@@ -261,9 +277,14 @@ nav .case-study-nav .collapse a::after {
   top: 3px;
   right: auto;
 }
-.header-nav.collapse a:hover, .header-nav.collapse a:focus {
-  border: solid 1px #56dbd6;
-  outline: none;
+.header-nav.collapse a.home {
+  width: 40px;
+  height: 30px;
+}
+.header-nav.collapse a.home::after {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2080%2076.55%22%3E%3Cpolygon%20points%3D%2221.82%2011.03%2021.82%205.48%2011.86%205.48%2011.86%2019.88%2021.82%2011.03%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3Cpath%20d%3D%22M40%2C14%2C11.86%2C39V75a1.52%2C1.52%2C0%2C0%2C0%2C1.52%2C1.52H66.63A1.52%2C1.52%2C0%2C0%2C0%2C68.15%2C75h0V39Zm14%2C42.7H43.44v10.2h-6.8V56.73H26V50.37H36.61v-10h6.83v10H54Z%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3Cpolygon%20points%3D%224.31%2040.38%200%2035.53%2040%200%2080%2035.52%2075.69%2040.38%2040%208.69%204.31%2040.38%22%20fill%3D%22rgb(0%2C0%2C0)%22%2F%3E%3C%2Fsvg%3E");
+  width: 45px;
+  height: 23px;
 }
 
 .header-title {
