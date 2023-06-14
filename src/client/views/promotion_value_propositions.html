@@ -24,7 +24,7 @@
           <div class="stage">
             {% for item in items %}
               {% set active = loop.index == 1 %}
-              <div data-slide="{{ loop.index }}" data-active="{{ active }}" onClick="setItemActive({{ loop.index }})">
+              <div data-slide="{{ loop.index }}" data-active="{{ active }}">
                 <h4>{{ item.title }}</h4>
                 <div class="content">
                   <p>{{ item.details }}</p>
@@ -37,7 +37,6 @@
               {% set active = loop.index == 1 %}
               <button data-slide="{{ loop.index }}" 
                 data-active="{{ active }}" 
-                onClick="setBtnActive({{ loop.index}})"
                 role="button" tabindex="0"
                 >
             </button>
@@ -56,14 +55,13 @@
 {{ _js.inViewport() }}
 {{ _js.slideShow() }}
 <script>
-  const mobile = window.innerWidth < 768;
   const stageItems = document.querySelectorAll('.made-simple .stage > div');
+  const btns = document.querySelectorAll('.made-simple .dots button');
   if (!mobile) {
     stageItems.forEach(item => {
       item.setAttribute('role', 'button');
       item.setAttribute('tabIndex', 0);
     })
-    const btns = document.querySelectorAll('.made-simple .dots button');
     btns.forEach(btn => { btn.setAttribute('tabIndex', -1); });
   }
 
@@ -73,7 +71,7 @@
   $(frame).inViewport(function(px) {
     if(px) {
       frame.classList.add('autoplay');
-    } 
+    }
   });
 
   const madeSimple = new SwipeIt('.made-simple .frame');
@@ -88,22 +86,23 @@
     prevSlide(e.target);
   });
 
-  function setBtnActive(slideNumber) {
-    frame.classList.remove('autoplay');
-    const dot = dotsContainer.querySelector(`button[data-slide="${slideNumber}"]`);
-    slideshowDots(dot, dotsContainer);
-  }
+  btns.forEach(btn => {
+    btn.addEventListener('click', event => {
+      frame.classList.remove('autoplay');
+      slideshowDots(btn, dotsContainer);
+    })
+  });
 
-  function setItemActive(slideNumber) {
-    if (!mobile) {
-    stageItems.forEach(x => {
-      x.setAttribute('data-active', false);
-    });
-    const slide = document.querySelector(`.made-simple .stage > div[data-slide="${slideNumber}"]`)
-    slide.setAttribute('data-active', true);
-    const dot = dotsContainer.querySelector(`button[data-slide="${slideNumber}"]`);
-    slideshowDots(dot, dotsContainer);
-  }
-  }
+  stageItems.forEach(item => { 
+    item.addEventListener('click', event => {
+      if (window.innerWidth > 767) {
+        stageItems.forEach(s => { s.setAttribute('data-active', false); });
+        item.setAttribute('data-active', true);
+        const slide = item.dataset.slide;
+        const dot = item.closest('.frame').querySelector(`.dots button[data-slide="${slide}"]`);
+        slideshowDots(dot, dotsContainer);
+      }
+    })
+  })
 </script>
 {% endblock %}

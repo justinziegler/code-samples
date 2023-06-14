@@ -119,7 +119,6 @@
         btns.forEach(btn => { btn.classList.add('animate')});
         setTimeout(function() {
           for (let i = 1; i < layers.length + 1; i++) {
-            console.log('i', i)
             let layer = document.querySelector(`.mattress-3d .layer[data-slide="${i}"]`);
             layer.classList.remove(`bounce${i}`);
             layer.setAttribute('style', 'opacity: 1;');

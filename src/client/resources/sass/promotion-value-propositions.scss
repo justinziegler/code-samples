@@ -59,7 +59,7 @@ $imgixUrl: 'https://lull-media.imgix.net/luxe-hybrid-mattress';
       content: '';
       position: absolute;
       top: 0;
-      left: 41%;
+      left: 45%;
       // left: 37%;
       width: vwl(57px);
       bottom: 0;
@@ -141,6 +141,7 @@ $imgixUrl: 'https://lull-media.imgix.net/luxe-hybrid-mattress';
   h4,
   p {
     color: $navy;
+    user-select: none;
   }
   h2 {
     text-align: center;

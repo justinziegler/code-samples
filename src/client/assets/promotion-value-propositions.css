@@ -119,7 +119,7 @@
     content: "";
     position: absolute;
     top: 0;
-    left: 41%;
+    left: 45%;
     width: 10.0352112676vw;
     bottom: 0;
     *zoom: 1;
@@ -198,6 +198,10 @@
 .made-simple h4,
 .made-simple p {
   color: #0b2836;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .made-simple h2 {
   text-align: center;

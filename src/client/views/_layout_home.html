@@ -14,7 +14,7 @@
   {% endblock %}
 </head>
 
-<body ontouchstart>
+<body>
   {{ _modules.header(p) }}
   <main>	
     {% block content %}
@@ -22,11 +22,13 @@
     {% endblock %}
   </main>
   
+  {% for script in scripts %}
+    <script src="../assets/{{ script }}.js"></script>
+    <script>
+      $('nav').autoHidingNavbar();
+    </script>
+  {% endfor %}
   {% block scripts %}
   {% endblock %}
-  
-  <script>
-    $('nav').autoHidingNavbar();
-  </script>
 </body>
 </html>

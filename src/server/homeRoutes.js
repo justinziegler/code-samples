@@ -1,63 +1,105 @@
 const nunjucks = require('nunjucks');
 const utils = require('./../lib/utils');
 const content = require('../lib/content');
-const productDetails = require('../lib/product-config');
-// const ourWay = require { ourWay } from 
+const pageConfig = require('../lib/page-config');
 
 const render = function (path, params = {}) {
   return new Promise(function(resolve, reject) {
-      const fs = require('fs');
-      const dir = './src/client/views/';
-      const ext = '.html';
-      fs.readFile(dir + path + ext, 'utf8', function (error, content) {
-          
-          if (error) return reject(error);
-          
-          nunjucks.configure({
-              autoescape: true
-          });
-          resolve(nunjucks.renderString(
-              content, params
-          ));
-          
+    const fs = require('fs');
+    const dir = './src/client/views/';
+    const ext = '.html';
+    fs.readFile(dir + path + ext, 'utf8', function (error, content) {
+        
+      if (error) return reject(error);
+      
+      nunjucks.configure({
+          autoescape: true
       });
+      resolve(nunjucks.renderString(
+          content, params
+      ));
+        
+    });
   });
 };
 
 const Router = require('@koa/router');
+let title = 'Case Studies'
 
 async function home(ctx, next) {
+  const caseStudies = await pageConfig.home(ctx);
   ctx.body = await render('index', {
-      p: {
-        pageUrl: '/',
-        nextPage: 'mattress',
-      },
-      caseStudies: [
-        {
-          title: 'Product Display Template',
-          intro: 'The following pages highlight the features of a Product Display template that I developed to support a line of bedding products. This project came about from a desire to:',
-          bullets: [ 
-            'Unify diverging styles among the company\'s various product pages',
-            'Create a semantically consistent structural system that would allow for easy re-styling',
-            'Speed up development time for future product launches'
-          ],
-          details: 'The template was developed using the Nunjucks templating language, Sass and jQuery, though I\'ve converted some of the scripts to ES6 over time. Additionally, there are a number of node modules developed to aid in setting product details, like discounted prices and monthly payments.  It\'s made to be fully functional once the relevant variables are set, allowing more time for the development of page content.',
-          thumbnails: [
-            {
-              title: 'Default Config',
-              link: '../mattress'
-            },
-            {
-              title: 'Advanced Features',
-              link: '../frame'
-            },
-            {
-              title: 'Flexible Upsells',
-              link: '../sheets'
-            }
-          ]
-        }
+    title: title,
+    p: {
+      pageUrl: '/',
+      nextPage: 'value-props',
+    },
+    caseStudies: caseStudies
+  });
+}
+
+async function valueProps(ctx, next) {
+  const items = await pageConfig.valueProps(ctx);
+  ctx.body = await render('promotion_value_propositions', {
+    p: {
+      prevPage: '../',
+      nextPage: 'mattress-animation',
+      headerTitle: 'Lightweight Multi-use Slideshow',
+      headerIntro: 'In my previous position, I would often be required to develop page sections that looked and functioned differently depending if users were on mobile vs. a larger screen. This project came about from a desire to build something lightweight that can function like a slideshow, but, while using the same markup, can have alternate functionality on different screen sizes. In this case, the section is a swipe-able slideshow on mobile screens and an accordion on larger screens.',
+      headerBullets: [
+        '<a href="https://lull.com/luxe-hybrid" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
       ]
+    },
+    items: items,
+    scripts: [
+      'nav',
+    ],
+  });
+}
+
+async function mattressAnimation(ctx, next) {
+  const layers = await pageConfig.mattressAnimation(ctx);
+  ctx.body = await render('promotion_mattress_animation', {
+    p: {
+      pageUrl: 'mattress-animation',
+      prevPage: 'value-props',
+      nextPage: 'tiktok',
+      headerTitle: 'Lightweight Multi-use Slideshow',
+      headerIntro: 'This is another example of the slideshow script highlighted on the previous page. In this instance, navigating between slides also steps through a simple animation that showcases each layer of a mattress.',
+      headerBullets: [
+        '<a href="https://lull.com/original-premium-mattress" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
+      ]
+    },
+    layers: layers
+  });
+}
+
+async function tiktok(ctx, next) {
+  const slides = await pageConfig.tkSlides(ctx);
+  const tweets = await pageConfig.tkTweets(ctx);
+  const faqs = await pageConfig.tkFaqs(ctx);
+  ctx.body = await render('promotion_tiktok', {
+    p: {
+      pageUrl: 'tiktok',
+      prevPage: 'mattress-animation',
+      nextPage: 'mattress',
+      headerTitle: 'Tiktok Marketing Mimic',
+      headerIntro: 'This was an interesting project developed for a social media marketing campaign. The intent was to mimic the look and feel of Tiktok and provide an engaging experience that would hopefully lead to sales. Most marketing campaigns I\'ve worked on would get refined over time to increase their overall chances of success, but that wasn\'t the case here. Very early after this page launched, sales data showed that the campaign was a hit with users.',
+      headerBullets: [
+        '<a href="https://lull.com/tksale" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
+      ]
+    },
+    slides: slides,
+    tweets: tweets,
+    faqs: faqs,
+    mattressDiscount: 200,
+    scripts: [
+      'nav',
+      'modal.bootstrap',
+      'swiper-lite',
+      'lazysizes.min',
+      'lazysizes.unveilhooks'
+    ],
   });
 }
 
@@ -66,7 +108,7 @@ async function mattress(ctx, next) {
   ctx.upsellDiscountActual = 0;
   ctx.skus = await utils.getProductSkus(ctx, 1, ctx.discountActual);
   ctx.upsellSkus = await utils.getProductSkus(ctx, 8, ctx.upsellDiscountActual);
-  const p = await productDetails.mattress(ctx);
+  const p = await pageConfig.mattress(ctx);
   const ourWay = await content.ourWay(ctx);
 
   ctx.body = await render('product_mattress', {
@@ -75,7 +117,7 @@ async function mattress(ctx, next) {
     discountActual: ctx.discountActual,
     upsellDiscountActual: ctx.upsellDiscountActual,
     ourWay: ourWay,
-    prevPage: '../',
+    prevPage: '../tiktok',
     nextPage: '../frame',
     headerTitle: 'Product Template Example with Upsell Modal',
     headerContent: 'This page illustrates some of the core features of the versatile product template I developed. (Add bullets'
@@ -88,7 +130,7 @@ async function frame(ctx, next) {
   const upholsteredSkus = await utils.getProductSkus(ctx, 40, discountActual);
   const tuftedSkus = await utils.getProductSkus(ctx, 41, discountActual);
 	ctx.skus = upholsteredSkus.concat(tuftedSkus);
-  const p = await productDetails.frame(ctx);
+  const p = await pageConfig.frame(ctx);
 
   ctx.body = await render('product_frame', {
     p: p[0],      
@@ -113,58 +155,12 @@ async function sheets(ctx, next) {
 	ctx.skus = skus;
 	ctx.duvetCoverSkus = duvetCoverSkus;
 	ctx.pillowcaseSkus = pillowcaseSkus;
-  const p = await productDetails.sheets(ctx);
+  const p = await pageConfig.sheets(ctx);
 
   ctx.body = await render('product_sheets', {
     p: p[0],
     title: 'Product Page example',
     discountActual: discountActual,
-  });
-}
-
-async function mattressAnimation(ctx, next) {
-  ctx.body = await render('promotion_mattress_animation', {
-    layers: [
-      {
-        title: 'Quilted Memory Foam Cover',
-        details: 'Easily concealed beneath the<br class="hidden-md hidden-lg"> sheets, this<br class="visible-md visible-lg"> high-quality cover<br class="visible-sm"> features quilted open-cell memory foam and a hexagonal, top-tick design for maximum airflow, keeping you comfortable both in and out of sleep.'
-      },
-      {
-        title: 'Cooling Comfort Layer',
-        details: '2" of cooling-gel bead infused memory<br class="visible-md"> foam promotes increased<br class="visible-xxs"> air circulation<br class="visible-md"> by redirecting and releasing heat away from your body. The contouring memory foam promotes proper spine alignment<br class="hidden-md hidden-lg"> for support<br class="visible-md"> all night long.'
-      },
-      {
-        title: 'Fast Response Transition Layer',
-        details: 'The 2" transitional layer is<br class="visible-xxs"> composed of proprietary high resilience, medium-firm foam and works hard to distribute motion and add additional support. <br class="visible-xssm">Rest easy with the perfect alignment <br class="visible-xssm">and <br class="visible-xxs">wake up feeling fully restored.'
-      },
-      {
-        title: 'Durable Base Layer',
-        details: 'The foundation for better sleep<br class="hidden-md hidden-lg"> starts here. <br class="visible-md visible-lg">7" of sink-resistant, <br class="hidden-md hidden-lg">high-density, foam maintains the appearance and feel of your mattress.  Unrivaled durability makes it the<br class="visible-md"> perfect foundation for the comfort layers above.'
-      }
-    ]
-  });
-}
-
-async function valueProps(ctx, next) {
-  ctx.body = await render('promotion_value_propositions', {
-    items: [
-      {
-        title: 'Free Shipping & Easy Returns',
-        details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultricies nisi a euismod bibendum. Sed congue sem at aliquet interdum.'
-      },
-      {
-        title: '365 Night Trial',
-        details: 'Donec vehicula porta metus, id malesuada massa ornare in. Vivamus vitae nisi aliquet, luctus urna sed, viverra leo.'
-      },
-      {
-        title: 'Lifetime Warranty',
-        details: 'Ut pellentesque id nisi vitae bibendum. Proin a consectetur magna. Nam sit amet metus ac metus condimentum aliquet.'
-      },
-      {
-        title: 'Easy Financing Available',
-        details: 'Aliquam erat volutpat. Suspendisse vitae lectus id massa tristique mattis. Nunc consectetur luctus augue sed'
-      }
-    ]
   });
 }
 
@@ -199,5 +195,6 @@ router.get('/frame/california-king', frame);
 
 router.get('/mattress-animation', mattressAnimation);
 router.get('/value-props', valueProps);
+router.get('/tiktok', tiktok);
 
 module.exports = router;
