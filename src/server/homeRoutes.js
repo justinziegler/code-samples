@@ -89,7 +89,7 @@ async function tiktok(ctx, next) {
       prevPage: 'mattress-animation',
       nextPage: 'mattress',
       headerTitle: 'Tiktok Mimic',
-      headerIntro: 'Most marketing campaigns I\'ve worked on would get refined over time to increase their overall chances of success, but that wasn\'t the case here. Very early after this page launched, engagement and sales data showed that the campaign was a hit with users. The features on display include:',
+      headerIntro: 'Most marketing campaigns I\'ve worked on would get refined over time to increase their overall chances of success, but that wasn\'t the case here. Very early after this page launched, engagement and sales data showed that the campaign was a hit. The features on display include:',
       headerBullets: [
         'Slideshow of a dozen short videos that auto-advance when complete',
         'Popup overlays of user reviews and FAQs',

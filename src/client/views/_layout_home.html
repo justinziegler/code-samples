@@ -1,7 +1,6 @@
-{% import "./../views/_css.html" as _m_css %}
-{% import "./../views/_js.html" as _m_js %}
-{% import "./../views/_modals.html" as _m_modals %}
+{% import "./../views/_css.html" as _css %}
 {% import "./../views/_modules.html" as _modules %}
+{% import "./../views/_js.html" as _js %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +21,8 @@
     {% endblock %}
   </main>
   
-  <script src="../assets/nav.js"></script>
+  {{ _js.headerScripts() }}
+  <!-- <script src="../assets/nav.js"></script> -->
   {%- for script in scripts -%}
     <script src="../assets/{{ script }}.js"></script>
   {%- endfor -%}

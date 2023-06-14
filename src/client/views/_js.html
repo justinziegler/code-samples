@@ -434,6 +434,30 @@
 </script>
 {% endmacro %}
 
+{% macro headerScripts() %}
+  <script>
+    let headerCollapsed = false;
+    function setCollapsed() {
+      headerCollapsed = !headerCollapsed;
+      nav.setAttribute('data-collapsed', headerCollapsed);
+    }
+    const nav = document.querySelector('nav');
+    const collapseBtns = document.querySelectorAll('.header-nav.collapse .toggle-description');
+    collapseBtns.forEach(btn => {
+      btn.addEventListener('click', event => {
+        event.preventDefault();
+        setCollapsed();
+      });
+    })
+    const main = document.querySelector('main');
+    main.addEventListener('click', event => {
+      if (!headerCollapsed) {
+        setCollapsed();
+      }
+    })
+  </script>
+{% endmacro %}
+
 {% macro addToCart() %}
   <script>
     function addToCart() {

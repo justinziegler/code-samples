@@ -126,6 +126,7 @@
     {{- _modals.upsellListModal(p) -}}
   {% endif %}
 
+  {{ _js.headerScripts() }}
   {% for script in p.scripts %}
     <script src="../assets/{{ script }}.js"></script>
   {% endfor %}
@@ -320,8 +321,6 @@
         } else {
           pType = '{{ p.defaultProductType }}';
         }
-        
-      
       {% else %}
         var typeSelection = false;
         pType = $('.product-selection .size-select li:first-of-type').data('type');

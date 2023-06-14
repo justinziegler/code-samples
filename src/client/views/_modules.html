@@ -125,23 +125,7 @@
             </div>
           </div>
         </div>
-        <div>
-          
-        </div>
       </div>
-      <script>
-        let headerCollapsed = false;
-        const nav = document.querySelector('nav');
-        const collapseBtns = document.querySelectorAll('.header-nav.collapse .toggle-description');
-        collapseBtns.forEach(btn => {
-          btn.addEventListener('click', event => {
-            event.preventDefault();
-            headerCollapsed = !headerCollapsed;
-            nav.setAttribute('data-collapsed', headerCollapsed);
-          });
-        })
-        
-      </script>
     {% endif %}
 	</nav>
 {% endmacro %}
