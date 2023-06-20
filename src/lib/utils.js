@@ -151,6 +151,25 @@ module.exports.numberWithCommas = function _numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 };
 
+module.exports.getPageId = async function (pageUrl) {
+  let id = 1;
+  const directory = [
+    { url: 'value-props', id: id++ },
+    { url: 'mattress-animation', id: id++ },
+    { url: 'tiktok', id: id++ },
+    { url: 'mattress', id: id++ },
+    { url: 'frame', id: id++ },
+    { url: 'sheets', id: id++ },
+  ]
+  let pageId;
+  directory.forEach(page => {
+    if (pageUrl === page.url) {
+      pageId = page.id;
+    }
+  })
+  return pageId;
+}
+
 module.exports.getProductSkus = async function (ctx, catId, discount) {
   const products = await content.getProducts(ctx);
   const items = [];

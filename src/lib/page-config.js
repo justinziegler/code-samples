@@ -239,6 +239,8 @@ module.exports.tkFaqs = async function (ctx) {
 }
 
 module.exports.mattress = async function (ctx) {
+  const pageUrl = 'mattress';
+  const pageId = await utils.getPageId(pageUrl);
   const p = [
     {
       skus: ctx.skus,
@@ -252,7 +254,8 @@ module.exports.mattress = async function (ctx) {
       comboProductAccordion: false,
       comboProductButtonTitles: true,
       comboProductButtonLabels: false,
-      pageUrl: 'mattress',
+      pageUrl: pageUrl,
+      pageId: pageId,
       gallerySlides: 4,
       galleryDimensions: 0,
       longTitle: false,
@@ -262,9 +265,9 @@ module.exports.mattress = async function (ctx) {
       ratings: [
         { 
           stars: true,
-          total: utils.numberWithCommas(5555),
+          total: await utils.numberWithCommas(5555),
           average: 4.7,
-          googleTotal: utils.numberWithCommas(2345),
+          googleTotal: await utils.numberWithCommas(2345),
           googleAverage: 4.2,
           tooltip: true,
           mattressTooltip: true
@@ -330,6 +333,8 @@ module.exports.valueProps = async function (ctx) {
 }
 
 module.exports.frame = async function (ctx) {
+  const pageUrl = 'frame';
+  const pageId = await utils.getPageId(pageUrl);
   const p = [
     {
       skus: ctx.skus,
@@ -354,7 +359,8 @@ module.exports.frame = async function (ctx) {
           discount: ctx.discountActual
         }
       ],
-      pageUrl: 'frame',
+      pageUrl: pageUrl,
+      pageId: pageId,
       productType: 'frame',
       gallerySlides: 5,
       galleryDimensions: 5,
@@ -363,7 +369,7 @@ module.exports.frame = async function (ctx) {
       subheading: 'Elevate your bedroom with a modern classic.',
       ratings: [
         { stars: true,
-          total: utils.numberWithCommas(3500),
+          total: await utils.numberWithCommas(3500),
           average: 4.3,
           tooltip: true,
           tooltipFootnote: '*Reviews based on all Bed Frames'
@@ -413,6 +419,8 @@ module.exports.frame = async function (ctx) {
 }
 
 module.exports.sheets = async function (ctx) {
+  const pageUrl = 'sheets';
+  const pageId = await utils.getPageId(pageUrl);
   const p = [
     {
       skus: ctx.skus,
@@ -420,7 +428,8 @@ module.exports.sheets = async function (ctx) {
       defaultCatId: 31,
       defaultProductType: 'OC',
       catSizes: 6,
-      pageUrl: 'sheets',
+      pageUrl: pageUrl,
+      pageId: pageId,
       productType: 'sheets',
       gallerySlides: 5,
       galleryDimensions: 0,
@@ -435,7 +444,7 @@ module.exports.sheets = async function (ctx) {
       ratings: [
         { 
           stars: true,
-          total: utils.numberWithCommas(6543),
+          total: await utils.numberWithCommas(6543),
           average: 4.5,
           tooltip: true,
           tooltipFootnote: '*Reviews based on the Original Sheets set'

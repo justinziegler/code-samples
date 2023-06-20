@@ -40,9 +40,13 @@ async function home(ctx, next) {
 
 async function valueProps(ctx, next) {
   const items = await pageConfig.valueProps(ctx);
+  const pageUrl = 'value-props';
+  const pageId = await utils.getPageId(pageUrl);
   ctx.body = await render('promotion_value_propositions', {
     title: title,
     p: {
+      pageUrl: pageUrl,
+      pageId: pageId,
       prevPage: '../',
       nextPage: 'mattress-animation',
       headerTitle: 'Lightweight Multi-use Slideshow',
@@ -57,12 +61,16 @@ async function valueProps(ctx, next) {
   });
 }
 
+
 async function mattressAnimation(ctx, next) {
   const layers = await pageConfig.mattressAnimation(ctx);
+  const pageUrl = 'mattress-animation';
+  const pageId = await utils.getPageId(pageUrl);
   ctx.body = await render('promotion_mattress_animation', {
     title: title,
     p: {
-      pageUrl: 'mattress-animation',
+      pageUrl: pageUrl,
+      pageId: pageId,
       prevPage: 'value-props',
       nextPage: 'tiktok',
       headerTitle: 'Lightweight Multi-use Slideshow',
@@ -82,10 +90,13 @@ async function tiktok(ctx, next) {
   const slides = await pageConfig.tkSlides(ctx);
   const tweets = await pageConfig.tkTweets(ctx);
   const faqs = await pageConfig.tkFaqs(ctx);
+  const pageUrl = 'tiktok';
+  const pageId = await utils.getPageId(pageUrl);
   ctx.body = await render('promotion_tiktok', {
     title: title,
     p: {
-      pageUrl: 'tiktok',
+      pageUrl: pageUrl,
+      pageId: pageId,
       prevPage: 'mattress-animation',
       nextPage: 'mattress',
       headerTitle: 'Tiktok Mimic',
@@ -163,7 +174,7 @@ async function sheets(ctx, next) {
   ctx.body = await render('product_sheets', {
     p: p[0],
     title: 'Product Page example',
-    discountActual: discountActual,
+    discountActual: discountActual
   });
 }
 

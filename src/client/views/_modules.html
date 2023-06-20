@@ -84,7 +84,8 @@
         <div>
           <h2>
             <span>Case Study</span><br>
-            {{ p.headerTitle }}
+            {%- if p.pageId < 10 -%}0{% endif %}
+            {{- p.pageId -}}. {{ p.headerTitle }}
           </h2>
           <p>{{ p.headerIntro | safe }}</p>
           <ul>
