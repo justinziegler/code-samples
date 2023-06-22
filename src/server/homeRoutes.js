@@ -2,6 +2,7 @@ const nunjucks = require('nunjucks');
 const utils = require('./../lib/utils');
 const content = require('../lib/content');
 const pageConfig = require('../lib/page-config');
+const biz = require('../lib/biz');
 
 const render = function (path, params = {}) {
   return new Promise(function(resolve, reject) {
@@ -178,6 +179,36 @@ async function sheets(ctx, next) {
   });
 }
 
+async function cart(ctx, next) {
+  let cartItems = [];
+  const mattressSkus = await utils.getProductSkus(ctx, 1, 300);
+  cartItems.push(mattressSkus[5]);
+  const sheetsSkus = await utils.getProductSkus(ctx, 30, 30);
+  sheetsSkus.forEach(item => {
+    if (item.size === 'CK' && item.color === 'GG') {
+      cartItems.push(item);
+    }
+  })
+  const u = await utils.getUpsells(cartItems, ctx);
+  const upsells = u.result[0];
+  // console.log('sheetsSkus', sheetsSkus)
+  // console.log('cartItems', cartItems)
+  // console.log('upsells', upsells)
+
+  ctx.body = await render('checkout_cart', {
+    title: 'Shopping Cart',
+    cart: {
+      items: cartItems,
+      upsells: upsells
+    },
+    scripts: [
+      'modal.bootstrap',
+      'swiper-lite',
+      'lazysizes.min'
+    ],
+  })
+}
+
 const router = new Router();
 router.get('/', home);
 
@@ -211,5 +242,7 @@ router.get('/frame/queen', frame);
 router.get('/frame/king', frame);
 router.get('/frame/cal-king', frame);
 router.get('/frame/california-king', frame);
+
+router.get('/cart', cart);
 
 module.exports = router;

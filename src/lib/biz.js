@@ -1,219 +1,6 @@
 
-const content = require('./product-data');
-
-module.exports.calculateDiscount = function _calculateDiscount(price, discount) {
-  let discountActual = discount;
-  if (typeof discount === 'string' && (discount.indexOf('%') > -1 || discount.indexOf('$') > -1)) {
-      discountActual = module.exports.parseDiscountActual(discount);
-  }
-  if (Number.isNaN(parseFloat(discountActual))) {
-      discountActual = 0;
-  }
-  if (discountActual < 1 && discountActual > 0) {
-      return Math.round(price * discountActual * 100) / 100;
-  }
-  return Math.round(discountActual * 100) / 100;
-}
-
-module.exports.calculateDiscountedPrice = function _calculateDiscountedPrice(price, discount) {
-  const discountActual = module.exports.calculateDiscount(price, discount);
-  return Math.round((price - discountActual) * 100) / 100;
-}
-
-module.exports.calculateMonthlyPayment = function _calculateMonthlyPayment(price, discount) {
-  let term = 18;
-  const paymentPrice = module.exports.calculateDiscountedPrice(price, discount);
-  if (paymentPrice >= 799) {
-      term = 24;
-  }
-  return paymentPrice / term;
-}
-
-module.exports.calculatePaymentTerm = function _calculatePaymentTerm(price, discount) {
-	let term = 18;
-	const paymentPrice = module.exports.calculateDiscountedPrice(price, discount);
-	if (paymentPrice >= 799) {
-			term = 24;
-	}
-	return term;
-}
-
-module.exports.getProductName = function _getProductName(type) {
-	switch (type) {
-	case 'MA': return 'Original Mattress';
-	case 'PR': return 'Mattress Protector';
-	case 'PW': return 'Original Pillow';
-	case 'FP': return 'Memory Foam Pillow';
-	case 'DP': return 'Down Pillow';
-	case 'PC': return 'Pillowcase Set';
-	case 'SH': return 'Sheet Set';
-	case 'DV': return 'Original Duvet';
-	case 'DD': return 'Down Duvet';
-	case 'DC': return 'Duvet Cover';
-	case 'WF': return 'Gaviota Platform Bed Frame';
-	case 'MF': return 'Arrellaga Folding Bed Frame';
-	case 'FO': return 'Mattress Foundation';
-	case 'FL': return 'Foundation Legs';
-	case 'HY': return 'Luxe Hybrid Mattress';
-	case 'PP': return '10 Year Protection Plan';
-	case 'CB': return 'Cotton Blend Sheets';
-	case 'BD': return 'Cotton Blend Duvet Cover';
-	case 'BP': return 'Cotton Blend Pillowcase Set';
-	case 'CS': return 'Cotton Sheets';
-	case 'CD': return 'Cotton Duvet Cover';
-	case 'CP': return 'Cotton Pillowcase Set';
-	case 'OC': return 'Organic Cotton Sheets';
-	case 'OD': return 'Organic Cotton Duvet Cover';
-	case 'OP': return 'Organic Cotton Pillowcase Set';
-	case 'TU':
-	case 'UU': return 'Upholstered Bed Frame';
-	case 'PM': return 'Original Premium Mattress';
-	case 'AF': return 'Anacapa Wood Bed Frame';
-	case 'SF': return 'Chapala Metal Bed Frame';
-	default: return 'Original Mattress';
-	}
-};
-
-module.exports.getShortName = function getShortName(type) {
-  switch (type) {
-  case 'CB':
-  case 'BD':
-  case 'BP':
-    return 'Cotton Blend';
-  case 'CS':
-  case 'CD':
-  case 'CP':
-    return 'Cotton';
-  case 'OC':
-  case 'OD':
-  case 'OP':
-    return 'Organic Cotton';
-  case 'UU':
-    return 'Classic Headboard';
-  case 'TU':
-    return 'Tufted Headboard';
-  case 'MA':
-    return 'Original';
-  case 'HY':
-    return 'Luxe Hybrid';
-  case 'PM':
-    return 'Original Premium';
-  case 'AF':
-    return 'Anacapa';
-  case 'SF':
-    return 'Chapala';
-  case 'PW':
-  case 'DV':
-    return 'Original';
-  case 'DP':
-  case 'DD':
-    return 'Down';
-  case 'FP':
-    return 'Memory Foam';
-  default: return 'Cotton';
-  }
-}
-
-module.exports.getColorName = function getColorName(color) {
-  switch (color) {
-  case 'BW': return 'Brilliant White';
-  case 'CD': return 'Cool Dot';
-  case 'CS': return 'Cold Stone';
-  case 'DS': return 'Desert Sand';
-  case 'GG': return 'Granite Grey';
-  case 'GR': return 'Grey';
-  case 'MB': return 'Moon Beam';
-  case 'PA': return 'Plein Air';
-  case 'QG': return 'Quiet Grey';
-  case 'WH': return 'White';
-  case 'WP': return 'Windowpane';
-  default: return 'White';
-  }
-}
-
-module.exports.getSizeName = function getSizeName(size) {
-  switch (size) {
-    case 'TW': return 'Twin';
-    case 'TX': return 'Twin XL';
-    case 'FL': return 'Full';
-    case 'QU': return 'Queen';
-    case 'KG': return 'King';
-    case 'CK': return 'Cal King';
-    case 'TT': return 'Twin / Twin XL';
-    case 'FQ': return 'Full / Queen';
-    case 'KC': return 'King / Cal King';
-    case 'ST': return 'Standard';
-    default: return 'Twin';
-  }
-}
-
-module.exports.numberWithCommas = function _numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-};
-
-module.exports.getPageId = async function (pageUrl) {
-  let id = 1;
-  const directory = [
-    { url: 'value-props', id: id++ },
-    { url: 'mattress-animation', id: id++ },
-    { url: 'tiktok', id: id++ },
-    { url: 'mattress', id: id++ },
-    { url: 'frame', id: id++ },
-    { url: 'sheets', id: id++ },
-  ]
-  let pageId;
-  directory.forEach(page => {
-    if (pageUrl === page.url) {
-      pageId = page.id;
-    }
-  })
-  return pageId;
-}
-
-module.exports.getProductSkus = async function (ctx, catId, discount) {
-  const products = await content.getProducts(ctx);
-  const items = [];
-  products.forEach(p => p.catId === catId && items.push(p));
-	let skus = [];
-	items.forEach(item => { 
-    let price = item.price;
-    let salePrice = module.exports.calculateDiscountedPrice(item.price, discount);
-    let monthlyPayment = module.exports.calculateMonthlyPayment(item.price, discount);
-    let paymentTerm = module.exports.calculatePaymentTerm(item.price, discount);
-    const type = item.sku.slice(3, -6);
-    const color = item.sku.slice(6, -3);
-    const colorName = module.exports.getColorName(color);
-    const size = item.sku.slice(9);
-    const sizeName = module.exports.getSizeName(size);
-    let maxQty = 1;
-    skus.push(
-      {
-        catId: item.catId,
-        sku: item.sku,
-        type: type,
-        name: module.exports.getProductName(type),
-        shortName: module.exports.getShortName(type),
-        color: color,
-        colorName: colorName,
-        size: size,
-        sizeName: sizeName,
-        price: price,
-        discount: discount,
-        salePrice: salePrice,
-        monthlyPayment: monthlyPayment.toFixed(2),
-        paymentTerm: paymentTerm,
-        w: item.w,
-        l: item.l,
-        h: item.h,
-        weight: item.weight,
-        dimensions: item.dimensions,
-        outOfStock: item.outOfStock,
-        maxQty: maxQty
-      }
-    );
-	})
-	return skus;
-}
+const productData = require('./product-data');
+const utils = require('./utils');
 
 module.exports.getUpsells = async function (items, ctx) {
 	// Mattresses
@@ -255,7 +42,7 @@ module.exports.getUpsells = async function (items, ctx) {
 	const cartSkus = items.map(item => item.sku);
 	const cartCatIds = items.map(item => item.catId);
 	let cartTier;
-	const products = await content.getProducts(ctx);
+	const products = await productData.getProducts(ctx);
 
 	function convertSize(itemSize, catId) {
 		let size = itemSize;
@@ -327,69 +114,28 @@ module.exports.getUpsells = async function (items, ctx) {
 		}
 	}
 
-  function getUpsellItem(catId) {
-    const items = [];    
-    products.forEach(p => p.catId === catId && items.push(p));
-    let skus = [];
-    items.forEach(item => { 
-      const type = item.sku.slice(3, -6);
-      const color = item.sku.slice(6, -3);
-      const colorName = module.exports.getColorName(color);
-      const size = item.sku.slice(9);
-      const sizeName = module.exports.getSizeName(size);
-      const details = content.getUpsellDetails(type);
-      skus.push(
-        {
-          catId: item.catId,
-          name: module.exports.getProductName(type),
-          sku: item.sku,
-          type: type,
-          shortName: module.exports.getShortName(type),
-          color: color,
-          colorName: colorName,
-          size: size,
-          sizeName: sizeName,
-          price: item.price,
-          w: item.w,
-          l: item.l,
-          h: item.h,
-          weight: item.weight,
-          dimensions: item.dimensions,
-          outOfStock: item.outOfStock,
-          upsellTitle: details.title,
-          upsellDescription: details.description,
-          url: details.url,
-          slug: details.slug
-        }
-      );
-    })
-    return skus;
-  }
-
 	function assignUpsells(catIds, itemSize, tier) {
 		let upsellItems = [];
 		catIds.forEach(catId => {
 			const size = convertSize(itemSize, catId);
 			const upsellGroup = checkUpsellGroup(catId);
 			const upsellGroupCatIds = getUpsellGroupCatIds(catId);
-			console.log('upsellGroup', upsellGroup);
-			console.log('upsellGroupCatIds', upsellGroupCatIds);
-			console.log('cartCatIds', cartCatIds);
-			console.log('catId', catId);
+			// console.log('upsellGroup', upsellGroup);
+			// console.log('upsellGroupCatIds', upsellGroupCatIds);
+			// console.log('cartCatIds', cartCatIds);
+			// console.log('catId', catId);
 			let catUpsellItems = [];
 			if (upsellGroup) {
 				let upsellOk = true;
 				upsellGroupCatIds.forEach(gCatId => {
 					if (cartCatIds.includes(gCatId)) upsellOk = false;
-          console.log('!!!!!!!!!!!!!')
-					// const g = products.filter(item => item.catId === gCatId);
-          const g = getUpsellItem(gCatId);
-          // const g = await f;
-          console.log('g', g)
+					const g = products.filter(item => item.catId === gCatId);
+          // const g = utils.getProductSkus(ctx, gCatId, 0);
+          // console.log('g', g)
 					const catItems = g.filter(item => item.sku.slice(9) === size);
 					catUpsellItems = catUpsellItems.concat(catItems);
-          console.log('catItems', catItems)
-          console.log('catUpsellItems', catUpsellItems)
+          // console.log('catItems', catItems)
+          // console.log('catUpsellItems', catUpsellItems)
 				})
 				if (upsellOk) {
 					let priorityType = 'CB';
@@ -453,17 +199,11 @@ module.exports.getUpsells = async function (items, ctx) {
 					upsellItems = upsellItems.concat(upsellItem);
 				}
 			} else if (!(cartCatIds.includes(catId))) {
-        const catItems = products.filter(item => item.catId === catId);
-				let catItem = catItems.filter(item => item.sku.slice(9) === size);
-        
-        const details = content.getUpsellDetails(catItem[0].sku.slice(3, -6)); 
-        const ci = catItem.concat(details[0]);
-        console.log('details', catItem[0].sku.slice(3, -6));
-				upsellItems = upsellItems.concat(catItem);
+				const catItems = products.filter(item => item.catId === catId);
+				catUpsellItems = catItems.filter(item => item.size === size);
+				upsellItems = upsellItems.concat(catUpsellItems);
 			}
 		})
-    
-    console.log('upsellItems', upsellItems);
 		return upsellItems;
 	}
 
@@ -541,6 +281,7 @@ module.exports.getUpsells = async function (items, ctx) {
 	getUpsellTargets(premiumMattressItems, 'premiumMattress');
 
 	let addUpsellItems = [];
+  console.log('cartTier', cartTier)
 	if (cartTier === 'premiumMattress') {
 		const catIds = [8, 9, 30, 19, 46, 53, 52, 20];
 		// protector, pillows, sheets, duvets, islay, chapala, anacapa, foundation

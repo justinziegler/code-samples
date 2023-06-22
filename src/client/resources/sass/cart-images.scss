@@ -1,0 +1,2313 @@
+/* When editing, use the source file for this page in client/resources/sass */
+@import 'compass';
+
+// Core variables and mixins
+@import 'bootstrap/variables';
+@import 'bootstrap/mixins';
+
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/svg';
+@import 'partials/layout';
+// @import "partials/snippets/max-width-1920";
+//@import "partials/snippets/video-embed";
+
+$imgixUrl: 'https://lull-media.imgix.net/checkout';
+$imgixDefaults: '?auto=format,compress&q=50';
+$imgixCrop: '&fit=crop&crop=focalpoint';
+
+///////////////////////
+// Guides - for styling
+// .product-image,
+// .product-image div {
+//   position: relative;
+//   &::before, &::after {
+//     content: '';
+//     position: absolute;
+//     background: $pink;
+//     z-index: 30;
+//   }
+//   &::before {
+//     top: 20%;
+//   }
+//   &::after {
+//     bottom: 20%;
+//   }
+// }
+// .product-image {
+//   &::before, &::after {
+//     left: 0;
+//     right: 15px;
+//     height: 1px;
+//   }
+//   &::before {
+//     top: 20%;
+//   }
+//   &::after {
+//     bottom: 20%;
+//   }
+//   div {
+//     &::before,
+//     &::after {
+//       top: 0;
+//       bottom: 0;
+//       width: 1px;
+//     }
+//     &::before {
+//       left: 12%;
+//     }
+//     &::after {
+//       right: 12%;
+//     }
+//   }
+// }
+////////////
+
+// Mattress SKUs
+li[data-type='MA'] {
+  .product-image div {
+    background-position: 100% 65%;
+    // background-size: 115px;
+    background-size: 90%;
+    @include mq(lg) {
+      background-position: 100% 70%;
+    }
+    &.lazyloaded {
+      // background-image: url('#{$imgixUrl}/mattress.png#{$imgixDefaults}#{$imgixCrop}&fp-x=0&fp-z=.8&w=115&h=100');
+      // @include retina {
+      background-image: url('#{$imgixUrl}/mattress.png#{$imgixDefaults}#{$imgixCrop}&fp-x=0&fp-z=.8&w=230&h=200');
+      // }
+    }
+  }
+}
+.upsells li[data-type='MA'],
+.upsells li[data-parent-sku^='LU-MA'] {
+  .product-image div {
+    background-position: 0 55%;
+    // background-size: 122px;
+    background-size: 95%;
+    @include mq(sm) {
+      background-position: 0 60%;
+    }
+    &.lazyloaded {
+      // background-image: url('#{$imgixUrl}/mattress.png#{$imgixDefaults}#{$imgixCrop}&fp-x=1&fp-z=.8&w=122&h=100');
+      // @include retina {
+      background-image: url('#{$imgixUrl}/mattress.png#{$imgixDefaults}#{$imgixCrop}&fp-x=1&fp-z=.8&w=244&h=200');
+      // }
+    }
+  }
+}
+
+// Luxe Hybrid SKUs
+li[data-type='HY'] {
+  .product-image div {
+    background-position: 100% 55%;
+    // background-size: 115px;
+    background-size: 87%;
+    &.lazyloaded {
+      background-image: url('#{$imgixUrl}/luxe-hybrid-elevated-profile.png#{$imgixDefaults}#{$imgixCrop}&fp-x=0&fp-z=.8&w=224&h=160');
+    }
+  }
+}
+.upsells li[data-type='HY'],
+.upsells li[data-parent-sku^='LU-HY'] {
+  .product-image div {
+    background-position: 0 55%;
+    // background-size: 115px;
+    background-size: 87%;
+    &.lazyloaded {
+      background-image: url('#{$imgixUrl}/luxe-hybrid-elevated-profile.png#{$imgixDefaults}#{$imgixCrop}&fp-x=1&fp-z=.8&w=224&h=160');
+    }
+  }
+}
+
+// Original Premium Mattress SKUs
+li[data-type='PM'] {
+  .product-image div {
+    background-position: 100% 55%;
+    // background-size: 115px;
+    background-size: 94%;
+    &.lazyloaded {
+      background-image: url('#{$imgixUrl}/original-premium-mattress-profile.png#{$imgixDefaults}#{$imgixCrop}&fp-x=0&w=242&h=150');
+    }
+  }
+}
+.upsells li[data-type='PM'],
+.upsells li[data-parent-sku^='LU-PM'] {
+  .product-image div {
+    background-position: 0 55%;
+    // background-size: 115px;
+    background-size: 93%;
+    &.lazyloaded {
+      background-image: url('#{$imgixUrl}/original-premium-mattress-profile.png#{$imgixDefaults}#{$imgixCrop}&fp-x=1&w=242&h=140');
+    }
+  }
+}
+
+// Mattress Protector SKUs
+li[data-type='PR'] {
+  .product-image div {
+    background-position: 100% 75%;
+    // background-size: 120px;
+    background-size: 93.4%;
+    @include mq(lg) {
+      background-position: 100% 80%;
+    }
+    &.lazyloaded {
+      // background-image: url('#{$imgixUrl}/mattress-protector.png#{$imgixDefaults}#{$imgixCrop}&w=120&h=110&fp-x=0&fp-z=.82');
+      // @include retina {
+      background-image: url('#{$imgixUrl}/mattress-protector.png#{$imgixDefaults}#{$imgixCrop}&w=240&h=220&fp-x=0&fp-z=.82');
+      // }
+    }
+  }
+}
+.upsells li[data-type='PR'] {
+  .product-image div {
+    background-position: 0% 56.5%;
+    background-size: 95%;
+    @include mq(lg) {
+      background-position: 0% 65%;
+    }
+    &.lazyloaded {
+      // background-image: url('#{$imgixUrl}/mattress-protector.png#{$imgixDefaults}#{$imgixCrop}&w=122&h=110&fp-x=1&fp-z=.82');
+      // @include retina {
+      background-image: url('#{$imgixUrl}/mattress-protector.png#{$imgixDefaults}#{$imgixCrop}&w=244&h=220&fp-x=1&fp-z=.82');
+      // }
+    }
+  }
+}
+
+// Platform Bed Frame SKUs
+li[data-type='WF'] {
+  .product-image div {
+    // background-size: 112px;
+    background-size: 87%;
+    background-position: 100% 87%;
+    &.lazyloaded {
+      // background-image: url('#{$imgixUrl}/platform-bed-frame.png#{$imgixDefaults}#{$imgixCrop}&w=112&h=120&fp-x=0&fp-z=.82');
+      // @include retina {
+      background-image: url('#{$imgixUrl}/platform-bed-frame.png#{$imgixDefaults}#{$imgixCrop}&w=224&h=240&fp-x=0&fp-z=.82');
+      // }
+    }
+  }
+}
+.upsells li[data-type='WF'] {
+  .product-image div {
+    background-position: 0 55%;
+    @include mq(lg) {
+      background-position: 0 60%;
+    }
+    &.lazyloaded {
+      // background-image: url('#{$imgixUrl}/platform-bed-frame.png#{$imgixDefaults}#{$imgixCrop}&w=112&h=120&fp-x=1&fp-z=.82');
+      // @include retina {
+      background-image: url('#{$imgixUrl}/platform-bed-frame.png#{$imgixDefaults}#{$imgixCrop}&w=224&h=240&fp-x=1&fp-z=.82');
+      // }
+    }
+  }
+}
+
+// Metal Bed Frame SKUs
+li[data-type='MF'] {
+  .product-image div {
+    // background-size: 115px;
+    background-size: 90%;
+    background-position: 100% 60%;
+    &.lazyloaded {
+      // background-image: url('#{$imgixUrl}/metal-frame-front.png#{$imgixDefaults}#{$imgixCrop}&w=115&h=100&fp-x=0&fp-z=.76');
+      // @include retina {
+      background-image: url('#{$imgixUrl}/metal-frame-front.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=200&fp-x=0&fp-z=.76');
+      // }
+    }
+  }
+}
+.upsells li[data-type='MF'] {
+  .product-image div {
+    background-position: 0 50%;
+    &.lazyloaded {
+      // background-image: url('#{$imgixUrl}/metal-frame-front.png#{$imgixDefaults}#{$imgixCrop}&w=115&h=100&fp-x=1&fp-z=.76');
+      // @include retina {
+      background-image: url('#{$imgixUrl}/metal-frame-front.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=200&fp-x=1&fp-z=.76');
+      // }
+    }
+  }
+}
+
+// Upholstered Bed Frame SKUs
+li[data-type='TU'],
+li[data-type='UU'] {
+  .product-image div {
+    background-size: 98%;
+    background-position: 100% 60%;
+  }
+}
+li[data-type='TU'] {
+  &[data-color='CS'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/frame-tufted-CS-angled.png#{$imgixDefaults}#{$imgixCrop}&w=252&h=244&fp-x=0');
+      }
+    }
+  }
+  &[data-color='DS'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/frame-tufted-DS-angled.png#{$imgixDefaults}#{$imgixCrop}&w=252&h=244&fp-x=0');
+      }
+    }
+  }
+}
+li[data-type='UU'] {
+  &[data-color='CS'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/frame-untufted-CS-angled.png#{$imgixDefaults}#{$imgixCrop}&w=252&h=244&fp-x=0');
+      }
+    }
+  }
+  &[data-color='DS'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/frame-untufted-DS-angled.png#{$imgixDefaults}#{$imgixCrop}&w=252&h=244&fp-x=0');
+      }
+    }
+  }
+}
+
+
+// Original Pillow SKUs
+li {
+  &[data-type='PW'] {
+    .product-image div {
+      background-position: 100% 60%;
+      // background-size: 115px;
+      background-size: 90%;
+      &.lazyloaded {
+        // background-image: url('#{$imgixUrl}/pillow-front.png?auto=format,compress,enhance&q=50#{$imgixCrop}&w=115&h=82&fp-x=0');
+        // @include retina {
+        background-image: url('#{$imgixUrl}/pillow-front.png?auto=format,compress,enhance&q=50#{$imgixCrop}&w=230&h=164&fp-x=0');
+        // }
+      }
+    }
+  }
+}
+.upsells li {
+  &[data-type='PW'],
+  &[data-type='FP'] {
+    .product-image div {
+      background-position: 0 52.5%;
+      @include mq(lg) {
+        background-position: 0 56%;
+      }
+      &.lazyloaded {
+        // background-image: url('#{$imgixUrl}/pillow-front.png?auto=format,compress,enhance&q=50#{$imgixCrop}&w=115&h=82&fp-x=1');
+        // @include retina {
+        background-image: url('#{$imgixUrl}/pillow-front.png?auto=format,compress,enhance&q=50#{$imgixCrop}&w=230&h=164&fp-x=1');
+        // }
+      }
+    }
+  }
+}
+// Memory Foam Pillow
+li {
+  &[data-type='FP'] {
+    .product-image div {
+      background-position: 100% 60%;
+      background-size: 87%;
+      @include mq(md) {
+        background-position: 100% 62.5%;
+      }
+      &.lazyloaded {
+        // background-image: url('#{$imgixUrl}/memory-foam-pillow.png?auto=format,compress,enhance&q=50#{$imgixCrop}&w=112&h=74&fp-x=0');
+        // @include retina {
+        background-image: url('#{$imgixUrl}/memory-foam-pillow.png?auto=format,compress,enhance&q=50#{$imgixCrop}&w=224&h=148&fp-x=0');
+        // }
+      }
+    }
+  }
+}
+// Down Pillow
+li {
+  &[data-type='DP'] {
+    .product-image div {
+      background-position: 100% 55%;
+      // background-size: 115px;
+      background-size: 90%;
+      @include mq(md) {
+        background-position: 100% 62.5%;
+      }
+      &.lazyloaded {
+        // background-image: url('#{$imgixUrl}/down-pillow-side.png?auto=format,compress,enhance&q=50#{$imgixCrop}&w=115&h=82&fp-x=0');
+        // @include retina {
+        background-image: url('#{$imgixUrl}/down-pillow-side.png?auto=format,compress,enhance&q=50#{$imgixCrop}&w=230&h=164&fp-x=0');
+        // }
+      }
+    }
+  }
+}
+
+// Original Duvet SKUs
+li[data-type='DV'] {
+  .product-image div {
+    background-position: 100% 60%;
+    // background-size: 115px;
+    background-size: 90%;
+    &.lazyloaded {
+      // background-image: url('#{$imgixUrl}/duvet-folded.png?auto=format,compress,enhance&q=50#{$imgixCrop}&w=115&h=140&fp-x=0&fp-z=.66');
+      // @include retina {
+      background-image: url('#{$imgixUrl}/duvet-folded.png?auto=format,compress,enhance&q=50#{$imgixCrop}&w=230&h=280&fp-x=0&fp-z=.66');
+      // }
+    }
+  }
+}
+.upsells li[data-type='DV'] {
+  .product-image div {
+    background-position: 0 50%;
+    &.lazyloaded {
+      // background-image: url('#{$imgixUrl}/duvet-folded.png?auto=format,compress,enhance&q=50#{$imgixCrop}&w=115&h=140&fp-x=1&fp-z=.66');
+      // @include retina {
+      background-image: url('#{$imgixUrl}/duvet-folded.png?auto=format,compress,enhance&q=50#{$imgixCrop}&w=230&h=280&fp-x=1&fp-z=.66');
+      // }
+    }
+  }
+}
+
+// Down Duvet SKUs
+li[data-type='DD'] {
+  .product-image div {
+    background-position: 100% 60%;
+    // background-size: 112px;
+    background-size: 87%;
+    &.lazyloaded {
+      // background-image: url('#{$imgixUrl}/down-duvet-folded.png?auto=format,compress,enhance&q=50#{$imgixCrop}&w=112&h=140&fp-x=0&fp-z=.66');
+      // @include retina {
+      background-image: url('#{$imgixUrl}/down-duvet-folded.png?auto=format,compress,enhance&q=50#{$imgixCrop}&w=224&h=280&fp-x=0&fp-z=.66');
+      // }
+    }
+  }
+}
+
+// Duvet Cover
+li[data-type='DC'] {
+  .product-image div {
+    // background-size: 115px;
+    background-size: 90%;
+    background-position: 100% 50%;
+    &.lazyloaded {
+      // background-image: url('#{$imgixUrl}/duvet-cover-folded-white.png?auto=format,compress,enhance&q=50#{$imgixCrop}&w=115&h=130&fp-x=0&fp-z=.6');
+      // @include retina {
+      background-image: url('#{$imgixUrl}/duvet-cover-folded-white.png?auto=format,compress,enhance&q=50#{$imgixCrop}&w=230&h=260&fp-x=0&fp-z=.6');
+      // }
+    }
+  }
+  &[data-color='GR'] {
+    .product-image div {
+      &.lazyloaded {
+        // background-image: url('#{$imgixUrl}/duvet-cover-folded-grey.png?auto=format,compress,enhance&q=50#{$imgixCrop}&w=115&h=130&fp-x=0&fp-z=.6');
+        // @include retina {
+        background-image: url('#{$imgixUrl}/duvet-cover-folded-grey.png?auto=format,compress,enhance&q=50#{$imgixCrop}&w=230&h=260&fp-x=0&fp-z=.6');
+        // }
+      }
+    }
+  }
+}
+// .upsells li[data-type="DC"] {
+//   .product-image div {
+//     &.lazyloaded {
+//       background-image: url('#{$imgixUrl}/duvet-cover-folded-white.png?auto=format,compress,enhance&q=50#{$imgixCrop}&w=115&h=130&fp-x=1&fp-z=.6');
+//       @include retina {
+//         background-image: url('#{$imgixUrl}/duvet-cover-folded-white.png?auto=format,compress,enhance&q=50#{$imgixCrop}&w=230&h=260&fp-x=1&fp-z=.6');
+//       }
+//     }
+//   }
+//   &[data-color="GR"] {
+//     &.lazyloaded {
+//       .product-image div {
+//         background-image: url('#{$imgixUrl}/duvet-cover-folded-grey.png?auto=format,compress,enhance&q=50#{$imgixCrop}&w=115&h=130&fp-x=1&fp-z=.6');
+//         @include retina {
+//           background-image: url('#{$imgixUrl}/duvet-cover-folded-grey.png?auto=format,compress,enhance&q=50#{$imgixCrop}&w=230&h=260&fp-x=1&fp-z=.6');
+//         }
+//       }
+//     }
+//   }
+// }
+
+// New duvet covers
+li[data-type='BD'],
+li[data-type='CD'],
+li[data-type='OD'] {
+  .product-image div {
+    // background-size: 115px;
+    background-size: 90%;
+    background-position: 100% 55%;
+  }
+  &[data-color='BW'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/duvet-cover-BW.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=260&fp-x=0&fp-z=.6');
+      }
+    }
+  }
+  &[data-color='CD'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/duvet-cover-CD.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=260&fp-x=0&fp-z=.6');
+      }
+    }
+  }
+  &[data-color='GG'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/duvet-cover-GG.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=260&fp-x=0&fp-z=.6');
+      }
+    }
+  }
+  &[data-color='MB'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/duvet-cover-MB.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=260&fp-x=0&fp-z=.6');
+      }
+    }
+  }
+  &[data-color='PA'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/duvet-cover-PA.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=260&fp-x=0&fp-z=.6');
+      }
+    }
+  }
+  &[data-color='QG'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/duvet-cover-QG.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=260&fp-x=0&fp-z=.6');
+      }
+    }
+  }
+  &[data-color='WP'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/duvet-cover-WP.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=260&fp-x=0&fp-z=.6');
+      }
+    }
+  }
+}
+// Sheets & Pillowcase images
+li {
+  &[data-type='SH'],
+  &[data-type='PC'] {
+    .product-image div {
+      // background-size: 120px;
+      background-size: 93.4%;
+      background-position: 100% 60%;
+      &.lazyloaded {
+        // background-image: url('#{$imgixUrl}/sheets-folded-white-v2.png#{$imgixDefaults}#{$imgixCrop}&w=120&h=150&fp-x=0&fp-z=.6');
+        // @include retina {
+        background-image: url('#{$imgixUrl}/sheets-folded-white-v2.png#{$imgixDefaults}#{$imgixCrop}&w=240&h=300&fp-x=0&fp-z=.6');
+        // }
+      }
+    }
+    &[data-color='GR'] {
+      .product-image div {
+        &.lazyloaded {
+          // background-image: url('#{$imgixUrl}/sheets-folded-grey.png#{$imgixDefaults}#{$imgixCrop}&w=120&h=150&fp-x=0&fp-z=.6');
+          // @include retina {
+          background-image: url('#{$imgixUrl}/sheets-folded-grey.png#{$imgixDefaults}#{$imgixCrop}&w=240&h=300&fp-x=0&fp-z=.6');
+          // }
+        }
+      }
+    }
+  }
+}
+.upsells li {
+  &[data-type='SH'],
+  &[data-type='PC'] {
+    .product-image div {
+      background-position: 0 52%;
+      @include mq(lg) {
+        background-position: 0 56%;
+      }
+      &.lazyloaded {
+        // background-image: url('#{$imgixUrl}/sheets-folded-white-v2.png#{$imgixDefaults}#{$imgixCrop}&w=120&h=144&fp-x=1&fp-z=.6');
+        // @include retina {
+        background-image: url('#{$imgixUrl}/sheets-folded-white-v2.png#{$imgixDefaults}#{$imgixCrop}&w=240&h=288&fp-x=1&fp-z=.6');
+        // }
+      }
+    }
+    &[data-color='GR'] {
+      .product-image div {
+        &.lazyloaded {
+          // background-image: url('#{$imgixUrl}/sheets-folded-grey.png#{$imgixDefaults}#{$imgixCrop}&w=120&h=144&fp-x=1&fp-z=.6');
+          // @include retina {
+          background-image: url('#{$imgixUrl}/sheets-folded-grey.png#{$imgixDefaults}#{$imgixCrop}&w=240&h=288&fp-x=1&fp-z=.6');
+          // }
+        }
+      }
+    }
+  }
+}
+// New sheets
+li[data-type='CB'],
+li[data-type='CS'],
+li[data-type='OC'] {
+  .product-image div {
+    // background-size: 115px;
+    background-size: 90%;
+    background-position: 100% 55%;
+  }
+  &[data-color='BW'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-BW.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=260&fp-x=0&fp-z=.6');
+      }
+    }
+  }
+  &[data-color='CD'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-CD.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=260&fp-x=0&fp-z=.6');
+      }
+    }
+  }
+  &[data-color='GG'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-GG.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=260&fp-x=0&fp-z=.6');
+      }
+    }
+  }
+  &[data-color='MB'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-MB.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=260&fp-x=0&fp-z=.6');
+      }
+    }
+  }
+  &[data-color='PA'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-PA.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=260&fp-x=0&fp-z=.6');
+      }
+    }
+  }
+  &[data-color='QG'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-QG.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=260&fp-x=0&fp-z=.6');
+      }
+    }
+  }
+  &[data-color='WP'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/sheets-WP.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=260&fp-x=0&fp-z=.6');
+      }
+    }
+  }
+}
+// New pillowcases
+li[data-type='BP'],
+li[data-type='CP'],
+li[data-type='OP'] {
+  .product-image div {
+    // background-size: 115px;
+    background-size: 90%;
+    background-position: 100% 45%;
+  }
+  &[data-color='BW'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/pillowcase-BW-horiz.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=190&fp-x=0&fp-z=1.1');
+      }
+    }
+  }
+  &[data-color='CD'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/pillowcase-CD-horiz.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=190&fp-x=0&fp-z=1.1');
+      }
+    }
+  }
+  &[data-color='GG'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/pillowcase-GG-horiz.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=190&fp-x=0&fp-z=1.1');
+      }
+    }
+  }
+  &[data-color='MB'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/pillowcase-MB-horiz.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=190&fp-x=0&fp-z=1.1');
+      }
+    }
+  }
+  &[data-color='PA'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/pillowcase-PA-horiz.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=190&fp-x=0&fp-z=1.1');
+      }
+    }
+  }
+  &[data-color='QG'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/pillowcase-QG-horiz.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=190&fp-x=0&fp-z=1.1');
+      }
+    }
+  }
+  &[data-color='WP'] {
+    .product-image div {
+      &.lazyloaded {
+        background-image: url('#{$imgixUrl}/pillowcase-WP-horiz.png#{$imgixDefaults}#{$imgixCrop}&w=230&h=190&fp-x=0&fp-z=1.1');
+      }
+    }
+  }
+}
+// Foundation
+li[data-type='FO'] {
+  .product-image div {
+    // background-size: 112px;
+    background-size: 87%;
+    background-position: 100% 50%;
+    &.lazyloaded {
+      // background-image: url('#{$imgixUrl}/light-grey-foundation1.png#{$imgixDefaults}#{$imgixCrop}&w=112&h=60&fp-x=0&fp-z=1.8');
+      // @include retina {
+      background-image: url('#{$imgixUrl}/light-grey-foundation1.png#{$imgixDefaults}#{$imgixCrop}&w=224&h=120&fp-x=0&fp-z=1.8');
+      // }
+    }
+  }
+}
+.upsells li[data-type='FO'] {
+  .product-image div {
+    background-position: 0 50%;
+    @include mq(sm) {
+      background-position: 0 45%;
+    }
+    &.lazyloaded {
+      // background-image: url('#{$imgixUrl}/light-grey-foundation1.png#{$imgixDefaults}#{$imgixCrop}&w=112&h=60&fp-x=1&fp-z=1.8');
+      // @include retina {
+      background-image: url('#{$imgixUrl}/light-grey-foundation1.png#{$imgixDefaults}#{$imgixCrop}&w=224&h=120&fp-x=1&fp-z=1.8');
+      // }
+    }
+  }
+}
+
+// Foundation Legs
+// Images for this product are identical in both cart summary & upsells
+li[data-type='FL'] {
+  .product-image div {
+    // background-size: 100px;
+    background-size: 77.8%;
+    background-position: 48% 50%;
+    &.lazyloaded {
+      // background-image: url('#{$imgixUrl}/foundation-legs-closeup.png#{$imgixDefaults}&w=100');
+      // @include retina {
+      background-image: url('#{$imgixUrl}/foundation-legs-closeup.png#{$imgixDefaults}&w=200');
+      // }
+    }
+  }
+}
+
+.upsells li[data-type='PP'] {
+  .product-image div {
+    // @include shield(tint($teal, 60%));
+    // @extend %svg;
+    // background-size: 65%;
+    &::before {
+      content: '';
+      @extend %svg;
+      @include logo-clyde-tag();
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 15%;
+      background-size: 80%;
+    }
+    &::after {
+      content: '';
+      @include badge-10-year-plan();
+      @extend %svg;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-size: 80%;
+      background-position: 50% 30%;
+    }
+  }
+  &[data-parent-sku^='LU-MA'] {
+    .product-image {
+      div {
+        background-position: 0% 85%;
+      }
+    }
+  }
+  &[data-parent-sku^='LU-HY'] {
+    .product-image {
+      div {
+        background-position: 0% 76%;
+      }
+    }
+  }
+}
+
+// Upsell modals
+.upsell-modal {
+  .modal-content {
+    background-color: #f7f5f3 !important;
+  }
+  .modal-body {
+    padding-top: 0 !important;
+  }
+  h2 {
+    margin-bottom: 10px;
+    @include mq(xsm) {
+      margin-bottom: vwl(10px);
+    }
+    @include mq(xxs) {
+      margin-bottom: vwp(10px);
+    }
+  }
+  .star-rating {
+    margin: 0 0 10px 0;
+    @include mq(xsm) {
+      margin: 0 0 vwl(10px) 0;
+    }
+    @include mq(xxs) {
+      margin: 0 0 vwp(10px) 0;
+    }
+    + h4 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      @include mq(xsm) {
+        font-size: vwl(13px);
+        margin-bottom: vwl(15px);
+      }
+      @include mq(xxs) {
+        font-size: vwp(13px);
+        margin-bottom: vwp(15px);
+      }
+    }
+  }
+}
+.product-gallery {
+  @include mq(xsm) {
+    padding: 0;
+  }
+}
+.swiper-container {
+  &.gallery {
+    @include mq(xs) {
+      margin-top: 15px;
+    }
+    @include mq(xssm) {
+      margin-top: vwl(15px);
+    }
+    @include mq(md) {
+      width: calc(100% - 30px);
+      margin: 30px 0 0 15px;
+    }
+    .swiper-slide {
+      padding-bottom: 62.5%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      filter: blur(4px);
+      transition: filter 0.4s;
+      &.lazyloaded {
+        filter: blur(0);
+      }
+    }
+    .swiper-pagination {
+      @include mq(sm) {
+        position: static;
+        margin-top: 15px;
+      }
+      @include mq(md) {
+        margin-top: 30px;
+      }
+    }
+    .swiper-pagination-bullets {
+      bottom: 0;
+    }
+    .swiper-pagination-bullet {
+      @include mq(xmd) {
+        background-image: none !important;
+      }
+      @include mq(md) {
+        width: 58px;
+        height: 58px;
+        border: solid 3px #f7f5f3;
+        background-size: auto 58px;
+        background-position: 100% 50%;
+        background-repeat: no-repeat;
+        background-color: $white;
+        border-radius: 0;
+        opacity: 1;
+        outline: none;
+        &:first-of-type {
+          margin-left: 0;
+        }
+        &:last-of-type {
+          margin-right: 0;
+        }
+        &:focus {
+          outline: 1px solid $teal;
+          outline-offset: -2px;
+        }
+      }
+    }
+    .swiper-pagination-bullet-active {
+      border-color: $teal;
+      outline: none;
+      @include mq(xmd) {
+        background-color: $teal;
+      }
+      &:focus {
+        outline-offset: 1px;
+      }
+    }
+  }
+  &.technicalities {
+    .swiper-slide {
+      @include mq(sm) {
+        padding: 15px 15px 0 15px;
+      }
+      @include mq(md) {
+        padding: 15px 30px 0 15px;
+      }
+    }
+    $bulletHeight: 36px;
+    .swiper-pagination-bullets {
+      position: static;
+      display: flex;
+      padding: 4px 30px 0 30px;
+      bottom: auto;
+      background: $white;
+      box-shadow: 0 0px 1px 0 rgba(11, 40, 54, 0.1);
+      @include mq(xsm) {
+        padding: vwl(4px) vwl(30px) 0 vwl(30px);
+      }
+      @include mq(xxs) {
+        padding: vwp(4px) vwp(30px) 0 vwp(30px);
+      }
+      @include mq(sm) {
+        position: sticky;
+        top: 0;
+        left: 15px;
+        right: 15px;
+        width: calc(100% - 30px);
+        padding: 0;
+        @include mq(md) {
+          width: calc(100% - 45px);
+          right: 30px;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          background-color: #f7f5f3;
+          z-index: -1;
+          @include mq(xsm) {
+            height: vwl(4px);
+          }
+          @include mq(xxs) {
+            height: vwp(4px);
+          }
+        }
+      }
+      > span {
+        flex-grow: 1;
+        display: block;
+        border-radius: 0;
+        padding-top: 10px;
+        height: $bulletHeight;
+        text-align: center;
+        width: auto;
+        margin: 0;
+        opacity: 1;
+        background-color: transparent;
+        transition: 0;
+        position: relative;
+        @include mq(xsm) {
+          padding-top: vwl(10px);
+          height: vwl($bulletHeight);
+        }
+        @include mq(xxs) {
+          padding-top: vwp(10px);
+          height: vwp($bulletHeight);
+        }
+        &:focus {
+          outline: none;
+          text-decoration: underline;
+        }
+        &::before {
+          color: $navy;
+          font-weight: 500;
+          font-size: 1.3rem;
+          @include mq(xsm) {
+            font-size: vwl(13px);
+          }
+          @include mq(xxs) {
+            font-size: vwp(13px);
+          }
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          top: -4px;
+          bottom: -4px;
+          background-color: rgb(11, 40, 54);
+          $gradientOffset: $bulletHeight + 4px;
+          @include filter-gradient(#0b2836, #56dbd6, vertical);
+          @include background-image(
+            linear-gradient(
+              top,
+              rgba(11, 40, 54, 1) 0%,
+              rgba(11, 40, 54, 1) #{$gradientOffset},
+              rgba(86, 219, 214, 1) #{$gradientOffset},
+              rgba(86, 219, 214, 1) 100%
+            )
+          );
+          transition: 0.15s ease;
+          z-index: -1;
+          @include mq(xsm) {
+            top: vwl(-4px);
+            bottom: vwl(-4px);
+            $x: $bulletHeight + 4px;
+            $gradientOffset: vwl($x);
+            @include filter-gradient(#0b2836, #56dbd6, vertical);
+            @include background-image(
+              linear-gradient(
+                top,
+                rgba(11, 40, 54, 1) 0%,
+                rgba(11, 40, 54, 1) #{$gradientOffset},
+                rgba(86, 219, 214, 1) #{$gradientOffset},
+                rgba(86, 219, 214, 1) 100%
+              )
+            );
+          }
+          @include mq(xxs) {
+            top: vwp(-4px);
+            bottom: vwp(-4px);
+            $x: $bulletHeight + 4px;
+            $gradientOffset: vwp($x);
+            @include filter-gradient(#0b2836, #56dbd6, vertical);
+            @include background-image(
+              linear-gradient(
+                top,
+                rgba(11, 40, 54, 1) 0%,
+                rgba(11, 40, 54, 1) #{$gradientOffset},
+                rgba(86, 219, 214, 1) #{$gradientOffset},
+                rgba(86, 219, 214, 1) 100%
+              )
+            );
+          }
+        }
+        &:nth-of-type(1) {
+          &::before {
+            content: 'Details';
+          }
+          &::after {
+            left: 100%;
+            right: 0;
+          }
+        }
+        &:nth-of-type(2) {
+          &::before {
+            content: 'Benefits';
+          }
+          &::after {
+            left: 100%;
+            right: 0;
+          }
+        }
+        &:nth-of-type(3) {
+          &::before {
+            content: 'Specs';
+          }
+          &::after {
+            left: 0;
+            right: 100%;
+          }
+        }
+        &.swiper-pagination-bullet-active {
+          &::before {
+            color: $white;
+          }
+          &:nth-of-type(1),
+          &:nth-of-type(2) {
+            &::after {
+              left: 0;
+            }
+          }
+          &:nth-of-type(3) {
+            &::after {
+              right: 0;
+            }
+          }
+          + .swiper-pagination-bullet {
+            &:nth-of-type(2) {
+              &::after {
+                left: 0;
+                right: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.upsell-item {
+  @include mq(xssm) {
+    width: 50%;
+  }
+  @include mq(smmd) {
+    padding-left: 0;
+  }
+}
+.upsell-details {
+  padding: 0 30px;
+  @include mq(xsm) {
+    padding: 0 vwl(30px);
+  }
+  @include mq(xxs) {
+    padding: 0 vwp(30px);
+  }
+  @include mq(sm) {
+    padding: 30px 15px 0 15px;
+  }
+}
+.technicalities,
+.tech-details {
+  p,
+  li {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    color: #666;
+    @include mq(xsm) {
+      font-size: vwl(12px);
+    }
+    @include mq(xxs) {
+      font-size: vwp(12px);
+    }
+    @include mq(md) {
+      font-size: 1.4rem;
+    }
+  }
+}
+.technicalities {
+  position: relative;
+  @include mq(sm) {
+    max-height: 360px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+  }
+  &::before {
+    @include mq(md) {
+      content: '';
+      position: fixed;
+      left: 50%;
+      right: 6px;
+      bottom: 15px;
+      height: 30px;
+      @include filter-gradient(#00f7f5f3, #f7f5f3, vertical);
+      @include background-image(
+        linear-gradient(
+          top,
+          rgba(247, 245, 243, 0) 0%,
+          rgba(247, 245, 243, 1) 100%
+        )
+      );
+      z-index: 10;
+    }
+  }
+  &::-webkit-scrollbar {
+    width: 6px;
+    @include mq(xsm) {
+      width: vwl(6px);
+    }
+    @include mq(xxs) {
+      width: vwp(6px);
+    }
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $teal;
+    border: solid 1px #f7f5f3;
+    border-radius: 3px;
+  }
+}
+.tech-details {
+  @include mq(xsm) {
+    padding: 15px;
+    padding: vwl(15px);
+  }
+  @include mq(xxs) {
+    padding: vwp(15px);
+  }
+  ul {
+    padding: 0;
+    margin: 10px 0 30px 0;
+    list-style-type: none;
+    @include mq(xsm) {
+      margin: vwl(10px) 0 vwl(30px) 0;
+    }
+    @include mq(xxs) {
+      margin: vwp(10px) 0 vwp(30px) 0;
+    }
+    @include mq(md) {
+      margin: 15px 60px 0 60px;
+    }
+  }
+  li {
+    padding-left: 26px;
+    position: relative;
+    margin: 0 0 5px 0;
+    @include mq(xsm) {
+      padding-left: vwl(26px);
+      margin: 0 0 vwl(5px) 0;
+    }
+    @include mq(xxs) {
+      padding-left: vwp(26px);
+      margin: 0 0 vwp(5px) 0;
+    }
+    &::before {
+      content: '';
+      @extend %svg;
+      width: 15px;
+      height: 12px;
+      position: absolute;
+      left: 0;
+      top: 3px;
+      @include mq(xsm) {
+        width: vwl(15px);
+        height: vwl(12px);
+        top: vwl(3px);
+      }
+      @include mq(xxs) {
+        width: vwp(15px);
+        height: vwp(12px);
+        top: vwp(3px);
+      }
+    }
+  }
+}
+/////////////////////////////////////////////////////
+.review {
+  text-align: center;
+  background-color: $white;
+  padding: 20px 30px 10px 30px;
+  box-shadow: 0px 4px 8px rgba($navy, 0.1);
+  border-radius: 8px;
+  @include mq(xsm) {
+    padding: vwl(20px) vwl(30px) vwl(10px) vwl(30px);
+  }
+  @include mq(xxs) {
+    padding: vwp(20px) vwp(30px) vwp(10px) vwp(30px);
+  }
+  @include mq(md) {
+    margin: 15px 45px 0 45px;
+  }
+  .star-gauge {
+    margin: 0 auto;
+  }
+  h3 {
+    @include mq(md) {
+      font-size: 1.6rem;
+    }
+  }
+  p {
+    &.reviewer {
+      color: $navy;
+      font-weight: 700;
+    }
+    span {
+      font-size: 1rem;
+      color: #666666;
+      font-weight: 400;
+      @include mq(xsm) {
+        font-size: vwl(10px);
+      }
+      @include mq(xxs) {
+        font-size: vwp(10px);
+      }
+    }
+  }
+}
+.benefits {
+  padding: 20px 0;
+  @include mq(xsm) {
+    padding: vwl(20px) 0;
+  }
+  @include mq(xxs) {
+    padding: vwp(20px) 0;
+  }
+  .item {
+    padding-right: 30px;
+    @include mq(xsm) {
+      padding-right: vwl(30px);
+    }
+    @include mq(xxs) {
+      padding-right: vwp(30px);
+    }
+  }
+  h3 {
+    position: relative;
+    @include mq(md) {
+      font-size: 1.6rem;
+    }
+    &::before {
+      content: '';
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      left: -45px;
+      top: -7.5px;
+      @extend %svg;
+      @include mq(xsm) {
+        width: vwl(30px);
+        height: vwl(30px);
+        left: vwl(-45px);
+        top: vwl(-7.5px);
+      }
+      @include mq(xxs) {
+        width: vwp(30px);
+        height: vwp(30px);
+        left: vwp(-45px);
+        top: vwp(-7.5px);
+      }
+    }
+  }
+}
+
+.specs {
+  padding: 0 0 20px 0;
+  @include mq(xsm) {
+    padding: 15px;
+    padding: vwl(15px);
+  }
+  @include mq(xxs) {
+    padding: vwl(15px);
+  }
+  .container {
+    width: auto !important;
+  }
+  .size-price-grid {
+    margin-left: 0;
+    width: 100%;
+    @include mq(sm) {
+      border-radius: 6px;
+    }
+    .row:nth-child(even) {
+      background-color: $white;
+    }
+    + .col-sm-offset-1 {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+  .grid-head {
+    margin-bottom: 5px;
+    @include mq(xsm) {
+      margin-bottom: vwl(5px);
+    }
+    @include mq(xxs) {
+      margin-bottom: vwp(5px);
+    }
+  }
+  h6 {
+    text-align: left;
+    margin: 10px 0 5px 0;
+    font-size: 1.5rem;
+    @include mq(xsm) {
+      margin: vwl(10px) 0 vwl(5px) 0;
+      font-size: vwl(15px);
+    }
+    @include mq(xxs) {
+      margin: vwp(10px) 0 vwp(5px) 0;
+      font-size: vwp(15px);
+    }
+  }
+  label {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-weight: 700;
+    @include mq(xsm) {
+      font-size: vwl(12px);
+    }
+    @include mq(xxs) {
+      font-size: vwp(12px);
+    }
+    @include mq(sm) {
+      font-size: 1.1rem;
+    }
+    @include mq(md) {
+      font-size: 1.4rem;
+    }
+  }
+  p {
+    margin: 0;
+    line-height: 1;
+    color: #666;
+    padding: 10px 0;
+    @include mq(xsm) {
+      padding: vwl(10px) 0;
+    }
+    @include mq(xxs) {
+      padding: vwp(10px) 0;
+    }
+    @include mq(lg) {
+      padding: 13px 0;
+    }
+    &.details {
+      padding: 0;
+      line-height: 1.4;
+      @include mq(xsm) {
+        font-size: 1.2rem;
+        font-size: vwl(12px);
+      }
+      @include mq(xxs) {
+        font-size: vwp(12px);
+      }
+      a {
+        border-bottom: solid 1px $navy;
+        transition: 0.2s;
+        &:hover,
+        &:focus {
+          border-bottom-color: transparent;
+        }
+      }
+    }
+  }
+  .size,
+  .size p {
+    text-align: left;
+  }
+  .size {
+    width: 25%;
+    padding-right: 0;
+  }
+  .dimensions,
+  .dimensions label,
+  .dimensions p {
+    text-align: left;
+  }
+  .dimensions {
+    width: 41.6666667%;
+    padding-right: 0;
+    &.box {
+      width: 66.6666667%;
+      @include mq(sm) {
+        width: 75%;
+      }
+    }
+  }
+  .weight {
+    text-align: right;
+    padding-left: 0;
+    width: 33.3333333%;
+    @include mq(sm) {
+      text-align: left;
+    }
+    @include mq(smmd) {
+      padding-right: 0;
+    }
+    label,
+    p {
+      text-align: right;
+      @include mq(sm) {
+        text-align: left;
+      }
+    }
+  }
+  .notes {
+    padding-top: 15px;
+    @include mq(xsm) {
+      padding-top: vwl(15px);
+    }
+    .left-col {
+      width: 100%;
+      text-align: right;
+    }
+    .right-col {
+      display: none;
+    }
+    p {
+      font-size: 1rem;
+      margin: 0 0 10px 0;
+      padding: 0;
+      @include mq(xsm) {
+        font-size: vwl(10px);
+        margin: 0 0 vwl(10px) 0;
+      }
+      @include mq(xxs) {
+        margin: 0 0 vwp(10px) 0;
+        font-size: vwp(10px);
+      }
+      @include mq(sm) {
+        font-size: 1.2rem;
+      }
+      @include mq(lg) {
+        font-size: 1.4rem;
+      }
+      a {
+        border-bottom: solid 1px $navy;
+        &:hover,
+        &:focus {
+          border-bottom-color: transparent;
+        }
+      }
+    }
+  }
+}
+.upsell-modal {
+  &[data-dual-sizes='true'] {
+    .specs {
+      .size {
+        width: 31%;
+      }
+      .dimensions {
+        width: 35.6666667%;
+      }
+    }
+  }
+  &#modal-SH {
+    .specs {
+      .size {
+        @include mq(sm) {
+          width: 18%;
+        }
+      }
+      .fitted {
+        @include mq(sm) {
+          width: 32%;
+          padding-right: 0;
+        }
+      }
+      .flat {
+        @include mq(sm) {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+  &#modal-FO,
+  &#modal-FL {
+    .specs {
+      .size {
+        width: 25%;
+        @include mq(sm) {
+          width: 18%;
+        }
+      }
+      .dimensions {
+        width: 41.6666667%;
+        @include mq(sm) {
+          width: 33%;
+        }
+      }
+      .leg-dimensions {
+        padding-right: 0;
+        @include mq(sm) {
+          width: 16%;
+        }
+      }
+      .weight {
+        text-align: right;
+        @include mq(sm) {
+          width: 33%;
+        }
+        p {
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
+// Mattress modal
+$imgixUrl: 'https://lull-media.imgix.net/shop';
+$imgixCrop: '&fit=crop&crop=focalpoint';
+$imgixDefaults: '?auto=format,compress&q=50,enhance';
+#modal-MA {
+  // .slide-1.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(1) {
+  //   background-image: url('#{$imgixUrl}/mattress.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.55&fp-z=1.65&w=420');
+  // }
+  // .slide-2.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(2) {
+  //   background-image: url('#{$imgixUrl}/lull-mattress.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.585&fp-y=.53&fp-z=1.8&w=420');
+  // }
+  // .slide-3.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(3) {
+  //   background-image: url('#{$imgixUrl}/girl-mattress.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.54&fp-y=.5&fp-z=1.13&w=420');
+  // }
+  // .slide-4.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(4) {
+  //   background-image: url('#{$imgixUrl}/mattress-soft.jpg#{$imgixDefaults}&w=420');
+  // }
+  // .slide-5.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(5) {
+  //   background-image: url('#{$imgixUrl}/mattress-profile-model-reclining.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.475&fp-y=.6&fp-z=1.3&w=420');
+  // }
+  // @include retina {
+  .slide-1.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(1) {
+    background-image: url('#{$imgixUrl}/mattress.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.55&fp-z=1.65&w=840');
+  }
+  .slide-2.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(2) {
+    background-image: url('#{$imgixUrl}/lull-mattress.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.585&fp-y=.53&fp-z=1.8&w=840');
+  }
+  .slide-3.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(3) {
+    background-image: url('#{$imgixUrl}/girl-mattress.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.54&fp-y=.5&fp-z=1.13&w=840');
+  }
+  .slide-4.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(4) {
+    background-image: url('#{$imgixUrl}/mattress-soft.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-5.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(5) {
+    background-image: url('#{$imgixUrl}/mattress-profile-model-reclining.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.475&fp-y=.6&fp-z=1.3&w=840');
+  }
+  // }
+}
+
+// Luxe Hybrid modal
+$imgixUrl: 'https://lull-media.imgix.net/shop-luxe';
+#modal-HY {
+  .slide-1.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(1) {
+    background-image: url('#{$imgixUrl}/luxe-mattress1.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=525&fp-y=1');
+  }
+  .slide-2.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(2) {
+    background-image: url('#{$imgixUrl}/luxe-mattress2.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=525&fp-y=1');
+  }
+  .slide-3.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(3) {
+    background-image: url('#{$imgixUrl}/luxe-mattress3.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=525&fp-y=1');
+  }
+  .slide-4.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(4) {
+    background-image: url('#{$imgixUrl}/luxe-mattress4.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=525&fp-y=.5');
+  }
+  .slide-5.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(5) {
+    background-image: url('#{$imgixUrl}/luxe-mattress5.png#{$imgixDefaults}#{$imgixCrop}&w=840&h=525');
+  }
+}
+
+// Protector modal
+$imgixUrl: 'https://lull-media.imgix.net/mattress-protector';
+$imgixDefaults: '?auto=format,compress&q=50';
+#modal-PR {
+  // .slide-1.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(1) {
+  //   background-image: url('#{$imgixUrl}/mattress-protector-sprite-gallery.jpg#{$imgixDefaults}#{$imgixCrop}&w=420&h=252&fp-x=0.175&fp-y=.5');
+  // }
+  // .slide-2.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(2) {
+  //   background-image: url('#{$imgixUrl}/mattress-protector-sprite-gallery.jpg#{$imgixDefaults}#{$imgixCrop}&w=420&h=252&fp-x=0.498&fp-y=.5');
+  // }
+  // .slide-3.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(3) {
+  //   background-image: url('#{$imgixUrl}/mattress-protector-sprite-gallery.jpg#{$imgixDefaults}#{$imgixCrop}&w=420&h=252&fp-x=0.87');
+  // }
+
+  // @include retina {
+  .slide-1.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(1) {
+    background-image: url('#{$imgixUrl}/mattress-protector-sprite-gallery.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=504&fp-x=0.175&fp-y=.5');
+  }
+  .slide-2.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(2) {
+    background-image: url('#{$imgixUrl}/mattress-protector-sprite-gallery.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=504&fp-x=0.498&fp-y=.5');
+  }
+  .slide-3.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(3) {
+    background-image: url('#{$imgixUrl}/mattress-protector-sprite-gallery.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=504&fp-x=0.87');
+  }
+  // }
+}
+
+// Pillow modal
+$imgixUrl: 'https://lull-dev.imgix.net/pillows';
+#modal-PW {
+  // .slide-1.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(1) {
+  // 	background-image: url('#{$imgixUrl}/gallery-01.jpg#{$imgixDefaults}&w=420');
+  // }
+  // .slide-2.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(2) {
+  //   background-image: url('#{$imgixUrl}/gallery-02.jpg#{$imgixDefaults}&w=420');
+  // }
+  // .slide-3.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(3) {
+  //   background-image: url('#{$imgixUrl}/gallery-03.jpg#{$imgixDefaults}&w=420');
+  // }
+  // .slide-4.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(4) {
+  //   background-image: url('#{$imgixUrl}/gallery-04.jpg#{$imgixDefaults}&w=420');
+  // }
+  // .slide-5.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(5) {
+  //   background-image: url('#{$imgixUrl}/gallery-05.jpg#{$imgixDefaults}&w=420');
+  // }
+  // .slide-6.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(6) {
+  //   background-image: url('#{$imgixUrl}/gallery-06.jpg#{$imgixDefaults}&w=420');
+  // }
+  // @include retina {
+  .slide-1.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(1) {
+    background-image: url('#{$imgixUrl}/gallery-01.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-2.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(2) {
+    background-image: url('#{$imgixUrl}/gallery-02.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-3.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(3) {
+    background-image: url('#{$imgixUrl}/gallery-03.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-4.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(4) {
+    background-image: url('#{$imgixUrl}/gallery-04.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-5.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(5) {
+    background-image: url('#{$imgixUrl}/gallery-05.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-6.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(6) {
+    background-image: url('#{$imgixUrl}/gallery-06.jpg#{$imgixDefaults}&w=840');
+  }
+  // }
+}
+
+// Metal Frame modal
+$imgixUrl: 'https://lull-media.imgix.net/metal-bed-frame';
+$imgixDefaults: '?auto=format,compress,enhance&q=50';
+$imgixCrop: '&fit=crop&crop=focalpoint';
+#modal-MF {
+  // .slide-1.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(1) {
+  // 	background-image: url('#{$imgixUrl}/metal-frame-01.jpg#{$imgixDefaults}&w=420');
+  // }
+  // .slide-2.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(2) {
+  //   background-image: url('#{$imgixUrl}/metal-frame-02.jpg#{$imgixDefaults}&w=420');
+  // }
+  // .slide-3.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(3) {
+  //   background-image: url('#{$imgixUrl}/metal-frame-03.jpg#{$imgixDefaults}&w=420');
+  // }
+  // .slide-4.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(4) {
+  //   background-image: url('#{$imgixUrl}/metal-frame-04.jpg#{$imgixDefaults}&w=420');
+  // }
+  // @include retina {
+  .slide-1.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(1) {
+    background-image: url('#{$imgixUrl}/metal-frame-01.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-2.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(2) {
+    background-image: url('#{$imgixUrl}/metal-frame-02.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-3.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(3) {
+    background-image: url('#{$imgixUrl}/metal-frame-03.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-4.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(4) {
+    background-image: url('#{$imgixUrl}/metal-frame-04.jpg#{$imgixDefaults}&w=840');
+  }
+  // }
+}
+
+// Wood Frame modal
+$imgixUrl: 'https://lull-media.imgix.net/platform-bed-frame';
+$imgixDefaults: '?auto=format,compress&q=50';
+$imgixCrop: '&fit=crop&crop=focalpoint';
+#modal-WF {
+  // .slide-1.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(1) {
+  // 	background-image: url('#{$imgixUrl}/wood-frame-1.jpg#{$imgixDefaults}&w=420');
+  // }
+  // .slide-2.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(2) {
+  //   background-image: url('#{$imgixUrl}/wood-frame-2.jpg#{$imgixDefaults}&w=420');
+  // }
+  // .slide-3.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(3) {
+  //   background-image: url('#{$imgixUrl}/wood-frame-3.jpg#{$imgixDefaults}&w=420');
+  // }
+  // .slide-4.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(4) {
+  //   background-image: url('#{$imgixUrl}/wood-frame-4.jpg#{$imgixDefaults}&w=420');
+  // }
+  // .slide-5.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(5) {
+  //   background-image: url('#{$imgixUrl}/wood-frame-5.jpg#{$imgixDefaults}&w=420');
+  // }
+  // @include retina {
+  .slide-1.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(1) {
+    background-image: url('#{$imgixUrl}/wood-frame-1.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-2.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(2) {
+    background-image: url('#{$imgixUrl}/wood-frame-2.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-3.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(3) {
+    background-image: url('#{$imgixUrl}/wood-frame-3.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-4.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(4) {
+    background-image: url('#{$imgixUrl}/wood-frame-4.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-5.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(5) {
+    background-image: url('#{$imgixUrl}/wood-frame-5.jpg#{$imgixDefaults}&w=840');
+  }
+  // }
+}
+
+// Sheets modal
+$imgixUrl: 'https://lull-media.imgix.net/sheets';
+$imgixDefaults: '?auto=format,compress&q=50';
+$imgixCrop: '&fit=crop&crop=focalpoint';
+#modal-CB, #modal-CS, #modal-OC {
+  .slide-1.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(1) {
+    background-image: url('#{$imgixUrl}/sheets-01-hero-BW.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-2.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(2) {
+    background-image: url('#{$imgixUrl}/sheets-duvet-BW.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-3.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(3) {
+    background-image: url('#{$imgixUrl}/sheets-corner-BW.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-4.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(4) {
+    background-image: url('#{$imgixUrl}/sheets-detail-BW.jpg#{$imgixDefaults}&w=840');
+  }
+}
+
+// Duvet modal
+$imgixUrl: 'https://lull-media.imgix.net/duvet';
+$imgixDefaults: '?auto=format,compress&q=50';
+#modal-DV {
+  // .slide-1.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(1) {
+  // 	background-image: url('#{$imgixUrl}/gallery-01.jpg#{$imgixDefaults}&w=420');
+  // }
+  // .slide-2.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(2) {
+  //   background-image: url('#{$imgixUrl}/gallery-02.jpg#{$imgixDefaults}&w=420');
+  // }
+  // .slide-3.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(3) {
+  //   background-image: url('#{$imgixUrl}/gallery-03.jpg#{$imgixDefaults}&w=420');
+  // }
+  // .slide-4.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(4) {
+  //   background-image: url('#{$imgixUrl}/duvet-folded.png#{$imgixDefaults}&w=420');
+  // }
+  // .slide-5.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(5) {
+  //   background-image: url('#{$imgixUrl}/gallery-05.jpg#{$imgixDefaults}&w=420');
+  // }
+  // .slide-6.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(6) {
+  //   background-image: url('#{$imgixUrl}/gallery-06.jpg#{$imgixDefaults}&w=420');
+  // }
+  // @include retina {
+  .slide-1.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(1) {
+    background-image: url('#{$imgixUrl}/gallery-01.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-2.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(2) {
+    background-image: url('#{$imgixUrl}/gallery-02.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-3.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(3) {
+    background-image: url('#{$imgixUrl}/gallery-03.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-4.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(4) {
+    background-image: url('#{$imgixUrl}/duvet-folded.png#{$imgixDefaults}&w=840');
+  }
+  .slide-5.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(5) {
+    background-image: url('#{$imgixUrl}/gallery-05.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-6.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(6) {
+    background-image: url('#{$imgixUrl}/gallery-06.jpg#{$imgixDefaults}&w=840');
+  }
+  // }
+}
+
+// Foundation modal
+$imgixUrl: 'https://lull-media.imgix.net/foundation';
+$imgixDefaults: '?auto=format,compress&q=50';
+$imgixCrop: '&fit=crop&crop=focalpoint';
+#modal-FO {
+  // .slide-1.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(1) {
+  // 	background-image: url('#{$imgixUrl}/foundation-1.jpg#{$imgixDefaults}&w=420');
+  // }
+  // .slide-2.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(2) {
+  //   background-image: url('#{$imgixUrl}/foundation-2.jpg#{$imgixDefaults}&w=420');
+  // }
+  // .slide-3.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(3) {
+  //   background-image: url('#{$imgixUrl}/foundation-2.jpg#{$imgixDefaults}#{$imgixCrop}&w=420&h=262&fp-x=.515&fp-y=.62&fp-z=3');
+  // }
+  // .slide-4.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(4) {
+  //   background-image: url('#{$imgixUrl}/foundation-3.jpg#{$imgixDefaults}&w=420');
+  // }
+  // .slide-5.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(5) {
+  //   background-image: url('#{$imgixUrl}/foundation-4.jpg#{$imgixDefaults}&w=420');
+  // }
+  // @include retina {
+  .slide-1.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(1) {
+    background-image: url('#{$imgixUrl}/foundation-1.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-2.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(2) {
+    background-image: url('#{$imgixUrl}/foundation-2.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-3.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(3) {
+    background-image: url('#{$imgixUrl}/foundation-2.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=525&fp-x=.515&fp-y=.62&fp-z=3');
+  }
+  .slide-4.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(4) {
+    background-image: url('#{$imgixUrl}/foundation-3.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-5.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(5) {
+    background-image: url('#{$imgixUrl}/foundation-4.jpg#{$imgixDefaults}&w=840');
+  }
+  // }
+}
+
+// Foundation Legs modal
+$imgixUrl: 'https://lull-media.imgix.net/foundation';
+$imgixDefaults: '?auto=format,compress&q=50';
+$imgixCrop: '&fit=crop&crop=focalpoint';
+#modal-FL {
+  // .slide-1.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(1) {
+  // 	background-image: url('#{$imgixUrl}/foundation-1b.jpg#{$imgixDefaults}&w=420');
+  // }
+  // .slide-2.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(2) {
+  //   background-image: url('#{$imgixUrl}/foundation-2b.jpg#{$imgixDefaults}&w=420');
+  // }
+  // .slide-3.lazyloaded,
+  // .gallery .swiper-pagination-bullet:nth-of-type(3) {
+  //   background-image: url('#{$imgixUrl}/foundation-3b.jpg#{$imgixDefaults}#{$imgixCrop}&w=420');
+  // }
+  // @include retina {
+  .slide-1.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(1) {
+    background-image: url('#{$imgixUrl}/foundation-1b.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-2.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(2) {
+    background-image: url('#{$imgixUrl}/foundation-2b.jpg#{$imgixDefaults}&w=840');
+  }
+  .slide-3.lazyloaded,
+  .gallery .swiper-pagination-bullet:nth-of-type(3) {
+    background-image: url('#{$imgixUrl}/foundation-3b.jpg#{$imgixDefaults}#{$imgixCrop}&w=840');
+  }
+  // }
+}
+
+.modal-header {
+  border-bottom: none;
+  padding: 15px 15px 0 15px;
+  margin: 0 auto;
+  text-align: center;
+  @include mq(xsm) {
+    padding: vwl(15px) vwl(15px) 0 vwl(15px);
+  }
+  @include mq(xxs) {
+    padding: vwp(15px) vwp(15px) 0 vwp(15px);
+  }
+}
+.modal-body {
+  color: #666;
+}
+.modal-footer {
+  @include mq(xsm) {
+    margin: 0 auto;
+    padding: 0 15px 10px 15px;
+    padding: 0 vwl(15px) vwl(10px) vwl(15px);
+    border-top: none;
+  }
+  @include mq(xxs) {
+    padding: 0 vwp(15px) vwp(10px) vwp(15px);
+  }
+}
+
+// Financing Modal
+#financing-modal {
+  h2 {
+    text-align: center;
+    font-weight: 900;
+    color: $navy;
+    font-size: 2.25rem;
+    margin: 15px 0;
+    @include mq(xsm) {
+      font-size: vwl(22.5px);
+      margin: vwl(15px) 0;
+    }
+    @include mq(xxs) {
+      font-size: vwp(22.5px);
+      margin: vwp(15px) 0;
+    }
+    @include mq(sm) {
+      font-size: 3rem;
+      margin: 15px 0;
+    }
+    @include mq(md) {
+      font-size: 3.6rem;
+    }
+    @include mq(lg) {
+      font-size: 4rem;
+      margin: 15px 0 20px 0;
+    }
+  }
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #666;
+    text-align: center;
+    margin: 10px;
+    @include mq(xsm) {
+      font-size: vwl(14px);
+      margin: vwl(10px);
+    }
+    @include mq(xxs) {
+      font-size: vwp(14px);
+      margin: vwp(10px);
+    }
+    @include mq(sm) {
+      font-size: 1.6rem;
+      margin: 10px;
+    }
+    @include mq(md) {
+      font-size: 1.8rem;
+    }
+    @include mq(lg) {
+      font-size: 2rem;
+    }
+  }
+  p {
+    line-height: 1.4;
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-align: left;
+    margin: 0 0 10px 55px;
+    color: #666;
+    @include mq(xsm) {
+      font-size: vwl(12px);
+      margin: 0 0 vwl(10px) vwl(55px);
+    }
+    @include mq(xxs) {
+      font-size: vwp(12px);
+      margin: 0 0 vwp(10px) vwp(55px);
+    }
+    @include mq(sm) {
+      font-size: 1.4rem;
+      margin: 0 0 15px 0;
+    }
+    @include mq(md) {
+      font-size: 1.6rem;
+    }
+    @include mq(lg) {
+      font-size: 1.8rem;
+    }
+    &.subheading {
+      @include mq(xlg) {
+        margin-bottom: 10px;
+      }
+      @include mq(xsm) {
+        margin-bottom: vwl(10px);
+      }
+      @include mq(xxs) {
+        margin-bottom: vwp(10px);
+      }
+    }
+  }
+  p {
+    @include mq(sm) {
+      margin-left: 75px;
+    }
+    strong {
+      color: $navy;
+    }
+    a {
+      color: $navy;
+      &:hover {
+        color: $navy;
+      }
+    }
+  }
+  .modal-dialog {
+    text-align: center;
+  }
+  .modal-header {
+    h3 {
+      @include mq(xsm) {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 1.4rem;
+        font-size: vwl(14px);
+      }
+      @include mq(xxs) {
+        font-size: vwp(14px);
+      }
+    }
+  }
+  .btn {
+    margin: 10px auto 30px auto;
+    @include mq(xsm) {
+      margin: 0 15% 20px 15%;
+      margin: 0 15% vwl(20px) 15%;
+    }
+    @include mq(xxs) {
+      margin: 0 15% vwp(20px) 15%;
+    }
+    &::after {
+      @include mq(sm) {
+        content: ' About Affirm';
+      }
+    }
+  }
+  .qualified,
+  .modal-footer {
+    p {
+      font-size: 1.3rem;
+      text-align: center;
+      margin: 0;
+      @include mq(xsm) {
+        font-size: 1rem !important;
+        font-size: vwl(10px) !important;
+      }
+      @include mq(xxs) {
+        font-size: vwp(10px) !important;
+      }
+    }
+  }
+  .modal-footer {
+    background: #f2f4f6;
+    color: #666;
+    border-radius: 0 0 6px 6px;
+    padding-top: 10px;
+    @include mq(xsm) {
+      padding-top: vwl(10px);
+    }
+    @include mq(xxs) {
+      padding-top: vwp(10px);
+    }
+  }
+  .icon-calendar {
+    @extend %svg;
+    width: 40px;
+    height: 44px;
+    float: left;
+    @include mq(xsm) {
+      width: vwl(40px);
+      height: vwl(44px);
+    }
+    @include mq(xxs) {
+      width: vwp(40px);
+      height: vwp(44px);
+    }
+    @include mq(sm) {
+      width: 56px;
+      height: 53px;
+    }
+  }
+  .icon-payment {
+    @extend %svg;
+    width: 40px;
+    height: 29px;
+    float: left;
+    @include mq(xsm) {
+      width: vwl(40px);
+      height: vwl(29px);
+    }
+    @include mq(xxs) {
+      width: vwp(40px);
+      height: vwp(29px);
+    }
+    @include mq(sm) {
+      width: 56px;
+      height: 40px;
+    }
+  }
+}
+
+// SVG
+.apple-pay-button-black span,
+.apple-pay h6::after {
+  @include logo-apple-pay($white);
+}
+// Upsell modal icons
+.tech-details li::before {
+  @include checkmark-fat($teal);
+}
+// Protector
+.waterproof::before {
+  @include waterproof($teal);
+}
+.stain {
+  &::before {
+    @include stain($teal);
+  }
+}
+.hypoallergenic {
+  &::before {
+    @include hypoallergenic($teal);
+  }
+}
+.quiet {
+  &::before {
+    @include shh($teal);
+  }
+}
+.breathable {
+  &::before {
+    @include breathable($teal);
+  }
+}
+.protection {
+  &::before {
+    @include badge-lock-filled($teal);
+  }
+}
+// Original Pillow
+.comfort {
+  &::before {
+    @include microfiber($teal);
+  }
+}
+.support {
+  &::before {
+    @include spine($teal);
+  }
+}
+.durable {
+  &::before {
+    // @include dumbbell($teal);
+    @include hammer($teal);
+  }
+}
+.washable {
+  &::before {
+    @include bubbles($teal);
+  }
+}
+.hypoallergenic {
+  &::before {
+    @include feather($teal);
+  }
+}
+// Metal Bed Frame
+.easy {
+  &::before {
+    @include thumbs-up-filled($teal);
+  }
+}
+.storage {
+  &::before {
+    @include storage($teal);
+  }
+}
+.versatile {
+  &::before {
+    @include versatile($teal);
+  }
+}
+.folding {
+  &::before {
+    @include origami($teal);
+  }
+}
+// Platform Bed Frame
+.craftsmanship {
+  &::before {
+    @include wrench-screwdriver($teal);
+  }
+}
+.boxspring {
+  &::before {
+    @include no-spring($teal);
+  }
+}
+.flexible {
+  &::before {
+    @include flexible($teal);
+  }
+}
+.modern {
+  &::before {
+    @include lightbulb($teal);
+  }
+}
+// Sheets
+.safe {
+  &::before {
+    @include shield-checkmark($teal);
+  }
+}
+.fit {
+  &::before {
+    @include shrink($teal);
+  }
+}
+// Original Duvet
+.all-season {
+  &::before {
+    @include all-season($teal);
+  }
+}
+.oversized {
+  &::before {
+    @include oversized($teal);
+  }
+}
+.loops {
+  &::before {
+    @include movement($teal);
+  }
+}
+// Affirm modal
+.icon-calendar {
+  @include calendar($navy);
+}
+.icon-payment {
+  @include payment($navy);
+}
