@@ -142,15 +142,13 @@
                 {%- endif -%}
               </ul>
               <div class="removed-items">
-                {#
                 {% for item in cart.items %}
                   {%- set type = item.sku.slice(3, -6) -%}
                   <p data-sku="{{ item.sku }}" style="display: none;">
-                    <span data-longtitle="{{ checkTitleLength(type) }}">{{ getProductName(type) }}</span> was removed. 
+                    <span>{{ item.name }}</span> was removed. 
                     <a class="cancel-remove" data-sku="{{ item.sku }}" title="Cancel" role="button" tabindex="0">Undo</a>
                   </p>
                 {% endfor %}
-                #}
               </div>
             </div>
           </div>
@@ -197,58 +195,6 @@
 
           <ul>
             {{- getUpsells() -}}
-
-            {%- if mattress.length -%}										
-              {{- getUpsells(mattress) -}}
-            {%- endif -%}
-            
-            {%- if luxeHybrid.length -%}										
-              {{- getUpsells(luxeHybrid) -}}
-            {%- endif -%}
-
-            {%- if originalPremium.length -%}										
-              {{- getUpsells(originalPremium) -}}
-            {%- endif -%}
-
-            {%- if protector.length -%}										
-              {{- getUpsells(protector) -}}
-            {%- endif -%}
-
-            {%- if pillow.length -%}										
-              {{- getUpsells(pillow) -}}
-            {%- endif -%}
-            
-            {%- if sheets.length -%}					
-              {{- getCrossCategoryUpsells(sheets) -}}
-            {%- endif -%}
-
-            {%- if duvet.length -%}										
-              {{- getUpsells(duvet, upsellSize) -}}
-            {%- endif -%}
-
-            {%- if woodFrame.length -%}										
-              {{- getUpsells(woodFrame) -}}
-            {%- endif -%}
-            
-            {%- if metalFrame.length -%}
-              {{- getUpsells(metalFrame) -}}
-            {%- endif -%}
-
-            {%- if foundation.length -%}										
-              {{- getUpsells(foundation) -}}
-            {%- endif -%}
-            
-            {%- if foundationLegs.length -%}										
-              {{- getUpsells(foundationLegs, upsellSize) -}}
-            {%- endif -%}
-
-            {%- if ppMattress.length -%}
-              {{- getAddOns(ppMattressSkus, ppMattress) -}}
-            {%- endif -%}
-
-            {%- if ppLuxeHybrid.length -%}
-              {{- getAddOns(ppLuxeHybridSkus, ppLuxeHybrid) -}}
-            {%- endif -%}
           </ul>
         </div>
       </div>
@@ -467,70 +413,70 @@ function updateCart() {
     upsellsHidden = true;
   }
 
-  $('body').addClass('processing');
-  {# Temporarily prevent pointer events #}
-  $.ajax("/api/updatecart", {
-    contentType: "application/x-www-form-urlencoded",
-    data: { cart: cart },
-    type: "POST",
-    success: function(result, status, xhr) {
-      if (result.ok !== true) {
-        console.log("FAIL updateCart: " + result.debug);
-        if (window.Rollbar && window.Rollbar.error) {
-          Rollbar.error('updatecart failed', result);
-        }
-        displayErrorBox(result.message);
-      }
-      {# push update_cart event #}
-      pushToDataLayer({
-        'event': 'update_cart',
-        'updated_cart': result.cart
-      });
-      $('body').removeClass('processing');
-    },
-    error: function(xhr, status, error) {
-      if (window.Rollbar && window.Rollbar.error) {
-        Rollbar.error('updatecart XHR failed', error);
-      }
-      displayGenericError();
-    }
-  });
+  // $('body').addClass('processing');
+  // {# Temporarily prevent pointer events #}
+  // $.ajax("/api/updatecart", {
+  //   contentType: "application/x-www-form-urlencoded",
+  //   data: { cart: cart },
+  //   type: "POST",
+  //   success: function(result, status, xhr) {
+  //     if (result.ok !== true) {
+  //       console.log("FAIL updateCart: " + result.debug);
+  //       if (window.Rollbar && window.Rollbar.error) {
+  //         Rollbar.error('updatecart failed', result);
+  //       }
+  //       displayErrorBox(result.message);
+  //     }
+  //     {# push update_cart event #}
+  //     pushToDataLayer({
+  //       'event': 'update_cart',
+  //       'updated_cart': result.cart
+  //     });
+  //     $('body').removeClass('processing');
+  //   },
+  //   error: function(xhr, status, error) {
+  //     if (window.Rollbar && window.Rollbar.error) {
+  //       Rollbar.error('updatecart XHR failed', error);
+  //     }
+  //     displayGenericError();
+  //   }
+  // });
 };
 
 {# Upsells + Addons #}
 function addToCart(sku) {
-  $('body').addClass('processing');
+  // $('body').addClass('processing');
 
-  pushToDataLayer({
-    'event': 'add_to_cart',
-    'added_sku': sku.toUpperCase(),
-    'eventCallback': function (containerId) {
-      if (containerId === '{{state.config.GTM_CONTAINER}}') {
-        $.ajax("/api/addCartItem", {
-          contentType: "application/x-www-form-urlencoded",
-          data: { sku: sku },
-          type: "POST",
-          success: function(result, status, xhr) {
-            if (result.ok !== true) {
-              console.log("FAIL addCartItem: " + result.debug);
-              if (window.Rollbar && window.Rollbar.error) {
-                Rollbar.error('addToCart failed', result);
-              }
-              displayErrorBox(result.message);
-            } 
-            $('body').removeClass('processing');
-          },
-          error: function(xhr, status, error) {
-            if (window.Rollbar && window.Rollbar.error) {
-              Rollbar.error('addToCart XHR failed', error);
-            }
-            displayGenericError();
-          }
-        });
-      }
-    },
-    'eventTimeout': 2000
-  });
+  // pushToDataLayer({
+  //   'event': 'add_to_cart',
+  //   'added_sku': sku.toUpperCase(),
+  //   'eventCallback': function (containerId) {
+  //     if (containerId === '{{state.config.GTM_CONTAINER}}') {
+  //       $.ajax("/api/addCartItem", {
+  //         contentType: "application/x-www-form-urlencoded",
+  //         data: { sku: sku },
+  //         type: "POST",
+  //         success: function(result, status, xhr) {
+  //           if (result.ok !== true) {
+  //             console.log("FAIL addCartItem: " + result.debug);
+  //             if (window.Rollbar && window.Rollbar.error) {
+  //               Rollbar.error('addToCart failed', result);
+  //             }
+  //             displayErrorBox(result.message);
+  //           } 
+  //           $('body').removeClass('processing');
+  //         },
+  //         error: function(xhr, status, error) {
+  //           if (window.Rollbar && window.Rollbar.error) {
+  //             Rollbar.error('addToCart XHR failed', error);
+  //           }
+  //           displayGenericError();
+  //         }
+  //       });
+  //     }
+  //   },
+  //   'eventTimeout': 2000
+  // });
 }
 
 function numberWithCommas(x) {
@@ -1158,72 +1104,28 @@ $('.upsell-modal').on('hidden.bs.modal', function () {
           </div>
           <div class="pricing col-xs-3">
             {%- if upsell -%}
-              {% if item.description !== undefined %} {# Pulling upsells directly from cart upsells #}
-                {% set originalPrice, salePrice = item.price %}
-                {% set discountedItem = false %}
-                {# This discount logic is here in case upsell discounts are eventually enabled #}
-                {%- if item.discountprice > 0 -%}
-                  {% set discountedItem = true %}
-                  {% set salePrice = p.discountprice %}
-                {%- endif -%}
-                <div class="item" data-sku="{{ item.sku }}" 
-                      data-type="{{ type }}"
-                      data-color="{{ color }}"
-                      data-price="{{ salePrice }}"
-                      data-discount="0"
-                      {# discount is set at 0 because product discounts are not presently available in the cart #}
-                      data-active="false"
-                      data-upsell="true"
-                      data-quantity="1"
-                      data-add-on-available="{{ addOnAvailable }}">
-                  <h4 class="{% if discountedItem %}discounted {% endif %}price">
-                    {%- if salePrice | round !== salePrice -%}
-                      {{ salePrice.toFixed(2) }}
-                    {%- else -%}
-                      {{ salePrice }}
-                    {%- endif -%}
-                  </h4>
-                  {%- if discountedItem -%}
-                    <h4 class="original-price">{{ originalPrice }}</h4>
-                  {% endif %}
-                </div>
-              {% else %}
-                {%- for p in products.result -%}
-                  {%- if p.productCategoryId == item.catId -%}
-                    {% set originalPrice, salePrice = p.price %}
-                    {% set discountedItem = false %}
-                    {# This discount logic is here in case upsell discounts are eventually enabled #}
-                    {%- if p.discountprice > 0 -%}
-                      {% set discountedItem = true %}
-                      {% set salePrice = p.discountprice %}
-                    {%- endif -%}
-                    <div class="item" data-sku="{{ p.sku }}" 
-                          data-type="{{ type }}"
-                          data-color="{{ color }}"
-                          data-price="{{ salePrice }}"
-                          data-discount="0"
-                          {# discount is set at 0 because product discounts are not presently available in the cart #}
-                          data-active="false"
-                          data-upsell="true"
-                          data-quantity="1"
-                          data-add-on-available="{{ addOnAvailable }}">
-                      <h4 class="{% if discountedItem %}discounted {% endif %}price">
-                        {%- if salePrice | round !== salePrice -%}
-                          {{ salePrice.toFixed(2) }}
-                        {%- else -%}
-                          {{ salePrice }}
-                        {%- endif -%}
-                      </h4>
-                      {%- if discountedItem -%}
-                        <h4 class="original-price">{{ originalPrice }}</h4>
-                      {% endif %}
-                    </div>
+              <div class="item" data-sku="{{ item.sku }}" 
+                    data-type="{{ item.type }}"
+                    data-color="{{ item.color }}"
+                    data-price="{{ item.salePrice }}"
+                    data-discount="0"
+                    {# discount is set at 0 because product discounts are not presently available in the cart #}
+                    data-active="false"
+                    data-upsell="true"
+                    data-quantity="1"
+                    data-add-on-available="{{ addOnAvailable }}">
+                <h4 class="price">
+                  {%- if item.salePrice | round !== item.salePrice -%}
+                    {{ item.salePrice.toFixed(2) }}
+                  {%- else -%}
+                    {{ item.salePrice }}
                   {%- endif -%}
-                {%- endfor -%}
-              {% endif %}
+                </h4>
+              </div>
+              
             {%- else -%}
               {% set originalPrice, salePrice = item.price %}
-              {% set discountedItem = item.discountprice > 0  %}
+              {% set discountedItem = item.discount > 0  %}
               <div class="item" data-sku="{{ item.sku }}" 
                     data-type="{{ item.type }}"
                     data-color="{{ item.color }}"
@@ -1352,39 +1254,25 @@ $('.upsell-modal').on('hidden.bs.modal', function () {
               {%- endif -%}
             </div>
             <div class="pricing col-xs-3">
-              {%- for item in products.result -%}
-                {%- if item.productCategoryId == u.catId -%}
-                  {%- set active = false -%}
-                  {%- if u.sku == item.sku -%}
-                    {%- set active = true -%}
+              {% set discounted = u.price > u.salePrice %}
+              <div class="item"
+                data-sku="{{ u.sku }}"
+                data-type="{{ u.type }}"
+                data-color="{{ u.color }}"
+                data-price="{{ u.salePrice }}"
+                data-out-of-stock="{{ u.outOfStock }}"
+                data-active="true">
+                <h4 class="{% if discounted %}discounted {% endif %}price">
+                  {%- if u.salePrice | round !== u.salePrice -%}
+                    {{ u.salePrice.toFixed(2) }}
+                  {%- else -%}
+                    {{ u.salePrice }}
                   {%- endif -%}
-
-                  {% set originalPrice, salePrice = item.price %}
-                  {% set discountedItem = false %}
-                  {%- if item.discountprice > 0 -%}
-                    {% set discountedItem = true %}
-                    {% set salePrice = item.discountprice %}
-                  {%- endif -%}
-                  <div class="item"
-                      data-sku="{{ item.sku }}"
-                      data-type="{{ item.sku.slice(3, -6) }}"
-                      data-color="{{ item.sku.slice(6, -3) }}"
-                      data-price="{{ salePrice }}"
-                      data-out-of-stock="{{ item.outOfStock }}"
-                      data-active="{{ active }}">
-                      <h4 class="{% if discountedItem %}discounted {% endif %}price">
-                        {%- if salePrice | round !== salePrice -%}
-                          {{ salePrice.toFixed(2) }}
-                        {%- else -%}
-                          {{ salePrice }}
-                        {%- endif -%}
-                      </h4>
-                      {%- if discountedItem -%}
-                        <h4 class="original-price">{{ originalPrice }}</h4>
-                      {% endif %}
-                  </div>
-                {%- endif -%}
-              {%- endfor -%}
+                </h4>
+                {%- if discounted -%}
+                  <h4 class="original-price">{{ u.price }}</h4>
+                {% endif %}
+              </div>
             </div>
           </div>
           <div class="row">
@@ -1396,59 +1284,56 @@ $('.upsell-modal').on('hidden.bs.modal', function () {
             <div class="size-select col-xs-6">
               <div class="dropdown">
                 <button class="btn btn-sm btn-white dropdown-toggle" type="button" id="upsell-LU-{{ type -}}-{{- color }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
-                  {% for item in products.result -%}
-                    {%- if item.productCategoryId == u.catId -%}	
-                      {%- set active = false -%}
-                      {%- if u.sku == item.sku -%}
-                        {%- set active = true -%}
-                        {# Setting the upsell that corresponds to the cart item as active #}
-                      {%- endif -%}
-
-                      {%- set itemOk = false -%}
-                      {%- set size = u.sku.slice(9, limit) -%}
-                      {%- set itemSize = item.sku.slice(9, limit) -%}
-                      {%- if u.colorSelection -%}
-                        {%- set activeColor = u.colors[0].id -%}
-                        {%- for color in u.colors -%}
-                          {# Only load specified colors #}
-                          {%- set itemColor = item.sku.slice(6, -3) -%}
-                          {%- if (itemColor == color.id) -%}
-                            {%- set itemOk = true -%}
-                          {%- endif -%}
-                        {%- endfor -%}
-                      {%- else -%}
-                        {%- set itemOk = true -%}
-                      {%- endif -%}
-                      {% if itemOk -%}
-                        
-                        <div class="current-size" 
-                            data-sku="{{ item.sku }}"
-                            data-active="{{ active }}"
-                            data-color-selection="{{ u.colorSelection }}"
-                            data-active-color="{{ activeColor }}"
-                            data-longtitle="{{ dualSizes }}">
-                          {%- if dualSizes -%}
-                            {%- if (upsellSize == 'TW') and (itemSize == 'TT') -%}
-                              Twin
-                            {%- elif (upsellSize == 'TX') and (itemSize == 'TT') -%}
-                              Twin XL
-                            {%- elif (upsellSize == 'FL') and (itemSize == 'FQ') -%}
-                              Full
-                            {%- elif (upsellSize == 'QU') and (itemSize == 'FQ') -%}
-                              Queen
-                            {%- elif (upsellSize == 'KG') and (itemSize == 'KC') -%}
-                              King
-                            {%- elif (upsellSize == 'CK') and (itemSize == 'KC') -%}
-                              Cal King
-                            {%- else -%}
-                              {{- item.name -}}
-                            {%- endif -%}
-                          {%- else -%}
-                            {{- item.name -}}
-                          {%- endif -%}
-                        </div>
-                      {%- endif %}
+                  {% for item in u.skus -%}
+                    {%- set active = false -%}
+                    {%- if u.sku == item.sku -%}
+                      {%- set active = true -%}
+                      {# Setting the upsell that corresponds to the cart item as active #}
                     {%- endif -%}
+
+                    {%- set itemOk = false -%}
+                    {%- set size = u.sku.slice(9, limit) -%}
+                    {%- if u.colorSelection -%}
+                      {%- set activeColor = u.colors[0].id -%}
+                      {%- for color in u.colors -%}
+                        {# Only load specified colors #}
+                        {%- set itemColor = item.sku.slice(6, -3) -%}
+                        {%- if (itemColor == color.id) -%}
+                          {%- set itemOk = true -%}
+                        {%- endif -%}
+                      {%- endfor -%}
+                    {%- else -%}
+                      {%- set itemOk = true -%}
+                    {%- endif -%}
+                    {% if itemOk -%}
+                      
+                      <div class="current-size" 
+                          data-sku="{{ item.sku }}"
+                          data-active="{{ active }}"
+                          data-color-selection="{{ u.colorSelection }}"
+                          data-active-color="{{ activeColor }}"
+                          data-longtitle="{{ dualSizes }}">
+                        {%- if dualSizes -%}
+                          {%- if (upsellSize == 'TW') and (item.size == 'TT') -%}
+                            Twin
+                          {%- elif (upsellSize == 'TX') and (item.size == 'TT') -%}
+                            Twin XL
+                          {%- elif (upsellSize == 'FL') and (item.size == 'FQ') -%}
+                            Full
+                          {%- elif (upsellSize == 'QU') and (item.size == 'FQ') -%}
+                            Queen
+                          {%- elif (upsellSize == 'KG') and (item.size == 'KC') -%}
+                            King
+                          {%- elif (upsellSize == 'CK') and (item.size == 'KC') -%}
+                            Cal King
+                          {%- else -%}
+                            {{- item.sizeName -}}
+                          {%- endif -%}
+                        {%- else -%}
+                          {{- item.sizeName -}}
+                        {%- endif -%}
+                      </div>
+                    {%- endif %}
                   {%- endfor %}	
                   {% if u.colorSelection %}
                     <div class="current-size selection-message"
@@ -1456,7 +1341,7 @@ $('.upsell-modal').on('hidden.bs.modal', function () {
                       data-active="false">Select Size</div>
                   {%- endif -%}
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="upsell-LU-{{ type -}}-{{- color }}" color-selection="{{ u.colorSelection }}">
+                <ul class="dropdown-menu" aria-labelledby="upsell-LU-{{ u.type -}}-{{- u.color }}" color-selection="{{ u.colorSelection }}">
                   {%- if u.colorSelection -%}
                     {%- set colorCount = u.colors | length -%}
                     {%- set activeColor = u.colors[0].id -%}
@@ -1488,56 +1373,54 @@ $('.upsell-modal').on('hidden.bs.modal', function () {
                     <ul>
                       {%- set count = 0 -%}
                       {%- set totalUpsellSizes = 6 -%}
-                      {%- for item in products.result -%}
-                        {%- if item.productCategoryId == u.catId -%}
-                          {%- set active = false -%}
-                          {%- if u.sku == item.sku -%}
-                            {%- set active = true -%}
-                          {%- endif -%}
-    
-                          {%- set itemOk = false -%}
-                          {%- set size = u.sku.slice(9, limit) -%} {# size of associated cart item #}
-                          {%- set itemSize = item.sku.slice(9, limit) -%}
-                          {%- set itemColor = item.sku.slice(6, -3) -%}
-                          {%- if u.colorSelection -%}
-                            {%- for color in u.colors -%}
-                              {# Only load current size and specified colors #}
-                              {%- if (itemColor == color.id) -%}
-                                {%- set itemOk = true -%}
-                              {%- endif -%}
-                            {%- endfor -%}
-                          {%- else -%}
-                            {%- set itemOk = true -%}
-                          {%- endif -%}
-                          {%- if itemOk -%}
-                            {%- set count = count + 1 -%}
-                            {%- if (count == 1) and (itemSize == 'ST') -%}
-                              {%- set totalUpsellSizes = 2 -%}
+                      {%- for item in u.skus -%}
+                        {%- set active = false -%}
+                        {%- if u.sku == item.sku -%}
+                          {%- set active = true -%}
+                        {%- endif -%}
+  
+                        {%- set itemOk = false -%}
+                        {%- set size = u.sku.slice(9, limit) -%} {# size of associated cart item #}
+                        {%- set itemSize = item.sku.slice(9, limit) -%}
+                        {%- set itemColor = item.sku.slice(6, -3) -%}
+                        {%- if u.colorSelection -%}
+                          {%- for color in u.colors -%}
+                            {# Only load current size and specified colors #}
+                            {%- if (itemColor == color.id) -%}
+                              {%- set itemOk = true -%}
                             {%- endif -%}
-                            {%- if (count == 1) and (itemSize == 'TT') -%}
-                              {%- set totalUpsellSizes = 3 -%}
-                            {%- endif -%}
-    
-                            <li class="upsell-item"
-                                data-sku="{{ item.sku }}"
-                                data-type="{{ type }}"
-                                data-price="{{ item.price }}"
-                                data-out-of-stock="{{ item.outOfStock }}"
-                                data-upsell-sizes="{{ totalUpsellSizes }}"
-                                data-active="{{ active }}"
-                                {%- if u.colorSelection %}
-                                  data-color-selection="true"
-                                  data-color="{{ itemColor }}"
-                                  {%- if itemColor !== activeColor %}
-                                    style="display: none;"
-                                  {%- endif -%}
+                          {%- endfor -%}
+                        {%- else -%}
+                          {%- set itemOk = true -%}
+                        {%- endif -%}
+                        {%- if itemOk -%}
+                          {%- set count = count + 1 -%}
+                          {%- if (count == 1) and (itemSize == 'ST') -%}
+                            {%- set totalUpsellSizes = 2 -%}
+                          {%- endif -%}
+                          {%- if (count == 1) and (itemSize == 'TT') -%}
+                            {%- set totalUpsellSizes = 3 -%}
+                          {%- endif -%}
+  
+                          <li class="upsell-item"
+                              data-sku="{{ item.sku }}"
+                              data-type="{{ type }}"
+                              data-price="{{ item.price }}"
+                              data-out-of-stock="{{ item.outOfStock }}"
+                              data-upsell-sizes="{{ totalUpsellSizes }}"
+                              data-active="{{ active }}"
+                              {%- if u.colorSelection %}
+                                data-color-selection="true"
+                                data-color="{{ itemColor }}"
+                                {%- if itemColor !== activeColor %}
+                                  style="display: none;"
                                 {%- endif -%}
-                                role="button" tabindex="0"
-                                >
-                                <h5>{{ item.name }}</h5>
-                                <p>${{ item.price }}</p>
-                            </li>
-                          {%- endif -%}
+                              {%- endif -%}
+                              role="button" tabindex="0"
+                              >
+                              <h5>{{ item.sizeName }}</h5>
+                              <p>${{ item.price }}</p>
+                          </li>
                         {%- endif -%}
                       {%- endfor -%}
                     </ul>

@@ -191,6 +191,7 @@ async function cart(ctx, next) {
   })
   const u = await utils.getUpsells(cartItems, ctx);
   const upsells = u.result[0];
+  console.log('upsells@@@', upsells)
   // console.log('sheetsSkus', sheetsSkus)
   // console.log('cartItems', cartItems)
   // console.log('upsells', upsells)
