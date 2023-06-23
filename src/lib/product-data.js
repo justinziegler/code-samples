@@ -28,18 +28,18 @@ module.exports.getProducts = async function () {
     },
     
     { catId: 8, sku: 'LU-PR-WH-TW', price: '75', outOfStock: false },
-    { catId: 8, sku: 'LU-PR-WH-TX', price: '75', outOfStock: false },
+    { catId: 8, sku: 'LU-PR-WH-TX', price: '80', outOfStock: false },
     { catId: 8, sku: 'LU-PR-WH-FL', price: '85', outOfStock: false },
-    { catId: 8, sku: 'LU-PR-WH-QU', price: '85', outOfStock: false },
+    { catId: 8, sku: 'LU-PR-WH-QU', price: '90', outOfStock: false },
     { catId: 8, sku: 'LU-PR-WH-KG', price: '95', outOfStock: false },
-    { catId: 8, sku: 'LU-PR-WH-CK', price: '95', outOfStock: false },
+    { catId: 8, sku: 'LU-PR-WH-CK', price: '100', outOfStock: false },
 
     { catId: 11, sku: 'LU-WF-BR-TW', price: '750', outOfStock: false },
-    { catId: 11, sku: 'LU-WF-BR-TX', price: '750', outOfStock: false },
+    { catId: 11, sku: 'LU-WF-BR-TX', price: '800', outOfStock: false },
     { catId: 11, sku: 'LU-WF-BR-FL', price: '850', outOfStock: false },
-    { catId: 11, sku: 'LU-WF-BR-QU', price: '850', outOfStock: false },
+    { catId: 11, sku: 'LU-WF-BR-QU', price: '900', outOfStock: false },
     { catId: 11, sku: 'LU-WF-BR-KG', price: '950', outOfStock: false },
-    { catId: 11, sku: 'LU-WF-BR-CK', price: '950', outOfStock: false },
+    { catId: 11, sku: 'LU-WF-BR-CK', price: '1000', outOfStock: false },
 
     { catId: 30, sku: 'LU-OC-BW-TW', price: '175', outOfStock: false },
     { catId: 30, sku: 'LU-OC-BW-TX', price: '175', outOfStock: false },
@@ -248,6 +248,8 @@ module.exports.getUpsellDetails = async function (skus) {
       const sizeName = utils.getSizeName(c.sku.slice(9));
       const item = {
         sku: c.sku,
+        type: c.sku.slice(3, -6),
+        color: c.sku.slice(6, -3),
         price: c.price,
         sizeName: sizeName,
         outOfStock: c.outOfStock
@@ -266,7 +268,7 @@ module.exports.getUpsellDetails = async function (skus) {
         }
         break;
       case 'PR': 
-        discount = 15;
+        discount = 0;
         details = {
           catId: item.catId,
           sku: item.sku,
@@ -336,12 +338,12 @@ module.exports.getUpsellDetails = async function (skus) {
             {
               catId: 8,
               dimensions: [
-                { size: 'TW', w: '39"', l: '75"', h: '', totalHeight: '', weight: '4 lbs.' },
-                { size: 'TX', w: '39"', l: '80"', h: '', totalHeight: '', weight: '4 lbs.' },
-                { size: 'FL', w: '54"', l: '75"', h: '', totalHeight: '', weight: '4.5 lbs.' },
-                { size: 'QU', w: '60"', l: '80"', h: '', totalHeight: '', weight: '4.75 lbs.' },
-                { size: 'KG', w: '76"', l: '80"', h: '', totalHeight: '', weight: '6 lbs.' },
-                { size: 'CK', w: '72"', l: '84"', h: '', totalHeight: '', weight: '6 lbs.' },
+                { size: 'Twin', w: '39"', l: '75"', h: '', totalHeight: '', weight: '4 lbs.' },
+                { size: 'Twin XL', w: '39"', l: '80"', h: '', totalHeight: '', weight: '4 lbs.' },
+                { size: 'Full', w: '54"', l: '75"', h: '', totalHeight: '', weight: '4.5 lbs.' },
+                { size: 'Queen', w: '60"', l: '80"', h: '', totalHeight: '', weight: '4.75 lbs.' },
+                { size: 'King', w: '76"', l: '80"', h: '', totalHeight: '', weight: '6 lbs.' },
+                { size: 'California King', w: '72"', l: '84"', h: '', totalHeight: '', weight: '6 lbs.' },
                 { size: 'BOX', w: '15"', l: '12"', h: '5.75"', totalHeight: '', weight: '' }
               ]
             }
@@ -526,12 +528,12 @@ module.exports.getUpsellDetails = async function (skus) {
             {
               catId: 11,
               dimensions: [
-                { size: 'TW', w: '41"', l: '76.5"', h: '13.5"', totalHeight: '', weight: '68 lbs.' },
-                { size: 'TX', w: '41"', l: '81.5"', h: '13.5"', totalHeight: '', weight: '71 lbs.' },
-                { size: 'FL', w: '55.7"', l: '76.8"', h: '14"', totalHeight: '', weight: '61 lbs.' },
-                { size: 'QU', w: '60.6"', l: '81.7"', h: '14"', totalHeight: '', weight: '61 lbs.' },
-                { size: 'KG', w: '77.7"', l: '81.7"', h: '14"', totalHeight: '', weight: '62 lbs.' },
-                { size: 'CK', w: '73.7"', l: '85.7"', h: '14"', totalHeight: '', weight: '82 lbs.' },
+                { size: 'Twin', w: '41"', l: '76.5"', h: '13.5"', totalHeight: '', weight: '68 lbs.' },
+                { size: 'Twin XL', w: '41"', l: '81.5"', h: '13.5"', totalHeight: '', weight: '71 lbs.' },
+                { size: 'Full', w: '55.7"', l: '76.8"', h: '14"', totalHeight: '', weight: '61 lbs.' },
+                { size: 'Queen', w: '60.6"', l: '81.7"', h: '14"', totalHeight: '', weight: '61 lbs.' },
+                { size: 'King', w: '77.7"', l: '81.7"', h: '14"', totalHeight: '', weight: '62 lbs.' },
+                { size: 'California King', w: '73.7"', l: '85.7"', h: '14"', totalHeight: '', weight: '82 lbs.' },
                 { size: 'BOX', w: 'A: 67" x 16" x 5"', l: 'B: 83" x 10" x 3"', h: '', totalHeight: '', weight: '' }
               ]
             }

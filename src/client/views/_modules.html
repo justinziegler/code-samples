@@ -130,3 +130,186 @@
     {% endif %}
 	</nav>
 {% endmacro %}
+
+{% macro specs(products, product, specs) %}
+  {% for p in product %}
+  <section class="specs">
+    <div class="container">
+      {% for items in specs %}
+        {% if items.heading !== '' %}
+          <div class="row">
+            <div class="col-xs-12">
+              <h2>{{ items.heading }}</h2>
+            </div>
+          </div>
+        {% endif %}
+        <div class="row">
+          <div class="size-price-grid col-xs-12 col-sm-10 col-sm-offset-1">
+            <div class="grid-head row">						
+              {% if p.defaultCatId == 16 %}
+              {# This section is unique for Sheets #}
+                <div class="size col-xs-3">
+                  <label>Size</label>
+                </div>
+                <div class="fitted col-xs-5 col-sm-3">
+                  <label>Fitted Sheet</label>
+                </div>
+                <div class="flat col-xs-4 col-sm-3">
+                  <label>Flat Sheet</label>
+                </div>
+                <div class="pillowcase hidden-xs col-sm-3">
+                  <label>Pillowcase</label>
+                </div>
+              {% elif p.defaultCatId == 20 %}
+              {# This section is unique for Mattress Foundation #}
+                <div class="size col-xs-4 col-sm-3">
+                  <label>Size</label>
+                </div>
+                <div class="dimensions col-xs-3 col-sm-4">
+                  <label>Dimensions</label>
+                </div>
+                <div class="leg-dimensions col-sm-2 hidden-xs">
+                  <label>Legs</label>
+                </div>
+                <div class="weight foundation-weight col-xs-5 col-sm-3">
+                  <label>Shipping <span class="hidden-xs hidden-sm">Weight</span><span class="visible-xs-inline visible-sm-inline">Wt.</span></label>
+                </div>
+              {% else %}
+                <div class="size col-xs-4">
+                  <label>Size</label>
+                </div>
+                <div class="dimensions col-xs-3 col-sm-4">
+                  <label>Dimensions</label>
+                </div>
+                <div class="weight col-xs-5 col-sm-4">
+                  <label>Shipping <span class="hidden-xs">Weight</span><span class="visible-xs-inline">Wt.</span></label>
+                </div>
+              {% endif %}
+            </div>
+            {% if p.defaultCatId == 16 %}
+            {# This section is unique for Sheets #}
+              {% for product in p.dimensions %}
+                {% if product.size !== 'BOX' %}
+                  <div class="row">
+                    <div class="size col-xs-3">
+                      <p>{{ product.size }}</p>
+                    </div>
+                    <div class="fitted col-xs-5 col-sm-3">
+                      <p>{{ product.fitted }}</p>
+                    </div>
+                    <div class="flat col-xs-4 col-sm-3">
+                      <p>{{ product.flat | safe }}</p>
+                    </div>
+                    <div class="pillowcase hidden-xs col-sm-3">
+                      <p>{{ product.pillowcase | safe }}</p>
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            {% elif p.defaultCatId == 20 %}
+            {# This section is unique for Mattress Foundation #}
+              {% for product in p.dimensions %}
+                {% if product.size !== 'BOX' %}
+                  <div class="row">
+                    <div class="size col-xs-4 col-sm-3">
+                      <p>{{ product.size }}</p>
+                    </div>
+                    <div class="dimensions col-xs-4">
+                      <p>{{ product.w }} x {{ product.l }} {% if product.h !== '' %}x {{ product.h }}{% endif %}</p>
+                    </div>
+                    <div class="leg-dimensions col-sm-2 hidden-xs">
+                      <p>3" x 8"</p>
+                    </div>
+                    <div class="weight foundation-weight col-xs-4 col-sm-3">
+                      {% if product.weight !== '' %}
+                        <p>{{ product.weight }}</p>
+                      {% endif %}
+                    </div>
+                  </div>				
+                {% endif %}							
+              {% endfor %}
+            {% else %}
+              {% for product in p.dimensions %}
+                {% if product.size !== 'BOX' %}
+                  <div class="row">
+                    <div class="size col-xs-4">
+                      <p>{{ product.size }}</p>
+                    </div>
+                    <div class="dimensions col-xs-4">
+                      <p>{{ product.w }} x {{ product.l }} {% if product.h !== '' %}x {{ product.h }}{% endif %}</p>
+                    </div>
+                    <div class="weight col-xs-4">
+                      {% if product.weight !== '' %}
+                        <p>{{ product.weight }}</p>
+                      {% endif %}
+                    </div>
+                  </div>										
+                {% endif %}	
+              {% endfor %}											
+            {% endif %}
+
+            {% for product in p.dimensions %}
+              {% if product.size == 'BOX' %}
+                <div class="row">
+                  <div class="size {% if p.defaultCatId == 16 %}col-xs-3{% elif p.defaultCatId == 20 %}col-xs-4 col-sm-3{% else %}col-xs-4{% endif %}">
+                    <p><strong>Box Size</strong></p>
+                  </div>
+                  <div class="dimensions {% if product.weight !== '' %}col-xs-4{% else %}col-xs-8{% endif %}">
+                    {% set x = product.w | truncate(1, true, '') %}
+                    {% set y = product.w | truncate(8, true, '') %}
+                    {% if (x == 'A') or (y == 'Standard') %}
+                      <p><strong>{{ product.w }}<br>{{ product.l }}</strong></p>
+                    {% elif p.defaultCatId == 16 %}
+                      <p>{{ product.dimensions }}</p>
+                    {% else %}
+                      <p><strong>{{ product.w }} x {{ product.l }} {% if product.h !== '' %}x {{ product.h }}{% endif %}</strong></p>
+                    {% endif %}
+                  </div>
+                  {% if product.weight !== '' %}
+                    <div class="weight col-xs-4">
+                      <p><strong>{{ product.weight }}</strong></p>
+                    </div>
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+
+            <div class="notes row">
+              <div class="left-col col-xs-9">
+                <p>*Dimensions and Weights are approximate</p>							
+              </div>
+              {% for sizeGuide in p.sizeGuide %}
+                {% if sizeGuide.show %}
+              <div class="right-col col-xs-3">
+                <p><a data-toggle="modal" data-target="#size-guide-modal" role="button" tabindex="0" href="">Size Guide</a></p>
+              </div>
+                {% endif %}
+              {% endfor %}
+              {% if items.numberOfBoxes !== undefined %}
+                <div class="left-col col-xs-12">
+                  <p>*Please note: This item ships in {{ items.numberOfBoxes }} separate boxes.</p>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+          
+          <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+            <div class="row">
+              {% for details in items.details %}
+                {% if details.item == 'clearfix' %}
+                  <div class="clearfix {{ details.classes }}"></div>
+                {% else %}
+                <div class="{{ details.classes }}">
+                  <h3>{{ details.item | safe }}</h3>
+                  <p class="details">{{ details.details | safe }}</p>
+                </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+{% endmacro %}
