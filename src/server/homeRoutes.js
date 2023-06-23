@@ -183,15 +183,14 @@ async function cart(ctx, next) {
   let cartItems = [];
   const mattressSkus = await utils.getProductSkus(ctx, 1, 300);
   cartItems.push(mattressSkus[5]);
-  const sheetsSkus = await utils.getProductSkus(ctx, 30, 30);
-  sheetsSkus.forEach(item => {
-    if (item.size === 'CK' && item.color === 'GG') {
-      cartItems.push(item);
-    }
-  })
+  // const sheetsSkus = await utils.getProductSkus(ctx, 30, 30);
+  // sheetsSkus.forEach(item => {
+  //   if (item.size === 'CK' && item.color === 'GG') {
+  //     cartItems.push(item);
+  //   }
+  // })
   const u = await utils.getUpsells(cartItems, ctx);
   const upsells = u.result[0];
-  console.log('upsells@@@', upsells)
   // console.log('sheetsSkus', sheetsSkus)
   // console.log('cartItems', cartItems)
   // console.log('upsells', upsells)

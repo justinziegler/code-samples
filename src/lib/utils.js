@@ -261,7 +261,7 @@ const duvetCatIds = [19, 24];
 
 // Sheets - Cotton Blend, Cotton & Organic Cotton
 const sheetsBaseCatId = 30;
-const sheetsCatIds = [30, 36, 31];
+const sheetsCatIds = [30, 31, 32];
 
 // Pillows - Original, Memory Foam & Down
 const pillowBaseCatId = 9;
@@ -313,107 +313,6 @@ function getUpsellGroupCatIds(catId) {
     default: return null;
   }
 }
-
-// module.exports.assignUpsells = async function (catIds, itemSize, tier, ctx) {
-//   const products = await content.getProducts();
-//   let upsellSkus = [];
-//   let upsellItems = [];
-//   catIds.forEach(catId => {
-//     const size = convertSize(itemSize, catId);
-//     const upsellGroup = checkUpsellGroup(catId);
-//     const upsellGroupCatIds = getUpsellGroupCatIds(catId);
-//     console.log('upsellGroup', upsellGroup);
-//     console.log('upsellGroupCatIds', upsellGroupCatIds);
-//     console.log('catId', catId);
-//     let catUpsellItems = [];
-//     if (upsellGroup) {
-//       let upsellOk = true;
-//       upsellGroupCatIds.forEach(gCatId => {
-//         if (ctx.cartCatIds.includes(gCatId)) upsellOk = false;
-//         console.log('!!!!!!!!!!!!!')
-//         // const g = products.filter(item => item.catId === gCatId);
-//         const g = getUpsellItem(gCatId);
-//         // const g = await f;
-//         console.log('g', g)
-//         const catItems = g.filter(item => item.sku.slice(9) === size);
-//         catUpsellItems = catUpsellItems.concat(catItems);
-//         console.log('catItems', catItems)
-//         console.log('catUpsellItems', catUpsellItems)
-//       })
-//       if (upsellOk) {
-//         let priorityType = 'CB';
-//         let typeOrder = ['CB', 'CS', 'OC'];
-//         let colorOrder = ['BW', 'QG', 'GG', 'MB', 'PA', 'WP', 'CD'];
-//         let label = 'Color &amp; Fabric';
-//         let colorSelect = false;
-//         const typeSelect = true;
-//         if (catId === sheetsBaseCatId) {
-//           colorSelect = true;
-//           if (tier === 'premiumMattress') {
-//             priorityType = 'OC';
-//             typeOrder = ['OC', 'CS', 'CB'];
-//           }
-//         } else if (catId === islayBaseCatId) {
-//           priorityType = 'TU';
-//           typeOrder = ['TU', 'UU'];
-//           colorOrder = ['CS', 'DS'];
-//           label = 'Color &amp; Style';
-//           colorSelect = true;
-//         } else if (catId === pillowBaseCatId) {
-//           label = 'Type';
-//           priorityType = 'PW';
-//           typeOrder = ['PW', 'DP', 'FP'];
-//           colorOrder = ['WH'];
-//           if (tier === 'premiumMattress' || tier === 'premiumFrame') {
-//             priorityType = 'DP';
-//           }
-//         } else if (catId === duvetBaseCatId) {
-//           label = 'Type';
-//           priorityType = 'DV';
-//           typeOrder = ['DV', 'DD'];
-//           colorOrder = ['WH'];
-//           if (tier === 'premiumMattress' || tier === 'premiumFrame') {
-//             priorityType = 'DD';
-//           }
-//         }
-//         const b = catUpsellItems.filter(item => item.sku.slice(3, -6) === priorityType);
-//         const c = b.filter(item => item.sku.slice(6, -3) === colorOrder[0]);
-//         const d = c.filter(item => item.sku.slice(9) === size);
-//         const upsellItem = {
-//           upsellTitle: d[0].upsellTitle,
-//           upsellDescription: d[0].upsellDescription,
-//           url: d[0].url,
-//           slug: d[0].slug,
-//           sku: d[0].sku,
-//           skus: catUpsellItems,
-//           name: d[0].name,
-//           type: d[0].type,
-//           color: d[0].color,
-//           size: d[0].size,
-//           price: d[0].price,
-//           discountPrice: d[0].discount,
-//           priorityProductType: priorityType,
-//           productTypeOrder: typeOrder,
-//           colorSelection: colorSelect,
-//           typeSelection: typeSelect,
-//           colorDisplayOrder: colorOrder,
-//           dropdownLabel: label
-//         }
-//         upsellItems = upsellItems.concat(upsellItem);
-//       }
-//     } else if (!(cartCatIds.includes(catId))) {
-//       const catItems = products.filter(item => item.catId === catId);
-//       let catItem = catItems.filter(item => item.sku.slice(9) === size);
-      
-//       // const details = content.getUpsellDetails(catItem[0].sku); 
-//       // catItem.push(details);
-//       console.log('details', catItem);
-//       upsellSkus = upsellSkus.concat(catItem[0]);
-//     }
-//   })
-//   upsellItems = await content.getUpsellDetails(upsellSkus); 
-//   return upsellItems;
-// }
 
 module.exports.getUpsells = async function (items, ctx) {
   cartSkus = items.map(item => item.sku);
@@ -494,109 +393,6 @@ module.exports.getUpsells = async function (items, ctx) {
     return skus;
   }
 
-	// function assignUpsells(catIds, itemSize, tier) {
-  //   let upsellSkus = [];
-	// 	let upsellItems = [];
-	// 	catIds.forEach(catId => {
-	// 		const size = convertSize(itemSize, catId);
-	// 		const upsellGroup = checkUpsellGroup(catId);
-	// 		const upsellGroupCatIds = getUpsellGroupCatIds(catId);
-	// 		console.log('upsellGroup', upsellGroup);
-	// 		console.log('upsellGroupCatIds', upsellGroupCatIds);
-	// 		console.log('cartCatIds', cartCatIds);
-	// 		console.log('catId', catId);
-	// 		let catUpsellItems = [];
-	// 		if (upsellGroup) {
-	// 			let upsellOk = true;
-	// 			upsellGroupCatIds.forEach(gCatId => {
-	// 				if (cartCatIds.includes(gCatId)) upsellOk = false;
-  //         console.log('!!!!!!!!!!!!!')
-	// 				// const g = products.filter(item => item.catId === gCatId);
-  //         const g = getUpsellItem(gCatId);
-  //         // const g = await f;
-  //         console.log('g', g)
-	// 				const catItems = g.filter(item => item.sku.slice(9) === size);
-	// 				catUpsellItems = catUpsellItems.concat(catItems);
-  //         console.log('catItems', catItems)
-  //         console.log('catUpsellItems', catUpsellItems)
-	// 			})
-	// 			if (upsellOk) {
-	// 				let priorityType = 'CB';
-	// 				let typeOrder = ['CB', 'CS', 'OC'];
-	// 				let colorOrder = ['BW', 'QG', 'GG', 'MB', 'PA', 'WP', 'CD'];
-	// 				let label = 'Color &amp; Fabric';
-	// 				let colorSelect = false;
-	// 				const typeSelect = true;
-	// 				if (catId === sheetsBaseCatId) {
-	// 					colorSelect = true;
-	// 					if (tier === 'premiumMattress') {
-	// 						priorityType = 'OC';
-	// 						typeOrder = ['OC', 'CS', 'CB'];
-	// 					}
-	// 				} else if (catId === islayBaseCatId) {
-	// 					priorityType = 'TU';
-	// 					typeOrder = ['TU', 'UU'];
-	// 					colorOrder = ['CS', 'DS'];
-	// 					label = 'Color &amp; Style';
-	// 					colorSelect = true;
-	// 				} else if (catId === pillowBaseCatId) {
-	// 					label = 'Type';
-	// 					priorityType = 'PW';
-	// 					typeOrder = ['PW', 'DP', 'FP'];
-	// 					colorOrder = ['WH'];
-	// 					if (tier === 'premiumMattress' || tier === 'premiumFrame') {
-	// 						priorityType = 'DP';
-	// 					}
-	// 				} else if (catId === duvetBaseCatId) {
-	// 					label = 'Type';
-	// 					priorityType = 'DV';
-	// 					typeOrder = ['DV', 'DD'];
-	// 					colorOrder = ['WH'];
-	// 					if (tier === 'premiumMattress' || tier === 'premiumFrame') {
-	// 						priorityType = 'DD';
-	// 					}
-	// 				}
-	// 				const b = catUpsellItems.filter(item => item.sku.slice(3, -6) === priorityType);
-	// 				const c = b.filter(item => item.sku.slice(6, -3) === colorOrder[0]);
-	// 				const d = c.filter(item => item.sku.slice(9) === size);
-	// 				const upsellItem = {
-	// 					upsellTitle: d[0].upsellTitle,
-	// 					upsellDescription: d[0].upsellDescription,
-	// 					url: d[0].url,
-	// 					slug: d[0].slug,
-	// 					sku: d[0].sku,
-	// 					skus: catUpsellItems,
-	// 					name: d[0].name,
-	// 					type: d[0].type,
-	// 					color: d[0].color,
-	// 					size: d[0].size,
-	// 					price: d[0].price,
-	// 					discountPrice: d[0].discount,
-	// 					priorityProductType: priorityType,
-	// 					productTypeOrder: typeOrder,
-	// 					colorSelection: colorSelect,
-	// 					typeSelection: typeSelect,
-	// 					colorDisplayOrder: colorOrder,
-	// 					dropdownLabel: label
-	// 				}
-	// 				upsellItems = upsellItems.concat(upsellItem);
-	// 			}
-	// 		} else if (!(cartCatIds.includes(catId))) {
-  //       const catItems = products.filter(item => item.catId === catId);
-	// 			let catItem = catItems.filter(item => item.sku.slice(9) === size);
-        
-  //       // const details = content.getUpsellDetails(catItem[0].sku); 
-  //       // catItem.push(details);
-  //       console.log('details', catItem);
-	// 			upsellSkus = upsellSkus.concat(catItem);
-	// 		}
-	// 	})
-  //   upsellItems = content.getUpsellDetails(upsellSkus); 
-  //   console.log('upsellSkus', upsellSkus);
-  //   console.log('upsellItems', upsellItems);
-	// 	return upsellItems;
-	// }
-
 	function assignProtectionPlans(cartItems, state) {
 		const upsellItems = [];
 		if (state !== 'WY') {
@@ -648,23 +444,21 @@ module.exports.getUpsells = async function (items, ctx) {
       const size = convertSize(itemSize, catId);
       const upsellGroup = checkUpsellGroup(catId);
       const upsellGroupCatIds = getUpsellGroupCatIds(catId);
-      console.log('upsellGroup', upsellGroup);
+      // console.log('upsellGroup', upsellGroup);
       console.log('upsellGroupCatIds', upsellGroupCatIds);
-      console.log('catId', catId);
       let catUpsellItems = [];
       if (upsellGroup) {
         let upsellOk = true;
         upsellGroupCatIds.forEach(gCatId => {
-          if (ctx.cartCatIds.includes(gCatId)) upsellOk = false;
-          console.log('!!!!!!!!!!!!!')
+          if (cartCatIds.includes(gCatId)) upsellOk = false;
           // const g = products.filter(item => item.catId === gCatId);
-          const g = getUpsellItem(gCatId);
+          const catItems = products.filter(item => item.catId === catId);
+          let catItem = catItems.filter(item => item.sku.slice(9) === size);
+          // const g = getUpsellItem(gCatId);
           // const g = await f;
-          console.log('g', g)
-          const catItems = g.filter(item => item.sku.slice(9) === size);
-          catUpsellItems = catUpsellItems.concat(catItems);
-          console.log('catItems', catItems)
-          console.log('catUpsellItems', catUpsellItems)
+          upsellSkus = upsellSkus.concat(catItem[0]);
+          console.log('catItems', catItems);
+          upsellItems = upsellItems.concat(upsellSkus);
         })
         if (upsellOk) {
           let priorityType = 'CB';
@@ -702,42 +496,37 @@ module.exports.getUpsells = async function (items, ctx) {
               priorityType = 'DD';
             }
           }
-          const b = catUpsellItems.filter(item => item.sku.slice(3, -6) === priorityType);
-          const c = b.filter(item => item.sku.slice(6, -3) === colorOrder[0]);
-          const d = c.filter(item => item.sku.slice(9) === size);
-          const upsellItem = {
-            upsellTitle: d[0].upsellTitle,
-            upsellDescription: d[0].upsellDescription,
-            url: d[0].url,
-            slug: d[0].slug,
-            sku: d[0].sku,
-            skus: catUpsellItems,
-            name: d[0].name,
-            type: d[0].type,
-            color: d[0].color,
-            size: d[0].size,
-            price: d[0].price,
-            discountPrice: d[0].discount,
-            priorityProductType: priorityType,
-            productTypeOrder: typeOrder,
-            colorSelection: colorSelect,
-            typeSelection: typeSelect,
-            colorDisplayOrder: colorOrder,
-            dropdownLabel: label
-          }
-          upsellItems = upsellItems.concat(upsellItem);
+          // const b = catUpsellItems.filter(item => item.sku.slice(3, -6) === priorityType);
+          // const c = b.filter(item => item.sku.slice(6, -3) === colorOrder[0]);
+          // const d = c.filter(item => item.sku.slice(9) === size);
+          // const upsellItem = {
+          //   upsellTitle: d[0].upsellTitle,
+          //   upsellDescription: d[0].upsellDescription,
+          //   url: d[0].url,
+          //   slug: d[0].slug,
+          //   sku: d[0].sku,
+          //   skus: catUpsellItems,
+          //   name: d[0].name,
+          //   type: d[0].type,
+          //   color: d[0].color,
+          //   size: d[0].size,
+          //   price: d[0].price,
+          //   discountPrice: d[0].discount,
+          //   priorityProductType: priorityType,
+          //   productTypeOrder: typeOrder,
+          //   colorSelection: colorSelect,
+          //   typeSelection: typeSelect,
+          //   colorDisplayOrder: colorOrder,
+          //   dropdownLabel: label
+          // }
+          // upsellItems = upsellItems.concat(upsellItem);
         }
       } else if (!(cartCatIds.includes(catId))) {
         const catItems = products.filter(item => item.catId === catId);
         let catItem = catItems.filter(item => item.sku.slice(9) === size);
-        
-        // const details = content.getUpsellDetails(catItem[0].sku); 
-        // catItem.push(details);
-        console.log('details', catItem);
         upsellSkus = upsellSkus.concat(catItem[0]);
       }
     })
-    // upsellItems = await content.getUpsellDetails(upsellSkus); 
     return upsellSkus;
   }
 
@@ -781,11 +570,12 @@ module.exports.getUpsells = async function (items, ctx) {
 		addUpsellItems 	= module.exports.assignUpsells(catIds, premiumMattressItems[0].size, cartTier);
 	} else if (cartTier === 'mattress') {
 		// const catIds = [8, 9, 30, 19, 46, 11, 10, 20];
-		const catIds = [8, 11];
+		const catIds = [8, 11, 30];
 		// protector, pillows, sheets, duvets, islay, gaviota, arrellaga, foundation
 
 		// addUpsellItems = module.exports.assignUpsells(catIds, mattressItems[0].size, cartTier);
     let x = assignUpsells(catIds, mattressItems[0].size, cartTier);
+    // console.log('upsellSkus', upsellSkus)
 		addUpsellItems = await content.getUpsellDetails(upsellSkus);
 	} else if (cartTier === 'premiumFrame') {
 		let catIds = [1, 51, 28, 8, 9, 30, 19, 20];
@@ -837,14 +627,12 @@ module.exports.getUpsells = async function (items, ctx) {
 	// addUpsellItems = addUpsellItems.concat(addLegsItems).concat(addPlanItems);
 
 	let filteredUpsells = [];
-  console.log('addUpsellItems!!!', addUpsellItems)
 	if (addUpsellItems.length > 0) {
 		filteredUpsells = addUpsellItems.filter(item => !item.outOfStock);
 	}
 	const upsells = [
 		filteredUpsells
 	];
-  console.log('upsells', upsells)
 
 	if (upsells.length > 0) {
 		return { ok: true, result: upsells };

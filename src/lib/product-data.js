@@ -280,7 +280,7 @@ module.exports.getUpsellDetails = async function (skus) {
           size: size,
           sizeName: sizeName,
           price: item.price,
-          discount: 15,
+          discount: 0,
           salePrice: item.price - discount,
           colorSelection: false,
           showStarRating: true,
@@ -406,13 +406,126 @@ module.exports.getUpsellDetails = async function (skus) {
           slug: 'down-pillow'
         }
         break;
-      case 'SH':
+      case 'OC': 
       case 'CB': 
         details = {
-          title: 'Add a Lull Sheet Set',
-          description: 'Silky, soft, and breathable - high quality sheets at an unbeatable price. Includes fitted sheet, top sheet and <span class="sheets-quantity"></span> <span class="pillowcase-quantity">pillowcase</span>.',
-          url: 'bed-sheets',
-          slug: 'sheets'
+          catId: item.catId,
+          sku: item.sku,
+          skus: catItems,
+          name: name,
+          quantity: 1,
+          type: type,
+          color: color,
+          size: size,
+          sizeName: sizeName,
+          price: item.price,
+          discount: 0,
+          salePrice: item.price - discount,
+          priorityProductType: 'CB',
+          priorityProductSize: 'CK',
+          productTypeOrder: ['CB', 'CS', 'OC'],
+          colorSelection: true,
+          colorDisplayOrder: ['BW', 'QG', 'GG', 'MB', 'PA', 'WP', 'CD'],
+          showStarRating: true,
+          avgReviews: 4.2,
+          totalReviews: 2345,
+          title: 'Lull Sheets',
+          subtitle: '<span data-type="CB">Silky, soft, and breathable – high quality sheets at an unbeatable price.</span><span data-type="CS">Premium 100% cotton percale sheets made for a cool night\'s sleep.</span><span data-type="OC">100% organic cotton sheets crafted with comfort, wellness, and luxury in mind.</span>',
+          price: item.price,
+          discountPrice: item.discountPrice,
+          gallerySlides: 4,
+          details: [{
+            tagline: 'Bedding that keeps you just the right temperature',
+            bullets: [
+              { bullet: 'Free Shipping and Free Returns' },
+              { bullet: '365 Night Trial' },
+              { bullet: '1-Year Warranty' }
+            ]
+          }],
+          review: [{
+            starTotal: 5,
+            title: 'Like pure luxury',
+            content: 'Excellent! Feels like the sheets of the most luxurious hotel-stay room imaginable.',
+            reviewer: 'Harry M.'
+          }],
+          benefits: [
+            {
+              heading: 'Breathable',
+              className: 'breathable',
+              content: 'Stay cool in summer and warm in winter. The Lull Sheets use a three-over, one-under specialty weave that\'s ideal for year-round comfort.'
+            },
+            {
+              heading: 'Safe',
+              className: 'safe',
+              content: 'The Lull Sheets are Standard 100 by Oeko-Tex certified, which means they are tested and verified to be free from harmful levels of more than 300 substances.'
+            },
+            {
+              heading: 'Smart',
+              className: 'modern',
+              content: 'Special tags on the fitted sheet help you to quickly identify the top, bottom and sides.'
+            },
+            {
+              heading: 'Perfect Fit',
+              className: 'fit',
+              content: 'The Lull Sheets are designed to be the perfect fit for your	Lull Mattress and mattresses up to 15".'
+            }
+          ],
+          dimensions: [
+            {
+              catId: 16,
+              dimensions: [
+                { size: 'TW', color: 'WH', fitted: '39" x 75" x 15"', flat: '71 x 98"', pillowcase: '20" x 27"' },
+                { size: 'TX', color: 'WH', fitted: '39" x 80" x 15"', flat: '71" x 104"', pillowcase: '20" x 27"' },
+                { size: 'FL', color: 'WH', fitted: '54" x 75" x 15"', flat: '86" x 98"', pillowcase: '20" x 27"' },
+                { size: 'QU', color: 'WH', fitted: '60" x 80" x 15"', flat: '92" x 104"', pillowcase: '20" x 27"' },
+                { size: 'KG', color: 'WH', fitted: '78" x 80" x 15"', flat: '110" x 104"', pillowcase: '20" x 37"' },
+                { size: 'CK', color: 'WH', fitted: '72" x 84" x 15"', flat: '110" x 104"', pillowcase: '20" x 37"' },
+                { size: 'BOX', dimensions: '17" x 9" x 4"' }
+              ]
+            }
+          ],
+          specs: [
+            {
+              heading: '',
+              columns: [
+                {
+                  size: true,
+                  dimensions: false,
+                  shippingWeight: false,
+                  fittedSheet: true,
+                  flatSheet: true,
+                  pillowcase: true
+                }
+              ],
+              details: [
+                {
+                  item: 'Construction',
+                  details: '100% Cotton',
+                  classes: 'col-xs-12 col-sm-6'
+                },
+                {
+                  item: 'Shipping Info',
+                  details: 'Ships in 1-4 business days',
+                  classes: 'col-xs-12 col-sm-6'
+                },
+                {
+                  item: 'clearfix',
+                  details: '',
+                  classes: 'visible-xs'
+                },
+                {
+                  item: 'Shipping Costs',
+                  details: 'Free Shipping &amp; Returns',
+                  classes: 'col-xs-12 col-sm-6'
+                },
+                {
+                  item: 'Warranty',
+                  details: '1 year',
+                  classes: 'col-xs-12 col-sm-6'
+                }
+              ]
+            }
+          ]
         }
         break;
       case 'CS': 
