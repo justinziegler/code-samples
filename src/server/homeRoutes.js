@@ -201,7 +201,7 @@ async function cart(ctx, next) {
       pageId: pageId,
       prevPage: 'sheets',
       headerTitle: 'Shopping Cart',
-      headerIntro: 'This page was A/B tested against our existing page for over a year. While it was ultimately shelved, some of the features developed here later were ported over to the existing cart. Features on display include:',
+      headerIntro: 'This page was A/B tested against our existing page for over a year. While it was ultimately shelved, some of the features developed here were later ported over to the existing cart. Features on display here include:',
       headerBullets: [
         'Upsells are preset to the same size as the primary cart item, but users can select another size if desired.',
         'Upsells each have a corresponding modal with an image gallery and product details.',
