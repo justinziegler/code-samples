@@ -1,0 +1,1339 @@
+{% extends "./src/client/views/_layout_home.html" %}
+{% import "./src/client/views/_modules.html" as _modules %}
+{% import "./src/client/views/_layout_cart_summary.html" as _cart_summary %}
+
+{% block styles %}
+{{ _css.cart() }}
+{% endblock %}
+
+{% block title %}Your Cart{% endblock %}
+
+{% block meta %}
+  <meta name="description" content="Your Shopping Cart">
+{% endblock %}
+
+{% block content %}
+{# _m_js.cartExperiment() #}
+
+<div class="container">
+  <div class="row">
+
+    {# Left column on tablet/desktop #}
+    <div class="cart col-xs-12 col-sm-7 col-md-6">
+      <div class="row">
+        <div class="cart-summary col-xs-12">
+          <div class="cart-head row">
+            <div class="discount-message col-xs-12" style="display: none;">
+              <p>Congratulations, You're <span class="alert">Saving <span class="discount"></span></span></p>
+            </div>				 
+            <div class="heading col-xs-12">
+              <h2><span>Cart Summary</span></h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">								
+              <ul>
+                {# Cart Items #}
+                {%- for item in cart.items -%}
+                  {%- set cartItem = true -%}
+                  {%- set upsell = false -%}		
+                  {{- getCartItems(item, cartItem, upsell) -}}
+                {%- endfor -%}
+
+                {# Potential Upsells #}
+                {%- for item in cart.upsells -%}
+                  {%- set cartItem = false -%}
+                  {%- set upsell = true -%}
+                  {{- getCartItems(item, cartItem, upsell) -}}
+                {%- endfor -%}
+              </ul>
+              <div class="removed-items">
+                {% for item in cart.items %}
+                  {%- set type = item.sku.slice(3, -6) -%}
+                  <p data-sku="{{ item.sku }}" style="display: none;">
+                    <span>{{ item.name }}</span> was removed. 
+                    <a class="cancel-remove" data-sku="{{ item.sku }}" title="Cancel" role="button" tabindex="0">Undo</a>
+                  </p>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>					
+
+        <div class="upsells col-xs-12">
+          <h2><span>Frequently Bought Together</span></h2>
+          <ul>
+            {{- getUpsells() -}}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {# Right column in tablet/desktop #}
+    <div class="order-summary col-xs-12 col-sm-5 col-md-offset-1">
+      <div class="row">
+        <div class="col-xs-12 col-md-10 col-md-offset-2">
+          <div class="row">
+            <div class="summary col-xs-12">
+              <div class="col-xs-12">
+                <h6 class="my-order">My Order</h6>
+              </div>
+              <div class="options row">
+                <div class="summary-total col-xs-6">
+                  <h5>Subtotal</h5>
+                  <h6 class="total js-subtotal-output"></h6>
+                </div>
+                <div class="summary-monthly-payment col-xs-6">
+                  <h5>As Low As</h5>
+                  <h6 class="monthly-payment"></h6>
+                  <p class="small">
+                    Choose Affirm at Checkout<br>
+                    APR as low as 0%<br>
+                    <a data-toggle="modal" data-target="#financing-modal" role="button" tabindex="0" href="">Learn More</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="checkout col-xs-12">
+                  <p class="delivery">Free Shipping, No-Contact Delivery</p>
+                  <a href="#" class="btn btn-checkout toggle-description"><span></span>Checkout</a>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="apple-pay-wrapper col-xs-12" style="display: none;">
+            <h4><span>Or express checkout</span></h4>
+            <div class="apple-pay-button apple-pay-button-black">
+              Pay with <span></span>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="callouts col-xs-12">
+              <div class="row">
+                <div class="callout col-xs-12">
+                  <div class="row">
+                    <div class="badge warranty col-xs-4" role="img" aria-label="Image: Lifetime Warranty"></div>
+                    <div class="tagline col-xs-8">
+                      <h4>Lifetime Warranty</h4>
+                      <p>Guaranteed restful sleep</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="callout col-xs-12">
+                  <div class="row">
+                    <div class="badge trial col-xs-4" role="img" aria-label="Image: 365 Night Trial"></div>
+                    <div class="tagline col-xs-8">
+                      <h4>365 Night Stress-Free Trial</h4>
+                      <p>Hassle-Free Returns</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="callout col-xs-12">
+                  <div class="row">
+                    <div class="badge recommended col-xs-4" role="img" aria-label="Image: Best Buy and Recommended"></div>
+                    <div class="tagline col-xs-8">
+                      <h4>Independently Rated</h4>
+                      <p>BEST BUY and RECOMMENDED</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>	
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# Upsell modals #}
+{% for upsell in cart.upsells %}
+  {{ getUpsellModals(upsell) }}
+{% endfor %}
+
+{# Financing Modal #}
+<div role="dialog" aria-modal="true" class="modal fade content-modal" id="financing-modal" tabindex="-1" aria-labelledby="financing">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">		
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>			
+        <h2>Easy Monthly Payments <span class="hidden-xxs">Available</span></h2>	
+        <h3>As low as 0% APR Financing Available with Affirm</h3>
+        <h3>
+          $<span class="monthly-payment"></span>/mo. based on a purchase price of 
+          $<span class="total"></span> at 0% APR for <span class="term" data-term="18"></span> months. <br class="visible-md visible-lg">
+          A down payment may be required.
+        </h3>		
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="icon-calendar"></div>
+            <p><strong>Easy Monthly Payments</strong><br>
+              Provide your basic information. Get instantly approved. Pay over 6 to 
+              <span class="term" data-term="18"></span> months with as low as 0% APR for qualified applicants.					
+            </p>
+          </div>
+          <div class="col-md-6">
+            <div class="icon-payment"></div>
+            <p><strong>Flexible Payments</strong><br>		
+            Easily pay your monthly bill using a bank transfer check, or debit card at <a href="http://affirm.com" target="_blank">affirm.com</a>.</p>
+          </div>
+          <div class="clearfix"></div>
+          <h3>Select <strong>'Affirm Monthly Payments'</strong><br class="visible-xxs"> at Checkout</h3>
+          <a href="/finance" class="btn-primary btn">Tell Me More</a>
+        </div>
+        <div class="qualified">
+          <p>0% APR financing over 6, 12<span class="term" data-term="18"></span> months available to qualified applicants.</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+          <div class="col-md-12">
+            <p>
+              Rates from 0-30% APR. Subject to credit check and approval.<br class="visible-sm"> Estimated payment amount excludes taxes and shipping fees.<br class="visible-md visible-lg"> Payment options through Affirm are provided by these lending partners: affirm.com/lenders. See <a href="http://www.affirm.com/faqs" target="_blank">www.affirm.com/faqs</a> for details.</p> 
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+</div>
+
+<div class="desktop-backdrop"></div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+
+function updateCart() {
+  var cart = [];
+  var totalQty = 0;
+  $('.cart-summary li[data-cart-item="true"] .item[data-active="true"]').each(function() {
+    var sku = $(this).data('sku');
+    var qty = $(this).attr('data-quantity'); 
+    {# this is retrieved differently because it may have changed #}
+    totalQty += parseInt(qty);
+    cart.push({ 'sku': sku, 'quantity': qty });
+
+    if ($(this).attr('data-add-on-available') === 'true') {
+      var addOn = $(this).closest('li').find('.addon');
+      var aActive = addOn.attr('data-active') === 'true';
+      if (aActive) {
+        var aSku = addOn.data('sku');
+        var aQty = addOn.attr('data-quantity');
+        totalQty += parseInt(aQty);
+        cart.push({ 'sku': aSku, 'quantity': aQty });
+      }
+    }
+  });
+  $('nav .cart-total').text(totalQty);
+  var upsellCount = $('.upsells > ul > li[data-active="false"]').length;
+  if (upsellCount == 0) {
+    $('.upsells').addClass('hidden');
+    upsellsHidden = true;
+  }
+
+  // $('body').addClass('processing');
+  // {# Temporarily prevent pointer events #}
+  // $.ajax("/api/updatecart", {
+  //   contentType: "application/x-www-form-urlencoded",
+  //   data: { cart: cart },
+  //   type: "POST",
+  //   success: function(result, status, xhr) {
+  //     if (result.ok !== true) {
+  //       console.log("FAIL updateCart: " + result.debug);
+  //       if (window.Rollbar && window.Rollbar.error) {
+  //         Rollbar.error('updatecart failed', result);
+  //       }
+  //       displayErrorBox(result.message);
+  //     }
+  //     {# push update_cart event #}
+  //     pushToDataLayer({
+  //       'event': 'update_cart',
+  //       'updated_cart': result.cart
+  //     });
+  //     $('body').removeClass('processing');
+  //   },
+  //   error: function(xhr, status, error) {
+  //     if (window.Rollbar && window.Rollbar.error) {
+  //       Rollbar.error('updatecart XHR failed', error);
+  //     }
+  //     displayGenericError();
+  //   }
+  // });
+};
+
+{# Upsells + Addons #}
+function addToCart(sku) {
+  // $('body').addClass('processing');
+
+  // pushToDataLayer({
+  //   'event': 'add_to_cart',
+  //   'added_sku': sku.toUpperCase(),
+  //   'eventCallback': function (containerId) {
+  //     if (containerId === '{{state.config.GTM_CONTAINER}}') {
+  //       $.ajax("/api/addCartItem", {
+  //         contentType: "application/x-www-form-urlencoded",
+  //         data: { sku: sku },
+  //         type: "POST",
+  //         success: function(result, status, xhr) {
+  //           if (result.ok !== true) {
+  //             console.log("FAIL addCartItem: " + result.debug);
+  //             if (window.Rollbar && window.Rollbar.error) {
+  //               Rollbar.error('addToCart failed', result);
+  //             }
+  //             displayErrorBox(result.message);
+  //           } 
+  //           $('body').removeClass('processing');
+  //         },
+  //         error: function(xhr, status, error) {
+  //           if (window.Rollbar && window.Rollbar.error) {
+  //             Rollbar.error('addToCart XHR failed', error);
+  //           }
+  //           displayGenericError();
+  //         }
+  //       });
+  //     }
+  //   },
+  //   'eventTimeout': 2000
+  // });
+}
+
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+var animationDuration = 300; {# used in calculation and removal functions #}
+var upsellsHidden = false;
+var total, subtotal, cartDiscount;
+
+function calculate() {
+  total = cartDiscount = 0;
+  var item = $('.cart-summary li[data-cart-item="true"] .item[data-active="true"]');
+  item.each(function() {
+    var qty = $(this).attr('data-quantity');
+    {# Retrieving qty slightly differently because it may be changed #}
+    var unitPrice = $(this).data('price');
+    var itemPrice = (unitPrice * qty);
+    total += itemPrice;
+    var discount = ($(this).data('discount') * qty);
+    cartDiscount += discount;
+
+    if ($(this).attr('data-add-on-available') === 'true') {
+      var addOn = $(this).closest('li').find('.addon');
+      var aActive = addOn.attr('data-active') === 'true';
+      if (aActive) {
+        var aQty = addOn.attr('data-quantity');
+        var aUnitPrice = addOn.data('price');
+        var aItemPrice = (aUnitPrice * aQty);
+        total += aItemPrice;
+      }
+    }
+  });
+
+  var term = 18;
+  if (total >= 799) {
+    term = 24;
+  }
+  var monthlyPayment = total / term;
+
+  subtotal = total + cartDiscount;
+  var s = numberWithCommas(subtotal.toFixed(2));
+  $('.subtotal').text(s);
+  var t = numberWithCommas(total.toFixed(2));
+  $('.total').text(t);
+  var mp = numberWithCommas(monthlyPayment.toFixed(2));
+  $('.monthly-payment').text(mp);
+  $('.term').attr('data-term', term);
+  
+  $('.order-summary .discount').text('$' + numberWithCommas(cartDiscount.toFixed(2)));
+  if (Number.isInteger(cartDiscount)) {
+    $('.discount-message .discount').text('$' + numberWithCommas(cartDiscount));
+  } else {
+    $('.discount-message .discount').text('$' + numberWithCommas(cartDiscount.toFixed(2)));
+  }
+
+
+  if (cartDiscount > 0) {
+    $('.discount-message, .discounts.line-item').slideDown(animationDuration);
+  } else {
+    $('.discount-message, .discounts.line-item').slideUp(animationDuration);
+  }
+
+  var upsellItems = $('.upsells li[data-active="false"').length;
+  if (upsellItems == 0) {
+    $('.upsells').addClass('hidden');
+    upsellsHidden = true;
+  } else {
+    $('.upsells').removeClass('hidden');
+    upsellsHidden = false;
+  }
+  $('.subtotal, .total, .monthly-payment, .discount').removeClass('blur');
+}
+
+function checkAddOnQuantity(item) {
+  var qty = item.attr('data-quantity');
+  var addOnAvailable = item.attr('data-add-on-available') === 'true';
+  if (addOnAvailable) {
+    var addOn = item.closest('li').find('.addon');
+    var aActive = addOn.attr('data-active') === 'true';
+    var aQty = addOn.attr('data-quantity');
+    if (aActive) {
+      if (parseInt(aQty) > parseInt(qty)) {
+        addOn.find('.qty.plus').addClass('disabled');
+        addOn.attr('data-quantity', qty);
+        addOn.find('.qty-display').attr('data-quantity', qty);
+        if (qty == 1) {
+          addOn.find('.qty.minus').addClass('disabled');
+        }
+      } else if (aQty == qty) {
+        addOn.find('.qty.plus').addClass('disabled');
+      } else {
+        addOn.find('.qty.plus').removeClass('disabled');
+      }
+    } 
+  }
+}
+
+$("nav").autoHidingNavbar();
+  
+$(document).ready(function() {
+  calculate();
+
+  {# Set flexbox order for existing cart + upsell items at load #}
+  {# The count for each only ever increases - purely a visual tool #}
+  var cartCount = 0;
+  $('.cart-summary li[data-cart-item="true"]').each(function() {
+    cartCount++;
+    $(this).css('order', cartCount);
+  });
+
+  var upsellCount = 0;
+  $('.upsells > ul > li').each(function() {
+    upsellCount++;
+    $(this).css('order', upsellCount);
+  });
+
+  function update() {	 
+    $('.subtotal, .total, .monthly-payment, .discount').addClass('blur');
+    $('body').addClass('processing');
+    setTimeout(function() {
+      calculate();
+      updateCart();
+      $('body').removeClass('processing');
+    }, animationDuration + 100); // after animation ends
+  }
+
+  function resetAddOn(item) {
+    var addOnAvailable = item.find('.item').attr('data-add-on-available') === 'true';
+    if (addOnAvailable) {
+      item.find('.addon .qty-display').attr('data-quantity', 1); 
+      item.find('.addon').attr('data-active', false).attr('data-quantity', 0).slideUp(animationDuration);
+    }
+  }
+
+  {# Quantity spinners #}
+  $('.product .quantity input').on('propertychange input paste spin change', function() {
+    var qty = $(this).val();
+    var item = $(this).closest('li').find('.item');
+    if (qty >= 1) {
+      item.attr('data-quantity', qty);
+    }
+    if (qty == 1) {
+      $(this).parent().find('.qty.minus').addClass('disabled');
+    }
+    checkAddOnQuantity(item);
+    update();
+  });
+
+  $('.product .qty').on('keypress click', function(e) {
+    if (e.which === 13 || e.type === 'click') {
+      var item = $(this).closest('li').find('.item');
+      var qty = item.attr('data-quantity');
+      if ($(this).hasClass('minus')) {
+        if (qty > 1) {
+          qty--;
+        }
+      } else if ($(this).hasClass('plus')) {
+        qty++;
+      }
+      item.attr('data-quantity', qty);
+      $(this).parent().find('.qty-display').attr('data-quantity', qty);
+      if (qty == 1) {
+        $(this).parent().find('.qty.minus').addClass('disabled');
+      } else if (qty > 1) {
+        $(this).parent().find('.qty.minus').removeClass('disabled');
+      }
+      checkAddOnQuantity(item);
+      update();
+    }
+  });
+
+  $('.addon .qty').on('keypress click', function(e) {
+    if (e.which === 13 || e.type === 'click') {
+      var addon = $(this).closest('.addon');
+      var qty = addon.attr('data-quantity');
+      var itemQty = $(this).closest('li').find('.item').attr('data-quantity');
+      if ($(this).hasClass('minus')) {
+        if (qty > 1) {
+          qty--;
+        }
+      } else if ($(this).hasClass('plus')) {
+        if (parseInt(qty) < parseInt(itemQty)) {
+          qty++;
+        }
+      }
+      addon.attr('data-quantity', qty);
+      $(this).parent().find('.qty-display').attr('data-quantity', qty);
+      if (parseInt(qty) == parseInt(itemQty)) {
+        $(this).parent().find('.qty.plus').addClass('disabled');
+      }
+      if (parseInt(qty) < parseInt(itemQty)) {
+        $(this).parent().find('.qty.plus').removeClass('disabled');
+      }
+      if (qty == 1) {
+        $(this).parent().find('.qty.minus').addClass('disabled');
+      } else if (qty > 1) {
+        $(this).parent().find('.qty.minus').removeClass('disabled');
+      }
+      update();
+    }
+  });
+
+  {# Remove product #}
+  $('.product .remove').on('keypress click', function(e) {
+    if (e.which === 13 || e.type === 'click') {
+      var item = $(this).closest('li');
+      var sku = item.data('sku');
+      var upsell = item.attr('data-upsell') === 'true';
+      {# Checking whether the cart item came from the upsell section #}
+      if (upsell) {
+        var type = item.find('.item[data-active="true"]').data('type');
+        if (type == 'CS' || type == 'OC') {
+          type = 'CB';
+        }
+        var color = item.find('.item[data-active="true"]').data('color');
+        var upsellItem = $('.upsells > ul > li[data-type="' + type + '"]');
+
+        if (upsellsHidden) {
+          $('.upsells').removeClass('hidden');
+          upsellsHidden = false;
+        }
+
+        item.slideUp(animationDuration);
+        {# The two lines below send removed upsells to the bottom of the list.
+            Works fine, but might confuse users #}
+        upsellCount++;
+        upsellItem.css('order', upsellCount); 
+        upsellItem.find('> div').css('opacity', 0);
+        upsellItem.slideDown(animationDuration);
+        $(document).trigger('cart', [ 'remove', sku ]);
+        
+        $('body').addClass('processing');
+        setTimeout(function() {
+          item.attr('data-cart-item', false);
+          item.find('.current-size, .item').attr('data-active', false);
+          upsellItem.attr('data-active', false);
+          upsellItem.find('> div').css('opacity', 1);
+          resetAddOn(item);
+          $('body').removeClass('processing');
+        }, (animationDuration));
+
+      } else {	
+        {# item is not an upsell #}
+        item.children().css('opacity', 0);
+        $('body').addClass('processing');
+        setTimeout(function() {
+          item.slideUp(animationDuration);
+          $('.removed-items p[data-sku="' + sku + '"]').slideDown(animationDuration);
+          item.attr('data-cart-item', false);
+          resetAddOn(item);
+          $('body').removeClass('processing');
+        }, animationDuration);
+      }
+      update();
+    }
+  });		
+
+  $('.cancel-remove').on('keypress click', function(e) {
+    if (e.which === 13 || e.type === 'click') {
+      var sku = $(this).data('sku');
+      var item = $('.cart-summary li[data-sku="' + sku + '"]');
+      cartCount++;
+      item.attr('data-cart-item', true).css('order', cartCount);
+      $(document).trigger('cart', [ 'add', sku ]);
+
+      $(this).parent().slideUp(animationDuration);
+      item.slideDown(animationDuration);
+      setTimeout(function() {
+        item.children().css('opacity', 1);
+      }, animationDuration);
+      var addOnAvailable = item.find('.item').attr('data-add-on-available') === 'true';
+      if (addOnAvailable) {
+        var aSku = item.find('.addon').data('sku');
+        if ($('.upsells li[data-sku="' + aSku + '"]').length) {
+          upsellCount++;
+          var addOnItem = $('.upsells li[data-sku="' + aSku + '"]');
+          addOnItem.css('order', upsellCount).attr('data-active', false); 
+          addOnItem.find('> div').css('opacity', 0);
+          addOnItem.slideDown(animationDuration);
+          setTimeout(function() {
+            addOnItem.find('> div').css('opacity', 1);
+          }, (animationDuration));
+        }
+      }
+      update();
+    }
+  });
+
+  {# Upsell buttons #}
+  $('.upsells li[data-add-on="false"] .add-to-cart .btn').on('keypress click', function(e) {
+    if (e.which === 13 || e.type === 'click') {
+      var item = $(this).closest('li');
+
+      var type = item.find('.item[data-active="true"]').data('type');
+      var sku = item.find('.item[data-active="true"]').data('sku');
+      var color = item.find('.item[data-active="true"]').attr('data-color');
+      {# Retrieving color slightly differently because it may be changed #}
+      var cartItem = $('.cart-summary li[data-type="' + type + '"][data-color="' + color + '"][data-upsell="true"]');
+      cartCount++;
+
+      {# Prepare cart item to animate in #}
+      cartItem.children().css('opacity', 0);
+      cartItem.attr('data-color', color);
+      cartItem.css('order', cartCount).attr('data-cart-item', true);
+
+      {# Add to Cart animation #}
+      item.attr('data-active', true).slideUp(animationDuration);
+      cartItem.slideDown(animationDuration);
+      setTimeout(function() {
+        cartItem.children().css({'opacity': 1 });
+      }, (animationDuration));
+
+      cartItem.find('.item[data-sku="' + sku + '"], .current-size[data-sku="' + sku + '"]').attr('data-active', true);
+      addToCart(sku);
+      $(document).trigger('cart', [ 'add', sku ]);
+      update();
+    }
+  });
+
+  $('.upsells .dropdown li[data-out-of-stock="false"]').on('keypress click', function(e) {
+    if (e.which === 13 || e.type === 'click') {
+      var sku = $(this).data('sku');
+      var item = $(this).parent().closest('.product-details');
+      item.attr('data-type', sku.slice(3, -6));
+      item.find('.pricing div, .current-size, .upsell-item').attr('data-active', false);
+      item.find('.item[data-sku="' + sku + '"], .current-size[data-sku="' + sku + '"], .upsell-item[data-sku="' + sku + '"]')
+        .attr('data-active', true);
+    }
+  });
+
+  $('.upsells .dropdown li.color-select').on('keypress click', function(e) {
+    if (e.which === 13 || e.type === 'click') {
+      e.stopPropagation();
+      {# prevent menu from closing if the container is clicked #}
+    }
+  });
+
+  $('.upsells .dropdown li.color-select li').on('keypress click', function(e) {
+    if (e.which === 13 || e.type === 'click') {
+      e.stopPropagation();
+      var color = $(this).data('color');
+      var colorName = $(this).data('color-name');
+      var item = $(this).parent().closest('.product-details');
+      $(this).attr('data-active', true).siblings().attr('data-active', false);
+      var type = item.find('li.upsell-item[data-active="true"]').data('type');
+      item.find('li.upsell-item').hide().attr('data-active', false);
+      var sku = item.find('li.upsell-item[data-type="' + type + '"][data-color="' + color + '"]').data('sku');
+      item.find('.pricing div, .current-size, .upsell-item').attr('data-active', false);
+      item.find('.item[data-sku="' + sku + '"], .current-size[data-sku="' + sku + '"], .upsell-item[data-sku="' + sku + '"]')
+        .attr('data-active', true);
+      item.find('li.upsell-item[data-color="' + color + '"]').show();
+      item.find('.color-label').attr('data-active-color-name', colorName);
+      item.find('.current-size').attr('data-active-color', color);
+      item.closest('li').attr('data-color', color);
+    }
+  });
+
+  {# Add-ons, like Clyde #}
+  $('.upsells li[data-add-on="true"] .add-to-cart .btn').on('keypress click', function(e) {
+    if (e.which === 13 || e.type === 'click') {
+      var item = $(this).closest('li');
+      var sku = item.data('sku');
+      var parentSku = item.data('parent-sku');
+      var cartItem = $('.cart-summary li[data-sku="' + parentSku + '"] .addon[data-sku="' + sku + '"]');
+      cartCount++;
+
+      {# Prepare cart item to animate in #}
+      cartItem.children().css('opacity', 0);
+      cartItem.attr('data-active', true).attr('data-quantity', 1);
+      var x = cartItem.closest('li').find('.item');
+      checkAddOnQuantity(x);
+
+      {# Add to Cart animation #}
+      item.attr('data-active', true).slideUp(animationDuration);
+      cartItem.slideDown(animationDuration);
+      setTimeout(function() {
+        cartItem.children().css({'opacity': 1 });
+      }, (animationDuration));
+
+      addToCart(sku);
+      update();
+    }
+  });
+
+  $('.addon .remove').on('keypress click', function(e) {
+    if (e.which === 13 || e.type === 'click') {
+      var item = $(this).closest('.addon');
+      var parentItem = $(this).closest('li');
+      item.children().css('opacity', 0);
+      var sku = item.data('sku');
+      $('body').addClass('processing');
+      upsellCount++;
+      setTimeout(function() {
+        item.slideUp(animationDuration).attr('data-active', false).attr('data-quantity', 0);
+        item.find('.qty-display').attr('data-quantity', 1);
+        $('.upsells li[data-sku="' + sku + '"]').css('order', upsellCount).slideDown(animationDuration);
+        $('body').removeClass('processing');
+      }, animationDuration);
+      update();
+    }
+  });
+});
+
+$(document).on('cart', function(event, type, sku) {
+  {# Keep track of which cart items are upsells in case of cart refresh #}
+  var upsells = new Set();
+  if ('cart_upsells' in localStorage) {
+    var cart_upsells = JSON.parse(localStorage.getItem('cart_upsells'));
+    upsells = new Set(cart_upsells);
+    localStorage.removeItem('cart_upsells');
+  }
+  if (type === 'add') {
+    upsells.add(sku);
+  } else if (type === 'remove') {
+    upsells = upsells.delete(sku);
+  } else {
+    throw new Error('Invalid cart subtype');
+  }
+  var upsells_array = Array.from(upsells);
+  localStorage.setItem('cart_upsells', JSON.stringify(upsells_array));
+});
+
+$('a.btn-checkout').on('keypress click', function(event) {
+  if (event.which === 13 || event.type === 'click') {
+    var cartItems = []; 
+    var upsells = [];
+    var refreshedUpsells = [];
+    var checkoutButton = this;
+    var upsellStats = {
+      total: 0,
+      quantity: 0
+    };
+    if ('cart_upsells' in localStorage) {
+      {# Upsells added to cart before a page refresh #}
+      refreshedUpsells = JSON.parse(localStorage.getItem('cart_upsells'));
+      localStorage.removeItem('cart_upsells');
+    }
+    var cartItem = $('.cart-summary li[data-cart-item="true"]');
+    cartItem.each(function() {
+      var sku = $(this).data('sku');
+      cartItems.push(sku);
+      
+      var upsell = $(this).attr('data-upsell') === 'true';
+      if (cartItems.some(sku => refreshedUpsells.includes(sku))) {
+        upsell = true;
+      }
+      if (upsell) {
+        upsells.push(sku);
+        var qty = parseInt($(this).find('.item[data-sku="' + sku + '"]').attr('data-quantity'));
+        var price = $(this).find('.item[data-sku="' + sku + '"]').data('price');
+        upsellStats.quantity += qty;
+        upsellStats.total += (price * qty);
+      }
+      if ($(this).find('.addon').length) {
+        if ($(this).find('.addon').attr('data-active') === 'true') {
+          var addonSku = $(this).find('.addon').data('sku');
+          cartItems.push(addonSku);
+        }
+      }
+    });
+
+    var gtmEvent = {
+      event: 'custom_event',
+      eventCategory: 'upsell',
+      eventCallback: function (containerId) {
+        if (containerId === '{{state.config.GTM_CONTAINER}}') {
+          var url = $(checkoutButton).attr('href');
+          window.location.href = url;
+        }
+      },
+      eventTimeout: 2000,
+      eventAction: 'button-click',
+      eventLabel: 'cart-page-checkout',
+      eventName: 'Cart - Click - Checkout - Custom',
+      eventData: {
+        'Cart Total': total,
+        'Subtotal': subtotal,
+        'Products': cartItems, 
+        'Upsell Total': upsellStats.total,
+        'Upsell Products': upsells,
+        'Upsell Quantity': upsellStats.quantity
+      }
+    };
+    // pushToDataLayer(gtmEvent);
+    return false;
+  }
+})
+
+{# Clyde modal #}
+$('a[data-gsc-modal="true"]').on('keypress click', function(e) {
+  if (e.which === 13 || e.type === 'click') {
+    var id = $(this).data('gsc-modal-id');
+    gsc('show', id);
+  }
+});
+
+{# Upsell modal galleries - create and destroy when needed #}
+$('.upsell-modal').on('shown.bs.modal', function () {
+  var upsellId = $(this).attr('id');
+  var gallery = new Swiper ('#' + upsellId + ' .gallery', {
+    loop: true,
+    grabCursor: true,
+    breakpointsInverse: true,
+    centeredSlides: true,
+    pagination: {
+    el: '#' + upsellId + ' .gallery .swiper-pagination',
+      clickable: true,
+    },
+  });
+  var specs = new Swiper ('#' + upsellId + ' .technicalities', {
+    loop: true,
+    grabCursor: true,
+    breakpointsInverse: true,
+    centeredSlides: true,
+    pagination: {
+    el: '#' + upsellId + ' .technicalities .swiper-pagination',
+      clickable: true,
+    },
+  });
+});
+$('.upsell-modal').on('hidden.bs.modal', function () {
+  var upsellId = $(this).attr('id');
+  var gallery = document.querySelector('#' + upsellId + ' .gallery').swiper;
+  gallery.destroy();
+  var specs = document.querySelector('#' + upsellId + ' .technicalities').swiper;
+  specs.destroy();
+});
+</script>
+{% endblock %}
+
+{%- macro getCartItems(item, cartItem, upsell, size) -%}
+{# Retrieves cart items and potential upsells #}
+{# 'item' refers to cart items. 'cartItem' and 'upsell' are booleans #}
+  {% set addOnItem, addOnAvailable = false %}
+  {% if item.sku.charAt(0) == 6 %}
+    {# product is a protection plan #}
+    {% set addOnItem = true %}
+  {% endif %}
+
+  {%- set productCategories = [ 28, 1 ] -%}
+  {%- for category in productCategories -%}
+    {%- if item.productCategoryId == category -%}
+      {%- set addOnAvailable = true -%}
+    {% endif %}
+  {% endfor %}
+
+  {% set itemOk = true %}
+  {%- if upsell and item.description !== undefined %}
+    {# This is to filter out extra upsell sizes for sheets, etc. #}
+    {% if item.sku.slice(9, limit) !== size %}
+      {% set itemOk = false %}
+    {% endif %}
+  {% endif %}
+
+  {% if itemOk and not addOnItem %}
+  <li data-sku="{{ item.sku }}"
+      data-type="{{ item.type }}"
+      data-color="{{ item.color }}"
+      data-cart-item="{{ cartItem }}"
+      data-upsell="{{ upsell }}"			
+      {% if upsell %}style="display: none;"{% endif %}>
+    <div class="product row">
+      <div class="product-image col-xs-3">
+        <div class="lazyload" role="img" aria-label="Image: {{ item.name }}">
+        </div>
+      </div>
+      <div class="product-details col-xs-9">
+        <div class="row">
+          <div class="details col-xs-9">
+            {%- if upsell -%}
+              {%- for u in item.skus %}
+                <h3 class="current-size" data-sku="{{ u.sku }}" data-active="false">
+                  {{- item.name -}}
+                </h3>
+                <h4 class="current-size" data-sku="{{ u.sku }}" data-active="false">
+                  {{- u.sizeName -}}
+                </h4>
+              {% endfor %}
+            {%- else %}
+              <h3 class="js-cart-item-name">
+                {{- item.name -}}
+              </h3>
+              <h4>{{ item.sizeName }}
+                {%- if item.colorSelection %}
+                  &ndash; {{ item.colorName -}}
+                {%- endif -%}
+              </h4>
+            {%- endif -%}
+          </div>
+          <div class="pricing col-xs-3">
+            {%- if upsell -%}
+              {%- for u in item.skus %}
+                <div class="item" data-sku="{{ u.sku }}" 
+                  data-type="{{ u.type }}"
+                  data-color="{{ u.color }}"
+                  data-price="{{ u.price }}"
+                  data-discount="0"
+                  {# discount is set at 0 because product discounts are not presently available in the cart #}
+                  data-active="false"
+                  data-upsell="true"
+                  data-quantity="1"
+                  data-add-on-available="{{ addOnAvailable }}">
+                  <h4 class="price">
+                    {{- u.price -}}
+                  </h4>
+                </div>
+              {% endfor %}
+              
+            {%- else -%}
+              {% set discountedItem = item.discount > 0  %}
+              <div class="item" data-sku="{{ item.sku }}" 
+                    data-type="{{ item.type }}"
+                    data-color="{{ item.color }}"
+                    data-price="{{ item.salePrice }}"
+                    data-discount="{{ item.discount | round(2) }}"
+                    data-active="true"
+                    data-upsell="false"
+                    data-quantity="1"
+                    data-add-on-available="{{ addOnAvailable }}">
+                <h4 class="{% if discountedItem %}discounted {% endif %}price">
+                  {%- if item.salePrice | round !== item.salePrice -%}
+                    {{ item.salePrice.toFixed(2) }}
+                  {%- else -%}
+                    {{ item.salePrice }}
+                  {%- endif -%}
+                </h4>
+                {%- if discountedItem -%}
+                  <h4 class="original-price">{{ item.price }}</h4>
+                {% endif %}
+              </div>
+            {% endif -%}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-9">
+            <div class="quantity">
+              {% set qty = item.quantity %}
+              {% if item.quantity == undefined %}
+                {% set qty = 1 %}
+              {% endif %}
+              <button class="qty minus {% if qty == 1 %}disabled{% endif %}" aria-label="Decrease Quantity" tabindex="0">-</button>
+              <div class="qty-display" data-quantity="{{ qty }}">
+              </div>
+              <button class="qty plus" aria-label="Increase Quantity" tabindex="0">+</button>
+            </div>
+          </div>
+        </div>
+        <a class="remove" role="button" aria-label="Remove Item" tabindex="0"></a>
+      </div>
+    </div>
+
+    {# Clyde #}
+    {% if addOnAvailable %}
+      {% set childSku = getChildSku(item.sku) %}
+      {%- for p in products.result -%}
+        {%- if p.sku == childSku -%}
+          {% set qty = 0 %}
+          {% set active = false %}
+          {% for x in cart.items %}
+            {% if x.sku == p.sku %}
+              {% set qty = x.quantity %}
+              {% set active = true %}
+            {% endif %}
+          {% endfor %}
+
+          {% if p.sku.charAt(0) == 6 %}
+            {% set type = 'PP' %}
+          {% else %}
+            {% set type = p.sku.slice(3, -6) %}
+          {% endif %}
+          <div class="row">
+            <div class="addon col-xs-12" 
+              data-sku="{{ p.sku }}" 
+              data-active="{{ active }}" 
+              data-price="{{ p.price }}" 
+              data-quantity="{{ qty }}" {% if not active %}style="display: none;"{% endif %}>
+              <div class="row">
+                <div class="addon-image col-xs-1 col-md-offset-3">
+                  <div role="img" aria-label="{{- getProductName(type) }} product image"></div>
+                </div>
+                <div class="addon-details col-xs-11 col-md-8">
+                  <h4 data-price="${{ p.price }}">{{- getProductName(type) -}}</h4>
+                  <div class="quantity">
+                    {% set qtyDefault = 1 %}
+                    {% if active %}
+                      {% set qtyDefault = qty %}
+                    {% endif %}
+                    <button class="qty minus {% if qtyDefault == 1 %}disabled{% endif %}" aria-label="Decrease Quantity" tabindex="0">-</button>
+                    <div class="qty-display" data-quantity="{{ qtyDefault }}"></div>
+                    <button class="qty plus {% if qty >= item.quantity %}disabled{% endif %}" aria-label="Increase Quantity" tabindex="0">+</button>
+                  </div>
+                </div>
+              </div>
+              <a class="remove" title="Remove" role="button" aria-label="Remove Item" tabindex="0"></a>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </li>
+  {% endif %}
+{%- endmacro -%}
+
+{% macro getUpsells() %}
+  {% for u in cart.upsells %}
+    {%- set dualSizes = false -%}
+    {%- if (u.type == 'DV') or (u.type == 'DD') or (u.type == 'FL') -%}
+      {%- set dualSizes = true -%}
+      {# is this product a duvet, etc. with sizes like 'twin/twin-xl'? #}
+    {%- endif -%}
+    <li data-add-on="false"
+        data-type="{{ u.type }}" 
+        data-color="{{ u.color }}"
+        data-active="false">
+      <div class="row">
+        <div class="product-image col-xs-3">
+          <div class="lazyload" role="img" aria-label="{{- u.name }} product image">
+            <a data-toggle="modal" href="" data-target="#modal-{{ u.type }}" role="button" tabindex="0" aria-label="Image: {{- u.name -}}"></a>
+          </div>
+        </div>
+        <div class="product-details col-xs-9" data-type="{{ u.type }}">
+          <div class="row">
+            <div class="details col-xs-9">
+              <h3>
+                <a data-toggle="modal" href="" data-target="#modal-{{ u.type }}" role="button" tabindex="0">
+                  {{- u.name -}}
+                </a>
+              </h3>
+              {%- if u.showStarRating -%}
+                <div class="star-rating">
+                  <div class="star-gauge">
+                    <div class="star-average" style="width: {{ u.avgReviews * 20 }}%" aria-label="{{ u.avgReviews }} Star Average"></div>
+                  </div>
+                  <p>{{ u.avgReviews | round(1) }}</p>
+                </div>
+              {%- endif -%}
+            </div>
+            <div class="pricing col-xs-3">
+              {% set discounted = u.price > u.salePrice %}
+              {% for item in u.skus %}
+                {% set active = item.sku === u.sku %}
+                <div class="item"
+                  data-sku="{{ item.sku }}"
+                  data-type="{{ item.type }}"
+                  data-color="{{ item.color }}"
+                  data-price="{{ item.price }}"
+                  data-out-of-stock="{{ item.outOfStock }}"
+                  data-active="{{ active }}">
+                  <h4 class="{% if discounted %}discounted {% endif %}price">
+                    {{- item.price -}}
+                  </h4>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="row">
+            <div class="subtitle col-xs-12">
+              <h4>{{ u.subtitle | safe }}</h4>
+            </div>
+          </div>
+          <div class="buttons row">
+            <div class="size-select col-xs-6">
+              <div class="dropdown">
+                <button class="btn btn-sm btn-white dropdown-toggle" type="button" id="upsell-LU-{{ type -}}-{{- color }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
+                  {% for item in u.skus -%}
+                    {%- set active = false -%}
+                    {%- if u.sku == item.sku -%}
+                      {%- set active = true -%}
+                      {# Setting the upsell that corresponds to the cart item as active #}
+                    {%- endif -%}
+
+                    {%- set itemOk = false -%}
+                    {%- set size = u.sku.slice(9, limit) -%}
+                    {%- if u.colorSelection -%}
+                      {%- set activeColor = u.colors[0].id -%}
+                      {%- for color in u.colors -%}
+                        {# Only load specified colors #}
+                        {%- set itemColor = item.sku.slice(6, -3) -%}
+                        {%- if (itemColor == color.id) -%}
+                          {%- set itemOk = true -%}
+                        {%- endif -%}
+                      {%- endfor -%}
+                    {%- else -%}
+                      {%- set itemOk = true -%}
+                    {%- endif -%}
+                    {% if itemOk -%}
+                      
+                      <div class="current-size" 
+                          data-sku="{{ item.sku }}"
+                          data-active="{{ active }}"
+                          data-color-selection="{{ u.colorSelection }}"
+                          data-active-color="{{ activeColor }}"
+                          data-longtitle="{{ dualSizes }}">
+                        {%- if dualSizes -%}
+                          {%- if (upsellSize == 'TW') and (item.size == 'TT') -%}
+                            Twin
+                          {%- elif (upsellSize == 'TX') and (item.size == 'TT') -%}
+                            Twin XL
+                          {%- elif (upsellSize == 'FL') and (item.size == 'FQ') -%}
+                            Full
+                          {%- elif (upsellSize == 'QU') and (item.size == 'FQ') -%}
+                            Queen
+                          {%- elif (upsellSize == 'KG') and (item.size == 'KC') -%}
+                            King
+                          {%- elif (upsellSize == 'CK') and (item.size == 'KC') -%}
+                            Cal King
+                          {%- else -%}
+                            {{- item.sizeName -}}
+                          {%- endif -%}
+                        {%- else -%}
+                          {{- item.sizeName -}}
+                        {%- endif -%}
+                      </div>
+                    {%- endif %}
+                  {%- endfor %}	
+                  {% if u.colorSelection %}
+                    <div class="current-size selection-message"
+                      data-active-color="{{ activeColor }}"
+                      data-active="false">Select Size</div>
+                  {%- endif -%}
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="upsell-LU-{{ u.type -}}-{{- u.color }}" color-selection="{{ u.colorSelection }}">
+                  {%- if u.colorSelection -%}
+                    {%- set colorCount = u.colors | length -%}
+                    {%- set activeColor = u.colors[0].id -%}
+                    {%- set activeColorName = u.colors[0].name -%}
+                    <li class="color-select">
+                      <div class="color-label" 
+                        data-active-color="{{ activeColor }}" 
+                        data-active-color-name="{{ activeColorName }}"	>
+                      </div>
+                      <ul>
+                        {%- for color in u.colors -%}
+                          {%- if loop.index == 1 -%}
+                            {%- set active = true -%}
+                          {%- else -%}
+                            {%- set active = false -%}
+                          {%- endif -%}
+                          <li data-upsell-colors="{{ colorCount }}" 
+                          data-color="{{ color.id }}"
+                          data-color-name="{{ color.name }}"
+                          data-type="{{ type }}"
+                          data-active="{{ active }}"
+                          role="button" tabindex="0"></li>
+                        {%- endfor -%}
+                      </ul>
+                    </li>
+                  {%- endif -%}
+
+                  <li class="upsell-select">
+                    <ul>
+                      {%- set count = 0 -%}
+                      {%- set totalUpsellSizes = 6 -%}
+                      {%- for item in u.skus -%}
+                        {%- set active = false -%}
+                        {%- if u.sku == item.sku -%}
+                          {%- set active = true -%}
+                        {%- endif -%}
+  
+                        {%- set itemOk = false -%}
+                        {%- set size = u.sku.slice(9, limit) -%} {# size of associated cart item #}
+                        {%- set itemSize = item.sku.slice(9, limit) -%}
+                        {%- set itemColor = item.sku.slice(6, -3) -%}
+                        {%- if u.colorSelection -%}
+                          {%- for color in u.colors -%}
+                            {# Only load current size and specified colors #}
+                            {%- if (itemColor == color.id) -%}
+                              {%- set itemOk = true -%}
+                            {%- endif -%}
+                          {%- endfor -%}
+                        {%- else -%}
+                          {%- set itemOk = true -%}
+                        {%- endif -%}
+                        {%- if itemOk -%}
+                          {%- set count = count + 1 -%}
+                          {%- if (count == 1) and (itemSize == 'ST') -%}
+                            {%- set totalUpsellSizes = 2 -%}
+                          {%- endif -%}
+                          {%- if (count == 1) and (itemSize == 'TT') -%}
+                            {%- set totalUpsellSizes = 3 -%}
+                          {%- endif -%}
+  
+                          <li class="upsell-item"
+                              data-sku="{{ item.sku }}"
+                              data-type="{{ type }}"
+                              data-price="{{ item.price }}"
+                              data-out-of-stock="{{ item.outOfStock }}"
+                              data-upsell-sizes="{{ totalUpsellSizes }}"
+                              data-active="{{ active }}"
+                              {%- if u.colorSelection %}
+                                data-color-selection="true"
+                                data-color="{{ itemColor }}"
+                                {%- if itemColor !== activeColor %}
+                                  style="display: none;"
+                                {%- endif -%}
+                              {%- endif -%}
+                              role="button" tabindex="0"
+                              >
+                              <h5>{{ item.sizeName }}</h5>
+                              <p>${{ item.price }}</p>
+                          </li>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="add-to-cart col-xs-6">
+              <a class="btn btn-sm btn-dark block" role="button" tabindex="0">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  {% endfor %}
+{% endmacro %}
+
+{% macro getUpsellModals(u) %}
+  {%- set dualSizes = false -%}
+  {%- if (u.type == 'DV') or (u.type == 'DD') or (u.type == 'FL') -%}
+    {%- set dualSizes = true -%}
+    {# is this product a duvet, etc. with sizes like 'twin/twin-xl'? #}
+  {%- endif -%}
+  {% if u.priorityProductType.length %}
+    {% set type = u.priorityProductType %}
+  {% endif %}
+  <div role="dialog" aria-modal="true" class="modal fade content-modal upsell-modal fullscreen-xs-down" id="modal-{{ u.type }}" tabindex="-1" data-dual-sizes="{{ dualSizes }}" aria-labelledby="accessory-modal">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" tabindex="0"><span aria-hidden="true"></span></button>
+          <div class="row">
+            {# Left col on Desktop #}
+            <div class="product-gallery col-xs-12 col-sm-6">
+              <div class="swiper-container gallery">
+                <div class="swiper-wrapper">
+                  {% for i in range(1, (u.gallerySlides + 1)) %}
+                    <div class="swiper-slide slide-{{ i }} lazyload">
+                    </div>
+                  {% endfor %}
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+              {% for details in u.details %}
+                <div class="tech-details hidden-xs col-xs-12">
+                  <ul>
+                    {% for b in details.bullets %}
+                      <li>{{ b.bullet }} </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endfor %}
+            </div>
+
+            {# Right col on Desktop #}
+            <div class="upsell-item col-xs-12 col-sm-6">
+              <div class="row">
+                <div class="upsell-details col-xs-12">
+                  {%- if u.priorityProductType.length -%}
+                    <h2><span>{{- u.title -}}</span></h2>
+                  {%- else -%}
+                    <h2><span>{{- u.name -}}</span></h2>
+                  {%- endif -%}
+                  {% if u.showStarRating %}
+                    <div class="star-rating">
+                      <div class="star-gauge">
+                        <div class="star-average" style="width: {{ u.avgReviews * 20 }}%;">
+                        </div>
+                      </div>
+                      <p>{{ u.avgReviews | round(1) }} <span>({{ u.totalReviews }})</span></p>
+                    </div>
+                  {% endif %}
+                  <h4>Ships in 1-4 Business Days</h4>
+                </div>
+              </div>
+              <div class="row">
+                <div class="swiper-container technicalities col-xs-12">
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide tech-details">
+                      {% for details in u.details %}
+                        <div class="col-xs-12">
+                          <p>{{ details.tagline }}</p>
+                          <ul class="visible-xs">
+                            {% for b in details.bullets %}
+                              <li>{{ b.bullet }} </li>
+                            {% endfor %}
+                          </ul>
+                        </div>
+                      {% endfor %}
+
+                      {% for r in u.review %}
+                        <div class="col-xs-12">
+                          <div class="review">
+                            <div class="star-rating">
+                              <div class="star-gauge">
+                                {% set starTotal = (r.starTotal * 20) %}
+                                <div class="star-average" style="width: {{ starTotal }}%;">
+                                </div> 
+                              </div>
+                            </div>
+                            <h3>{{ r.title }}</h3>
+                            <p>{{ r.content }}</p>
+                            <p class="reviewer">
+                              &ndash; {{ r.reviewer }} <span>(Verified Buyer)</span>
+                            </p>
+                          </div>
+                        </div>
+                      {% endfor %}
+                    </div>
+                    <div class="swiper-slide benefits">
+                      {% for item in u.benefits %}
+                        <div class="item col-xs-10 col-xs-offset-2">
+                          <h3 class="{{ item.className }}">{{ item.heading | safe }}</h3>
+                          <p>{{ item.content | safe }}</p>
+                        </div>
+                      {% endfor %}
+                    </div>
+                    <div class="swiper-slide">
+                      {{ _modules.specs(products, u.dimensions, u.specs) }}
+                    </div>	
+                  </div>
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endmacro %}
