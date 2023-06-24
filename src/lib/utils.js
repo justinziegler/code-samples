@@ -427,23 +427,14 @@ module.exports.getUpsells = async function (items, ctx) {
       const size = convertSize(itemSize, catId);
       const upsellGroup = checkUpsellGroup(catId);
       const upsellGroupCatIds = getUpsellGroupCatIds(catId);
-      console.log('upsellGroup', upsellGroup);
-      console.log('upsellGroupCatIds', upsellGroupCatIds);
-      console.log('catId', catId);
       let catUpsellItems = [];
       if (upsellGroup) {
         let upsellOk = true;
         upsellGroupCatIds.forEach(gCatId => {
           if (ctx.cartCatIds.includes(gCatId)) upsellOk = false;
-          console.log('!!!!!!!!!!!!!')
-          // const g = products.filter(item => item.catId === gCatId);
           const g = getUpsellItem(gCatId);
-          // const g = await f;
-          console.log('g', g)
           const catItems = g.filter(item => item.sku.slice(9) === size);
           catUpsellItems = catUpsellItems.concat(catItems);
-          console.log('catItems', catItems)
-          console.log('catUpsellItems', catUpsellItems)
         })
         if (upsellOk) {
           let priorityType = 'CB';
@@ -512,7 +503,6 @@ module.exports.getUpsells = async function (items, ctx) {
         
         // const details = content.getUpsellDetails(catItem[0].sku); 
         // catItem.push(details);
-        console.log('details', catItem);
         upsellSkus = upsellSkus.concat(catItem[0]);
       }
     })
@@ -616,14 +606,12 @@ module.exports.getUpsells = async function (items, ctx) {
 	// addUpsellItems = addUpsellItems.concat(addLegsItems).concat(addPlanItems);
 
 	let filteredUpsells = [];
-  console.log('addUpsellItems!!!', addUpsellItems)
 	if (addUpsellItems.length > 0) {
 		filteredUpsells = addUpsellItems.filter(item => !item.outOfStock);
 	}
 	const upsells = [
 		filteredUpsells
 	];
-  console.log('upsells', upsells)
 
 	if (upsells.length > 0) {
 		return { ok: true, result: upsells };

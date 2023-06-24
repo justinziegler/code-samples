@@ -661,7 +661,6 @@ module.exports.getUpsellDetails = async function (skus) {
         break;
     }
     const d = details[0];
-    console.log('d', details)
     upsellItems = upsellItems.concat(details);
   })
 	return upsellItems;

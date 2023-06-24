@@ -281,7 +281,6 @@ module.exports.getUpsells = async function (items, ctx) {
 	getUpsellTargets(premiumMattressItems, 'premiumMattress');
 
 	let addUpsellItems = [];
-  console.log('cartTier', cartTier)
 	if (cartTier === 'premiumMattress') {
 		const catIds = [8, 9, 30, 19, 46, 53, 52, 20];
 		// protector, pillows, sheets, duvets, islay, chapala, anacapa, foundation

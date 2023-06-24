@@ -616,7 +616,6 @@ $(document).ready(function() {
       setTimeout(function() {
         cartItem.children().css({'opacity': 1 });
       }, (animationDuration));
-      console.log('sku', sku)
 
       cartItem.find('.item[data-sku="' + sku + '"], .current-size[data-sku="' + sku + '"]').attr('data-active', true);
       addToCart(sku);
@@ -628,7 +627,6 @@ $(document).ready(function() {
   $('.upsells .dropdown li[data-out-of-stock="false"]').on('keypress click', function(e) {
     if (e.which === 13 || e.type === 'click') {
       var sku = $(this).data('sku');
-      console.log('sku!!!', sku)
       var item = $(this).parent().closest('.product-details');
       item.attr('data-type', sku.slice(3, -6));
       item.find('.pricing div, .current-size, .upsell-item').attr('data-active', false);
