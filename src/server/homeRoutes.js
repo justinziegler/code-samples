@@ -180,6 +180,8 @@ async function sheets(ctx, next) {
 }
 
 async function cart(ctx, next) {
+  const pageUrl = 'cart';
+  const pageId = await utils.getPageId(pageUrl);
   let cartItems = [];
   const mattressSkus = await utils.getProductSkus(ctx, 1, 300);
   cartItems.push(mattressSkus[5]);
@@ -191,13 +193,21 @@ async function cart(ctx, next) {
   })
   const u = await utils.getUpsells(cartItems, ctx);
   const upsells = u.result[0];
-  console.log('upsells@@@', upsells)
-  // console.log('sheetsSkus', sheetsSkus)
-  // console.log('cartItems', cartItems)
-  // console.log('upsells', upsells)
-
   ctx.body = await render('checkout_cart', {
     title: 'Shopping Cart',
+    title: title,
+    p: {
+      pageUrl: pageUrl,
+      pageId: pageId,
+      prevPage: 'sheets',
+      headerTitle: 'Shopping Cart',
+      headerIntro: 'This page was A/B tested against our existing page for over a year. While it was ultimately shelved, some of the features developed here later were ported over to the existing cart. Features on display include:',
+      headerBullets: [
+        'Upsells are preset to the same size as the primary cart item, but users can select another size if desired.',
+        'Upsells each have a corresponding modal with an image gallery and product details.',
+        'Adding and removing upsells to the cart is visually fluid.'
+      ]
+    },
     cart: {
       items: cartItems,
       upsells: upsells

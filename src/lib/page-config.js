@@ -23,7 +23,7 @@ module.exports.home = async function (ctx) {
     },
     {
       title: 'Tiktok Mimic',
-      intro: 'In my previous position, I would often be required to develop page sections that looked and functioned differently depending if users were on mobile vs. a larger screen. This project came about from a desire to:',
+      intro: 'This was a fun project developed for a social media marketing campaign. This project goals were to:',
       bullets: [ 
         'Mimic the look and feel of Tiktok for users that are referred from mobile-targeted links on social media',
         'Provide an engaging experience that gathers sales leads'
@@ -56,6 +56,21 @@ module.exports.home = async function (ctx) {
         {
           title: 'Flexible Upsells',
           link: '../sheets'
+        }
+      ]
+    },
+    {
+      title: 'Shopping Cart',
+      intro: 'This page was developed to replace the company\'s existing shopping cart with an experience that:',
+      bullets: [ 
+        'Better reflects the brand',
+        'Expands on the product upsell capabilities'
+      ],
+      details: 'This project was developed using Nunjucks, Node, jQuery & Sass. A node module examines the cart contents and places the cart into one of seven tiers, then finds upsells appropriate to the cart tier and item size of the highest-value cart items.',
+      thumbnails: [
+        {
+          title: 'Shopping Cart',
+          link: '../cart'
         }
       ]
     }
@@ -578,6 +593,7 @@ module.exports.sheets = async function (ctx) {
         'lazysizes.min'
       ],
       prevPage: '../frame',
+      nextPage: '../cart',
       headerTitle: 'Product Display Template',
       headerIntro: 'This configuration sorts through 42 product skus and over 100 upsell skus from 6 product lines. The features on display here include:',
       headerBullets: [
