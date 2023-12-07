@@ -15,7 +15,7 @@ li[data-type=MA] .product-image div {
   }
 }
 li[data-type=MA] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/mattress.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&fp-x=0&fp-z=.8&w=230&h=200");
+  background-image: url("./mattress.png?&fp-x=0&fp-z=.8&w=230&h=200");
 }
 
 .upsells li[data-type=MA] .product-image div,
@@ -31,7 +31,7 @@ li[data-type=MA] .product-image div.lazyloaded {
 }
 .upsells li[data-type=MA] .product-image div.lazyloaded,
 .upsells li[data-parent-sku^=LU-MA] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/mattress.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&fp-x=1&fp-z=.8&w=244&h=200");
+  background-image: url("./mattress.png?&fp-x=1&fp-z=.8&w=244&h=200");
 }
 
 li[data-type=HY] .product-image div {
@@ -39,7 +39,7 @@ li[data-type=HY] .product-image div {
   background-size: 87%;
 }
 li[data-type=HY] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/luxe-hybrid-elevated-profile.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&fp-x=0&fp-z=.8&w=224&h=160");
+  background-image: url("./luxe-hybrid-elevated-profile.png?&fp-x=0&fp-z=.8&w=224&h=160");
 }
 
 .upsells li[data-type=HY] .product-image div,
@@ -49,7 +49,7 @@ li[data-type=HY] .product-image div.lazyloaded {
 }
 .upsells li[data-type=HY] .product-image div.lazyloaded,
 .upsells li[data-parent-sku^=LU-HY] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/luxe-hybrid-elevated-profile.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&fp-x=1&fp-z=.8&w=224&h=160");
+  background-image: url("./luxe-hybrid-elevated-profile.png?&fp-x=1&fp-z=.8&w=224&h=160");
 }
 
 li[data-type=PM] .product-image div {
@@ -57,7 +57,7 @@ li[data-type=PM] .product-image div {
   background-size: 94%;
 }
 li[data-type=PM] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/original-premium-mattress-profile.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&fp-x=0&w=242&h=150");
+  background-image: url("./original-premium-mattress-profile.png?&fp-x=0&w=242&h=150");
 }
 
 .upsells li[data-type=PM] .product-image div,
@@ -67,7 +67,7 @@ li[data-type=PM] .product-image div.lazyloaded {
 }
 .upsells li[data-type=PM] .product-image div.lazyloaded,
 .upsells li[data-parent-sku^=LU-PM] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/original-premium-mattress-profile.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&fp-x=1&w=242&h=140");
+  background-image: url("./original-premium-mattress-profile.png?&fp-x=1&w=242&h=140");
 }
 
 li[data-type=PR] .product-image div {
@@ -80,7 +80,7 @@ li[data-type=PR] .product-image div {
   }
 }
 li[data-type=PR] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/mattress-protector.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=240&h=220&fp-x=0&fp-z=.82");
+  background-image: url("./mattress-protector.png?&w=240&h=220&fp-x=0&fp-z=.82");
 }
 
 .upsells li[data-type=PR] .product-image div {
@@ -93,7 +93,7 @@ li[data-type=PR] .product-image div.lazyloaded {
   }
 }
 .upsells li[data-type=PR] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/mattress-protector.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=244&h=220&fp-x=1&fp-z=.82");
+  background-image: url("./mattress-protector.png?&w=244&h=220&fp-x=1&fp-z=.82");
 }
 
 li[data-type=WF] .product-image div {
@@ -101,7 +101,7 @@ li[data-type=WF] .product-image div {
   background-position: 100% 87%;
 }
 li[data-type=WF] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/platform-bed-frame.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=224&h=240&fp-x=0&fp-z=.82");
+  background-image: url("./platform-bed-frame.png?&w=224&h=240&fp-x=0&fp-z=.82");
 }
 
 .upsells li[data-type=WF] .product-image div {
@@ -113,7 +113,7 @@ li[data-type=WF] .product-image div.lazyloaded {
   }
 }
 .upsells li[data-type=WF] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/platform-bed-frame.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=224&h=240&fp-x=1&fp-z=.82");
+  background-image: url("./platform-bed-frame.png?&w=224&h=240&fp-x=1&fp-z=.82");
 }
 
 li[data-type=MF] .product-image div {
@@ -121,14 +121,14 @@ li[data-type=MF] .product-image div {
   background-position: 100% 60%;
 }
 li[data-type=MF] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/metal-frame-front.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=200&fp-x=0&fp-z=.76");
+  background-image: url("./metal-frame-front.png?&w=230&h=200&fp-x=0&fp-z=.76");
 }
 
 .upsells li[data-type=MF] .product-image div {
   background-position: 0 50%;
 }
 .upsells li[data-type=MF] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/metal-frame-front.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=200&fp-x=1&fp-z=.76");
+  background-image: url("./metal-frame-front.png?&w=230&h=200&fp-x=1&fp-z=.76");
 }
 
 li[data-type=TU] .product-image div,
@@ -138,17 +138,17 @@ li[data-type=UU] .product-image div {
 }
 
 li[data-type=TU][data-color=CS] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/frame-tufted-CS-angled.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=252&h=244&fp-x=0");
+  background-image: url("./frame-tufted-CS-angled.png?&w=252&h=244&fp-x=0");
 }
 li[data-type=TU][data-color=DS] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/frame-tufted-DS-angled.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=252&h=244&fp-x=0");
+  background-image: url("./frame-tufted-DS-angled.png?&w=252&h=244&fp-x=0");
 }
 
 li[data-type=UU][data-color=CS] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/frame-untufted-CS-angled.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=252&h=244&fp-x=0");
+  background-image: url("./frame-untufted-CS-angled.png?&w=252&h=244&fp-x=0");
 }
 li[data-type=UU][data-color=DS] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/frame-untufted-DS-angled.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=252&h=244&fp-x=0");
+  background-image: url("./frame-untufted-DS-angled.png?&w=252&h=244&fp-x=0");
 }
 
 li[data-type=PW] .product-image div {
@@ -156,7 +156,7 @@ li[data-type=PW] .product-image div {
   background-size: 90%;
 }
 li[data-type=PW] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/pillow-front.png?auto=format,compress,enhance&q=50&fit=crop&crop=focalpoint&w=230&h=164&fp-x=0");
+  background-image: url("./pillow-front.png?auto=format,compress,enhance&q=50?&w=230&h=164&fp-x=0");
 }
 
 .upsells li[data-type=PW] .product-image div, .upsells li[data-type=FP] .product-image div {
@@ -168,7 +168,7 @@ li[data-type=PW] .product-image div.lazyloaded {
   }
 }
 .upsells li[data-type=PW] .product-image div.lazyloaded, .upsells li[data-type=FP] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/pillow-front.png?auto=format,compress,enhance&q=50&fit=crop&crop=focalpoint&w=230&h=164&fp-x=1");
+  background-image: url("./pillow-front.png?auto=format,compress,enhance&q=50?&w=230&h=164&fp-x=1");
 }
 
 li[data-type=FP] .product-image div {
@@ -181,7 +181,7 @@ li[data-type=FP] .product-image div {
   }
 }
 li[data-type=FP] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/memory-foam-pillow.png?auto=format,compress,enhance&q=50&fit=crop&crop=focalpoint&w=224&h=148&fp-x=0");
+  background-image: url("./memory-foam-pillow.png?auto=format,compress,enhance&q=50?&w=224&h=148&fp-x=0");
 }
 
 li[data-type=DP] .product-image div {
@@ -194,7 +194,7 @@ li[data-type=DP] .product-image div {
   }
 }
 li[data-type=DP] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/down-pillow-side.png?auto=format,compress,enhance&q=50&fit=crop&crop=focalpoint&w=230&h=164&fp-x=0");
+  background-image: url("./down-pillow-side.png?auto=format,compress,enhance&q=50?&w=230&h=164&fp-x=0");
 }
 
 li[data-type=DV] .product-image div {
@@ -202,14 +202,14 @@ li[data-type=DV] .product-image div {
   background-size: 90%;
 }
 li[data-type=DV] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/duvet-folded.png?auto=format,compress,enhance&q=50&fit=crop&crop=focalpoint&w=230&h=280&fp-x=0&fp-z=.66");
+  background-image: url("./duvet-folded.png?auto=format,compress,enhance&q=50?&w=230&h=280&fp-x=0&fp-z=.66");
 }
 
 .upsells li[data-type=DV] .product-image div {
   background-position: 0 50%;
 }
 .upsells li[data-type=DV] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/duvet-folded.png?auto=format,compress,enhance&q=50&fit=crop&crop=focalpoint&w=230&h=280&fp-x=1&fp-z=.66");
+  background-image: url("./duvet-folded.png?auto=format,compress,enhance&q=50?&w=230&h=280&fp-x=1&fp-z=.66");
 }
 
 li[data-type=DD] .product-image div {
@@ -217,7 +217,7 @@ li[data-type=DD] .product-image div {
   background-size: 87%;
 }
 li[data-type=DD] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/down-duvet-folded.png?auto=format,compress,enhance&q=50&fit=crop&crop=focalpoint&w=224&h=280&fp-x=0&fp-z=.66");
+  background-image: url("./down-duvet-folded.png?auto=format,compress,enhance&q=50?&w=224&h=280&fp-x=0&fp-z=.66");
 }
 
 li[data-type=DC] .product-image div {
@@ -225,10 +225,10 @@ li[data-type=DC] .product-image div {
   background-position: 100% 50%;
 }
 li[data-type=DC] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/duvet-cover-folded-white.png?auto=format,compress,enhance&q=50&fit=crop&crop=focalpoint&w=230&h=260&fp-x=0&fp-z=.6");
+  background-image: url("./duvet-cover-folded-white.png?auto=format,compress,enhance&q=50?&w=230&h=260&fp-x=0&fp-z=.6");
 }
 li[data-type=DC][data-color=GR] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/duvet-cover-folded-grey.png?auto=format,compress,enhance&q=50&fit=crop&crop=focalpoint&w=230&h=260&fp-x=0&fp-z=.6");
+  background-image: url("./duvet-cover-folded-grey.png?auto=format,compress,enhance&q=50?&w=230&h=260&fp-x=0&fp-z=.6");
 }
 
 li[data-type=BD] .product-image div,
@@ -240,37 +240,37 @@ li[data-type=OD] .product-image div {
 li[data-type=BD][data-color=BW] .product-image div.lazyloaded,
 li[data-type=CD][data-color=BW] .product-image div.lazyloaded,
 li[data-type=OD][data-color=BW] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/duvet-cover-BW.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=260&fp-x=0&fp-z=.6");
+  background-image: url("./duvet-cover-BW.png?&w=230&h=260&fp-x=0&fp-z=.6");
 }
 li[data-type=BD][data-color=CD] .product-image div.lazyloaded,
 li[data-type=CD][data-color=CD] .product-image div.lazyloaded,
 li[data-type=OD][data-color=CD] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/duvet-cover-CD.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=260&fp-x=0&fp-z=.6");
+  background-image: url("./duvet-cover-CD.png?&w=230&h=260&fp-x=0&fp-z=.6");
 }
 li[data-type=BD][data-color=GG] .product-image div.lazyloaded,
 li[data-type=CD][data-color=GG] .product-image div.lazyloaded,
 li[data-type=OD][data-color=GG] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/duvet-cover-GG.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=260&fp-x=0&fp-z=.6");
+  background-image: url("./duvet-cover-GG.png?&w=230&h=260&fp-x=0&fp-z=.6");
 }
 li[data-type=BD][data-color=MB] .product-image div.lazyloaded,
 li[data-type=CD][data-color=MB] .product-image div.lazyloaded,
 li[data-type=OD][data-color=MB] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/duvet-cover-MB.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=260&fp-x=0&fp-z=.6");
+  background-image: url("./duvet-cover-MB.png?&w=230&h=260&fp-x=0&fp-z=.6");
 }
 li[data-type=BD][data-color=PA] .product-image div.lazyloaded,
 li[data-type=CD][data-color=PA] .product-image div.lazyloaded,
 li[data-type=OD][data-color=PA] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/duvet-cover-PA.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=260&fp-x=0&fp-z=.6");
+  background-image: url("./duvet-cover-PA.png?&w=230&h=260&fp-x=0&fp-z=.6");
 }
 li[data-type=BD][data-color=QG] .product-image div.lazyloaded,
 li[data-type=CD][data-color=QG] .product-image div.lazyloaded,
 li[data-type=OD][data-color=QG] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/duvet-cover-QG.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=260&fp-x=0&fp-z=.6");
+  background-image: url("./duvet-cover-QG.png?&w=230&h=260&fp-x=0&fp-z=.6");
 }
 li[data-type=BD][data-color=WP] .product-image div.lazyloaded,
 li[data-type=CD][data-color=WP] .product-image div.lazyloaded,
 li[data-type=OD][data-color=WP] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/duvet-cover-WP.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=260&fp-x=0&fp-z=.6");
+  background-image: url("./duvet-cover-WP.png?&w=230&h=260&fp-x=0&fp-z=.6");
 }
 
 li[data-type=SH] .product-image div, li[data-type=PC] .product-image div {
@@ -278,10 +278,10 @@ li[data-type=SH] .product-image div, li[data-type=PC] .product-image div {
   background-position: 100% 60%;
 }
 li[data-type=SH] .product-image div.lazyloaded, li[data-type=PC] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/sheets-folded-white-v2.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=240&h=300&fp-x=0&fp-z=.6");
+  background-image: url("./sheets-folded-white-v2.png?&w=240&h=300&fp-x=0&fp-z=.6");
 }
 li[data-type=SH][data-color=GR] .product-image div.lazyloaded, li[data-type=PC][data-color=GR] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/sheets-folded-grey.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=240&h=300&fp-x=0&fp-z=.6");
+  background-image: url("./sheets-folded-grey.png?&w=240&h=300&fp-x=0&fp-z=.6");
 }
 
 .upsells li[data-type=SH] .product-image div, .upsells li[data-type=PC] .product-image div {
@@ -293,10 +293,10 @@ li[data-type=SH][data-color=GR] .product-image div.lazyloaded, li[data-type=PC][
   }
 }
 .upsells li[data-type=SH] .product-image div.lazyloaded, .upsells li[data-type=PC] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/sheets-folded-white-v2.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=240&h=288&fp-x=1&fp-z=.6");
+  background-image: url("./sheets-folded-white-v2.png?&w=240&h=288&fp-x=1&fp-z=.6");
 }
 .upsells li[data-type=SH][data-color=GR] .product-image div.lazyloaded, .upsells li[data-type=PC][data-color=GR] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/sheets-folded-grey.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=240&h=288&fp-x=1&fp-z=.6");
+  background-image: url("./sheets-folded-grey.png?&w=240&h=288&fp-x=1&fp-z=.6");
 }
 
 li[data-type=CB] .product-image div,
@@ -308,37 +308,37 @@ li[data-type=OC] .product-image div {
 li[data-type=CB][data-color=BW] .product-image div.lazyloaded,
 li[data-type=CS][data-color=BW] .product-image div.lazyloaded,
 li[data-type=OC][data-color=BW] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/sheets-BW.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=260&fp-x=0&fp-z=.6");
+  background-image: url("./sheets-BW.png?&w=230&h=260&fp-x=0&fp-z=.6");
 }
 li[data-type=CB][data-color=CD] .product-image div.lazyloaded,
 li[data-type=CS][data-color=CD] .product-image div.lazyloaded,
 li[data-type=OC][data-color=CD] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/sheets-CD.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=260&fp-x=0&fp-z=.6");
+  background-image: url("./sheets-CD.png?&w=230&h=260&fp-x=0&fp-z=.6");
 }
 li[data-type=CB][data-color=GG] .product-image div.lazyloaded,
 li[data-type=CS][data-color=GG] .product-image div.lazyloaded,
 li[data-type=OC][data-color=GG] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/sheets-GG.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=260&fp-x=0&fp-z=.6");
+  background-image: url("./sheets-GG.png?&w=230&h=260&fp-x=0&fp-z=.6");
 }
 li[data-type=CB][data-color=MB] .product-image div.lazyloaded,
 li[data-type=CS][data-color=MB] .product-image div.lazyloaded,
 li[data-type=OC][data-color=MB] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/sheets-MB.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=260&fp-x=0&fp-z=.6");
+  background-image: url("./sheets-MB.png?&w=230&h=260&fp-x=0&fp-z=.6");
 }
 li[data-type=CB][data-color=PA] .product-image div.lazyloaded,
 li[data-type=CS][data-color=PA] .product-image div.lazyloaded,
 li[data-type=OC][data-color=PA] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/sheets-PA.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=260&fp-x=0&fp-z=.6");
+  background-image: url("./sheets-PA.png?&w=230&h=260&fp-x=0&fp-z=.6");
 }
 li[data-type=CB][data-color=QG] .product-image div.lazyloaded,
 li[data-type=CS][data-color=QG] .product-image div.lazyloaded,
 li[data-type=OC][data-color=QG] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/sheets-QG.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=260&fp-x=0&fp-z=.6");
+  background-image: url("./sheets-QG.png?&w=230&h=260&fp-x=0&fp-z=.6");
 }
 li[data-type=CB][data-color=WP] .product-image div.lazyloaded,
 li[data-type=CS][data-color=WP] .product-image div.lazyloaded,
 li[data-type=OC][data-color=WP] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/sheets-WP.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=260&fp-x=0&fp-z=.6");
+  background-image: url("./sheets-WP.png?&w=230&h=260&fp-x=0&fp-z=.6");
 }
 
 li[data-type=BP] .product-image div,
@@ -350,37 +350,37 @@ li[data-type=OP] .product-image div {
 li[data-type=BP][data-color=BW] .product-image div.lazyloaded,
 li[data-type=CP][data-color=BW] .product-image div.lazyloaded,
 li[data-type=OP][data-color=BW] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/pillowcase-BW-horiz.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=190&fp-x=0&fp-z=1.1");
+  background-image: url("./pillowcase-BW-horiz.png?&w=230&h=190&fp-x=0&fp-z=1.1");
 }
 li[data-type=BP][data-color=CD] .product-image div.lazyloaded,
 li[data-type=CP][data-color=CD] .product-image div.lazyloaded,
 li[data-type=OP][data-color=CD] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/pillowcase-CD-horiz.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=190&fp-x=0&fp-z=1.1");
+  background-image: url("./pillowcase-CD-horiz.png?&w=230&h=190&fp-x=0&fp-z=1.1");
 }
 li[data-type=BP][data-color=GG] .product-image div.lazyloaded,
 li[data-type=CP][data-color=GG] .product-image div.lazyloaded,
 li[data-type=OP][data-color=GG] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/pillowcase-GG-horiz.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=190&fp-x=0&fp-z=1.1");
+  background-image: url("./pillowcase-GG-horiz.png?&w=230&h=190&fp-x=0&fp-z=1.1");
 }
 li[data-type=BP][data-color=MB] .product-image div.lazyloaded,
 li[data-type=CP][data-color=MB] .product-image div.lazyloaded,
 li[data-type=OP][data-color=MB] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/pillowcase-MB-horiz.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=190&fp-x=0&fp-z=1.1");
+  background-image: url("./pillowcase-MB-horiz.png?&w=230&h=190&fp-x=0&fp-z=1.1");
 }
 li[data-type=BP][data-color=PA] .product-image div.lazyloaded,
 li[data-type=CP][data-color=PA] .product-image div.lazyloaded,
 li[data-type=OP][data-color=PA] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/pillowcase-PA-horiz.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=190&fp-x=0&fp-z=1.1");
+  background-image: url("./pillowcase-PA-horiz.png?&w=230&h=190&fp-x=0&fp-z=1.1");
 }
 li[data-type=BP][data-color=QG] .product-image div.lazyloaded,
 li[data-type=CP][data-color=QG] .product-image div.lazyloaded,
 li[data-type=OP][data-color=QG] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/pillowcase-QG-horiz.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=190&fp-x=0&fp-z=1.1");
+  background-image: url("./pillowcase-QG-horiz.png?&w=230&h=190&fp-x=0&fp-z=1.1");
 }
 li[data-type=BP][data-color=WP] .product-image div.lazyloaded,
 li[data-type=CP][data-color=WP] .product-image div.lazyloaded,
 li[data-type=OP][data-color=WP] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/pillowcase-WP-horiz.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=230&h=190&fp-x=0&fp-z=1.1");
+  background-image: url("./pillowcase-WP-horiz.png?&w=230&h=190&fp-x=0&fp-z=1.1");
 }
 
 li[data-type=FO] .product-image div {
@@ -388,7 +388,7 @@ li[data-type=FO] .product-image div {
   background-position: 100% 50%;
 }
 li[data-type=FO] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/light-grey-foundation1.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=224&h=120&fp-x=0&fp-z=1.8");
+  background-image: url("./light-grey-foundation1.png?&w=224&h=120&fp-x=0&fp-z=1.8");
 }
 
 .upsells li[data-type=FO] .product-image div {
@@ -400,7 +400,7 @@ li[data-type=FO] .product-image div.lazyloaded {
   }
 }
 .upsells li[data-type=FO] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/light-grey-foundation1.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=224&h=120&fp-x=1&fp-z=1.8");
+  background-image: url("./light-grey-foundation1.png?&w=224&h=120&fp-x=1&fp-z=1.8");
 }
 
 li[data-type=FL] .product-image div {
@@ -408,7 +408,7 @@ li[data-type=FL] .product-image div {
   background-position: 48% 50%;
 }
 li[data-type=FL] .product-image div.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/foundation-legs-closeup.png?auto=format,compress&q=50&w=200");
+  background-image: url("./foundation-legs-closeup.png&w=200");
 }
 
 .upsells li[data-type=PP] .product-image div::before {
@@ -702,11 +702,11 @@ li[data-type=FL] .product-image div.lazyloaded {
   position: absolute;
   top: -4px;
   bottom: -4px;
-  background-color: rgb(11, 40, 54);
+  background-color: #0b2836;
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr="#FF0B2836", endColorstr="#FF56DBD6");
-  background-image: -owg-linear-gradient(top, rgb(11, 40, 54) 0%, rgb(11, 40, 54) 40px, rgb(86, 219, 214) 40px, rgb(86, 219, 214) 100%);
-  background-image: linear-gradient(top, rgb(11, 40, 54) 0%, rgb(11, 40, 54) 40px, rgb(86, 219, 214) 40px, rgb(86, 219, 214) 100%);
+  background-image: -owg-linear-gradient(top, #0b2836 0%, #0b2836 40px, #56dbd6 40px, #56dbd6 100%);
+  background-image: linear-gradient(top, #0b2836 0%, #0b2836 40px, #56dbd6 40px, #56dbd6 100%);
   -webkit-transition: 0.15s ease;
   transition: 0.15s ease;
   z-index: -1;
@@ -717,9 +717,9 @@ li[data-type=FL] .product-image div.lazyloaded {
     bottom: -0.7042253521vw;
     *zoom: 1;
     filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr="#FF0B2836", endColorstr="#FF56DBD6");
-    background-image: -owg-linear-gradient(top, rgb(11, 40, 54) 0%, rgb(11, 40, 54) 7.0422535211vw, rgb(86, 219, 214) 7.0422535211vw, rgb(86, 219, 214) 100%);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(11, 40, 54)), color-stop(7.0422535211vw, rgb(11, 40, 54)), color-stop(7.0422535211vw, rgb(86, 219, 214)), to(rgb(86, 219, 214)));
-    background-image: linear-gradient(top, rgb(11, 40, 54) 0%, rgb(11, 40, 54) 7.0422535211vw, rgb(86, 219, 214) 7.0422535211vw, rgb(86, 219, 214) 100%);
+    background-image: -owg-linear-gradient(top, #0b2836 0%, #0b2836 7.0422535211vw, #56dbd6 7.0422535211vw, #56dbd6 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#0b2836), color-stop(7.0422535211vw, #0b2836), color-stop(7.0422535211vw, #56dbd6), to(#56dbd6));
+    background-image: linear-gradient(top, #0b2836 0%, #0b2836 7.0422535211vw, #56dbd6 7.0422535211vw, #56dbd6 100%);
   }
 }
 @media (max-width: 543px) {
@@ -728,9 +728,9 @@ li[data-type=FL] .product-image div.lazyloaded {
     bottom: -1.25vw;
     *zoom: 1;
     filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr="#FF0B2836", endColorstr="#FF56DBD6");
-    background-image: -owg-linear-gradient(top, rgb(11, 40, 54) 0%, rgb(11, 40, 54) 12.5vw, rgb(86, 219, 214) 12.5vw, rgb(86, 219, 214) 100%);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(11, 40, 54)), color-stop(12.5vw, rgb(11, 40, 54)), color-stop(12.5vw, rgb(86, 219, 214)), to(rgb(86, 219, 214)));
-    background-image: linear-gradient(top, rgb(11, 40, 54) 0%, rgb(11, 40, 54) 12.5vw, rgb(86, 219, 214) 12.5vw, rgb(86, 219, 214) 100%);
+    background-image: -owg-linear-gradient(top, #0b2836 0%, #0b2836 12.5vw, #56dbd6 12.5vw, #56dbd6 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#0b2836), color-stop(12.5vw, #0b2836), color-stop(12.5vw, #56dbd6), to(#56dbd6));
+    background-image: linear-gradient(top, #0b2836 0%, #0b2836 12.5vw, #56dbd6 12.5vw, #56dbd6 100%);
   }
 }
 .swiper-container.technicalities .swiper-pagination-bullets > span:nth-of-type(1)::before {
@@ -851,9 +851,9 @@ li[data-type=FL] .product-image div.lazyloaded {
     height: 30px;
     *zoom: 1;
     filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr="#F300F7F5", endColorstr="#FFF7F5F3");
-    background-image: -owg-linear-gradient(top, rgba(247, 245, 243, 0) 0%, rgb(247, 245, 243) 100%);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(247, 245, 243, 0)), to(rgb(247, 245, 243)));
-    background-image: linear-gradient(top, rgba(247, 245, 243, 0) 0%, rgb(247, 245, 243) 100%);
+    background-image: -owg-linear-gradient(top, rgba(247, 245, 243, 0) 0%, #f7f5f3 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(247, 245, 243, 0)), to(#f7f5f3));
+    background-image: linear-gradient(top, rgba(247, 245, 243, 0) 0%, #f7f5f3 100%);
     z-index: 10;
   }
 }
@@ -1348,204 +1348,82 @@ li[data-type=FL] .product-image div.lazyloaded {
 
 #modal-MA .slide-1.lazyloaded,
 #modal-MA .gallery .swiper-pagination-bullet:nth-of-type(1) {
-  background-image: url("https://lull-media.imgix.net/shop/mattress.jpg?auto=format,compress&q=50,enhance&fit=crop&crop=focalpoint&fp-y=.55&fp-z=1.65&w=840");
+  background-image: url("./mattress.jpg?&fp-y=.55&fp-z=1.65&w=840");
 }
 #modal-MA .slide-2.lazyloaded,
 #modal-MA .gallery .swiper-pagination-bullet:nth-of-type(2) {
-  background-image: url("https://lull-media.imgix.net/shop/lull-mattress.jpg?auto=format,compress&q=50,enhance&fit=crop&crop=focalpoint&fp-x=.585&fp-y=.53&fp-z=1.8&w=840");
+  background-image: url("./lull-mattress.jpg?&fp-x=.585&fp-y=.53&fp-z=1.8&w=840");
 }
 #modal-MA .slide-3.lazyloaded,
 #modal-MA .gallery .swiper-pagination-bullet:nth-of-type(3) {
-  background-image: url("https://lull-media.imgix.net/shop/girl-mattress.jpg?auto=format,compress&q=50,enhance&fit=crop&crop=focalpoint&fp-x=.54&fp-y=.5&fp-z=1.13&w=840");
+  background-image: url("./girl-mattress.jpg?&fp-x=.54&fp-y=.5&fp-z=1.13&w=840");
 }
 #modal-MA .slide-4.lazyloaded,
 #modal-MA .gallery .swiper-pagination-bullet:nth-of-type(4) {
-  background-image: url("https://lull-media.imgix.net/shop/mattress-soft.jpg?auto=format,compress&q=50,enhance&w=840");
+  background-image: url("./mattress-soft.jpg&w=840");
 }
 #modal-MA .slide-5.lazyloaded,
 #modal-MA .gallery .swiper-pagination-bullet:nth-of-type(5) {
-  background-image: url("https://lull-media.imgix.net/shop/mattress-profile-model-reclining.jpg?auto=format,compress&q=50,enhance&fit=crop&crop=focalpoint&fp-x=.475&fp-y=.6&fp-z=1.3&w=840");
-}
-
-#modal-HY .slide-1.lazyloaded,
-#modal-HY .gallery .swiper-pagination-bullet:nth-of-type(1) {
-  background-image: url("https://lull-media.imgix.net/shop-luxe/luxe-mattress1.jpg?auto=format,compress&q=50,enhance&fit=crop&crop=focalpoint&w=840&h=525&fp-y=1");
-}
-#modal-HY .slide-2.lazyloaded,
-#modal-HY .gallery .swiper-pagination-bullet:nth-of-type(2) {
-  background-image: url("https://lull-media.imgix.net/shop-luxe/luxe-mattress2.jpg?auto=format,compress&q=50,enhance&fit=crop&crop=focalpoint&w=840&h=525&fp-y=1");
-}
-#modal-HY .slide-3.lazyloaded,
-#modal-HY .gallery .swiper-pagination-bullet:nth-of-type(3) {
-  background-image: url("https://lull-media.imgix.net/shop-luxe/luxe-mattress3.jpg?auto=format,compress&q=50,enhance&fit=crop&crop=focalpoint&w=840&h=525&fp-y=1");
-}
-#modal-HY .slide-4.lazyloaded,
-#modal-HY .gallery .swiper-pagination-bullet:nth-of-type(4) {
-  background-image: url("https://lull-media.imgix.net/shop-luxe/luxe-mattress4.jpg?auto=format,compress&q=50,enhance&fit=crop&crop=focalpoint&w=840&h=525&fp-y=.5");
-}
-#modal-HY .slide-5.lazyloaded,
-#modal-HY .gallery .swiper-pagination-bullet:nth-of-type(5) {
-  background-image: url("https://lull-media.imgix.net/shop-luxe/luxe-mattress5.png?auto=format,compress&q=50,enhance&fit=crop&crop=focalpoint&w=840&h=525");
+  background-image: url("./mattress-profile-model-reclining.jpg?&fp-x=.475&fp-y=.6&fp-z=1.3&w=840");
 }
 
 #modal-PR .slide-1.lazyloaded,
 #modal-PR .gallery .swiper-pagination-bullet:nth-of-type(1) {
-  background-image: url("https://lull-media.imgix.net/mattress-protector/mattress-protector-sprite-gallery.jpg?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=840&h=504&fp-x=0.175&fp-y=.5");
+  background-image: url("./mattress-protector-sprite-gallery.jpg?&w=840&h=504&fp-x=0.175&fp-y=.5");
 }
 #modal-PR .slide-2.lazyloaded,
 #modal-PR .gallery .swiper-pagination-bullet:nth-of-type(2) {
-  background-image: url("https://lull-media.imgix.net/mattress-protector/mattress-protector-sprite-gallery.jpg?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=840&h=504&fp-x=0.498&fp-y=.5");
+  background-image: url("./mattress-protector-sprite-gallery.jpg?&w=840&h=504&fp-x=0.498&fp-y=.5");
 }
 #modal-PR .slide-3.lazyloaded,
 #modal-PR .gallery .swiper-pagination-bullet:nth-of-type(3) {
-  background-image: url("https://lull-media.imgix.net/mattress-protector/mattress-protector-sprite-gallery.jpg?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=840&h=504&fp-x=0.87");
-}
-
-#modal-PW .slide-1.lazyloaded,
-#modal-PW .gallery .swiper-pagination-bullet:nth-of-type(1) {
-  background-image: url("https://lull-dev.imgix.net/pillows/gallery-01.jpg?auto=format,compress&q=50&w=840");
-}
-#modal-PW .slide-2.lazyloaded,
-#modal-PW .gallery .swiper-pagination-bullet:nth-of-type(2) {
-  background-image: url("https://lull-dev.imgix.net/pillows/gallery-02.jpg?auto=format,compress&q=50&w=840");
-}
-#modal-PW .slide-3.lazyloaded,
-#modal-PW .gallery .swiper-pagination-bullet:nth-of-type(3) {
-  background-image: url("https://lull-dev.imgix.net/pillows/gallery-03.jpg?auto=format,compress&q=50&w=840");
-}
-#modal-PW .slide-4.lazyloaded,
-#modal-PW .gallery .swiper-pagination-bullet:nth-of-type(4) {
-  background-image: url("https://lull-dev.imgix.net/pillows/gallery-04.jpg?auto=format,compress&q=50&w=840");
-}
-#modal-PW .slide-5.lazyloaded,
-#modal-PW .gallery .swiper-pagination-bullet:nth-of-type(5) {
-  background-image: url("https://lull-dev.imgix.net/pillows/gallery-05.jpg?auto=format,compress&q=50&w=840");
-}
-#modal-PW .slide-6.lazyloaded,
-#modal-PW .gallery .swiper-pagination-bullet:nth-of-type(6) {
-  background-image: url("https://lull-dev.imgix.net/pillows/gallery-06.jpg?auto=format,compress&q=50&w=840");
-}
-
-#modal-MF .slide-1.lazyloaded,
-#modal-MF .gallery .swiper-pagination-bullet:nth-of-type(1) {
-  background-image: url("https://lull-media.imgix.net/metal-bed-frame/metal-frame-01.jpg?auto=format,compress,enhance&q=50&w=840");
-}
-#modal-MF .slide-2.lazyloaded,
-#modal-MF .gallery .swiper-pagination-bullet:nth-of-type(2) {
-  background-image: url("https://lull-media.imgix.net/metal-bed-frame/metal-frame-02.jpg?auto=format,compress,enhance&q=50&w=840");
-}
-#modal-MF .slide-3.lazyloaded,
-#modal-MF .gallery .swiper-pagination-bullet:nth-of-type(3) {
-  background-image: url("https://lull-media.imgix.net/metal-bed-frame/metal-frame-03.jpg?auto=format,compress,enhance&q=50&w=840");
-}
-#modal-MF .slide-4.lazyloaded,
-#modal-MF .gallery .swiper-pagination-bullet:nth-of-type(4) {
-  background-image: url("https://lull-media.imgix.net/metal-bed-frame/metal-frame-04.jpg?auto=format,compress,enhance&q=50&w=840");
+  background-image: url("./mattress-protector-sprite-gallery.jpg?&w=840&h=504&fp-x=0.87");
 }
 
 #modal-WF .slide-1.lazyloaded,
 #modal-WF .gallery .swiper-pagination-bullet:nth-of-type(1) {
-  background-image: url("https://lull-media.imgix.net/platform-bed-frame/wood-frame-1.jpg?auto=format,compress&q=50&w=840");
+  background-image: url("./wood-frame-1.jpg&w=840");
 }
 #modal-WF .slide-2.lazyloaded,
 #modal-WF .gallery .swiper-pagination-bullet:nth-of-type(2) {
-  background-image: url("https://lull-media.imgix.net/platform-bed-frame/wood-frame-2.jpg?auto=format,compress&q=50&w=840");
+  background-image: url("./wood-frame-2.jpg&w=840");
 }
 #modal-WF .slide-3.lazyloaded,
 #modal-WF .gallery .swiper-pagination-bullet:nth-of-type(3) {
-  background-image: url("https://lull-media.imgix.net/platform-bed-frame/wood-frame-3.jpg?auto=format,compress&q=50&w=840");
+  background-image: url("./wood-frame-3.jpg&w=840");
 }
 #modal-WF .slide-4.lazyloaded,
 #modal-WF .gallery .swiper-pagination-bullet:nth-of-type(4) {
-  background-image: url("https://lull-media.imgix.net/platform-bed-frame/wood-frame-4.jpg?auto=format,compress&q=50&w=840");
+  background-image: url("./wood-frame-4.jpg&w=840");
 }
 #modal-WF .slide-5.lazyloaded,
 #modal-WF .gallery .swiper-pagination-bullet:nth-of-type(5) {
-  background-image: url("https://lull-media.imgix.net/platform-bed-frame/wood-frame-5.jpg?auto=format,compress&q=50&w=840");
+  background-image: url("./wood-frame-5.jpg&w=840");
 }
 
 #modal-CB .slide-1.lazyloaded,
 #modal-CB .gallery .swiper-pagination-bullet:nth-of-type(1), #modal-CS .slide-1.lazyloaded,
 #modal-CS .gallery .swiper-pagination-bullet:nth-of-type(1), #modal-OC .slide-1.lazyloaded,
 #modal-OC .gallery .swiper-pagination-bullet:nth-of-type(1) {
-  background-image: url("https://lull-media.imgix.net/sheets/sheets-01-hero-BW.jpg?auto=format,compress&q=50&w=840");
+  background-image: url("./sheets-01-hero-BW.jpg&w=840");
 }
 #modal-CB .slide-2.lazyloaded,
 #modal-CB .gallery .swiper-pagination-bullet:nth-of-type(2), #modal-CS .slide-2.lazyloaded,
 #modal-CS .gallery .swiper-pagination-bullet:nth-of-type(2), #modal-OC .slide-2.lazyloaded,
 #modal-OC .gallery .swiper-pagination-bullet:nth-of-type(2) {
-  background-image: url("https://lull-media.imgix.net/sheets/sheets-duvet-BW.jpg?auto=format,compress&q=50&w=840");
+  background-image: url("./sheets-duvet-BW.jpg&w=840");
 }
 #modal-CB .slide-3.lazyloaded,
 #modal-CB .gallery .swiper-pagination-bullet:nth-of-type(3), #modal-CS .slide-3.lazyloaded,
 #modal-CS .gallery .swiper-pagination-bullet:nth-of-type(3), #modal-OC .slide-3.lazyloaded,
 #modal-OC .gallery .swiper-pagination-bullet:nth-of-type(3) {
-  background-image: url("https://lull-media.imgix.net/sheets/sheets-corner-BW.jpg?auto=format,compress&q=50&w=840");
+  background-image: url("./sheets-corner-BW.jpg&w=840");
 }
 #modal-CB .slide-4.lazyloaded,
 #modal-CB .gallery .swiper-pagination-bullet:nth-of-type(4), #modal-CS .slide-4.lazyloaded,
 #modal-CS .gallery .swiper-pagination-bullet:nth-of-type(4), #modal-OC .slide-4.lazyloaded,
 #modal-OC .gallery .swiper-pagination-bullet:nth-of-type(4) {
-  background-image: url("https://lull-media.imgix.net/sheets/sheets-detail-BW.jpg?auto=format,compress&q=50&w=840");
-}
-
-#modal-DV .slide-1.lazyloaded,
-#modal-DV .gallery .swiper-pagination-bullet:nth-of-type(1) {
-  background-image: url("https://lull-media.imgix.net/duvet/gallery-01.jpg?auto=format,compress&q=50&w=840");
-}
-#modal-DV .slide-2.lazyloaded,
-#modal-DV .gallery .swiper-pagination-bullet:nth-of-type(2) {
-  background-image: url("https://lull-media.imgix.net/duvet/gallery-02.jpg?auto=format,compress&q=50&w=840");
-}
-#modal-DV .slide-3.lazyloaded,
-#modal-DV .gallery .swiper-pagination-bullet:nth-of-type(3) {
-  background-image: url("https://lull-media.imgix.net/duvet/gallery-03.jpg?auto=format,compress&q=50&w=840");
-}
-#modal-DV .slide-4.lazyloaded,
-#modal-DV .gallery .swiper-pagination-bullet:nth-of-type(4) {
-  background-image: url("https://lull-media.imgix.net/duvet/duvet-folded.png?auto=format,compress&q=50&w=840");
-}
-#modal-DV .slide-5.lazyloaded,
-#modal-DV .gallery .swiper-pagination-bullet:nth-of-type(5) {
-  background-image: url("https://lull-media.imgix.net/duvet/gallery-05.jpg?auto=format,compress&q=50&w=840");
-}
-#modal-DV .slide-6.lazyloaded,
-#modal-DV .gallery .swiper-pagination-bullet:nth-of-type(6) {
-  background-image: url("https://lull-media.imgix.net/duvet/gallery-06.jpg?auto=format,compress&q=50&w=840");
-}
-
-#modal-FO .slide-1.lazyloaded,
-#modal-FO .gallery .swiper-pagination-bullet:nth-of-type(1) {
-  background-image: url("https://lull-media.imgix.net/foundation/foundation-1.jpg?auto=format,compress&q=50&w=840");
-}
-#modal-FO .slide-2.lazyloaded,
-#modal-FO .gallery .swiper-pagination-bullet:nth-of-type(2) {
-  background-image: url("https://lull-media.imgix.net/foundation/foundation-2.jpg?auto=format,compress&q=50&w=840");
-}
-#modal-FO .slide-3.lazyloaded,
-#modal-FO .gallery .swiper-pagination-bullet:nth-of-type(3) {
-  background-image: url("https://lull-media.imgix.net/foundation/foundation-2.jpg?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=840&h=525&fp-x=.515&fp-y=.62&fp-z=3");
-}
-#modal-FO .slide-4.lazyloaded,
-#modal-FO .gallery .swiper-pagination-bullet:nth-of-type(4) {
-  background-image: url("https://lull-media.imgix.net/foundation/foundation-3.jpg?auto=format,compress&q=50&w=840");
-}
-#modal-FO .slide-5.lazyloaded,
-#modal-FO .gallery .swiper-pagination-bullet:nth-of-type(5) {
-  background-image: url("https://lull-media.imgix.net/foundation/foundation-4.jpg?auto=format,compress&q=50&w=840");
-}
-
-#modal-FL .slide-1.lazyloaded,
-#modal-FL .gallery .swiper-pagination-bullet:nth-of-type(1) {
-  background-image: url("https://lull-media.imgix.net/foundation/foundation-1b.jpg?auto=format,compress&q=50&w=840");
-}
-#modal-FL .slide-2.lazyloaded,
-#modal-FL .gallery .swiper-pagination-bullet:nth-of-type(2) {
-  background-image: url("https://lull-media.imgix.net/foundation/foundation-2b.jpg?auto=format,compress&q=50&w=840");
-}
-#modal-FL .slide-3.lazyloaded,
-#modal-FL .gallery .swiper-pagination-bullet:nth-of-type(3) {
-  background-image: url("https://lull-media.imgix.net/foundation/foundation-3b.jpg?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=840");
+  background-image: url("./sheets-detail-BW.jpg&w=840");
 }
 
 .modal-header {

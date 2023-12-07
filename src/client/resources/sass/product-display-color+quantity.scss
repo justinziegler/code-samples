@@ -394,50 +394,50 @@ li.color,
           font-size: 1.4rem;
         }
       }
-      &[data-type='MA'], &[data-type='PM'], &[data-type='HY'] {
-        background-size: 70%;
-        background-position: 50% 15px;
-        background-repeat: no-repeat;
-        padding: 65px 0 10px 0;
-        background-color: rgba(#000, .025);
-        transition: .2s;
-        @include mq(xsm) {
-          background-position: 50% vwl(15px);
-          padding: vwl(60px) 0 vwl(15px) 0;
-        }
-        @include mq(xxs) {
-          background-position: 50% vwp(15px);
-          padding: vwp(60px) 0 vwp(15px) 0;
-        }
-        @include mq(md) {
-          background-size: 60%;
-          padding: 70px 0 15px 0;
-        }
-        &[data-active='true'],
-        &:focus {
-          &::before {
-            border-color: $navy;
-          }
-        }
-        &[data-active='true'] {
-          // background-color: tint(#23527c, 95%);
-          background-color: $white;
-          border-color: $navy;
-        }
-      }
-      &[data-type='MA'] {
-        background-image: url('https://lull-media.imgix.net/shop/mattress-no-shadow.png#{$imgixDefaults}&w=350');
-        background-position: 50% 20px;
-        @include mq(xsm) {
-          background-position: 50% vwl(18px);
-        }
-        @include mq(xxs) {
-          background-position: 50% vwp(18px);
-        }
-      }
-      &[data-type='PM'] {
-        background-image: url('https://lull-media.imgix.net/shop/original-premium-label-side-v2.png#{$imgixDefaults}&w=350');
-      }
+      // &[data-type='MA'], &[data-type='PM'], &[data-type='HY'] {
+      //   background-size: 70%;
+      //   background-position: 50% 15px;
+      //   background-repeat: no-repeat;
+      //   padding: 65px 0 10px 0;
+      //   background-color: rgba(#000, .025);
+      //   transition: .2s;
+      //   @include mq(xsm) {
+      //     background-position: 50% vwl(15px);
+      //     padding: vwl(60px) 0 vwl(15px) 0;
+      //   }
+      //   @include mq(xxs) {
+      //     background-position: 50% vwp(15px);
+      //     padding: vwp(60px) 0 vwp(15px) 0;
+      //   }
+      //   @include mq(md) {
+      //     background-size: 60%;
+      //     padding: 70px 0 15px 0;
+      //   }
+      //   &[data-active='true'],
+      //   &:focus {
+      //     &::before {
+      //       border-color: $navy;
+      //     }
+      //   }
+      //   &[data-active='true'] {
+      //     // background-color: tint(#23527c, 95%);
+      //     background-color: $white;
+      //     border-color: $navy;
+      //   }
+      // }
+      // &[data-type='MA'] {
+      //   background-image: url('https://lull-media.imgix.net/shop/mattress-no-shadow.png?&w=350');
+      //   background-position: 50% 20px;
+      //   @include mq(xsm) {
+      //     background-position: 50% vwl(18px);
+      //   }
+      //   @include mq(xxs) {
+      //     background-position: 50% vwp(18px);
+      //   }
+      // }
+      // &[data-type='PM'] {
+      //   background-image: url('https://lull-media.imgix.net/shop/original-premium-label-side-v2.png?&w=350');
+      // }
     }
     &.inline {
       li {
@@ -453,107 +453,107 @@ li.color,
         }
       }
     }
-    &[data-product-types='3'] {
-      justify-content: space-evenly;
-      li {
-        width: 33.33333333%;
-        &[data-type='MA'], &[data-type='PM'], &[data-type='HY'] {
-          padding: 42.5px 0 5px 0;
-          background-position: 50% 10px;
-          @include mq(xsm) {
-            padding: vwl(42.5px) 0 vwl(5px) 0;
-            background-position: 50% vwl(10px);
-          }
-          @include mq(xxs) {
-            padding: vwp(42.5px) 0 vwp(5px) 0;
-            background-position: 50% vwp(10px);
-          }
-          @include mq(md) {
-            padding: 50px 0 10px 0;
-            background-position: 50% 12.5px;
-          }
-          @include mq(lg) {
-            padding-top: 60px;
-            background-size: 73%;
-          }
-        }
-        &[data-type='MA'] {
-          background-position: 50% 13px;
-          @include mq(xsm) {
-            background-position: 50% vwl(13px);
-          }
-          @include mq(xxs) {
-            background-position: 50% vwp(13px);
-          }
-          @include mq(md) {
-            background-position: 50% 16px;
-          }
-        }
-        &[data-type='HY'] {
-          background-image: url('https://lull-media.imgix.net/checkout/luxe-hybrid-profile-logo-full.png#{$imgixDefaults}#{$imgixCrop}&w=350&h=150');
-          background-size: 72.5%;
-          background-position: 50% 7px;
-          @include mq(xsm) {
-            background-position: 50% vwl(7px);
-          }
-          @include mq(xxs) {
-            background-position: 50% vwp(7px);
-          }
-          @include mq(md) {
-            background-position: 50% 10px;
-          }
-        }
-        &::before {
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          border-radius: 5px;
-          // border-color: #ccc; 
-        }
-        &:first-of-type, &:first-of-type::before {
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-        }
-        &:nth-of-type(even), &:nth-of-type(even)::before {
-          border-radius: 0;
-        }
-        &:last-of-type, &:last-of-type::before {
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
-        }
-        span {
-          font-size: 1.1rem;
-          @include mq(xsm) {
-            font-size: vwl(10px);
-          }
-          @include mq(xxs) {
-            font-size: vwp(10px);
-          }
-          @include mq(md) {
-            font-size: 1.3rem;
-          }
-          @include mq(lg) {
-            font-size: 1.4rem;
-          }
-        }
-        label {
-          font-size: 1rem;
-          @include mq(xsm) {
-            font-size: vwl(9px);
-          }
-          @include mq(xxs) {
-            font-size: vwp(9px);
-          }
-          @include mq(md) {
-            font-size: 1.2rem;
-          }
-          @include mq(lg) {
-            font-size: 1.3rem;
-          }
-        }
-      }
-    }
+    // &[data-product-types='3'] {
+    //   justify-content: space-evenly;
+    //   li {
+    //     width: 33.33333333%;
+    //     &[data-type='MA'], &[data-type='PM'], &[data-type='HY'] {
+    //       padding: 42.5px 0 5px 0;
+    //       background-position: 50% 10px;
+    //       @include mq(xsm) {
+    //         padding: vwl(42.5px) 0 vwl(5px) 0;
+    //         background-position: 50% vwl(10px);
+    //       }
+    //       @include mq(xxs) {
+    //         padding: vwp(42.5px) 0 vwp(5px) 0;
+    //         background-position: 50% vwp(10px);
+    //       }
+    //       @include mq(md) {
+    //         padding: 50px 0 10px 0;
+    //         background-position: 50% 12.5px;
+    //       }
+    //       @include mq(lg) {
+    //         padding-top: 60px;
+    //         background-size: 73%;
+    //       }
+    //     }
+    //     &[data-type='MA'] {
+    //       background-position: 50% 13px;
+    //       @include mq(xsm) {
+    //         background-position: 50% vwl(13px);
+    //       }
+    //       @include mq(xxs) {
+    //         background-position: 50% vwp(13px);
+    //       }
+    //       @include mq(md) {
+    //         background-position: 50% 16px;
+    //       }
+    //     }
+    //     &[data-type='HY'] {
+    //       background-image: url('https://lull-media.imgix.net/checkout/luxe-hybrid-profile-logo-full.png?w=350&h=150');
+    //       background-size: 72.5%;
+    //       background-position: 50% 7px;
+    //       @include mq(xsm) {
+    //         background-position: 50% vwl(7px);
+    //       }
+    //       @include mq(xxs) {
+    //         background-position: 50% vwp(7px);
+    //       }
+    //       @include mq(md) {
+    //         background-position: 50% 10px;
+    //       }
+    //     }
+    //     &::before {
+    //       top: 0;
+    //       left: 0;
+    //       right: 0;
+    //       bottom: 0;
+    //       border-radius: 5px;
+    //       // border-color: #ccc; 
+    //     }
+    //     &:first-of-type, &:first-of-type::before {
+    //       border-top-right-radius: 0;
+    //       border-bottom-right-radius: 0;
+    //     }
+    //     &:nth-of-type(even), &:nth-of-type(even)::before {
+    //       border-radius: 0;
+    //     }
+    //     &:last-of-type, &:last-of-type::before {
+    //       border-top-left-radius: 0;
+    //       border-bottom-left-radius: 0;
+    //     }
+    //     span {
+    //       font-size: 1.1rem;
+    //       @include mq(xsm) {
+    //         font-size: vwl(10px);
+    //       }
+    //       @include mq(xxs) {
+    //         font-size: vwp(10px);
+    //       }
+    //       @include mq(md) {
+    //         font-size: 1.3rem;
+    //       }
+    //       @include mq(lg) {
+    //         font-size: 1.4rem;
+    //       }
+    //     }
+    //     label {
+    //       font-size: 1rem;
+    //       @include mq(xsm) {
+    //         font-size: vwl(9px);
+    //       }
+    //       @include mq(xxs) {
+    //         font-size: vwp(9px);
+    //       }
+    //       @include mq(md) {
+    //         font-size: 1.2rem;
+    //       }
+    //       @include mq(lg) {
+    //         font-size: 1.3rem;
+    //       }
+    //     }
+    //   }
+    // }
   }
   &[data-order='reverse'] {
     .type-select {
@@ -638,10 +638,10 @@ $imgixCrop: '&fit=crop&crop=focalpoint';
       + .type-select {
         li {
           &[data-type='UU'] {
-            background-image: url('#{$imgixUrl}/swatch-UU-CS.jpg#{$imgixDefaults}#{$imgixCrop}&w=286&h=84&fp-y=0');
+            background-image: url('./frame/swatch-UU-CS.jpg?w=286&h=84&fp-y=0');
           }
           &[data-type='TU'] {
-            background-image: url('#{$imgixUrl}/swatch-TU-CS.jpg#{$imgixDefaults}#{$imgixCrop}&w=286&h=84&fp-y=0');
+            background-image: url('./frame/swatch-TU-CS.jpg?w=286&h=84&fp-y=0');
           }
         }
       }
@@ -650,10 +650,10 @@ $imgixCrop: '&fit=crop&crop=focalpoint';
       + .type-select {
         li {
           &[data-type='UU'] {
-            background-image: url('#{$imgixUrl}/swatch-UU-DS.jpg#{$imgixDefaults}#{$imgixCrop}&w=286&h=84&fp-y=0');
+            background-image: url('./frame/swatch-UU-DS.jpg?w=286&h=84&fp-y=0');
           }
           &[data-type='TU'] {
-            background-image: url('#{$imgixUrl}/swatch-TU-DS.jpg#{$imgixDefaults}#{$imgixCrop}&w=286&h=84&fp-y=0');
+            background-image: url('./frame/swatch-TU-DS.jpg?w=286&h=84&fp-y=0');
           }
         }
       }

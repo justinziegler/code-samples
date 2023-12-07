@@ -816,7 +816,7 @@ div[id^=upsell-modal-OP] .swiper-pagination-bullets .swiper-pagination-bullet:nt
 }
 @media (min-width: 992px) {
   .upsell-modal .star-rating .reviews-star-gauge,
-.upsell-modal .star-rating .reviews-star-average {
+  .upsell-modal .star-rating .reviews-star-average {
     height: 14px;
   }
 }
@@ -828,7 +828,7 @@ div[id^=upsell-modal-OP] .swiper-pagination-bullets .swiper-pagination-bullet:nt
 }
 @media (min-width: 992px) {
   .upsell-modal .star-rating .reviews-star-gauge::after,
-.upsell-modal .star-rating .reviews-star-average {
+  .upsell-modal .star-rating .reviews-star-average {
     background-size: 18px 14px;
   }
 }
@@ -1057,6 +1057,9 @@ div[id^=upsell-modal-OP] .swiper-pagination-bullets .swiper-pagination-bullet:nt
     border-radius: 0 6px 6px 0;
   }
 }
+.upsell-modal .swiper-slide {
+  background-repeat: no-repeat;
+}
 @media (min-width: 768px) {
   .upsell-modal .swiper-slide {
     padding-bottom: 0;
@@ -1074,66 +1077,6 @@ div[id^=upsell-modal-OP] .swiper-pagination-bullets .swiper-pagination-bullet:nt
   }
 }
 
-div[id^=upsell-modal-WF] .slide-1.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/platform-bed-frame/wood-frame-1.jpg?auto=format,compress&q=50&w=840");
-}
-div[id^=upsell-modal-WF] .slide-2.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/platform-bed-frame/wood-frame-2.jpg?auto=format,compress&q=50&w=840");
-}
-div[id^=upsell-modal-WF] .slide-3.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/platform-bed-frame/wood-frame-3.jpg?auto=format,compress&q=50&w=840");
-}
-div[id^=upsell-modal-WF] .slide-4.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/platform-bed-frame/wood-frame-4.jpg?auto=format,compress&q=50&w=840");
-}
-div[id^=upsell-modal-WF] .slide-5.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/platform-bed-frame/wood-frame-5.jpg?auto=format,compress&q=50&w=840");
-}
-@media (min-width: 768px) {
-  div[id^=upsell-modal-WF] .slide-1.lazyloaded {
-    background-image: url("https://lull-media.imgix.net/platform-bed-frame/wood-frame-1.jpg?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=640&h=950&fp-x=0");
-  }
-  div[id^=upsell-modal-WF] .slide-2.lazyloaded {
-    background-image: url("https://lull-media.imgix.net/platform-bed-frame/wood-frame-2.jpg?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=640&h=950&fp-x=.25");
-  }
-  div[id^=upsell-modal-WF] .slide-3.lazyloaded {
-    background-image: url("https://lull-media.imgix.net/platform-bed-frame/wood-frame-3.jpg?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=640&h=950&fp-x=.25");
-  }
-  div[id^=upsell-modal-WF] .slide-4.lazyloaded {
-    background-image: url("https://lull-media.imgix.net/platform-bed-frame/wood-frame-4.jpg?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=640&h=950&fp-x=.3");
-  }
-  div[id^=upsell-modal-WF] .slide-5.lazyloaded {
-    background-image: url("https://lull-media.imgix.net/platform-bed-frame/wood-frame-5.jpg?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=640&h=950&fp-x=.475");
-  }
-}
-
-div[id^=upsell-modal-FO][data-x-bundle=true] .slide-1.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/foundation/foundation-1b.jpg?auto=format,compress&q=50&w=840");
-}
-div[id^=upsell-modal-FO][data-x-bundle=true] .slide-2.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/foundation/foundation-2b.jpg?auto=format,compress&q=50&w=840");
-}
-div[id^=upsell-modal-FO][data-x-bundle=true] .slide-3.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/foundation/foundation-3b.jpg?auto=format,compress&q=50&w=840");
-}
-div[id^=upsell-modal-FO][data-x-bundle=true] .slide-4.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/foundation/foundation-4.jpg?auto=format,compress&q=50&w=840");
-}
-@media (min-width: 768px) {
-  div[id^=upsell-modal-FO][data-x-bundle=true] .slide-1.lazyloaded {
-    background-image: url("https://lull-media.imgix.net/foundation/foundation-1b.jpg?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=640&h=950&fp-x=.27&fp-y=1&fp-z=1.05");
-  }
-  div[id^=upsell-modal-FO][data-x-bundle=true] .slide-2.lazyloaded {
-    background-image: url("https://lull-media.imgix.net/foundation/foundation-2b.jpg?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=640&h=950&fp-x=.725");
-  }
-  div[id^=upsell-modal-FO][data-x-bundle=true] .slide-3.lazyloaded {
-    background-image: url("https://lull-media.imgix.net/foundation/foundation-3b.jpg?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=640&h=950&fp-x=.5");
-  }
-  div[id^=upsell-modal-FO][data-x-bundle=true] .slide-4.lazyloaded {
-    background-image: url("https://lull-media.imgix.net/foundation/foundation-4.jpg?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=640&h=950&fp-x=0");
-  }
-}
-
 div[id^=upsell-modal-BD].upsell-modal .swiper-container,
 div[id^=upsell-modal-CD].upsell-modal .swiper-container,
 div[id^=upsell-modal-OD].upsell-modal .swiper-container,
@@ -1144,21 +1087,21 @@ div[id^=upsell-modal-OP].upsell-modal .swiper-container {
 }
 @media (max-width: 767px) {
   div[id^=upsell-modal-BD].upsell-modal .swiper-container,
-div[id^=upsell-modal-CD].upsell-modal .swiper-container,
-div[id^=upsell-modal-OD].upsell-modal .swiper-container,
-div[id^=upsell-modal-BP].upsell-modal .swiper-container,
-div[id^=upsell-modal-CP].upsell-modal .swiper-container,
-div[id^=upsell-modal-OP].upsell-modal .swiper-container {
+  div[id^=upsell-modal-CD].upsell-modal .swiper-container,
+  div[id^=upsell-modal-OD].upsell-modal .swiper-container,
+  div[id^=upsell-modal-BP].upsell-modal .swiper-container,
+  div[id^=upsell-modal-CP].upsell-modal .swiper-container,
+  div[id^=upsell-modal-OP].upsell-modal .swiper-container {
     padding: 0 0 5.6338028169vw 0;
   }
 }
 @media (max-width: 543px) {
   div[id^=upsell-modal-BD].upsell-modal .swiper-container,
-div[id^=upsell-modal-CD].upsell-modal .swiper-container,
-div[id^=upsell-modal-OD].upsell-modal .swiper-container,
-div[id^=upsell-modal-BP].upsell-modal .swiper-container,
-div[id^=upsell-modal-CP].upsell-modal .swiper-container,
-div[id^=upsell-modal-OP].upsell-modal .swiper-container {
+  div[id^=upsell-modal-CD].upsell-modal .swiper-container,
+  div[id^=upsell-modal-OD].upsell-modal .swiper-container,
+  div[id^=upsell-modal-BP].upsell-modal .swiper-container,
+  div[id^=upsell-modal-CP].upsell-modal .swiper-container,
+  div[id^=upsell-modal-OP].upsell-modal .swiper-container {
     padding: 0 0 10vw 0;
   }
 }
@@ -1172,21 +1115,21 @@ div[id^=upsell-modal-OP].upsell-modal .swiper-wrapper {
 }
 @media (max-width: 767px) {
   div[id^=upsell-modal-BD].upsell-modal .swiper-wrapper,
-div[id^=upsell-modal-CD].upsell-modal .swiper-wrapper,
-div[id^=upsell-modal-OD].upsell-modal .swiper-wrapper,
-div[id^=upsell-modal-BP].upsell-modal .swiper-wrapper,
-div[id^=upsell-modal-CP].upsell-modal .swiper-wrapper,
-div[id^=upsell-modal-OP].upsell-modal .swiper-wrapper {
+  div[id^=upsell-modal-CD].upsell-modal .swiper-wrapper,
+  div[id^=upsell-modal-OD].upsell-modal .swiper-wrapper,
+  div[id^=upsell-modal-BP].upsell-modal .swiper-wrapper,
+  div[id^=upsell-modal-CP].upsell-modal .swiper-wrapper,
+  div[id^=upsell-modal-OP].upsell-modal .swiper-wrapper {
     height: calc(100% - 5.6338028169vw);
   }
 }
 @media (max-width: 543px) {
   div[id^=upsell-modal-BD].upsell-modal .swiper-wrapper,
-div[id^=upsell-modal-CD].upsell-modal .swiper-wrapper,
-div[id^=upsell-modal-OD].upsell-modal .swiper-wrapper,
-div[id^=upsell-modal-BP].upsell-modal .swiper-wrapper,
-div[id^=upsell-modal-CP].upsell-modal .swiper-wrapper,
-div[id^=upsell-modal-OP].upsell-modal .swiper-wrapper {
+  div[id^=upsell-modal-CD].upsell-modal .swiper-wrapper,
+  div[id^=upsell-modal-OD].upsell-modal .swiper-wrapper,
+  div[id^=upsell-modal-BP].upsell-modal .swiper-wrapper,
+  div[id^=upsell-modal-CP].upsell-modal .swiper-wrapper,
+  div[id^=upsell-modal-OP].upsell-modal .swiper-wrapper {
     height: calc(100% - 10vw);
   }
 }
@@ -1204,11 +1147,11 @@ div[id^=upsell-modal-OP] .swiper-pagination-bullets .swiper-pagination-bullet {
 }
 @media (max-width: 767px) {
   div[id^=upsell-modal-BD] .swiper-pagination-bullets .swiper-pagination-bullet,
-div[id^=upsell-modal-CD] .swiper-pagination-bullets .swiper-pagination-bullet,
-div[id^=upsell-modal-OD] .swiper-pagination-bullets .swiper-pagination-bullet,
-div[id^=upsell-modal-BP] .swiper-pagination-bullets .swiper-pagination-bullet,
-div[id^=upsell-modal-CP] .swiper-pagination-bullets .swiper-pagination-bullet,
-div[id^=upsell-modal-OP] .swiper-pagination-bullets .swiper-pagination-bullet {
+  div[id^=upsell-modal-CD] .swiper-pagination-bullets .swiper-pagination-bullet,
+  div[id^=upsell-modal-OD] .swiper-pagination-bullets .swiper-pagination-bullet,
+  div[id^=upsell-modal-BP] .swiper-pagination-bullets .swiper-pagination-bullet,
+  div[id^=upsell-modal-CP] .swiper-pagination-bullets .swiper-pagination-bullet,
+  div[id^=upsell-modal-OP] .swiper-pagination-bullets .swiper-pagination-bullet {
     width: 4.9295774648vw;
     height: 4.9295774648vw;
     margin: 0 0.8802816901vw;
@@ -1216,11 +1159,11 @@ div[id^=upsell-modal-OP] .swiper-pagination-bullets .swiper-pagination-bullet {
 }
 @media (max-width: 543px) {
   div[id^=upsell-modal-BD] .swiper-pagination-bullets .swiper-pagination-bullet,
-div[id^=upsell-modal-CD] .swiper-pagination-bullets .swiper-pagination-bullet,
-div[id^=upsell-modal-OD] .swiper-pagination-bullets .swiper-pagination-bullet,
-div[id^=upsell-modal-BP] .swiper-pagination-bullets .swiper-pagination-bullet,
-div[id^=upsell-modal-CP] .swiper-pagination-bullets .swiper-pagination-bullet,
-div[id^=upsell-modal-OP] .swiper-pagination-bullets .swiper-pagination-bullet {
+  div[id^=upsell-modal-CD] .swiper-pagination-bullets .swiper-pagination-bullet,
+  div[id^=upsell-modal-OD] .swiper-pagination-bullets .swiper-pagination-bullet,
+  div[id^=upsell-modal-BP] .swiper-pagination-bullets .swiper-pagination-bullet,
+  div[id^=upsell-modal-CP] .swiper-pagination-bullets .swiper-pagination-bullet,
+  div[id^=upsell-modal-OP] .swiper-pagination-bullets .swiper-pagination-bullet {
     width: 8.75vw;
     height: 8.75vw;
     margin: 0 1.5625vw;
@@ -1332,42 +1275,41 @@ div[id^=upsell-modal-CD] .swiper-slide,
 div[id^=upsell-modal-OD] .swiper-slide {
   background-size: 80%;
   background-position: 50% 55%;
-  background-repeat: no-repeat;
 }
 div[id^=upsell-modal-BD] .slide-1.lazyloaded,
 div[id^=upsell-modal-CD] .slide-1.lazyloaded,
 div[id^=upsell-modal-OD] .slide-1.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/duvet-cover-BW.png?auto=format,compress&q=50&w=672");
+  background-image: url("./sheets/duvet-cover-BW.png?&w=672");
 }
 div[id^=upsell-modal-BD] .slide-2.lazyloaded,
 div[id^=upsell-modal-CD] .slide-2.lazyloaded,
 div[id^=upsell-modal-OD] .slide-2.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/duvet-cover-QG.png?auto=format,compress&q=50&w=672");
+  background-image: url("./sheets/duvet-cover-QG.png?&w=672");
 }
 div[id^=upsell-modal-BD] .slide-3.lazyloaded,
 div[id^=upsell-modal-CD] .slide-3.lazyloaded,
 div[id^=upsell-modal-OD] .slide-3.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/duvet-cover-GG.png?auto=format,compress&q=50&w=672");
+  background-image: url("./sheets/duvet-cover-GG.png?&w=672");
 }
 div[id^=upsell-modal-BD] .slide-4.lazyloaded,
 div[id^=upsell-modal-CD] .slide-4.lazyloaded,
 div[id^=upsell-modal-OD] .slide-4.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/duvet-cover-MB.png?auto=format,compress&q=50&w=672");
+  background-image: url("./sheets/duvet-cover-MB.png?&w=672");
 }
 div[id^=upsell-modal-BD] .slide-5.lazyloaded,
 div[id^=upsell-modal-CD] .slide-5.lazyloaded,
 div[id^=upsell-modal-OD] .slide-5.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/duvet-cover-PA.png?auto=format,compress&q=50&w=672");
+  background-image: url("./sheets/duvet-cover-PA.png?&w=672");
 }
 div[id^=upsell-modal-BD] .slide-6.lazyloaded,
 div[id^=upsell-modal-CD] .slide-6.lazyloaded,
 div[id^=upsell-modal-OD] .slide-6.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/duvet-cover-WP.png?auto=format,compress&q=50&w=672");
+  background-image: url("./sheets/duvet-cover-WP.png?&w=672");
 }
 div[id^=upsell-modal-BD] .slide-7.lazyloaded,
 div[id^=upsell-modal-CD] .slide-7.lazyloaded,
 div[id^=upsell-modal-OD] .slide-7.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/duvet-cover-CD.png?auto=format,compress&q=50&w=672");
+  background-image: url("./sheets/duvet-cover-CD.png?&w=672");
 }
 
 div[id^=upsell-modal-BP] .swiper-slide,
@@ -1378,43 +1320,43 @@ div[id^=upsell-modal-OP] .swiper-slide {
 }
 @media (max-width: 767px) {
   div[id^=upsell-modal-BP] .swiper-slide,
-div[id^=upsell-modal-CP] .swiper-slide,
-div[id^=upsell-modal-OP] .swiper-slide {
+  div[id^=upsell-modal-CP] .swiper-slide,
+  div[id^=upsell-modal-OP] .swiper-slide {
     background-size: 65%;
   }
 }
 div[id^=upsell-modal-BP] .slide-1.lazyloaded,
 div[id^=upsell-modal-CP] .slide-1.lazyloaded,
 div[id^=upsell-modal-OP] .slide-1.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/pillowcase-BW-horiz.png?auto=format,compress&q=50&w=672");
+  background-image: url("./sheets/pillowcase-BW-horiz.png?&w=672");
 }
 div[id^=upsell-modal-BP] .slide-2.lazyloaded,
 div[id^=upsell-modal-CP] .slide-2.lazyloaded,
 div[id^=upsell-modal-OP] .slide-2.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/pillowcase-QG-horiz.png?auto=format,compress&q=50&w=672");
+  background-image: url("./sheets/pillowcase-QG-horiz.png?&w=672");
 }
 div[id^=upsell-modal-BP] .slide-3.lazyloaded,
 div[id^=upsell-modal-CP] .slide-3.lazyloaded,
 div[id^=upsell-modal-OP] .slide-3.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/pillowcase-GG-horiz.png?auto=format,compress&q=50&w=672");
+  background-image: url("./sheets/pillowcase-GG-horiz.png?&w=672");
 }
 div[id^=upsell-modal-BP] .slide-4.lazyloaded,
 div[id^=upsell-modal-CP] .slide-4.lazyloaded,
 div[id^=upsell-modal-OP] .slide-4.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/pillowcase-MB-horiz.png?auto=format,compress&q=50&w=672");
+  background-image: url("./sheets/pillowcase-MB-horiz.png?&w=672");
 }
 div[id^=upsell-modal-BP] .slide-5.lazyloaded,
 div[id^=upsell-modal-CP] .slide-5.lazyloaded,
 div[id^=upsell-modal-OP] .slide-5.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/pillowcase-PA-horiz.png?auto=format,compress&q=50&w=672");
+  background-image: url("./sheets/pillowcase-PA-horiz.png?&w=672");
 }
 div[id^=upsell-modal-BP] .slide-6.lazyloaded,
 div[id^=upsell-modal-CP] .slide-6.lazyloaded,
 div[id^=upsell-modal-OP] .slide-6.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/pillowcase-WP-horiz.png?auto=format,compress&q=50&w=672");
+  background-image: url("./sheets/pillowcase-WP-horiz.png?&w=672");
 }
 div[id^=upsell-modal-BP] .slide-7.lazyloaded,
 div[id^=upsell-modal-CP] .slide-7.lazyloaded,
 div[id^=upsell-modal-OP] .slide-7.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/pillowcase-CD-horiz.png?auto=format,compress&q=50&w=672");
+  background-image: url("./sheets/pillowcase-CD-horiz.png?&w=672");
 }

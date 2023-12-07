@@ -9,16 +9,11 @@
 @import 'animate/bouncing-entrances/bounceInDown';
 @import "animate/sliding-entrances/slideInUpSubtle"; 
 
-$imgixUrl: 'https://lull-media.imgix.net/shop-luxe';
-$imgixCrop: '&fit=crop&crop=focalpoint';
-$imgixDefaults: '?auto=format,compress&q=50,enhance';
-
-$imgixUrl: 'https://lull-media.imgix.net/luxe-hybrid-mattress';
 .made-simple {
   background-color: #fff;
   padding: 15px 0;
   padding: vwp(15px) 0;
-  background-image: url('#{$imgixUrl}/luxe-vp-couple.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=950&fp-y=1&fp-z=1.16');
+  background-image: url('./luxe-vp-couple-portrait.jpg');
   background-size: 100%;
   background-position: 50% 0%;
   background-repeat: no-repeat;
@@ -28,31 +23,27 @@ $imgixUrl: 'https://lull-media.imgix.net/luxe-hybrid-mattress';
   @include mq(xs) {
     background-color: #f8f8f8;
     padding: vwl(15px) 0;
-    background-image: url('#{$imgixUrl}/luxe-vp-couple.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=750&fp-y=1&fp-x=0&fp-z=1.02');
+    background-image: url('./luxe-vp-couple-landscape.jpg');
     background-size: auto 100%;
     background-position: 100% 100%;
   }
   @include mq(sm) {
     padding: 30px 0 45px 0;
-    background-image: url('#{$imgixUrl}/luxe-vp-couple.jpg#{$imgixDefaults}#{$imgixCrop}&w=1000&h=900&fp-y=1&fp-x=0');
+    background-image: url('./luxe-vp-couple-md.jpg');
     background-size: 500px;
     background-position: calc(50% + 175px) 100%;
   }
   @include mq(md) {
     background-image: none;
     padding: 75px 0;
-    background-image: url('#{$imgixUrl}/luxe-vp-couple.jpg#{$imgixDefaults}&w=1400');
+    background-image: url('./luxe-vp-couple-lg.jpg');
     background-size: 700px;
     background-position: calc(50% + 230px) 100%;
   }
   @include mq(lg) {
     padding: 105px 0;
-    background-image: url('#{$imgixUrl}/luxe-vp-couple.jpg#{$imgixDefaults}&w=815');
     background-size: 815px;
     background-position: calc(50% + 300px) 100%;
-    @include retina {
-      background-image: url('#{$imgixUrl}/luxe-vp-couple.jpg#{$imgixDefaults}&w=1630');
-    }
   }
   &::before {
     @include mq(xs) {

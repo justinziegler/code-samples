@@ -614,7 +614,7 @@ h2, p {
     &[data-source='instagram'] {
       color: #82008f;
       &::after {
-        background-image: url('https://lull-media.imgix.net/shop/logo-instagram-color.png?auto=format,compress&q=50,enhance&w=60');
+        background-image: url('./logo-instagram-color.png?&w=60');
         background-size: contain;
         width: 30px;
         height: 36px;
@@ -799,7 +799,6 @@ h2, p {
     }
   }
 }
-$imgixUrl: 'https://lull-media.imgix.net/shop';
 .reviews-carousel {
   .close {
     @extend %tintWhite;
@@ -808,17 +807,17 @@ $imgixUrl: 'https://lull-media.imgix.net/shop';
     &.lazyloaded {
       &[data-reviewer='@taydempereira'] {
         &.lazyloaded::before {
-          background-image: url('#{$imgixUrl}/taydempereira.jpg#{$imgixDefaults}#{$imgixCrop}&w=120&h=120&fp-x=.5&fp-y=.5');
+          background-image: url('./taydempereira.jpg');
         }
       }
       &[data-reviewer='@mariapretelt'] {
         &::before {
-          background-image: url('#{$imgixUrl}/mariapretelt.jpg#{$imgixDefaults}#{$imgixCrop}&w=120&h=120&fp-x=.5&fp-y=.5');
+          background-image: url('./mariapretelt.jpg');
         }
       }
       &[data-reviewer='@kyla.moravec'] {
         &::before {
-          background-image: url('#{$imgixUrl}/kyla-moravec.jpg#{$imgixDefaults}#{$imgixCrop}&w=120&h=120&fp-x=.5&fp-y=.5');
+          background-image: url('./kyla-moravec.jpg');
         }
       }
       &[data-reviewer='@paigexalexandria'] {
@@ -826,22 +825,22 @@ $imgixUrl: 'https://lull-media.imgix.net/shop';
           font-size: vwp(16px);
         }
         &::before {
-          background-image: url('#{$imgixUrl}/paigexalexandria.jpg#{$imgixDefaults}#{$imgixCrop}&w=120&h=120&fp-x=.5&fp-y=.5');
+          background-image: url('./paigexalexandria.jpg');
         }
       }
       &[data-reviewer='@sydneejaynexo'] {
         &::before {
-          background-image: url('#{$imgixUrl}/sydneejaynexo.jpg#{$imgixDefaults}#{$imgixCrop}&w=120&h=120&fp-x=.5&fp-y=.5');
+          background-image: url('./sydneejaynexo.jpg');
         }
       }
       &[data-reviewer='@__Mel4'] {
         &::before {
-          background-image: url('#{$imgixUrl}/__Mel4.jpg#{$imgixDefaults}#{$imgixCrop}&w=120&h=120&fp-x=.5&fp-y=.5');
+          background-image: url('./__Mel4.jpg');
         }
       }
       &[data-reviewer='@barfieldthecat'] {
         &::before {
-          background-image: url('#{$imgixUrl}/barfieldthecat.jpg#{$imgixDefaults}#{$imgixCrop}&w=120&h=120&fp-x=.5&fp-y=.5');
+          background-image: url('./barfieldthecat.jpg');
         }
       }
     }

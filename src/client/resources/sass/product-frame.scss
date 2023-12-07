@@ -11,8 +11,8 @@
 @import 'partials/svg';
 @import 'partials/snippets/video-embed';
 
-$imgixUrl: 'https://lull-media.imgix.net/upholstered-bed-frame';
-$imgixDefaults: '?auto=format,compress&q=50';
+// $imgixUrl: 'https://lull-media.imgix.net/upholstered-bed-frame';
+// $imgixDefaults: '?auto=format,compress&q=50';
 $imgixCrop: '&fit=crop&crop=focalpoint';
 
 video {
@@ -33,158 +33,158 @@ video {
   &[data-type='TU'] {
     &[data-color='CS'] {
       .slide-1 {
-        background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-TU-CS.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./frame/gallery-straighton-withluxe-TU-CS.jpg?&w=840');
       }
       .slide-1,
       .swiper-pagination-bullet:nth-of-type(1) {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-TU-CS.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./frame/gallery-straighton-withluxe-TU-CS.jpg?&w=1200');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-TU-CS.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./frame/gallery-straighton-withluxe-TU-CS.jpg?&w=720');
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-TU-CS.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./frame/gallery-straighton-withluxe-TU-CS.jpg?&w=800');
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-TU-CS.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./frame/gallery-straighton-withluxe-TU-CS.jpg?&w=960');
         }
         @include retina {
           @include mq(lg) {
-            background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-TU-CS.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./frame/gallery-straighton-withluxe-TU-CS.jpg?&w=1440');
           }
           @media (min-width: 1440px) {
-            background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-TU-CS.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./frame/gallery-straighton-withluxe-TU-CS.jpg?&w=1600');
           }
           @media (min-width: 1600px) {
-            background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-TU-CS.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./frame/gallery-straighton-withluxe-TU-CS.jpg?&w=1920');
           }
         }
       }
       .slide-2 {
         &.lazyloaded {
-          background-image: url('#{$imgixUrl}/gallery-altangle-noluxe-TU-CS.jpg#{$imgixDefaults}&w=840');
+          background-image: url('./frame/gallery-altangle-noluxe-TU-CS.jpg?&w=840');
         }
       }
       .slide-2,
       .swiper-pagination-bullet:nth-of-type(2) {
         &.lazyloaded {
           @include mq(md) {
-            background-image: url('#{$imgixUrl}/gallery-altangle-noluxe-TU-CS.jpg#{$imgixDefaults}&w=1200');
+            background-image: url('./frame/gallery-altangle-noluxe-TU-CS.jpg?&w=1200');
           }
           @include mq(lg) {
-            background-image: url('#{$imgixUrl}/gallery-altangle-noluxe-TU-CS.jpg#{$imgixDefaults}&w=720');
+            background-image: url('./frame/gallery-altangle-noluxe-TU-CS.jpg?&w=720');
           }
           @media (min-width: 1440px) {
-            background-image: url('#{$imgixUrl}/gallery-altangle-noluxe-TU-CS.jpg#{$imgixDefaults}&w=800');
+            background-image: url('./frame/gallery-altangle-noluxe-TU-CS.jpg?&w=800');
           }
           @media (min-width: 1600px) {
-            background-image: url('#{$imgixUrl}/gallery-altangle-noluxe-TU-CS.jpg#{$imgixDefaults}&w=960');
+            background-image: url('./frame/gallery-altangle-noluxe-TU-CS.jpg?&w=960');
           }
           @include retina {
             @include mq(lg) {
-              background-image: url('#{$imgixUrl}/gallery-altangle-noluxe-TU-CS.jpg#{$imgixDefaults}&w=1440');
+              background-image: url('./frame/gallery-altangle-noluxe-TU-CS.jpg?&w=1440');
             }
             @media (min-width: 1440px) {
-              background-image: url('#{$imgixUrl}/gallery-altangle-noluxe-TU-CS.jpg#{$imgixDefaults}&w=1600');
+              background-image: url('./frame/gallery-altangle-noluxe-TU-CS.jpg?&w=1600');
             }
             @media (min-width: 1600px) {
-              background-image: url('#{$imgixUrl}/gallery-altangle-noluxe-TU-CS.jpg#{$imgixDefaults}&w=1920');
+              background-image: url('./frame/gallery-altangle-noluxe-TU-CS.jpg?&w=1920');
             }
           }
         }
       }
       .slide-3 {
         &.lazyloaded {
-          background-image: url('#{$imgixUrl}/gallery-silo-TU-CS.jpg#{$imgixDefaults}&w=840');
+          background-image: url('./frame/gallery-silo-TU-CS.jpg?&w=840');
         }
       }
       .slide-3,
       .swiper-pagination-bullet:nth-of-type(3) {
         &.lazyloaded {
           @include mq(md) {
-            background-image: url('#{$imgixUrl}/gallery-silo-TU-CS.jpg#{$imgixDefaults}&w=1200');
+            background-image: url('./frame/gallery-silo-TU-CS.jpg?&w=1200');
           }
           @include mq(lg) {
-            background-image: url('#{$imgixUrl}/gallery-silo-TU-CS.jpg#{$imgixDefaults}&w=720');
+            background-image: url('./frame/gallery-silo-TU-CS.jpg?&w=720');
           }
           @media (min-width: 1440px) {
-            background-image: url('#{$imgixUrl}/gallery-silo-TU-CS.jpg#{$imgixDefaults}&w=800');
+            background-image: url('./frame/gallery-silo-TU-CS.jpg?&w=800');
           }
           @media (min-width: 1600px) {
-            background-image: url('#{$imgixUrl}/gallery-silo-TU-CS.jpg#{$imgixDefaults}&w=960');
+            background-image: url('./frame/gallery-silo-TU-CS.jpg?&w=960');
           }
           @include retina {
             @include mq(lg) {
-              background-image: url('#{$imgixUrl}/gallery-silo-TU-CS.jpg#{$imgixDefaults}&w=1440');
+              background-image: url('./frame/gallery-silo-TU-CS.jpg?&w=1440');
             }
             @media (min-width: 1440px) {
-              background-image: url('#{$imgixUrl}/gallery-silo-TU-CS.jpg#{$imgixDefaults}&w=1600');
+              background-image: url('./frame/gallery-silo-TU-CS.jpg?&w=1600');
             }
             @media (min-width: 1600px) {
-              background-image: url('#{$imgixUrl}/gallery-silo-TU-CS.jpg#{$imgixDefaults}&w=1920');
+              background-image: url('./frame/gallery-silo-TU-CS.jpg?&w=1920');
             }
           }
         }
       }
       .slide-4 {
         &.lazyloaded {
-          background-image: url('#{$imgixUrl}/gallery-corner-TU-CS.jpg#{$imgixDefaults}&w=840');
+          background-image: url('./frame/gallery-corner-TU-CS.jpg?&w=840');
         }
       }
       .slide-4,
       .swiper-pagination-bullet:nth-of-type(4) {
         &.lazyloaded {
           @include mq(md) {
-            background-image: url('#{$imgixUrl}/gallery-corner-TU-CS.jpg#{$imgixDefaults}&w=1200');
+            background-image: url('./frame/gallery-corner-TU-CS.jpg?&w=1200');
           }
           @include mq(lg) {
-            background-image: url('#{$imgixUrl}/gallery-corner-TU-CS.jpg#{$imgixDefaults}&w=720');
+            background-image: url('./frame/gallery-corner-TU-CS.jpg?&w=720');
             @include retina {
-              background-image: url('#{$imgixUrl}/gallery-corner-TU-CS.jpg#{$imgixDefaults}&w=1440');
+              background-image: url('./frame/gallery-corner-TU-CS.jpg?&w=1440');
             }
           }
           @media (min-width: 1440px) {
-            background-image: url('#{$imgixUrl}/gallery-corner-TU-CS.jpg#{$imgixDefaults}&w=800');
+            background-image: url('./frame/gallery-corner-TU-CS.jpg?&w=800');
             @include retina {
-              background-image: url('#{$imgixUrl}/gallery-corner-TU-CS.jpg#{$imgixDefaults}&w=1600');
+              background-image: url('./frame/gallery-corner-TU-CS.jpg?&w=1600');
             }
           }
           @media (min-width: 1600px) {
-            background-image: url('#{$imgixUrl}/gallery-corner-TU-CS.jpg#{$imgixDefaults}&w=960');
+            background-image: url('./frame/gallery-corner-TU-CS.jpg?&w=960');
             @include retina {
-              background-image: url('#{$imgixUrl}/gallery-corner-TU-CS.jpg#{$imgixDefaults}&w=1920');
+              background-image: url('./frame/gallery-corner-TU-CS.jpg?&w=1920');
             }
           }
         }
       }
       .slide-5 {
         &.lazyloaded {
-          background-image: url('#{$imgixUrl}/dimensions-TU-CS.jpg#{$imgixDefaults}&w=840');
+          background-image: url('./frame/dimensions-TU-CS.jpg?&w=840');
         }
       }
       .slide-5,
       .swiper-pagination-bullet:nth-of-type(5) {
         &.lazyloaded {
           @include mq(md) {
-            background-image: url('#{$imgixUrl}/dimensions-TU-CS.jpg#{$imgixDefaults}&w=1200');
+            background-image: url('./frame/dimensions-TU-CS.jpg?&w=1200');
           }
           @include mq(lg) {
-            background-image: url('#{$imgixUrl}/dimensions-TU-CS.jpg#{$imgixDefaults}&w=720');
+            background-image: url('./frame/dimensions-TU-CS.jpg?&w=720');
             @include retina {
-              background-image: url('#{$imgixUrl}/dimensions-TU-CS.jpg#{$imgixDefaults}&w=1440');
+              background-image: url('./frame/dimensions-TU-CS.jpg?&w=1440');
             }
           }
           @media (min-width: 1440px) {
-            background-image: url('#{$imgixUrl}/dimensions-TU-CS.jpg#{$imgixDefaults}&w=800');
+            background-image: url('./frame/dimensions-TU-CS.jpg?&w=800');
             @include retina {
-              background-image: url('#{$imgixUrl}/dimensions-TU-CS.jpg#{$imgixDefaults}&w=1600');
+              background-image: url('./frame/dimensions-TU-CS.jpg?&w=1600');
             }
           }
           @media (min-width: 1600px) {
-            background-image: url('#{$imgixUrl}/dimensions-TU-CS.jpg#{$imgixDefaults}&w=960');
+            background-image: url('./frame/dimensions-TU-CS.jpg?&w=960');
             @include retina {
-              background-image: url('#{$imgixUrl}/dimensions-TU-CS.jpg#{$imgixDefaults}&w=1920');
+              background-image: url('./frame/dimensions-TU-CS.jpg?&w=1920');
             }
           }
         }
@@ -192,158 +192,158 @@ video {
     }
     &[data-color='DS'] {
       .slide-1 {
-        background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-TU-DS.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./frame/gallery-straighton-withluxe-TU-DS.jpg?&w=840');
       }
       .slide-1,
       .swiper-pagination-bullet:nth-of-type(1) {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-TU-DS.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./frame/gallery-straighton-withluxe-TU-DS.jpg?&w=1200');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-TU-DS.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./frame/gallery-straighton-withluxe-TU-DS.jpg?&w=720');
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-TU-DS.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./frame/gallery-straighton-withluxe-TU-DS.jpg?&w=800');
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-TU-DS.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./frame/gallery-straighton-withluxe-TU-DS.jpg?&w=960');
         }
         @include retina {
           @include mq(lg) {
-            background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-TU-DS.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./frame/gallery-straighton-withluxe-TU-DS.jpg?&w=1440');
           }
           @media (min-width: 1440px) {
-            background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-TU-DS.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./frame/gallery-straighton-withluxe-TU-DS.jpg?&w=1600');
           }
           @media (min-width: 1600px) {
-            background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-TU-DS.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./frame/gallery-straighton-withluxe-TU-DS.jpg?&w=1920');
           }
         }
       }
       .slide-2 {
         &.lazyloaded {
-          background-image: url('#{$imgixUrl}/gallery-altangle-withluxe-TU-DS.jpg#{$imgixDefaults}&w=840');
+          background-image: url('./frame/gallery-altangle-withluxe-TU-DS.jpg?&w=840');
         }
       }
       .slide-2,
       .swiper-pagination-bullet:nth-of-type(2) {
         &.lazyloaded {
           @include mq(md) {
-            background-image: url('#{$imgixUrl}/gallery-altangle-withluxe-TU-DS.jpg#{$imgixDefaults}&w=1200');
+            background-image: url('./frame/gallery-altangle-withluxe-TU-DS.jpg?&w=1200');
           }
           @include mq(lg) {
-            background-image: url('#{$imgixUrl}/gallery-altangle-withluxe-TU-DS.jpg#{$imgixDefaults}&w=720');
+            background-image: url('./frame/gallery-altangle-withluxe-TU-DS.jpg?&w=720');
           }
           @media (min-width: 1440px) {
-            background-image: url('#{$imgixUrl}/gallery-altangle-withluxe-TU-DS.jpg#{$imgixDefaults}&w=800');
+            background-image: url('./frame/gallery-altangle-withluxe-TU-DS.jpg?&w=800');
           }
           @media (min-width: 1600px) {
-            background-image: url('#{$imgixUrl}/gallery-altangle-withluxe-TU-DS.jpg#{$imgixDefaults}&w=960');
+            background-image: url('./frame/gallery-altangle-withluxe-TU-DS.jpg?&w=960');
           }
           @include retina {
             @include mq(lg) {
-              background-image: url('#{$imgixUrl}/gallery-altangle-withluxe-TU-DS.jpg#{$imgixDefaults}&w=1440');
+              background-image: url('./frame/gallery-altangle-withluxe-TU-DS.jpg?&w=1440');
             }
             @media (min-width: 1440px) {
-              background-image: url('#{$imgixUrl}/gallery-altangle-withluxe-TU-DS.jpg#{$imgixDefaults}&w=1600');
+              background-image: url('./frame/gallery-altangle-withluxe-TU-DS.jpg?&w=1600');
             }
             @media (min-width: 1600px) {
-              background-image: url('#{$imgixUrl}/gallery-altangle-withluxe-TU-DS.jpg#{$imgixDefaults}&w=1920');
+              background-image: url('./frame/gallery-altangle-withluxe-TU-DS.jpg?&w=1920');
             }
           }
         }
       }
       .slide-3 {
         &.lazyloaded {
-          background-image: url('#{$imgixUrl}/gallery-silo-TU-DS.jpg#{$imgixDefaults}&w=840');
+          background-image: url('./frame/gallery-silo-TU-DS.jpg?&w=840');
         }
       }
       .slide-3,
       .swiper-pagination-bullet:nth-of-type(3) {
         &.lazyloaded {
           @include mq(md) {
-            background-image: url('#{$imgixUrl}/gallery-silo-TU-DS.jpg#{$imgixDefaults}&w=1200');
+            background-image: url('./frame/gallery-silo-TU-DS.jpg?&w=1200');
           }
           @include mq(lg) {
-            background-image: url('#{$imgixUrl}/gallery-silo-TU-DS.jpg#{$imgixDefaults}&w=720');
+            background-image: url('./frame/gallery-silo-TU-DS.jpg?&w=720');
           }
           @media (min-width: 1440px) {
-            background-image: url('#{$imgixUrl}/gallery-silo-TU-DS.jpg#{$imgixDefaults}&w=800');
+            background-image: url('./frame/gallery-silo-TU-DS.jpg?&w=800');
           }
           @media (min-width: 1600px) {
-            background-image: url('#{$imgixUrl}/gallery-silo-TU-DS.jpg#{$imgixDefaults}&w=960');
+            background-image: url('./frame/gallery-silo-TU-DS.jpg?&w=960');
           }
           @include retina {
             @include mq(lg) {
-              background-image: url('#{$imgixUrl}/gallery-silo-TU-DS.jpg#{$imgixDefaults}&w=1440');
+              background-image: url('./frame/gallery-silo-TU-DS.jpg?&w=1440');
             }
             @media (min-width: 1440px) {
-              background-image: url('#{$imgixUrl}/gallery-silo-TU-DS.jpg#{$imgixDefaults}&w=1600');
+              background-image: url('./frame/gallery-silo-TU-DS.jpg?&w=1600');
             }
             @media (min-width: 1600px) {
-              background-image: url('#{$imgixUrl}/gallery-silo-TU-DS.jpg#{$imgixDefaults}&w=1920');
+              background-image: url('./frame/gallery-silo-TU-DS.jpg?&w=1920');
             }
           }
         }
       }
       .slide-4 {
         &.lazyloaded {
-          background-image: url('#{$imgixUrl}/gallery-corner-TU-DS.jpg#{$imgixDefaults}&w=840');
+          background-image: url('./frame/gallery-corner-TU-DS.jpg?&w=840');
         }
       }
       .slide-4,
       .swiper-pagination-bullet:nth-of-type(4) {
         &.lazyloaded {
           @include mq(md) {
-            background-image: url('#{$imgixUrl}/gallery-corner-TU-DS.jpg#{$imgixDefaults}&w=1200');
+            background-image: url('./frame/gallery-corner-TU-DS.jpg?&w=1200');
           }
           @include mq(lg) {
-            background-image: url('#{$imgixUrl}/gallery-corner-TU-DS.jpg#{$imgixDefaults}&w=720');
+            background-image: url('./frame/gallery-corner-TU-DS.jpg?&w=720');
             @include retina {
-              background-image: url('#{$imgixUrl}/gallery-corner-TU-DS.jpg#{$imgixDefaults}&w=1440');
+              background-image: url('./frame/gallery-corner-TU-DS.jpg?&w=1440');
             }
           }
           @media (min-width: 1440px) {
-            background-image: url('#{$imgixUrl}/gallery-corner-TU-DS.jpg#{$imgixDefaults}&w=800');
+            background-image: url('./frame/gallery-corner-TU-DS.jpg?&w=800');
             @include retina {
-              background-image: url('#{$imgixUrl}/gallery-corner-TU-DS.jpg#{$imgixDefaults}&w=1600');
+              background-image: url('./frame/gallery-corner-TU-DS.jpg?&w=1600');
             }
           }
           @media (min-width: 1600px) {
-            background-image: url('#{$imgixUrl}/gallery-corner-TU-DS.jpg#{$imgixDefaults}&w=960');
+            background-image: url('./frame/gallery-corner-TU-DS.jpg?&w=960');
             @include retina {
-              background-image: url('#{$imgixUrl}/gallery-corner-TU-DS.jpg#{$imgixDefaults}&w=1920');
+              background-image: url('./frame/gallery-corner-TU-DS.jpg?&w=1920');
             }
           }
         }
       }
       .slide-5 {
         &.lazyloaded {
-          background-image: url('#{$imgixUrl}/dimensions-TU-DS.jpg#{$imgixDefaults}&w=840');
+          background-image: url('./frame/dimensions-TU-DS.jpg?&w=840');
         }
       }
       .slide-5,
       .swiper-pagination-bullet:nth-of-type(5) {
         &.lazyloaded {
           @include mq(md) {
-            background-image: url('#{$imgixUrl}/dimensions-TU-DS.jpg#{$imgixDefaults}&w=1200');
+            background-image: url('./frame/dimensions-TU-DS.jpg?&w=1200');
           }
           @include mq(lg) {
-            background-image: url('#{$imgixUrl}/dimensions-TU-DS.jpg#{$imgixDefaults}&w=720');
+            background-image: url('./frame/dimensions-TU-DS.jpg?&w=720');
             @include retina {
-              background-image: url('#{$imgixUrl}/dimensions-TU-DS.jpg#{$imgixDefaults}&w=1440');
+              background-image: url('./frame/dimensions-TU-DS.jpg?&w=1440');
             }
           }
           @media (min-width: 1440px) {
-            background-image: url('#{$imgixUrl}/dimensions-TU-DS.jpg#{$imgixDefaults}&w=800');
+            background-image: url('./frame/dimensions-TU-DS.jpg?&w=800');
             @include retina {
-              background-image: url('#{$imgixUrl}/dimensions-TU-DS.jpg#{$imgixDefaults}&w=1600');
+              background-image: url('./frame/dimensions-TU-DS.jpg?&w=1600');
             }
           }
           @media (min-width: 1600px) {
-            background-image: url('#{$imgixUrl}/dimensions-TU-DS.jpg#{$imgixDefaults}&w=960');
+            background-image: url('./frame/dimensions-TU-DS.jpg?&w=960');
             @include retina {
-              background-image: url('#{$imgixUrl}/dimensions-TU-DS.jpg#{$imgixDefaults}&w=1920');
+              background-image: url('./frame/dimensions-TU-DS.jpg?&w=1920');
             }
           }
         }
@@ -354,158 +354,158 @@ video {
   &[data-type='UU'] {
     &[data-color='CS'] {
       .slide-1 {
-        background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-UU-CS.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./frame/gallery-straighton-withluxe-UU-CS.jpg?&w=840');
       }
       .slide-1,
       .swiper-pagination-bullet:nth-of-type(1) {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-UU-CS.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./frame/gallery-straighton-withluxe-UU-CS.jpg?&w=1200');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-UU-CS.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./frame/gallery-straighton-withluxe-UU-CS.jpg?&w=720');
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-UU-CS.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./frame/gallery-straighton-withluxe-UU-CS.jpg?&w=800');
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-UU-CS.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./frame/gallery-straighton-withluxe-UU-CS.jpg?&w=960');
         }
         @include retina {
           @include mq(lg) {
-            background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-UU-CS.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./frame/gallery-straighton-withluxe-UU-CS.jpg?&w=1440');
           }
           @media (min-width: 1440px) {
-            background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-UU-CS.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./frame/gallery-straighton-withluxe-UU-CS.jpg?&w=1600');
           }
           @media (min-width: 1600px) {
-            background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-UU-CS.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./frame/gallery-straighton-withluxe-UU-CS.jpg?&w=1920');
           }
         }
       }
       .slide-2 {
         &.lazyloaded {
-          background-image: url('#{$imgixUrl}/gallery-altangle-noluxe-UU-CS.jpg#{$imgixDefaults}&w=840');
+          background-image: url('./frame/gallery-altangle-noluxe-UU-CS.jpg?&w=840');
         }
       }
       .slide-2,
       .swiper-pagination-bullet:nth-of-type(2) {
         &.lazyloaded {
           @include mq(md) {
-            background-image: url('#{$imgixUrl}/gallery-altangle-noluxe-UU-CS.jpg#{$imgixDefaults}&w=1200');
+            background-image: url('./frame/gallery-altangle-noluxe-UU-CS.jpg?&w=1200');
           }
           @include mq(lg) {
-            background-image: url('#{$imgixUrl}/gallery-altangle-noluxe-UU-CS.jpg#{$imgixDefaults}&w=720');
+            background-image: url('./frame/gallery-altangle-noluxe-UU-CS.jpg?&w=720');
           }
           @media (min-width: 1440px) {
-            background-image: url('#{$imgixUrl}/gallery-altangle-noluxe-UU-CS.jpg#{$imgixDefaults}&w=800');
+            background-image: url('./frame/gallery-altangle-noluxe-UU-CS.jpg?&w=800');
           }
           @media (min-width: 1600px) {
-            background-image: url('#{$imgixUrl}/gallery-altangle-noluxe-UU-CS.jpg#{$imgixDefaults}&w=960');
+            background-image: url('./frame/gallery-altangle-noluxe-UU-CS.jpg?&w=960');
           }
           @include retina {
             @include mq(lg) {
-              background-image: url('#{$imgixUrl}/gallery-altangle-noluxe-UU-CS.jpg#{$imgixDefaults}&w=1440');
+              background-image: url('./frame/gallery-altangle-noluxe-UU-CS.jpg?&w=1440');
             }
             @media (min-width: 1440px) {
-              background-image: url('#{$imgixUrl}/gallery-altangle-noluxe-UU-CS.jpg#{$imgixDefaults}&w=1600');
+              background-image: url('./frame/gallery-altangle-noluxe-UU-CS.jpg?&w=1600');
             }
             @media (min-width: 1600px) {
-              background-image: url('#{$imgixUrl}/gallery-altangle-noluxe-UU-CS.jpg#{$imgixDefaults}&w=1920');
+              background-image: url('./frame/gallery-altangle-noluxe-UU-CS.jpg?&w=1920');
             }
           }
         }
       }
       .slide-3 {
         &.lazyloaded {
-          background-image: url('#{$imgixUrl}/gallery-silo-UU-CS.jpg#{$imgixDefaults}&w=840');
+          background-image: url('./frame/gallery-silo-UU-CS.jpg?&w=840');
         }
       }
       .slide-3,
       .swiper-pagination-bullet:nth-of-type(3) {
         &.lazyloaded {
           @include mq(md) {
-            background-image: url('#{$imgixUrl}/gallery-silo-UU-CS.jpg#{$imgixDefaults}&w=1200');
+            background-image: url('./frame/gallery-silo-UU-CS.jpg?&w=1200');
           }
           @include mq(lg) {
-            background-image: url('#{$imgixUrl}/gallery-silo-UU-CS.jpg#{$imgixDefaults}&w=720');
+            background-image: url('./frame/gallery-silo-UU-CS.jpg?&w=720');
           }
           @media (min-width: 1440px) {
-            background-image: url('#{$imgixUrl}/gallery-silo-UU-CS.jpg#{$imgixDefaults}&w=800');
+            background-image: url('./frame/gallery-silo-UU-CS.jpg?&w=800');
           }
           @media (min-width: 1600px) {
-            background-image: url('#{$imgixUrl}/gallery-silo-UU-CS.jpg#{$imgixDefaults}&w=960');
+            background-image: url('./frame/gallery-silo-UU-CS.jpg?&w=960');
           }
           @include retina {
             @include mq(lg) {
-              background-image: url('#{$imgixUrl}/gallery-silo-UU-CS.jpg#{$imgixDefaults}&w=1440');
+              background-image: url('./frame/gallery-silo-UU-CS.jpg?&w=1440');
             }
             @media (min-width: 1440px) {
-              background-image: url('#{$imgixUrl}/gallery-silo-UU-CS.jpg#{$imgixDefaults}&w=1600');
+              background-image: url('./frame/gallery-silo-UU-CS.jpg?&w=1600');
             }
             @media (min-width: 1600px) {
-              background-image: url('#{$imgixUrl}/gallery-silo-UU-CS.jpg#{$imgixDefaults}&w=1920');
+              background-image: url('./frame/gallery-silo-UU-CS.jpg?&w=1920');
             }
           }
         }
       }
       .slide-4 {
         &.lazyloaded {
-          background-image: url('#{$imgixUrl}/gallery-corner-UU-CS.jpg#{$imgixDefaults}&w=840');
+          background-image: url('./frame/gallery-corner-UU-CS.jpg?&w=840');
         }
       }
       .slide-4,
       .swiper-pagination-bullet:nth-of-type(4) {
         &.lazyloaded {
           @include mq(md) {
-            background-image: url('#{$imgixUrl}/gallery-corner-UU-CS.jpg#{$imgixDefaults}&w=1200');
+            background-image: url('./frame/gallery-corner-UU-CS.jpg?&w=1200');
           }
           @include mq(lg) {
-            background-image: url('#{$imgixUrl}/gallery-corner-UU-CS.jpg#{$imgixDefaults}&w=720');
+            background-image: url('./frame/gallery-corner-UU-CS.jpg?&w=720');
             @include retina {
-              background-image: url('#{$imgixUrl}/gallery-corner-UU-CS.jpg#{$imgixDefaults}&w=1440');
+              background-image: url('./frame/gallery-corner-UU-CS.jpg?&w=1440');
             }
           }
           @media (min-width: 1440px) {
-            background-image: url('#{$imgixUrl}/gallery-corner-UU-CS.jpg#{$imgixDefaults}&w=800');
+            background-image: url('./frame/gallery-corner-UU-CS.jpg?&w=800');
             @include retina {
-              background-image: url('#{$imgixUrl}/gallery-corner-UU-CS.jpg#{$imgixDefaults}&w=1600');
+              background-image: url('./frame/gallery-corner-UU-CS.jpg?&w=1600');
             }
           }
           @media (min-width: 1600px) {
-            background-image: url('#{$imgixUrl}/gallery-corner-UU-CS.jpg#{$imgixDefaults}&w=960');
+            background-image: url('./frame/gallery-corner-UU-CS.jpg?&w=960');
             @include retina {
-              background-image: url('#{$imgixUrl}/gallery-corner-UU-CS.jpg#{$imgixDefaults}&w=1920');
+              background-image: url('./frame/gallery-corner-UU-CS.jpg?&w=1920');
             }
           }
         }
       }
       .slide-5 {
         &.lazyloaded {
-          background-image: url('#{$imgixUrl}/dimensions-UU-CS.jpg#{$imgixDefaults}&w=840');
+          background-image: url('./frame/dimensions-UU-CS.jpg?&w=840');
         }
       }
       .slide-5,
       .swiper-pagination-bullet:nth-of-type(5) {
         &.lazyloaded {
           @include mq(md) {
-            background-image: url('#{$imgixUrl}/dimensions-UU-CS.jpg#{$imgixDefaults}&w=1200');
+            background-image: url('./frame/dimensions-UU-CS.jpg?&w=1200');
           }
           @include mq(lg) {
-            background-image: url('#{$imgixUrl}/dimensions-UU-CS.jpg#{$imgixDefaults}&w=720');
+            background-image: url('./frame/dimensions-UU-CS.jpg?&w=720');
             @include retina {
-              background-image: url('#{$imgixUrl}/dimensions-UU-CS.jpg#{$imgixDefaults}&w=1440');
+              background-image: url('./frame/dimensions-UU-CS.jpg?&w=1440');
             }
           }
           @media (min-width: 1440px) {
-            background-image: url('#{$imgixUrl}/dimensions-UU-CS.jpg#{$imgixDefaults}&w=800');
+            background-image: url('./frame/dimensions-UU-CS.jpg?&w=800');
             @include retina {
-              background-image: url('#{$imgixUrl}/dimensions-UU-CS.jpg#{$imgixDefaults}&w=1600');
+              background-image: url('./frame/dimensions-UU-CS.jpg?&w=1600');
             }
           }
           @media (min-width: 1600px) {
-            background-image: url('#{$imgixUrl}/dimensions-UU-CS.jpg#{$imgixDefaults}&w=960');
+            background-image: url('./frame/dimensions-UU-CS.jpg?&w=960');
             @include retina {
-              background-image: url('#{$imgixUrl}/dimensions-UU-CS.jpg#{$imgixDefaults}&w=1920');
+              background-image: url('./frame/dimensions-UU-CS.jpg?&w=1920');
             }
           }
         }
@@ -513,158 +513,158 @@ video {
     }
     &[data-color='DS'] {
       .slide-1 {
-        background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-UU-DS.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./frame/gallery-straighton-withluxe-UU-DS.jpg?&w=840');
       }
       .slide-1,
       .swiper-pagination-bullet:nth-of-type(1) {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-UU-DS.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./frame/gallery-straighton-withluxe-UU-DS.jpg?&w=1200');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-UU-DS.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./frame/gallery-straighton-withluxe-UU-DS.jpg?&w=720');
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-UU-DS.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./frame/gallery-straighton-withluxe-UU-DS.jpg?&w=800');
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-UU-DS.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./frame/gallery-straighton-withluxe-UU-DS.jpg?&w=960');
         }
         @include retina {
           @include mq(lg) {
-            background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-UU-DS.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./frame/gallery-straighton-withluxe-UU-DS.jpg?&w=1440');
           }
           @media (min-width: 1440px) {
-            background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-UU-DS.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./frame/gallery-straighton-withluxe-UU-DS.jpg?&w=1600');
           }
           @media (min-width: 1600px) {
-            background-image: url('#{$imgixUrl}/gallery-straighton-withluxe-UU-DS.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./frame/gallery-straighton-withluxe-UU-DS.jpg?&w=1920');
           }
         }
       }
       .slide-2 {
         &.lazyloaded {
-          background-image: url('#{$imgixUrl}/gallery-altangle-withluxe-UU-DS.jpg#{$imgixDefaults}&w=840');
+          background-image: url('./frame/gallery-altangle-withluxe-UU-DS.jpg?&w=840');
         }
       }
       .slide-2,
       .swiper-pagination-bullet:nth-of-type(2) {
         &.lazyloaded {
           @include mq(md) {
-            background-image: url('#{$imgixUrl}/gallery-altangle-withluxe-UU-DS.jpg#{$imgixDefaults}&w=1200');
+            background-image: url('./frame/gallery-altangle-withluxe-UU-DS.jpg?&w=1200');
           }
           @include mq(lg) {
-            background-image: url('#{$imgixUrl}/gallery-altangle-withluxe-UU-DS.jpg#{$imgixDefaults}&w=720');
+            background-image: url('./frame/gallery-altangle-withluxe-UU-DS.jpg?&w=720');
           }
           @media (min-width: 1440px) {
-            background-image: url('#{$imgixUrl}/gallery-altangle-withluxe-UU-DS.jpg#{$imgixDefaults}&w=800');
+            background-image: url('./frame/gallery-altangle-withluxe-UU-DS.jpg?&w=800');
           }
           @media (min-width: 1600px) {
-            background-image: url('#{$imgixUrl}/gallery-altangle-withluxe-UU-DS.jpg#{$imgixDefaults}&w=960');
+            background-image: url('./frame/gallery-altangle-withluxe-UU-DS.jpg?&w=960');
           }
           @include retina {
             @include mq(lg) {
-              background-image: url('#{$imgixUrl}/gallery-altangle-withluxe-UU-DS.jpg#{$imgixDefaults}&w=1440');
+              background-image: url('./frame/gallery-altangle-withluxe-UU-DS.jpg?&w=1440');
             }
             @media (min-width: 1440px) {
-              background-image: url('#{$imgixUrl}/gallery-altangle-withluxe-UU-DS.jpg#{$imgixDefaults}&w=1600');
+              background-image: url('./frame/gallery-altangle-withluxe-UU-DS.jpg?&w=1600');
             }
             @media (min-width: 1600px) {
-              background-image: url('#{$imgixUrl}/gallery-altangle-withluxe-UU-DS.jpg#{$imgixDefaults}&w=1920');
+              background-image: url('./frame/gallery-altangle-withluxe-UU-DS.jpg?&w=1920');
             }
           }
         }
       }
       .slide-3 {
         &.lazyloaded {
-          background-image: url('#{$imgixUrl}/gallery-silo-UU-DS.jpg#{$imgixDefaults}&w=840');
+          background-image: url('./frame/gallery-silo-UU-DS.jpg?&w=840');
         }
       }
       .slide-3,
       .swiper-pagination-bullet:nth-of-type(3) {
         &.lazyloaded {
           @include mq(md) {
-            background-image: url('#{$imgixUrl}/gallery-silo-UU-DS.jpg#{$imgixDefaults}&w=1200');
+            background-image: url('./frame/gallery-silo-UU-DS.jpg?&w=1200');
           }
           @include mq(lg) {
-            background-image: url('#{$imgixUrl}/gallery-silo-UU-DS.jpg#{$imgixDefaults}&w=720');
+            background-image: url('./frame/gallery-silo-UU-DS.jpg?&w=720');
           }
           @media (min-width: 1440px) {
-            background-image: url('#{$imgixUrl}/gallery-silo-UU-DS.jpg#{$imgixDefaults}&w=800');
+            background-image: url('./frame/gallery-silo-UU-DS.jpg?&w=800');
           }
           @media (min-width: 1600px) {
-            background-image: url('#{$imgixUrl}/gallery-silo-UU-DS.jpg#{$imgixDefaults}&w=960');
+            background-image: url('./frame/gallery-silo-UU-DS.jpg?&w=960');
           }
           @include retina {
             @include mq(lg) {
-              background-image: url('#{$imgixUrl}/gallery-silo-UU-DS.jpg#{$imgixDefaults}&w=1440');
+              background-image: url('./frame/gallery-silo-UU-DS.jpg?&w=1440');
             }
             @media (min-width: 1440px) {
-              background-image: url('#{$imgixUrl}/gallery-silo-UU-DS.jpg#{$imgixDefaults}&w=1600');
+              background-image: url('./frame/gallery-silo-UU-DS.jpg?&w=1600');
             }
             @media (min-width: 1600px) {
-              background-image: url('#{$imgixUrl}/gallery-silo-UU-DS.jpg#{$imgixDefaults}&w=1920');
+              background-image: url('./frame/gallery-silo-UU-DS.jpg?&w=1920');
             }
           }
         }
       }
       .slide-4 {
         &.lazyloaded {
-          background-image: url('#{$imgixUrl}/gallery-corner-UU-DS.jpg#{$imgixDefaults}&w=840');
+          background-image: url('./frame/gallery-corner-UU-DS.jpg?&w=840');
         }
       }
       .slide-4,
       .swiper-pagination-bullet:nth-of-type(4) {
         &.lazyloaded {
           @include mq(md) {
-            background-image: url('#{$imgixUrl}/gallery-corner-UU-DS.jpg#{$imgixDefaults}&w=1200');
+            background-image: url('./frame/gallery-corner-UU-DS.jpg?&w=1200');
           }
           @include mq(lg) {
-            background-image: url('#{$imgixUrl}/gallery-corner-UU-DS.jpg#{$imgixDefaults}&w=720');
+            background-image: url('./frame/gallery-corner-UU-DS.jpg?&w=720');
             @include retina {
-              background-image: url('#{$imgixUrl}/gallery-corner-UU-DS.jpg#{$imgixDefaults}&w=1440');
+              background-image: url('./frame/gallery-corner-UU-DS.jpg?&w=1440');
             }
           }
           @media (min-width: 1440px) {
-            background-image: url('#{$imgixUrl}/gallery-corner-UU-DS.jpg#{$imgixDefaults}&w=800');
+            background-image: url('./frame/gallery-corner-UU-DS.jpg?&w=800');
             @include retina {
-              background-image: url('#{$imgixUrl}/gallery-corner-UU-DS.jpg#{$imgixDefaults}&w=1600');
+              background-image: url('./frame/gallery-corner-UU-DS.jpg?&w=1600');
             }
           }
           @media (min-width: 1600px) {
-            background-image: url('#{$imgixUrl}/gallery-corner-UU-DS.jpg#{$imgixDefaults}&w=960');
+            background-image: url('./frame/gallery-corner-UU-DS.jpg?&w=960');
             @include retina {
-              background-image: url('#{$imgixUrl}/gallery-corner-UU-DS.jpg#{$imgixDefaults}&w=1920');
+              background-image: url('./frame/gallery-corner-UU-DS.jpg?&w=1920');
             }
           }
         }
       }
       .slide-5 {
         &.lazyloaded {
-          background-image: url('#{$imgixUrl}/dimensions-UU-DS.jpg#{$imgixDefaults}&w=840');
+          background-image: url('./frame/dimensions-UU-DS.jpg?&w=840');
         }
       }
       .slide-5,
       .swiper-pagination-bullet:nth-of-type(5) {
         &.lazyloaded {
           @include mq(md) {
-            background-image: url('#{$imgixUrl}/dimensions-UU-DS.jpg#{$imgixDefaults}&w=1200');
+            background-image: url('./frame/dimensions-UU-DS.jpg?&w=1200');
           }
           @include mq(lg) {
-            background-image: url('#{$imgixUrl}/dimensions-UU-DS.jpg#{$imgixDefaults}&w=720');
+            background-image: url('./frame/dimensions-UU-DS.jpg?&w=720');
             @include retina {
-              background-image: url('#{$imgixUrl}/dimensions-UU-DS.jpg#{$imgixDefaults}&w=1440');
+              background-image: url('./frame/dimensions-UU-DS.jpg?&w=1440');
             }
           }
           @media (min-width: 1440px) {
-            background-image: url('#{$imgixUrl}/dimensions-UU-DS.jpg#{$imgixDefaults}&w=800');
+            background-image: url('./frame/dimensions-UU-DS.jpg?&w=800');
             @include retina {
-              background-image: url('#{$imgixUrl}/dimensions-UU-DS.jpg#{$imgixDefaults}&w=1600');
+              background-image: url('./frame/dimensions-UU-DS.jpg?&w=1600');
             }
           }
           @media (min-width: 1600px) {
-            background-image: url('#{$imgixUrl}/dimensions-UU-DS.jpg#{$imgixDefaults}&w=960');
+            background-image: url('./frame/dimensions-UU-DS.jpg?&w=960');
             @include retina {
-              background-image: url('#{$imgixUrl}/dimensions-UU-DS.jpg#{$imgixDefaults}&w=1920');
+              background-image: url('./frame/dimensions-UU-DS.jpg?&w=1920');
             }
           }
         }
@@ -772,7 +772,7 @@ video {
     }
     &.lazyloaded {
       @include mq(md) {
-        background-image: url('#{$imgixUrl}/couple-in-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=120&h=120&fp-x=0.4&y=0.5&fp-z=2');
+        background-image: url('./frame/couple-in-bed.jpg?#{$imgixCrop}&w=120&h=120&fp-x=0.4&y=0.5&fp-z=2');
       }
     }
   }
@@ -794,133 +794,133 @@ video {
 //   }
 // }
 
-.financing-info {
-  text-align: center;
-  padding: 30px 0;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: 50% 80%;
-  position: relative;
-  background-color: #ebebeb;
-  z-index: 1;
-  @include mq(sm) {
-    padding: 30px 0 45px 0;
-  }
-  @include mq(lg) {
-    padding: 45px 0 60px 0;
-  }
-  &.lazyloaded {
-    background-image: url('#{$imgixUrl}/ubf-financing.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.405&w=840&h=960');
-    @include mq(xs) {
-      background-image: url('#{$imgixUrl}/upholstered-bed-frame-financing-desktop.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=0&fp-z=1.4&q=50&w=922&h=792');
-      background-size: 60%;
-      background-position: 100% 50%;
-    }
-    @include mq(sm) {
-      background-image: url('#{$imgixUrl}/upholstered-bed-frame-financing-desktop.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=0&fp-z=1.23&q=50&w=1200&h=860');
-      background-size: 600px;
-      background-position: calc(50% + 196px) 50%;
-    }
-    @include mq(md) {
-      background-image: url('#{$imgixUrl}/upholstered-bed-frame-financing-desktop.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=0&fp-z=1.15&q=50&w=1440&h=960');
-      background-size: 720px;
-      background-position: calc(50% + 240px) 50%;
-    }
-    @include mq(lg) {
-      background-image: url('#{$imgixUrl}/upholstered-bed-frame-financing-desktop.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=0&fp-z=1.199&q=50&w=840&h=550');
-      background-size: 840px;
-      background-position: calc(50% + 300px) 44%;
-      @include retina {
-        background-image: url('#{$imgixUrl}/upholstered-bed-frame-financing-desktop.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=0&fp-z=1.199&q=50&w=1680&h=1100');
-      }
-    }
-    @media (min-width: 1440px) {
-      background-image: url('#{$imgixUrl}/upholstered-bed-frame-financing-desktop.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=0.5&fp-z=1.1&q=50&w=900&h=550');
-      background-size: 900px;
-      background-position: calc(50% + 380px) 44%;
-      @include retina {
-        background-image: url('#{$imgixUrl}/upholstered-bed-frame-financing-desktop.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=0.5&fp-z=1.1&q=50&w=1800&h=1100');
-      }
-    }
-    @media (min-width: 1660px) {
-      background-image: url('#{$imgixUrl}/upholstered-bed-frame-financing-desktop.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=0.5&fp-y=0.48&fp-z=1&q=50&w=1140&h=580');
-      background-size: 1140px;
-      background-position: calc(50% + 390px) 44%;
-      padding: 60px 0 75px 0;
-      @include retina {
-        background-image: url('#{$imgixUrl}/upholstered-bed-frame-financing-desktop.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=0.5&fp-y=0.48&fp-z=1&q=50&w=2280&h=1160');
-      }
-    }
-  }
-  @include mq(xsm) {
-    padding: vwl(30px) 0;
-  }
-  @include mq(xxs) {
-    padding: vwp(30px) 0;
-  }
-  .col-xs-12 {
-    @include mq(xssm) {
-      width: 50%;
-    }
-  }
-  h3 {
-    margin: 0;
-  }
-  h4 {
-    margin: 0 0 15px 0;
-    color: #476f82;
-    @include mq(xsm) {
-      margin: 0 0 vwl(15px) 0;
-    }
-    @include mq(xxs) {
-      margin: 0 0 vwp(165px) 0;
-    }
-    @include mq(md) { 
-      margin: 0 0 30px 0;
-    }
-    span {
-      &::before {
-        font-size: 7rem;
-        font-weight: 700;
-        @include mq(xsm) {
-          font-size: vwl(70px);
-        }
-        @include mq(xxs) {
-          font-size: vwp(70px);
-        }
-      }
-    }
-    sup {
-      font-size: 3.5rem;
-      top: -2.75rem;
-      @include mq(xsm) {
-        font-size: vwl(35px);
-        top: vwl(-27.5px);
-      }
-      @include mq(xxs) {
-        font-size: vwp(35px);
-        top: vwp(-27.5px);
-      }
-    }
-  }
-  p {
-    color: $navy;
-    font-weight: 500;
-  }
-}
+// .financing-info {
+//   text-align: center;
+//   padding: 30px 0;
+//   background-size: 100%;
+//   background-repeat: no-repeat;
+//   background-position: 50% 80%;
+//   position: relative;
+//   background-color: #ebebeb;
+//   z-index: 1;
+//   @include mq(sm) {
+//     padding: 30px 0 45px 0;
+//   }
+//   @include mq(lg) {
+//     padding: 45px 0 60px 0;
+//   }
+//   &.lazyloaded {
+//     background-image: url('./frame/ubf-financing.jpg?#{$imgixCrop}&fp-x=.405&w=840&h=960');
+//     @include mq(xs) {
+//       background-image: url('./frame/upholstered-bed-frame-financing-desktop.jpg?#{$imgixCrop}&fp-x=0&fp-z=1.4&q=50&w=922&h=792');
+//       background-size: 60%;
+//       background-position: 100% 50%;
+//     }
+//     @include mq(sm) {
+//       background-image: url('./frame/upholstered-bed-frame-financing-desktop.jpg?#{$imgixCrop}&fp-x=0&fp-z=1.23&q=50&w=1200&h=860');
+//       background-size: 600px;
+//       background-position: calc(50% + 196px) 50%;
+//     }
+//     @include mq(md) {
+//       background-image: url('./frame/upholstered-bed-frame-financing-desktop.jpg?#{$imgixCrop}&fp-x=0&fp-z=1.15&q=50&w=1440&h=960');
+//       background-size: 720px;
+//       background-position: calc(50% + 240px) 50%;
+//     }
+//     @include mq(lg) {
+//       background-image: url('./frame/upholstered-bed-frame-financing-desktop.jpg?#{$imgixCrop}&fp-x=0&fp-z=1.199&q=50&w=840&h=550');
+//       background-size: 840px;
+//       background-position: calc(50% + 300px) 44%;
+//       @include retina {
+//         background-image: url('./frame/upholstered-bed-frame-financing-desktop.jpg?#{$imgixCrop}&fp-x=0&fp-z=1.199&q=50&w=1680&h=1100');
+//       }
+//     }
+//     @media (min-width: 1440px) {
+//       background-image: url('./frame/upholstered-bed-frame-financing-desktop.jpg?#{$imgixCrop}&fp-x=0.5&fp-z=1.1&q=50&w=900&h=550');
+//       background-size: 900px;
+//       background-position: calc(50% + 380px) 44%;
+//       @include retina {
+//         background-image: url('./frame/upholstered-bed-frame-financing-desktop.jpg?#{$imgixCrop}&fp-x=0.5&fp-z=1.1&q=50&w=1800&h=1100');
+//       }
+//     }
+//     @media (min-width: 1660px) {
+//       background-image: url('./frame/upholstered-bed-frame-financing-desktop.jpg?#{$imgixCrop}&fp-x=0.5&fp-y=0.48&fp-z=1&q=50&w=1140&h=580');
+//       background-size: 1140px;
+//       background-position: calc(50% + 390px) 44%;
+//       padding: 60px 0 75px 0;
+//       @include retina {
+//         background-image: url('./frame/upholstered-bed-frame-financing-desktop.jpg?#{$imgixCrop}&fp-x=0.5&fp-y=0.48&fp-z=1&q=50&w=2280&h=1160');
+//       }
+//     }
+//   }
+//   @include mq(xsm) {
+//     padding: vwl(30px) 0;
+//   }
+//   @include mq(xxs) {
+//     padding: vwp(30px) 0;
+//   }
+//   .col-xs-12 {
+//     @include mq(xssm) {
+//       width: 50%;
+//     }
+//   }
+//   h3 {
+//     margin: 0;
+//   }
+//   h4 {
+//     margin: 0 0 15px 0;
+//     color: #476f82;
+//     @include mq(xsm) {
+//       margin: 0 0 vwl(15px) 0;
+//     }
+//     @include mq(xxs) {
+//       margin: 0 0 vwp(165px) 0;
+//     }
+//     @include mq(md) { 
+//       margin: 0 0 30px 0;
+//     }
+//     span {
+//       &::before {
+//         font-size: 7rem;
+//         font-weight: 700;
+//         @include mq(xsm) {
+//           font-size: vwl(70px);
+//         }
+//         @include mq(xxs) {
+//           font-size: vwp(70px);
+//         }
+//       }
+//     }
+//     sup {
+//       font-size: 3.5rem;
+//       top: -2.75rem;
+//       @include mq(xsm) {
+//         font-size: vwl(35px);
+//         top: vwl(-27.5px);
+//       }
+//       @include mq(xxs) {
+//         font-size: vwp(35px);
+//         top: vwp(-27.5px);
+//       }
+//     }
+//   }
+//   p {
+//     color: $navy;
+//     font-weight: 500;
+//   }
+// }
 
-.versatile {
-  padding: 30px 0;
-  @include mq(xsm) {
-    padding: vwl(30px) 0;
-  }
-  @include mq(xxs) {
-    padding: vwp(30px) 0;
-  }
-  @include mq(lg) {
-    padding: 60px 0;
-  }
-}
+// .versatile {
+//   padding: 30px 0;
+//   @include mq(xsm) {
+//     padding: vwl(30px) 0;
+//   }
+//   @include mq(xxs) {
+//     padding: vwp(30px) 0;
+//   }
+//   @include mq(lg) {
+//     padding: 60px 0;
+//   }
+// }
 
 
 // slideshow stuff
@@ -981,103 +981,103 @@ video {
       padding-bottom: 82.5%;
     }
     &.lazyloaded {
-      background-image: url('#{$imgixUrl}/upholstered-bed-frame-design.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=694&fp-z=1.15&fp-x=.52');
+      background-image: url('./frame/upholstered-bed-frame-design.jpg?#{$imgixCrop}&w=840&h=694&fp-z=1.15&fp-x=.52');
       @include mq(sm) {
-        background-image: url('#{$imgixUrl}/upholstered-bed-frame-design.jpg#{$imgixDefaults}#{$imgixCrop}&w=992&h=492&fp-x=0&fp-y=.55');
+        background-image: url('./frame/upholstered-bed-frame-design.jpg?#{$imgixCrop}&w=992&h=492&fp-x=0&fp-y=.55');
         background-size: 496px;
       }
       @include mq(md) {
-        background-image: url('#{$imgixUrl}/upholstered-bed-frame-design.jpg#{$imgixDefaults}#{$imgixCrop}&w=1200&h=570&fp-x=0&fp-y=.55');
+        background-image: url('./frame/upholstered-bed-frame-design.jpg?#{$imgixCrop}&w=1200&h=570&fp-x=0&fp-y=.55');
         background-size: 600px;
       }
       @include mq(lg) {
         height: 500px;
         padding: 0;
-        background-image: url('#{$imgixUrl}/upholstered-bed-frame-design.jpg#{$imgixDefaults}#{$imgixCrop}&w=720&h=500&fp-x=0&fp-y=.55');
+        background-image: url('./frame/upholstered-bed-frame-design.jpg?#{$imgixCrop}&w=720&h=500&fp-x=0&fp-y=.55');
         background-size: 720px;
         @include retina {
-          background-image: url('#{$imgixUrl}/upholstered-bed-frame-design.jpg#{$imgixDefaults}#{$imgixCrop}&w=1440&h=1000&fp-x=0&fp-y=.55');
+          background-image: url('./frame/upholstered-bed-frame-design.jpg?#{$imgixCrop}&w=1440&h=1000&fp-x=0&fp-y=.55');
         }
       }
       @media (min-width: 1440px) {
-        background-image: url('#{$imgixUrl}/upholstered-bed-frame-design.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=500&fp-x=0&fp-y=.55');
+        background-image: url('./frame/upholstered-bed-frame-design.jpg?#{$imgixCrop}&w=840&h=500&fp-x=0&fp-y=.55');
         background-size: 840px;
         @include retina {
-          background-image: url('#{$imgixUrl}/upholstered-bed-frame-design.jpg#{$imgixDefaults}#{$imgixCrop}&w=1680&h=1000&fp-x=0&fp-y=.55');
+          background-image: url('./frame/upholstered-bed-frame-design.jpg?#{$imgixCrop}&w=1680&h=1000&fp-x=0&fp-y=.55');
         }
       }
       @media (min-width: 1660px) {
-        background-image: url('#{$imgixUrl}/upholstered-bed-frame-design.jpg#{$imgixDefaults}#{$imgixCrop}&w=960&h=500&fp-x=0&fp-y=.55');
+        background-image: url('./frame/upholstered-bed-frame-design.jpg?#{$imgixCrop}&w=960&h=500&fp-x=0&fp-y=.55');
         background-size: 960px;
         @include retina {
-          background-image: url('#{$imgixUrl}/upholstered-bed-frame-design.jpg#{$imgixDefaults}#{$imgixCrop}&w=1920&h=1000&fp-x=0&fp-y=.55');
+          background-image: url('./frame/upholstered-bed-frame-design.jpg?#{$imgixCrop}&w=1920&h=1000&fp-x=0&fp-y=.55');
         }
       }
       &[data-current='2'] {
-        background-image: url('#{$imgixUrl}/couple-in-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=694&fp-x=.47&fp-y=1&fp-z=1.1');
+        background-image: url('./frame/couple-in-bed.jpg?#{$imgixCrop}&w=840&h=694&fp-x=.47&fp-y=1&fp-z=1.1');
         @include mq(sm) {
-          background-image: url('#{$imgixUrl}/couple-in-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=992&h=492&fp-z=1.05&fp-x=0&fp-y=.6');
+          background-image: url('./frame/couple-in-bed.jpg?#{$imgixCrop}&w=992&h=492&fp-z=1.05&fp-x=0&fp-y=.6');
           background-size: 496px;
         }
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/couple-in-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1200&h=570&fp-x=0&fp-y=.55&fp-z=1.1');
+          background-image: url('./frame/couple-in-bed.jpg?#{$imgixCrop}&w=1200&h=570&fp-x=0&fp-y=.55&fp-z=1.1');
           background-size: 600px;
         }
         @include mq(lg) {
           height: 500px;
           padding: 0;
-          background-image: url('#{$imgixUrl}/couple-in-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=720&h=500&fp-x=0&fp-z=1.1&fp-y=1');
+          background-image: url('./frame/couple-in-bed.jpg?#{$imgixCrop}&w=720&h=500&fp-x=0&fp-z=1.1&fp-y=1');
           background-size: 720px;
           @include retina {
-            background-image: url('#{$imgixUrl}/couple-in-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1440&h=1000&fp-x=0&fp-z=1.1&fp-y=1');
+            background-image: url('./frame/couple-in-bed.jpg?#{$imgixCrop}&w=1440&h=1000&fp-x=0&fp-z=1.1&fp-y=1');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/couple-in-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=500&fp-x=0&fp-y=.55');
+          background-image: url('./frame/couple-in-bed.jpg?#{$imgixCrop}&w=840&h=500&fp-x=0&fp-y=.55');
           background-size: 840px;
           @include retina {
-            background-image: url('#{$imgixUrl}/couple-in-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1680&h=1000&fp-x=0&fp-y=.55');
+            background-image: url('./frame/couple-in-bed.jpg?#{$imgixCrop}&w=1680&h=1000&fp-x=0&fp-y=.55');
           }
         }
         @media (min-width: 1660px) {
-          background-image: url('#{$imgixUrl}/couple-in-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=960&h=500&fp-x=0&fp-y=.55');
+          background-image: url('./frame/couple-in-bed.jpg?#{$imgixCrop}&w=960&h=500&fp-x=0&fp-y=.55');
           background-size: 960px;
           @include retina {
-            background-image: url('#{$imgixUrl}/couple-in-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1920&h=1000&fp-x=0&fp-y=.55');
+            background-image: url('./frame/couple-in-bed.jpg?#{$imgixCrop}&w=1920&h=1000&fp-x=0&fp-y=.55');
           }
         }
       }
       &[data-current='3'] {
-        background-image: url('#{$imgixUrl}/frame-corner-closeup-DS.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=694');
+        background-image: url('./frame/frame-corner-closeup-DS.jpg?#{$imgixCrop}&w=840&h=694');
         @include mq(sm) {
-          background-image: url('#{$imgixUrl}/frame-corner-closeup-DS.jpg#{$imgixDefaults}#{$imgixCrop}&w=992&h=492');
+          background-image: url('./frame/frame-corner-closeup-DS.jpg?#{$imgixCrop}&w=992&h=492');
           background-size: 496px;
         }
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/frame-corner-closeup-DS.jpg#{$imgixDefaults}#{$imgixCrop}&w=1200&h=570');
+          background-image: url('./frame/frame-corner-closeup-DS.jpg?#{$imgixCrop}&w=1200&h=570');
           background-size: 600px;
         }
         @include mq(lg) {
           height: 500px;
           padding: 0;
-          background-image: url('#{$imgixUrl}/frame-corner-closeup-DS.jpg#{$imgixDefaults}#{$imgixCrop}&w=720&h=500');
+          background-image: url('./frame/frame-corner-closeup-DS.jpg?#{$imgixCrop}&w=720&h=500');
           background-size: 720px;
           @include retina {
-            background-image: url('#{$imgixUrl}/frame-corner-closeup-DS.jpg#{$imgixDefaults}#{$imgixCrop}&w=1440&h=1000');
+            background-image: url('./frame/frame-corner-closeup-DS.jpg?#{$imgixCrop}&w=1440&h=1000');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/frame-corner-closeup-DS.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=500');
+          background-image: url('./frame/frame-corner-closeup-DS.jpg?#{$imgixCrop}&w=840&h=500');
           background-size: 840px;
           @include retina {
-            background-image: url('#{$imgixUrl}/frame-corner-closeup-DS.jpg#{$imgixDefaults}#{$imgixCrop}&w=1680&h=1000');
+            background-image: url('./frame/frame-corner-closeup-DS.jpg?#{$imgixCrop}&w=1680&h=1000');
           }
         }
         @media (min-width: 1660px) {
-          background-image: url('#{$imgixUrl}/frame-corner-closeup-DS.jpg#{$imgixDefaults}#{$imgixCrop}&w=960&h=500');
+          background-image: url('./frame/frame-corner-closeup-DS.jpg?#{$imgixCrop}&w=960&h=500');
           background-size: 960px;
           @include retina {
-            background-image: url('#{$imgixUrl}/frame-corner-closeup-DS.jpg#{$imgixDefaults}#{$imgixCrop}&w=1920&h=1000');
+            background-image: url('./frame/frame-corner-closeup-DS.jpg?#{$imgixCrop}&w=1920&h=1000');
           }
         }
       }
@@ -1482,7 +1482,7 @@ main[data-active-type='TU'][data-active-color='CS'] .compare,
   main[data-active-type='UU'][data-active-color='CS'] .compare[data-type='TU'] {
   &.lazyloaded {
     @include mq(xsm) {
-      background-image: url('#{$imgixUrl}/comparison-full-TU-CS.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=1110&fp-x=.37&fp-z=1.6&fp-y=.32');
+      background-image: url('./frame/comparison-full-TU-CS.jpg?#{$imgixCrop}&w=840&h=1110&fp-x=.37&fp-z=1.6&fp-y=.32');
     }
   }
 }
@@ -1491,7 +1491,7 @@ main[data-active-type='TU'][data-active-color='DS'] .compare[data-type='TU'],
 main[data-active-type='UU'][data-active-color='DS'] .compare[data-type='TU'] {
   &.lazyloaded {
     @include mq(xsm) {
-      background-image: url('#{$imgixUrl}/comparison-full-TU-DS.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=1110&fp-x=.37&fp-z=1.6&fp-y=.32');
+      background-image: url('./frame/comparison-full-TU-DS.jpg?#{$imgixCrop}&w=840&h=1110&fp-x=.37&fp-z=1.6&fp-y=.32');
     }
   }
 }
@@ -1529,7 +1529,7 @@ main[data-active-type='UU'][data-active-color='CS'] .compare[data-type='UU'],
 main[data-active-type='TU'][data-active-color='CS'] .compare[data-type='UU'] {
   &.lazyloaded {
     @include mq(xsm) {
-      background-image: url('#{$imgixUrl}/comparison-full-UU-CS.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=1110&fp-x=.37&fp-z=1.6&fp-y=.32');
+      background-image: url('./frame/comparison-full-UU-CS.jpg?#{$imgixCrop}&w=840&h=1110&fp-x=.37&fp-z=1.6&fp-y=.32');
     }
   }
 }
@@ -1538,7 +1538,7 @@ main[data-active-type='UU'][data-active-color='DS'] .compare[data-type='UU'],
 main[data-active-type='TU'][data-active-color='DS'] .compare[data-type='UU'] {
   &.lazyloaded {
     @include mq(xsm) {
-      background-image: url('#{$imgixUrl}/comparison-full-UU-DS.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=1110&fp-x=.37&fp-z=1.6&fp-y=.32');
+      background-image: url('./frame/comparison-full-UU-DS.jpg?#{$imgixCrop}&w=840&h=1110&fp-x=.37&fp-z=1.6&fp-y=.32');
     }
   }
 }
@@ -1548,19 +1548,19 @@ main {
     .compare {
       &.lazyloaded {
         @include mq(sm) {
-          background-image: url('#{$imgixUrl}/comparison-full-UU-CS.jpg#{$imgixDefaults}#{$imgixCrop}&w=1984&h=1000&fp-x=.5&fp-y=0.45&fp-z=1.15');
+          background-image: url('./frame/comparison-full-UU-CS.jpg?#{$imgixCrop}&w=1984&h=1000&fp-x=.5&fp-y=0.45&fp-z=1.15');
         }
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/comparison-full-UU-CS.jpg#{$imgixDefaults}#{$imgixCrop}&w=2400&h=1100&fp-x=.5&fp-y=0.475&fp-z=1.1');
+          background-image: url('./frame/comparison-full-UU-CS.jpg?#{$imgixCrop}&w=2400&h=1100&fp-x=.5&fp-y=0.475&fp-z=1.1');
         }
       }
       .photo {
         &.lazyloaded {
           @include mq(sm) {
-            background-image: url('#{$imgixUrl}/comparison-full-TU-CS.jpg#{$imgixDefaults}#{$imgixCrop}&w=1984&h=1000&fp-x=.5&fp-y=0.45&fp-z=1.15');
+            background-image: url('./frame/comparison-full-TU-CS.jpg?#{$imgixCrop}&w=1984&h=1000&fp-x=.5&fp-y=0.45&fp-z=1.15');
           }
           @include mq(md) {
-            background-image: url('#{$imgixUrl}/comparison-full-TU-CS.jpg#{$imgixDefaults}#{$imgixCrop}&w=2400&h=1100&fp-x=.5&fp-y=0.475&fp-z=1.1');
+            background-image: url('./frame/comparison-full-TU-CS.jpg?#{$imgixCrop}&w=2400&h=1100&fp-x=.5&fp-y=0.475&fp-z=1.1');
           }
         }
         &::before {
@@ -1594,19 +1594,19 @@ main {
     .compare {
       &.lazyloaded {
         @include mq(sm) {
-          background-image: url('#{$imgixUrl}/comparison-full-UU-DS.jpg#{$imgixDefaults}#{$imgixCrop}&w=1984&h=1000&fp-x=.5&fp-y=0.45&fp-z=1.15');
+          background-image: url('./frame/comparison-full-UU-DS.jpg?#{$imgixCrop}&w=1984&h=1000&fp-x=.5&fp-y=0.45&fp-z=1.15');
         }
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/comparison-full-UU-DS.jpg#{$imgixDefaults}#{$imgixCrop}&w=2400&h=1100&fp-x=.5&fp-y=0.475&fp-z=1.1');
+          background-image: url('./frame/comparison-full-UU-DS.jpg?#{$imgixCrop}&w=2400&h=1100&fp-x=.5&fp-y=0.475&fp-z=1.1');
         }
       }
       .photo {
         &.lazyloaded {
           @include mq(sm) {
-            background-image: url('#{$imgixUrl}/comparison-full-TU-DS.jpg#{$imgixDefaults}#{$imgixCrop}&w=1984&h=1000&fp-x=.5&fp-y=0.45&fp-z=1.15');
+            background-image: url('./frame/comparison-full-TU-DS.jpg?#{$imgixCrop}&w=1984&h=1000&fp-x=.5&fp-y=0.45&fp-z=1.15');
           }
           @include mq(md) {
-            background-image: url('#{$imgixUrl}/comparison-full-TU-DS.jpg#{$imgixDefaults}#{$imgixCrop}&w=2400&h=1100&fp-x=.5&fp-y=0.475&fp-z=1.1');
+            background-image: url('./frame/comparison-full-TU-DS.jpg?#{$imgixCrop}&w=2400&h=1100&fp-x=.5&fp-y=0.475&fp-z=1.1');
           }
         }
       }
@@ -1652,17 +1652,17 @@ main {
     padding: vwp(30px) 0;
   }
   &.lazyloaded {
-    background-image: url('#{$imgixUrl}/sheets-texture.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=1200&fp-x=0&fp-y=0');
+    background-image: url('./frame/sheets-texture.jpg?#{$imgixCrop}&w=840&h=1200&fp-x=0&fp-y=0');
     @include mq(sm) {
-      background-image: url('#{$imgixUrl}/sheets-texture.jpg#{$imgixDefaults}#{$imgixCrop}&w=992&h=750&fp-x=0&fp-y=0');
+      background-image: url('./frame/sheets-texture.jpg?#{$imgixCrop}&w=992&h=750&fp-x=0&fp-y=0');
       background-size: 992px;
     }
     @include mq(md) {
-      background-image: url('#{$imgixUrl}/sheets-texture.jpg#{$imgixDefaults}#{$imgixCrop}&w=1200&h=800&fp-x=0&fp-y=0');
+      background-image: url('./frame/sheets-texture.jpg?#{$imgixCrop}&w=1200&h=800&fp-x=0&fp-y=0');
       background-size: 1200px;
     }
     @include mq(lg) {
-      background-image: url('#{$imgixUrl}/sheets-texture.jpg#{$imgixDefaults}#{$imgixCrop}&w=1920&h=600&fp-x=0&fp-y=0');
+      background-image: url('./frame/sheets-texture.jpg?#{$imgixCrop}&w=1920&h=600&fp-x=0&fp-y=0');
       background-size: 1920px;
       padding: 60px 0 75px 0;
     }
