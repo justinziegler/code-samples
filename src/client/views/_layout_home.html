@@ -16,6 +16,7 @@
 
 <body>
   {{ _modules.header(p) }}
+  
   <main>	
     {% block content %}
       <p>Missing content block</p>
@@ -28,7 +29,7 @@
     <script src="../assets/{{ script }}.js"></script>
   {%- endfor -%}
   <script>
-    $('nav').autoHidingNavbar();
+    $('#header-nav').autoHidingNavbar();
   </script>
   {% block scripts %}
   {% endblock %}

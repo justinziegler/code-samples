@@ -35,7 +35,12 @@ async function home(ctx, next) {
       pageUrl: '/',
       nextPage: 'value-props',
     },
-    caseStudies: caseStudies
+    caseStudies: caseStudies,
+    scripts: [
+      'modal.bootstrap',
+      'lazysizes.min',
+      'lazysizes.unveilhooks'
+    ],
   });
 }
 

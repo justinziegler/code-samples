@@ -1,8 +1,28 @@
 $bootstrap-sass-asset-helper: false !default;
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&family=Cabin+Condensed:wght@400;500&display=swap');
 //
 // Variables
 // --------------------------------------------------
+$eggplant: #2a0136;
+$purple: #5e0f5b;
+// $lipstick: #962756;
+$lipstick: #932755;
+$flame: #C93B30;
+$orange: #FF7132;
 
+$color1: $purple;
+$color2: #781b58;
+$color3: $lipstick;
+$color4: #ae3143;
+$color5: $flame;
+$color6: #e45631;
+$color7: $orange;
+
+// Original Palette
+$cat1: $lipstick;
+$cat2: $color4;
+$cat3: $flame;
+$cat4: $color6;
 
 //== Colors
 //

@@ -1,6 +1,7 @@
 {% extends "./src/client/views/_layout_home.html" %}
 {% import "./src/client/views/_css.html" as _css %}
 {% import "./src/client/views/_js.html" as _js %}
+{% import "./src/client/views/_modals.html" as _modals %}
 {% import "./src/client/views/_modules.html" as _modules %}
 
 {% block styles %}
@@ -15,53 +16,134 @@
 {% endblock %}
 
 {% block content %}
+  {{ _modules.pageNav() }}
+
   {% macro getCaseStudies(caseStudies) %}
     {% set caseNumber = 1 %}
     {% for cs in caseStudies %}
-      <section class="case-studies">
+      <section class="case-study">
         <div class="container">
           <div class="row">
-            <div class="case-study col-xs-12 col-sm-10 col-sm-offset-1">
-              <h2><span>Case Study:</span> {{ cs.title }}</h2>
-              <h3>{{ cs.intro }}</h3>
-              <ul>
-                {% for bullet in cs.bullets %}
-                  <li>{{ bullet }}</li>
+            <div class="case col-xs-12 col-sm-9 col-sm-offset-3">
+              <div class="case-background">
+                {% for image in cs.background %}
+                  <div {% if cs.background.length === 1 %}style="background-image: url('{{ image }}')"{% endif %}>
+                    {% if cs.background.length > 1 %}
+                      <img src="{{ image }}" alt="{{ cs.title }}" class="lazyload">
+                    {% endif %}
+                  </div>
                 {% endfor %}
-              </ul>
-              <p>{{ cs.details }}</p>
+              </div>
               <div class="row">
-                <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-12">
-                  <div class="thumbnails row">
-                    {% for thumb in cs.thumbnails %}
-                      <div class="col-xs-6 col-sm-3">
-                        <div class="thumbnail">
-                          <a href="{{ thumb.link }}">
-                          <span data-number="0{{ caseNumber }}.">
-                            {{ thumb.title }}
-                          </span>
-                          </a>
+                
+                <div class="case-details col-xs-5 col-xs-offset-7">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <h2>{{ cs.title }}</h2>
+                      <p>{{ cs.intro }}</p>
+                      {% if cs.bullets.length %}
+                        <ul>
+                          {% for bullet in cs.bullets %}
+                            <li>{{ bullet }}</li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                      {% if cs.details.length %}
+                        <p>{{ cs.details }}</p>
+                      {% endif %}
+                      <ul class="link">
+                        <li>
+                          <a href="{{ cs.link }}">Check it out</a>
+                        </li>
+                      </ul>
+                    </div>
+
+                    {# <div class="thumbnails col-xs-12">
+                        {% for thumb in cs.thumbnails %}
+                          <div class="thumbnail">
+                            <a href="{{ thumb.link }}">
+                            <span data-number="0{{ caseNumber }}.">
+                              {{ thumb.title }}
+                            </span>
+                            </a>
+                          </div>
+                          {%- set caseNumber = caseNumber + 1 -%}
+                        {% endfor %}
+                      </div> #}
+                  </div>
+                  {# <div class="row">
+                      <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-12">
+                        <div class="row">
+                          
+                          <div class="header-nav next col-xs-6 col-sm-3 col-lg-2">
+                            <a href="{{ cs.thumbnails[0].link }}">
+                              <span>Start</span>
+                            </a>
+                          </div>
                         </div>
                       </div>
-                      {%- set caseNumber = caseNumber + 1 -%}
-                    {% endfor %}
-                    <div class="header-nav next col-xs-6 col-sm-3 col-lg-2">
-                      <a href="{{ cs.thumbnails[0].link }}">
-                        <span>Start</span>
-                      </a>
-                    </div>
-                  </div>
+                    </div> #}
                 </div>
+                
               </div>
+              
+              
             </div>
           </div>
         </div>
       </section>
     {% endfor %}
   {% endmacro %}
+
   {{ getCaseStudies(caseStudies) }}
+  {{ _modals.galleryModal() }}
 {% endblock %}
 
 {% block scripts %}
+<script>
+  var winHeight = window.innerHeight,
+      pages = document.querySelectorAll('section'),
+      navLinks = document.querySelectorAll('#menu-nav a'),
+      currentPage = 0;
 
+  window.addEventListener('mousewheel', function(e){
+    scrollPages(e.wheelDelta);
+  });
+  window.addEventListener('DOMMouseScroll', function(e){
+    scrollPages(-1 * e.detail);
+  });
+
+  function scrollPages(delta){
+    var direction = (delta > 0) ? 'up' : 'down',
+      currentPageOffset = currentPage * winHeight;
+    
+    if(direction == 'down' && currentPage <= pages.length - 2) {
+      window.scrollTo({
+        top: currentPageOffset + winHeight,
+        behavior: 'smooth',
+      });
+      currentPage++;
+    } else if(direction == 'up' && currentPage > 0) {
+      window.scrollTo({
+        top: currentPageOffset - winHeight,
+        behavior: 'smooth'
+      });
+      currentPage--;
+    }
+  }
+
+  // for(var i = 0; i < navLinks.length; i++){
+  //   navLinks[i].addEventListener('click', updateNav(i));
+  // }
+
+  // function updateNav(i){
+  //   return function(){
+  //     for(var j=0 ; j < navLinks.length; j++) {
+  //       navLinks[j].parentNode.classList.remove('current');
+  //     }
+  //     navLinks[i].parentNode.classList.add('current');
+  //     currentPage = i;
+  // }
+  // }
+</script>
 {% endblock %}

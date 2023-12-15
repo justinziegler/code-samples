@@ -4,36 +4,38 @@ const utils = require('./utils');
 module.exports.home = async function (ctx) {
   const caseStudies = [
     {
-      title: 'Lightweight Multi-use Slideshow',
+      title: 'Tiktok Mimic',
+      intro: 'Tiktok-styled mobile promotional page for a social media-targeted marketing campaign. Videos advance manually or automatically.',
+      background: [
+        '../assets/promos/tiktok-01.jpg',
+        '../assets/promos/tiktok-02.jpg',
+        '../assets/promos/tiktok-03.jpg'
+      ],
+      link: '../tiktok'
+    },
+    {
+      title: 'Lightweight Multi-use Slideshow (1)',
       intro: 'In my previous position, I would often be required to develop page sections that looked and functioned differently depending if users were on mobile vs. a larger screen. This project came about from a desire to:',
       bullets: [ 
         'Build a lightweight, barebones slider plugin replacement',
         'Allow for alternate functionality on different screen sizes while using the same markup'
       ],
-      thumbnails: [
-        {
-          title: 'Value Propositions',
-          link: '../value-props'
-        },
-        {
-          title: 'Mattress Animation',
-          link: '../mattress-animation'
-        }
-      ]
+      background: [
+        '../assets/luxe-vp-couple-md.jpg',
+      ],
+      link: '../value-props'
     },
     {
-      title: 'Tiktok Mimic',
-      intro: 'This was a fun project developed for a social media marketing campaign. This project goals were to:',
+      title: 'Lightweight Multi-use Slideshow (2)',
+      intro: 'In my previous position, I would often be required to develop page sections that looked and functioned different ly depending if users were on mobile vs. a larger screen. This project came about from a desire to:',
       bullets: [ 
-        'Mimic the look and feel of Tiktok for users that are referred from mobile-targeted links on social media',
-        'Provide an engaging experience that gathers sales leads'
+        'Build a lightweight, barebones slider plugin replacement',
+        'Allow for alternate functionality on different screen sizes while using the same markup'
       ],
-      thumbnails: [
-        {
-          title: 'Tiktok Mimic',
-          link: '../tiktok'
-        }
-      ]
+      background: [
+        '../assets/luxe-vp-couple-md.jpg',
+      ],
+      link: '../mattress-animation'
     },
     {
       title: 'Product Display Template',
@@ -44,6 +46,10 @@ module.exports.home = async function (ctx) {
         'Speed up development time for future product launches'
       ],
       details: 'The template was developed using the Nunjucks templating language, Sass and jQuery, though I\'ve converted some of the scripts to ES6 over time. Additionally, there are a number of node modules developed to aid in setting product details, like discounted prices and monthly payments.  It\'s made to be fully functional once the relevant variables are set, allowing more time for the development of page content.',
+      background: [
+        '../assets/luxe-vp-couple-md.jpg',
+      ],
+      link: '../mattress',
       thumbnails: [
         {
           title: 'Default Config',

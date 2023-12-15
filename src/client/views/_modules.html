@@ -43,7 +43,7 @@
 {%- endmacro -%}
 
 {% macro header(p) %}
-	<nav data-collapsed="false">
+	<nav id="header-nav" data-collapsed="false">
     <div class="container-fluid">
       <div class="row">
         <div class="header-nav prev">
@@ -129,6 +129,26 @@
       </div>
     {% endif %}
 	</nav>
+{% endmacro %}
+
+{% macro pageNav() %}
+  <nav id="page-nav">
+    <div class="nav-content">
+      <div class="logo-container">
+        <div class="logo">
+          <h1>Justin Ziegler</h1>
+          <h2>Recent Work</h2>
+        </div>
+      </div>
+      <div class="nav-links">
+        <ul>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Promotions</a></li>
+          <li><a href="#">Checkout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 {% endmacro %}
 
 {% macro specs(products, product, specs) %}
