@@ -1,0 +1,459 @@
+/* When editing, use the source file for this page in client/resources/sass */
+@import 'compass';
+
+// Core variables and mixins
+@import 'bootstrap/variables';
+@import 'bootstrap/mixins';
+
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/svg';
+@import 'partials/layout';
+
+[class^='reviews-carousel'] {
+  text-align: center;
+  background-color: #f7f6f4;
+  padding: 15px 0 30px 0;
+  @include mq(xsm) {
+    padding: vwl(15px) 20% vwl(30px) 20%;
+  }
+  @include mq(xxs) {
+    padding: vwp(15px) 0 vwp(30px) 0;
+  }
+  @include mq(sm) {
+    padding: 15px 0 45px 0;
+  }
+  @include mq(md) {
+    padding: 30px 0 45px 0;
+  }
+  @include mq(lg) {
+    padding: 45px 0;
+  }
+  .col-xs-12 {
+    @include mq(xxs) {
+      padding: 0;
+    }
+  }
+  h3 {
+    color: $grey;
+    padding: 0 10px;
+    font-size: 1.4rem;
+    font-size: vwp(14px);
+    font-weight: 500;
+    text-align: center;
+    margin: 10px 0 20px 0;
+    margin: vwp(10px) 0 vwp(20px) 0;
+    @include mq(xssm) {
+      font-size: vwp(10px);
+    }
+    @include mq(sm) {
+      font-size: 1.6rem;
+      margin: 10px 0 20px 0;
+    }
+    @include mq(lg) {
+      font-size: 2rem;
+    }
+  }
+  h4 {
+    font-size: 1.8rem;
+    font-size: vwp(18px);
+    color: $navy;
+    line-height: 1;
+    margin: 0;
+    position: relative;
+    @include mq(xssm) {
+      font-size: vwp(12px);
+    }
+    @include mq(sm) {
+      font-size: 1.75rem;
+    }
+    @include mq(md) {
+      font-size: 1.8rem;
+    }
+    &[data-source-type='reviews'] {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+    }
+    &[data-source-type='social'] {
+      text-align: left;
+      padding: 15px 0 30px 65px;
+      @include mq(xsm) {
+        // font-size: vwl(16px);
+        padding: vwl(14.5px) 0 vwl(30px) vwl(57px);
+      }
+      @include mq(xxs) {
+        // font-size: vwp(16px);
+        padding: vwp(9.5px) 0 vwp(30px) vwp(50px);
+      }
+      @include mq(md) {
+        // font-size: 1.75rem;
+        padding: 12px 0 25px 55px;
+      }
+      &::before {
+        content: '';
+        width: 45px;
+        height: 45px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: -2px;
+        border-radius: 50%;
+        @include mq(xsm) {
+          width: vwl(45px);
+          height: vwl(45px);
+          top: vwl(-2px);
+        }
+        @include mq(xxs) {
+          width: vwp(45px);
+          height: vwp(45px);
+          top: vwp(-2px);
+        }
+        @include mq(sm) {
+          top: -4px;
+        }
+      }
+      &::after {
+        content: '';
+        width: 38px;
+        height: 38px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        display: inline-block;
+        position: absolute;
+        right: 10px;
+        top: 4px;
+        @extend %svg;
+        @include mq(xsm) {
+          width: vwl(27.5px);
+          height: vwl(27.5px);
+          top: vwl(10px);
+          right: vwl(-9px);
+        }
+        @include mq(xxs) {
+          width: vwp(22px);
+          height: vwp(22px);
+          top: vwp(7.5px);
+          right: vwp(-5px);
+        }
+        @include mq(smmd) {
+          display: none;
+        }
+        @include mq(md) {
+          right: -5px;
+        }
+        @include mq(lg) {
+          right: 10px;
+        }
+      }
+    }
+    &[data-source='twitter'] {
+      color: #1da1f2;
+      &::after {
+        @include logo-twitter(#1da1f2);
+      }
+    }
+    &[data-source='facebook'] {
+      color: #1877f2;
+      &::after {
+        @include logo-facebook(#1877f2);
+        width: 40px;
+        height: 35px;
+        right: 0px;
+        @include mq(xsm) {
+          width: vwl(40px);
+          height: vwl(25px);
+          top: vwl(9px);
+          right: vwl(0px);
+        }
+        @include mq(xxs) {
+          width: vwp(35px);
+          height: vwp(35px);
+          top: vwp(0px);
+          right: vwp(0px);
+        }
+      }
+    }
+    &[data-source='instagram'] {
+      color: #82008f;
+      &::after {
+        background-image: url('https://lull-media.imgix.net/shop/logo-instagram-color.png?auto=format,compress&q=50,enhance&w=60');
+        background-size: contain;
+        width: 30px;
+        height: 36px;
+        @include mq(xsm) {
+          width: vwl(20px);
+          height: vwl(20px);
+          top: vwl(13px);
+        }
+        @include mq(xxs) {
+          width: vwp(18px);
+          height: vwp(18px);
+          top: vwp(9px);
+        }
+      }
+    }
+  }
+  .swiper-container {
+    @include mq(xxs) {
+      margin: 0 vwp(25px);
+    }
+    @include mq(sm) {
+      margin: 15px 10px 0 10px;
+    }
+    .swiper-slide {
+      padding-bottom: 0;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+      padding-left: vwp(5px);
+      padding-right: vwp(5px);
+      @include mq(xs) {
+        padding-left: vwl(5px);
+        padding-right: vwl(5px);
+      }
+      @include mq(sm) {
+        padding-left: 7px;
+        padding-right: 7px;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    $x: 36px;
+    $y: ($x * 2) / 3;
+    width: #{$x};
+    height: #{$x};
+    margin-top: -$y;
+    border-radius: 50%;
+    background-color: rgba($mdgrey, 0.5);
+    border: solid 1px #ccc;
+    z-index: 1;
+    @include mq(xsm) {
+      $x: vwl(36px);
+      width: #{$x};
+      height: #{$x};
+      $y: ($x * 2) / 3;
+      margin-top: -$y;
+    }
+    @include mq(xxs) {
+      $x: vwp(36px);
+      width: #{$x};
+      height: #{$x};
+      $y: ($x * 2) / 3;
+      margin-top: -$y;
+    }
+    &::after {
+      color: $white;
+      font-size: 1.4rem;
+      font-weight: 900;
+      line-height: 1;
+      @include mq(xsm) {
+        font-size: vwl(14px);
+      }
+      @include mq(xxs) {
+        font-size: vwp(14px);
+      }
+    }
+    &:hover, &:focus {
+      outline: none;
+      background-color: rgba($mdgrey, 0.65);
+      border: solid 1px shade(#ccc, 35%);
+    }
+  }
+  .swiper-button-prev {
+    left: 10px;
+    left: vwp(10px);
+    @include mq(xs) {
+      left: 0;
+    }
+    @include mq(sm) {
+      left: 8px;
+    }
+  }
+  .swiper-button-next {
+    right: 10px;
+    right: vwp(10px);
+    @include mq(xs) {
+      right: 0;
+    }
+    @include mq(sm) {
+      right: 8px;
+    }
+  }
+  .swiper-pagination {
+    left: 0;
+    right: 0;
+    margin-top: 5px;
+    text-align: center;
+    @include mq(xsm) {
+      margin-top: vwl(5px);
+    }
+    @include mq(xxs) {
+      margin-top: vwp(5px);
+    }
+    &-bullet {
+      margin: 0 5px;
+      background-color: #666;
+      &:focus {
+        outline: 0;
+        opacity: 0.75;
+      }
+      &-active {
+        opacity: 1;
+      }
+    }
+  }
+  .item {
+    background-color: $white;
+    padding: 15px 20px 50px 20px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0px 4px 8px rgba($navy, 0.1);
+    transition: 0.2s;
+    margin-bottom: 10px;
+    flex: 1;
+    @include mq(xsm) {
+      padding: vwl(15px) vwl(20px) vwl(50px) vwl(20px);
+      box-shadow: 0 vwl(4px) vwl(8px) rgba($navy, 0.1);
+      margin-bottom: vwl(10px);
+    }
+    @include mq(xxs) {
+      padding: vwp(15px) vwp(20px) vwp(50px) vwp(20px);
+      box-shadow: 0 vwp(4px) vwp(8px) rgba($navy, 0.1);
+      margin-bottom: vwp(10px);
+    }
+    @include mq(lg) {
+      padding: 30px 30px 50px 30px;
+    }
+    p {
+      color: #666;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: left;
+      line-height: 1.2;
+      &.reviewer {
+        bottom: 0;
+        left: 20px;
+        right: 20px;
+        text-align: right;
+        text-transform: none;
+        padding-top: 15px;
+        margin: 0 0 20px 0;
+        top: auto;
+        transform: none;
+        font-weight: 700;
+        color: $navy;
+        @include mq(xsm) {
+          left: vwl(20px);
+          right: vwl(20px);
+          padding-top: vwl(15px);
+          margin: 0 0 vwl(20px) 0;
+        }
+        @include mq(xxs) {
+          left: vwp(20px);
+          right: vwp(20px);
+          padding-top: vwp(15px);
+          margin: 0 0 vwp(20px) 0;
+        }
+      }
+    }
+  }
+  .star-gauge,
+  .stars {
+    height: 20px;
+    background-repeat: repeat-x;
+    background-size: 25px 20px;
+    @include mq(xsm) {
+      height: vwl(20px);
+      background-size: vwl(25px) vwl(20px);
+    }
+    @include mq(xxs) {
+      height: vwp(20px);
+      background-size: vwp(25px) vwp(20px);
+    }
+  }
+  .star-gauge {
+    @include star(#666);
+    width: 125px;
+    text-align: left;
+    margin: 5px auto 10px auto;
+    @include mq(xsm) {
+      width: vwl(125px);
+      margin: vwl(5px) auto vwl(10px) auto;
+    }
+    @include mq(xxs) {
+      width: vwp(125px);
+      margin: vwp(5px) auto vwp(10px) auto;
+    }
+  }
+  .stars {
+    @include star($pink);
+  }
+  .review-title {
+    position: relative;
+    min-height: 45px;
+    @include mq(xssm) {
+      min-height: 30px;
+    }
+    @include mq(md) {
+      min-height: 50px;
+    }
+  }
+  .review {
+    min-height: 150px;
+    position: relative;
+    @include mq(xsm) {
+      min-height: vwl(150px);
+    }
+    @include mq(xxs) {
+      min-height: vwp(150px);
+    }
+    @include mq(sm) {
+      min-height: 165px;
+    }
+    @include mq(lg) {
+      min-height: 180px;
+    }
+  }
+  .btn {
+    margin-top: 45px;
+    @include mq(xsm) {
+      margin-top: vwl(45px);
+    }
+    @include mq(xxs) {
+      margin-top: vwp(45px);
+    }
+  }
+  &.navy {
+    background-color: $navy;
+    h2, h3 {
+      color: $white;
+    }
+    .swiper-pagination-bullet {
+      background-color: $white;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      background-color: rgba($white, .75);
+      &:focus {
+        border-color: $navy;
+      }
+      &::after {
+        color: $navy;
+      }
+    }
+  }
+}

@@ -144,7 +144,7 @@ async function mattress(ctx, next) {
   });
 }
 
-async function frame(ctx, next) {
+async function frameA(ctx, next) {
   const discountActual = 200;
   ctx.discountActual = discountActual;
   const upholsteredSkus = await utils.getProductSkus(ctx, 40, discountActual);
@@ -156,6 +156,36 @@ async function frame(ctx, next) {
     p: p[0],      
     title: 'Product Page example',
     discountActual: discountActual
+  })
+}
+
+async function frameB(ctx, next) {
+  const discountActual = 200;
+  ctx.discountActual = discountActual;
+  const upholsteredSkus = await utils.getProductSkus(ctx, 40, discountActual);
+  const tuftedSkus = await utils.getProductSkus(ctx, 41, discountActual);
+	ctx.skus = upholsteredSkus.concat(tuftedSkus);
+  const p = await pageConfig.frame(ctx);
+  const frameReviews = await pageConfig.frameReviews(ctx);
+
+  const ourWay = await content.ourWay(ctx);
+  let monthlyPayment = 0;
+  let name;
+  upholsteredSkus.forEach(item => {
+    if (item.sku == 'LU-UU-DS-TW')  {
+      monthlyPayment = item.monthlyPayment;
+      name = item.name;
+    } 
+  })
+
+  ctx.body = await render('product_frame_islay', {
+    p: p[0],      
+    title: 'Product Page example',
+    discountActual: discountActual,
+    ourWay: ourWay,
+    monthlyPayment: monthlyPayment,
+    name: name,
+    frameReviews: frameReviews
   })
 }
 
@@ -250,14 +280,23 @@ router.get('/sheets/king', sheets);
 router.get('/sheets/cal-king', sheets);
 router.get('/sheets/california-king', sheets);
 
-router.get('/frame', frame);
-router.get('/frame/twin', frame);
-router.get('/frame/twin-xl', frame);
-router.get('/frame/full', frame);
-router.get('/frame/queen', frame);
-router.get('/frame/king', frame);
-router.get('/frame/cal-king', frame);
-router.get('/frame/california-king', frame);
+router.get('/frame', frameA);
+router.get('/frame/twin', frameA);
+router.get('/frame/twin-xl', frameA);
+router.get('/frame/full', frameA);
+router.get('/frame/queen', frameA);
+router.get('/frame/king', frameA);
+router.get('/frame/cal-king', frameA);
+router.get('/frame/california-king', frameA);
+
+router.get('/frame-b', frameB);
+router.get('/frame-b/twin', frameB);
+router.get('/frame-b/twin-xl', frameB);
+router.get('/frame-b/full', frameB);
+router.get('/frame-b/queen', frameB);
+router.get('/frame-b/king', frameB);
+router.get('/frame-b/cal-king', frameB);
+router.get('/frame-b/california-king', frameB);
 
 router.get('/cart', cart);
 

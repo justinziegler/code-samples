@@ -1,0 +1,331 @@
+
+{% extends "./src/client/views/_layout_product.html" %}
+{% import "./src/client/views/_css.html" as _css %}
+{% import "./src/client/views/_js.html" as _js %}
+{% import "./src/client/views/_modules.html" as _modules %}
+
+{% block styles %}
+  {{ _css.frame() }}
+  {{ _css.frameB() }}
+{% endblock %}
+
+{% block title %}{{ Title }}{% endblock %}
+
+{% block content %}
+  {{ _modules.ourWay(ourWay) }}
+  {% set mp = 0 %}
+
+  {% for item in skus %}
+    {% if item.sku == 'LU-UU-DS-TW' %}
+      {% set mp = item.monthlyPayment %}
+    {% endif %}
+  {% endfor %}
+
+  <section class="financing-info lazyload">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <h2>A Luxury Bed Frame<br> You Can Afford</h2>
+          <h3>Get the {{ name }}<br> for as low as</h3>
+          <h4><sup>$</sup><span class="price monthly" data-mprice="{{- monthlyPayment | round -}}">/mo.</span></h4>
+          <p>Spread Payments Over  6 to 24 Months<br>
+            As Low as 0% APR Financing Available</p>
+          <a class="btn btn-transparent" role="button" href="#" tabindex="0" id="affirm-learn-more-cta-shop" data-toggle="modal" data-target="#financing-modal">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="versatile">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Versatile, Luxurious and Seriously Comfortable</h2>
+          <h3>The {{ name }} is<br class="visible-xs"> everything you and your bedroom<br class="visible-xs"> have been dreaming of.</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="photo lazyload col-xs-12 col-sm-6"></div>
+        <div style="opacity: 0; height: 0; overflow: hidden;">
+          {# This is to help preload images #}
+          <div class="photo lazyload" data-current="2"></div>
+          <div class="photo lazyload" data-current="3"></div>
+        </div>
+        <div class="content col-xs-12 col-sm-6 col-md-5 col-md-offset-1">
+          <div class="frame" data-current="1">
+            <div class="dots">
+              <button data-slide="1" role="button" tabindex="0">Design</button>
+              <button data-slide="2" role="button" tabindex="0">Comfort</button>
+              <button data-slide="3" role="button" tabindex="0">Quality</button>
+            </div>
+            <div class="stage">
+              <div data-slide="1" class="design">
+                <h4>Modern Design</h4>
+                <p>Offering a modern take on a classic design, this versatile bed frame comes tufted or untufted and in two neutral colors, to complement any bedroom.</p>
+              </div>
+              <div data-slide="2" class="comfort">
+                <h4>Ultimate Comfort</h4>
+                <p>Indulge in unparalleled lounge-ability.  Fully upholstered in linen-like fabric and padded with high quality foam &ndash; the Lull {{ name }} doesn't skimp on comfort.</p>
+              </div>
+              <div data-slide="3" class="quality">
+                <h4>Quality Craftsmanship</h4>
+                <p>Materials matter.  Every component, from wood to fabric, is carefully selected to provide the best in design, quality and support.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="compare lazyload">
+    <div id="handle"></div>
+    <h2 data-type="UU">Timeless Classic</h2>
+    <h2 data-type="TU">Modern Minimalism</h2>
+    <ul>
+      <li data-type="UU">Classic</a>
+      <li data-type="TU">Tufted</a>
+    </ul>
+    <div class="photo lazyload"></div>
+  </section>
+
+  <section class="assembly">
+    <div class="container">
+      <div class="row">
+        <div class="heading col-xs-12">
+          <h2>Quick &amp; Easy Assembly</h2>
+          <h3>Elevated sleep awaits.</h3>
+        </div>
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0 col-lg-10 col-lg-offset-1">
+          <div class="embed-container">
+            <video role="img" aria-label="Assembly video" autoplay playsinline loop muted>
+              <source src="../assets/frame/ubf-16x9-no-audio.mp4" class="lazyload" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="ethical lazyload">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12">
+              <h2>Sustainable &amp; <br class="visible-xxs">Award-Winning</h2>
+            </div>
+          </div>
+          <div class="content row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0">
+              <div class="row">
+                <div class="logo-col col-xs-4 col-sm-3 col-md-offset-1">
+                  <div class="logo sfc" role="img" aria-label="Logo: Sustainable Furnishing Council Member"></div>
+                </div>
+                <div class="col-xs-8 col-sm-offset-1 col-md-offset-0">
+                  <p>As a member of the Sustainable Furnishings Council Lull is committed to reducing the environmental impact of the furnishings industry, while educating ourselves and our customers on the importance of sustainability and conservation.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0">
+              <div class="row">
+                <div class="logo-col col-xs-4 col-sm-3 col-md-offset-1">
+                  <div class="logo newsweek" role="img" aria-label="Logo: Newsweek"></div>
+                </div>
+                <div class="col-xs-8 col-sm-offset-1 col-md-offset-0">
+                  <p>Lull has been recognized<br class="visible-xxs"> as one of <strong>America's Best Trending Online Shops</strong> <br class="visible-xxs">by Newsweek<br class="visible-xssm visible-sm"> for our commitment to offering exceptional customer service,<br class="visible-xssm visible-md visible-lg"> a painless ordering process,<br class="visible-xssm"> and an easy-to-use website.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </d
+    </div>
+  </section>
+
+  {{ _modules.reviewsCarousel(frameReviews) }}
+{% endblock %}
+
+{% block scripts %}   
+{{ _js.swipeIt() }}
+{{ _modules.reviewsCarouselScript() }}
+<script>
+  const speed = .2;
+
+  function nextSlide(slideshow) {
+    var current = Number(slideshow.attr('data-current'));
+    if (isNaN(current))  current = 1;
+    var stage = slideshow.find('.stage');
+    var photo = slideshow.closest('.row').find('.photo');
+    var max = stage.children().length;
+    var next = current + 1;
+    if (current < max) {
+      slideshow.attr('data-current', next);
+      photo.attr('data-current', next);
+      stage.attr('style', 'transition: ' + speed + 's ease-in-out;');
+    } else { // at max
+      next = 1;
+      slideshow.attr('data-current', 1);
+      photo.attr('data-current', 1);
+      var transition = ((max - 1) * speed);
+      stage.attr('style', 'transition: ' + transition + 's ease-in-out;');
+    }
+    slideshow.find('.stage div[data-slide="' + next + '"]').attr('data-active', true).siblings().attr('data-active', false);
+    if (slideshow.find('.dots').length) {
+      slideshow.find('.dots button[data-slide="' + next + '"]').attr('data-active', true).siblings().attr('data-active', false);
+    }
+  }
+
+  function prevSlide(slideshow) {
+    var current = Number(slideshow.attr('data-current'));
+    if (isNaN(current)) current = 1;
+    var stage = slideshow.find('.stage');
+    var photo = slideshow.closest('.row').find('.photo');
+    if (current > 1) {
+      var next = (current - 1);
+      slideshow.attr('data-current', next);
+      photo.attr('data-current', next);
+      stage.attr('style', 'transition: ' + speed + 's ease-in-out;');
+
+      slideshow.find('.stage div[data-slide="' + next + '"]').attr('data-active', true).siblings().attr('data-active', false);
+      if (slideshow.find('.dots').length) {
+        slideshow.find('.dots button[data-slide="' + next + '"]').attr('data-active', true).siblings().attr('data-active', false);
+      }
+    }
+    return current;
+  }
+
+  function slideshowDots(dot) {
+    dot.attr('data-active', true).siblings().attr('data-active', false);
+    var current = Number(dot.closest('.frame').attr('data-current'));
+    var slide = Number(dot.data('slide'));
+    var transition = speed;
+    if (current < slide) {
+      transition = (speed * (slide - current));
+    } else if (current > slide) {
+      transition = (speed * (current - slide));
+    }
+    dot.closest('.row').find('.photo').attr('data-current', slide);
+    dot.closest('.frame').attr('data-current', slide).find('.stage').attr('style', 'transition: ' + transition + 's ease-in-out');
+    dot.closest('.frame').find('.stage div[data-slide="' + slide + '"]').attr('data-active', true).siblings().attr('data-active', false);
+  }
+
+  var features = new SwipeIt('.features .frame');
+  var featuresNav = ('.features .dots button');
+
+  features.on('swipeLeft',function() {
+    nextSlide($(this));
+  })
+  .on('swipeRight',function(e){
+    prevSlide($(this));
+  });
+
+  $(featuresNav).click(function(e) {
+    slideshowDots($(this));
+  });
+
+  var dragItem = document.querySelector("#handle");
+  var container = document.querySelector(".compare");
+  var photo = document.querySelector(".compare .photo");
+
+  var active = false;
+  var currentX;
+  var initialX;
+  var xOffset = (window.innerWidth / 2);
+  if (window.innerWidth >= 1200) {
+    xOffset = 1200 / 2;
+  }
+
+  container.addEventListener("touchstart", dragStart, false);
+  container.addEventListener("touchend", dragEnd, false);
+  container.addEventListener("touchmove", drag, false);
+
+  container.addEventListener("mousedown", dragStart, false);
+  container.addEventListener("mouseup", dragEnd, false);
+  container.addEventListener("mousemove", drag, false);
+
+  function dragStart(e) {
+    if (e.type === "touchstart") {
+      initialX = e.touches[0].clientX - xOffset;
+    } else {
+      initialX = e.clientX - xOffset;
+    }
+
+    if (e.target === dragItem) {
+      active = true;
+    }
+  }
+
+  function dragEnd(e) {
+    initialX = currentX;
+    active = false;
+  }
+
+  function drag(e) {
+    if (active) {
+      e.preventDefault();
+      if (e.type === "touchmove") {
+        currentX = e.touches[0].clientX - initialX;
+      } else {
+        currentX = e.clientX - initialX;
+      }
+      xOffset = currentX;
+      if (currentX < 1200) {
+        setTranslate(currentX, dragItem, photo);
+      }
+    }
+  }
+  
+  $('.compare li').on('keypress click', function(e) {
+    if (e.which === 13 || e.type === 'click') {
+      const type = this.getAttribute('data-type');
+      document.querySelector('.compare').setAttribute('data-type', type);
+    }
+  });
+  $('.color-select li, .type-select li').on('keypress click', function(e) {
+    if (e.which === 13 || e.type === 'click') {
+      document.querySelector('.compare').setAttribute('data-type', '');
+    }
+  });
+  
+  function getTypeCode(x) {
+    switch(x.toUpperCase()) {
+      case 'CLASSIC': return 'UU';
+      case 'TUFTED': return 'TU';
+      default: return 'UU';
+    }
+  }
+  
+  function setTranslate(xPos, el, mask) {
+    var viewportWidth = window.innerWidth;
+    var mediaWidth = 992;
+    if (viewportWidth >= 992) {
+      mediaWidth = 1200;
+    }
+    el.style.left = `calc(${xPos}px - 30px)`;
+    mask.style.left = `${xPos}px`;
+    var x = (mediaWidth / 2) - (viewportWidth / 2);
+    mask.style.backgroundPosition = `right -${x}px top 50%`;
+    
+    let xPosPct = xPos / viewportWidth;
+    if (viewportWidth > 1200) {
+      xPosPct = xPos / mediaWidth;
+    }
+    
+    const classicH2 = document.querySelector('.compare h2[data-type="UU"]');
+    const tuftedH2 = document.querySelector('.compare h2[data-type="TU"]');
+    if (xPosPct < .5) {
+      classicH2.style.opacity = '0';
+      tuftedH2.style.opacity = '1';
+    } else {
+      classicH2.style.opacity = '1';
+      tuftedH2.style.opacity = '0';
+    }
+  }
+</script>
+{% endblock %}

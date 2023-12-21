@@ -333,3 +333,108 @@
   </section>
   {% endfor %}
 {% endmacro %}
+
+{% macro reviewsCarousel(reviews) %}
+  {% for items in reviews %}
+    <section class="reviews-carousel{{- items.containerClassnameExtension }} {% if items.navyBackground %}navy{% endif %}">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            {% if items.heading !== '' %}
+              <h2>{{ items.heading | safe }}</h2>
+            {% endif %}
+            {% if items.subheading !== '' %}
+              {% if items.subheading == 'bbb' %}
+                <div class="bbb-logo"></div>
+              {% else %}
+                <h3>{{ items.subheading | safe }}</h3>
+              {% endif %}
+            {% endif %}
+          </div>
+          <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-12 col-md-offset-0">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                
+                {% for reviews in items.reviews %}
+                <div class="swiper-slide">
+                  <div class="item">
+                    {%- if items.socialMediaSources -%}
+                      <h4 data-source-type="social" data-source="{{ reviews.source }}" data-reviewer="{{ reviews.name | safe }}" class="lazyload">{{ reviews.name | safe }}</h4>
+                      <div class="review">
+                        <p>{{ reviews.review | safe }}</p>
+                      </div>
+                    {% else %}
+                      <div class="star-gauge">
+                        <div class="stars" style="width: {{ reviews.stars * 20 }}%;"></div>
+                      </div>
+                      {% if reviews.reviewTitle !== '' %}
+                        <div class="review-title">
+                          <h4 data-source-type="reviews">{{ reviews.reviewTitle | safe }}</h4>
+                        </div>
+                      {% endif %}
+                      <div class="review">
+                        <p>{{ reviews.review | safe }}</p>
+                      </div>
+                      <p class="reviewer">&mdash; {{ reviews.name | safe }}</p>
+                    {%- endif -%}
+                  </div>
+                </div>
+                {% endfor %}
+                
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="col-xs-12">
+            {% if items.cta !== undefined %}
+              {% for cta in items.cta %}
+                <a href="{{ cta.link }}" class="btn btn-{{ cta.buttonType }}">{{ cta.text }}</a>
+              {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endfor %}
+{% endmacro %}
+
+{% macro reviewsCarouselScript(options) %}
+  {% set socialMediaSources = false %}
+  {% set containerClassnameExtension = '' %}
+  {% for item in options %}
+    {% if item.socialMediaSources %}
+      {% set socialMediaSources = true %}
+    {% endif %}
+    {% if item.containerClassnameExtension !== '' %}
+      {% set containerClassnameExtension = item.containerClassnameExtension %}
+    {% endif %}
+  {% endfor %}
+  <script type="text/javascript">
+    var reviewsCarousel = new Swiper ('.reviews-carousel{{- containerClassnameExtension }} .swiper-container', {
+      loop: true,
+      grabCursor: true,
+      breakpointsInverse: true,
+      centeredSlides: true,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 30
+        },
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 7.5
+        },
+      },
+      pagination: {
+        el: '.reviews-carousel{{- containerClassnameExtension }} .swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.reviews-carousel{{- containerClassnameExtension }} .swiper-button-next',
+        prevEl: '.reviews-carousel{{- containerClassnameExtension }} .swiper-button-prev',
+      }
+    });
+  </script>
+{% endmacro %}
