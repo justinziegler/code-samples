@@ -1,0 +1,460 @@
+{% extends "./src/client/views/_layout_home.html" %}
+{% import "./src/client/views/_css.html" as _css %}
+{% import "./src/client/views/_js.html" as _js %}
+{% import "./src/client/views/_modules.html" as _modules %}
+
+{% import "_m_layout.html" as _m_layout %}
+{% import "_m_modals.html" as _m_modals %}
+
+{% block styles %}
+  <link href="https://fonts.googleapis.com/css?family=Mr+Dafoe" rel="stylesheet">
+    {{ _m_css.pr_05_03() }}
+{% endblock %}
+
+{% block title %}Lull Mattress, Premium Memory Foam Mattress | Lull Home{% endblock %}
+
+{% block meta %}
+<meta name="description" content="The Mattress Worth Obsessing Over | Lull">
+{% endblock %}
+
+{% block content %}
+{% set ctaLink = '#' %}
+
+<main>
+  <div class="hero">
+    <div class="container">
+      <div class="row">
+        <div class="column three col-xs-4">
+          <div class="group three">
+            <div class="pic pic1 lazyload"></div>
+            <div class="pic pic2 lazyload"></div>
+            <div class="pic pic3 lazyload"></div>
+            <div class="pic pic1 lazyload"></div>
+            <div class="pic pic2 lazyload"></div>
+            <div class="pic pic3 lazyload"></div>
+            <div class="pic pic1 lazyload"></div>
+          </div>
+        </div>
+        <div class="column four col-xs-4">
+          <div class="group four">
+            <div class="pic pic1 lazyload"></div>
+            <div class="pic pic2 lazyload"></div>
+            <div class="pic pic3 lazyload"></div>
+            <div class="pic pic1 lazyload"></div>
+            <div class="pic pic2 lazyload"></div>
+            <div class="pic pic3 lazyload"></div>
+          </div>
+        </div>
+        <div class="column five col-xs-4">
+          <div class="group five">
+            <div class="pic pic1 lazyload"></div>
+            <div class="pic pic2 lazyload"></div>
+            <div class="pic pic3 lazyload"></div>
+            <div class="pic pic1 lazyload"></div>
+            <div class="pic pic2 lazyload"></div>
+            <div class="pic pic3 lazyload"></div>
+            <div class="pic pic1 lazyload"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="logo"></div>
+    {% if holidaySale() %}
+      <p>Life changing sleep from sea to shining sea.<br> Don't miss our Labor Day Sale.</p>
+      <a class="down-arrow" href="#july4-promo">More</a>
+    {% else %}
+      <p>Check Out the Mattress<br> That's Changing Lives</p>
+      <a class="down-arrow" href="#top-section">More</a>
+    {% endif %}
+  </div>
+
+  {% if holidaySale() %}
+    {{ _modules.july4promo(state, true) }}
+  {% endif %}
+
+  <div id="value-props">
+    <a name="top-section" class="anchor"></a>
+    <div class="container">
+      <div class="row">
+        <div class="slide-content col-xs-6">
+        <div class="vp one">
+            <h1>Find Comfort in <span>Great Sleep</span></h1>
+            <p>Great sleep reduces stress,<br class="visible-sm"> boosts your immune system,<br class="visible-sm visible-lg"> and helps you stay happy.</p>
+            <a href="{{ ctaLink }}" class="btn btn-default hidden-xs">Shop the Mattress</a>
+            <div class="swiper-pagination hidden-xs"></div>
+          </div>
+          <div class="vp four">
+              <h2>Built For <span>Beauty Sleep</span></h2>
+              <p>Lull’s three layers of memory foam are designed to relieve pressure points and support you in all the right places.</p>
+          </div>
+          <div class="vp two">
+                          {#<h2>Built For <span>Beauty Sleep</span></h2>#}
+                          <h2>Shop Safe. Sleep Well. <span>Stay Healthy.</span></h2>
+              <p>Lull’s three layers of memory foam are<br> designed to relieve pressure points and<br> support you in all the right places.</p>
+              <a href="{{ ctaLink }}" class="btn btn-default hidden-xs">Shop the Mattress</a>
+              <div class="swiper-pagination hidden-xs"></div>
+          </div>
+          <div class="vp three">
+              <h2>More Sleep <span>More Happy</span></h2>
+              <p>You snooze you win! Sleep so good, you’ll wake up smiling.</p>
+          </div>
+          </div>  
+          <div class="swiper-container col-xs-12 col-sm-5 col-lg-4 col-lg-offset-1">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide one">
+                  <h1>Find Comfort in <span>Great Sleep</span></h1>
+                  <p>Great sleep reduces stress,<br class="visible-sm"> boosts your immune system,<br class="visible-sm visible-lg"> and helps you stay happy.</p>
+              </div>
+              <div class="swiper-slide four">
+                              {#<h2>Built For <span>Beauty Sleep</span></h2>#}
+                              <h2>Shop Safe. Sleep Well. <span>Stay Healthy.</span></h2>
+              <p>Lull’s three layers of memory foam are<br class="visible-xs"> designed to relieve pressure points and<br class="visible-xs"> support you in all the right places.</p>
+              </div>
+              <div class="swiper-slide two">
+                  <h2>No Store.<br>No Sales Pitch. <span>No Kidding</span></h2>
+                  <p>Order Lull online and it arrives at<br class="visible-xs"> your door compressed in a box.</p>
+              </div>
+              <div class="swiper-slide three">
+              <h2>More Sleep <span>More Happy</span></h2>
+              <p>You snooze you win! Sleep so good,<br class="visible-xs"> you’ll wake up smiling.</p>
+              </div>
+          </div>
+          </div>
+          <div class="swiper-pagination mobile"></div>
+          <a href="{{ ctaLink }}" class="btn btn-default visible-xs">Shop the Mattress</a>
+          <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="know-lull">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <a class="pic lazyload">
+            <h2>Get to know Lull<br class="visible-xs"> in 30 seconds</h2>
+            <div class="play"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div id="value-props-deux">
+        <div class="container">
+            <div class="row">
+            <div class="swiper-container-deux col-xs-12 col-sm-5 col-lg-4 col-lg-offset-1">
+                <div class="swiper-wrapper">
+                <div class="swiper-slide two"></div>
+                <div class="swiper-slide one"></div>
+                </div>
+            </div>
+            <div class="slide-content col-sm-6">
+                <div class="vp one">
+                <h1>More Sleep <span>More Happy</span></h1>
+                <p>You snooze you win! Sleep so good,<br> you’ll wake up smiling.</p>
+                <a href="{{ ctaLink }}" class="btn btn-default hidden-xs">Shop the Mattress</a>
+                <div class="swiper-pagination"></div>
+                </div>
+                <div class="vp two">
+                    <h2>No Store.<br>No Sales Pitch. <span>No Kidding</span></h2>
+                    <p>Order Lull online and it arrives<br class="hidden-xs"> at your door compressed in a box.</p>
+                <a href="{{ ctaLink }}" class="btn btn-default hidden-xs">Shop the Mattress</a>
+                <div class="swiper-pagination hidden-xs"></div>
+                </div>
+            </div>  
+            <div class="swiper-pagination mobile"></div>
+            <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+
+  {% set monthlyPayment = 0 %}
+  {%- for item in products.result -%}
+    {%- if item.sku == 'LU-MA-WH-TW' -%}  
+      {% if state.optimizelyExperimentVariables['klarna_experiment'].enabled %}
+        {%- set monthlyPayment = calculateKlarnaMonthlyPayment(item.price, discountActual) -%}
+      {% else %}
+        {%- set monthlyPayment = calculateMonthlyPayment(item.price, discountActual) -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+  <div class="financing pic lazyload">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <div class="content">
+            <h2>A Mattress You Can<br> Actually Afford</h2>
+            <p>Pay now or finance over time. <br>Get Your {{ getProductName('MA') }} for as low as<span class="visible-xs-inline">:</span> 
+              <span class="hidden-xs">${{ monthlyPayment | round }}/mo.</span></p>
+            <a href="/mattress-financing" class="btn btn-transparent hidden-xs">Learn More</a>
+          </div>
+        </div>
+        <div class="mattress-pic pic lazyload col-xs-12 col-sm-6">
+          <h3><sup>$</sup>{{ monthlyPayment | round }}<span>/mo</span></h3>
+        </div>
+        <div class="col-xs-12 visible-xs">
+          <a href="/mattress-financing" class="btn btn-transparent visible-xs-inline-block">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="size-guide">
+    <div class="specs panel-group" id="specs" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="detailsHeadingOne">
+          <h6 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#details" href="#sizeGuide" aria-expanded="false" aria-controls="sizeGuide">
+              Mattress Size Guide<span></span>
+            </a>
+          </h6>
+        </div>
+        <div id="sizeGuide" class="panel-collapse collapse" role="tabpanel" aria-labelledby="detailsHeadingOne">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-xs-6 col-sm-4">
+                <p><b>Twin</b><br>
+                  38” x 75” x 10”<br>
+                  48 lbs</p>
+              </div>
+              <div class="col-xs-6 col-sm-4">
+                <p><b>Twin XL</b><br>
+                  38” x 80” x 10”<br>
+                  52 lbs</p>
+              </div>
+              <div class="col-xs-6 col-sm-4">
+                <p><b>Full</b><br>
+                  54” x 75” x 10”<br>
+                  66 lbs</p>
+              </div>
+              <div class="col-xs-6 col-sm-4">
+                <p><b>Queen</b><br>
+                  60” x 80” x 10”<br>
+                  77 lbs</p>
+              </div>
+              <div class="col-xs-6 col-sm-4">
+                <p><b>King</b><br>
+                  76” x 80” x 10”<br>
+                  96 lbs</p>
+              </div>
+              <div class="col-xs-6 col-sm-4">
+                <p><b>Cal King</b><br>
+                  72” x 84” x 10”<br>
+                  94 lbs</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="diy">
+    <div class="container">
+      <h2>The Super Easy DIY Mattress</h2>
+      <div class="row">
+        <div class="col-xs-12 col-md-10 col-md-offset-1">
+          <div class="icon phone"></div>
+          <h3>Buy it Online</h3>
+          <p>Get incredible value with Lull compared to traditional retail mattresses.  We cut out the middle man so you can save big!</p>
+        </div>
+        <div class="col-xs-12 col-md-10 col-md-offset-1">
+          <div class="icon door"></div>
+          <h3>Arrives at Your Door</h3>
+          <p>Your mattress ships in just 1-4 days with no-contact delivery. Innovative compression technology allows your Lull Mattress to easily ship in a box the size of a mini fridge.</p>
+        </div>
+        <div class="col-xs-12 col-md-10 col-md-offset-1">
+          <div class="icon setup"></div>
+          <h3>Easy Setup</h3>
+          <p>Open the box, place your compressed mattress on any bed frame, box spring, or flat surface. Unwrap, and watch the memory foam expand. Your new mattress is ready to sleep on right away.</p>
+        </div>
+        <div class="col-xs-12 col-md-10 col-md-offset-1">
+          <div class="icon snooze"></div>
+          <h3>Enjoy Your Bed</h3>
+          <p>Built for all sleepers, Lull's three layers of proprietary foam are designed to relieve pressure points and provide support in all the right places.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reviews">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>People Love Lull!</h2>
+          <p>The best-reviewed mattress online.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="swiper-container swiper-container-reviews">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="item">
+                <div class="stars"></div>
+                <div class="review">
+                  <p>The experience has been awesome. Easy to take out of the box and easy to set up. Mattress is really nice and for the price it's a bargain.</p>
+                </div>
+                <h6>&mdash; Gregory</h6>
+              </div>
+            </div>
+            
+            <div class="swiper-slide">
+              <div class="item">
+                <div class="stars"></div>
+                <div class="review">
+                  <p>Its no longer a struggle to try to fall asleep or stay asleep. Buying a Lull is the best decision I ever made.</p>
+                </div>
+                <h6>&mdash; Leolanie</h6>
+              </div>
+            </div>
+            
+            <div class="swiper-slide">
+              <div class="item">
+                <div class="stars"></div>
+                <div class="review">
+                  <p>We slept like freaking babies. It's so great! Not too soft or hard, easy sleep and hugs you just right without suffocating you!</p>
+                </div>
+                <h6>&mdash; Jessica</h6>
+              </div>
+            </div>
+            
+            <div class="swiper-slide">
+              <div class="item">
+                <div class="stars"></div>
+                <div class="review">
+                  <p class="x2">My husband gets up early for work, and I do not feel him getting out of bed.</p>
+                </div>
+                <h6>&mdash; Mia C.</h6>
+              </div>
+            </div>
+            
+            <div class="swiper-slide">
+              <div class="item">
+                <div class="stars"></div>
+                <div class="review">
+                  <p>I was skeptical a bed that comes in a box could be so comfortable.... but it is amazing! The price was fantastic and everyone I have dealt with was great!</p>
+                </div>
+                <h6>&mdash; Christine H.</h6>
+              </div>
+            </div>
+            
+            <div class="swiper-slide">
+              <div class="item">
+                <div class="stars"></div>
+                <div class="review">
+                  <p>My lull mattress is the best thing ever! Every night when I sleep it feels like a marshmallow suggling and supporting me it is so comfortable.</p>
+                </div>
+                <h6>&mdash; Tonia P.</h6>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="media-collage">
+    <div class="container">
+      <div class="row">
+        <div class="collection col-xs-12 col-sm-6 col-md-4">
+          <div class="group row">
+            <div class="col-1 col-xs-6">
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="collage1 pic lazyload sq">
+                    <div class="play"></div>
+                  </div>
+                </div>
+                <div class="col-xs-12">
+                  <div class="collage3 pic lazyload sq"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-2 col-xs-6">
+              <div class="collage2 pic lazyload tall"></div>
+            </div>
+          </div>
+        </div>
+        <div class="collection col-xs-12 col-sm-6 col-md-4">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="collage4 pic lazyload wide"></div>
+            </div>
+            <div class="col-1 col-xs-6">
+              <div class="collage5 pic lazyload sq">
+                <div class="play"></div>
+              </div>
+            </div>
+            <div class="col-2 col-xs-6">
+              <div class="collage6 pic lazyload sq">
+                <div class="play"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="collection col-xs-12 col-md-4">
+          <div class="group row">
+            <div class="col-1 col-xs-6">
+              <div class="collage7 pic lazyload tall"></div>
+            </div>
+            <div class="col-2 col-xs-6">
+              <div class="collage8 pic lazyload sq"></div>
+              <div class="collage9 pic lazyload sq">
+                <div class="play"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Kiss Bad Sleep <span>Goodbye</span></h2>
+          <div class="goodbye"></div>
+          <a href="{{ ctaLink }}" class="btn btn-default">See the Mattress</a>
+          <ul>
+            <li><a href="../contact">Contact Us</a></li>
+            <li><a href="../privacy">Privacy</a></li>
+            <li>&copy;{{ currentYear }} Lull</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<div  role="dialog" aria-modal="true" class="modal fade video-modal" id="video-modal" tabindex="-1" aria-labelledby="video-modal">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="embed-container">
+          <iframe src="" class="video" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ _m_yotpo.yotpoRichText() }}
+{% endblock %}
+
+{% block scripts %}
+{{ _m_js.pinterest() }}
+{{ _m_js.nav() }}
+{{ _m_js.modalBootstrap() }}
+<script>
+  $('.header-promotion').autoHidingNavbar();
+
+</script>
+{% set header = false %}
+{{ _m_modals.salesModal(mattressDiscount, state, header) }}
+{% endblock %} 

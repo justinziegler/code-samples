@@ -1,0 +1,267 @@
+@import 'compass';
+
+// Core variables and mixins
+@import 'bootstrap/variables';
+// @import "bootstrap/mixins";
+
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/svg';
+//@import "partials/base";
+@import 'partials/layout';
+//@import "animate/properties";
+//@import "animate/sliding-entrances/slideInUpSubtle";
+
+////////////////////////////////////////////////////
+// Bootstrap collapse (component animations partial)
+.fade {
+  opacity: 0;
+  @include transition(opacity 0.15s linear);
+  &.in {
+    opacity: 1;
+  }
+}
+.collapse {
+  display: none;
+  &.in {
+    display: block;
+  }
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  @include transition-property(height, visibility);
+  @include transition-duration(0.2s);
+  @include transition-timing-function(ease);
+}
+/////////////////////////////////////////////////////
+// Panels
+// --------------------------------------------------
+// Panel contents
+.faq {
+  .panel-body {
+    padding: $panel-body-padding;
+    @include clearfix;
+  }
+
+  // Optional heading
+  .panel-heading {
+    padding: $panel-heading-padding;
+    > .dropdown .dropdown-toggle {
+      color: inherit;
+    }
+  }
+
+  // Within heading, strip any `h*` tag of its default margins for spacing.
+  .panel-title {
+    margin: 0;
+    font-size: ceil(($font-size-base * 1.125));
+    color: inherit;
+    text-align: left;
+
+    > a,
+    > small,
+    > .small,
+    > small > a,
+    > .small > a {
+      color: inherit;
+    }
+  }
+
+  // Collapsible panels (aka, accordion)
+  //
+  // Wrap a series of panels in `.panel-group` to turn them into an accordion with
+  // the help of our collapse JavaScript plugin.
+
+  .panel-group {
+    margin-bottom: $line-height-computed;
+
+    // Tighten up margin so it's only between panels
+    .panel {
+      margin-bottom: 0;
+      + .panel {
+        margin-top: 5px;
+      }
+    }
+
+    .panel-heading {
+      border-bottom: 0;
+    }
+  }
+}
+/////////////////////////////////////////////
+
+.faq {
+  background-color: #124056;
+  padding: 15px 0;
+  @include mq(xsm) {
+    padding: vwl(15px) 0;
+  }
+  @include mq(xxs) {
+    padding: vwp(15px) 0;
+  }
+  @include mq(lg) {
+    padding-top: 15px;
+    padding-bottom: 30px;
+  }
+  h2 {
+    color: $white;
+  }
+  .panel-heading {
+    border-top: solid 1px #afc8d9;
+    padding: 10px 0 10px 15px;
+    @include mq(xsm) {
+      padding: vwl(10px) 0 vwl(10px) vwl(15px);
+    }
+    @include mq(xxs) {
+      padding: vwp(10px) 0 vwp(10px) vwp(15px);
+    }
+  }
+  .panel {
+    &:first-of-type {
+      .panel-heading {
+        border-top: none;
+      }
+    }
+  }
+  .panel-title {
+    > a {
+      display: block;
+      color: $teal;
+      font-weight: 500;
+      font-size: 1.5rem;
+      padding-right: 30px;
+      position: relative;
+      @include mq(xsm) {
+        font-size: vwl(15px);
+        padding-right: vwl(30px);
+      }
+      @include mq(xxs) {
+        font-size: vwp(15px);
+        padding-right: vwp(30px);
+      }
+      @include mq(sm) {
+        font-size: 1.6rem;
+      }
+      @include mq(md) {
+        font-size: 1.8rem;
+      }
+      @include mq(lg) {
+        font-size: 2rem;
+      }
+      &::after {
+        content: '';
+        @include arrow-thin($teal);
+        background-repeat: no-repeat;
+        background-position: 100% 50%;
+        position: absolute;
+        background-size: 10px;
+        width: 10px;
+        height: 8px;
+        right: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: 0.2s;
+        @include mq(xsm) {
+          background-size: vwl(10px);
+          width: vwl(10px);
+          height: vwl(8px);
+          right: vwl(4px);
+        }
+        @include mq(xxs) {
+          background-size: vwp(10px);
+          width: vwp(10px);
+          height: vwp(8px);
+          right: vwp(4px);
+        }
+      }
+      &[aria-expanded='true'] {
+        // color: $white;
+        &::after {
+          transform: rotate(180deg) translateY(50%);
+          transition: 0.2s;
+        }
+      }
+      &:focus {
+        outline: none;
+        color: $white;
+      }
+    }
+  }
+  .panel-body {
+    padding: 0 15px 15px 15px;
+    @include mq(xsm) {
+      padding: 0 vwl(15px) vwl(15px) vwl(15px);
+    }
+    @include mq(xxs) {
+      padding: 0 vwp(15px) vwp(15px) vwp(15px);
+    }
+    p, li {
+      color: #fff;
+      margin: 0 0 0 15px;
+      text-align: left;
+      @include mq(xsm) {
+        margin: 0 0 0 vwl(15px);
+      }
+      @include mq(xxs) {
+        margin: 0 0 0 vwp(15px);
+      }
+      @include mq(md) {
+        font-size: 1.6rem;
+      }
+      a {
+        color: $teal;
+        border-bottom: solid 1px $teal;
+        transition: 0.2s;
+        &:hover,
+        &:focus {
+          border-bottom-color: transparent;
+        }
+      }
+    }
+  }
+  .chart-head, .chart-body {
+    padding: 0 15px;
+    @include mq(sm) {
+      padding: 0 60px;
+    }
+    @include mq(lg) {
+      padding: 0 120px;
+    }
+    p {
+      margin: 0;
+      text-align: center;
+    }
+  }
+  .chart-head {
+    div {
+      border-bottom: solid 2px #afc8d9;
+    }
+    p {
+      font-weight: 700;
+      font-size: 1.6rem;
+      @include mq(xsm) {
+        font-size: vwl(16px);
+      }
+      @include mq(xxs) {
+        font-size: vwp(16px);
+      }
+      @include mq(md) {
+        font-size: 1.8rem;
+      }
+    }
+  }
+  .chart-body {
+    margin-top: 5px;
+    div {
+      padding: 5px 15px;
+      border-bottom: dotted 1px #afc8d9;
+      &:last-of-type,
+      &:nth-last-of-type(2) {
+        border-bottom: none;
+      }
+    }
+  }
+}

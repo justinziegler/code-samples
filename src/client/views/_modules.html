@@ -438,3 +438,280 @@
     });
   </script>
 {% endmacro %}
+
+{% macro suggestedItems(suggestedItems) %}
+<section class="suggestions">
+  <div class="container">
+    <div class="row">
+      {% for si in suggestedItems %}
+      <div class="col-xs-12">
+        <h2>{{ si.title | safe }}</h2>
+        {% if si.subtitle.length %}
+          <h3>{{ si.subtitle | safe }}</h3>
+        {% endif %}
+      </div>
+      <div id="suggested-items" class="swiper-container">
+        <div class="swiper-wrapper">
+          {% for item in si.items %}
+            <div class="suggested swiper-slide">
+              <div class="item {{ item.shortName }} lazyload" role="img" aria-label="Image: {{ item.itemName }}"></div>
+              <h3>{{ item.itemName }}</h3>
+              <p>{{ item.description | safe }}</p>
+              <a href="../{{- item.url }}" class="btn btn-transparent" tabindex="-1">See the {{ item.linkName | title }}</a>
+            </div>
+          {% endfor %}					
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endmacro %}
+
+{% macro suggestedItemsScripts() %}
+  <script type="text/javascript">
+    const breakpoint = window.matchMedia( '(min-width: 768px)' );
+    const totalItems = $('#suggested-items .suggested').length;
+    let suggestedItems;
+    const breakpointChecker = function() {
+      if ((breakpoint.matches === true ) && (totalItems < 4)) {
+        if (suggestedItems !== undefined) {
+          suggestedItems.destroy( true, true );
+        }
+        return disableSwiper();
+      } else if ((breakpoint.matches === false ) || (totalItems > 3)) {
+        return enableSwiper();
+      }
+    };
+    const enableSwiper = function() {
+      var suggestedItems = new Swiper ('#suggested-items', {
+        loop: true,
+        grabCursor: true,
+        breakpointsInverse: true,
+        centeredSlides: true,
+        breakpoints: {
+          0: {
+              slidesPerView: 1,
+              spaceBetween: 15
+          },
+          544: {
+              slidesPerView: 1.5,
+              spaceBetween: 15
+          },
+          768: {
+              slidesPerView: 3,
+              spaceBetween: 7.5
+          }
+        },
+        pagination: { 
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }
+      });
+    };
+    const disableSwiper = function() {
+      var b = '#suggested-items'; 
+      $(b).removeClass('swiper-container').addClass('col-xs-12');
+      $(b).find('> div:first-of-type').removeClass('swiper-wrapper').addClass('row');
+      $(b).find('> div:first-of-type > .suggested').removeClass('swiper-slide').addClass('col-xs-4');
+      $(b).find('.swiper-pagination, .swiper-button-next, .swiper-button-prev').remove();
+      $(b).find('.suggested a').attr('tabIndex', 0);
+    }
+    // keep an eye on viewport size changes
+    breakpoint.addListener(breakpointChecker);
+    // kickstart
+    breakpointChecker();
+  </script>
+{% endmacro %}
+
+{% macro faq(faq) %}
+  <section class="faq">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Top Questions</h2>
+        </div>
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+          <div class="panel-group" id="faqs" role="tablist" aria-multiselectable="true">
+            {% for q in faq %}
+              <div class="panel panel-default" 
+                {% if q.productType !== undefined -%}
+                  data-toggle-visibility="true" data-product-id="{{ q.productType }}"
+                {%- endif -%}>
+                <div class="panel-heading" role="tab" id="faqHeading{{ loop.index }}">
+                  <h3 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#faqs" href="#faq{{ loop.index }}" aria-expanded="false" aria-controls="faq{{ loop.index }}" tabindex="0">
+                      {{ q.question }}
+                    </a>
+                  </h3>
+                </div>
+                <div id="faq{{ loop.index }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeading{{ loop.index }}">
+                  <div class="panel-body">
+                    <p>{{ q.answer | safe }}</p>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}						
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endmacro %}
+
+{% macro footer(currentYear) %}
+<footer>
+	<div class="container">
+	 	<div class="row">
+			<div class="footer-contact col-xs-12 col-md-4">
+				<div class="row">
+					<div class="footer-here-to-help col-xs-12 col-sm-5 col-sm-offset-1 col-md-12 col-md-offset-0">
+						<h4>We're Here to Help</h4>
+						<p>Monday–Saturday, 6am to 6pm PST</p>
+					</div>
+					<div class="footer-call-email col-xs-12 col-sm-5 col-md-12">
+						<div class="row">
+							<div class="col-xs-6">
+								<a href="tel:+18005015845" class="text" tabindex="0" rel="nooopener noreferrer">
+									<h5>Call or Text</h5>
+									<p>1-800-501-5845</p>
+								</a>
+							</div>
+							<div class="col-xs-6">
+								<a href="" tabindex="0">
+									<h5>Email</h5>
+									<p>support@lull.com</p>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="footer-social col-xs-7 col-sm-5 col-sm-offset-1 col-md-12 col-md-offset-0">
+						<ul>
+							<li><a href="https://instagram.com/lullbed" class="footer-instagram" aria-label="instagram" target="_blank" rel="noreferrer" tabindex="0">Instagram</a></li><!--
+						--><li><a href="https://www.facebook.com/lullbed" aria-label="facebook" class="footer-facebook" target="_blank" rel="noreferrer" tabindex="0">Facebook</a></li><!--
+						--><li><a href="https://www.pinterest.com/lullbed/" aria-label="pinterest" class="footer-pinterest" target="_blank" rel="noreferrer" tabindex="0">pinterest</a></li><!--
+						--><li><a href="https://twitter.com/LullBed" aria-label="twitter" class="footer-twitter" target="_blank" rel="noreferrer" tabindex="0">Twitter</a></li><br class="hidden-lg"><!--
+						--><li><a href="https://www.youtube.com/c/LullBed/featured" aria-label="youtube" class="footer-youtube" target="_blank" rel="noreferrer" tabindex="0">Youtube</a></li><!--
+						--><li><a href="https://www.tiktok.com/@lull" aria-label="tiktok" class="footer-tiktok" target="_blank" rel="noreferrer" tabindex="0">Tiktok</a></li>
+						</ul>
+					</div>
+					<div class="footer-brand col-xs-5 col-sm-5 col-md-12 col-md-offset-0">
+						<a href="https://lull.com" class="footer-logo-lull" role="img" aria-label="Lull home" tabindex="0">
+							<span class="sr-only">Lull</span>
+						</a>
+						<a href="http://www.bbb.org/santa-barbara/business-reviews/mattresses/lull-in-santa-barbara-ca-92014258/" target="_blank" class="footer-bbb" rel="noreferrer" role="img" aria-label="Lull on the Better Business Bureau">
+							<span class="sr-only">Better Business Bureau</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-0">
+				<div class="row">
+					<div class="col-xs-6 col-sm-4">
+						<h6>Products</h6>
+						<ul class="products">
+							<li><a href="/mattresses" tabindex="0">Mattresses</a></li>
+							<li><a href="/mattress-protector" tabindex="0">Mattress Protector</a></li>
+							<li><a href="/pillows" tabindex="0">Pillows</a></li>
+							<li><a href="/bed-sheets" tabindex="0">Sheets</a></li>
+							<li><a href="/duvet-insert" tabindex="0">Original Lull Duvet</a></li>
+							<li><a href="/down-duvet-insert" tabindex="0">Down Duvet</a></li>
+							<li><a href="/bedding-bundle" tabindex="0">Bedding Bundle</a></li>
+							<li><a href="/bed-frames" tabindex="0">Bed Frames</a></li>
+							<li><a href="/mattress-foundation" tabindex="0">Mattress Foundation</a></li>
+						</ul>
+					</div>
+					<div class="center-col col-xs-6 col-sm-4">
+						<h6>Research</h6>
+						<ul class="research">
+							<li><a href="/trial" tabindex="0">365 Night Trial</a></li>
+							<li><a href="/reviews" tabindex="0">Reviews</a></li>                    
+							<li><a href="/videos" tabindex="0">Videos</a></li>
+							<li><a href="/memory-foam-mattress" tabindex="0">Memory Foam</a></li>
+							<li class="visible-xs"><a href="/how-a-bed-can-fit-into-a-small-box" tabindex="0">Mattress in a Box</a></li>
+							<li class="visible-xs"><a href="/mattress-sizes-dimensions" tabindex="0">Mattress Sizes</a></li>
+							<li class="visible-xs"><a href="/mattress-financing" tabindex="0">Mattress Financing</a></li>		
+							<li class="visible-xs"><a href="/mattress-buying-guide" tabindex="0">Mattress Buying Guide</a></li>
+							<li class="visible-xs"><a href="/mattress-disposal-guide" tabindex="0">Mattress Disposal Guide</a></li>				
+						</ul>
+						<h6 class="hidden-xs">Support</h6>
+						<ul class="hidden-xs">							
+							<li><a href="https://help.lull.com/hc/en-us" tabindex="0">FAQs</a></li>
+							<li><a href="/contact" tabindex="0">Contact Us</a></li>	
+							<li><a href="/warranty" tabindex="0">Lifetime Warranty</a></li>
+							<li><a href="/terms" tabindex="0">Terms</a></li>
+							<li><a href="/privacy" tabindex="0">Privacy</a></li>
+						</ul>
+					</div>
+					<div class="right-col hidden-xs col-sm-4">
+						<h6>Resources</h6>
+						<ul class="products">
+							<li><a href="/how-a-bed-can-fit-into-a-small-box" tabindex="0">Mattress in a Box</a></li>
+							<li><a href="/mattress-sizes-dimensions" tabindex="0">Mattress Sizes</a></li>
+							<li><a href="/mattress-financing" tabindex="0">Mattress Financing</a></li>
+							<li><a href="/mattress-buying-guide" tabindex="0">Mattress Buying Guide</a></li>
+							<li><a href="/mattress-disposal-guide" tabindex="0">Mattress Disposal Guide</a></li>
+						</ul>
+						<h6>Company</h6>
+						<ul>
+							<li><a href="/about" tabindex="0">About</a></li>
+							<li><a href="/blog" tabindex="0">Blog</a></li>
+							<li id="extole_zone_global_footer_1" tabindex="0"></li>
+							<li><a href="/stores" tabindex="0">Stores</a></li>
+							<li><a href="/corporate-sales" tabindex="0">Corporate Sales</a></li>	
+							<li><a href="/partnership" tabindex="0">Partnerships</a></li>
+							<li><a href="/jobs" tabindex="0">Careers</a></li>	
+						</ul>
+					</div>
+				</div>
+				<div class="footer-company row visible-xs">
+					<div class="col-xs-6 col-sm-4">
+						<h6>Support</h6>
+						<ul>
+							<li><a href="https://help.lull.com/hc/en-us" tabindex="0">FAQs</a></li>
+							<li><a href="/contact" tabindex="0">Contact Us</a></li>	
+							<li><a href="/warranty" tabindex="0">Lifetime Warranty</a></li>
+							<li><a href="/terms" tabindex="0">Terms</a></li>
+							<li><a href="/privacy" tabindex="0">Privacy</a></li>
+						</ul>
+					</div>
+					<div class="col-xs-6 col-sm-4">
+						<h6>Company</h6>
+						<ul>
+							<li><a href="/about" tabindex="0">About</a></li>
+							<li><a href="/blog" tabindex="0">Blog</a></li>
+							<li id="extole_zone_global_footer_2" tabindex="0"></li>
+							<li><a href="/stores" tabindex="0">Stores</a></li>
+							<li><a href="/corporate-sales" tabindex="0">Corporate Sales</a></li>	
+							<li><a href="/partnership" tabindex="0">Partnerships</a></li>
+							<li><a href="/jobs" tabindex="0">Careers</a></li>	
+						</ul>
+					</div>
+				</div>	
+			</div>
+		</div>
+		<div id="copyright">
+			&copy;<span id="year">{{ currentYear }}</span> Lull
+		</div>
+	</div>
+</footer>
+<script>
+  const footer = document.querySelector('footer');
+  const links = footer.querySelectorAll('a');
+  links.forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      console.log('Footer links are disabled');
+    })
+  })
+</script>
+{% endmacro %}

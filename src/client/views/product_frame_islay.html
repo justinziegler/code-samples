@@ -7,6 +7,7 @@
 {% block styles %}
   {{ _css.frame() }}
   {{ _css.frameB() }}
+  {{ _css.footer() }}
 {% endblock %}
 
 {% block title %}{{ Title }}{% endblock %}
@@ -144,16 +145,20 @@
             </div>
           </div>
         </div>
-      </d
+      </div>
     </div>
   </section>
 
   {{ _modules.reviewsCarousel(frameReviews) }}
+  {{ _modules.suggestedItems(suggestedItems) }}
+  {{ _modules.faq(faq) }}
+  {{ _modules.footer(currentYear) }}
 {% endblock %}
 
 {% block scripts %}   
 {{ _js.swipeIt() }}
 {{ _modules.reviewsCarouselScript() }}
+{{ _modules.suggestedItemsScripts() }}
 <script>
   const speed = .2;
 

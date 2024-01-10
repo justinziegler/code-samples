@@ -1,0 +1,268 @@
+/* When editing, use the source file for this page in client/resources/sass */
+@import 'compass';
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/layout';
+@import 'partials/svg';
+
+$imgixDefaults: '?';
+
+:root {
+  --swiper-theme-color: $navy;
+}
+.suggestions {
+  padding: 15px 0;
+  background-color: #f7f6f4;
+  @include mq(xsm) {
+    padding: vwl(15px) 0;
+  }
+  @include mq(xxs) {
+    padding: vwp(15px) 0;
+  }
+  @include mq(sm) {
+    padding: 30px 0;
+  }
+  @include mq(lg) {
+    padding: 45px 0 60px 0;
+  }
+  .swiper-container {
+    width: 100%;
+    padding-bottom: 30px;
+    @include mq(sm) {
+      padding: 0 20px 30px 20px;
+      &::before, &::after {
+        content: '';
+        width: 25px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        @include filter-gradient(#f7f6f4, #00f7f6f4, horizontal); // IE6-9
+        @include background-image(linear-gradient(left, rgba(#f7f6f4,1) 0%, rgba(#f7f6f4,1) 50%, rgba(#f7f6f4,0) 100%));
+        z-index: 10;
+      }
+      &::after {
+        left: calc(100% - 25px);
+        @include filter-gradient(#00f7f6f4, #f7f6f4, horizontal); // IE6-9
+        @include background-image(linear-gradient(left, rgba(#f7f6f4,0) 0%, rgba(#f7f6f4,1) 50%, rgba(#f7f6f4,1) 100%));
+      }
+    }
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    border-radius: 50%;
+    border: solid 1px #ccc;
+    $x: 36px;
+    width: #{$x};
+    height: #{$x};
+    top: 25%;
+    margin-top: $x / 2;
+    z-index: 11;
+    @include mq(xsm) {
+      $x: vwl(36px);
+      width: #{$x};
+      height: #{$x};
+      margin-top: $x / 2;
+    }
+    @include mq(xxs) {
+      $x: vwp(36px);
+      width: #{$x};
+      height: #{$x};
+      margin-top: $x / 2;
+    }
+    &::after {
+      font-size: 1.4rem;
+      font-weight: 900;
+      line-height: 1;
+      @include mq(xsm) {
+        font-size: vwl(14px);
+      }
+      @include mq(xxs) {
+        font-size: vwp(14px);
+      }
+    }
+    &:focus {
+      outline: none;
+      border: solid 1px shade(#ccc, 35%);
+    }
+  }
+  .swiper-button-prev {
+    @include mq(sm) {
+      left: 5px;
+    }
+  }
+  .swiper-button-next {
+    @include mq(sm) {
+      right: 5px;
+    }
+  }
+  .swiper-pagination-bullet {
+    position: relative;
+    background-color: #56dbd6;
+    opacity: 0.5;
+    &-active {
+      opacity: 1;
+    }
+    &:focus {
+      opacity: 1;
+      &::before {
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        width: 14px;
+        height: 14px;
+        border: solid 1px $teal;
+        border-radius: 50%;
+      }
+    }
+  }
+  .suggested {
+    height: auto;
+    text-align: center;
+    @include mq(xsm) {
+      padding: 0 25px;
+    }
+    // @include mq(sm) {
+    //   padding: 0 10px;
+    // }
+    @include mq(md) {
+      padding: 0 30px;
+    }
+    @include mq(lg) {
+      padding: 0 45px;
+    }
+  }
+  .item {
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 0;
+    padding-bottom: 45%;
+    margin: 0 auto 15px auto;
+    background-size: 75%;
+    @include mq(xssm) {
+      width: 90%;
+    }
+    &.pillow.lazyloaded {
+      background-image: url('https://lull-media.imgix.net/pillows/pillow-stack-angled.png?auto=format,compress,enhance&q=100&w=500');
+    }
+    &.down-pillow.lazyloaded {
+      background-image: url('https://lull-media.imgix.net/down-pillow/down-pillow-angled.png?auto=format,compress,enhance&q=100&w=500');
+    }
+    &.memory-foam-pillow.lazyloaded {
+      background-image: url('https://lull-media.imgix.net/memory-foam-pillow/memory-foam-pillow.png?auto=format,compress,enhance&q=100&w=500');
+    }
+    &.sheets.lazyloaded {
+      background-image: url('https://lull-media.imgix.net/sheets/sheets-brilliant-white-upsell.png#{$imgixDefaults}&w=500');
+      background-position: 50% 0%;
+    }
+    &.duvet.lazyloaded {
+      background-image: url('https://lull-media.imgix.net/duvet/duvet-folded.png?auto=format,compress,enhance&q=100&w=500');
+    }
+    &.down-duvet.lazyloaded {
+      background-image: url('https://lull-media.imgix.net/down-duvet/down-duvet-folded.png?auto=format,compress&q=100&w=500');
+    }
+    &.protector.lazyloaded {
+      background-image: url('https://lull-media.imgix.net/mattress-protector/protector.png?auto=format,compress&q=100&w=500');
+    }
+    &.mattress.lazyloaded {
+      background-image: url('https://lull-media.imgix.net/checkout/mattress.png#{$imgixDefaults}&w=500');
+      // background-size: 100%;
+    }
+    &.luxe.lazyloaded {
+      background-image: url('https://lull-media.imgix.net/checkout/luxe-hybrid-elevated-profile.png#{$imgixDefaults}&w=500');
+    }
+    &.cotton-sheets.lazyloaded {
+    //   background-image: url('https://lull-media.imgix.net/checkout/sheets-BW.png#{$imgixDefaults}&w=500');
+    // }
+    // &.organic-cotton-sheets.lazyloaded {
+      background-image: url('https://lull-media.imgix.net/checkout/sheets-CD.png#{$imgixDefaults}&w=500');
+    }
+    &.foundation.lazyloaded {
+      background-image: url('https://lull-media.imgix.net/checkout/light-grey-foundation.png#{$imgixDefaults}&w=500');
+    }
+    &.metal-frame.lazyloaded {
+      background-image: url('https://lull-media.imgix.net/checkout/metal-frame-front.png#{$imgixDefaults}&w=500');
+    }
+    &.wood-frame.lazyloaded {
+      background-image: url('https://lull-media.imgix.net/checkout/platform-bed-frame-product-image.png#{$imgixDefaults}&w=500');
+    }
+    &.islay-frame.lazyloaded {
+      background-image: url('https://lull-media.imgix.net/shop-luxe/islay-UU-CS-angled.png#{$imgixDefaults}&w=500');
+      background-size: 60%;
+    }
+    &.anacapa-frame.lazyloaded {
+      background-image: url('https://lull-media.imgix.net/shop-luxe/anacapa-angled.png#{$imgixDefaults}&w=500');
+      background-size: 70%;
+    }
+    &.chapala-frame.lazyloaded {
+      background-image: url('https://lull-media.imgix.net/shop-luxe/chapala-metal-frame.png#{$imgixDefaults}&w=500');
+      background-size: 60%;
+    }
+    &.mattress, &.luxe, &.foundation {
+      @include mq(sm) {
+        background-size: 100%;
+      }
+    }
+  }
+  h3 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .suggested {
+    h3 {
+      font-size: 1.75rem;
+      font-size: vwp(17.5px);
+      font-weight: 700;
+      margin: 10px 0;
+      margin: vwp(10px) 0 vwp(5px) 0;
+      color: $navy;
+      @include mq(xs) {
+        font-size: vwl(17.5px);
+        margin: vwl(10px) 0 vwl(5px) 0;
+      }
+      @include mq(sm) {
+        font-size: 1.8rem;
+        margin: 10px 0 5px 0;
+      }
+      @include mq(md) {
+        font-size: 2.1rem;
+      }
+      @include mq(lg) {
+        font-size: 2.4rem;
+      }
+    }
+  }
+  p {
+    @include mq(sm) {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+  .btn {
+    margin: 5px auto;
+    border: solid 1px #ccc;
+    @include mq(xsm) {
+      opacity: 0;
+      transition: 0.5s;
+    }
+    @include mq(sm) {
+      width: calc(100% - 30px);
+      padding-left: 0;
+      padding-right: 0;
+      font-size: 14px;
+    }
+    @include mq(md) {
+      font-size: 16px;
+    }
+    @include mq(lg) {
+      font-size: 18px;
+    }
+  }
+  .swiper-slide-active {
+    .btn {
+      opacity: 1;
+    }
+  }
+}

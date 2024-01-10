@@ -14,7 +14,7 @@ const render = function (path, params = {}) {
       if (error) return reject(error);
       
       nunjucks.configure({
-          autoescape: true
+          autoescape: true,
       });
       resolve(nunjucks.renderString(
           content, params
@@ -25,7 +25,8 @@ const render = function (path, params = {}) {
 };
 
 const Router = require('@koa/router');
-let title = 'Case Studies'
+let title = 'Case Studies';
+const currentYear = new Date().getFullYear();
 
 async function home(ctx, next) {
   const caseStudies = await pageConfig.home(ctx);
@@ -169,6 +170,8 @@ async function frameB(ctx, next) {
   const frameReviews = await pageConfig.frameReviews(ctx);
 
   const ourWay = await content.ourWay(ctx);
+  const suggestedItems = await content.suggestedItems(ctx);
+  const faq = await content.faq(ctx);
   let monthlyPayment = 0;
   let name;
   upholsteredSkus.forEach(item => {
@@ -185,7 +188,10 @@ async function frameB(ctx, next) {
     ourWay: ourWay,
     monthlyPayment: monthlyPayment,
     name: name,
-    frameReviews: frameReviews
+    frameReviews: frameReviews,
+    suggestedItems: suggestedItems,
+    faq: faq,
+    currentYear: currentYear
   })
 }
 
