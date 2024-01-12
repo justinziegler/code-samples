@@ -1525,17 +1525,17 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
   }
 }
 .sustainable .photo.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/sheets/photo-parachute.jpg?&fit=crop&crop=focalpoint&w=840&h=694");
+  background-image: url("./sheets/photo-parachute.jpg");
   background-size: cover;
 }
 @media (min-width: 544px) {
   .sustainable .photo.lazyloaded {
-    background-image: url("https://lull-media.imgix.net/sheets/photo-parachute.jpg?&fit=crop&crop=focalpoint&w=1534&h=690&fp-x=.42&fp-y=.5");
+    background-image: url("./sheets/photo-parachute-xs.jpg");
   }
 }
 @media (min-width: 768px) {
   .sustainable .photo.lazyloaded {
-    background-image: url("https://lull-media.imgix.net/sheets/photo-parachute.jpg?&fit=crop&crop=focalpoint&w=1984&h=800&fp-x=.42&fp-y=.5");
+    background-image: url("./sheets/photo-parachute-sm.jpg");
     background-size: 992px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -1543,7 +1543,7 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
 }
 @media (min-width: 992px) {
   .sustainable .photo.lazyloaded {
-    background-image: url("https://lull-media.imgix.net/sheets/photo-parachute.jpg?&fit=crop&crop=focalpoint&w=1200&h=960&fp-x=.38&fp-y=.5");
+    background-image: url("./sheets/photo-parachute-md.jpg");
     background-size: 600px;
     background-position: 100% 50%;
     background-repeat: no-repeat;
@@ -1551,19 +1551,19 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
 }
 @media (min-width: 1200px) {
   .sustainable .photo.lazyloaded {
-    background-image: url("https://lull-media.imgix.net/sheets/photo-parachute.jpg?&fit=crop&crop=focalpoint&w=1440&h=1100&fp-x=0.38&fp-y=.5");
+    background-image: url("./sheets/photo-parachute-lg.jpg");
     background-size: 720px;
   }
 }
 @media (min-width: 1440px) {
   .sustainable .photo.lazyloaded {
-    background-image: url("https://lull-media.imgix.net/sheets/photo-parachute.jpg?&fit=crop&crop=focalpoint&w=1660&h=1100&fp-x=.38&fp-y=.5");
+    background-image: url("./sheets/photo-parachute-xl.jpg");
     background-size: 830px;
   }
 }
 @media (min-width: 1660px) {
   .sustainable .photo.lazyloaded {
-    background-image: url("https://lull-media.imgix.net/sheets/photo-parachute.jpg?&fit=crop&crop=focalpoint&w=1880&h=1080&fp-x=.55&fp-y=.5");
+    background-image: url("./sheets/photo-parachute-xxl.jpg");
     background-size: 960px;
   }
 }
@@ -1622,17 +1622,17 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
   }
 }
 .comfort .photo.lazyloaded {
-  background-image: url("./sheets/closeup-making-bed.jpg?&fit=crop&crop=focalpoint&w=840&h=694");
+  background-image: url("./sheets/closeup-making-bed.jpg?fit=crop&crop=focalpoint&w=840&h=694");
   background-size: cover;
 }
 @media (min-width: 544px) {
   .comfort .photo.lazyloaded {
-    background-image: url("./sheets/closeup-making-bed.jpg?&fit=crop&crop=focalpoint&w=1534&h=690&fp-x=.42&fp-y=.5");
+    background-image: url("./sheets/closeup-making-bed.jpg?fit=crop&crop=focalpoint&w=1534&h=690&fp-x=.42&fp-y=.5");
   }
 }
 @media (min-width: 768px) {
   .comfort .photo.lazyloaded {
-    background-image: url("./sheets/closeup-making-bed.jpg?&fit=crop&crop=focalpoint&w=1984&h=800&fp-x=1&fp-y=.4");
+    background-image: url("./sheets/closeup-making-bed.jpg?fit=crop&crop=focalpoint&w=1984&h=800&fp-x=1&fp-y=.4");
     background-size: 992px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -1640,7 +1640,7 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
 }
 @media (min-width: 992px) {
   .comfort .photo.lazyloaded {
-    background-image: url("./sheets/closeup-making-bed.jpg?&fit=crop&crop=focalpoint&w=1140&h=800&fp-x=.55&fp-y=0");
+    background-image: url("./sheets/closeup-making-bed.jpg?fit=crop&crop=focalpoint&w=1140&h=800&fp-x=.55&fp-y=0");
     background-size: 570px;
     background-position: 100% 50%;
     background-repeat: no-repeat;
@@ -1648,19 +1648,19 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
 }
 @media (min-width: 1200px) {
   .comfort .photo.lazyloaded {
-    background-image: url("./sheets/closeup-making-bed.jpg?&fit=crop&crop=focalpoint&w=1350&h=900&fp-x=.55&fp-y=0");
+    background-image: url("./sheets/closeup-making-bed.jpg?fit=crop&crop=focalpoint&w=1350&h=900&fp-x=.55&fp-y=0");
     background-size: 675px;
   }
 }
 @media (min-width: 1440px) {
   .comfort .photo.lazyloaded {
-    background-image: url("./sheets/closeup-making-bed.jpg?&fit=crop&crop=focalpoint&w=1560&h=900&fp-x=.55&fp-y=0");
+    background-image: url("./sheets/closeup-making-bed.jpg?fit=crop&crop=focalpoint&w=1560&h=900&fp-x=.55&fp-y=0");
     background-size: 830px;
   }
 }
 @media (min-width: 1660px) {
   .comfort .photo.lazyloaded {
-    background-image: url("./sheets/closeup-making-bed.jpg?&fit=crop&crop=focalpoint&w=1800&h=1000&fp-x=.55&fp-y=0");
+    background-image: url("./sheets/closeup-making-bed.jpg?fit=crop&crop=focalpoint&w=1800&h=1000&fp-x=.55&fp-y=0");
     background-size: 960px;
   }
 }
@@ -1708,17 +1708,17 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
   }
 }
 .responsibly-grown .photo.lazyloaded {
-  background-image: url("./sheets/photo-clothesline.jpg?&fit=crop&crop=focalpoint&w=840&h=694");
+  background-image: url("./sheets/photo-clothesline.jpg?fit=crop&crop=focalpoint&w=840&h=694");
   background-size: cover;
 }
 @media (min-width: 544px) {
   .responsibly-grown .photo.lazyloaded {
-    background-image: url("./sheets/photo-clothesline.jpg?&fit=crop&crop=focalpoint&w=1534&h=690&fp-x=.42&fp-y=.5");
+    background-image: url("./sheets/photo-clothesline.jpg?fit=crop&crop=focalpoint&w=1534&h=690&fp-x=.42&fp-y=.5");
   }
 }
 @media (min-width: 768px) {
   .responsibly-grown .photo.lazyloaded {
-    background-image: url("./sheets/photo-clothesline.jpg?&fit=crop&crop=focalpoint&w=1984&h=800&fp-x=.42&fp-y=.5");
+    background-image: url("./sheets/photo-clothesline.jpg?fit=crop&crop=focalpoint&w=1984&h=800&fp-x=.42&fp-y=.5");
     background-size: 992px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -1726,7 +1726,7 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
 }
 @media (min-width: 992px) {
   .responsibly-grown .photo.lazyloaded {
-    background-image: url("./sheets/photo-clothesline.jpg?&fit=crop&crop=focalpoint&w=1190&h=1060&fp-x=.55&fp-y=.5");
+    background-image: url("./sheets/photo-clothesline.jpg?fit=crop&crop=focalpoint&w=1190&h=1060&fp-x=.55&fp-y=.5");
     background-size: 595px;
     background-position: 100% 50%;
     background-repeat: no-repeat;
@@ -1734,19 +1734,19 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
 }
 @media (min-width: 1200px) {
   .responsibly-grown .photo.lazyloaded {
-    background-image: url("./sheets/photo-clothesline.jpg?&fit=crop&crop=focalpoint&w=1440&h=1240&fp-x=.55&fp-y=.5");
+    background-image: url("./sheets/photo-clothesline.jpg?fit=crop&crop=focalpoint&w=1440&h=1240&fp-x=.55&fp-y=.5");
     background-size: 720px;
   }
 }
 @media (min-width: 1440px) {
   .responsibly-grown .photo.lazyloaded {
-    background-image: url("./sheets/photo-clothesline.jpg?&fit=crop&crop=focalpoint&w=1660&h=1240&fp-x=.55&fp-y=.5");
+    background-image: url("./sheets/photo-clothesline.jpg?fit=crop&crop=focalpoint&w=1660&h=1240&fp-x=.55&fp-y=.5");
     background-size: 830px;
   }
 }
 @media (min-width: 1660px) {
   .responsibly-grown .photo.lazyloaded {
-    background-image: url("./sheets/photo-clothesline.jpg?&fit=crop&crop=focalpoint&w=1920&h=1240&fp-x=.55&fp-y=.5");
+    background-image: url("./sheets/photo-clothesline.jpg?fit=crop&crop=focalpoint&w=1920&h=1240&fp-x=.55&fp-y=.5");
     background-size: 960px;
   }
 }
@@ -1895,17 +1895,17 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
   background-color: #f7f5f3;
 }
 .mission .photo.lazyloaded {
-  background-image: url("./sheets/sheets-field-mobile.jpeg?&fit=crop&crop=focalpoint&w=840&h=694&fp-x=.5");
+  background-image: url("./sheets/sheets-field-mobile.jpeg?fit=crop&crop=focalpoint&w=840&h=694&fp-x=.5");
   background-size: cover;
 }
 @media (min-width: 544px) {
   .mission .photo.lazyloaded {
-    background-image: url("./sheets/sheets-field-mobile.jpeg?&fit=crop&crop=focalpoint&w=1534&h=690&fp-x=.5&fp-y=.5");
+    background-image: url("./sheets/sheets-field-mobile.jpeg?fit=crop&crop=focalpoint&w=1534&h=690&fp-x=.5&fp-y=.5");
   }
 }
 @media (min-width: 768px) {
   .mission .photo.lazyloaded {
-    background-image: url("./sheets/sheets-field-mobile.jpeg?&fit=crop&crop=focalpoint&w=1984&h=800");
+    background-image: url("./sheets/sheets-field-mobile.jpeg?fit=crop&crop=focalpoint&w=1984&h=800");
     background-size: 992px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -1913,26 +1913,26 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
 }
 @media (min-width: 992px) {
   .mission .photo.lazyloaded {
-    background-image: url("./sheets/sheets-field-mobile.jpeg?&fit=crop&crop=focalpoint&w=1190&h=800");
+    background-image: url("./sheets/sheets-field-mobile.jpeg?fit=crop&crop=focalpoint&w=1190&h=800");
     background-size: 595px;
     background-position: 100% 50%;
   }
 }
 @media (min-width: 1200px) {
   .mission .photo.lazyloaded {
-    background-image: url("./sheets/sheets-field-mobile.jpeg?&fit=crop&crop=focalpoint&w=1440&h=900");
+    background-image: url("./sheets/sheets-field-mobile.jpeg?fit=crop&crop=focalpoint&w=1440&h=900");
     background-size: 720px;
   }
 }
 @media (min-width: 1440px) {
   .mission .photo.lazyloaded {
-    background-image: url("./sheets/sheets-field-mobile.jpeg?&fit=crop&crop=focalpoint&w=1660&h=900");
+    background-image: url("./sheets/sheets-field-mobile.jpeg?fit=crop&crop=focalpoint&w=1660&h=900");
     background-size: 830px;
   }
 }
 @media (min-width: 1660px) {
   .mission .photo.lazyloaded {
-    background-image: url("./sheets/sheets-field-mobile.jpeg?&fit=crop&crop=focalpoint&w=1920&h=1000");
+    background-image: url("./sheets/sheets-field-mobile.jpeg?fit=crop&crop=focalpoint&w=1920&h=1000");
     background-size: 960px;
   }
 }
@@ -1978,23 +1978,23 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
   }
 }
 .ethical.lazyloaded {
-  background-image: url("./sheets/sheets-texture.jpg?&fit=crop&crop=focalpoint&w=840&h=1200&fp-x=0&fp-y=0");
+  background-image: url("./sheets/sheets-texture.jpg?fit=crop&crop=focalpoint&w=840&h=1200&fp-x=0&fp-y=0");
 }
 @media (min-width: 768px) {
   .ethical.lazyloaded {
-    background-image: url("./sheets/sheets-texture.jpg?&fit=crop&crop=focalpoint&w=992&h=750&fp-x=0&fp-y=0");
+    background-image: url("./sheets/sheets-texture.jpg?fit=crop&crop=focalpoint&w=992&h=750&fp-x=0&fp-y=0");
     background-size: 992px;
   }
 }
 @media (min-width: 992px) {
   .ethical.lazyloaded {
-    background-image: url("./sheets/sheets-texture.jpg?&fit=crop&crop=focalpoint&w=1200&h=800&fp-x=0&fp-y=0");
+    background-image: url("./sheets/sheets-texture.jpg?fit=crop&crop=focalpoint&w=1200&h=800&fp-x=0&fp-y=0");
     background-size: 1200px;
   }
 }
 @media (min-width: 1200px) {
   .ethical.lazyloaded {
-    background-image: url("./sheets/sheets-texture.jpg?&fit=crop&crop=focalpoint&w=1920&h=870&fp-x=0&fp-y=0");
+    background-image: url("./sheets/sheets-texture.jpg?fit=crop&crop=focalpoint&w=1920&h=870&fp-x=0&fp-y=0");
     background-size: 1920px;
     padding: 60px 0 75px 0;
   }
@@ -2102,17 +2102,17 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
   }
 }
 .perfect-blend .photo.lazyloaded {
-  background-image: url("./sheets/photo-bedroom-windowpane.jpg?&fit=crop&crop=focalpoint&w=840&h=694&fp-x=.42");
+  background-image: url("./sheets/photo-bedroom-windowpane.jpg?fit=crop&crop=focalpoint&w=840&h=694&fp-x=.42");
   background-size: cover;
 }
 @media (min-width: 544px) {
   .perfect-blend .photo.lazyloaded {
-    background-image: url("./sheets/photo-bedroom-windowpane.jpg?&fit=crop&crop=focalpoint&w=1534&h=690&fp-x=.42&fp-y=.38");
+    background-image: url("./sheets/photo-bedroom-windowpane.jpg?fit=crop&crop=focalpoint&w=1534&h=690&fp-x=.42&fp-y=.38");
   }
 }
 @media (min-width: 768px) {
   .perfect-blend .photo.lazyloaded {
-    background-image: url("./sheets/photo-bedroom-windowpane.jpg?&fit=crop&crop=focalpoint&w=1984&h=800&fp-x=.42&fp-y=.45");
+    background-image: url("./sheets/photo-bedroom-windowpane.jpg?fit=crop&crop=focalpoint&w=1984&h=800&fp-x=.42&fp-y=.45");
     background-size: 992px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -2120,25 +2120,25 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
 }
 @media (min-width: 992px) {
   .perfect-blend .photo.lazyloaded {
-    background-image: url("./sheets/photo-bedroom-windowpane.jpg?&fit=crop&crop=focalpoint&w=1200&h=840&fp-x=0&fp-y=0");
+    background-image: url("./sheets/photo-bedroom-windowpane.jpg?fit=crop&crop=focalpoint&w=1200&h=840&fp-x=0&fp-y=0");
     background-size: 600px;
   }
 }
 @media (min-width: 1200px) {
   .perfect-blend .photo.lazyloaded {
-    background-image: url("./sheets/photo-bedroom-windowpane.jpg?&fit=crop&crop=focalpoint&w=1420&h=900&fp-x=0&fp-y=0&fp-z=1.05");
+    background-image: url("./sheets/photo-bedroom-windowpane.jpg?fit=crop&crop=focalpoint&w=1420&h=900&fp-x=0&fp-y=0&fp-z=1.05");
     background-size: 710px;
   }
 }
 @media (min-width: 1440px) {
   .perfect-blend .photo.lazyloaded {
-    background-image: url("./sheets/photo-bedroom-windowpane.jpg?&fit=crop&crop=focalpoint&w=1630&h=900&fp-x=0&fp-y=0.5");
+    background-image: url("./sheets/photo-bedroom-windowpane.jpg?fit=crop&crop=focalpoint&w=1630&h=900&fp-x=0&fp-y=0.5");
     background-size: 815px;
   }
 }
 @media (min-width: 1660px) {
   .perfect-blend .photo.lazyloaded {
-    background-image: url("./sheets/photo-bedroom-windowpane.jpg?&fit=crop&crop=focalpoint&w=1880&h=1000&fp-x=0&fp-y=.5");
+    background-image: url("./sheets/photo-bedroom-windowpane.jpg?fit=crop&crop=focalpoint&w=1880&h=1000&fp-x=0&fp-y=.5");
     background-size: 940px;
   }
 }
@@ -2160,17 +2160,17 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
   }
 }
 .year-round-comfort .photo.lazyloaded {
-  background-image: url("./sheets/photo-couple-making-bed.jpg?&fit=crop&crop=focalpoint&w=840&h=694&fp-x=.5");
+  background-image: url("./sheets/photo-couple-making-bed.jpg?fit=crop&crop=focalpoint&w=840&h=694&fp-x=.5");
   background-size: cover;
 }
 @media (min-width: 544px) {
   .year-round-comfort .photo.lazyloaded {
-    background-image: url("./sheets/photo-couple-making-bed.jpg?&fit=crop&crop=focalpoint&w=1534&h=690&fp-x=.5&fp-y=.45");
+    background-image: url("./sheets/photo-couple-making-bed.jpg?fit=crop&crop=focalpoint&w=1534&h=690&fp-x=.5&fp-y=.45");
   }
 }
 @media (min-width: 768px) {
   .year-round-comfort .photo.lazyloaded {
-    background-image: url("./sheets/photo-couple-making-bed.jpg?&fit=crop&crop=focalpoint&w=1984&h=800&fp-x=.5&fp-y=.5");
+    background-image: url("./sheets/photo-couple-making-bed.jpg?fit=crop&crop=focalpoint&w=1984&h=800&fp-x=.5&fp-y=.5");
     background-size: 992px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -2178,25 +2178,25 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
 }
 @media (min-width: 992px) {
   .year-round-comfort .photo.lazyloaded {
-    background-image: url("./sheets/photo-couple-making-bed.jpg?&fit=crop&crop=focalpoint&w=1200&h=840&fp-x=0&fp-y=0");
+    background-image: url("./sheets/photo-couple-making-bed.jpg?fit=crop&crop=focalpoint&w=1200&h=840&fp-x=0&fp-y=0");
     background-size: 600px;
   }
 }
 @media (min-width: 1200px) {
   .year-round-comfort .photo.lazyloaded {
-    background-image: url("./sheets/photo-couple-making-bed.jpg?&fit=crop&crop=focalpoint&w=1320&h=900&fp-x=0&fp-y=0");
+    background-image: url("./sheets/photo-couple-making-bed.jpg?fit=crop&crop=focalpoint&w=1320&h=900&fp-x=0&fp-y=0");
     background-size: 660px;
   }
 }
 @media (min-width: 1440px) {
   .year-round-comfort .photo.lazyloaded {
-    background-image: url("./sheets/photo-couple-making-bed.jpg?&fit=crop&crop=focalpoint&w=1540&h=900&fp-x=0&fp-y=1");
+    background-image: url("./sheets/photo-couple-making-bed.jpg?fit=crop&crop=focalpoint&w=1540&h=900&fp-x=0&fp-y=1");
     background-size: 770px;
   }
 }
 @media (min-width: 1660px) {
   .year-round-comfort .photo.lazyloaded {
-    background-image: url("./sheets/photo-couple-making-bed.jpg?&fit=crop&crop=focalpoint&w=1800&h=1000&fp-x=0.5&fp-y=.55");
+    background-image: url("./sheets/photo-couple-making-bed.jpg?fit=crop&crop=focalpoint&w=1800&h=1000&fp-x=0.5&fp-y=.55");
     background-size: 900px;
   }
 }
@@ -2218,17 +2218,17 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
   }
 }
 .perfect-night .photo.lazyloaded {
-  background-image: url("./sheets/photo-couple-prone.jpg?&fit=crop&crop=focalpoint&w=840&h=694&fp-x=.5");
+  background-image: url("./sheets/photo-couple-prone.jpg?fit=crop&crop=focalpoint&w=840&h=694&fp-x=.5");
   background-size: cover;
 }
 @media (min-width: 544px) {
   .perfect-night .photo.lazyloaded {
-    background-image: url("./sheets/photo-couple-prone.jpg?&fit=crop&crop=focalpoint&w=1534&h=690&fp-x=.5&fp-y=.5");
+    background-image: url("./sheets/photo-couple-prone.jpg?fit=crop&crop=focalpoint&w=1534&h=690&fp-x=.5&fp-y=.5");
   }
 }
 @media (min-width: 768px) {
   .perfect-night .photo.lazyloaded {
-    background-image: url("./sheets/photo-couple-prone.jpg?&fit=crop&crop=focalpoint&w=1984&h=800&fp-x=.5&fp-y=.5");
+    background-image: url("./sheets/photo-couple-prone.jpg?fit=crop&crop=focalpoint&w=1984&h=800&fp-x=.5&fp-y=.5");
     background-size: 992px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -2236,25 +2236,25 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
 }
 @media (min-width: 992px) {
   .perfect-night .photo.lazyloaded {
-    background-image: url("./sheets/photo-couple-prone.jpg?&fit=crop&crop=focalpoint&w=1170&h=800&fp-x=0.5&fp-y=0.5");
+    background-image: url("./sheets/photo-couple-prone.jpg?fit=crop&crop=focalpoint&w=1170&h=800&fp-x=0.5&fp-y=0.5");
     background-size: 585px;
   }
 }
 @media (min-width: 1200px) {
   .perfect-night .photo.lazyloaded {
-    background-image: url("./sheets/photo-couple-prone.jpg?&fit=crop&crop=focalpoint&w=1410&h=900&fp-x=0.5&fp-y=0.45");
+    background-image: url("./sheets/photo-couple-prone.jpg?fit=crop&crop=focalpoint&w=1410&h=900&fp-x=0.5&fp-y=0.45");
     background-size: 705px;
   }
 }
 @media (min-width: 1440px) {
   .perfect-night .photo.lazyloaded {
-    background-image: url("./sheets/photo-couple-prone.jpg?&fit=crop&crop=focalpoint&w=1630&h=900&fp-x=0.5&fp-y=0.48");
+    background-image: url("./sheets/photo-couple-prone.jpg?fit=crop&crop=focalpoint&w=1630&h=900&fp-x=0.5&fp-y=0.48");
     background-size: 815px;
   }
 }
 @media (min-width: 1660px) {
   .perfect-night .photo.lazyloaded {
-    background-image: url("./sheets/photo-couple-prone.jpg?&fit=crop&crop=focalpoint&w=1890&h=1000&fp-x=.5&fp-y=.45");
+    background-image: url("./sheets/photo-couple-prone.jpg?fit=crop&crop=focalpoint&w=1890&h=1000&fp-x=.5&fp-y=.45");
     background-size: 960px;
   }
 }
@@ -2273,44 +2273,44 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
   }
 }
 .hypoallergenic .photo.lazyloaded {
-  background-image: url("./sheets/photo-clothesline-candid.jpg?&fit=crop&crop=focalpoint&w=840&h=694&fp-x=.7");
+  background-image: url("./sheets/photo-clothesline-candid.jpg?fit=crop&crop=focalpoint&w=840&h=694&fp-x=.7");
   background-size: cover;
   background-repeat: no-repeat;
 }
 @media (min-width: 544px) {
   .hypoallergenic .photo.lazyloaded {
-    background-image: url("./sheets/photo-clothesline-candid.jpg?&fit=crop&crop=focalpoint&w=1534&h=690&fp-x=.7&fp-y=.4");
+    background-image: url("./sheets/photo-clothesline-candid.jpg?fit=crop&crop=focalpoint&w=1534&h=690&fp-x=.7&fp-y=.4");
   }
 }
 @media (min-width: 768px) {
   .hypoallergenic .photo.lazyloaded {
-    background-image: url("./sheets/photo-clothesline-candid.jpg?&fit=crop&crop=focalpoint&w=1984&h=800&fp-x=.7&fp-y=.4");
+    background-image: url("./sheets/photo-clothesline-candid.jpg?fit=crop&crop=focalpoint&w=1984&h=800&fp-x=.7&fp-y=.4");
     background-size: 992px;
     background-position: 50% 50%;
   }
 }
 @media (min-width: 992px) {
   .hypoallergenic .photo.lazyloaded {
-    background-image: url("./sheets/photo-clothesline-candid.jpg?&fit=crop&crop=focalpoint&w=1140&h=800&fp-x=0.7&fp-y=0.4");
+    background-image: url("./sheets/photo-clothesline-candid.jpg?fit=crop&crop=focalpoint&w=1140&h=800&fp-x=0.7&fp-y=0.4");
     background-size: 600px;
     background-position: 100% 50%;
   }
 }
 @media (min-width: 1200px) {
   .hypoallergenic .photo.lazyloaded {
-    background-image: url("./sheets/photo-clothesline-candid.jpg?&fit=crop&crop=focalpoint&w=1440&h=1040&fp-x=0.7&fp-y=0.4");
+    background-image: url("./sheets/photo-clothesline-candid.jpg?fit=crop&crop=focalpoint&w=1440&h=1040&fp-x=0.7&fp-y=0.4");
     background-size: 720px;
   }
 }
 @media (min-width: 1440px) {
   .hypoallergenic .photo.lazyloaded {
-    background-image: url("./sheets/photo-clothesline-candid.jpg?&fit=crop&crop=focalpoint&w=1540&h=900&fp-x=0.7&fp-y=0.4");
+    background-image: url("./sheets/photo-clothesline-candid.jpg?fit=crop&crop=focalpoint&w=1540&h=900&fp-x=0.7&fp-y=0.4");
     background-size: 770px;
   }
 }
 @media (min-width: 1660px) {
   .hypoallergenic .photo.lazyloaded {
-    background-image: url("./sheets/photo-clothesline-candid.jpg?&fit=crop&crop=focalpoint&w=1800&h=1000&fp-x=0.7&fp-y=.4");
+    background-image: url("./sheets/photo-clothesline-candid.jpg?fit=crop&crop=focalpoint&w=1800&h=1000&fp-x=0.7&fp-y=.4");
     background-size: 960px;
   }
 }
@@ -2332,17 +2332,17 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
   }
 }
 .crafted .photo.lazyloaded {
-  background-image: url("./sheets/photo-bedroom-grey.jpg?&fit=crop&crop=focalpoint&w=840&h=694&fp-x=.5");
+  background-image: url("./sheets/photo-bedroom-grey.jpg?fit=crop&crop=focalpoint&w=840&h=694&fp-x=.5");
   background-size: cover;
 }
 @media (min-width: 544px) {
   .crafted .photo.lazyloaded {
-    background-image: url("./sheets/photo-bedroom-grey.jpg?&fit=crop&crop=focalpoint&w=1534&h=690&fp-x=.5&fp-y=.6");
+    background-image: url("./sheets/photo-bedroom-grey.jpg?fit=crop&crop=focalpoint&w=1534&h=690&fp-x=.5&fp-y=.6");
   }
 }
 @media (min-width: 768px) {
   .crafted .photo.lazyloaded {
-    background-image: url("./sheets/photo-bedroom-grey.jpg?&fit=crop&crop=focalpoint&w=1984&h=800&fp-x=.5&fp-y=.6");
+    background-image: url("./sheets/photo-bedroom-grey.jpg?fit=crop&crop=focalpoint&w=1984&h=800&fp-x=.5&fp-y=.6");
     background-size: 992px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -2350,25 +2350,25 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
 }
 @media (min-width: 992px) {
   .crafted .photo.lazyloaded {
-    background-image: url("./sheets/photo-bedroom-grey.jpg?&fit=crop&crop=focalpoint&w=1170&h=800&fp-x=.5&fp-y=.5");
+    background-image: url("./sheets/photo-bedroom-grey.jpg?fit=crop&crop=focalpoint&w=1170&h=800&fp-x=.5&fp-y=.5");
     background-size: 585px;
   }
 }
 @media (min-width: 1200px) {
   .crafted .photo.lazyloaded {
-    background-image: url("./sheets/photo-bedroom-grey.jpg?&fit=crop&crop=focalpoint&w=1410&h=900&fp-x=.5&fp-y=.5");
+    background-image: url("./sheets/photo-bedroom-grey.jpg?fit=crop&crop=focalpoint&w=1410&h=900&fp-x=.5&fp-y=.5");
     background-size: 705px;
   }
 }
 @media (min-width: 1440px) {
   .crafted .photo.lazyloaded {
-    background-image: url("./sheets/photo-bedroom-grey.jpg?&fit=crop&crop=focalpoint&w=1630&h=900&fp-x=.5&fp-y=.525");
+    background-image: url("./sheets/photo-bedroom-grey.jpg?fit=crop&crop=focalpoint&w=1630&h=900&fp-x=.5&fp-y=.525");
     background-size: 815px;
   }
 }
 @media (min-width: 1660px) {
   .crafted .photo.lazyloaded {
-    background-image: url("./sheets/photo-bedroom-grey.jpg?&fit=crop&crop=focalpoint&w=1890&h=1040&fp-x=0.5&fp-y=.525");
+    background-image: url("./sheets/photo-bedroom-grey.jpg?fit=crop&crop=focalpoint&w=1890&h=1040&fp-x=0.5&fp-y=.525");
     background-size: 945px;
   }
 }

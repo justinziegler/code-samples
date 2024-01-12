@@ -11,7 +11,7 @@
 @import 'partials/svg';
 
 // $imgixUrl: 'https://lull-media.imgix.net/sheets';
-$imgixCrop: '&fit=crop&crop=focalpoint';
+$imgixCrop: 'fit=crop&crop=focalpoint';
 
 video {
   width: 100%;
@@ -1108,33 +1108,33 @@ main {
   }
   .photo {
     &.lazyloaded {
-      background-image: url('https://lull-media.imgix.net/sheets/photo-parachute.jpg?#{$imgixCrop}&w=840&h=694');
+      background-image: url('https://lull-media.imgix.net/sheets/photo-parachute.jpg');
       background-size: cover;
       @include mq(xs) {
-        background-image: url('https://lull-media.imgix.net/sheets/photo-parachute.jpg?#{$imgixCrop}&w=1534&h=690&fp-x=.42&fp-y=.5');
+        background-image: url('https://lull-media.imgix.net/sheets/photo-parachute-xs.jpg');
       }
       @include mq(sm) {
-        background-image: url('https://lull-media.imgix.net/sheets/photo-parachute.jpg?#{$imgixCrop}&w=1984&h=800&fp-x=.42&fp-y=.5');
+        background-image: url('https://lull-media.imgix.net/sheets/photo-parachute-sm.jpg');
         background-size: 992px;
         background-position: 50% 50%;
         background-repeat: no-repeat;
       }
       @include mq(md) {
-        background-image: url('https://lull-media.imgix.net/sheets/photo-parachute.jpg?#{$imgixCrop}&w=1200&h=960&fp-x=.38&fp-y=.5');
+        background-image: url('https://lull-media.imgix.net/sheets/photo-parachute-md.jpg');
         background-size: 600px;
         background-position: 100% 50%;
         background-repeat: no-repeat;
       }
       @include mq(lg) {
-        background-image: url('https://lull-media.imgix.net/sheets/photo-parachute.jpg?#{$imgixCrop}&w=1440&h=1100&fp-x=0.38&fp-y=.5');
+        background-image: url('https://lull-media.imgix.net/sheets/photo-parachute-lg.jpg');
         background-size: 720px;
       }
       @media (min-width: 1440px) {
-        background-image: url('https://lull-media.imgix.net/sheets/photo-parachute.jpg?#{$imgixCrop}&w=1660&h=1100&fp-x=.38&fp-y=.5');
+        background-image: url('https://lull-media.imgix.net/sheets/photo-parachute-xl.jpg');
         background-size: 830px;
       }
       @media (min-width: 1660px) {
-        background-image: url('https://lull-media.imgix.net/sheets/photo-parachute.jpg?#{$imgixCrop}&w=1880&h=1080&fp-x=.55&fp-y=.5');
+        background-image: url('https://lull-media.imgix.net/sheets/photo-parachute-xxl.jpg');
         background-size: 960px;
       }
     }
@@ -1188,33 +1188,33 @@ main {
   }
   .photo {
     &.lazyloaded {
-      background-image: url('./sheets/closeup-making-bed.jpg?#{$imgixCrop}&w=840&h=694');
+      background-image: url('https://lull-media.imgix.net/sheets/closeup-making-bed.jpg?#{$imgixCrop}&w=840&h=694');
       background-size: cover;
       @include mq(xs) {
-        background-image: url('./sheets/closeup-making-bed.jpg?#{$imgixCrop}&w=1534&h=690&fp-x=.42&fp-y=.5');
+        background-image: url('https://lull-media.imgix.net/sheets/closeup-making-bed.jpg?#{$imgixCrop}&w=1534&h=690&fp-x=.42&fp-y=.5');
       }
       @include mq(sm) {
-        background-image: url('./sheets/closeup-making-bed.jpg?#{$imgixCrop}&w=1984&h=800&fp-x=1&fp-y=.4');
+        background-image: url('https://lull-media.imgix.net/sheets/closeup-making-bed.jpg?#{$imgixCrop}&w=1984&h=800&fp-x=1&fp-y=.4');
         background-size: 992px;
         background-position: 50% 50%;
         background-repeat: no-repeat;
       }
       @include mq(md) {
-        background-image: url('./sheets/closeup-making-bed.jpg?#{$imgixCrop}&w=1140&h=800&fp-x=.55&fp-y=0');
+        background-image: url('https://lull-media.imgix.net/sheets/closeup-making-bed.jpg?#{$imgixCrop}&w=1140&h=800&fp-x=.55&fp-y=0');
         background-size: 570px;
         background-position: 100% 50%;
         background-repeat: no-repeat;
       }
       @include mq(lg) {
-        background-image: url('./sheets/closeup-making-bed.jpg?#{$imgixCrop}&w=1350&h=900&fp-x=.55&fp-y=0');
+        background-image: url('https://lull-media.imgix.net/sheets/closeup-making-bed.jpg?#{$imgixCrop}&w=1350&h=900&fp-x=.55&fp-y=0');
         background-size: 675px;
       }
       @media (min-width: 1440px) {
-        background-image: url('./sheets/closeup-making-bed.jpg?#{$imgixCrop}&w=1560&h=900&fp-x=.55&fp-y=0');
+        background-image: url('https://lull-media.imgix.net/sheets/closeup-making-bed.jpg?#{$imgixCrop}&w=1560&h=900&fp-x=.55&fp-y=0');
         background-size: 830px;
       }
       @media (min-width: 1660px) {
-        background-image: url('./sheets/closeup-making-bed.jpg?#{$imgixCrop}&w=1800&h=1000&fp-x=.55&fp-y=0');
+        background-image: url('https://lull-media.imgix.net/sheets/closeup-making-bed.jpg?#{$imgixCrop}&w=1800&h=1000&fp-x=.55&fp-y=0');
         background-size: 960px;
       }
     }
