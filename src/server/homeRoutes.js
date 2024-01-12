@@ -128,6 +128,105 @@ async function tiktok(ctx, next) {
   });
 }
 
+async function holidayMode(ctx, next) {
+  const pageUrl = 'holiday-mode';
+  const pageId = await utils.getPageId(pageUrl);
+  ctx.body = await render('promotion_holiday_mode', {
+    title: title,
+    p: {
+      pageUrl: pageUrl,
+      pageId: pageId,
+      prevPage: 'mattress-animation',
+      nextPage: 'mattress',
+      headerTitle: 'Holiday Mode',
+      headerIntro: `<a href="#" class="mode-toggle">Click here</a> to toggle the page to its <span class="mode-toggle-text">'evergreen'</span> content.`,
+      headerBullets: [
+        '<a href="#" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
+      ]
+    }
+  });
+}
+
+async function holidayModeEnabled(ctx, next) {
+  const pageUrl = 'holiday-mode-enabled';
+  const pageId = await utils.getPageId(pageUrl);
+  const p = await pageConfig.mattress(ctx);
+  let monthlyPayment = 0;
+  let name;
+  const skus = await utils.getProductSkus(ctx, 1, ctx.discountActual);
+  skus.forEach(item => {
+    if (item.sku == 'LU-MA-WH-TW')  {
+      monthlyPayment = item.monthlyPayment;
+      name = item.name;
+    } 
+  })
+  ctx.body = await render('promotion_holiday_mode_example', {
+    title: title,
+    p: {
+      pageUrl: pageUrl,
+      pageId: pageId,
+      prevPage: 'mattress-animation',
+      nextPage: 'mattress',
+      headerTitle: 'Holiday Promotions',
+      headerIntro: 'asdf',
+      headerBullets: [
+        '<a href="#" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
+      ]
+    },
+    mattressDiscount: 200,
+    monthlyPayment: monthlyPayment,
+    name: name,
+    holidaySale: true,
+    scripts: [
+      'modal.bootstrap',
+      'collapse.bootstrap',
+      'lazysizes.min',
+      'swiper-lite',
+      'promotion-holiday',
+    ],
+  });
+}
+
+async function holidayModeDisabled(ctx, next) {
+  const pageUrl = 'holiday-mode-disabled';
+  const pageId = await utils.getPageId(pageUrl);
+  const p = await pageConfig.mattress(ctx);
+  let monthlyPayment = 0;
+  let name;
+  const skus = await utils.getProductSkus(ctx, 1, ctx.discountActual);
+  skus.forEach(item => {
+    if (item.sku == 'LU-MA-WH-TW')  {
+      monthlyPayment = item.monthlyPayment;
+      name = item.name;
+    } 
+  })
+  ctx.body = await render('promotion_holiday_mode_example', {
+    title: title,
+    p: {
+      pageUrl: pageUrl,
+      pageId: pageId,
+      prevPage: 'mattress-animation',
+      nextPage: 'mattress',
+      headerTitle: 'Holiday Promotions',
+      headerIntro: 'Add text',
+      headerBullets: [
+        '<a href="#" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
+      ]
+    },
+    mattressDiscount: 200,
+    monthlyPayment: monthlyPayment,
+    name: name,
+    holidaySale: false,
+    scripts: [
+      'modal.bootstrap',
+      'collapse.bootstrap',
+      'lazysizes.min',
+      'swiper-lite',
+      'promotion-holiday',
+    ],
+  });
+}
+
 async function mattress(ctx, next) {
   ctx.discountActual = 200;
   ctx.upsellDiscountActual = 0;
@@ -181,7 +280,7 @@ async function frameB(ctx, next) {
     } 
   })
 
-  ctx.body = await render('product_frame_islay', {
+  ctx.body = await render('product_frame_full', {
     p: p[0],      
     title: 'Product Page example',
     discountActual: discountActual,
@@ -214,6 +313,31 @@ async function sheets(ctx, next) {
   const p = await pageConfig.sheets(ctx);
 
   ctx.body = await render('product_sheets', {
+    p: p[0],
+    title: 'Product Page example',
+    discountActual: discountActual
+  });
+}
+
+async function sheetsFull(ctx, next) {
+  const discountActual = 70;
+  const dcDiscountActual = 20;
+  const pcDiscountActual = 20;
+  const skus = await utils.getProductSkus(ctx, 30, discountActual);
+  const skus31 = await utils.getProductSkus(ctx, 31, dcDiscountActual);
+	const skus32 = await utils.getProductSkus(ctx, 32, dcDiscountActual);
+	const skus33 = await utils.getProductSkus(ctx, 33, dcDiscountActual);
+	const skus34 = await utils.getProductSkus(ctx, 34, pcDiscountActual);
+	const skus35 = await utils.getProductSkus(ctx, 35, pcDiscountActual);
+	const skus36 = await utils.getProductSkus(ctx, 36, pcDiscountActual);
+	const duvetCoverSkus = skus31.concat(skus32).concat(skus33);
+	const pillowcaseSkus = skus34.concat(skus35).concat(skus36);
+	ctx.skus = skus;
+	ctx.duvetCoverSkus = duvetCoverSkus;
+	ctx.pillowcaseSkus = pillowcaseSkus;
+  const p = await pageConfig.sheets(ctx);
+
+  ctx.body = await render('product_sheets_full', {
     p: p[0],
     title: 'Product Page example',
     discountActual: discountActual
@@ -267,6 +391,10 @@ router.get('/', home);
 router.get('/value-props', valueProps);
 router.get('/mattress-animation', mattressAnimation);
 router.get('/tiktok', tiktok);
+router.get('/tiktok', tiktok);
+router.get('/holiday-mode', holidayMode);
+router.get('/holiday-mode-enabled', holidayModeEnabled);
+router.get('/holiday-mode-disabled', holidayModeDisabled);
 
 router.get('/mattress', mattress);
 router.get('/mattress/twin', mattress);
@@ -285,6 +413,15 @@ router.get('/sheets/queen', sheets);
 router.get('/sheets/king', sheets);
 router.get('/sheets/cal-king', sheets);
 router.get('/sheets/california-king', sheets);
+
+router.get('/sheets-full', sheetsFull);
+router.get('/sheets-full/twin', sheetsFull);
+router.get('/sheets-full/twin-xl', sheetsFull);
+router.get('/sheets-full/full', sheetsFull);
+router.get('/sheets-full/queen', sheetsFull);
+router.get('/sheets-full/king', sheetsFull);
+router.get('/sheets-full/cal-king', sheetsFull);
+router.get('/sheets-full/california-king', sheetsFull);
 
 router.get('/frame', frameA);
 router.get('/frame/twin', frameA);

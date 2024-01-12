@@ -1,0 +1,370 @@
+{% extends "./src/client/views/_layout_product.html" %}
+{% import "./src/client/views/_css.html" as _css %}
+
+{% block styles %}
+  {{ _css.sheets() }}
+{% endblock %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block meta %}
+  <meta name="description" content="{{ description }}">
+{% endblock %}
+
+{% block content %}
+<section class="sustainable photo-module photo-left">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="photo-frame col-xs-12 col-md-6">
+        <div class="photo lazyload" role="img" aria-label="Image: Couple making bed"></div>
+      </div>
+      <div class="content right-col col-xs-12 col-md-6">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2><strong>Organic Luxury</strong><br> Made Sustainably</h2>
+            <p>Sleep easy knowing your bedding meets the<br> highest safety and environmental standards.</p>
+          </div>
+        </div>
+        <div class="certs row">
+          <div class="logo-col col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-0 col-md-3">
+            <div class="logo gots" role="img" aria-label="Global Organic Textile Standard"></div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9">
+            <p>Lull’s GOTS Certified (Global Organic<br class="visible-md visible-lg"> Textile Standard) organic sheets are<br class="visible-md"> made with cotton that’s grown without pesticides, herbicides, or fertilizers.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="logo-col col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-0 col-md-3">
+            <div class="logo oeko-tex" role="img" aria-label="Logo: Oeko-Tex Standard 100"></div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9">
+            <p>The Lull Organic Sheets are STANDARD<br class="visible-md"> 100 by OEKO-TEX certified, which means the fabrics used are tested and verified to be free from harmful levels of over<br class="visible-md"> 300 substances.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <p class="last">From seed to your home, we scrutinize every ingredient<br class="visible-md"> so you don’t have to. That means it’s<br class="visible-lg"> better for you and<br class="visible-md"> the environment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="comfort photo-module photo-right">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="photo-frame col-xs-12 col-md-6 col-md-push-6">
+        <div class="photo lazyload" role="img" aria-label="Image: Silky smooth sheets"></div>
+      </div>
+      <div class="content left-col col-xs-12 col-md-6 col-md-pull-6">
+        <h2>Beautifully Designed with <strong>Comfort in Mind</strong></h2>
+        <p>Silky, soft, and buttery, Lull’s signature Organic Cotton Sheets have a 400 thread count making them long lasting and softer with each wash.</p>
+        <p>Lull's specialty three-over, one-under sateen weave feels silky and smooth against your skin keeping you cool on summer nights and cozy all winter long.</p>
+        <p>The set is available in calming neutral colors and patterns designed to complement your bedroom. Your body will feel well-rested with colors and designs that soothe you<br class="visible-md"> to sleep.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="responsibly-grown photo-module photo-left">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="photo-frame col-xs-12 col-md-6">
+        <div class="photo lazyload" role="img" aria-label="Image: Hanging sheets on clothesline"></div>
+      </div>
+      <div class="content col-xs-12 col-md-6">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2><strong>Responsibly Grown</strong><br class="visible-xs"> Cotton for a Better Planet</h2>
+            <p>Lull’s GOTS Certified organic cotton is grown without fertilizers or chemical pesticides minimizing its impact on the environment. Its cultivation uses 90% less water and 60% less energy than regular cotton, significantly reducing greenhouse gas emissions. </p>
+            <ul>
+              <li class="water">Cultivated using<br class="visible-lg"> 90% less<br class="visible-xs visible-sm"> water and no harsh chemicals.</li>
+              <li class="energy">60% less energy used<br class="visible-xs"> than<br class="visible-sm"> conventional cotton.</li>
+            </ul>
+            <p>Conventionally grown cotton uses pesticides and insecticides that can<br class="visible-xxs"> harm surrounding soil, air quality<br class="visible-md"> and waterways. Toxins in traditionally grown cotton<br class="visible-md"> can be carried into your home which can cause irritation, rashes and dizziness.</p>
+            <p>Lull is a socially and environmentally responsible company dedicated to helping people sleep better so they<br class="visible-xxs"> can <br class="visible-md"> live better.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% set valueProps = [
+  {
+    type: 'vp',
+    heading: 'Get Ready for the Ultimate Sleep Experience',
+    items: [
+      {
+        title: __('shipping&Returns'),
+        icon: true,
+        className: 'shipping',
+        bullets: false,
+        content: [
+          { item: 'Your Lull Sheets ship fast and free in the contiguous US. Once your order is placed it typically ships in 
+          1-4 business days and arrives with no-contact delivery. Don\'t love them? Arrange a quick, stress-free return.' }
+        ]
+      },
+      {
+        title: '100 Night Trial',
+        icon: true,
+        className: 'trial',
+        bullets: false,
+        content: [
+          { item: 'Try the Lull Organic Cotton Sheet Set in your home for 100 nights, stress-free. If you\'re not 100% satisfied with your sleep experience during the trial period, arrange a quick and easy return.' }
+        ]
+      },
+      {
+        title: '1-Year Warranty',
+        icon: true,
+        className: 'warranty',
+        bullets: false,
+        content: [
+          {	item: 'Your Lull Sheets are protected by a 1-year limited manufacturer\'s warranty.' }
+        ]
+      }
+    ]
+  }
+]%}
+
+{{ _m_modules.contentAccordion(valueProps, product, products) }}
+
+<section class="mission photo-module photo-left">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="photo-frame col-xs-12 col-md-6">
+        <div class="photo lazyload" role="img" aria-label="Image: Cotton field"></div>
+      </div>
+      <div class="content col-xs-12 col-md-6">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Crafted With a Mission</h2>
+            <p>Lull Sheets are sustainably produced using 99% recycled water and 70% renewable energy. The planet will love these sheets as much as you will.</p>
+            <p>Lull’s premium sheets come from a family-owned workshop that has been crafting high-quality textiles since 1945.</p>
+            <p>With an emphasis on giving back, the purchase of your new Lull Sheets helps fund education, housing, and women’s empowerment efforts.</p>
+            <p>Every stitch in the Lull Sheets collection is crafted with care, love, and to the highest standards.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ethical lazyload">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Safe, Sustainable,<br class="visible-xxs"> and Award-Winning</h2>
+          </div>
+        </div>
+        <div class="content row">
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0">
+            <div class="row">
+              <div class="logo-col col-xs-4 col-sm-3 col-md-offset-1">
+                <div class="logo oeko-tex" role="img" aria-label="Logo: Oeko-Tex Standard 100"></div>
+              </div>
+              <div class="col-xs-8 col-sm-offset-1 col-md-offset-0">
+                <p>Standard 100 by Oeko-Tex certified, which means the fabrics used are tested and verified to be free from harmful levels of more than 300 substances.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0">
+            <div class="row">
+              <div class="logo-col col-xs-4 col-sm-3 col-md-offset-1">
+                <div class="logo gots" role="img" aria-label="Logo: Global Organic Textile Standard"></div>
+              </div>
+              <div class="col-xs-8 col-sm-offset-1 col-md-offset-0">
+                <p>The Global Organic Textile Standard ensures that the sourcing and manufacturing of textile material is <br class="visible-lg">done in a social and environmentally responsible manner.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0">
+            <div class="row">
+              <div class="logo-col col-xs-4 col-sm-3 col-md-offset-1">
+                <div class="logo sfc" role="img" aria-label="Logo: Sustainable Furnishing Council Member"></div>
+              </div>
+              <div class="col-xs-8 col-sm-offset-1 col-md-offset-0">
+                <p>Environmental and health impacts of all products are analyzed and all possible steps are taken to minimize carbon emissions, waste stream pollutants, <br class="visible-md visible-lg">and un-recyclable content.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0">
+            <div class="row">
+              <div class="logo-col col-xs-4 col-sm-3 col-md-offset-1">
+                <div class="logo newsweek" role="img" aria-label="Logo: Newsweek"></div>
+              </div>
+              <div class="col-xs-8 col-sm-offset-1 col-md-offset-0">
+                <p>Lull has been recognized as one of <strong>America's Best Trending Online Shops</strong> by Newsweek for our commitment to offering exceptional customer service, <br class="visible-lg">a painless ordering process, and an <br class="visible-md">easy-to-use website.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{#
+<section class="photos">
+  <h2>Placeholder</h2>
+</section>
+#}
+
+{% set reviews = [
+  {
+    heading: 'People Love Lull Sheets',
+    reviews: [
+      {
+        stars: '5',
+        reviewTitle: 'The sheets are so soft',
+        review: 'The sheets are so soft, fresh and so comfortable. Wash really well and the fit is great. Love white sheets.',
+        name: 'Marvette H.'
+      },
+      {
+        stars: '5',
+        reviewTitle: 'Best sheets ever',
+        review: 'The sheets are thick, and comfortable, way better than anything I\'ve bought from a store.',
+        name: 'Leslie'
+      },
+      {
+        stars: '5',
+        reviewTitle: 'These sheets are absolutely worth it',
+        review: 'These sheets are absolutely worth the money, I\’ll be buying another set!',
+        name: 'Lisa F.'
+      },
+      {
+        stars: '5',
+        reviewTitle: 'Softest sheets',
+        review: 'Its super soft and comfortable. I really like this sheet set, definitely not like the traditional sheets you buy from the store. They fit perfectly on my Lull.',
+        name: 'Diana'
+      },
+      {
+        stars: '5',
+        reviewTitle: 'The perfect end',
+        review: 'The sheets showed up, and I washed them per the instructions. They are the best sheets, like hotel sheets! It\'s like sleeping on a cloud. It\'s the perfect set for the mattress.',
+        name: 'Rebeca'
+      },
+      {
+        stars: '5',
+        reviewTitle: 'Comfy!',
+        review: 'These sheets are SO soft & comfortable. Definitely a great purchase!',
+        name: 'Crystal C.'
+      },
+      {
+        stars: '5',
+        reviewTitle: 'Sheets are great.<br class="visible-xxs"> Really soft.',
+        review: 'Sheets are great. Really soft but don\’t cling to you.',
+        name: 'Jacque K.'
+      },
+      {
+        stars: '5',
+        reviewTitle: 'Amazing',
+        review: 'These sheets are phenomenal. I was so impressed with the overall experience, I bought more products!',
+        name: 'Jeremy A.'
+      },
+      {
+        stars: '5',
+        reviewTitle: 'The best!',
+        review: 'The sheets are a must as well. I sleep great and have more energy the next day now.',
+        name: 'Mike D.'
+      }
+    ]
+  }	
+]%}
+
+{{ _m_modules.reviewsCarousel(reviews) }}
+
+{% set additionalDetails = [
+  {
+    type: 'additional-details',
+    heading: 'Additional Details',
+    items: [
+      {
+        title: 'Perfect Fit',
+        icon: false,
+        className: 'perfect-fit',
+        bullets: true,
+        content: [
+          { item: 'The Lull Organic Cotton Sheets are designed to stay in place and fit any Lull mattress or mattresses up to 15”.' }, 
+          { item: 'Each pillowcase features a sleek envelope enclosure designed to keep pillows secure and clean.' }
+        ]
+      },
+      {
+        title: 'Care Instructions',
+        icon: false,
+        className: 'care-instructions',
+        bullets: true,
+        content: [
+           { item: 'Wash and rotate weekly' },
+          {	item: 'Machine wash, cold, separately with mild detergent' },
+          {	item: 'Tumble dry on lowest heat setting' },
+          {	item: 'Warm iron as needed' }
+        ]
+      },
+      {
+        title: 'Product Dimensions',
+        icon: false,
+        className: 'product-dimensions',
+        content: 'This is pulled from the product details'
+      }
+    ]
+  }
+]%}
+
+{{ _m_modules.contentAccordion(additionalDetails, product, products) }}
+
+{% set suggestedItems = [
+  {
+    title: 'You Might Also Love',
+    items: [
+      {
+        itemName: 'Down Pillow',
+        shortName: 'down-pillow',
+        linkName: 'pillow',
+        url: 'down-pillow',
+        description: 'Premium head and neck support filled with responsibly sourced white duck down.'
+      },
+      {
+        itemName: 'Original Lull Pillow',
+        shortName: 'pillow',
+        linkName: 'pillow',
+        url: 'pillow',
+        description: 'A three-layer design provides the perfect combination of comfort and support.'
+      },
+      {
+        itemName: 'Original Lull Duvet',
+        shortName: 'duvet',
+        linkName: 'duvet',
+        url: 'duvet-insert',
+        description: 'Millions of premium fibers keep you warm in the winter and cool in the summer.'
+      },
+      {
+        itemName: 'Memory Foam Pillow',
+        shortName: 'memory-foam-pillow',
+        linkName: 'pillow',
+        url: 'memory-foam-pillow',
+        description: 'Soft on one side and firm<br class="hidden-xs"> on the<br class="visible-xs"> other to support<br class="hidden-xs"> all sleepers.'
+      },
+      {
+        itemName: 'Down Duvet',
+        shortName: 'duvet',
+        linkName: 'down duvet',
+        url: 'down-duvet-insert',
+        description: 'Heirloom quality down<br> duvet insert.<br class="hidden-xs">&nbsp;'
+      }
+    ]
+  }
+]%}
+{{ _m_modules.suggestedItems(suggestedItems) }}
+
+{{- _m_modules.faq( faqs ) -}}
+{% endblock %}
+
+{% block scripts %}
+  {{ _m_js.collapseBootstrap() }}
+  {{ _m_modules.reviewsCarouselScript() }}
+  {{ _m_modules.suggestedItemsScripts() }}
+{% endblock %}

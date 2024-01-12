@@ -1,0 +1,56 @@
+{% extends "./src/client/views/_layout_product.html" %}
+{% import "./src/client/views/_css.html" as _css %}
+
+{% block styles %}
+  {{ _css.sheets() }}
+{% endblock %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block meta %}
+  <meta name="description" content="{{ description }}">
+{% endblock %}
+
+{% block content %}
+<section class="sustainable photo-module photo-left">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="photo-frame col-xs-12 col-md-6">
+        <div class="photo lazyload" role="img" aria-label="Image: Couple making bed"></div>
+      </div>
+      <div class="content right-col col-xs-12 col-md-6">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2><strong>Organic Luxury</strong><br> Made Sustainably</h2>
+            <p>Sleep easy knowing your bedding meets the<br> highest safety and environmental standards.</p>
+          </div>
+        </div>
+        <div class="certs row">
+          <div class="logo-col col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-0 col-md-3">
+            <div class="logo gots" role="img" aria-label="Global Organic Textile Standard"></div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9">
+            <p>Lull’s GOTS Certified (Global Organic<br class="visible-md visible-lg"> Textile Standard) organic sheets are<br class="visible-md"> made with cotton that’s grown without pesticides, herbicides, or fertilizers.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="logo-col col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-0 col-md-3">
+            <div class="logo oeko-tex" role="img" aria-label="Logo: Oeko-Tex Standard 100"></div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9">
+            <p>The Lull Organic Sheets are STANDARD<br class="visible-md"> 100 by OEKO-TEX certified, which means the fabrics used are tested and verified to be free from harmful levels of over<br class="visible-md"> 300 substances.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <p class="last">From seed to your home, we scrutinize every ingredient<br class="visible-md"> so you don’t have to. That means it’s<br class="visible-lg"> better for you and<br class="visible-md"> the environment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

@@ -715,3 +715,43 @@
   })
 </script>
 {% endmacro %}
+
+{# July 4 Promotion - uses module-july4-promo.css #}
+{% macro july4promo(mattressDiscount, darkTheme) %}
+  <section class="july4-promo" {% if darkTheme %} data-theme="dark"{% endif %}>
+    <a name="july4-promo" class="anchor"></a>
+    <div class="container">
+      <div class="row">
+        <div class="box col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+          <div class="border">
+            <p>Labor Day Sale</p>
+            <div class="divider">
+              <span>UP TO</span>
+            </div>
+            <h2>${{ mattressDiscount }} OFF</h2>
+            <h3>Lull Mattresses</h3>
+            <div class="divider"></div>
+            <p class="promo-cta">Don't Sleep Through<br> This Sale!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <link rel="stylesheet" href="../assets/module-july4-promo.css">
+{% endmacro %}
+
+{% macro july4logo(state) %}
+  <div class="logo-independence-day">
+    <div class="logo">
+    </div>
+    <span>{{ discountDisplay(state.mattressDiscount) }} OFF</span>
+    <span class="badge-cta">
+      {%- if holidaySaleExtended() -%}
+        EXTENDED!
+      {%- else -%}
+        ENDS SOON!
+      {%- endif -%}
+    </span>
+  </div>
+  <link rel="stylesheet" href="../assets/module-july4-logo.css">
+{% endmacro %}

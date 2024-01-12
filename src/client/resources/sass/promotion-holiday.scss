@@ -63,14 +63,6 @@
 //@import "animate/properties";
 //@import "animate/sliding-entrances/slideInUpSubtle"; 
 
-// Lull
-//@import "partials/snippets/_image-sprites"; // Uncomment to build image sprites
-//@import "partials/snippets/_video-embed"; // Responsive video embed CSS
-
-$imgixUrl: 'https://lull-media.imgix.net/pinterest';
-$imgixDefaults: '?auto=format,compress,enhance&q=50';
-$imgixCrop: '&fit=crop&crop=focalpoint';
-
 ////////////////////////////////////////////////////
 // Bootstrap collapse (component animations partial)
 .fade {
@@ -361,163 +353,72 @@ main {
 		&.four {
 			animation-duration: 72s;
 		}
-		// &.three, &.five {
-			// top: -75px;
-			// bottom: -405px;
-			// @include mq(sm) {
-			// 	top: -95px;
-			// 	bottom: -505px;
-			// }
-			// @include mq(lg) {
-			// 	top: -110px;
-			// 	bottom: -580px;
-			// }
-			// @media (min-width: 1660px) {
-			// 	top: -155px;
-			// 	bottom: -805px;
-			// }
-		// }
-		// &.one {
-		// 	@include mq(md) {
-		// 		.pic1.lazyloaded {
-		// 			background-image: url('#{$imgixUrl}/hero1-1.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.65&fp-y=1&fp-z=1.4&w=264&h=380');
-		// 		}
-		// 		.pic2.lazyloaded {
-		// 			background-image: url('#{$imgixUrl}/hero1-2.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=1&fp-z=.3&w=264&h=380');
-		// 		}
-		// 		.pic3.lazyloaded {
-		// 			background-image: url('#{$imgixUrl}/hero1-3.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=0&w=264&h=380');
-		// 		}
-		// 	}
-		// }
-		// &.two {
-		// 	.pic1.lazyloaded {
-		// 		background-image: url('#{$imgixUrl}/hero2-1.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.55&fp-y=1&fp-z=1.5&w=236&h=300');
-		// 	}
-		// 	.pic2.lazyloaded {
-		// 		background-image: url('#{$imgixUrl}/hero2-2.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=1&fp-z=.85&w=236&h=300');
-		// 	}
-		// 	.pic3.lazyloaded {
-		// 		background-image: url('#{$imgixUrl}/hero2-3.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=0&fp-y=1&fp-z=.85&w=236&h=300');
-		// 	}
-		// 	@include mq(sm) {
-		// 		.pic1.lazyloaded {
-		// 			background-image: url('#{$imgixUrl}/hero2-1.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.55&fp-y=1&fp-z=1.5&w=274&h=380');
-		// 		}
-		// 		.pic2.lazyloaded {
-		// 			background-image: url('#{$imgixUrl}/hero2-2.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=1&fp-z=.85&w=274&h=380');
-		// 		}
-		// 		.pic3.lazyloaded {
-		// 			background-image: url('#{$imgixUrl}/hero2-3.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=0&fp-y=1&fp-z=.85&w=274&h=380');
-		// 		}
-		// 	}
-		// }
-
-		////////////////////////////////////////////////////////////////
-		// EVERGREEN
 		&.three {
 			.pic1.lazyloaded {
-				background-image: url('#{$imgixUrl}/hero3-1.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.9&fp-y=1&fp-z=1.6&w=236&h=300');
+				background-image: url('./holiday-promotion/hero3-1.jpg');
 			}
 			.pic2.lazyloaded {
-				background-image: url('#{$imgixUrl}/hero3-2.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=1&fp-y=1&fp-z=.5&w=236&h=300');
+				background-image: url('./holiday-promotion/hero3-2.jpg');
 			}
 			.pic3.lazyloaded {
-				background-image: url('#{$imgixUrl}/hero8-1.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.4&fp-x=.65&fp-z=1.1&w=236&h=300');
+				background-image: url('./holiday-promotion/hero8-1.jpg');
 			}
 			@include mq(sm) {
 				.pic1.lazyloaded {
-					background-image: url('#{$imgixUrl}/hero3-1.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.9&fp-y=1&fp-z=1.6&w=274&h=380');
+					background-image: url('./holiday-promotion/hero3-1-sm.jpg');
 				}
 				.pic2.lazyloaded {
-					background-image: url('#{$imgixUrl}/hero3-2.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=1&fp-y=1&fp-z=.5&w=274&h=380');
+					background-image: url('./holiday-promotion/hero3-2-sm.jpg');
 				}
 				.pic3.lazyloaded {
-					background-image: url('#{$imgixUrl}/hero8-1.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.4&fp-x=.65&fp-z=1.1&w=274&h=380');
+					background-image: url('./holiday-promotion/hero8-1-sm.jpg');
 				}
 			}
 		}
 		&.four {
 			.pic1.lazyloaded {
-				background-image: url('#{$imgixUrl}/hero4-1.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=1&fp-z=.85&w=236&h=300');
+				background-image: url('./holiday-promotion/hero4-1.jpg');
 			}
 			.pic2.lazyloaded {
-				background-image: url('#{$imgixUrl}/hero8-2.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.45&fp-y=.5&fp-z=1.1&w=236&h=300');
+				background-image: url('./holiday-promotion/hero8-2.jpg');
 			}
 			.pic3.lazyloaded {
-				background-image: url('#{$imgixUrl}/hero4-3.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.55&fp-y=1&fp-z=1.1&w=236&h=300');
+				background-image: url('./holiday-promotion/hero4-3.jpg');
 			}
 			@include mq(sm) {
 				.pic1.lazyloaded {
-					background-image: url('#{$imgixUrl}/hero4-1.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=1&fp-z=.85&w=274&h=380');
+					background-image: url('./holiday-promotion/hero4-1-sm.jpg');
 				}
 				.pic2.lazyloaded {
-					background-image: url('#{$imgixUrl}/hero8-2.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.45&fp-y=.5&w=274&h=380');
+					background-image: url('./holiday-promotion/hero8-2-sm.jpg');
 				}
 				.pic3.lazyloaded {
-					background-image: url('#{$imgixUrl}/hero4-3.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.55&fp-y=1&fp-z=1.1&w=274&h=380');
+					background-image: url('./holiday-promotion/hero4-3-sm.jpg');
 				}
 			}
 		}
 		&.five {
 			.pic1.lazyloaded {
-				background-image: url('#{$imgixUrl}/hero8-4.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=1&fp-y=.45&fp-z=.85&w=236&h=300');
+				background-image: url('./holiday-promotion/hero8-4.jpg');
 			}
 			.pic2.lazyloaded {
-				background-image: url('#{$imgixUrl}/hero5-2.jpg#{$imgixDefaults}#{$imgixCrop}&fp-z=.85&w=236&h=300');
+				background-image: url('./holiday-promotion/hero5-2.jpg');
 			}
 			.pic3.lazyloaded {
-				background-image: url('#{$imgixUrl}/hero8-3.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.45&fp-y=1&fp-z=.85&w=236&h=300');
+				background-image: url('./holiday-promotion/hero8-3.jpg');
 			}
 			@include mq(sm) {
 				.pic1.lazyloaded {
-					background-image: url('#{$imgixUrl}/hero8-4.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=1&fp-y=.3&w=274&h=380');
+					background-image: url('./holiday-promotion/hero8-4-sm.jpg');
 				}
 				.pic2.lazyloaded {
-					background-image: url('#{$imgixUrl}/hero5-2.jpg#{$imgixDefaults}#{$imgixCrop}&fp-z=.85&w=274&h=380');
+					background-image: url('./holiday-promotion/hero5-2-sm.jpg');
 				}
 				.pic3.lazyloaded {
-					background-image: url('#{$imgixUrl}/hero8-3.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.45&fp-y=1&fp-z=.85&w=274&h=380');
+					background-image: url('./holiday-promotion/hero8-3-sm.jpg');
 				}
 			}
 		}
-		// END EVERGREEN
-
-		// &.six {
-		// 	.pic1.lazyloaded {
-		// 		background-image: url('#{$imgixUrl}/hero6-1.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.5&fp-y=1&fp-z=.85&w=236&h=300');
-		// 	}
-		// 	.pic2.lazyloaded {
-		// 		background-image: url('#{$imgixUrl}/hero6-2.jpg#{$imgixDefaults}#{$imgixCrop}&fp-z=.85&w=236&h=300');
-		// 	}
-		// 	.pic3.lazyloaded {
-		// 		background-image: url('#{$imgixUrl}/hero6-3.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.5&fp-x=.5&fp-z=1.15&w=236&h=300');
-		// 	}
-		// 	@include mq(sm) {
-		// 		.pic1.lazyloaded {
-		// 			background-image: url('#{$imgixUrl}/hero6-1.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.5&fp-y=1&fp-z=.85&w=274&h=380');
-		// 		}
-		// 		.pic2.lazyloaded {
-		// 			background-image: url('#{$imgixUrl}/hero6-2.jpg#{$imgixDefaults}#{$imgixCrop}&fp-z=.85&w=274&h=380');
-		// 		}
-		// 		.pic3.lazyloaded {
-		// 			background-image: url('#{$imgixUrl}/hero6-3.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.5&fp-x=.5&fp-z=1.15&w=274&h=380');
-		// 		}
-		// 	}
-		// }
-		// &.seven {
-		// 	@include mq(md) {
-		// 		.pic1.lazyloaded {
-		// 			background-image: url('#{$imgixUrl}/hero7-1.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=1&fp-z=.85&w=264&h=380');
-		// 		}
-		// 		.pic2.lazyloaded {
-		// 			background-image: url('#{$imgixUrl}/hero7-2.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=0&fp-y=.7&fp-z=.85&w=264&h=380');
-		// 		}
-		// 		.pic3.lazyloaded {
-		// 			background-image: url('#{$imgixUrl}/hero7-3.jpg#{$imgixDefaults}#{$imgixCrop}&fp-z=.85&w=264&h=380');
-		// 		}
-		// 	}
-		// }
 	}
 	.pic {
 		height: 150px;
@@ -822,57 +723,54 @@ main {
 	&.slide-one {
 		background-size: cover;
 		@include mq(sm) {
-			background-image: url('#{$imgixUrl}/carousel01-mob.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.65&w=1024&h=375&blur=150&blend=ffffff&bm=softlight');
+			background-image: url('./holiday-promotion/carousel01-mob.jpg');
 		}
 		@include mq(md) {
-			background-image: url('#{$imgixUrl}/carousel01-mob.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.65&w=1200&h=450&blur=150&blend=ffffff&bm=softlight');
+			background-image: url('./holiday-promotion/carousel01-mob-md.jpg');
 		}
 		@include mq(lg) {
-			background-image: url('#{$imgixUrl}/carousel01-mob.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.65&w=1440&h=550&blur=150&blend=ffffff&bm=softlight');
+			background-image: url('./holiday-promotion/carousel01-mob-lg.jpg');
 		}
 		@media (min-width: 1440px) {
-			background-image: url('#{$imgixUrl}/carousel01-mob.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.65&w=1600&h=550&blur=150&blend=ffffff&bm=softlight');
+			background-image: url('./holiday-promotion/carousel01-mob-xl.jpg');
 		}
 		@media (min-width: 1920px) {
-			background-image: url('#{$imgixUrl}/carousel01-mob.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.65&w=1920&h=550&blur=150&blend=ffffff&bm=softlight');
+			background-image: url('./holiday-promotion/carousel01-mob-xxl.jpg');
 		}
 	}
 	&.slide-two {
 		background-size: cover;
 		@include mq(sm) {
-			background-image: url('#{$imgixUrl}/carousel04-mob.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.5&w=1024&h=375&blur=150&blend=ffffff&bm=softlight');
+			background-image: url('./holiday-promotion/carousel04-mob.jpg');
 		}
 		@include mq(md) {
-			background-image: url('#{$imgixUrl}/carousel04-mob.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.5&w=1200&h=450&blur=150&blend=ffffff&bm=softlight');
+			background-image: url('./holiday-promotion/carousel04-mob-md.jpg');
 		}
 		@include mq(lg) {
-			background-image: url('#{$imgixUrl}/carousel04-mob.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.5&w=1440&h=550&blur=150&blend=ffffff&bm=softlight');
+			background-image: url('./holiday-promotion/carousel04-mob-lg.jpg');
 		}
 		@media (min-width: 1440px) {
-			background-image: url('#{$imgixUrl}/carousel04-mob.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.5&w=1600&h=550&blur=150&blend=ffffff&bm=softlight');
+			background-image: url('./holiday-promotion/carousel04-mob-xl.jpg');
 		}
 		@media (min-width: 1920px) {
-			background-image: url('#{$imgixUrl}/carousel04-mob.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.5&w=1920&h=550&blur=150&blend=ffffff&bm=softlight');
+			background-image: url('./holiday-promotion/carousel04-mob-xxl.jpg');
 		}
 	}
 	.swiper-slide {
 		&.one {
-			background-image: url('#{$imgixUrl}/carousel01-mob.jpg#{$imgixDefaults}#{$imgixCrop}&w=828&h=1366');
+			background-image: url('./holiday-promotion/carousel01-mob-vp.jpg');
 			@include mq(sm) {
-				background-image: url('#{$imgixUrl}/carousel01-mob.jpg#{$imgixDefaults}#{$imgixCrop}&w=626&h=780');
+				background-image: url('./holiday-promotion/carousel01-mob-vp-sm.jpg');
 			}
 			@include mq(md) {
-				background-image: url('#{$imgixUrl}/carousel01-mob.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.58&w=808&h=950');
+				background-image: url('./holiday-promotion/carousel01-mob-vp-md.jpg');
 			}
 			@include mq(lg) {
-				background-image: url('#{$imgixUrl}/carousel01-mob.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.6&w=390&h=550');
-				@include retina {
-					background-image: url('#{$imgixUrl}/carousel01-mob.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.6&w=780&h=1100');
-				}
+				background-image: url('./holiday-promotion/carousel01-mob-vp-lg.jpg');
 			}
 		}
 		&.two {
-			background-image: url('#{$imgixUrl}/carousel02-alt.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.55&w=828&h=1366');
+			background-image: url('./holiday-promotion/carousel02-alt.jpg');
 			position: relative;
 			&::before {
 				content: '';
@@ -889,35 +787,20 @@ main {
 				position: relative;
 				z-index: 3;
 			}
-			// @include mq(sm) {
-			// 	background-image: url('#{$imgixUrl}/carousel02.jpg#{$imgixDefaults}#{$imgixCrop}&w=626&h=780');
-			// }
-			// @include mq(md) {
-			// 	background-image: url('#{$imgixUrl}/carousel02.jpg#{$imgixDefaults}#{$imgixCrop}&w=808&h=950');
-			// }
-			// @include mq(lg) {
-			// 	background-image: url('#{$imgixUrl}/carousel02.jpg#{$imgixDefaults}#{$imgixCrop}&w=390&h=550');
-			// 	@include retina {
-			// 		background-image: url('#{$imgixUrl}/carousel02.jpg#{$imgixDefaults}#{$imgixCrop}&w=780&h=1100');
-			// 	}
-			// }
 		}
 		&.three {
-			background-image: url('#{$imgixUrl}/carousel03-mob.jpg#{$imgixDefaults}#{$imgixCrop}&w=828&h=1366');
+			background-image: url('./holiday-promotion/carousel03-mob.png');
 		}
 		&.four {
-			background-image: url('#{$imgixUrl}/carousel04-mob.jpg#{$imgixDefaults}#{$imgixCrop}&w=828&h=1366');
+			background-image: url('./holiday-promotion/carousel04-mob-vp.jpg');
 			@include mq(sm) {
-				background-image: url('#{$imgixUrl}/carousel04.jpg#{$imgixDefaults}#{$imgixCrop}&fit=crop&crop=focalpoint&fp-y=.8&w=626&h=780');
+				background-image: url('./holiday-promotion/carousel04-sm.jpg');
 			}
 			@include mq(md) {
-				background-image: url('#{$imgixUrl}/carousel04-mob.jpg#{$imgixDefaults}#{$imgixCrop}&w=810&h=950');
+				background-image: url('./holiday-promotion/carousel04-mob-vp-md.jpg');
 			}
 			@include mq(lg) {
-				background-image: url('#{$imgixUrl}/carousel04-mob.jpg#{$imgixDefaults}#{$imgixCrop}&w=390&h=550');
-				@include retina {
-					background-image: url('#{$imgixUrl}/carousel04-mob.jpg#{$imgixDefaults}#{$imgixCrop}&w=780&h=1100');
-				}
+				background-image: url('./holiday-promotion/carousel04-mob-vp-lg.jpg');
 			}
 		}
 	}
@@ -935,73 +818,67 @@ main {
 	&.slide-one {
 		background-size: cover;
 		@include mq(sm) {
-			background-image: url('#{$imgixUrl}/carousel03-mob.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.77&w=1024&h=375&blur=150&blend=ffffff&bm=softlight');
+			background-image: url('./holiday-promotion/carousel03-mob-sm.png');
 		}
 		@include mq(md) {
-			background-image: url('#{$imgixUrl}/carousel03-mob.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.77&w=1200&h=450&blur=150&blend=ffffff&bm=softlight');
+			background-image: url('./holiday-promotion/carousel03-mob-md.png');
 		}
 		@include mq(lg) {
-			background-image: url('#{$imgixUrl}/carousel03-mob.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.77&w=1440&h=550&blur=150&blend=ffffff&bm=softlight');
+			background-image: url('./holiday-promotion/carousel03-mob-lg.png');
 		}
 		@media (min-width: 1440px) {
-			background-image: url('#{$imgixUrl}/carousel03-mob.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.77&w=1600&h=550&blur=150&blend=ffffff&bm=softlight');
+			background-image: url('./holiday-promotion/carousel03-mob-xl.png');
 		}
 		@media (min-width: 1920px) {
-			background-image: url('#{$imgixUrl}/carousel03-mob.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.77&w=1920&h=550&blur=150&blend=ffffff&bm=softlight');
+			background-image: url('./holiday-promotion/carousel03-mob-xxl.png');
 		}
 	}
 	&.slide-two {
 		background-size: cover;
 		@include mq(sm) {
-			background-image: url('#{$imgixUrl}/carousel02-alt.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.5&w=1024&h=375&blur=150&blend=ffffff&bm=softlight');
+			background-image: url('./holiday-promotion/carousel02-alt.jpg');
 		}
 		@include mq(md) {
-			background-image: url('#{$imgixUrl}/carousel02-alt.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.5&fp-z=1.5&w=1200&h=450&blur=150&blend=ffffff&bm=softlight');
+			background-image: url('./holiday-promotion/carousel02-alt-md.jpg');
 		}
 		@include mq(lg) {
-			background-image: url('#{$imgixUrl}/carousel02-alt.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.5&fp-z=1.5&w=1440&h=550&blur=150&blend=ffffff&bm=softlight');
+			background-image: url('./holiday-promotion/carousel02-alt-lg.jpg');
 		}
 		@media (min-width: 1440px) {
-			background-image: url('#{$imgixUrl}/carousel02-alt.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.5&fp-z=1.5&w=1600&h=550&blur=150&blend=ffffff&bm=softlight');
+			background-image: url('./holiday-promotion/carousel02-alt-xl.jpg');
 		}
 		@media (min-width: 1920px) {
-			background-image: url('#{$imgixUrl}/carousel02-alt.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.5&fp-z=1.5&w=1920&h=550&blur=150&blend=ffffff&bm=softlight');
+			background-image: url('./holiday-promotion/carousel02-alt-xxl.jpg');
 		}
 	}
 	.swiper-slide {
 		&.one {
 			@include mq(sm) {
-				background-image: url('#{$imgixUrl}/carousel03.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=1&w=626&h=780');
+				background-image: url('./holiday-promotion/carousel03.jpg');
 			}
 			@include mq(md) {
-				background-image: url('#{$imgixUrl}/carousel03.jpg#{$imgixDefaults}#{$imgixCrop}&w=810&h=950');
+				background-image: url('./holiday-promotion/carousel03-md.jpg?&w=810&h=950');
 			}
 			@include mq(lg) {
-				background-image: url('#{$imgixUrl}/carousel03.jpg#{$imgixDefaults}#{$imgixCrop}&w=390&h=550');
-				@include retina {
-					background-image: url('#{$imgixUrl}/carousel03.jpg#{$imgixDefaults}#{$imgixCrop}&w=780&h=1100');
-				}
+				background-image: url('./holiday-promotion/carousel03-lg.jpg');
 			}
 		}
 		&.two {
 			@include mq(sm) {
-				background-image: url('#{$imgixUrl}/carousel02-alt.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.8&fp-x=.55&fp-z=1.25&w=626&h=780');
+				background-image: url('./holiday-promotion/carousel02-alt-vp-sm.jpg');
 			}
 			@include mq(md) {
-				background-image: url('#{$imgixUrl}/carousel02-alt.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.8&fp-x=.55&fp-z=1.1&w=810&h=950');
+				background-image: url('./holiday-promotion/carousel02-alt-vp-md.jpg');
 			}
 			@include mq(lg) {
-				background-image: url('#{$imgixUrl}/carousel02-alt.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.8&fp-x=.55&fp-z=1.1&w=390&h=550');
-				@include retina {
-					background-image: url('#{$imgixUrl}/carousel02-alt.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.8&fp-x=.55&fp-z=1.1&w=780&h=1100');
-				}
+				background-image: url('./holiday-promotion/carousel02-alt-vp-lg.jpg');
 			}
 		}
 	}
 }
 
 .know-lull {
-	background-color: #93bdd8;
+	background-color: #80bcde;
 	padding-top: 15px;
 	@include mq(md) {
 		padding-top: 30px;
@@ -1046,12 +923,12 @@ main {
 			}
 		}
 		&.lazyloaded {
-			background-image: url('#{$imgixUrl}/explainer-video.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.3&w=728&h=420');
+			background-image: url('./holiday-promotion/explainer-video.jpg');
 			@include mq(sm) {
-				background-image: url('#{$imgixUrl}/explainer-video.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.3&w=800&h=480');
+				background-image: url('./holiday-promotion/explainer-video-sm.jpg');
 			}
 			@include mq(md) {
-				background-image: url('#{$imgixUrl}/explainer-video.jpg#{$imgixDefaults}#{$imgixCrop}&fp-y=.3&w=1100&h=640');
+				background-image: url('./holiday-promotion/explainer-video-md.jpg');
 			}
 		}
 	}
@@ -1071,12 +948,12 @@ main {
 		padding-bottom: 30px;
 	}
 	&.lazyloaded {
-		background-image: url('#{$imgixUrl}/texture.jpg?auto=format,compress&q=65#{$imgixCrop}&fp-z=1.6&w=414');
+		background-image: url('./holiday-promotion/texture.jpg');
 		@include mq(sm) {
-			background-image: url('#{$imgixUrl}/texture.jpg?auto=format,compress&q=65#{$imgixCrop}&fp-z=1.4&w=1000');
+			background-image: url('./holiday-promotion/texture-sm.jpg');
 		}
 		@include mq(lg) {
-			background-image: url('#{$imgixUrl}/texture.jpg?auto=format,compress&q=65&w=1200');
+			background-image: url('./holiday-promotion/texture-md.jpg');
 		}
 	}
 	.row {
@@ -1117,12 +994,12 @@ main {
 			height: 430px;
 		}
 		&.lazyloaded {
-			background-image: url('#{$imgixUrl}/mattress.png#{$imgixDefaults}#{$imgixCrop}&w=600&h=265&fp-x=0');
+			background-image: url('./holiday-promotion/mattress.png');
 			@include mq(sm) {
-				background-image: url('#{$imgixUrl}/mattress.png#{$imgixDefaults}#{$imgixCrop}&w=1140&h=500&fp-x=0');
+				background-image: url('./holiday-promotion/mattress-sm.png');
 			}
 			@include mq(lg) {
-				background-image: url('#{$imgixUrl}/mattress.png#{$imgixDefaults}&w=1300');
+				background-image: url('./holiday-promotion/mattress-lg.png');
 			}
 		}
 	}
@@ -1585,17 +1462,17 @@ main {
 				margin-bottom: 30px;
 			}
 			&.lazyloaded {
-				background-image: url('#{$imgixUrl}/collage01.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=1&fp-y=.2&fp-z=1.1&w=370&h=296');
+				background-image: url('./holiday-promotion/collage01.jpg');
 			}
 		}
 		&2 {
 			&.lazyloaded {
-				background-image: url('#{$imgixUrl}/collage02.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.48&fp-y=.5&w=370&h=620');
+				background-image: url('./holiday-promotion/collage02.jpg');
 			}
 		}
 		&3 {
 			&.lazyloaded {
-				background-image: url('#{$imgixUrl}/collage03.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.5&fp-y=.6&w=370&h=296');
+				background-image: url('./holiday-promotion/collage03.jpg');
 			}
 		}
 		&4 {
@@ -1615,7 +1492,7 @@ main {
 				padding-bottom: 37.25%;
 			}
 			&.lazyloaded {
-				background-image: url('#{$imgixUrl}/collage04.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.5&fp-y=.5&w=768&h=290');
+				background-image: url('./holiday-promotion/collage04.jpg');
 			}
 		}
 		&5 {
@@ -1624,17 +1501,17 @@ main {
 				margin-bottom: 0;
 			}
 			&.lazyloaded {
-				background-image: url('#{$imgixUrl}/collage05.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.4&fp-y=.5&w=370&h=296');
+				background-image: url('./holiday-promotion/collage05.jpg');
 			}
 		}
 		&6 {
 			&.lazyloaded {
-				background-image: url('#{$imgixUrl}/collage06.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.55&fp-y=.6&w=370&h=296');
+				background-image: url('./holiday-promotion/collage06.jpg');
 			}
 		}
 		&7 {
 			&.lazyloaded {
-				background-image: url('#{$imgixUrl}/collage07.jpg#{$imgixDefaults}&w=370&h=620');
+				background-image: url('./holiday-promotion/collage07.jpg');
 			}
 		}
 		&8 {
@@ -1643,12 +1520,12 @@ main {
 				margin-bottom: 30px;
 			}
 			&.lazyloaded {
-				background-image: url('#{$imgixUrl}/collage08.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.5&fp-y=.7&w=370&h=296');
+				background-image: url('./holiday-promotion/collage08.jpg');
 			}
 		}
 		&9 {
 			&.lazyloaded {
-				background-image: url('#{$imgixUrl}/collage09.jpg#{$imgixDefaults}#{$imgixCrop}&fp-x=.52&fp-y=.9&fp-z=1.3&w=370&h=296');
+				background-image: url('./holiday-promotion/collage09.jpg');
 			}
 		}
 	}
