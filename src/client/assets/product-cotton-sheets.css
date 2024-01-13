@@ -1622,17 +1622,17 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
   }
 }
 .comfort .photo.lazyloaded {
-  background-image: url("./sheets/closeup-making-bed.jpg?fit=crop&crop=focalpoint&w=840&h=694");
+  background-image: url("./sheets/closeup-making-bed.jpg");
   background-size: cover;
 }
 @media (min-width: 544px) {
   .comfort .photo.lazyloaded {
-    background-image: url("./sheets/closeup-making-bed.jpg?fit=crop&crop=focalpoint&w=1534&h=690&fp-x=.42&fp-y=.5");
+    background-image: url("./sheets/closeup-making-bed-xs.jpg");
   }
 }
 @media (min-width: 768px) {
   .comfort .photo.lazyloaded {
-    background-image: url("./sheets/closeup-making-bed.jpg?fit=crop&crop=focalpoint&w=1984&h=800&fp-x=1&fp-y=.4");
+    background-image: url("./sheets/closeup-making-bed-sm.jpg");
     background-size: 992px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -1640,7 +1640,7 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
 }
 @media (min-width: 992px) {
   .comfort .photo.lazyloaded {
-    background-image: url("./sheets/closeup-making-bed.jpg?fit=crop&crop=focalpoint&w=1140&h=800&fp-x=.55&fp-y=0");
+    background-image: url("./sheets/closeup-making-bed-md.jpg");
     background-size: 570px;
     background-position: 100% 50%;
     background-repeat: no-repeat;
@@ -1648,19 +1648,19 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
 }
 @media (min-width: 1200px) {
   .comfort .photo.lazyloaded {
-    background-image: url("./sheets/closeup-making-bed.jpg?fit=crop&crop=focalpoint&w=1350&h=900&fp-x=.55&fp-y=0");
+    background-image: url("./sheets/closeup-making-bed-lg.jpg");
     background-size: 675px;
   }
 }
 @media (min-width: 1440px) {
   .comfort .photo.lazyloaded {
-    background-image: url("./sheets/closeup-making-bed.jpg?fit=crop&crop=focalpoint&w=1560&h=900&fp-x=.55&fp-y=0");
+    background-image: url("./sheets/closeup-making-bed-xl.jpg");
     background-size: 830px;
   }
 }
 @media (min-width: 1660px) {
   .comfort .photo.lazyloaded {
-    background-image: url("./sheets/closeup-making-bed.jpg?fit=crop&crop=focalpoint&w=1800&h=1000&fp-x=.55&fp-y=0");
+    background-image: url("./sheets/closeup-making-bed-xxl.jpg");
     background-size: 960px;
   }
 }
