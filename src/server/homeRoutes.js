@@ -336,11 +336,13 @@ async function sheetsFull(ctx, next) {
 	ctx.duvetCoverSkus = duvetCoverSkus;
 	ctx.pillowcaseSkus = pillowcaseSkus;
   const p = await pageConfig.sheets(ctx);
+  const valueProps = await content.valuePropsSheets(ctx);
 
   ctx.body = await render('product_sheets_full', {
     p: p[0],
     title: 'Product Page example',
-    discountActual: discountActual
+    discountActual: discountActual,
+    valueProps: valueProps
   });
 }
 

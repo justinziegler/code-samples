@@ -1254,33 +1254,33 @@ main {
   }
   .photo {
     &.lazyloaded {
-      background-image: url('./sheets/photo-clothesline.jpg?#{$imgixCrop}&w=840&h=694');
+      background-image: url('./sheets/photo-clothesline.jpg');
       background-size: cover;
       @include mq(xs) {
-        background-image: url('./sheets/photo-clothesline.jpg?#{$imgixCrop}&w=1534&h=690&fp-x=.42&fp-y=.5');
+        background-image: url('./sheets/photo-clothesline-xs.jpg');
       }
       @include mq(sm) {
-        background-image: url('./sheets/photo-clothesline.jpg?#{$imgixCrop}&w=1984&h=800&fp-x=.42&fp-y=.5');
+        background-image: url('./sheets/photo-clothesline-sm.jpg');
         background-size: 992px;
         background-position: 50% 50%;
         background-repeat: no-repeat;
       }
       @include mq(md) {
-        background-image: url('./sheets/photo-clothesline.jpg?#{$imgixCrop}&w=1190&h=1060&fp-x=.55&fp-y=.5');
+        background-image: url('./sheets/photo-clothesline-md.jpg');
         background-size: 595px;
         background-position: 100% 50%;
         background-repeat: no-repeat;
       }
       @include mq(lg) {
-        background-image: url('./sheets/photo-clothesline.jpg?#{$imgixCrop}&w=1440&h=1240&fp-x=.55&fp-y=.5');
+        background-image: url('./sheets/photo-clothesline-lg.jpg');
         background-size: 720px;
       }
       @media (min-width: 1440px) {
-        background-image: url('./sheets/photo-clothesline.jpg?#{$imgixCrop}&w=1660&h=1240&fp-x=.55&fp-y=.5');
+        background-image: url('./sheets/photo-clothesline-xl.jpg');
         background-size: 830px;
       }
       @media (min-width: 1660px) {
-        background-image: url('./sheets/photo-clothesline.jpg?#{$imgixCrop}&w=1920&h=1240&fp-x=.55&fp-y=.5');
+        background-image: url('./sheets/photo-clothesline-xxl.jpg');
         background-size: 960px;
       }
     }

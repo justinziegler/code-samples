@@ -740,18 +740,325 @@
   <link rel="stylesheet" href="../assets/module-july4-promo.css">
 {% endmacro %}
 
-{% macro july4logo(state) %}
-  <div class="logo-independence-day">
-    <div class="logo">
+{% macro contentAccordion(content, product, products) %}
+  {% for content in content %}
+  <section class="{{ content.type }} accordion">
+    <div class="container">
+      <div class="row">
+        <div class="heading col-xs-12">
+          <h2>{{ content.heading | safe }}</h2>
+        </div>
+        
+        {% set classlist = 'col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2' %}
+        {% if content.productIdNavigation %}
+          {% set classlist = 'col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0 col-lg-5' %}
+        {% endif %}
+        <div class="panel-group col-xs-12 {{ classlist }}" id="{{ content.type }}-accordion" role="tablist" aria-multiselectable="true" data-active="true">
+          {% for item in content.items %}
+            {% set active = false %}
+            {% if loop.index == 1 %}
+              {% set active = true %}
+            {% endif %}
+            <div class="{{ item.className }} panel" data-active="{{ active }}">
+              <h5 role="tab">
+                <a href="#{{ item.className }}" data-toggle="collapse" 
+                data-parent="#{{ content.type }}-accordion" 
+                aria-expanded="{% if loop.index == 1 %}true{% else %}false{% endif %}" 
+                aria-controls="{{ item.className }}" 
+                class="collapsed {% if item.icon %}icon{% endif %}" 
+                role="button" tabindex="0">
+                  {{ item.title | safe }}
+                </a>
+              </h5>
+              <div class="panel-collapse collapse {% if loop.index == 1 %}in{% endif %}" id="{{ item.className }}" role="tabpanel" aria-expanded="{% if loop.index == 1 %}true{% else %}false{% endif %}">
+
+                {% if item.title == 'Product Dimensions' %}
+                  {% for p in product %}
+                  <div class="size-price-grid col-xs-12">
+                    <div class="grid-head row">						
+                      {% if p.productType == 'sheets' %}
+                      {# This section is unique for Sheets #}
+                        <div class="size col-xs-3">
+                          <label>Size</label>
+                        </div>
+                        <div class="fitted col-xs-5 col-sm-3">
+                          <label>Fitted Sheet</label>
+                        </div>
+                        <div class="flat col-xs-4 col-sm-3">
+                          <label>Flat Sheet</label>
+                        </div>
+                        <div class="pillowcase hidden-xs col-sm-3">
+                          <label>Pillowcase</label>
+                        </div>
+                      {% elif p.productType == 'foundation' %}
+                      {# This section is unique for Mattress Foundation #}
+                        <div class="size col-xs-4 col-sm-3">
+                          <label>Size</label>
+                        </div>
+                        <div class="dimensions col-xs-3 col-sm-4">
+                          <label>Dimensions</label>
+                        </div>
+                        <div class="leg-dimensions col-sm-2 hidden-xs">
+                          <label>Legs</label>
+                        </div>
+                        <div class="weight foundation-weight col-xs-5 col-sm-3">
+                          <label>Shipping <span class="hidden-xs hidden-sm">Weight</span><span class="visible-xs-inline visible-sm-inline">Wt.</span></label>
+                        </div>
+                      {% else %}
+                        <div class="size col-xs-4">
+                          <label>Size</label>
+                        </div>
+                        <div class="dimensions col-xs-3 col-sm-4">
+                          <label>Dimensions</label>
+                        </div>
+                        <div class="weight col-xs-5 col-sm-4">
+                          <label>Shipping <span class="hidden-xs">Weight</span><span class="visible-xs-inline">Wt.</span></label>
+                        </div>
+                      {% endif %}
+                    </div>
+                    {% if p.productType == 'sheets' %}
+                    {# This section is unique for Sheets #}
+                      {% for product in p.dimensions %}
+                        {% if product.size !== 'BOX' %}
+                          <div class="row">
+                            <div class="size col-xs-3">
+                              <p>{{ getSizeName(product.size) }}</p>
+                            </div>
+                            <div class="fitted col-xs-5 col-sm-3">
+                              <p>{{ product.fitted }}</p>
+                            </div>
+                            <div class="flat col-xs-4 col-sm-3">
+                              <p>{{ product.flat | safe }}</p>
+                            </div>
+                            <div class="pillowcase hidden-xs col-sm-3">
+                              <p>{{ product.pillowcase | safe }}</p>
+                            </div>
+                          </div>
+                        {% endif %}
+                      {% endfor %}
+                    {% elif p.productType == 'foundation' %}
+                    {# This section is unique for Mattress Foundation #}
+                      {% for product in p.dimensions %}
+                        {% if product.size !== 'BOX' %}
+                          <div class="row">
+                            <div class="size col-xs-4 col-sm-3">
+                              <p>{{ getSizeName(product.size) }}</p>
+                            </div>
+                            <div class="dimensions col-xs-4">
+                              <p>{{ product.w }} x {{ product.l }} {% if product.h !== '' %}x {{ product.h }}{% endif %}</p>
+                            </div>
+                            <div class="leg-dimensions col-sm-2 hidden-xs">
+                              <p>3" x 8"</p>
+                            </div>
+                            <div class="weight foundation-weight col-xs-4 col-sm-3">
+                              {% if product.weight !== '' %}
+                                <p>{{ product.weight }}</p>
+                              {% endif %}
+                            </div>
+                          </div>
+                        {% endif %}												
+                      {% endfor %}
+                    {% else %}
+                      {% for product in p.dimensions %}
+                        {% if product.size !== 'BOX' %}
+                          <div class="row" 
+                            {%- if product.size.length > 2 -%}
+                              {%- set visible = true -%}
+                              {%- set type = product.size.slice(3, -6) %}
+                              {%- if p.comboPage -%}
+                                {%- for c in p.comboProduct -%}
+                                  {%- if c.comboProductType == type -%}
+                                    {%- set visible = false -%}
+                                  {%- endif -%}
+                                {%- endfor -%}
+                              {%- endif -%}
+                              data-sku="{{ product.size }}"
+                              data-toggle-visibility="true" data-product-id="{{ type }}"
+                              {% if not visible %}style="display: none;"{%- endif -%}
+                            {% endif %}>
+                            <div class="size col-xs-4">
+                              <p>
+                                {%- if product.size.length > 2 -%}
+                                  {{- getSizeName(product.size.slice(9, limit)) -}}
+                                {% else %}
+                                  {{ getSizeName(product.size) }}
+                                {%- endif -%}
+                              </p>
+                            </div>
+                            <div class="dimensions col-xs-4">
+                              <p>{{ product.w }} x {{ product.l }} {% if product.h !== '' %}x {{ product.h }}{% endif %}</p>
+                            </div>
+                            <div class="weight col-xs-4">
+                              {% if product.weight !== '' %}
+                                <p>{{ product.weight }}</p>
+                              {% endif %}
+                            </div>
+                          </div>
+                        {% endif %}												
+                      {% endfor %}											
+                    {% endif %}			
+          
+                    {% for product in p.dimensions %}
+                      {% if product.size == 'BOX' %}
+                        <div class="row">
+                          <div class="size {% if p.productType == 'sheets' %}col-xs-3{% elif p.productType == 'foundation' %}col-xs-4 col-sm-3{% else %}col-xs-4{% endif %}">
+                            <p><strong>Box Size</strong></p>
+                          </div>
+                          {% if p.productType == 'sheets' %}
+                            <div class="col-xs-8">
+                              <p>{{ product.dimensions }}</p>
+                            </div>
+                          {% else %}
+                            <div class="dimensions {% if product.weight !== '' %}col-xs-4{% else %}col-xs-8{% endif %}">
+                              {% set x = product.w | truncate(1, true, '') %}
+                              {% set y = product.w | truncate(8, true, '') %}
+                              {% if (x == 'A') or (y == 'Standard') %}
+                                <p><strong>{{ product.w }}<br>{{ product.l }}</strong></p>
+                              {% else %}
+                                <p><strong>{{ product.w }} x {{ product.l }} {% if product.h !== '' %}x {{ product.h | safe }}{% endif %}</strong></p>
+                              {% endif %}
+                            </div>
+                          {% endif %}
+                          {% if product.weight !== '' %}
+                            <div class="weight col-xs-4">
+                              <p><strong>{{ product.weight | safe }}</strong></p>
+                            </div>
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+          
+                    {#<div class="notes row">
+                      <div class="col-xs-12">
+                        <p>*Dimensions and Weights are approximate</p>							
+                      </div>
+                      {% for sizeGuide in p.sizeGuide %}
+                        {% if sizeGuide.show %}
+                      <div class="right-col col-xs-3">
+                        <p><a data-toggle="modal" data-target="#size-guide-modal" role="button" tabindex="0" href="">Size Guide</a></p>
+                      </div>
+                        {% endif %}
+                      {% endfor %}
+                      {% if p.catId == 11 %}
+                        <div class="left-col col-xs-12">
+                          <p>*Please note: This item ships in two separate boxes.</p>
+                        </div>
+                      {% endif %}
+                    </div>#}
+                  </div>
+                  
+                  {#
+                  <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                    <div class="row">
+                      {% for details in items.details %}
+                        {% if details.item == 'clearfix' %}
+                          <div class="clearfix {{ details.classes }}"></div>
+                        {% else %}
+                        <div class="{{ details.classes }}">
+                          <h6>{{ details.item | safe }}</h6>
+                          <p class="details">{{ details.details | safe }}</p>
+                        </div>
+                        {% endif %}
+                      {% endfor %}
+                    </div>
+                  </div>
+                  #}
+                  {% endfor %}
+                {% elif item.title == 'Size Guide' %}
+                  {% for p in product %}
+                    <ul class="mattress-sizes">
+                      {% set sizes = [] %}
+                      {% for product in p.dimensions %}
+                        {% set size = product.size %}
+                        {% if product.size.length > 2 %}
+                          {% set size = product.size.slice(9, limit) %}
+                        {% endif %}
+                        {% set alreadyProcessed = false %}
+                        {% for processedSize in sizes %}
+                          {% if size == processedSize %}
+                            {% set alreadyProcessed = true %}
+                          {% endif %}
+                        {% endfor %}
+                        {% if not alreadyProcessed %}
+                          {% set sizes = (sizes.push(size),sizes) %}
+                          <li data-size="{{ size }}">
+                            <span class="title">
+                              {{- getSizeName(size) -}}
+                            </span>
+                            <span class="dimensions">{{ product.w }} x {{ product.l }}</span>
+                            <div class="bed" data-size="{{ size }}"></div>
+                          </li>
+                        {% endif %}
+                      {% endfor %}
+                    </ul>
+                  {% endfor %}
+                {% else %}
+                  {% if item.bullets %}
+                    <ul>
+                      {% for content in item.content %}
+                        <li>{{ content.item | safe }}</li>
+                      {% endfor %}
+                    </ul>
+                  {% else %}
+                    {% for content in item.content %}
+                      <p{% if item.footnote === undefined %} class="single"{% endif %}>{{ content.item | safe }}</p>
+                    {% endfor %}
+                    {% if item.footnote !== undefined %}
+                      <p class="footnote">{{ item.footnote }}</p>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        {% if content.productIdNavigation %}
+          <div class="cta col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0">
+            <div class="btn btn-container">
+              &nbsp;
+              <a data-product-id="MA" href="/shop" class="btn" role="button" tabindex="0">Shop The Original</a>
+              <a data-product-id="PM" href="/original-premium-mattress" class="btn" role="button" tabindex="0" style="display: none;">Shop The Original Premium</a>
+              <a data-product-id="HY" href="/shop-luxe" class="btn" role="button" tabindex="0" style="display: none;">Shop The Luxe Hybrid</a>
+            </div>
+          </div>
+        {% endif %}
+      </div>
     </div>
-    <span>{{ discountDisplay(state.mattressDiscount) }} OFF</span>
-    <span class="badge-cta">
-      {%- if holidaySaleExtended() -%}
-        EXTENDED!
-      {%- else -%}
-        ENDS SOON!
-      {%- endif -%}
-    </span>
-  </div>
-  <link rel="stylesheet" href="../assets/module-july4-logo.css">
+  </section>
+  {% if content.productIdNavigation %}
+    <script>
+      $(document).ready(function(){
+        $('.accordion .product-nav li').on('keypress click', function(e) {
+          if (e.which === 13 || e.type === 'click') {
+            let id = $(this).data('product-id');
+            $(this).attr('data-active', true).siblings().attr('data-active', false);
+            $('.accordion .product-photo').attr('data-current', id);
+            $(`.accordion h5 span[data-product-id="${id}"]`).fadeIn(200).siblings().fadeOut(200);
+            $(`.accordion .panel ul ul:not([data-product-id="${id}"])`).slideUp(200);
+            $(`.accordion .panel ul[data-product-id="${id}"]`).slideDown(200);
+            $(`.accordion .btn-container .btn[data-product-id="${id}"]`).fadeIn(200).siblings().fadeOut(200);
+          }
+        });
+        $('.accordion .panel a').on('keypress click', function(e) {
+          if (e.which === 13 || e.type === 'click') {
+            let expanded = $(this).attr('aria-expanded') == 'true';
+            if (expanded) {
+              $(this).closest('.panel').attr('data-active', false);
+            } else {
+              $(this).closest('.panel').attr('data-active', true).siblings().attr('data-active', false);
+            }
+            {# adjust layout if all panels are closed #}
+            let active = false;
+            $('.accordion .panel').each(function() {
+              if (!active) {
+                active = $(this).attr('data-active') == 'true';
+              }
+            });
+            $('.accordion .product-nav, .accordion .panel-group').attr('data-active', active);
+          }
+        });
+      });
+    </script>
+  {% endif %}
+  {% endfor %}
 {% endmacro %}

@@ -1,10 +1,6 @@
-var mobile;
-function detectmob() {
-    if(window.screen.width <= 500 && window.screen.height <= 880) {
-      mobile = true;
-    } else {
-      mobile = false;
-    }
+let mobile = false;
+if (window.screen.width <= 500 && window.screen.height <= 880) {
+    mobile = true;
 }
 function lockScreenPosition() {
     // Lock screen position on mobile when modal shows; resume position when it's hidden
@@ -17,11 +13,7 @@ function lockScreenPosition() {
     });
 }
 $(document).ready(function(){
-    detectmob();
     var mySwiper = new Swiper ('#value-props .swiper-container', {
-        // Optional parameters
-        //direction: 'vertical',
-        //loop: true,
         effect: 'flip',
         flipEffect: {
             slideShadows: false
@@ -32,20 +24,18 @@ $(document).ready(function(){
             disableOnInteraction: true,
         },
     
-        // If we need pagination
         pagination: {
           el: '#value-props .swiper-pagination',
           clickable: true,
         },
         on: {
             init: function () {
-                //console.dir(mobile);
                 var currentIndex = this.activeIndex;
-                if ((currentIndex == 0) && (mobile === false)) {
+                if ((currentIndex == 0) && (!mobile)) {
                     $('#value-props .slide-content .vp.one').fadeIn();
                     $('#value-props').attr('class', '').addClass('slide-one');
                 }
-                if (mobile === true) {
+                if (mobile) {
                     return;
                 } else {
                     this.removeSlide([2,3]);
@@ -55,7 +45,6 @@ $(document).ready(function(){
             },
             slideChange: function () {
                 var currentIndex = this.activeIndex;
-                //console.dir(currentIndex);
                 if (mobile === false) {
                     $('#value-props .slide-content .vp').fadeOut();
                     if (currentIndex == 0) {

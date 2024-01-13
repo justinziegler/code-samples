@@ -1708,17 +1708,17 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
   }
 }
 .responsibly-grown .photo.lazyloaded {
-  background-image: url("./sheets/photo-clothesline.jpg?fit=crop&crop=focalpoint&w=840&h=694");
+  background-image: url("./sheets/photo-clothesline.jpg");
   background-size: cover;
 }
 @media (min-width: 544px) {
   .responsibly-grown .photo.lazyloaded {
-    background-image: url("./sheets/photo-clothesline.jpg?fit=crop&crop=focalpoint&w=1534&h=690&fp-x=.42&fp-y=.5");
+    background-image: url("./sheets/photo-clothesline-xs.jpg");
   }
 }
 @media (min-width: 768px) {
   .responsibly-grown .photo.lazyloaded {
-    background-image: url("./sheets/photo-clothesline.jpg?fit=crop&crop=focalpoint&w=1984&h=800&fp-x=.42&fp-y=.5");
+    background-image: url("./sheets/photo-clothesline-sm.jpg");
     background-size: 992px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -1726,7 +1726,7 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
 }
 @media (min-width: 992px) {
   .responsibly-grown .photo.lazyloaded {
-    background-image: url("./sheets/photo-clothesline.jpg?fit=crop&crop=focalpoint&w=1190&h=1060&fp-x=.55&fp-y=.5");
+    background-image: url("./sheets/photo-clothesline-md.jpg");
     background-size: 595px;
     background-position: 100% 50%;
     background-repeat: no-repeat;
@@ -1734,19 +1734,19 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
 }
 @media (min-width: 1200px) {
   .responsibly-grown .photo.lazyloaded {
-    background-image: url("./sheets/photo-clothesline.jpg?fit=crop&crop=focalpoint&w=1440&h=1240&fp-x=.55&fp-y=.5");
+    background-image: url("./sheets/photo-clothesline-lg.jpg");
     background-size: 720px;
   }
 }
 @media (min-width: 1440px) {
   .responsibly-grown .photo.lazyloaded {
-    background-image: url("./sheets/photo-clothesline.jpg?fit=crop&crop=focalpoint&w=1660&h=1240&fp-x=.55&fp-y=.5");
+    background-image: url("./sheets/photo-clothesline-xl.jpg");
     background-size: 830px;
   }
 }
 @media (min-width: 1660px) {
   .responsibly-grown .photo.lazyloaded {
-    background-image: url("./sheets/photo-clothesline.jpg?fit=crop&crop=focalpoint&w=1920&h=1240&fp-x=.55&fp-y=.5");
+    background-image: url("./sheets/photo-clothesline-xxl.jpg");
     background-size: 960px;
   }
 }
