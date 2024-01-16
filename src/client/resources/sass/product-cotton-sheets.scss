@@ -1401,32 +1401,32 @@ main {
   background-color: #f7f5f3;
   .photo {
     &.lazyloaded {
-      background-image: url('./sheets/sheets-field-mobile.jpeg?#{$imgixCrop}&w=840&h=694&fp-x=.5');
+      background-image: url('./sheets/sheets-field-mobile.jpg');
       background-size: cover;
       @include mq(xs) {
-        background-image: url('./sheets/sheets-field-mobile.jpeg?#{$imgixCrop}&w=1534&h=690&fp-x=.5&fp-y=.5');
+        background-image: url('./sheets/sheets-field-mobile-xs.jpg');
       }
       @include mq(sm) {
-        background-image: url('./sheets/sheets-field-mobile.jpeg?#{$imgixCrop}&w=1984&h=800');
+        background-image: url('./sheets/sheets-field-mobile-sm.jpg');
         background-size: 992px;
         background-position: 50% 50%;
         background-repeat: no-repeat;
       }
       @include mq(md) {
-        background-image: url('./sheets/sheets-field-mobile.jpeg?#{$imgixCrop}&w=1190&h=800');
+        background-image: url('./sheets/sheets-field-mobile-md.jpg');
         background-size: 595px;
         background-position: 100% 50%;
       }
       @include mq(lg) {
-        background-image: url('./sheets/sheets-field-mobile.jpeg?#{$imgixCrop}&w=1440&h=900');
+        background-image: url('./sheets/sheets-field-mobile-lg.jpg');
         background-size: 720px;
       }
       @media (min-width: 1440px) {
-        background-image: url('./sheets/sheets-field-mobile.jpeg?#{$imgixCrop}&w=1660&h=900');
+        background-image: url('./sheets/sheets-field-mobile-xl.jpg');
         background-size: 830px;
       }
       @media (min-width: 1660px) {
-        background-image: url('./sheets/sheets-field-mobile.jpeg?#{$imgixCrop}&w=1920&h=1000');
+        background-image: url('./sheets/sheets-field-mobile-xxl.jpg');
         background-size: 960px;
       }
     }

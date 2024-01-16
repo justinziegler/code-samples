@@ -119,45 +119,213 @@ module.exports.suggestedItems = async function (ctx) {
                 <div class="col-xs-6"><p>Screw</p></div>
                 <div class="col-xs-6"><p>Steel</p></div>
               </div>`
-      }
-    ];
-    return faq;
-  }
+    }
+  ];
+  return faq;
+}
 
-  module.exports.valuePropsSheets = async function (ctx) {
-    const valueProps = [
-      {
-        type: 'vp',
-        heading: 'Get Ready for the Ultimate Sleep Experience',
-        items: [
-          {
-            title: 'Shipping &amp; Returns',
-            icon: true,
-            className: 'shipping',
-            bullets: false,
-            content: [
-              { item: 'Your sheets ship fast and free in the contiguous US. Once your order is placed it typically ships in 1-4 business days and arrives with no-contact delivery. Don\'t love them? Arrange a quick, stress-free return.' }
-            ]
-          },
-          {
-            title: '100 Night Trial',
-            icon: true,
-            className: 'trial',
-            bullets: false,
-            content: [
-              { item: 'Try the Organic Cotton Sheet Set in your home for 100 nights, stress-free. If you\'re not 100% satisfied with your sleep experience during the trial period, arrange a quick and easy return.' }
-            ]
-          },
-          {
-            title: '1-Year Warranty',
-            icon: true,
-            className: 'warranty',
-            bullets: false,
-            content: [
-              {	item: 'Your Lull Sheets are protected by a 1-year limited manufacturer\'s warranty.' }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+module.exports.valuePropsSheets = async function (ctx) {
+  const valueProps = [
+    {
+      type: 'vp',
+      heading: 'Get Ready for the Ultimate Sleep Experience',
+      items: [
+        {
+          title: 'Shipping &amp; Returns',
+          icon: true,
+          className: 'shipping',
+          bullets: false,
+          content: [
+            { item: 'Your sheets ship fast and free in the contiguous US. Once your order is placed it typically ships in 1-4 business days and arrives with no-contact delivery. Don\'t love them? Arrange a quick, stress-free return.' }
+          ]
+        },
+        {
+          title: '100 Night Trial',
+          icon: true,
+          className: 'trial',
+          bullets: false,
+          content: [
+            { item: 'Try the Organic Cotton Sheet Set in your home for 100 nights, stress-free. If you\'re not 100% satisfied with your sleep experience during the trial period, arrange a quick and easy return.' }
+          ]
+        },
+        {
+          title: '1-Year Warranty',
+          icon: true,
+          className: 'warranty',
+          bullets: false,
+          content: [
+            {	item: 'Your Lull Sheets are protected by a 1-year limited manufacturer\'s warranty.' }
+          ]
+        }
+      ]
+    }
+  ];
+  return valueProps;
+}
+
+module.exports.reviewsSheets = async function (ctx) {
+  const reviews = [
+    {
+      heading: 'People Love Lull Sheets',
+      reviews: [
+        {
+          stars: '5',
+          reviewTitle: 'The sheets are so soft',
+          review: 'The sheets are so soft, fresh and so comfortable. Wash really well and the fit is great. Love white sheets.',
+          name: 'Marvette H.'
+        },
+        {
+          stars: '5',
+          reviewTitle: 'Best sheets ever',
+          review: 'The sheets are thick, and comfortable, way better than anything I\'ve bought from a store.',
+          name: 'Leslie'
+        },
+        {
+          stars: '5',
+          reviewTitle: 'These sheets are absolutely worth it',
+          review: 'These sheets are absolutely worth the money, I\’ll be buying another set!',
+          name: 'Lisa F.'
+        },
+        {
+          stars: '5',
+          reviewTitle: 'Softest sheets',
+          review: 'Its super soft and comfortable. I really like this sheet set, definitely not like the traditional sheets you buy from the store. They fit perfectly on my Lull.',
+          name: 'Diana'
+        },
+        {
+          stars: '5',
+          reviewTitle: 'The perfect end',
+          review: 'The sheets showed up, and I washed them per the instructions. They are the best sheets, like hotel sheets! It\'s like sleeping on a cloud. It\'s the perfect set for the mattress.',
+          name: 'Rebeca'
+        },
+        {
+          stars: '5',
+          reviewTitle: 'Comfy!',
+          review: 'These sheets are SO soft & comfortable. Definitely a great purchase!',
+          name: 'Crystal C.'
+        },
+        {
+          stars: '5',
+          reviewTitle: 'Sheets are great.<br class="visible-xxs"> Really soft.',
+          review: 'Sheets are great. Really soft but don\’t cling to you.',
+          name: 'Jacque K.'
+        },
+        {
+          stars: '5',
+          reviewTitle: 'Amazing',
+          review: 'These sheets are phenomenal. I was so impressed with the overall experience, I bought more products!',
+          name: 'Jeremy A.'
+        },
+        {
+          stars: '5',
+          reviewTitle: 'The best!',
+          review: 'The sheets are a must as well. I sleep great and have more energy the next day now.',
+          name: 'Mike D.'
+        }
+      ]
+    }	
+  ];
+  return reviews;
+}
+
+module.exports.additionalDetails = async function (ctx) {
+  const additionalDetails = [
+    {
+      type: 'additional-details',
+      heading: 'Additional Details',
+      items: [
+        {
+          title: 'Perfect Fit',
+          icon: false,
+          className: 'perfect-fit',
+          bullets: true,
+          content: [
+            { item: 'The Lull Organic Cotton Sheets are designed to stay in place and fit any Lull mattress or mattresses up to 15”.' }, 
+            { item: 'Each pillowcase features a sleek envelope enclosure designed to keep pillows secure and clean.' }
+          ]
+        },
+        {
+          title: 'Care Instructions',
+          icon: false,
+          className: 'care-instructions',
+          bullets: true,
+          content: [
+              { item: 'Wash and rotate weekly' },
+            {	item: 'Machine wash, cold, separately with mild detergent' },
+            {	item: 'Tumble dry on lowest heat setting' },
+            {	item: 'Warm iron as needed' }
+          ]
+        }
+      ]
+    }
+  ];
+  return additionalDetails;
+}
+
+module.exports.suggestedItems = async function (ctx) {
+  const suggestedItems = [
+    {
+      title: 'You Might Also Love',
+      items: [
+        {
+          itemName: 'Down Pillow',
+          shortName: 'down-pillow',
+          linkName: 'pillow',
+          url: 'down-pillow',
+          description: 'Premium head and neck support filled with responsibly sourced white duck down.'
+        },
+        {
+          itemName: 'Original Lull Pillow',
+          shortName: 'pillow',
+          linkName: 'pillow',
+          url: 'pillow',
+          description: 'A three-layer design provides the perfect combination of comfort and support.'
+        },
+        {
+          itemName: 'Original Lull Duvet',
+          shortName: 'duvet',
+          linkName: 'duvet',
+          url: 'duvet-insert',
+          description: 'Millions of premium fibers keep you warm in the winter and cool in the summer.'
+        },
+        {
+          itemName: 'Memory Foam Pillow',
+          shortName: 'memory-foam-pillow',
+          linkName: 'pillow',
+          url: 'memory-foam-pillow',
+          description: 'Soft on one side and firm<br class="hidden-xs"> on the<br class="visible-xs"> other to support<br class="hidden-xs"> all sleepers.'
+        },
+        {
+          itemName: 'Down Duvet',
+          shortName: 'duvet',
+          linkName: 'down duvet',
+          url: 'down-duvet-insert',
+          description: 'Heirloom quality down<br> duvet insert.<br class="hidden-xs">&nbsp;'
+        }
+      ]
+    }
+  ];
+  return suggestedItems;
+}
+
+module.exports.faqs = async function (ctx) {
+  const faqs = [
+    {
+      question: 'Does organic cotton run hot or cold?',
+      answer: 'Lull\’s 100% Organic Cotton Sheets feature a lightweight sateen weave that breathes well, keeping you warm in the winter and cool in the summer.'
+    },
+    {
+      question: 'What do the Organic Cotton Sheets feel like?',
+      answer: 'Lull\’s Organic Cotton Sheets are buttery soft with a luminous, silky finish.'
+    },
+    {
+      question: 'How do I care for the Organic Cotton Sheets?',
+      answer: 'For best results and longevity, machine wash cold, separately, with mild detergent. Tumble dry on lowest heat setting and use a warm iron as needed.'
+    },
+    {
+      question: 'Is financing available for buying Lull Sheets?',
+      answer: 'Yes, simply select Affirm as a payment option on the final step of the checkout process.'
+    }
+  ];
+  return faqs;
+}

@@ -1,0 +1,447 @@
+/* When editing, use the source file for this page in client/resources/sass */
+@import 'compass';
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/svg';
+@import 'partials/layout';
+
+.collapse {
+  display: none;
+  &.in {
+    display: block;
+  }
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  @include transition-property(height, visibility);
+  @include transition-duration(0.35s);
+  @include transition-timing-function(ease);
+}
+
+.accordion {
+  background: #fff;
+  color: $navy;
+  padding: 30px 0 45px 0;
+  position: relative;
+  @include mq(xsm) {
+    padding: vwl(30px) 15px vwl(45px) 15px;
+  }
+  @include mq(xxs) {
+    padding: vwp(30px) 15px vwp(45px) 15px;
+  }
+  @include mq(md) {
+    padding: 45px 0 60px 0;
+  }
+  @include mq(md) {
+    padding: 60px 0;
+  }
+  .heading {
+    padding: 0;
+  }
+  h5 {
+    position: relative;
+    margin: 0;
+    text-align: left;
+    font-weight: 700;
+    a {
+      display: block;
+      line-height: 1.2;
+      padding: 16px 25px 14px 20px;
+      background-color: #f5f4f2;
+      color: $navy;
+      transition: 0.1s;
+      position: relative;
+      @include mq(xsm) {
+        padding: vwl(16px) vwl(25px) vwl(14px) vwl(20px);
+      }
+      @include mq(xxs) {
+        padding: vwp(16px) vwp(25px) vwp(14px) vwp(20px);
+      }
+      @include mq(sm) {
+        padding: 20px 25px 20px 25px;
+      }
+      @include mq(lg) {
+        padding: 30px 25px 25px 45px;
+      }
+      &.collapsed {
+        color: $navy;
+        transition: 0.1s;
+      }
+      &:hover,
+      &:focus {
+        background-color: shade(#f5f4f2, 5%);
+        outline: none;
+      }
+      &::after {
+        content: '';
+        @include plus(#000);
+        filter: invert(11%) sepia(23%) saturate(1909%) hue-rotate(157deg) brightness(95%) contrast(94%);
+        display: inline-block;
+        box-sizing: content-box;
+        transition: 0.2s;
+        position: absolute;
+        right: 30px;
+        top: calc(50% - 7px);
+        transform: rotate(-90deg);
+        width: 17px;
+        height: 17px;
+        @include mq(xsm) {
+          height: 14px;
+          width: 14px;
+          right: 15px;
+        }
+      }
+      &[aria-expanded='true'] {
+        border-bottom: solid 2px #d4d3d1;
+        &::after {
+          height: 3px;
+          background-color: $navy;
+          transform: rotate(0deg);
+          transition: 0.2s;
+          top: 50%;
+          @include mq(xsm) {
+            height: vwl(2px);
+          }
+          @include mq(xxs) {
+            height: vwp(2px);
+          }
+        }
+      }
+      &.icon {
+        padding-left: 55px;
+        @include mq(xsm) {
+          padding-left: vwl(55px);
+        }
+        @include mq(xxs) {
+          padding-left: vwp(55px);
+        }
+        @include mq(sm) {
+          padding-left: 65px;
+        }
+        @include mq(lg) {
+          padding-left: 100px;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          display: block;
+          left: 15px;
+          top: 12.5px;
+          width: 35px;
+          height: 35px;
+          @extend %svg;
+          @include mq(xsm) {
+            height: vwl(30px);
+            width: vwl(30px);
+            left: vwl(15px);
+            top: vwl(10px);
+          }
+          @include mq(xxs) {
+            height: vwp(30px);
+            width: vwp(30px);
+            left: vwp(15px);
+            top: vwp(10px);
+          }
+          @include mq(lg) {
+            left: 30px;
+            top: 10px;
+            width: 60px;
+            height: 60px;
+          }
+        }
+      }
+    }
+  }
+  p {
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.6;
+    color: #666;
+    @include mq(xsm) {
+      padding: 0 vwl(20px);
+      margin: vwl(20px) 0 vwl(15px) 0;
+    }
+    @include mq(xxs) {
+      padding: 0 vwp(20px);
+      margin: vwp(20px) 0 vwp(15px) 0;
+    }
+    @include mq(sm) {
+      padding: 0 45px 0 65px;
+      margin: 30px 0 15px 0;
+    }
+    @include mq(lg) {
+      padding: 0 100px;
+    }
+    &.single {
+      @include mq(xsm) {
+        margin-bottom: vwl(20px);
+      }
+      @include mq(xxs) {
+        margin-bottom: vwp(20px);
+      }
+      @include mq(sm) {
+        margin-bottom: 30px;
+      }
+    }
+    &.footnote {
+      margin-top: 0;
+    }
+    a {
+      border-bottom: solid 2px #d4d3d1;
+      transition: 0.2s;
+      &:hover,
+      &:focus {
+        border-bottom: dotted 2px $navy;
+        outline: none;
+      }
+    }
+  }
+  .panel-collapse {
+    background-color: #fff;
+    @include mq(sm) {
+      margin: 0 0 0 auto;
+    }
+  }
+  .panel-group {
+    border: 2px solid #d4d3d1;
+    border-radius: 10px;
+    margin-top: 5px;
+    padding: 0;
+    @include mq(xssm) {
+      width: 70%;
+      margin: vwl(5px) 15% 0 15%;
+    }
+    @include mq(xxs) {
+      margin-top: vwp(5px);
+    }
+  }
+  .panel {
+    border-bottom: solid 2px #d4d3d1;
+    margin-top: 0;
+    &:last-of-type {
+      .panel-collapse {
+        border-radius: 0 0 10px 10px;
+      }
+    }
+    ul {
+      list-style-type: none;
+      padding: 20px;
+      margin: 0;
+      @include mq(xsm) {
+        padding: vwl(20px);
+      }
+      @include mq(xxs) {
+        padding: vwp(20px);
+      }
+      @include mq(sm) {
+        padding: 20px 50px 20px 25px;
+      }
+      @include mq(lg) {
+        padding: 30px 60px 30px 45px;
+      }
+    }
+    li {
+      font-size: 1.4rem;
+      line-height: 1.4;
+      @include mq(xsm) {
+        font-size: vwl(14px);
+      }
+      @include mq(xxs) {
+        font-size: vwp(14px);
+      }
+      @include mq(sm) {
+        font-size: 1.6rem;
+      }
+      @include mq(md) {
+        font-size: 1.8rem;
+      }
+      @include mq(lg) {
+        font-size: 2rem;
+      }
+      &:first-of-type {
+        margin-top: 5px;
+        @include mq(xsm) {
+          margin-top: vwl(5px);
+        }
+        @include mq(xxs) {
+          margin-top: vwp(5px);
+        }
+      }
+      &:not(:last-child) {
+        margin-bottom: 15px;
+        @include mq(xsm) {
+          margin-bottom: vwl(15px);
+        }
+        @include mq(xxs) {
+          margin-bottom: vwp(15px);
+        }
+      }
+    }
+    &:first-of-type {
+      > h5 {
+        border-radius: 10px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        a {
+          border-radius: 8px 8px 0 0;
+        }
+      }
+    }
+    &:last-of-type {
+      border-bottom: none;
+      > h5 {
+        border-radius: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        a {
+          &:not([aria-expanded='true']) {
+            border-radius: 0 0 8px 8px;
+          }
+        }
+      }
+      > p {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+    }
+    &.shipping {
+      a {
+        &::before {
+          @include truck-outline(#363b43);
+        }
+      }
+    }
+    &.trial {
+      a {
+        &::before {
+          @include moon(#000);
+          background-size: 85%;
+          filter: invert(18%) sepia(14%) saturate(626%) hue-rotate(178deg) brightness(94%) contrast(82%); // #363b43
+        }
+      }
+    }
+    &.warranty {
+      a {
+        &::before {
+          @include badge-lock-outline(#000);
+          filter: invert(18%) sepia(14%) saturate(626%) hue-rotate(178deg) brightness(94%) contrast(82%);
+        }
+      }
+    }
+    &.care-instructions {
+      li {
+        position: relative;
+        padding-left: 30px;
+        @include mq(xsm) {
+          padding-left: vwl(30px);
+        }
+        @include mq(xxs) {
+          padding-left: vwp(30px);
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          @extend %svg;
+          @include waterproof($navy);
+          left: 0;
+          width: 24px;
+          height: 24px;
+          top: calc(50% - 12px);
+          @include mq(xsm) {
+            $x: vwl(24px);
+            width: #{$x};
+            height: #{$x};
+            top: calc(50% - (#{$x} / 2));
+          }
+          @include mq(xxs) {
+            $x: vwp(24px);
+            width: #{$x};
+            height: #{$x};
+            top: calc(50% - (#{$x} / 2));
+          }
+        }
+      }
+    }
+  }
+  &.additional-details {
+    // alternate color scheme
+    .panel-group {
+      border: solid 2px #c2c4c9;
+    }
+    .panel:not(:last-child) {
+      border-bottom: solid 2px #c2c4c9;
+    }
+    h5 {
+      a {
+        background-color: #d5dee3;
+        &[aria-expanded='true'] {
+          border-bottom: solid 2px #c2c4c9;
+        }
+        &:hover,
+        &:focus {
+          background-color: shade(#d5dee3, 5%);
+          outline: none;
+        }
+      }
+    }
+  }
+}
+.size-price-grid {
+  border-radius: 0 0 8px 8px;
+  float: none;
+  padding-bottom: 5px;
+  @include mq(xsm) {
+    padding-bottom: vwl(5px);
+  }
+  @include mq(xxs) {
+    padding-bottom: vwp(5px);
+  }
+  @include mq(md) {
+    padding-bottom: 10px;
+  }
+  .row {
+    padding: 8px 0 5px 0;
+    &:nth-child(even) {
+      background: tint(#d5dee3, 60%);
+    }
+  }
+  .size {
+    @include mq(xxs) {
+      padding-left: 15px;
+    }
+  }
+  .flat {
+    @include mq(xxs) {
+      padding-right: 0;
+    }
+  }
+  .notes {
+    .left-col {
+      @include mq(xxs) {
+        padding-left: 15px;
+      }
+    }
+  }
+  p {
+    padding: 0;
+    margin: 0;
+  }
+}
+#size-guide-icons {
+  background-color: $navy;
+  .mattress-sizes {
+    border-radius: 0;
+    @include mq(xxs) {
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 0;
+    }
+    li {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}

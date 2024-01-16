@@ -3,6 +3,7 @@
 
 {% block styles %}
   {{ _css.sheets() }}
+  {{ _css.sheetsFull() }}
 {% endblock %}
 
 {% block title %}{{ title }}{% endblock %}
@@ -12,6 +13,95 @@
 {% endblock %}
 
 {% block content %}
+
+
+
+
+
+
+{{ _modules.contentAccordion(valueProps) }}
+
+<section class="mission photo-module photo-left">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="photo-frame col-xs-12 col-md-6">
+        <div class="photo lazyload" role="img" aria-label="Image: Cotton field"></div>
+      </div>
+      <div class="content col-xs-12 col-md-6">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Crafted With a Mission</h2>
+            <p>Lull Sheets are sustainably produced using 99% recycled water and 70% renewable energy. The planet will love these sheets as much as you will.</p>
+            <p>Lull’s premium sheets come from a family-owned workshop that has been crafting high-quality textiles since 1945.</p>
+            <p>With an emphasis on giving back, the purchase of your new Lull Sheets helps fund education, housing, and women’s empowerment efforts.</p>
+            <p>Every stitch in the Lull Sheets collection is crafted with care, love, and to the highest standards.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ethical lazyload">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Safe, Sustainable,<br class="visible-xxs"> and Award-Winning</h2>
+          </div>
+        </div>
+        <div class="content row">
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0">
+            <div class="row">
+              <div class="logo-col col-xs-4 col-sm-3 col-md-offset-1">
+                <div class="logo oeko-tex" role="img" aria-label="Logo: Oeko-Tex Standard 100"></div>
+              </div>
+              <div class="col-xs-8 col-sm-offset-1 col-md-offset-0">
+                <p>Standard 100 by Oeko-Tex certified, which means the fabrics used are tested and verified to be free from harmful levels of more than 300 substances.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0">
+            <div class="row">
+              <div class="logo-col col-xs-4 col-sm-3 col-md-offset-1">
+                <div class="logo gots" role="img" aria-label="Logo: Global Organic Textile Standard"></div>
+              </div>
+              <div class="col-xs-8 col-sm-offset-1 col-md-offset-0">
+                <p>The Global Organic Textile Standard ensures that the sourcing and manufacturing of textile material is <br class="visible-lg">done in a social and environmentally responsible manner.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0">
+            <div class="row">
+              <div class="logo-col col-xs-4 col-sm-3 col-md-offset-1">
+                <div class="logo sfc" role="img" aria-label="Logo: Sustainable Furnishing Council Member"></div>
+              </div>
+              <div class="col-xs-8 col-sm-offset-1 col-md-offset-0">
+                <p>Environmental and health impacts of all products are analyzed and all possible steps are taken to minimize carbon emissions, waste stream pollutants, <br class="visible-md visible-lg">and un-recyclable content.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0">
+            <div class="row">
+              <div class="logo-col col-xs-4 col-sm-3 col-md-offset-1">
+                <div class="logo newsweek" role="img" aria-label="Logo: Newsweek"></div>
+              </div>
+              <div class="col-xs-8 col-sm-offset-1 col-md-offset-0">
+                <p>Lull has been recognized as one of <strong>America's Best Trending Online Shops</strong> by Newsweek for our commitment to offering exceptional customer service, <br class="visible-lg">a painless ordering process, and an <br class="visible-md">easy-to-use website.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ _modules.reviewsCarousel(reviews) }}
+
+{{ _modules.contentAccordion(additionalDetails) }}
+
 <section class="sustainable photo-module photo-left">
   <div class="container-fluid">
     <div class="row">
@@ -67,32 +157,13 @@
   </div>
 </section>
 
-<section class="responsibly-grown photo-module photo-left">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="photo-frame col-xs-12 col-md-6">
-        <div class="photo lazyload" role="img" aria-label="Image: Hanging sheets on clothesline"></div>
-      </div>
-      <div class="content col-xs-12 col-md-6">
-        <div class="row">
-          <div class="col-xs-12">
-            <h2><strong>Responsibly Grown</strong><br class="visible-xs"> Cotton for a Better Planet</h2>
-            <p>Lull’s GOTS Certified organic cotton is grown without fertilizers or chemical pesticides minimizing its impact on the environment. Its cultivation uses 90% less water and 60% less energy than regular cotton, significantly reducing greenhouse gas emissions. </p>
-            <ul>
-              <li class="water">Cultivated using<br class="visible-lg"> 90% less<br class="visible-xs visible-sm"> water and no harsh chemicals.</li>
-              <li class="energy">60% less energy used<br class="visible-xs"> than<br class="visible-sm"> conventional cotton.</li>
-            </ul>
-            <p>Conventionally grown cotton uses pesticides and insecticides that can<br class="visible-xxs"> harm surrounding soil, air quality<br class="visible-md"> and waterways. Toxins in traditionally grown cotton<br class="visible-md"> can be carried into your home which can cause irritation, rashes and dizziness.</p>
-            <p>Lull is a socially and environmentally responsible company dedicated to helping people sleep better so they<br class="visible-xxs"> can <br class="visible-md"> live better.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+{{ _modules.suggestedItems(suggestedItems) }}
+{{- _modules.faq(faqs) -}}
+{{ _modules.footer(currentYear) }}
 
 {% endblock %}
 
 {% block scripts %}
+  {{ _modules.reviewsCarouselScript() }}
+  {{ _modules.suggestedItemsScripts() }}
 {% endblock %}

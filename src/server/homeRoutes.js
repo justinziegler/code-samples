@@ -337,12 +337,20 @@ async function sheetsFull(ctx, next) {
 	ctx.pillowcaseSkus = pillowcaseSkus;
   const p = await pageConfig.sheets(ctx);
   const valueProps = await content.valuePropsSheets(ctx);
-
+  const reviews = await content.reviewsSheets(ctx);
+  const additionalDetails = await content.additionalDetails(ctx);
+  const suggestedItems = await content.suggestedItems(ctx);
+  const faqs = await content.faqs(ctx);
+  
   ctx.body = await render('product_sheets_full', {
     p: p[0],
     title: 'Product Page example',
     discountActual: discountActual,
-    valueProps: valueProps
+    valueProps: valueProps,
+    reviews: reviews,
+    additionalDetails: additionalDetails,
+    suggestedItems: suggestedItems,
+    faqs: faqs
   });
 }
 
