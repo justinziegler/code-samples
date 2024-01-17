@@ -172,55 +172,55 @@
   }
 }
 .suggestions .item.pillow.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/pillows/pillow-stack-angled.png?auto=format,compress,enhance&q=100&w=500");
+  background-image: url("./suggested-items/pillow-stack-angled.png");
 }
 .suggestions .item.down-pillow.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/down-pillow/down-pillow-angled.png?auto=format,compress,enhance&q=100&w=500");
+  background-image: url("./suggested-items/down-pillow-angled.png");
 }
 .suggestions .item.memory-foam-pillow.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/memory-foam-pillow/memory-foam-pillow.png?auto=format,compress,enhance&q=100&w=500");
+  background-image: url("./suggested-items/memory-foam-pillow.png");
 }
 .suggestions .item.sheets.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/sheets/sheets-brilliant-white-upsell.png?&w=500");
+  background-image: url("./suggested-items/sheets-brilliant-white-upsell.png");
   background-position: 50% 0%;
 }
 .suggestions .item.duvet.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/duvet/duvet-folded.png?auto=format,compress,enhance&q=100&w=500");
+  background-image: url("./suggested-items/duvet-folded.png");
 }
 .suggestions .item.down-duvet.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/down-duvet/down-duvet-folded.png?auto=format,compress&q=100&w=500");
+  background-image: url("./suggested-items/down-duvet-folded.png");
 }
 .suggestions .item.protector.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/mattress-protector/protector.png?auto=format,compress&q=100&w=500");
+  background-image: url("./suggested-items/protector.png");
 }
 .suggestions .item.mattress.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/mattress.png?&w=500");
+  background-image: url("./suggested-items/mattress.png");
 }
 .suggestions .item.luxe.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/luxe-hybrid-elevated-profile.png?&w=500");
+  background-image: url("./suggested-items/luxe-hybrid-elevated-profile.png");
 }
 .suggestions .item.cotton-sheets.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/sheets-CD.png?&w=500");
+  background-image: url("./suggested-items/sheets-CD.png");
 }
 .suggestions .item.foundation.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/light-grey-foundation.png?&w=500");
+  background-image: url("./suggested-items/light-grey-foundation.png");
 }
 .suggestions .item.metal-frame.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/metal-frame-front.png?&w=500");
+  background-image: url("./suggested-items/metal-frame-front.png");
 }
 .suggestions .item.wood-frame.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/checkout/platform-bed-frame-product-image.png?&w=500");
+  background-image: url("./suggested-items/platform-bed-frame-product-image.png");
 }
 .suggestions .item.islay-frame.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/shop-luxe/islay-UU-CS-angled.png?&w=500");
+  background-image: url("./suggested-items/islay-UU-CS-angled.png");
   background-size: 60%;
 }
 .suggestions .item.anacapa-frame.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/shop-luxe/anacapa-angled.png?&w=500");
+  background-image: url("./suggested-items/anacapa-angled.png");
   background-size: 70%;
 }
 .suggestions .item.chapala-frame.lazyloaded {
-  background-image: url("https://lull-media.imgix.net/shop-luxe/chapala-metal-frame.png?&w=500");
+  background-image: url("./suggested-items/chapala-metal-frame.png");
   background-size: 60%;
 }
 @media (min-width: 768px) {

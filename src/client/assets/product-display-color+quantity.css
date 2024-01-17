@@ -1,4 +1,5 @@
 /* When editing, use the source file for this page in client/resources/sass */
+@import url("https://fonts.googleapis.com/css2?family=Boogaloo&family=Cabin+Condensed:wght@400;500&display=swap");
 .color[data-color=WP], .color[data-color=CD] {
   background-position: 50% 50%;
   background-size: contain;

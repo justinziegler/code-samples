@@ -20,1263 +20,1263 @@ video:focus {
   padding-bottom: 56.25%;
 }
 .product-gallery[data-color=BW] .slide-1 {
-  background-image: url("./sheets/sheets-01-hero-BW.jpg?&w=840");
+  background-image: url("./sheets/sheets-01-hero-BW.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=BW] .slide-1,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-BW.jpg?&w=1200");
+    background-image: url("./sheets/sheets-01-hero-BW.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=BW] .slide-1,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-BW.jpg?&w=720");
+    background-image: url("./sheets/sheets-01-hero-BW.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=BW] .slide-1,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-BW.jpg?&w=800");
+    background-image: url("./sheets/sheets-01-hero-BW.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=BW] .slide-1,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-BW.jpg?&w=960");
+    background-image: url("./sheets/sheets-01-hero-BW.jpg");
   }
 }
 @media (min-device-pixel-ratio: 1.25) and (min-width: 1200px), (-webkit-min-device-pixel-ratio: 2) and (min-width: 1200px), (min-resolution: 192dpi) and (min-width: 1200px), (-webkit-min-device-pixel-ratio: 1.25) and (min-width: 1200px), (min-resolution: 1.25dppx) and (min-width: 1200px) {
   .product-gallery[data-color=BW] .slide-1,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-BW.jpg?&w=1440");
+    background-image: url("./sheets/sheets-01-hero-BW.jpg");
   }
 }
 @media (min-device-pixel-ratio: 1.25) and (min-width: 1440px), (-webkit-min-device-pixel-ratio: 2) and (min-width: 1440px), (min-resolution: 192dpi) and (min-width: 1440px), (-webkit-min-device-pixel-ratio: 1.25) and (min-width: 1440px), (min-resolution: 1.25dppx) and (min-width: 1440px) {
   .product-gallery[data-color=BW] .slide-1,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-BW.jpg?&w=1600");
+    background-image: url("./sheets/sheets-01-hero-BW.jpg");
   }
 }
 @media (min-device-pixel-ratio: 1.25) and (min-width: 1600px), (-webkit-min-device-pixel-ratio: 2) and (min-width: 1600px), (min-resolution: 192dpi) and (min-width: 1600px), (-webkit-min-device-pixel-ratio: 1.25) and (min-width: 1600px), (min-resolution: 1.25dppx) and (min-width: 1600px) {
   .product-gallery[data-color=BW] .slide-1,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-BW.jpg?&w=1920");
+    background-image: url("./sheets/sheets-01-hero-BW.jpg");
   }
 }
 .product-gallery[data-color=BW] .slide-2.lazyloaded {
-  background-image: url("./sheets/sheets-duvet-BW.jpg?&w=840");
+  background-image: url("./sheets/sheets-duvet-BW.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=BW] .slide-2.lazyloaded,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-BW.jpg?&w=1200");
+    background-image: url("./sheets/sheets-duvet-BW.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=BW] .slide-2.lazyloaded,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-BW.jpg?&w=720");
+    background-image: url("./sheets/sheets-duvet-BW.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=BW] .slide-2.lazyloaded,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-BW.jpg?&w=800");
+    background-image: url("./sheets/sheets-duvet-BW.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=BW] .slide-2.lazyloaded,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-BW.jpg?&w=960");
+    background-image: url("./sheets/sheets-duvet-BW.jpg");
   }
 }
 @media (min-device-pixel-ratio: 1.25) and (min-width: 1200px), (-webkit-min-device-pixel-ratio: 2) and (min-width: 1200px), (min-resolution: 192dpi) and (min-width: 1200px), (-webkit-min-device-pixel-ratio: 1.25) and (min-width: 1200px), (min-resolution: 1.25dppx) and (min-width: 1200px) {
   .product-gallery[data-color=BW] .slide-2.lazyloaded,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-BW.jpg?&w=1440");
+    background-image: url("./sheets/sheets-duvet-BW.jpg");
   }
 }
 @media (min-device-pixel-ratio: 1.25) and (min-width: 1440px), (-webkit-min-device-pixel-ratio: 2) and (min-width: 1440px), (min-resolution: 192dpi) and (min-width: 1440px), (-webkit-min-device-pixel-ratio: 1.25) and (min-width: 1440px), (min-resolution: 1.25dppx) and (min-width: 1440px) {
   .product-gallery[data-color=BW] .slide-2.lazyloaded,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-BW.jpg?&w=1600");
+    background-image: url("./sheets/sheets-duvet-BW.jpg");
   }
 }
 @media (min-device-pixel-ratio: 1.25) and (min-width: 1600px), (-webkit-min-device-pixel-ratio: 2) and (min-width: 1600px), (min-resolution: 192dpi) and (min-width: 1600px), (-webkit-min-device-pixel-ratio: 1.25) and (min-width: 1600px), (min-resolution: 1.25dppx) and (min-width: 1600px) {
   .product-gallery[data-color=BW] .slide-2.lazyloaded,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-BW.jpg?&w=1920");
+    background-image: url("./sheets/sheets-duvet-BW.jpg");
   }
 }
 .product-gallery[data-color=BW] .slide-3.lazyloaded {
-  background-image: url("./sheets/sheets-corner-BW.jpg?&w=840");
+  background-image: url("./sheets/sheets-corner-BW.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=BW] .slide-3.lazyloaded,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-BW.jpg?&w=1200");
+    background-image: url("./sheets/sheets-corner-BW.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=BW] .slide-3.lazyloaded,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-BW.jpg?&w=720");
+    background-image: url("./sheets/sheets-corner-BW.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=BW] .slide-3.lazyloaded,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-BW.jpg?&w=800");
+    background-image: url("./sheets/sheets-corner-BW.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=BW] .slide-3.lazyloaded,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-BW.jpg?&w=960");
+    background-image: url("./sheets/sheets-corner-BW.jpg");
   }
 }
 @media (min-device-pixel-ratio: 1.25) and (min-width: 1200px), (-webkit-min-device-pixel-ratio: 2) and (min-width: 1200px), (min-resolution: 192dpi) and (min-width: 1200px), (-webkit-min-device-pixel-ratio: 1.25) and (min-width: 1200px), (min-resolution: 1.25dppx) and (min-width: 1200px) {
   .product-gallery[data-color=BW] .slide-3.lazyloaded,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-BW.jpg?&w=1440");
+    background-image: url("./sheets/sheets-corner-BW.jpg");
   }
 }
 @media (min-device-pixel-ratio: 1.25) and (min-width: 1440px), (-webkit-min-device-pixel-ratio: 2) and (min-width: 1440px), (min-resolution: 192dpi) and (min-width: 1440px), (-webkit-min-device-pixel-ratio: 1.25) and (min-width: 1440px), (min-resolution: 1.25dppx) and (min-width: 1440px) {
   .product-gallery[data-color=BW] .slide-3.lazyloaded,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-BW.jpg?&w=1600");
+    background-image: url("./sheets/sheets-corner-BW.jpg");
   }
 }
 @media (min-device-pixel-ratio: 1.25) and (min-width: 1600px), (-webkit-min-device-pixel-ratio: 2) and (min-width: 1600px), (min-resolution: 192dpi) and (min-width: 1600px), (-webkit-min-device-pixel-ratio: 1.25) and (min-width: 1600px), (min-resolution: 1.25dppx) and (min-width: 1600px) {
   .product-gallery[data-color=BW] .slide-3.lazyloaded,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-BW.jpg?&w=1920");
+    background-image: url("./sheets/sheets-corner-BW.jpg");
   }
 }
 .product-gallery[data-color=BW] .slide-4.lazyloaded {
-  background-image: url("./sheets/sheets-detail-BW.jpg?&w=840");
+  background-image: url("./sheets/sheets-detail-BW.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=BW] .slide-4.lazyloaded,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-BW.jpg?&w=1200");
+    background-image: url("./sheets/sheets-detail-BW.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=BW] .slide-4.lazyloaded,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-BW.jpg?&w=720");
+    background-image: url("./sheets/sheets-detail-BW.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=BW] .slide-4.lazyloaded,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-BW.jpg?&w=1440");
+    background-image: url("./sheets/sheets-detail-BW.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=BW] .slide-4.lazyloaded,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-BW.jpg?&w=800");
+    background-image: url("./sheets/sheets-detail-BW.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=BW] .slide-4.lazyloaded,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-BW.jpg?&w=1600");
+    background-image: url("./sheets/sheets-detail-BW.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=BW] .slide-4.lazyloaded,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-BW.jpg?&w=960");
+    background-image: url("./sheets/sheets-detail-BW.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=BW] .slide-4.lazyloaded,
   .product-gallery[data-color=BW] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-BW.jpg?&w=1920");
+    background-image: url("./sheets/sheets-detail-BW.jpg");
   }
 }
 .product-gallery[data-color=QG] .slide-1 {
-  background-image: url("./sheets/sheets-01-hero-QG.jpg?&w=840");
+  background-image: url("./sheets/sheets-01-hero-QG.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=QG] .slide-1,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-QG.jpg?&w=1200");
+    background-image: url("./sheets/sheets-01-hero-QG.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=QG] .slide-1,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-QG.jpg?&w=720");
+    background-image: url("./sheets/sheets-01-hero-QG.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=QG] .slide-1,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-QG.jpg?&w=1440");
+    background-image: url("./sheets/sheets-01-hero-QG.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=QG] .slide-1,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-QG.jpg?&w=800");
+    background-image: url("./sheets/sheets-01-hero-QG.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=QG] .slide-1,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-QG.jpg?&w=1600");
+    background-image: url("./sheets/sheets-01-hero-QG.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=QG] .slide-1,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-QG.jpg?&w=960");
+    background-image: url("./sheets/sheets-01-hero-QG.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=QG] .slide-1,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-QG.jpg?&w=1920");
+    background-image: url("./sheets/sheets-01-hero-QG.jpg");
   }
 }
 .product-gallery[data-color=QG] .slide-2.lazyloaded {
-  background-image: url("./sheets/sheets-duvet-QG.jpg?&w=840");
+  background-image: url("./sheets/sheets-duvet-QG.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=QG] .slide-2.lazyloaded,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-QG.jpg?&w=1200");
+    background-image: url("./sheets/sheets-duvet-QG.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=QG] .slide-2.lazyloaded,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-QG.jpg?&w=720");
+    background-image: url("./sheets/sheets-duvet-QG.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=QG] .slide-2.lazyloaded,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-QG.jpg?&w=1440");
+    background-image: url("./sheets/sheets-duvet-QG.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=QG] .slide-2.lazyloaded,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-QG.jpg?&w=800");
+    background-image: url("./sheets/sheets-duvet-QG.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=QG] .slide-2.lazyloaded,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-QG.jpg?&w=1600");
+    background-image: url("./sheets/sheets-duvet-QG.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=QG] .slide-2.lazyloaded,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-QG.jpg?&w=960");
+    background-image: url("./sheets/sheets-duvet-QG.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=QG] .slide-2.lazyloaded,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-QG.jpg?&w=1920");
+    background-image: url("./sheets/sheets-duvet-QG.jpg");
   }
 }
 .product-gallery[data-color=QG] .slide-3.lazyloaded {
-  background-image: url("./sheets/sheets-corner-QG.jpg?&w=840");
+  background-image: url("./sheets/sheets-corner-QG.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=QG] .slide-3.lazyloaded,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-QG.jpg?&w=1200");
+    background-image: url("./sheets/sheets-corner-QG.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=QG] .slide-3.lazyloaded,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-QG.jpg?&w=720");
+    background-image: url("./sheets/sheets-corner-QG.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=QG] .slide-3.lazyloaded,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-QG.jpg?&w=1440");
+    background-image: url("./sheets/sheets-corner-QG.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=QG] .slide-3.lazyloaded,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-QG.jpg?&w=800");
+    background-image: url("./sheets/sheets-corner-QG.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=QG] .slide-3.lazyloaded,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-QG.jpg?&w=1600");
+    background-image: url("./sheets/sheets-corner-QG.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=QG] .slide-3.lazyloaded,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-QG.jpg?&w=960");
+    background-image: url("./sheets/sheets-corner-QG.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=QG] .slide-3.lazyloaded,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-QG.jpg?&w=1920");
+    background-image: url("./sheets/sheets-corner-QG.jpg");
   }
 }
 .product-gallery[data-color=QG] .slide-4.lazyloaded {
-  background-image: url("./sheets/sheets-detail-QG.jpg?&w=840");
+  background-image: url("./sheets/sheets-detail-QG.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=QG] .slide-4.lazyloaded,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-QG.jpg?&w=1200");
+    background-image: url("./sheets/sheets-detail-QG.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=QG] .slide-4.lazyloaded,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-QG.jpg?&w=720");
+    background-image: url("./sheets/sheets-detail-QG.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=QG] .slide-4.lazyloaded,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-QG.jpg?&w=1440");
+    background-image: url("./sheets/sheets-detail-QG.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=QG] .slide-4.lazyloaded,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-QG.jpg?&w=800");
+    background-image: url("./sheets/sheets-detail-QG.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=QG] .slide-4.lazyloaded,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-QG.jpg?&w=1600");
+    background-image: url("./sheets/sheets-detail-QG.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=QG] .slide-4.lazyloaded,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-QG.jpg?&w=960");
+    background-image: url("./sheets/sheets-detail-QG.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=QG] .slide-4.lazyloaded,
   .product-gallery[data-color=QG] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-QG.jpg?&w=1920");
+    background-image: url("./sheets/sheets-detail-QG.jpg");
   }
 }
 .product-gallery[data-color=GG] .slide-1 {
-  background-image: url("./sheets/sheets-01-hero-GG.jpg?&w=840");
+  background-image: url("./sheets/sheets-01-hero-GG.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=GG] .slide-1,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-GG.jpg?&w=1200");
+    background-image: url("./sheets/sheets-01-hero-GG.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=GG] .slide-1,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-GG.jpg?&w=720");
+    background-image: url("./sheets/sheets-01-hero-GG.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=GG] .slide-1,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-GG.jpg?&w=1440");
+    background-image: url("./sheets/sheets-01-hero-GG.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=GG] .slide-1,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-GG.jpg?&w=800");
+    background-image: url("./sheets/sheets-01-hero-GG.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=GG] .slide-1,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-GG.jpg?&w=1600");
+    background-image: url("./sheets/sheets-01-hero-GG.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=GG] .slide-1,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-GG.jpg?&w=960");
+    background-image: url("./sheets/sheets-01-hero-GG.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=GG] .slide-1,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-GG.jpg?&w=1920");
+    background-image: url("./sheets/sheets-01-hero-GG.jpg");
   }
 }
 .product-gallery[data-color=GG] .slide-2.lazyloaded {
-  background-image: url("./sheets/sheets-duvet-GG.jpg?&w=840");
+  background-image: url("./sheets/sheets-duvet-GG.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=GG] .slide-2.lazyloaded,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-GG.jpg?&w=1200");
+    background-image: url("./sheets/sheets-duvet-GG.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=GG] .slide-2.lazyloaded,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-GG.jpg?&w=720");
+    background-image: url("./sheets/sheets-duvet-GG.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=GG] .slide-2.lazyloaded,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-GG.jpg?&w=1440");
+    background-image: url("./sheets/sheets-duvet-GG.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=GG] .slide-2.lazyloaded,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-GG.jpg?&w=800");
+    background-image: url("./sheets/sheets-duvet-GG.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=GG] .slide-2.lazyloaded,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-GG.jpg?&w=1600");
+    background-image: url("./sheets/sheets-duvet-GG.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=GG] .slide-2.lazyloaded,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-GG.jpg?&w=960");
+    background-image: url("./sheets/sheets-duvet-GG.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=GG] .slide-2.lazyloaded,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-GG.jpg?&w=1920");
+    background-image: url("./sheets/sheets-duvet-GG.jpg");
   }
 }
 .product-gallery[data-color=GG] .slide-3.lazyloaded {
-  background-image: url("./sheets/sheets-corner-GG.jpg?&w=840");
+  background-image: url("./sheets/sheets-corner-GG.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=GG] .slide-3.lazyloaded,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-GG.jpg?&w=1200");
+    background-image: url("./sheets/sheets-corner-GG.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=GG] .slide-3.lazyloaded,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-GG.jpg?&w=720");
+    background-image: url("./sheets/sheets-corner-GG.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=GG] .slide-3.lazyloaded,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-GG.jpg?&w=1440");
+    background-image: url("./sheets/sheets-corner-GG.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=GG] .slide-3.lazyloaded,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-GG.jpg?&w=800");
+    background-image: url("./sheets/sheets-corner-GG.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=GG] .slide-3.lazyloaded,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-GG.jpg?&w=1600");
+    background-image: url("./sheets/sheets-corner-GG.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=GG] .slide-3.lazyloaded,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-GG.jpg?&w=960");
+    background-image: url("./sheets/sheets-corner-GG.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=GG] .slide-3.lazyloaded,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-GG.jpg?&w=1920");
+    background-image: url("./sheets/sheets-corner-GG.jpg");
   }
 }
 .product-gallery[data-color=GG] .slide-4.lazyloaded {
-  background-image: url("./sheets/sheets-detail-GG.jpg?&w=840");
+  background-image: url("./sheets/sheets-detail-GG.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=GG] .slide-4.lazyloaded,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-GG.jpg?&w=1200");
+    background-image: url("./sheets/sheets-detail-GG.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=GG] .slide-4.lazyloaded,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-GG.jpg?&w=720");
+    background-image: url("./sheets/sheets-detail-GG.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=GG] .slide-4.lazyloaded,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-GG.jpg?&w=1440");
+    background-image: url("./sheets/sheets-detail-GG.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=GG] .slide-4.lazyloaded,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-GG.jpg?&w=800");
+    background-image: url("./sheets/sheets-detail-GG.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=GG] .slide-4.lazyloaded,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-GG.jpg?&w=1600");
+    background-image: url("./sheets/sheets-detail-GG.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=GG] .slide-4.lazyloaded,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-GG.jpg?&w=960");
+    background-image: url("./sheets/sheets-detail-GG.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=GG] .slide-4.lazyloaded,
   .product-gallery[data-color=GG] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-GG.jpg?&w=1920");
+    background-image: url("./sheets/sheets-detail-GG.jpg");
   }
 }
 .product-gallery[data-color=MB] .slide-1 {
-  background-image: url("./sheets/sheets-01-hero-MB.jpg?&w=840");
+  background-image: url("./sheets/sheets-01-hero-MB.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=MB] .slide-1,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-MB.jpg?&w=1200");
+    background-image: url("./sheets/sheets-01-hero-MB.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=MB] .slide-1,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-MB.jpg?&w=720");
+    background-image: url("./sheets/sheets-01-hero-MB.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=MB] .slide-1,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-MB.jpg?&w=1440");
+    background-image: url("./sheets/sheets-01-hero-MB.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=MB] .slide-1,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-MB.jpg?&w=800");
+    background-image: url("./sheets/sheets-01-hero-MB.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=MB] .slide-1,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-MB.jpg?&w=1600");
+    background-image: url("./sheets/sheets-01-hero-MB.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=MB] .slide-1,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-MB.jpg?&w=960");
+    background-image: url("./sheets/sheets-01-hero-MB.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=MB] .slide-1,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-MB.jpg?&w=1920");
+    background-image: url("./sheets/sheets-01-hero-MB.jpg");
   }
 }
 .product-gallery[data-color=MB] .slide-2.lazyloaded {
-  background-image: url("./sheets/sheets-duvet-MB.jpg?&w=840");
+  background-image: url("./sheets/sheets-duvet-MB.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=MB] .slide-2.lazyloaded,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-MB.jpg?&w=1200");
+    background-image: url("./sheets/sheets-duvet-MB.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=MB] .slide-2.lazyloaded,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-MB.jpg?&w=720");
+    background-image: url("./sheets/sheets-duvet-MB.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=MB] .slide-2.lazyloaded,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-MB.jpg?&w=1440");
+    background-image: url("./sheets/sheets-duvet-MB.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=MB] .slide-2.lazyloaded,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-MB.jpg?&w=800");
+    background-image: url("./sheets/sheets-duvet-MB.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=MB] .slide-2.lazyloaded,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-MB.jpg?&w=1600");
+    background-image: url("./sheets/sheets-duvet-MB.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=MB] .slide-2.lazyloaded,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-MB.jpg?&w=960");
+    background-image: url("./sheets/sheets-duvet-MB.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=MB] .slide-2.lazyloaded,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-MB.jpg?&w=1920");
+    background-image: url("./sheets/sheets-duvet-MB.jpg");
   }
 }
 .product-gallery[data-color=MB] .slide-3.lazyloaded {
-  background-image: url("./sheets/sheets-corner-MB.jpg?&w=840");
+  background-image: url("./sheets/sheets-corner-MB.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=MB] .slide-3.lazyloaded,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-MB.jpg?&w=1200");
+    background-image: url("./sheets/sheets-corner-MB.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=MB] .slide-3.lazyloaded,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-MB.jpg?&w=720");
+    background-image: url("./sheets/sheets-corner-MB.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=MB] .slide-3.lazyloaded,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-MB.jpg?&w=1440");
+    background-image: url("./sheets/sheets-corner-MB.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=MB] .slide-3.lazyloaded,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-MB.jpg?&w=800");
+    background-image: url("./sheets/sheets-corner-MB.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=MB] .slide-3.lazyloaded,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-MB.jpg?&w=1600");
+    background-image: url("./sheets/sheets-corner-MB.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=MB] .slide-3.lazyloaded,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-MB.jpg?&w=960");
+    background-image: url("./sheets/sheets-corner-MB.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=MB] .slide-3.lazyloaded,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-MB.jpg?&w=1920");
+    background-image: url("./sheets/sheets-corner-MB.jpg");
   }
 }
 .product-gallery[data-color=MB] .slide-4.lazyloaded {
-  background-image: url("./sheets/sheets-detail-MB.jpg?&w=840");
+  background-image: url("./sheets/sheets-detail-MB.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=MB] .slide-4.lazyloaded,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-MB.jpg?&w=1200");
+    background-image: url("./sheets/sheets-detail-MB.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=MB] .slide-4.lazyloaded,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-MB.jpg?&w=720");
+    background-image: url("./sheets/sheets-detail-MB.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=MB] .slide-4.lazyloaded,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-MB.jpg?&w=1440");
+    background-image: url("./sheets/sheets-detail-MB.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=MB] .slide-4.lazyloaded,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-MB.jpg?&w=800");
+    background-image: url("./sheets/sheets-detail-MB.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=MB] .slide-4.lazyloaded,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-MB.jpg?&w=1600");
+    background-image: url("./sheets/sheets-detail-MB.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=MB] .slide-4.lazyloaded,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-MB.jpg?&w=960");
+    background-image: url("./sheets/sheets-detail-MB.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=MB] .slide-4.lazyloaded,
   .product-gallery[data-color=MB] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-MB.jpg?&w=1920");
+    background-image: url("./sheets/sheets-detail-MB.jpg");
   }
 }
 .product-gallery[data-color=PA] .slide-1 {
-  background-image: url("./sheets/sheets-01-hero-PA.jpg?&w=840");
+  background-image: url("./sheets/sheets-01-hero-PA.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=PA] .slide-1,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-PA.jpg?&w=1200");
+    background-image: url("./sheets/sheets-01-hero-PA.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=PA] .slide-1,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-PA.jpg?&w=720");
+    background-image: url("./sheets/sheets-01-hero-PA.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=PA] .slide-1,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-PA.jpg?&w=1440");
+    background-image: url("./sheets/sheets-01-hero-PA.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=PA] .slide-1,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-PA.jpg?&w=800");
+    background-image: url("./sheets/sheets-01-hero-PA.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=PA] .slide-1,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-PA.jpg?&w=1600");
+    background-image: url("./sheets/sheets-01-hero-PA.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=PA] .slide-1,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-PA.jpg?&w=960");
+    background-image: url("./sheets/sheets-01-hero-PA.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=PA] .slide-1,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-PA.jpg?&w=1920");
+    background-image: url("./sheets/sheets-01-hero-PA.jpg");
   }
 }
 .product-gallery[data-color=PA] .slide-2.lazyloaded {
-  background-image: url("./sheets/sheets-duvet-PA.jpg?&w=840");
+  background-image: url("./sheets/sheets-duvet-PA.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=PA] .slide-2.lazyloaded,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-PA.jpg?&w=1200");
+    background-image: url("./sheets/sheets-duvet-PA.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=PA] .slide-2.lazyloaded,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-PA.jpg?&w=720");
+    background-image: url("./sheets/sheets-duvet-PA.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=PA] .slide-2.lazyloaded,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-PA.jpg?&w=1440");
+    background-image: url("./sheets/sheets-duvet-PA.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=PA] .slide-2.lazyloaded,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-PA.jpg?&w=800");
+    background-image: url("./sheets/sheets-duvet-PA.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=PA] .slide-2.lazyloaded,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-PA.jpg?&w=1600");
+    background-image: url("./sheets/sheets-duvet-PA.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=PA] .slide-2.lazyloaded,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-PA.jpg?&w=960");
+    background-image: url("./sheets/sheets-duvet-PA.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=PA] .slide-2.lazyloaded,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-PA.jpg?&w=1920");
+    background-image: url("./sheets/sheets-duvet-PA.jpg");
   }
 }
 .product-gallery[data-color=PA] .slide-3.lazyloaded {
-  background-image: url("./sheets/sheets-corner-PA.jpg?&w=840");
+  background-image: url("./sheets/sheets-corner-PA.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=PA] .slide-3.lazyloaded,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-PA.jpg?&w=1200");
+    background-image: url("./sheets/sheets-corner-PA.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=PA] .slide-3.lazyloaded,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-PA.jpg?&w=720");
+    background-image: url("./sheets/sheets-corner-PA.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=PA] .slide-3.lazyloaded,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-PA.jpg?&w=1440");
+    background-image: url("./sheets/sheets-corner-PA.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=PA] .slide-3.lazyloaded,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-PA.jpg?&w=800");
+    background-image: url("./sheets/sheets-corner-PA.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=PA] .slide-3.lazyloaded,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-PA.jpg?&w=1600");
+    background-image: url("./sheets/sheets-corner-PA.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=PA] .slide-3.lazyloaded,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-PA.jpg?&w=960");
+    background-image: url("./sheets/sheets-corner-PA.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=PA] .slide-3.lazyloaded,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-PA.jpg?&w=1920");
+    background-image: url("./sheets/sheets-corner-PA.jpg");
   }
 }
 .product-gallery[data-color=PA] .slide-4.lazyloaded {
-  background-image: url("./sheets/sheets-detail-PA.jpg?&w=840");
+  background-image: url("./sheets/sheets-detail-PA.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=PA] .slide-4.lazyloaded,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-PA.jpg?&w=1200");
+    background-image: url("./sheets/sheets-detail-PA.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=PA] .slide-4.lazyloaded,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-PA.jpg?&w=720");
+    background-image: url("./sheets/sheets-detail-PA.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=PA] .slide-4.lazyloaded,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-PA.jpg?&w=1440");
+    background-image: url("./sheets/sheets-detail-PA.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=PA] .slide-4.lazyloaded,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-PA.jpg?&w=800");
+    background-image: url("./sheets/sheets-detail-PA.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=PA] .slide-4.lazyloaded,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-PA.jpg?&w=1600");
+    background-image: url("./sheets/sheets-detail-PA.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=PA] .slide-4.lazyloaded,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-PA.jpg?&w=960");
+    background-image: url("./sheets/sheets-detail-PA.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=PA] .slide-4.lazyloaded,
   .product-gallery[data-color=PA] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-PA.jpg?&w=1920");
+    background-image: url("./sheets/sheets-detail-PA.jpg");
   }
 }
 .product-gallery[data-color=WP] .slide-1 {
-  background-image: url("./sheets/sheets-01-hero-WP.jpg?&w=840");
+  background-image: url("./sheets/sheets-01-hero-WP.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=WP] .slide-1,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-WP.jpg?&w=1200");
+    background-image: url("./sheets/sheets-01-hero-WP.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=WP] .slide-1,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-WP.jpg?&w=720");
+    background-image: url("./sheets/sheets-01-hero-WP.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=WP] .slide-1,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-WP.jpg?&w=1440");
+    background-image: url("./sheets/sheets-01-hero-WP.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=WP] .slide-1,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-WP.jpg?&w=800");
+    background-image: url("./sheets/sheets-01-hero-WP.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=WP] .slide-1,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-WP.jpg?&w=1600");
+    background-image: url("./sheets/sheets-01-hero-WP.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=WP] .slide-1,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-WP.jpg?&w=960");
+    background-image: url("./sheets/sheets-01-hero-WP.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=WP] .slide-1,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-WP.jpg?&w=1920");
+    background-image: url("./sheets/sheets-01-hero-WP.jpg");
   }
 }
 .product-gallery[data-color=WP] .slide-2.lazyloaded {
-  background-image: url("./sheets/sheets-duvet-WP.jpg?&w=840");
+  background-image: url("./sheets/sheets-duvet-WP.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=WP] .slide-2.lazyloaded,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-WP.jpg?&w=1200");
+    background-image: url("./sheets/sheets-duvet-WP.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=WP] .slide-2.lazyloaded,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-WP.jpg?&w=720");
+    background-image: url("./sheets/sheets-duvet-WP.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=WP] .slide-2.lazyloaded,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-WP.jpg?&w=1440");
+    background-image: url("./sheets/sheets-duvet-WP.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=WP] .slide-2.lazyloaded,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-WP.jpg?&w=800");
+    background-image: url("./sheets/sheets-duvet-WP.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=WP] .slide-2.lazyloaded,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-WP.jpg?&w=1600");
+    background-image: url("./sheets/sheets-duvet-WP.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=WP] .slide-2.lazyloaded,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-WP.jpg?&w=960");
+    background-image: url("./sheets/sheets-duvet-WP.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=WP] .slide-2.lazyloaded,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-WP.jpg?&w=1920");
+    background-image: url("./sheets/sheets-duvet-WP.jpg");
   }
 }
 .product-gallery[data-color=WP] .slide-3.lazyloaded {
-  background-image: url("./sheets/sheets-corner-WP.jpg?&w=840");
+  background-image: url("./sheets/sheets-corner-WP.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=WP] .slide-3.lazyloaded,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-WP.jpg?&w=1200");
+    background-image: url("./sheets/sheets-corner-WP.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=WP] .slide-3.lazyloaded,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-WP.jpg?&w=720");
+    background-image: url("./sheets/sheets-corner-WP.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=WP] .slide-3.lazyloaded,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-WP.jpg?&w=1440");
+    background-image: url("./sheets/sheets-corner-WP.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=WP] .slide-3.lazyloaded,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-WP.jpg?&w=800");
+    background-image: url("./sheets/sheets-corner-WP.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=WP] .slide-3.lazyloaded,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-WP.jpg?&w=1600");
+    background-image: url("./sheets/sheets-corner-WP.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=WP] .slide-3.lazyloaded,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-WP.jpg?&w=960");
+    background-image: url("./sheets/sheets-corner-WP.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=WP] .slide-3.lazyloaded,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-WP.jpg?&w=1920");
+    background-image: url("./sheets/sheets-corner-WP.jpg");
   }
 }
 .product-gallery[data-color=WP] .slide-4.lazyloaded {
-  background-image: url("./sheets/sheets-detail-WP.jpg?&w=840");
+  background-image: url("./sheets/sheets-detail-WP.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=WP] .slide-4.lazyloaded,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-WP.jpg?&w=1200");
+    background-image: url("./sheets/sheets-detail-WP.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=WP] .slide-4.lazyloaded,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-WP.jpg?&w=720");
+    background-image: url("./sheets/sheets-detail-WP.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=WP] .slide-4.lazyloaded,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-WP.jpg?&w=1440");
+    background-image: url("./sheets/sheets-detail-WP.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=WP] .slide-4.lazyloaded,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-WP.jpg?&w=800");
+    background-image: url("./sheets/sheets-detail-WP.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=WP] .slide-4.lazyloaded,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-WP.jpg?&w=1600");
+    background-image: url("./sheets/sheets-detail-WP.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=WP] .slide-4.lazyloaded,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-WP.jpg?&w=960");
+    background-image: url("./sheets/sheets-detail-WP.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=WP] .slide-4.lazyloaded,
   .product-gallery[data-color=WP] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-WP.jpg?&w=1920");
+    background-image: url("./sheets/sheets-detail-WP.jpg");
   }
 }
 .product-gallery[data-color=CD] .slide-1 {
-  background-image: url("./sheets/sheets-01-hero-CD.jpg?&w=840");
+  background-image: url("./sheets/sheets-01-hero-CD.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=CD] .slide-1,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-CD.jpg?&w=1200");
+    background-image: url("./sheets/sheets-01-hero-CD.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=CD] .slide-1,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-CD.jpg?&w=720");
+    background-image: url("./sheets/sheets-01-hero-CD.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=CD] .slide-1,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-CD.jpg?&w=1440");
+    background-image: url("./sheets/sheets-01-hero-CD.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=CD] .slide-1,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-CD.jpg?&w=800");
+    background-image: url("./sheets/sheets-01-hero-CD.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=CD] .slide-1,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-CD.jpg?&w=1600");
+    background-image: url("./sheets/sheets-01-hero-CD.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=CD] .slide-1,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-CD.jpg?&w=960");
+    background-image: url("./sheets/sheets-01-hero-CD.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=CD] .slide-1,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(1) {
-    background-image: url("./sheets/sheets-01-hero-CD.jpg?&w=1920");
+    background-image: url("./sheets/sheets-01-hero-CD.jpg");
   }
 }
 .product-gallery[data-color=CD] .slide-2.lazyloaded {
-  background-image: url("./sheets/sheets-duvet-CD.jpg?&w=840");
+  background-image: url("./sheets/sheets-duvet-CD.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=CD] .slide-2.lazyloaded,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-CD.jpg?&w=1200");
+    background-image: url("./sheets/sheets-duvet-CD.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=CD] .slide-2.lazyloaded,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-CD.jpg?&w=720");
+    background-image: url("./sheets/sheets-duvet-CD.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=CD] .slide-2.lazyloaded,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-CD.jpg?&w=1440");
+    background-image: url("./sheets/sheets-duvet-CD.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=CD] .slide-2.lazyloaded,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-CD.jpg?&w=800");
+    background-image: url("./sheets/sheets-duvet-CD.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=CD] .slide-2.lazyloaded,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-CD.jpg?&w=1600");
+    background-image: url("./sheets/sheets-duvet-CD.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=CD] .slide-2.lazyloaded,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-CD.jpg?&w=960");
+    background-image: url("./sheets/sheets-duvet-CD.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=CD] .slide-2.lazyloaded,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(2).lazyloaded {
-    background-image: url("./sheets/sheets-duvet-CD.jpg?&w=1920");
+    background-image: url("./sheets/sheets-duvet-CD.jpg");
   }
 }
 .product-gallery[data-color=CD] .slide-3.lazyloaded {
-  background-image: url("./sheets/sheets-corner-CD.jpg?&w=840");
+  background-image: url("./sheets/sheets-corner-CD.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=CD] .slide-3.lazyloaded,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-CD.jpg?&w=1200");
+    background-image: url("./sheets/sheets-corner-CD.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=CD] .slide-3.lazyloaded,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-CD.jpg?&w=720");
+    background-image: url("./sheets/sheets-corner-CD.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=CD] .slide-3.lazyloaded,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-CD.jpg?&w=1440");
+    background-image: url("./sheets/sheets-corner-CD.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=CD] .slide-3.lazyloaded,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-CD.jpg?&w=800");
+    background-image: url("./sheets/sheets-corner-CD.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=CD] .slide-3.lazyloaded,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-CD.jpg?&w=1600");
+    background-image: url("./sheets/sheets-corner-CD.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=CD] .slide-3.lazyloaded,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-CD.jpg?&w=960");
+    background-image: url("./sheets/sheets-corner-CD.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=CD] .slide-3.lazyloaded,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(3).lazyloaded {
-    background-image: url("./sheets/sheets-corner-CD.jpg?&w=1920");
+    background-image: url("./sheets/sheets-corner-CD.jpg");
   }
 }
 .product-gallery[data-color=CD] .slide-4.lazyloaded {
-  background-image: url("./sheets/sheets-detail-CD.jpg?&w=840");
+  background-image: url("./sheets/sheets-detail-CD.jpg");
 }
 @media (min-width: 992px) {
   .product-gallery[data-color=CD] .slide-4.lazyloaded,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-CD.jpg?&w=1200");
+    background-image: url("./sheets/sheets-detail-CD.jpg");
   }
 }
 @media (min-width: 1200px) {
   .product-gallery[data-color=CD] .slide-4.lazyloaded,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-CD.jpg?&w=720");
+    background-image: url("./sheets/sheets-detail-CD.jpg");
   }
 }
 @media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=CD] .slide-4.lazyloaded,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-CD.jpg?&w=1440");
+    background-image: url("./sheets/sheets-detail-CD.jpg");
   }
 }
 @media (min-width: 1440px) {
   .product-gallery[data-color=CD] .slide-4.lazyloaded,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-CD.jpg?&w=800");
+    background-image: url("./sheets/sheets-detail-CD.jpg");
   }
 }
 @media (min-width: 1440px) and (min-device-pixel-ratio: 1.25), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1440px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=CD] .slide-4.lazyloaded,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-CD.jpg?&w=1600");
+    background-image: url("./sheets/sheets-detail-CD.jpg");
   }
 }
 @media (min-width: 1600px) {
   .product-gallery[data-color=CD] .slide-4.lazyloaded,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-CD.jpg?&w=960");
+    background-image: url("./sheets/sheets-detail-CD.jpg");
   }
 }
 @media (min-width: 1600px) and (min-device-pixel-ratio: 1.25), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1600px) and (min-resolution: 192dpi), (min-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1600px) and (min-resolution: 1.25dppx) {
   .product-gallery[data-color=CD] .slide-4.lazyloaded,
   .product-gallery[data-color=CD] .swiper-pagination-bullet:nth-of-type(4).lazyloaded {
-    background-image: url("./sheets/sheets-detail-CD.jpg?&w=1920");
+    background-image: url("./sheets/sheets-detail-CD.jpg");
   }
 }
 .product-gallery .swiper-pagination-bullet:nth-of-type(5)::before {
@@ -1294,7 +1294,7 @@ video:focus {
 }
 @media (min-width: 992px) {
   .product-gallery .swiper-pagination-bullet:nth-of-type(5).lazyloaded {
-    background-image: url("./sheets/photo-bedroom-windowpane.jpg?&w=120");
+    background-image: url("./sheets/photo-bedroom-windowpane.jpg?w=120");
   }
 }
 

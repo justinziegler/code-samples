@@ -1,4 +1,5 @@
 /* When editing, use the source file for this page in client/resources/sass */
+@import url("https://fonts.googleapis.com/css2?family=Boogaloo&family=Cabin+Condensed:wght@400;500&display=swap");
 @media (max-width: 767px) {
   h1 {
     font-size: 3.4330985915vw;

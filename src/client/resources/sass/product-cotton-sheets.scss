@@ -10,7 +10,6 @@
 @import 'partials/layout';
 @import 'partials/svg';
 
-// $imgixUrl: 'https://lull-media.imgix.net/sheets';
 $imgixCrop: 'fit=crop&crop=focalpoint';
 
 video {
@@ -30,127 +29,127 @@ video {
   }
   &[data-color='BW'] {
     .slide-1 {
-      background-image: url('./sheets/sheets-01-hero-BW.jpg?&w=840');
+      background-image: url('./sheets/sheets-01-hero-BW.jpg');
     }
     .slide-1,
     .swiper-pagination-bullet:nth-of-type(1) {
       @include mq(md) {
-        background-image: url('./sheets/sheets-01-hero-BW.jpg?&w=1200');
+        background-image: url('./sheets/sheets-01-hero-BW.jpg');
       }
       @include mq(lg) {
-        background-image: url('./sheets/sheets-01-hero-BW.jpg?&w=720');
+        background-image: url('./sheets/sheets-01-hero-BW.jpg');
       }
       @media (min-width: 1440px) {
-        background-image: url('./sheets/sheets-01-hero-BW.jpg?&w=800');
+        background-image: url('./sheets/sheets-01-hero-BW.jpg');
       }
       @media (min-width: 1600px) {
-        background-image: url('./sheets/sheets-01-hero-BW.jpg?&w=960');
+        background-image: url('./sheets/sheets-01-hero-BW.jpg');
       }
       @include retina {
         @include mq(lg) {
-          background-image: url('./sheets/sheets-01-hero-BW.jpg?&w=1440');
+          background-image: url('./sheets/sheets-01-hero-BW.jpg');
         }
         @media (min-width: 1440px) {
-          background-image: url('./sheets/sheets-01-hero-BW.jpg?&w=1600');
+          background-image: url('./sheets/sheets-01-hero-BW.jpg');
         }
         @media (min-width: 1600px) {
-          background-image: url('./sheets/sheets-01-hero-BW.jpg?&w=1920');
+          background-image: url('./sheets/sheets-01-hero-BW.jpg');
         }
       }
     }
     .slide-2 {
       &.lazyloaded {
-        background-image: url('./sheets/sheets-duvet-BW.jpg?&w=840');
+        background-image: url('./sheets/sheets-duvet-BW.jpg');
       }
     }
     .slide-2,
     .swiper-pagination-bullet:nth-of-type(2) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('./sheets/sheets-duvet-BW.jpg?&w=1200');
+          background-image: url('./sheets/sheets-duvet-BW.jpg');
         }
         @include mq(lg) {
-          background-image: url('./sheets/sheets-duvet-BW.jpg?&w=720');
+          background-image: url('./sheets/sheets-duvet-BW.jpg');
         }
         @media (min-width: 1440px) {
-          background-image: url('./sheets/sheets-duvet-BW.jpg?&w=800');
+          background-image: url('./sheets/sheets-duvet-BW.jpg');
         }
         @media (min-width: 1600px) {
-          background-image: url('./sheets/sheets-duvet-BW.jpg?&w=960');
+          background-image: url('./sheets/sheets-duvet-BW.jpg');
         }
         @include retina {
           @include mq(lg) {
-            background-image: url('./sheets/sheets-duvet-BW.jpg?&w=1440');
+            background-image: url('./sheets/sheets-duvet-BW.jpg');
           }
           @media (min-width: 1440px) {
-            background-image: url('./sheets/sheets-duvet-BW.jpg?&w=1600');
+            background-image: url('./sheets/sheets-duvet-BW.jpg');
           }
           @media (min-width: 1600px) {
-            background-image: url('./sheets/sheets-duvet-BW.jpg?&w=1920');
+            background-image: url('./sheets/sheets-duvet-BW.jpg');
           }
         }
       }
     }
     .slide-3 {
       &.lazyloaded {
-        background-image: url('./sheets/sheets-corner-BW.jpg?&w=840');
+        background-image: url('./sheets/sheets-corner-BW.jpg');
       }
     }
     .slide-3,
     .swiper-pagination-bullet:nth-of-type(3) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('./sheets/sheets-corner-BW.jpg?&w=1200');
+          background-image: url('./sheets/sheets-corner-BW.jpg');
         }
         @include mq(lg) {
-          background-image: url('./sheets/sheets-corner-BW.jpg?&w=720');
+          background-image: url('./sheets/sheets-corner-BW.jpg');
         }
         @media (min-width: 1440px) {
-          background-image: url('./sheets/sheets-corner-BW.jpg?&w=800');
+          background-image: url('./sheets/sheets-corner-BW.jpg');
         }
         @media (min-width: 1600px) {
-          background-image: url('./sheets/sheets-corner-BW.jpg?&w=960');
+          background-image: url('./sheets/sheets-corner-BW.jpg');
         }
         @include retina {
           @include mq(lg) {
-            background-image: url('./sheets/sheets-corner-BW.jpg?&w=1440');
+            background-image: url('./sheets/sheets-corner-BW.jpg');
           }
           @media (min-width: 1440px) {
-            background-image: url('./sheets/sheets-corner-BW.jpg?&w=1600');
+            background-image: url('./sheets/sheets-corner-BW.jpg');
           }
           @media (min-width: 1600px) {
-            background-image: url('./sheets/sheets-corner-BW.jpg?&w=1920');
+            background-image: url('./sheets/sheets-corner-BW.jpg');
           }
         }
       }
     }
     .slide-4 {
       &.lazyloaded {
-        background-image: url('./sheets/sheets-detail-BW.jpg?&w=840');
+        background-image: url('./sheets/sheets-detail-BW.jpg');
       }
     }
     .slide-4,
     .swiper-pagination-bullet:nth-of-type(4) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('./sheets/sheets-detail-BW.jpg?&w=1200');
+          background-image: url('./sheets/sheets-detail-BW.jpg');
         }
         @include mq(lg) {
-          background-image: url('./sheets/sheets-detail-BW.jpg?&w=720');
+          background-image: url('./sheets/sheets-detail-BW.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-detail-BW.jpg?&w=1440');
+            background-image: url('./sheets/sheets-detail-BW.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('./sheets/sheets-detail-BW.jpg?&w=800');
+          background-image: url('./sheets/sheets-detail-BW.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-detail-BW.jpg?&w=1600');
+            background-image: url('./sheets/sheets-detail-BW.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('./sheets/sheets-detail-BW.jpg?&w=960');
+          background-image: url('./sheets/sheets-detail-BW.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-detail-BW.jpg?&w=1920');
+            background-image: url('./sheets/sheets-detail-BW.jpg');
           }
         }
       }
@@ -158,121 +157,121 @@ video {
   }
   &[data-color='QG'] {
     .slide-1 {
-      background-image: url('./sheets/sheets-01-hero-QG.jpg?&w=840');
+      background-image: url('./sheets/sheets-01-hero-QG.jpg');
     }
     .slide-1,
     .swiper-pagination-bullet:nth-of-type(1) {
       @include mq(md) {
-        background-image: url('./sheets/sheets-01-hero-QG.jpg?&w=1200');
+        background-image: url('./sheets/sheets-01-hero-QG.jpg');
       }
       @include mq(lg) {
-        background-image: url('./sheets/sheets-01-hero-QG.jpg?&w=720');
+        background-image: url('./sheets/sheets-01-hero-QG.jpg');
         @include retina {
-          background-image: url('./sheets/sheets-01-hero-QG.jpg?&w=1440');
+          background-image: url('./sheets/sheets-01-hero-QG.jpg');
         }
       }
       @media (min-width: 1440px) {
-        background-image: url('./sheets/sheets-01-hero-QG.jpg?&w=800');
+        background-image: url('./sheets/sheets-01-hero-QG.jpg');
         @include retina {
-          background-image: url('./sheets/sheets-01-hero-QG.jpg?&w=1600');
+          background-image: url('./sheets/sheets-01-hero-QG.jpg');
         }
       }
       @media (min-width: 1600px) {
-        background-image: url('./sheets/sheets-01-hero-QG.jpg?&w=960');
+        background-image: url('./sheets/sheets-01-hero-QG.jpg');
         @include retina {
-          background-image: url('./sheets/sheets-01-hero-QG.jpg?&w=1920');
+          background-image: url('./sheets/sheets-01-hero-QG.jpg');
         }
       }
     }
     .slide-2 {
       &.lazyloaded {
-        background-image: url('./sheets/sheets-duvet-QG.jpg?&w=840');
+        background-image: url('./sheets/sheets-duvet-QG.jpg');
       }
     }
     .slide-2,
     .swiper-pagination-bullet:nth-of-type(2) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('./sheets/sheets-duvet-QG.jpg?&w=1200');
+          background-image: url('./sheets/sheets-duvet-QG.jpg');
         }
         @include mq(lg) {
-          background-image: url('./sheets/sheets-duvet-QG.jpg?&w=720');
+          background-image: url('./sheets/sheets-duvet-QG.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-duvet-QG.jpg?&w=1440');
+            background-image: url('./sheets/sheets-duvet-QG.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('./sheets/sheets-duvet-QG.jpg?&w=800');
+          background-image: url('./sheets/sheets-duvet-QG.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-duvet-QG.jpg?&w=1600');
+            background-image: url('./sheets/sheets-duvet-QG.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('./sheets/sheets-duvet-QG.jpg?&w=960');
+          background-image: url('./sheets/sheets-duvet-QG.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-duvet-QG.jpg?&w=1920');
+            background-image: url('./sheets/sheets-duvet-QG.jpg');
           }
         }
       }
     }
     .slide-3 {
       &.lazyloaded {
-        background-image: url('./sheets/sheets-corner-QG.jpg?&w=840');
+        background-image: url('./sheets/sheets-corner-QG.jpg');
       }
     }
     .slide-3,
     .swiper-pagination-bullet:nth-of-type(3) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('./sheets/sheets-corner-QG.jpg?&w=1200');
+          background-image: url('./sheets/sheets-corner-QG.jpg');
         }
         @include mq(lg) {
-          background-image: url('./sheets/sheets-corner-QG.jpg?&w=720');
+          background-image: url('./sheets/sheets-corner-QG.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-corner-QG.jpg?&w=1440');
+            background-image: url('./sheets/sheets-corner-QG.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('./sheets/sheets-corner-QG.jpg?&w=800');
+          background-image: url('./sheets/sheets-corner-QG.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-corner-QG.jpg?&w=1600');
+            background-image: url('./sheets/sheets-corner-QG.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('./sheets/sheets-corner-QG.jpg?&w=960');
+          background-image: url('./sheets/sheets-corner-QG.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-corner-QG.jpg?&w=1920');
+            background-image: url('./sheets/sheets-corner-QG.jpg');
           }
         }
       }
     }
     .slide-4 {
       &.lazyloaded {
-        background-image: url('./sheets/sheets-detail-QG.jpg?&w=840');
+        background-image: url('./sheets/sheets-detail-QG.jpg');
       }
     }
     .slide-4,
     .swiper-pagination-bullet:nth-of-type(4) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('./sheets/sheets-detail-QG.jpg?&w=1200');
+          background-image: url('./sheets/sheets-detail-QG.jpg');
         }
         @include mq(lg) {
-          background-image: url('./sheets/sheets-detail-QG.jpg?&w=720');
+          background-image: url('./sheets/sheets-detail-QG.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-detail-QG.jpg?&w=1440');
+            background-image: url('./sheets/sheets-detail-QG.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('./sheets/sheets-detail-QG.jpg?&w=800');
+          background-image: url('./sheets/sheets-detail-QG.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-detail-QG.jpg?&w=1600');
+            background-image: url('./sheets/sheets-detail-QG.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('./sheets/sheets-detail-QG.jpg?&w=960');
+          background-image: url('./sheets/sheets-detail-QG.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-detail-QG.jpg?&w=1920');
+            background-image: url('./sheets/sheets-detail-QG.jpg');
           }
         }
       }
@@ -280,121 +279,121 @@ video {
   }
   &[data-color='GG'] {
     .slide-1 {
-      background-image: url('./sheets/sheets-01-hero-GG.jpg?&w=840');
+      background-image: url('./sheets/sheets-01-hero-GG.jpg');
     }
     .slide-1,
     .swiper-pagination-bullet:nth-of-type(1) {
       @include mq(md) {
-        background-image: url('./sheets/sheets-01-hero-GG.jpg?&w=1200');
+        background-image: url('./sheets/sheets-01-hero-GG.jpg');
       }
       @include mq(lg) {
-        background-image: url('./sheets/sheets-01-hero-GG.jpg?&w=720');
+        background-image: url('./sheets/sheets-01-hero-GG.jpg');
         @include retina {
-          background-image: url('./sheets/sheets-01-hero-GG.jpg?&w=1440');
+          background-image: url('./sheets/sheets-01-hero-GG.jpg');
         }
       }
       @media (min-width: 1440px) {
-        background-image: url('./sheets/sheets-01-hero-GG.jpg?&w=800');
+        background-image: url('./sheets/sheets-01-hero-GG.jpg');
         @include retina {
-          background-image: url('./sheets/sheets-01-hero-GG.jpg?&w=1600');
+          background-image: url('./sheets/sheets-01-hero-GG.jpg');
         }
       }
       @media (min-width: 1600px) {
-        background-image: url('./sheets/sheets-01-hero-GG.jpg?&w=960');
+        background-image: url('./sheets/sheets-01-hero-GG.jpg');
         @include retina {
-          background-image: url('./sheets/sheets-01-hero-GG.jpg?&w=1920');
+          background-image: url('./sheets/sheets-01-hero-GG.jpg');
         }
       }
     }
     .slide-2 {
       &.lazyloaded {
-        background-image: url('./sheets/sheets-duvet-GG.jpg?&w=840');
+        background-image: url('./sheets/sheets-duvet-GG.jpg');
       }
     }
     .slide-2,
     .swiper-pagination-bullet:nth-of-type(2) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('./sheets/sheets-duvet-GG.jpg?&w=1200');
+          background-image: url('./sheets/sheets-duvet-GG.jpg');
         }
         @include mq(lg) {
-          background-image: url('./sheets/sheets-duvet-GG.jpg?&w=720');
+          background-image: url('./sheets/sheets-duvet-GG.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-duvet-GG.jpg?&w=1440');
+            background-image: url('./sheets/sheets-duvet-GG.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('./sheets/sheets-duvet-GG.jpg?&w=800');
+          background-image: url('./sheets/sheets-duvet-GG.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-duvet-GG.jpg?&w=1600');
+            background-image: url('./sheets/sheets-duvet-GG.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('./sheets/sheets-duvet-GG.jpg?&w=960');
+          background-image: url('./sheets/sheets-duvet-GG.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-duvet-GG.jpg?&w=1920');
+            background-image: url('./sheets/sheets-duvet-GG.jpg');
           }
         }
       }
     }
     .slide-3 {
       &.lazyloaded {
-        background-image: url('./sheets/sheets-corner-GG.jpg?&w=840');
+        background-image: url('./sheets/sheets-corner-GG.jpg');
       }
     }
     .slide-3,
     .swiper-pagination-bullet:nth-of-type(3) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('./sheets/sheets-corner-GG.jpg?&w=1200');
+          background-image: url('./sheets/sheets-corner-GG.jpg');
         }
         @include mq(lg) {
-          background-image: url('./sheets/sheets-corner-GG.jpg?&w=720');
+          background-image: url('./sheets/sheets-corner-GG.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-corner-GG.jpg?&w=1440');
+            background-image: url('./sheets/sheets-corner-GG.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('./sheets/sheets-corner-GG.jpg?&w=800');
+          background-image: url('./sheets/sheets-corner-GG.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-corner-GG.jpg?&w=1600');
+            background-image: url('./sheets/sheets-corner-GG.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('./sheets/sheets-corner-GG.jpg?&w=960');
+          background-image: url('./sheets/sheets-corner-GG.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-corner-GG.jpg?&w=1920');
+            background-image: url('./sheets/sheets-corner-GG.jpg');
           }
         }
       }
     }
     .slide-4 {
       &.lazyloaded {
-        background-image: url('./sheets/sheets-detail-GG.jpg?&w=840');
+        background-image: url('./sheets/sheets-detail-GG.jpg');
       }
     }
     .slide-4,
     .swiper-pagination-bullet:nth-of-type(4) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('./sheets/sheets-detail-GG.jpg?&w=1200');
+          background-image: url('./sheets/sheets-detail-GG.jpg');
         }
         @include mq(lg) {
-          background-image: url('./sheets/sheets-detail-GG.jpg?&w=720');
+          background-image: url('./sheets/sheets-detail-GG.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-detail-GG.jpg?&w=1440');
+            background-image: url('./sheets/sheets-detail-GG.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('./sheets/sheets-detail-GG.jpg?&w=800');
+          background-image: url('./sheets/sheets-detail-GG.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-detail-GG.jpg?&w=1600');
+            background-image: url('./sheets/sheets-detail-GG.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('./sheets/sheets-detail-GG.jpg?&w=960');
+          background-image: url('./sheets/sheets-detail-GG.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-detail-GG.jpg?&w=1920');
+            background-image: url('./sheets/sheets-detail-GG.jpg');
           }
         }
       }
@@ -402,121 +401,121 @@ video {
   }
   &[data-color='MB'] {
     .slide-1 {
-      background-image: url('./sheets/sheets-01-hero-MB.jpg?&w=840');
+      background-image: url('./sheets/sheets-01-hero-MB.jpg');
     }
     .slide-1,
     .swiper-pagination-bullet:nth-of-type(1) {
       @include mq(md) {
-        background-image: url('./sheets/sheets-01-hero-MB.jpg?&w=1200');
+        background-image: url('./sheets/sheets-01-hero-MB.jpg');
       }
       @include mq(lg) {
-        background-image: url('./sheets/sheets-01-hero-MB.jpg?&w=720');
+        background-image: url('./sheets/sheets-01-hero-MB.jpg');
         @include retina {
-          background-image: url('./sheets/sheets-01-hero-MB.jpg?&w=1440');
+          background-image: url('./sheets/sheets-01-hero-MB.jpg');
         }
       }
       @media (min-width: 1440px) {
-        background-image: url('./sheets/sheets-01-hero-MB.jpg?&w=800');
+        background-image: url('./sheets/sheets-01-hero-MB.jpg');
         @include retina {
-          background-image: url('./sheets/sheets-01-hero-MB.jpg?&w=1600');
+          background-image: url('./sheets/sheets-01-hero-MB.jpg');
         }
       }
       @media (min-width: 1600px) {
-        background-image: url('./sheets/sheets-01-hero-MB.jpg?&w=960');
+        background-image: url('./sheets/sheets-01-hero-MB.jpg');
         @include retina {
-          background-image: url('./sheets/sheets-01-hero-MB.jpg?&w=1920');
+          background-image: url('./sheets/sheets-01-hero-MB.jpg');
         }
       }
     }
     .slide-2 {
       &.lazyloaded {
-        background-image: url('./sheets/sheets-duvet-MB.jpg?&w=840');
+        background-image: url('./sheets/sheets-duvet-MB.jpg');
       }
     }
     .slide-2,
     .swiper-pagination-bullet:nth-of-type(2) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('./sheets/sheets-duvet-MB.jpg?&w=1200');
+          background-image: url('./sheets/sheets-duvet-MB.jpg');
         }
         @include mq(lg) {
-          background-image: url('./sheets/sheets-duvet-MB.jpg?&w=720');
+          background-image: url('./sheets/sheets-duvet-MB.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-duvet-MB.jpg?&w=1440');
+            background-image: url('./sheets/sheets-duvet-MB.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('./sheets/sheets-duvet-MB.jpg?&w=800');
+          background-image: url('./sheets/sheets-duvet-MB.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-duvet-MB.jpg?&w=1600');
+            background-image: url('./sheets/sheets-duvet-MB.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('./sheets/sheets-duvet-MB.jpg?&w=960');
+          background-image: url('./sheets/sheets-duvet-MB.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-duvet-MB.jpg?&w=1920');
+            background-image: url('./sheets/sheets-duvet-MB.jpg');
           }
         }
       }
     }
     .slide-3 {
       &.lazyloaded {
-        background-image: url('./sheets/sheets-corner-MB.jpg?&w=840');
+        background-image: url('./sheets/sheets-corner-MB.jpg');
       }
     }
     .slide-3,
     .swiper-pagination-bullet:nth-of-type(3) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('./sheets/sheets-corner-MB.jpg?&w=1200');
+          background-image: url('./sheets/sheets-corner-MB.jpg');
         }
         @include mq(lg) {
-          background-image: url('./sheets/sheets-corner-MB.jpg?&w=720');
+          background-image: url('./sheets/sheets-corner-MB.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-corner-MB.jpg?&w=1440');
+            background-image: url('./sheets/sheets-corner-MB.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('./sheets/sheets-corner-MB.jpg?&w=800');
+          background-image: url('./sheets/sheets-corner-MB.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-corner-MB.jpg?&w=1600');
+            background-image: url('./sheets/sheets-corner-MB.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('./sheets/sheets-corner-MB.jpg?&w=960');
+          background-image: url('./sheets/sheets-corner-MB.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-corner-MB.jpg?&w=1920');
+            background-image: url('./sheets/sheets-corner-MB.jpg');
           }
         }
       }
     }
     .slide-4 {
       &.lazyloaded {
-        background-image: url('./sheets/sheets-detail-MB.jpg?&w=840');
+        background-image: url('./sheets/sheets-detail-MB.jpg');
       }
     }
     .slide-4,
     .swiper-pagination-bullet:nth-of-type(4) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('./sheets/sheets-detail-MB.jpg?&w=1200');
+          background-image: url('./sheets/sheets-detail-MB.jpg');
         }
         @include mq(lg) {
-          background-image: url('./sheets/sheets-detail-MB.jpg?&w=720');
+          background-image: url('./sheets/sheets-detail-MB.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-detail-MB.jpg?&w=1440');
+            background-image: url('./sheets/sheets-detail-MB.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('./sheets/sheets-detail-MB.jpg?&w=800');
+          background-image: url('./sheets/sheets-detail-MB.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-detail-MB.jpg?&w=1600');
+            background-image: url('./sheets/sheets-detail-MB.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('./sheets/sheets-detail-MB.jpg?&w=960');
+          background-image: url('./sheets/sheets-detail-MB.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-detail-MB.jpg?&w=1920');
+            background-image: url('./sheets/sheets-detail-MB.jpg');
           }
         }
       }
@@ -524,121 +523,121 @@ video {
   }
   &[data-color='PA'] {
     .slide-1 {
-      background-image: url('./sheets/sheets-01-hero-PA.jpg?&w=840');
+      background-image: url('./sheets/sheets-01-hero-PA.jpg');
     }
     .slide-1,
     .swiper-pagination-bullet:nth-of-type(1) {
       @include mq(md) {
-        background-image: url('./sheets/sheets-01-hero-PA.jpg?&w=1200');
+        background-image: url('./sheets/sheets-01-hero-PA.jpg');
       }
       @include mq(lg) {
-        background-image: url('./sheets/sheets-01-hero-PA.jpg?&w=720');
+        background-image: url('./sheets/sheets-01-hero-PA.jpg');
         @include retina {
-          background-image: url('./sheets/sheets-01-hero-PA.jpg?&w=1440');
+          background-image: url('./sheets/sheets-01-hero-PA.jpg');
         }
       }
       @media (min-width: 1440px) {
-        background-image: url('./sheets/sheets-01-hero-PA.jpg?&w=800');
+        background-image: url('./sheets/sheets-01-hero-PA.jpg');
         @include retina {
-          background-image: url('./sheets/sheets-01-hero-PA.jpg?&w=1600');
+          background-image: url('./sheets/sheets-01-hero-PA.jpg');
         }
       }
       @media (min-width: 1600px) {
-        background-image: url('./sheets/sheets-01-hero-PA.jpg?&w=960');
+        background-image: url('./sheets/sheets-01-hero-PA.jpg');
         @include retina {
-          background-image: url('./sheets/sheets-01-hero-PA.jpg?&w=1920');
+          background-image: url('./sheets/sheets-01-hero-PA.jpg');
         }
       }
     }
     .slide-2 {
       &.lazyloaded {
-        background-image: url('./sheets/sheets-duvet-PA.jpg?&w=840');
+        background-image: url('./sheets/sheets-duvet-PA.jpg');
       }
     }
     .slide-2,
     .swiper-pagination-bullet:nth-of-type(2) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('./sheets/sheets-duvet-PA.jpg?&w=1200');
+          background-image: url('./sheets/sheets-duvet-PA.jpg');
         }
         @include mq(lg) {
-          background-image: url('./sheets/sheets-duvet-PA.jpg?&w=720');
+          background-image: url('./sheets/sheets-duvet-PA.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-duvet-PA.jpg?&w=1440');
+            background-image: url('./sheets/sheets-duvet-PA.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('./sheets/sheets-duvet-PA.jpg?&w=800');
+          background-image: url('./sheets/sheets-duvet-PA.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-duvet-PA.jpg?&w=1600');
+            background-image: url('./sheets/sheets-duvet-PA.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('./sheets/sheets-duvet-PA.jpg?&w=960');
+          background-image: url('./sheets/sheets-duvet-PA.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-duvet-PA.jpg?&w=1920');
+            background-image: url('./sheets/sheets-duvet-PA.jpg');
           }
         }
       }
     }
     .slide-3 {
       &.lazyloaded {
-        background-image: url('./sheets/sheets-corner-PA.jpg?&w=840');
+        background-image: url('./sheets/sheets-corner-PA.jpg');
       }
     }
     .slide-3,
     .swiper-pagination-bullet:nth-of-type(3) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('./sheets/sheets-corner-PA.jpg?&w=1200');
+          background-image: url('./sheets/sheets-corner-PA.jpg');
         }
         @include mq(lg) {
-          background-image: url('./sheets/sheets-corner-PA.jpg?&w=720');
+          background-image: url('./sheets/sheets-corner-PA.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-corner-PA.jpg?&w=1440');
+            background-image: url('./sheets/sheets-corner-PA.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('./sheets/sheets-corner-PA.jpg?&w=800');
+          background-image: url('./sheets/sheets-corner-PA.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-corner-PA.jpg?&w=1600');
+            background-image: url('./sheets/sheets-corner-PA.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('./sheets/sheets-corner-PA.jpg?&w=960');
+          background-image: url('./sheets/sheets-corner-PA.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-corner-PA.jpg?&w=1920');
+            background-image: url('./sheets/sheets-corner-PA.jpg');
           }
         }
       }
     }
     .slide-4 {
       &.lazyloaded {
-        background-image: url('./sheets/sheets-detail-PA.jpg?&w=840');
+        background-image: url('./sheets/sheets-detail-PA.jpg');
       }
     }
     .slide-4,
     .swiper-pagination-bullet:nth-of-type(4) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('./sheets/sheets-detail-PA.jpg?&w=1200');
+          background-image: url('./sheets/sheets-detail-PA.jpg');
         }
         @include mq(lg) {
-          background-image: url('./sheets/sheets-detail-PA.jpg?&w=720');
+          background-image: url('./sheets/sheets-detail-PA.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-detail-PA.jpg?&w=1440');
+            background-image: url('./sheets/sheets-detail-PA.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('./sheets/sheets-detail-PA.jpg?&w=800');
+          background-image: url('./sheets/sheets-detail-PA.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-detail-PA.jpg?&w=1600');
+            background-image: url('./sheets/sheets-detail-PA.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('./sheets/sheets-detail-PA.jpg?&w=960');
+          background-image: url('./sheets/sheets-detail-PA.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-detail-PA.jpg?&w=1920');
+            background-image: url('./sheets/sheets-detail-PA.jpg');
           }
         }
       }
@@ -646,121 +645,121 @@ video {
   }
   &[data-color='WP'] {
     .slide-1 {
-      background-image: url('./sheets/sheets-01-hero-WP.jpg?&w=840');
+      background-image: url('./sheets/sheets-01-hero-WP.jpg');
     }
     .slide-1,
     .swiper-pagination-bullet:nth-of-type(1) {
       @include mq(md) {
-        background-image: url('./sheets/sheets-01-hero-WP.jpg?&w=1200');
+        background-image: url('./sheets/sheets-01-hero-WP.jpg');
       }
       @include mq(lg) {
-        background-image: url('./sheets/sheets-01-hero-WP.jpg?&w=720');
+        background-image: url('./sheets/sheets-01-hero-WP.jpg');
         @include retina {
-          background-image: url('./sheets/sheets-01-hero-WP.jpg?&w=1440');
+          background-image: url('./sheets/sheets-01-hero-WP.jpg');
         }
       }
       @media (min-width: 1440px) {
-        background-image: url('./sheets/sheets-01-hero-WP.jpg?&w=800');
+        background-image: url('./sheets/sheets-01-hero-WP.jpg');
         @include retina {
-          background-image: url('./sheets/sheets-01-hero-WP.jpg?&w=1600');
+          background-image: url('./sheets/sheets-01-hero-WP.jpg');
         }
       }
       @media (min-width: 1600px) {
-        background-image: url('./sheets/sheets-01-hero-WP.jpg?&w=960');
+        background-image: url('./sheets/sheets-01-hero-WP.jpg');
         @include retina {
-          background-image: url('./sheets/sheets-01-hero-WP.jpg?&w=1920');
+          background-image: url('./sheets/sheets-01-hero-WP.jpg');
         }
       }
     }
     .slide-2 {
       &.lazyloaded {
-        background-image: url('./sheets/sheets-duvet-WP.jpg?&w=840');
+        background-image: url('./sheets/sheets-duvet-WP.jpg');
       }
     }
     .slide-2,
     .swiper-pagination-bullet:nth-of-type(2) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('./sheets/sheets-duvet-WP.jpg?&w=1200');
+          background-image: url('./sheets/sheets-duvet-WP.jpg');
         }
         @include mq(lg) {
-          background-image: url('./sheets/sheets-duvet-WP.jpg?&w=720');
+          background-image: url('./sheets/sheets-duvet-WP.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-duvet-WP.jpg?&w=1440');
+            background-image: url('./sheets/sheets-duvet-WP.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('./sheets/sheets-duvet-WP.jpg?&w=800');
+          background-image: url('./sheets/sheets-duvet-WP.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-duvet-WP.jpg?&w=1600');
+            background-image: url('./sheets/sheets-duvet-WP.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('./sheets/sheets-duvet-WP.jpg?&w=960');
+          background-image: url('./sheets/sheets-duvet-WP.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-duvet-WP.jpg?&w=1920');
+            background-image: url('./sheets/sheets-duvet-WP.jpg');
           }
         }
       }
     }
     .slide-3 {
       &.lazyloaded {
-        background-image: url('./sheets/sheets-corner-WP.jpg?&w=840');
+        background-image: url('./sheets/sheets-corner-WP.jpg');
       }
     }
     .slide-3,
     .swiper-pagination-bullet:nth-of-type(3) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('./sheets/sheets-corner-WP.jpg?&w=1200');
+          background-image: url('./sheets/sheets-corner-WP.jpg');
         }
         @include mq(lg) {
-          background-image: url('./sheets/sheets-corner-WP.jpg?&w=720');
+          background-image: url('./sheets/sheets-corner-WP.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-corner-WP.jpg?&w=1440');
+            background-image: url('./sheets/sheets-corner-WP.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('./sheets/sheets-corner-WP.jpg?&w=800');
+          background-image: url('./sheets/sheets-corner-WP.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-corner-WP.jpg?&w=1600');
+            background-image: url('./sheets/sheets-corner-WP.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('./sheets/sheets-corner-WP.jpg?&w=960');
+          background-image: url('./sheets/sheets-corner-WP.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-corner-WP.jpg?&w=1920');
+            background-image: url('./sheets/sheets-corner-WP.jpg');
           }
         }
       }
     }
     .slide-4 {
       &.lazyloaded {
-        background-image: url('./sheets/sheets-detail-WP.jpg?&w=840');
+        background-image: url('./sheets/sheets-detail-WP.jpg');
       }
     }
     .slide-4,
     .swiper-pagination-bullet:nth-of-type(4) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('./sheets/sheets-detail-WP.jpg?&w=1200');
+          background-image: url('./sheets/sheets-detail-WP.jpg');
         }
         @include mq(lg) {
-          background-image: url('./sheets/sheets-detail-WP.jpg?&w=720');
+          background-image: url('./sheets/sheets-detail-WP.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-detail-WP.jpg?&w=1440');
+            background-image: url('./sheets/sheets-detail-WP.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('./sheets/sheets-detail-WP.jpg?&w=800');
+          background-image: url('./sheets/sheets-detail-WP.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-detail-WP.jpg?&w=1600');
+            background-image: url('./sheets/sheets-detail-WP.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('./sheets/sheets-detail-WP.jpg?&w=960');
+          background-image: url('./sheets/sheets-detail-WP.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-detail-WP.jpg?&w=1920');
+            background-image: url('./sheets/sheets-detail-WP.jpg');
           }
         }
       }
@@ -768,121 +767,121 @@ video {
   }
   &[data-color='CD'] {
     .slide-1 {
-      background-image: url('./sheets/sheets-01-hero-CD.jpg?&w=840');
+      background-image: url('./sheets/sheets-01-hero-CD.jpg');
     }
     .slide-1,
     .swiper-pagination-bullet:nth-of-type(1) {
       @include mq(md) {
-        background-image: url('./sheets/sheets-01-hero-CD.jpg?&w=1200');
+        background-image: url('./sheets/sheets-01-hero-CD.jpg');
       }
       @include mq(lg) {
-        background-image: url('./sheets/sheets-01-hero-CD.jpg?&w=720');
+        background-image: url('./sheets/sheets-01-hero-CD.jpg');
         @include retina {
-          background-image: url('./sheets/sheets-01-hero-CD.jpg?&w=1440');
+          background-image: url('./sheets/sheets-01-hero-CD.jpg');
         }
       }
       @media (min-width: 1440px) {
-        background-image: url('./sheets/sheets-01-hero-CD.jpg?&w=800');
+        background-image: url('./sheets/sheets-01-hero-CD.jpg');
         @include retina {
-          background-image: url('./sheets/sheets-01-hero-CD.jpg?&w=1600');
+          background-image: url('./sheets/sheets-01-hero-CD.jpg');
         }
       }
       @media (min-width: 1600px) {
-        background-image: url('./sheets/sheets-01-hero-CD.jpg?&w=960');
+        background-image: url('./sheets/sheets-01-hero-CD.jpg');
         @include retina {
-          background-image: url('./sheets/sheets-01-hero-CD.jpg?&w=1920');
+          background-image: url('./sheets/sheets-01-hero-CD.jpg');
         }
       }
     }
     .slide-2 {
       &.lazyloaded {
-        background-image: url('./sheets/sheets-duvet-CD.jpg?&w=840');
+        background-image: url('./sheets/sheets-duvet-CD.jpg');
       }
     }
     .slide-2,
     .swiper-pagination-bullet:nth-of-type(2) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('./sheets/sheets-duvet-CD.jpg?&w=1200');
+          background-image: url('./sheets/sheets-duvet-CD.jpg');
         }
         @include mq(lg) {
-          background-image: url('./sheets/sheets-duvet-CD.jpg?&w=720');
+          background-image: url('./sheets/sheets-duvet-CD.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-duvet-CD.jpg?&w=1440');
+            background-image: url('./sheets/sheets-duvet-CD.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('./sheets/sheets-duvet-CD.jpg?&w=800');
+          background-image: url('./sheets/sheets-duvet-CD.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-duvet-CD.jpg?&w=1600');
+            background-image: url('./sheets/sheets-duvet-CD.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('./sheets/sheets-duvet-CD.jpg?&w=960');
+          background-image: url('./sheets/sheets-duvet-CD.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-duvet-CD.jpg?&w=1920');
+            background-image: url('./sheets/sheets-duvet-CD.jpg');
           }
         }
       }
     }
     .slide-3 {
       &.lazyloaded {
-        background-image: url('./sheets/sheets-corner-CD.jpg?&w=840');
+        background-image: url('./sheets/sheets-corner-CD.jpg');
       }
     }
     .slide-3,
     .swiper-pagination-bullet:nth-of-type(3) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('./sheets/sheets-corner-CD.jpg?&w=1200');
+          background-image: url('./sheets/sheets-corner-CD.jpg');
         }
         @include mq(lg) {
-          background-image: url('./sheets/sheets-corner-CD.jpg?&w=720');
+          background-image: url('./sheets/sheets-corner-CD.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-corner-CD.jpg?&w=1440');
+            background-image: url('./sheets/sheets-corner-CD.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('./sheets/sheets-corner-CD.jpg?&w=800');
+          background-image: url('./sheets/sheets-corner-CD.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-corner-CD.jpg?&w=1600');
+            background-image: url('./sheets/sheets-corner-CD.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('./sheets/sheets-corner-CD.jpg?&w=960');
+          background-image: url('./sheets/sheets-corner-CD.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-corner-CD.jpg?&w=1920');
+            background-image: url('./sheets/sheets-corner-CD.jpg');
           }
         }
       }
     }
     .slide-4 {
       &.lazyloaded {
-        background-image: url('./sheets/sheets-detail-CD.jpg?&w=840');
+        background-image: url('./sheets/sheets-detail-CD.jpg');
       }
     }
     .slide-4,
     .swiper-pagination-bullet:nth-of-type(4) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('./sheets/sheets-detail-CD.jpg?&w=1200');
+          background-image: url('./sheets/sheets-detail-CD.jpg');
         }
         @include mq(lg) {
-          background-image: url('./sheets/sheets-detail-CD.jpg?&w=720');
+          background-image: url('./sheets/sheets-detail-CD.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-detail-CD.jpg?&w=1440');
+            background-image: url('./sheets/sheets-detail-CD.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('./sheets/sheets-detail-CD.jpg?&w=800');
+          background-image: url('./sheets/sheets-detail-CD.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-detail-CD.jpg?&w=1600');
+            background-image: url('./sheets/sheets-detail-CD.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('./sheets/sheets-detail-CD.jpg?&w=960');
+          background-image: url('./sheets/sheets-detail-CD.jpg');
           @include retina {
-            background-image: url('./sheets/sheets-detail-CD.jpg?&w=1920');
+            background-image: url('./sheets/sheets-detail-CD.jpg');
           }
         }
       }
@@ -905,7 +904,7 @@ video {
     }
     &.lazyloaded {
       @include mq(md) {
-        background-image: url('./sheets/photo-bedroom-windowpane.jpg?&w=120');
+        background-image: url('./sheets/photo-bedroom-windowpane.jpg?w=120');
       }
     }
   }

@@ -226,7 +226,7 @@
   color: #82008f;
 }
 [class^=reviews-carousel] h4[data-source=instagram]::after {
-  background-image: url("https://lull-media.imgix.net/shop/logo-instagram-color.png?auto=format,compress&q=50,enhance&w=60");
+  background-image: url("./logo-instagram-color.png");
   background-size: contain;
   width: 30px;
   height: 36px;

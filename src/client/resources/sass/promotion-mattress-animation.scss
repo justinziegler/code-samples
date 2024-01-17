@@ -13,10 +13,6 @@
 // @import 'animate/properties';
 // @import 'animate/bouncing-entrances/bounceInDown';
 
-$imgixUrl: 'https://lull-media.imgix.net/original-premium';
-$imgixDefaults: '?auto=format,compress&q=50';
-$imgixCrop: '&fit=crop&crop=focalpoint';
-
 h1 {
   @include mq(xsm) {
     font-size: vwl(19.5px);

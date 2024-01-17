@@ -416,7 +416,7 @@ module.exports.frame = async function (ctx) {
       defaultColorName: utils.getColorName('CS'),
       qtySelection: false,
       maxQty: 1,
-      productImage: 'https://lull-media.imgix.net/upholstered-bed-frame/gallery-straighton-withluxe-TU-CS.jpg?auto=format,compress&w=1200',
+      productImage: '../assets/gallery-straighton-withluxe-TU-CS.jpg',
       financingSection: true,
       scripts: [
         'nav',
@@ -567,7 +567,7 @@ module.exports.sheets = async function (ctx) {
       defaultColorName: utils.getColorName('MB'),
       qtySelection: false,
       maxQty: 1,
-      productImage: 'https://lull-media.imgix.net/sheets/sheets-wh-01.jpg?auto=format,compress&w=1200',
+      productImage: '../assets/sheets-wh-01.jpg',
       financingSection: false,
       upsellModal: false,
       upsellModalCatId: 0,

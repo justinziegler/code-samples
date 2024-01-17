@@ -11,10 +11,6 @@
 @import 'partials/svg';
 @import 'partials/snippets/video-embed';
 
-// $imgixUrl: 'https://lull-media.imgix.net/upholstered-bed-frame';
-// $imgixDefaults: '?auto=format,compress&q=50';
-// $imgixCrop: '&fit=crop&crop=focalpoint';
-
 video {
   width: 100%;
   &:focus {
