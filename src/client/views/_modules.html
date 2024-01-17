@@ -43,92 +43,94 @@
 {%- endmacro -%}
 
 {% macro header(p) %}
-	<nav id="header-nav" data-collapsed="false">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="header-nav prev">
-          {% if p.pageUrl !== '/' %}
-            <a href="{{ p.prevPage }}">
-              <span>Back</span>
-            </a>
-          {% endif %}
-        </div>
-        <div class="header-title">
-          {%- if p.pageUrl !== '/' -%}
-            <div class="header-nav collapse">
-              <a href="#" class="toggle-description">
-                &nbsp;<span class="hidden-xs">Description</span>&nbsp;
+  {% if p !== undefined %}
+    <nav id="header-nav" data-collapsed="false">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="header-nav prev">
+            {% if p.pageUrl !== '/' %}
+              <a href="{{ p.prevPage }}">
+                <span>Back</span>
               </a>
-              <a class="home" href="../">
-                <span class="sr-only">Home</span>
+            {% endif %}
+          </div>
+          <div class="header-title">
+            {%- if p.pageUrl !== '/' -%}
+              <div class="header-nav collapse">
+                <a href="#" class="toggle-description">
+                  &nbsp;<span class="hidden-xs">Description</span>&nbsp;
+                </a>
+                <a class="home" href="../">
+                  <span class="sr-only">Home</span>
+                </a>
+              </div>
+            {%- endif -%}
+          </div>
+          
+          <div class="header-nav next">
+            {% if p.nextPage !== undefined %}
+              <a href="{{ p.nextPage }}">
+                {% if p.pageUrl == '/' %}
+                  <span>Start</span>
+                {% else %}
+                  <span>Next</span>
+                {% endif %}
               </a>
-            </div>
-          {%- endif -%}
-        </div>
-        
-        <div class="header-nav next">
-          {% if p.nextPage !== undefined %}
-            <a href="{{ p.nextPage }}">
-              {% if p.pageUrl == '/' %}
-                <span>Start</span>
-              {% else %}
-                <span>Next</span>
-              {% endif %}
-            </a>
-          {% endif %}
+            {% endif %}
+          </div>
         </div>
       </div>
-    </div>
-    {% if p.pageUrl !== '/' %}
-      <div class="header-content">
-        <div>
-          <h2>
-            <span>Case Study</span><br>
-            {%- if p.pageId < 10 -%}0{% endif %}
-            {{- p.pageId -}}. {{ p.headerTitle }}
-          </h2>
-          <p>{{ p.headerIntro | safe }}</p>
-          <ul>
-            {% for bullet in p.headerBullets %}
-              <li>{{ bullet | safe }}</li>
-            {% endfor %}
-          </ul>
-          <div class="case-study-nav container-fluid">
-            <div class="row">
-              <div class="header-nav prev">
-                {% if p.pageUrl !== '/' %}
-                  <a href="{{ p.prevPage }}">
-                    <span>Back</span>
-                  </a>
-                {% endif %}
-              </div>
-              <div class="header-title">
-                {%- if p.pageUrl !== '/' -%}
-                  <div class="header-nav collapse">
-                    <a href="#" class="toggle-description">
-                      &nbsp;<span>This</span>&nbsp;
+      {% if p.pageUrl !== '/' %}
+        <div class="header-content">
+          <div>
+            <h2>
+              <span>Case Study</span><br>
+              {%- if p.pageId < 10 -%}0{% endif %}
+              {{- p.pageId -}}. {{ p.headerTitle }}
+            </h2>
+            <p>{{ p.headerIntro | safe }}</p>
+            <ul>
+              {% for bullet in p.headerBullets %}
+                <li>{{ bullet | safe }}</li>
+              {% endfor %}
+            </ul>
+            <div class="case-study-nav container-fluid">
+              <div class="row">
+                <div class="header-nav prev">
+                  {% if p.pageUrl !== '/' %}
+                    <a href="{{ p.prevPage }}">
+                      <span>Back</span>
                     </a>
-                  </div>
-                {%- endif -%}
-              </div>
-              
-              <div class="header-nav next">
-                {% if p.nextPage !== undefined %}
-                  <a href="{{ p.nextPage }}">
-                    {% if p.pageUrl == '/' %}
-                      <span>Start</span>
-                    {% else %}
-                      <span>Next</span>
-                    {% endif %}
-                  </a>
-                {% endif %}
+                  {% endif %}
+                </div>
+                <div class="header-title">
+                  {%- if p.pageUrl !== '/' -%}
+                    <div class="header-nav collapse">
+                      <a href="#" class="toggle-description">
+                        &nbsp;<span>This</span>&nbsp;
+                      </a>
+                    </div>
+                  {%- endif -%}
+                </div>
+                
+                <div class="header-nav next">
+                  {% if p.nextPage !== undefined %}
+                    <a href="{{ p.nextPage }}">
+                      {% if p.pageUrl == '/' %}
+                        <span>Start</span>
+                      {% else %}
+                        <span>Next</span>
+                      {% endif %}
+                    </a>
+                  {% endif %}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    {% endif %}
-	</nav>
+      {% endif %}
+    </nav>
+  {% endif %}
 {% endmacro %}
 
 {% macro pageNav() %}

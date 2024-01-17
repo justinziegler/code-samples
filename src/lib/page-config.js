@@ -84,180 +84,7 @@ module.exports.home = async function (ctx) {
   return caseStudies;
 }
 
-module.exports.mattressAnimation = async function (ctx) {
-  const layers = [
-    {
-      title: 'Quilted Memory Foam Cover',
-      details: 'Easily concealed beneath the<br class="hidden-md hidden-lg"> sheets, this<br class="visible-md visible-lg"> high-quality cover<br class="visible-sm"> features quilted open-cell memory foam and a hexagonal, top-tick design for maximum airflow, keeping you comfortable both in and out of sleep.'
-    },
-    {
-      title: 'Cooling Comfort Layer',
-      details: '2" of cooling-gel bead infused memory<br class="visible-md"> foam promotes increased<br class="visible-xxs"> air circulation<br class="visible-md"> by redirecting and releasing heat away from your body. The contouring memory foam promotes proper spine alignment<br class="hidden-md hidden-lg"> for support<br class="visible-md"> all night long.'
-    },
-    {
-      title: 'Fast Response Transition Layer',
-      details: 'The 2" transitional layer is<br class="visible-xxs"> composed of proprietary high resilience, medium-firm foam and works hard to distribute motion and add additional support. <br class="visible-xssm">Rest easy with the perfect alignment <br class="visible-xssm">and <br class="visible-xxs">wake up feeling fully restored.'
-    },
-    {
-      title: 'Durable Base Layer',
-      details: 'The foundation for better sleep<br class="hidden-md hidden-lg"> starts here. <br class="visible-md visible-lg">7" of sink-resistant, <br class="hidden-md hidden-lg">high-density, foam maintains the appearance and feel of your mattress.  Unrivaled durability makes it the<br class="visible-md"> perfect foundation for the comfort layers above.'
-    }
-  ]
-  return layers;
-}
 
-module.exports.tkSlides = async function (ctx) {
-  slides = [
-    {
-      heading: 'Get Life-Changing Sleep',
-      content: 'Lull Original Mattresses are crafted with three layers of high-quality memory foam and are designed for all body types and sleeping positions.',
-      cta: true,
-      videoUrl: '../assets/1.mp4'
-    },
-    {
-      heading: 'Invest in Your Sleep',
-      content: 'Make The Original Lull Mattress your new secret weapon for a happier, healthier, more energetic day. Try it stress-free for 365 nights and feel the difference a Lull can make!',
-      cta: false,
-      videoUrl: '../assets/2.mp4'
-    },
-    {
-      heading: 'Flippin\' Out for Lull',
-      content: 'People are jumping for joy over the unbeatable comfort and support Lull provides. Experience the excitement of upgrading to a Lull mattress.',
-      cta: false,
-      videoUrl: '../assets/3.mp4'
-    },
-    {
-      heading: 'From Compressed to<br> <i>Impressed</i> in 5 min',
-      content: 'Get your new perfect mattress with free shipping right to your door in only 1-4 business days. Simply unroll, unpack, and watch it expand in just 5 minutes!',
-      cta: true,
-      videoUrl: '../assets/4.mp4'
-    },
-    {
-      heading: 'Namaste in Bed',
-      content: 'More stretching, less stressing. Studies show that a good night\'s sleep can improve your mood, reduce stress, boost your immune system, and help your brain fire on all cylinders.',
-      cta: false,
-      videoUrl: '../assets/5.mp4'
-    },
-    {
-      heading: 'Shop Day or Night from the Comfort of Home',
-      content: 'The Original Lull Mattress is more than just memory foam. Its a triple-layer paradise that\'ll change the way you sleep, forever!',
-      cta: true,
-      videoUrl: '../assets/6.mp4'
-    },
-    {
-      heading: 'Get Cozy Now, Pay Later',
-      content: 'Invest in your dreams. Literally. Get the Original Lull Mattress now and pay over time with easy financing for as low as $28/mo.<a class="question financing-modal-link" href="#" data-sku="LU-MA-WH-TW" data-quantity="1">?</a> No hidden fees.',
-      cta: true,
-      videoUrl: '../assets/7.mp4'
-    },
-    {
-      heading: 'Better Sleep = Better Days',
-      content: 'Made with the highest quality foam, the Original Lull Mattress is the perfect spot for “me” time. Great sleep reduces stress, boosts the immune system, & helps you stay happy.',
-      cta: true,
-      videoUrl: '../assets/8.mp4'
-    },
-    {
-      heading: 'The People Have Spoken',
-      content: 'Lull is the only mattress company with 4.5 stars & over 4,321 verified reviews! We never pay for or hide reviews & guarantee a full refund if you don\'t see yours on our site.',
-      cta: false,
-      videoUrl: '../assets/9.mp4'
-    },
-    {
-      heading: 'Lull Checks All the Boxes ✅',
-      content: 'Nobody likes buyer\'s remorse. That\'s why Lull offers a risk-free, 365 night trial! If you\'re not in love with your Lull mattress within a year, we\'ll arrange a quick and easy return.',
-      cta: false,
-      videoUrl: '../assets/10.mp4'
-    },
-    {
-      heading: 'Easy as 1, 2, <i>zzz</i>',
-      content: 'You\'re just a few clicks away from a Lull mattress being delivered right to your front door. Setup is a snap and you\'ll be drifting off to dreamland in no time.',
-      cta: false,
-      videoUrl: '../assets/11.mp4'
-    },
-    {
-      heading: 'Sleeping is Believing',
-      content: 'Try the Original Lull Mattress in your home for 365 nights. We know you\'re going to love it. If we\'re wrong, we\'ll arrange a quick and easy return.',
-      cta: true,
-      videoUrl: '../assets/12.mp4'
-    }
-  ]
-  return slides;
-}
-
-module.exports.tkTweets = async function (ctx) {
-  tweets = [
-    {
-      reviews: [
-        {
-          review: 'Big shoutout to <strong>@LullBed</strong> for helping our apartment feel more like home! It\'s only our first night using it, but I can assure you my body definitely feels the difference!',
-          name: '@taydempereira',
-          source: 'instagram'
-        },
-        {
-          review: 'I literally changed the way I sleep. Best investment!! The perfect mix of comfort and support. Bye bye back and neck pain, you\'ve been here for way too long! Loving my cooling gel-infused foam mattress with all my heart <strong>@LullBed</strong>',
-          name: '@mariapretelt',
-          source: 'instagram'
-        },
-        {
-          review: 'Got my new Lull mattress in. I\'m in heaven!!',
-          name: '@kyla.moravec',
-          source: 'facebook'
-        },
-        {
-          review: 'Look what came in the mail! I\'m super excited to finally have a full, good nights sleep on my new <strong>@LullBed</strong> mattress after a long exhausting week of relocating! The delivery is such a convenience and it comes right to your doorstep!!! You can catch me snoozing for the next few days.',
-          name: '@paigexalexandria',
-          source: 'instagram'
-        },
-        {
-          review: 'The new bed I got is so comfortable, I don\'t think I\'ve ever slept so good!! <strong>@LullBed</strong>',
-          name: '@sydneejaynexo',
-          source: 'twitter'
-        },
-        {
-          review: 'Wow I\'m in love with my new bed thank you <strong>@LullBed</strong>',
-          name: '@__Mel4',
-          source: 'twitter'
-        },
-        {
-          review: 'If any of y\'all are looking to buy a new mattress I can\'t recommend <strong>@LullBed</strong> enough. I haven\'t slept this well in my entire life.',
-          name: '@barfieldthecat',
-          source: 'twitter'
-        }
-      ]
-    }
-  ]
-  return tweets;
-}
-
-module.exports.tkFaqs = async function (ctx) {
-  faqs = [
-    {
-      username: 'lullfan_1',
-      question: 'How does the 365-Night Trial work for the Lull mattress?',
-      answer: 'After you order your Lull mattress, we\'ll ship it right to your doorstep for free. Try it out in your home for a full year. If you don\'t love it within the first 365 nights, arrange a quick and easy return. We\'ll even send a courier to pick up the mattress for free!',
-      date: '2021-01-31'
-    },
-    {
-      username: 'mr_sandman',
-      question: 'Does the mattress sleep hot like other memory foam mattresses?',
-      answer: 'The Lull mattress is designed to keep you comfortable all night long. The top layer of the mattress is made of 1.5” gel infused viscoelastic memory foam. This layer provides dramatically enhanced air flow and draws heat away from your body.',
-      date: '2021-02-01'
-    },
-    {
-      username: 'savy_snoozer',
-      question: 'How do I get the mattress back in the box?',
-      answer: 'You don\'t. We pick it up fully expanded. If you are not completely satisfied with your sleeping experience within the first 365 nights, we will arrange for a free pickup and removal of your Lull mattress in its expanded form. Lull makes every effort possible to donate returned trial mattresses to charities and organizations in need of beds.',
-      date: '2021-02-02'
-    },
-    {
-      username: 'dr_dreamzz',
-      question: 'How long before I receive my mattress?',
-      answer: 'Lull mattresses typically ships in 1-4 business days following your order. Once your mattress has shipped, we will provide you with information to track your order.',
-      date: '2021-02-03'
-    }
-  ]
-  return faqs;
-}
 
 module.exports.mattress = async function (ctx) {
   const pageUrl = 'mattress';
@@ -317,8 +144,8 @@ module.exports.mattress = async function (ctx) {
         'tippy',
         'lazysizes.min'
       ],
-      prevPage: '../tiktok',
-      nextPage: '../frame',
+      prevPage: 'tiktok',
+      nextPage: 'frame',
       headerTitle: 'Product Display Template',
       headerIntro: 'This is the default configuration of the template. The features on display here include:',
       headerBullets: [
@@ -331,31 +158,8 @@ module.exports.mattress = async function (ctx) {
   return p;
 }
 
-module.exports.valueProps = async function (ctx) {
-  const items = [
-    {
-      title: 'Free Shipping & Easy Returns',
-      details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultricies nisi a euismod bibendum. Sed congue sem at aliquet interdum.'
-    },
-    {
-      title: '365 Night Trial',
-      details: 'Donec vehicula porta metus, id malesuada massa ornare in. Vivamus vitae nisi aliquet, luctus urna sed, viverra leo.'
-    },
-    {
-      title: 'Lifetime Warranty',
-      details: 'Ut pellentesque id nisi vitae bibendum. Proin a consectetur magna. Nam sit amet metus ac metus condimentum aliquet.'
-    },
-    {
-      title: 'Easy Financing Available',
-      details: 'Aliquam erat volutpat. Suspendisse vitae lectus id massa tristique mattis. Nunc consectetur luctus augue sed'
-    }
-  ]
-  return items;
-}
-
 module.exports.frame = async function (ctx) {
-  const pageUrl = 'frame';
-  const pageId = await utils.getPageId(pageUrl);
+  
   const p = [
     {
       skus: ctx.skus,
@@ -380,8 +184,6 @@ module.exports.frame = async function (ctx) {
           discount: ctx.discountActual
         }
       ],
-      pageUrl: pageUrl,
-      pageId: pageId,
       productType: 'frame',
       gallerySlides: 5,
       galleryDimensions: 5,
@@ -425,8 +227,6 @@ module.exports.frame = async function (ctx) {
         'tippy',
         'lazysizes.min'
       ],
-      prevPage: '../mattress',
-      nextPage: '../sheets',
       headerTitle: 'Product Display Template',
       headerIntro: 'This configuration offers users choices between two product lines. The features on display here include:',
       headerBullets: [
@@ -439,76 +239,6 @@ module.exports.frame = async function (ctx) {
   return p;
 }
 
-module.exports.frameReviews = async function (ctx) {
-  const frameReviews = [
-    {
-      heading: 'Lull Bed Frame Reviews',
-      reviews: [
-        {
-          stars: '5',
-          reviewTitle: 'Total Package',
-          review: 'The frame is beautiful. It was easy to put together and it provides nice support. I love the way it looks, it really is a clean look.',
-          name: 'Timber'
-        },
-        {
-          stars: '5',
-          reviewTitle: 'Great Frame',
-          review: 'The frame was really easy to put together. The book that comes with it said it would take 10 minutes and I didn\'t believe it, but it did. It\'s really sturdy and everything I expected.',
-          name: 'Valerie G.'
-        },
-        {
-          stars: '5',
-          reviewTitle: 'Great',
-          review: 'Arrived just like promised, very easy to set up, comfortable, my husband has very bad sciatica and after just the first night he felt better. It definitely helps his back pain.',
-          name: 'Nancy G.'
-        },
-        {
-          stars: '5',
-          reviewTitle: 'Fabulous',
-          review: 'It looks fabulous. It\'s strong and sturdy. Easy to put together.',
-          name: 'Charles V.'
-        },
-        {
-          stars: '5',
-          reviewTitle: 'Fantastic!',
-          review: 'High quality, easy to put together, solid piece of furniture.',
-          name: 'Ann'
-        },
-        {
-          stars: '5',
-          reviewTitle: 'Lull Bed Frame',
-          review: 'This frame is amazing. You can put it together in a few minutes without any tools. It\'s strong and the design is clean and elegant. Will go great in any room. It\'s a steal if you ask me!',
-          name: 'Elba M.'
-        },
-        {
-          stars: '5',
-          reviewTitle: 'Would Recommend',
-          review: 'I like the clean appearance of it. It was very simple. It goes really well with the room and is super supportive compared to our other frame!',
-          name: 'Brandy R.'
-        },
-        {
-          stars: '5',
-          reviewTitle: 'Perfect Craftsmanship',
-          review: 'Super easy to put together and in less than five minutes. It\'s beautifully manufactured and everything fits together perfectly.',
-          name: 'Dean C.'
-        },
-        {
-          stars: '5',
-          reviewTitle: 'Nice Frame',
-          review: 'I love it, it\'s the perfect height above the ground, not too far above it but not too low. It looks gorgeous in my room, it\'s a nice frame.',
-          name: 'Kimberly'
-        },
-        {
-          stars: '5',
-          reviewTitle: 'Silent and Sturdy',
-          review: 'No squeaks, no rattles, no sound from this bed frame whatsoever! It\'s really great.',
-          name: 'Robert F.'
-        }
-      ]
-    }	
-  ]
-  return frameReviews;
-}
 
 module.exports.sheets = async function (ctx) {
   const pageUrl = 'sheets';

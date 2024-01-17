@@ -45,8 +45,85 @@ async function home(ctx, next) {
   });
 }
 
+async function holidayMode(ctx, next) {
+  const pageUrl = 'holiday-mode';
+  const pageId = await utils.getPageId(pageUrl);
+  ctx.body = await render('promotion_holiday_mode', {
+    title: title,
+    p: {
+      pageUrl: pageUrl,
+      pageId: pageId,
+      prevPage: '../',
+      nextPage: 'value-props',
+      headerTitle: 'Holiday Mode',
+      headerIntro: `<a href="#" class="mode-toggle">Click here</a> to toggle the page to its <span class="mode-toggle-text">'evergreen'</span> content.`,
+      headerBullets: [
+        '<a href="#" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
+      ]
+    }
+  });
+}
+
+async function holidayModeEnabled(ctx, next) {
+  const pageUrl = 'holiday-mode-enabled';
+  const pageId = await utils.getPageId(pageUrl);
+  const p = await pageConfig.mattress(ctx);
+  let monthlyPayment = 0;
+  let name;
+  const skus = await utils.getProductSkus(ctx, 1, ctx.discountActual);
+  skus.forEach(item => {
+    if (item.sku == 'LU-MA-WH-TW')  {
+      monthlyPayment = item.monthlyPayment;
+      name = item.name;
+    } 
+  })
+  ctx.body = await render('promotion_holiday_mode_example', {
+    title: title,
+    mattressDiscount: 200,
+    monthlyPayment: monthlyPayment,
+    name: name,
+    holidaySale: true,
+    scripts: [
+      'modal.bootstrap',
+      'collapse.bootstrap',
+      'lazysizes.min',
+      'swiper-lite',
+      'promotion-holiday',
+    ],
+  });
+}
+
+async function holidayModeDisabled(ctx, next) {
+  const pageUrl = 'holiday-mode-disabled';
+  const pageId = await utils.getPageId(pageUrl);
+  const p = await pageConfig.mattress(ctx);
+  let monthlyPayment = 0;
+  let name;
+  const skus = await utils.getProductSkus(ctx, 1, ctx.discountActual);
+  skus.forEach(item => {
+    if (item.sku == 'LU-MA-WH-TW')  {
+      monthlyPayment = item.monthlyPayment;
+      name = item.name;
+    } 
+  })
+  ctx.body = await render('promotion_holiday_mode_example', {
+    title: title,
+    mattressDiscount: 200,
+    monthlyPayment: monthlyPayment,
+    name: name,
+    holidaySale: false,
+    scripts: [
+      'modal.bootstrap',
+      'collapse.bootstrap',
+      'lazysizes.min',
+      'swiper-lite',
+      'promotion-holiday',
+    ],
+  });
+}
+
 async function valueProps(ctx, next) {
-  const items = await pageConfig.valueProps(ctx);
+  const items = await content.valueProps(ctx);
   const pageUrl = 'value-props';
   const pageId = await utils.getPageId(pageUrl);
   ctx.body = await render('promotion_value_propositions', {
@@ -54,7 +131,7 @@ async function valueProps(ctx, next) {
     p: {
       pageUrl: pageUrl,
       pageId: pageId,
-      prevPage: '../',
+      prevPage: 'holiday-mode',
       nextPage: 'mattress-animation',
       headerTitle: 'Lightweight Multi-use Slideshow',
       headerIntro: 'This example illustrates one of the more common use cases that lead me to develop this script. In addition, I did the Photoshop work required to provide a suitable backdrop to the text content. Features on display here include:',
@@ -70,7 +147,7 @@ async function valueProps(ctx, next) {
 
 
 async function mattressAnimation(ctx, next) {
-  const layers = await pageConfig.mattressAnimation(ctx);
+  const layers = await content.mattressAnimation(ctx);
   const pageUrl = 'mattress-animation';
   const pageId = await utils.getPageId(pageUrl);
   ctx.body = await render('promotion_mattress_animation', {
@@ -94,9 +171,9 @@ async function mattressAnimation(ctx, next) {
 }
 
 async function tiktok(ctx, next) {
-  const slides = await pageConfig.tkSlides(ctx);
-  const tweets = await pageConfig.tkTweets(ctx);
-  const faqs = await pageConfig.tkFaqs(ctx);
+  const slides = await content.tkSlides(ctx);
+  const tweets = await content.tkTweets(ctx);
+  const faqs = await content.tkFaqs(ctx);
   const pageUrl = 'tiktok';
   const pageId = await utils.getPageId(pageUrl);
   ctx.body = await render('promotion_tiktok', {
@@ -128,104 +205,9 @@ async function tiktok(ctx, next) {
   });
 }
 
-async function holidayMode(ctx, next) {
-  const pageUrl = 'holiday-mode';
-  const pageId = await utils.getPageId(pageUrl);
-  ctx.body = await render('promotion_holiday_mode', {
-    title: title,
-    p: {
-      pageUrl: pageUrl,
-      pageId: pageId,
-      prevPage: 'mattress-animation',
-      nextPage: 'mattress',
-      headerTitle: 'Holiday Mode',
-      headerIntro: `<a href="#" class="mode-toggle">Click here</a> to toggle the page to its <span class="mode-toggle-text">'evergreen'</span> content.`,
-      headerBullets: [
-        '<a href="#" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
-      ]
-    }
-  });
-}
 
-async function holidayModeEnabled(ctx, next) {
-  const pageUrl = 'holiday-mode-enabled';
-  const pageId = await utils.getPageId(pageUrl);
-  const p = await pageConfig.mattress(ctx);
-  let monthlyPayment = 0;
-  let name;
-  const skus = await utils.getProductSkus(ctx, 1, ctx.discountActual);
-  skus.forEach(item => {
-    if (item.sku == 'LU-MA-WH-TW')  {
-      monthlyPayment = item.monthlyPayment;
-      name = item.name;
-    } 
-  })
-  ctx.body = await render('promotion_holiday_mode_example', {
-    title: title,
-    p: {
-      pageUrl: pageUrl,
-      pageId: pageId,
-      prevPage: 'mattress-animation',
-      nextPage: 'mattress',
-      headerTitle: 'Holiday Promotions',
-      headerIntro: 'asdf',
-      headerBullets: [
-        '<a href="#" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
-      ]
-    },
-    mattressDiscount: 200,
-    monthlyPayment: monthlyPayment,
-    name: name,
-    holidaySale: true,
-    scripts: [
-      'modal.bootstrap',
-      'collapse.bootstrap',
-      'lazysizes.min',
-      'swiper-lite',
-      'promotion-holiday',
-    ],
-  });
-}
 
-async function holidayModeDisabled(ctx, next) {
-  const pageUrl = 'holiday-mode-disabled';
-  const pageId = await utils.getPageId(pageUrl);
-  const p = await pageConfig.mattress(ctx);
-  let monthlyPayment = 0;
-  let name;
-  const skus = await utils.getProductSkus(ctx, 1, ctx.discountActual);
-  skus.forEach(item => {
-    if (item.sku == 'LU-MA-WH-TW')  {
-      monthlyPayment = item.monthlyPayment;
-      name = item.name;
-    } 
-  })
-  ctx.body = await render('promotion_holiday_mode_example', {
-    title: title,
-    p: {
-      pageUrl: pageUrl,
-      pageId: pageId,
-      prevPage: 'mattress-animation',
-      nextPage: 'mattress',
-      headerTitle: 'Holiday Promotions',
-      headerIntro: 'Add text',
-      headerBullets: [
-        '<a href="#" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
-      ]
-    },
-    mattressDiscount: 200,
-    monthlyPayment: monthlyPayment,
-    name: name,
-    holidaySale: false,
-    scripts: [
-      'modal.bootstrap',
-      'collapse.bootstrap',
-      'lazysizes.min',
-      'swiper-lite',
-      'promotion-holiday',
-    ],
-  });
-}
+
 
 async function mattress(ctx, next) {
   ctx.discountActual = 200;
@@ -266,7 +248,7 @@ async function frameB(ctx, next) {
   const tuftedSkus = await utils.getProductSkus(ctx, 41, discountActual);
 	ctx.skus = upholsteredSkus.concat(tuftedSkus);
   const p = await pageConfig.frame(ctx);
-  const frameReviews = await pageConfig.frameReviews(ctx);
+  const frameReviews = await content.frameReviews(ctx);
 
   const ourWay = await content.ourWay(ctx);
   const suggestedItems = await content.suggestedItems(ctx);
@@ -398,13 +380,12 @@ async function cart(ctx, next) {
 const router = new Router();
 router.get('/', home);
 
-router.get('/value-props', valueProps);
-router.get('/mattress-animation', mattressAnimation);
-router.get('/tiktok', tiktok);
-router.get('/tiktok', tiktok);
 router.get('/holiday-mode', holidayMode);
 router.get('/holiday-mode-enabled', holidayModeEnabled);
 router.get('/holiday-mode-disabled', holidayModeDisabled);
+router.get('/value-props', valueProps);
+router.get('/mattress-animation', mattressAnimation);
+router.get('/tiktok', tiktok);
 
 router.get('/mattress', mattress);
 router.get('/mattress/twin', mattress);
