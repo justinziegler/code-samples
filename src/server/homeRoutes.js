@@ -33,8 +33,9 @@ async function home(ctx, next) {
   ctx.body = await render('index', {
     title: title,
     p: {
+      header: true,
       pageUrl: '/',
-      nextPage: 'value-props',
+      nextPage: 'holiday-mode',
     },
     caseStudies: caseStudies,
     scripts: [
@@ -51,6 +52,7 @@ async function holidayMode(ctx, next) {
   ctx.body = await render('promotion_holiday_mode', {
     title: title,
     p: {
+      header: true,
       pageUrl: pageUrl,
       pageId: pageId,
       prevPage: '../',
@@ -66,8 +68,6 @@ async function holidayMode(ctx, next) {
 
 async function holidayModeEnabled(ctx, next) {
   const pageUrl = 'holiday-mode-enabled';
-  const pageId = await utils.getPageId(pageUrl);
-  const p = await pageConfig.mattress(ctx);
   let monthlyPayment = 0;
   let name;
   const skus = await utils.getProductSkus(ctx, 1, ctx.discountActual);
@@ -95,8 +95,6 @@ async function holidayModeEnabled(ctx, next) {
 
 async function holidayModeDisabled(ctx, next) {
   const pageUrl = 'holiday-mode-disabled';
-  const pageId = await utils.getPageId(pageUrl);
-  const p = await pageConfig.mattress(ctx);
   let monthlyPayment = 0;
   let name;
   const skus = await utils.getProductSkus(ctx, 1, ctx.discountActual);
@@ -129,6 +127,7 @@ async function valueProps(ctx, next) {
   ctx.body = await render('promotion_value_propositions', {
     title: title,
     p: {
+      header: true,
       pageUrl: pageUrl,
       pageId: pageId,
       prevPage: 'holiday-mode',
@@ -153,6 +152,7 @@ async function mattressAnimation(ctx, next) {
   ctx.body = await render('promotion_mattress_animation', {
     title: title,
     p: {
+      header: true,
       pageUrl: pageUrl,
       pageId: pageId,
       prevPage: 'value-props',
@@ -179,10 +179,11 @@ async function tiktok(ctx, next) {
   ctx.body = await render('promotion_tiktok', {
     title: title,
     p: {
+      header: true,
       pageUrl: pageUrl,
       pageId: pageId,
       prevPage: 'mattress-animation',
-      nextPage: 'mattress',
+      nextPage: 'product-display',
       headerTitle: 'Tiktok Mimic',
       headerIntro: 'Most marketing campaigns I\'ve worked on would get refined over time to increase their overall chances of success, but that wasn\'t the case here. Very early after this page launched, engagement and sales data showed that the campaign was a hit. The features on display include:',
       headerBullets: [
@@ -205,10 +206,6 @@ async function tiktok(ctx, next) {
   });
 }
 
-
-
-
-
 async function mattress(ctx, next) {
   ctx.discountActual = 200;
   ctx.upsellDiscountActual = 0;
@@ -226,12 +223,28 @@ async function mattress(ctx, next) {
   });
 }
 
-async function frameA(ctx, next) {
+async function frame(ctx, next) {
+  const pageUrl = 'frame';
+  const pageId = await utils.getPageId(pageUrl);
   const discountActual = 200;
   ctx.discountActual = discountActual;
   const upholsteredSkus = await utils.getProductSkus(ctx, 40, discountActual);
   const tuftedSkus = await utils.getProductSkus(ctx, 41, discountActual);
 	ctx.skus = upholsteredSkus.concat(tuftedSkus);
+  ctx.q = [
+    {
+      pageId: pageId,
+      pageUrl: pageUrl,
+      headerTitle: '!!!!!!!!!!!!!!!',
+      headerIntro: 'Most marketing campaigns I\'ve worked on would get refined over time to increase their overall chances of success, but that wasn\'t the case here. Very early after this page launched, engagement and sales data showed that the campaign was a hit. The features on display include:',
+      headerBullets: [
+        'Slideshow of a dozen short videos that auto-advance when complete',
+        'Popup overlays of user reviews and FAQs',
+        'Email capture redirect to main website',
+        '<a href="https://lull.com/tksale" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
+      ]
+    }
+  ]
   const p = await pageConfig.frame(ctx);
 
   ctx.body = await render('product_frame', {
@@ -241,12 +254,90 @@ async function frameA(ctx, next) {
   })
 }
 
-async function frameB(ctx, next) {
+async function sheets(ctx, next) {
+  const pageUrl = 'sheets';
+  const pageId = await utils.getPageId(pageUrl);
+  const discountActual = 70;
+  ctx.q = [
+    {
+      header: false,
+      pageId: pageId,
+      pageUrl: pageUrl,
+      headerTitle: 'Product Display Template',
+      headerIntro: 'This configuration sorts through 42 product skus and over 100 upsell skus from 6 product lines. The features on display here include:',
+      headerBullets: [
+        'The upsells update their currently offered product size when the main product size selection changes. In this case, all 3 product groups have differing numbers of corresponding sizes that all need to be matched. Users can then select the upsell item\'s color and fabric type. Upsell color and fabric selections persist if the user changes the main product size selection',
+        'Each upsell has an associated modal containing product details and a gallery of product images.',
+        'The financing modal (accessible by hovering over the question mark icon below the color swatches) updates with each product selection change, including adding upsells.',
+        '<a href="https://lull.com/organic-cotton-sheets" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
+      ]
+    }
+  ]
+  const p = await pageConfig.sheets(ctx);
+
+  ctx.body = await render('product_sheets', {
+    p: p[0],
+    title: 'Product Page example',
+    discountActual: discountActual
+  });
+}
+
+async function productDisplay(ctx, next) {
+  const pageUrl = 'product-display';
+  const pageId = await utils.getPageId(pageUrl);
+  ctx.body = await render('product_display', {
+    title: 'Product Display Template',
+    p: {
+      header: true,
+      pageUrl: pageUrl,
+      pageId: pageId,
+      prevPage: 'tiktok',
+      nextPage: 'frame-full',
+      headerTitle: 'Product Display Template',
+      headerIntro: ``,
+      toggleLinks: [
+        {
+          link: 'mattress',
+          title: 'Mattress',
+        },
+        {
+          link: 'frame',
+          title: 'Bed Frame',
+        },
+        {
+          link: 'sheets',
+          title: 'Sheets',
+        }
+      ]
+    }
+  });
+}
+
+async function frameFull(ctx, next) {
+  const pageUrl = 'frame-full';
+  const pageId = await utils.getPageId(pageUrl);
   const discountActual = 200;
   ctx.discountActual = discountActual;
   const upholsteredSkus = await utils.getProductSkus(ctx, 40, discountActual);
   const tuftedSkus = await utils.getProductSkus(ctx, 41, discountActual);
 	ctx.skus = upholsteredSkus.concat(tuftedSkus);
+  ctx.q = [
+    {
+      header: true,
+      pageId: pageId,
+      pageUrl: pageUrl,
+      prevPage: 'frame-full',
+      nextPage: 'sheets-full',
+      headerTitle: '!!!!!!!!!!!!!!!',
+      headerIntro: 'Most marketing campaigns I\'ve worked on would get refined over time to increase their overall chances of success, but that wasn\'t the case here. Very early after this page launched, engagement and sales data showed that the campaign was a hit. The features on display include:',
+      headerBullets: [
+        'Slideshow of a dozen short videos that auto-advance when complete',
+        'Popup overlays of user reviews and FAQs',
+        'Email capture redirect to main website',
+        '<a href="https://lull.com/tksale" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
+      ]
+    }
+  ]
   const p = await pageConfig.frame(ctx);
   const frameReviews = await content.frameReviews(ctx);
 
@@ -261,7 +352,6 @@ async function frameB(ctx, next) {
       name = item.name;
     } 
   })
-
   ctx.body = await render('product_frame_full', {
     p: p[0],      
     title: 'Product Page example',
@@ -276,53 +366,33 @@ async function frameB(ctx, next) {
   })
 }
 
-async function sheets(ctx, next) {
-  const discountActual = 70;
-  const dcDiscountActual = 20;
-  const pcDiscountActual = 20;
-  const skus = await utils.getProductSkus(ctx, 30, discountActual);
-  const skus31 = await utils.getProductSkus(ctx, 31, dcDiscountActual);
-	const skus32 = await utils.getProductSkus(ctx, 32, dcDiscountActual);
-	const skus33 = await utils.getProductSkus(ctx, 33, dcDiscountActual);
-	const skus34 = await utils.getProductSkus(ctx, 34, pcDiscountActual);
-	const skus35 = await utils.getProductSkus(ctx, 35, pcDiscountActual);
-	const skus36 = await utils.getProductSkus(ctx, 36, pcDiscountActual);
-	const duvetCoverSkus = skus31.concat(skus32).concat(skus33);
-	const pillowcaseSkus = skus34.concat(skus35).concat(skus36);
-	ctx.skus = skus;
-	ctx.duvetCoverSkus = duvetCoverSkus;
-	ctx.pillowcaseSkus = pillowcaseSkus;
-  const p = await pageConfig.sheets(ctx);
-
-  ctx.body = await render('product_sheets', {
-    p: p[0],
-    title: 'Product Page example',
-    discountActual: discountActual
-  });
-}
-
 async function sheetsFull(ctx, next) {
+  const pageUrl = 'sheets-full';
+  const pageId = await utils.getPageId(pageUrl);
   const discountActual = 70;
-  const dcDiscountActual = 20;
-  const pcDiscountActual = 20;
-  const skus = await utils.getProductSkus(ctx, 30, discountActual);
-  const skus31 = await utils.getProductSkus(ctx, 31, dcDiscountActual);
-	const skus32 = await utils.getProductSkus(ctx, 32, dcDiscountActual);
-	const skus33 = await utils.getProductSkus(ctx, 33, dcDiscountActual);
-	const skus34 = await utils.getProductSkus(ctx, 34, pcDiscountActual);
-	const skus35 = await utils.getProductSkus(ctx, 35, pcDiscountActual);
-	const skus36 = await utils.getProductSkus(ctx, 36, pcDiscountActual);
-	const duvetCoverSkus = skus31.concat(skus32).concat(skus33);
-	const pillowcaseSkus = skus34.concat(skus35).concat(skus36);
-	ctx.skus = skus;
-	ctx.duvetCoverSkus = duvetCoverSkus;
-	ctx.pillowcaseSkus = pillowcaseSkus;
-  const p = await pageConfig.sheets(ctx);
   const valueProps = await content.valuePropsSheets(ctx);
   const reviews = await content.reviewsSheets(ctx);
   const additionalDetails = await content.additionalDetails(ctx);
   const suggestedItems = await content.suggestedItems(ctx);
   const faqs = await content.faqs(ctx);
+  ctx.q = [
+    {
+      header: true,
+      pageId: pageId,
+      pageUrl: pageUrl,
+      prevPage: 'frame-full',
+      nextPage: 'cart',
+      headerTitle: 'Full Product Display Template',
+      headerIntro: 'This configuration sorts through 42 product skus and over 100 upsell skus from 6 product lines. The features on display here include:',
+      headerBullets: [
+        'The upsells update their currently offered product size when the main product size selection changes. In this case, all 3 product groups have differing numbers of corresponding sizes that all need to be matched. Users can then select the upsell item\'s color and fabric type. Upsell color and fabric selections persist if the user changes the main product size selection',
+        'Each upsell has an associated modal containing product details and a gallery of product images.',
+        'The financing modal (accessible by hovering over the question mark icon below the color swatches) updates with each product selection change, including adding upsells.',
+        '<a href="https://lull.com/organic-cotton-sheets" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
+      ]
+    }
+  ]
+  const p = await pageConfig.sheets(ctx);
   
   ctx.body = await render('product_sheets_full', {
     p: p[0],
@@ -354,9 +424,10 @@ async function cart(ctx, next) {
     title: 'Shopping Cart',
     title: title,
     p: {
+      header: true,
       pageUrl: pageUrl,
       pageId: pageId,
-      prevPage: 'sheets',
+      prevPage: 'sheets-full',
       headerTitle: 'Shopping Cart',
       headerIntro: 'This page was A/B tested against our existing page for over a year. While it was ultimately shelved, some of the features developed here were later ported over to the existing cart. Features on display here include:',
       headerBullets: [
@@ -387,6 +458,8 @@ router.get('/value-props', valueProps);
 router.get('/mattress-animation', mattressAnimation);
 router.get('/tiktok', tiktok);
 
+router.get('/product-display', productDisplay);
+
 router.get('/mattress', mattress);
 router.get('/mattress/twin', mattress);
 router.get('/mattress/twin-xl', mattress);
@@ -414,23 +487,23 @@ router.get('/sheets-full/king', sheetsFull);
 router.get('/sheets-full/cal-king', sheetsFull);
 router.get('/sheets-full/california-king', sheetsFull);
 
-router.get('/frame', frameA);
-router.get('/frame/twin', frameA);
-router.get('/frame/twin-xl', frameA);
-router.get('/frame/full', frameA);
-router.get('/frame/queen', frameA);
-router.get('/frame/king', frameA);
-router.get('/frame/cal-king', frameA);
-router.get('/frame/california-king', frameA);
+router.get('/frame', frame);
+router.get('/frame/twin', frame);
+router.get('/frame/twin-xl', frame);
+router.get('/frame/full', frame);
+router.get('/frame/queen', frame);
+router.get('/frame/king', frame);
+router.get('/frame/cal-king', frame);
+router.get('/frame/california-king', frame);
 
-router.get('/frame-b', frameB);
-router.get('/frame-b/twin', frameB);
-router.get('/frame-b/twin-xl', frameB);
-router.get('/frame-b/full', frameB);
-router.get('/frame-b/queen', frameB);
-router.get('/frame-b/king', frameB);
-router.get('/frame-b/cal-king', frameB);
-router.get('/frame-b/california-king', frameB);
+router.get('/frame-full', frameFull);
+router.get('/frame-full/twin', frameFull);
+router.get('/frame-full/twin-xl', frameFull);
+router.get('/frame-full/full', frameFull);
+router.get('/frame-full/queen', frameFull);
+router.get('/frame-full/king', frameFull);
+router.get('/frame-full/cal-king', frameFull);
+router.get('/frame-full/california-king', frameFull);
 
 router.get('/cart', cart);
 

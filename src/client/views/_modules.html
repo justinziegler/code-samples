@@ -43,7 +43,7 @@
 {%- endmacro -%}
 
 {% macro header(p) %}
-  {% if p !== undefined %}
+  {% if p.header %}
     <nav id="header-nav" data-collapsed="false">
       <div class="container-fluid">
         <div class="row">
@@ -89,11 +89,20 @@
               {{- p.pageId -}}. {{ p.headerTitle }}
             </h2>
             <p>{{ p.headerIntro | safe }}</p>
-            <ul>
+            <ul class="project-details">
               {% for bullet in p.headerBullets %}
                 <li>{{ bullet | safe }}</li>
               {% endfor %}
             </ul>
+            {% if p.toggleLinks.length %}
+              <ul class="toggle-links">
+                {% for item in p.toggleLinks %}
+                  <li><a href="#" data-target="{{ item.link }}">
+                    <span>{{ item.title }}</span>
+                  </a></li>
+                {% endfor %}
+              </ul>
+            {% endif %}
             <div class="case-study-nav container-fluid">
               <div class="row">
                 <div class="header-nav prev">
@@ -130,6 +139,7 @@
         </div>
       {% endif %}
     </nav>
+    
   {% endif %}
 {% endmacro %}
 

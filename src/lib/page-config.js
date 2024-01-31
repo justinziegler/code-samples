@@ -4,17 +4,18 @@ const utils = require('./utils');
 module.exports.home = async function (ctx) {
   const caseStudies = [
     {
-      title: 'Tiktok Mimic',
-      intro: 'Tiktok-styled mobile promotional page for a social media-targeted marketing campaign. Videos advance manually or automatically.',
-      background: [
-        '../assets/promos/tiktok-01.jpg',
-        '../assets/promos/tiktok-02.jpg',
-        '../assets/promos/tiktok-03.jpg'
-      ],
-      link: '../tiktok'
+      title: 'Intro?'
     },
     {
-      title: 'Lightweight Multi-use Slideshow (1)',
+      title: 'Holiday Mode',
+      intro: 'Holiday promotions were an important part of this company’s business, and several times a year we would theme the website for a variety of holidays. This eventually became too time-consuming, and in response I developed Holiday Mode for the site, which enabled reverting back to the regular site by updating one variable. Click here to toggle between the two versions.',
+      background: [
+        '../assets/holiday-promotion/carousel01-mob-vp-lg.jpg'
+      ],
+      link: '../holiday-mode'
+    },
+    {
+      title: 'Value Propositions',
       intro: 'In my previous position, I would often be required to develop page sections that looked and functioned differently depending if users were on mobile vs. a larger screen. This project came about from a desire to:',
       bullets: [ 
         'Build a lightweight, barebones slider plugin replacement',
@@ -26,7 +27,7 @@ module.exports.home = async function (ctx) {
       link: '../value-props'
     },
     {
-      title: 'Lightweight Multi-use Slideshow (2)',
+      title: 'Mattress Layer Animation',
       intro: 'In my previous position, I would often be required to develop page sections that looked and functioned different ly depending if users were on mobile vs. a larger screen. This project came about from a desire to:',
       bullets: [ 
         'Build a lightweight, barebones slider plugin replacement',
@@ -36,6 +37,16 @@ module.exports.home = async function (ctx) {
         '../assets/luxe-vp-couple-md.jpg',
       ],
       link: '../mattress-animation'
+    },
+    {
+      title: 'Tiktok Mimic',
+      intro: 'Tiktok-styled mobile promotional page for a social media-targeted marketing campaign. Videos advance manually or automatically.',
+      background: [
+        '../assets/promos/tiktok-01.jpg',
+        '../assets/promos/tiktok-02.jpg',
+        '../assets/promos/tiktok-03.jpg'
+      ],
+      link: '../tiktok'
     },
     {
       title: 'Product Display Template',
@@ -50,20 +61,42 @@ module.exports.home = async function (ctx) {
         '../assets/luxe-vp-couple-md.jpg',
       ],
       link: '../mattress',
-      thumbnails: [
-        {
-          title: 'Default Config',
-          link: '../mattress'
-        },
-        {
-          title: 'Advanced Features',
-          link: '../frame'
-        },
-        {
-          title: 'Flexible Upsells',
-          link: '../sheets'
-        }
-      ]
+    },
+    {
+      title: 'Pr',
+      intro: '...',
+      details: '.................',
+      background: [
+        '../assets/luxe-vp-couple-md.jpg',
+      ],
+      link: '../frame',
+    },
+    {
+      title: 'Frame Full',
+      intro: '...',
+      details: '............',
+      background: [
+        '../assets/luxe-vp-couple-md.jpg',
+      ],
+      link: '../frame-full',
+    },
+    {
+      title: 'Sheets PD',
+      intro: '...',
+      details: '.................',
+      background: [
+        '../assets/luxe-vp-couple-md.jpg',
+      ],
+      link: '../sheets',
+    },
+    {
+      title: 'Sheets Full',
+      intro: '...',
+      details: '............',
+      background: [
+        '../assets/luxe-vp-couple-md.jpg',
+      ],
+      link: '../sheets-full',
     },
     {
       title: 'Shopping Cart',
@@ -79,6 +112,10 @@ module.exports.home = async function (ctx) {
           link: '../cart'
         }
       ]
+    }, 
+    {
+      title: 'Start',
+      link: '../holiday-mode',
     }
   ]
   return caseStudies;
@@ -159,7 +196,6 @@ module.exports.mattress = async function (ctx) {
 }
 
 module.exports.frame = async function (ctx) {
-  
   const p = [
     {
       skus: ctx.skus,
@@ -218,7 +254,7 @@ module.exports.frame = async function (ctx) {
       defaultColorName: utils.getColorName('CS'),
       qtySelection: false,
       maxQty: 1,
-      productImage: '../assets/gallery-straighton-withluxe-TU-CS.jpg',
+      productImage: '../assets/frame/gallery-straighton-withluxe-TU-CS.jpg',
       financingSection: true,
       scripts: [
         'nav',
@@ -227,31 +263,38 @@ module.exports.frame = async function (ctx) {
         'tippy',
         'lazysizes.min'
       ],
-      headerTitle: 'Product Display Template',
-      headerIntro: 'This configuration offers users choices between two product lines. The features on display here include:',
-      headerBullets: [
-        'The gallery displays images relevant to both the currently selected product color and the currently selected product line (Classic or Tufted).',
-        'Out of Stock conditions prevent customers from ordering items not currently in inventory',
-        'URL search parameters allow for complex marketing links that sort by size, color and product type (for example, <a href="?size=full&color=desert-sand&type=tufted">/frame?size=full&color=desert-sand&type=tufted)</a>.',
-        '<a href="https://lull.com/islay-upholstered-bed" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
-      ]
+      header: ctx.q[0].header,
+      pageId: ctx.q[0].pageId,
+      pageUrl: ctx.q[0].pageUrl,
+      prevPage: ctx.q[0].prevPage,
+      nextPage: ctx.q[0].nextPage,
+      headerTitle: ctx.q[0].headerTitle,
+      headerIntro: ctx.q[0].headerIntro,
+      headerBullets: ctx.q[0].headerBullets
   }]
   return p;
 }
 
 
 module.exports.sheets = async function (ctx) {
-  const pageUrl = 'sheets';
-  const pageId = await utils.getPageId(pageUrl);
+  const discountActual = 70;
+  const dcDiscountActual = 20;
+  const pcDiscountActual = 20;
+  const skus31 = await utils.getProductSkus(ctx, 31, dcDiscountActual);
+  const skus32 = await utils.getProductSkus(ctx, 32, dcDiscountActual);
+  const skus33 = await utils.getProductSkus(ctx, 33, dcDiscountActual);
+  const skus34 = await utils.getProductSkus(ctx, 34, pcDiscountActual);
+  const skus35 = await utils.getProductSkus(ctx, 35, pcDiscountActual);
+  const skus36 = await utils.getProductSkus(ctx, 36, pcDiscountActual);
+  const duvetCoverSkus = skus31.concat(skus32).concat(skus33);
+  const pillowcaseSkus = skus34.concat(skus35).concat(skus36);
   const p = [
     {
-      skus: ctx.skus,
+      skus: await utils.getProductSkus(ctx, 30, discountActual),
       catIds: [31],
       defaultCatId: 31,
       defaultProductType: 'OC',
       catSizes: 6,
-      pageUrl: pageUrl,
-      pageId: pageId,
       productType: 'sheets',
       gallerySlides: 5,
       galleryDimensions: 0,
@@ -307,7 +350,7 @@ module.exports.sheets = async function (ctx) {
       upsellMinimum: 1,
       upsells: [
         {
-          skus: ctx.duvetCoverSkus,
+          skus: duvetCoverSkus,
           catIds: [31, 32, 33],
           catSizes: 3,
           defaultCatId: 33,
@@ -347,7 +390,7 @@ module.exports.sheets = async function (ctx) {
           gallerySlides: 7 
         },
         {
-          skus: ctx.pillowcaseSkus,
+          skus: pillowcaseSkus,
           catIds: [34, 35, 36],
           catSizes: 2,
           defaultCatId: 35,
@@ -399,16 +442,14 @@ module.exports.sheets = async function (ctx) {
         'tippy',
         'lazysizes.min'
       ],
-      prevPage: '../frame',
-      nextPage: '../cart',
-      headerTitle: 'Product Display Template',
-      headerIntro: 'This configuration sorts through 42 product skus and over 100 upsell skus from 6 product lines. The features on display here include:',
-      headerBullets: [
-        'The upsells update their currently offered product size when the main product size selection changes. In this case, all 3 product groups have differing numbers of corresponding sizes that all need to be matched. Users can then select the upsell item\'s color and fabric type. Upsell color and fabric selections persist if the user changes the main product size selection',
-        'Each upsell has an associated modal containing product details and a gallery of product images.',
-        'The financing modal (accessible by hovering over the question mark icon below the color swatches) updates with each product selection change, including adding upsells.',
-        '<a href="https://lull.com/organic-cotton-sheets" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
-      ]
+      header: ctx.q[0].header,
+      pageId: ctx.q[0].pageId,
+      pageUrl: ctx.q[0].pageUrl,
+      prevPage: ctx.q[0].prevPage,
+      nextPage: ctx.q[0].nextPage,
+      headerTitle: ctx.q[0].headerTitle,
+      headerIntro: ctx.q[0].headerIntro,
+      headerBullets: ctx.q[0].headerBullets
     }]
   return p;
 }

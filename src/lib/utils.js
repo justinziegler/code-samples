@@ -151,15 +151,20 @@ module.exports.numberWithCommas = function _numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 };
 
+module.exports.directory = async function () {
+
+}
+
 module.exports.getPageId = async function (pageUrl) {
   let id = 1;
   const directory = [
+    { url: 'holiday-mode', id: id++ },
     { url: 'value-props', id: id++ },
     { url: 'mattress-animation', id: id++ },
     { url: 'tiktok', id: id++ },
-    { url: 'mattress', id: id++ },
-    { url: 'frame', id: id++ },
-    { url: 'sheets', id: id++ },
+    { url: 'product-display', id: id++ },
+    { url: 'frame-full', id: id++ },
+    { url: 'sheets-full', id: id++ },
     { url: 'cart', id: id++ },
   ]
   let pageId;

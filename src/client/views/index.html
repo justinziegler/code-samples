@@ -18,6 +18,27 @@
 {% block content %}
   {{ _modules.pageNav() }}
 
+
+  {% set caseNumber = 1 %}
+  <section class="case-study">
+    <div class="container">
+      <div class="row">
+        <div class="case col-xs-12 col-sm-9 col-sm-offset-3">
+          <div class="row">
+            {% for cs in caseStudies %}
+              <div class="item col-xs-4" {% if cs.background.length === 1 %}style="background-image: url('{{ cs.background }}')"{% endif %}>
+                <h2>{{ cs.title }}</h2>
+                <!-- <p>{{ cs.intro }}</p> -->
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+
   {% macro getCaseStudies(caseStudies) %}
     {% set caseNumber = 1 %}
     {% for cs in caseStudies %}

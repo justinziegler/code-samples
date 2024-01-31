@@ -1,7 +1,5 @@
-let mobile = false;
-if (window.screen.width <= 500 && window.screen.height <= 880) {
-    mobile = true;
-}
+const mobile = (window.screen.width <= 500 && window.screen.height <= 880);
+
 function lockScreenPosition() {
     // Lock screen position on mobile when modal shows; resume position when it's hidden
     var savedScrollPosition;

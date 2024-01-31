@@ -69,13 +69,13 @@ nav#header-nav ul {
   padding: 0;
   margin: 0;
 }
-nav#header-nav li {
+nav#header-nav ul.project-details li {
   margin-bottom: 10px;
   list-style-type: none;
   padding-left: 30px;
   position: relative;
 }
-nav#header-nav li::before {
+nav#header-nav ul.project-details li::before {
   content: "";
   position: absolute;
   width: 12px;
@@ -84,13 +84,55 @@ nav#header-nav li::before {
   top: 6px;
   left: 6px;
 }
-nav#header-nav li a {
+nav#header-nav ul.project-details li a {
   color: #56dbd6;
   border-bottom: dotted 1px #56dbd6;
 }
-nav#header-nav li a:hover, nav#header-nav li a:focus {
+nav#header-nav ul.project-details li a:hover, nav#header-nav ul.project-details li a:focus {
   color: #78e2de;
   border-bottom-color: #78e2de;
+}
+nav#header-nav ul.toggle-links {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-column-gap: 15px;
+     -moz-column-gap: 15px;
+          column-gap: 15px;
+  padding: 0 15%;
+}
+nav#header-nav ul.toggle-links li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 16px;
+}
+nav#header-nav ul.toggle-links a {
+  width: 100%;
+  padding: 60px 10px 30px 10px;
+  border: solid 2px #56dbd6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 nav#header-nav .container-fluid {
   position: relative;
@@ -391,10 +433,9 @@ nav .nav-links a:hover {
 
 .header-content {
   position: fixed;
-  left: 0;
-  top: 0;
+  left: calc(50% - 300px);
   bottom: 0;
-  right: 0;
+  width: 600px;
   z-index: 1;
   overflow: hidden;
   -webkit-transition: 0.4s;
@@ -414,14 +455,13 @@ nav .nav-links a:hover {
 }
 @media (min-width: 768px) {
   .header-content {
-    right: calc(100% - 600px);
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
 }
 .header-content > div {
-  padding: 90px 45px 0 45px;
+  padding: 30px 30px 15px 30px;
   width: 600px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
