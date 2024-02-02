@@ -2,17 +2,35 @@
 const utils = require('./utils');
 
 module.exports.home = async function (ctx) {
-  const caseStudies = [
-    {
-      title: 'Intro?'
-    },
+  // const directory = await utils.getDirectory();
+  // const pageDetails = await content.getPageDetails(ctx);
+  // let caseStudies = [];
+  // let pageId = -1;
+  // directory.forEach(link => {
+  //   pageId++
+  //   pageDetails.forEach(page => {
+  //     if (link === page.link) {
+  //       const item = {
+  //         link: link,
+  //         pageId: pageId,
+  //         title: page.title,
+  //         intro: page.intro,
+  //         background: page.background
+  //       }
+  //       caseStudies.push(item);
+  //     }
+  //   })
+    
+  // })
+  console.log('caseStudies', caseStudies)
+  const caseStudiesXXX = [
     {
       title: 'Holiday Mode',
       intro: 'Holiday promotions were an important part of this company’s business, and several times a year we would theme the website for a variety of holidays. This eventually became too time-consuming, and in response I developed Holiday Mode for the site, which enabled reverting back to the regular site by updating one variable. Click here to toggle between the two versions.',
       background: [
         '../assets/holiday-promotion/carousel01-mob-vp-lg.jpg'
       ],
-      link: '../holiday-mode'
+      link: 'holiday-mode',
     },
     {
       title: 'Value Propositions',

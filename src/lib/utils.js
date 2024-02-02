@@ -151,29 +151,52 @@ module.exports.numberWithCommas = function _numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 };
 
-module.exports.directory = async function () {
-
+module.exports.getDirectory = async function () {
+  const directory = [
+    '/',
+    'holiday-mode',
+    'value-props',
+    'mattress-animation',
+    'tiktok',
+    'product-display',
+    'bed-frame',
+    'sheets',
+    'cart'
+  ]
+  return directory;
 }
 
 module.exports.getPageId = async function (pageUrl) {
-  let id = 1;
-  const directory = [
-    { url: 'holiday-mode', id: id++ },
-    { url: 'value-props', id: id++ },
-    { url: 'mattress-animation', id: id++ },
-    { url: 'tiktok', id: id++ },
-    { url: 'product-display', id: id++ },
-    { url: 'frame-full', id: id++ },
-    { url: 'sheets-full', id: id++ },
-    { url: 'cart', id: id++ },
-  ]
   let pageId;
-  directory.forEach(page => {
-    if (pageUrl === page.url) {
-      pageId = page.id;
+  const directory = await module.exports.getDirectory();
+  directory.forEach(item => {
+    if (pageUrl === item) {
+      pageId = directory.indexOf(item);
     }
   })
   return pageId;
+}
+
+module.exports.getPrevPage = async function (pageUrl) {
+  const directory = await module.exports.getDirectory();
+  let prevPage;
+  directory.forEach(item => {
+    if (pageUrl === item) {
+      prevPage = directory[(directory.indexOf(item)) - 1];
+    }
+  })
+  return prevPage;
+}
+
+module.exports.getNextPage = async function (pageUrl) {
+  const directory = await module.exports.getDirectory();
+  let nextPage;
+  directory.forEach(item => {
+    if (pageUrl === item) {
+      nextPage = directory[(directory.indexOf(item)) + 1];
+    }
+  })
+  return nextPage;
 }
 
 module.exports.setDisplayColor = function setDisplayColor(type) {

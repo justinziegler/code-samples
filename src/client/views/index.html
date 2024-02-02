@@ -23,11 +23,15 @@
   <section class="case-study">
     <div class="container">
       <div class="row">
-        <div class="case col-xs-12 col-sm-9 col-sm-offset-3">
-          <div class="row">
+        <div class="case col-xs-12 col-sm-8 col-sm-offset-3">
+          <div class="case-studies row">
             {% for cs in caseStudies %}
-              <div class="item col-xs-4" {% if cs.background.length === 1 %}style="background-image: url('{{ cs.background }}')"{% endif %}>
-                <h2>{{ cs.title }}</h2>
+              <div class="item" {% if cs.background.length %}style="background-image: url('{{ cs.background }}')"{% endif %}>
+                <a href="{{ cs.url }}" title="{{ cs.title }}">
+                  <span class="case-number">0{{- cs.pageId -}}</span>
+                  <span class="case-title">{{ cs.title }}</span>
+                </a>
+                
                 <!-- <p>{{ cs.intro }}</p> -->
               </div>
             {% endfor %}
@@ -37,87 +41,6 @@
       </div>
     </div>
   </section>
-
-
-  {% macro getCaseStudies(caseStudies) %}
-    {% set caseNumber = 1 %}
-    {% for cs in caseStudies %}
-      <section class="case-study">
-        <div class="container">
-          <div class="row">
-            <div class="case col-xs-12 col-sm-9 col-sm-offset-3">
-              <div class="case-background">
-                {% for image in cs.background %}
-                  <div {% if cs.background.length === 1 %}style="background-image: url('{{ image }}')"{% endif %}>
-                    {% if cs.background.length > 1 %}
-                      <img src="{{ image }}" alt="{{ cs.title }}" class="lazyload">
-                    {% endif %}
-                  </div>
-                {% endfor %}
-              </div>
-              <div class="row">
-                
-                <div class="case-details col-xs-5 col-xs-offset-7">
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <h2>{{ cs.title }}</h2>
-                      <p>{{ cs.intro }}</p>
-                      {% if cs.bullets.length %}
-                        <ul>
-                          {% for bullet in cs.bullets %}
-                            <li>{{ bullet }}</li>
-                          {% endfor %}
-                        </ul>
-                      {% endif %}
-                      {% if cs.details.length %}
-                        <p>{{ cs.details }}</p>
-                      {% endif %}
-                      <ul class="link">
-                        <li>
-                          <a href="{{ cs.link }}">Check it out</a>
-                        </li>
-                      </ul>
-                    </div>
-
-                    {# <div class="thumbnails col-xs-12">
-                        {% for thumb in cs.thumbnails %}
-                          <div class="thumbnail">
-                            <a href="{{ thumb.link }}">
-                            <span data-number="0{{ caseNumber }}.">
-                              {{ thumb.title }}
-                            </span>
-                            </a>
-                          </div>
-                          {%- set caseNumber = caseNumber + 1 -%}
-                        {% endfor %}
-                      </div> #}
-                  </div>
-                  {# <div class="row">
-                      <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-12">
-                        <div class="row">
-                          
-                          <div class="header-nav next col-xs-6 col-sm-3 col-lg-2">
-                            <a href="{{ cs.thumbnails[0].link }}">
-                              <span>Start</span>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div> #}
-                </div>
-                
-              </div>
-              
-              
-            </div>
-          </div>
-        </div>
-      </section>
-    {% endfor %}
-  {% endmacro %}
-
-  {{ getCaseStudies(caseStudies) }}
-  {{ _modals.galleryModal() }}
 {% endblock %}
 
 {% block scripts %}

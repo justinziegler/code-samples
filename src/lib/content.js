@@ -1,5 +1,59 @@
 const utils = require('./utils');
 
+module.exports.getPageDetails = async function (ctx) {
+  const pageDetails = [
+    {
+      title: 'Holiday Mode',
+      url: 'holiday-mode',
+      intro: 'Holiday promotions were an important part of this company’s business, and several times a year we would theme the website for a variety of holidays. This eventually became too time-consuming, and in response I developed Holiday Mode for the site, which enabled reverting back to the regular site by updating one variable. Click here to toggle between the two versions.',
+      background: '../assets/holiday-promotion/carousel01-mob-vp-lg.jpg'
+    },
+    {
+      title: 'Value Propositions',
+      url: 'value-props',
+      intro: 'In my previous position, I would often be required to develop page sections that looked and functioned differently depending if users were on mobile vs. a larger screen. This project came about from a desire to:',
+      background: '../assets/luxe-vp-couple-md.jpg',
+    },,
+    {
+      title: 'Exploded Product View',
+      url: 'mattress-animation',
+      intro: 'In my previous position, I would often be required to develop page sections that looked and functioned different ly depending if users were on mobile vs. a larger screen. This project came about from a desire to:',
+      background: '../assets/luxe-vp-couple-md.jpg'
+    },
+    {
+      title: 'Tiktok Mimic',
+      url: 'tiktok',
+      intro: 'Tiktok-styled mobile promotional page for a social media-targeted marketing campaign. Videos advance manually or automatically.',
+      background: '../assets/promos/tiktok-01.jpg'
+    },
+    {
+      title: 'Product Display',
+      url: 'product-display',
+      intro: 'The following pages highlight the features of a Product Display module that I developed to support a line of bedding products. This project came about from a need to:',
+      background: '../assets/luxe-vp-couple-md.jpg'
+    },
+    {
+      title: 'Bed Frame PDP',
+      url: 'bed-frame',
+      intro: 'The following pages highlight the features of a Product Display template that I developed to support a line of bedding products. This project came about from a need to:',
+      background: '../assets/luxe-vp-couple-md.jpg'
+    },,
+    {
+      title: 'Bed Sheets PDP',
+      url: 'sheets',
+      intro: 'The following pages highlight the features of a Product Display template that I developed to support a line of bedding products. This project came about from a need to:',
+      background: '../assets/luxe-vp-couple-md.jpg'
+    },
+    {
+      title: 'Shopping Cart',
+      url: 'cart',
+      intro: 'This page was developed to replace the company\'s existing shopping cart with an experience that:',
+      background: '../assets/luxe-vp-couple-md.jpg'
+    }, 
+  ]
+  return pageDetails;
+}
+
 module.exports.valueProps = async function (ctx) {
   const items = [
     {
