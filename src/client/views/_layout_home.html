@@ -21,6 +21,9 @@
     {% block content %}
       <p>Missing content block</p>
     {% endblock %}
+    {% if p.header and p.pageUrl !== '/' %}
+      <div class="header-overlay"></div>
+    {% endif %}
   </main>
   
   {{ _js.headerScripts() }}

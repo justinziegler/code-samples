@@ -91,9 +91,8 @@ async function holidayMode(ctx, next) {
       prevPage: prevPage,
       nextPage: nextPage,
       headerTitle: 'Holiday Mode',
-      headerIntro: `<a href="#" class="mode-toggle">Click here</a> to toggle the page to its <span class="mode-toggle-text">'evergreen'</span> content.`,
+      headerIntro: `Holiday promotions were an important part of this company’s business, and several times a year we would theme the website for a variety of holidays. This eventually became too time-consuming, and in response I developed Holiday Mode for the site, which enabled reverting back to the regular site by updating one variable. Use the buttons below to toggle between the two versions.`,
       headerBullets: [
-        '<a href="#" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
       ],
       toggleLinks: [
         {

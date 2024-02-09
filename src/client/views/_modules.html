@@ -50,21 +50,17 @@
           <div class="header-nav prev">
             {% if p.pageUrl !== '/' %}
               <a href="{{ p.prevPage }}">
-                <span>Back</span>
+                &laquo; Back
               </a>
             {% endif %}
           </div>
-          <div class="header-title">
-            {%- if p.pageUrl !== '/' -%}
-              <div class="header-nav collapse">
-                <a href="#" class="toggle-description">
-                  &nbsp;<span class="hidden-xs">Description</span>&nbsp;
-                </a>
-                <a class="home" href="../">
-                  <span class="sr-only">Home</span>
-                </a>
-              </div>
-            {%- endif -%}
+          <div class="header-nav header-title">
+            <a class="home" href="../">
+              <span class="sr-only">Home</span>
+            </a>
+            <a class="about" href="#">
+              <span class="sr-only">About</span>
+            </a> 
           </div>
           
           <div class="header-nav next">
@@ -75,67 +71,81 @@
                 {% else %}
                   <span>Next</span>
                 {% endif %}
+                &nbsp;&raquo;
               </a>
             {% endif %}
           </div>
         </div>
       </div>
       {% if p.pageUrl !== '/' %}
-        <div class="header-content">
-          <div>
-            <h2>
-              <span>Case Study</span><br>
-              {%- if p.pageId < 10 -%}0{% endif %}
-              {{- p.pageId -}}. {{ p.headerTitle }}
-            </h2>
-            <p>{{ p.headerIntro | safe }}</p>
-            <ul class="project-details">
-              {% for bullet in p.headerBullets %}
-                <li>{{ bullet | safe }}</li>
-              {% endfor %}
-            </ul>
-            {% if p.toggleLinks.length %}
-              <ul class="toggle-links">
-                {% for item in p.toggleLinks %}
-                  <li><a href="#" data-target="{{ item.link }}">
-                    <span>{{ item.title }}</span>
-                  </a></li>
-                {% endfor %}
-              </ul>
-            {% endif %}
-            <div class="case-study-nav container-fluid">
-              <div class="row">
-                <div class="header-nav prev">
-                  {% if p.pageUrl !== '/' %}
-                    <a href="{{ p.prevPage }}">
-                      <span>Back</span>
-                    </a>
-                  {% endif %}
-                </div>
-                <div class="header-title">
-                  {%- if p.pageUrl !== '/' -%}
-                    <div class="header-nav collapse">
-                      <a href="#" class="toggle-description">
-                        &nbsp;<span>This</span>&nbsp;
-                      </a>
-                    </div>
-                  {%- endif -%}
-                </div>
-                
-                <div class="header-nav next">
-                  {% if p.nextPage !== undefined %}
-                    <a href="{{ p.nextPage }}">
-                      {% if p.pageUrl == '/' %}
-                        <span>Start</span>
-                      {% else %}
-                        <span>Next</span>
-                      {% endif %}
-                    </a>
-                  {% endif %}
-                </div>
+        <div class="header-content top">
+          <div class="case-study">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in hendrerit nisl, vitae pharetra ipsum. Sed varius interdum facilisis. Vivamus euismod eleifend neque. Etiam rhoncus sem a vulputate dapibus. Ut posuere arcu in ligula lobortis rutrum. Vestibulum pretium leo dui, id accumsan arcu cursus quis. Maecenas at massa gravida, sodales tortor tincidunt, rutrum lectus. Maecenas egestas placerat sem vitae tempor. Pellentesque efficitur dignissim accumsan. Integer hendrerit nisi enim, sed aliquam mauris viverra eget. Proin in nisl fringilla, sollicitudin mi vel, vehicula libero.</p>
+          </div>
+        </div>
+
+        <div class="header-content bottom">
+          <div class="case-study-nav">
+            <div>
+              <div class="prev">
+                {% if p.pageUrl !== '/' %}
+                  <a href="{{ p.prevPage }}">
+                    &laquo; Back
+                  </a>
+                {% endif %}
+              </div>
+  
+              <div class="header-collapse">
+                <a href="#" class="toggle-description">
+                  &nbsp;<span class="arrow">&raquo;</span>
+                </a>
+              </div>
+              
+              <div class="next">
+                {% if p.nextPage !== undefined %}
+                  <a href="{{ p.nextPage }}">
+                    {% if p.pageUrl == '/' %}
+                      <span>Start</span>
+                    {% else %}
+                      <span>Next</span>
+                    {% endif %}
+                    &raquo;
+                  </a>
+                {% endif %}
               </div>
             </div>
+            <div>
+              <h2>
+                <span>
+                  {% if p.pageId < 10 -%}0{% endif %}
+                  {{- p.pageId -}}. 
+                </span>
+                {{ p.headerTitle }}
+              </h2>
+            </div>
           </div>
+          
+          <div class="case-study">
+            
+            <div class="case-study-content">
+              <p>{{ p.headerIntro | safe }}</p>
+              <ul class="project-details">
+                {% for bullet in p.headerBullets %}
+                  <li>{{ bullet | safe }}</li>
+                {% endfor %}
+              </ul>
+              {% if p.toggleLinks.length %}
+                <ul class="toggle-links">
+                  {% for item in p.toggleLinks %}
+                    <li><a href="#" data-target="{{ item.link }}">
+                      <span>{{ item.title }}</span>
+                    </a></li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          </div>
+          
         </div>
       {% endif %}
     </nav>

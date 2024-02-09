@@ -437,11 +437,15 @@
 {% macro headerScripts() %}
   <script>
     let headerCollapsed = false;
+    const nav = document.querySelector('nav');
+    const content = document.querySelector('.case-study-content');
+    const overlay = document.querySelector('.header-overlay');
     function setCollapsed() {
       headerCollapsed = !headerCollapsed;
       nav.setAttribute('data-collapsed', headerCollapsed);
+      $(content).slideToggle(200);
+      $(overlay).fadeToggle(200);
     }
-    const nav = document.querySelector('nav');
     const collapseBtns = document.querySelectorAll('.toggle-description');
     collapseBtns.forEach(btn => {
       btn.addEventListener('click', event => {
@@ -455,6 +459,18 @@
         setCollapsed();
       }
     })
+
+    let aboutCollapsed = true;
+    const about = document.querySelector('.header-content.top');
+    const aboutBtn = document.querySelector('nav .about');
+    function toggleAbout() {
+      aboutCollapsed = !aboutCollapsed;
+      $(about).slideToggle(200);
+    }
+    aboutBtn.addEventListener('click', event => {
+      event.preventDefault();
+      toggleAbout();
+    });
   </script>
 {% endmacro %}
 
