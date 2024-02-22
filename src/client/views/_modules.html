@@ -42,28 +42,24 @@
   </script>
 {%- endmacro -%}
 
+{% macro navLinks() %}
+
+{% endmacro %}
+
 {% macro header(p) %}
   {% if p.header %}
-    <nav id="header-nav" data-collapsed="false">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="header-nav prev">
-            {% if p.pageUrl !== '/' %}
-              <a href="{{ p.prevPage }}">
-                &laquo; Back
-              </a>
-            {% endif %}
-          </div>
-          <div class="header-nav header-title">
-            <a class="home" href="../">
-              <span class="sr-only">Home</span>
-            </a>
-            <a class="about" href="#">
-              <span class="sr-only">About</span>
-            </a> 
-          </div>
-          
-          <div class="header-nav next">
+    {% set collapsed = p.pageUrl == '/' %}
+    <nav id="nav" data-collapsed="{{ collapsed }}">
+      <div class="nav-container">
+        <div class="nav-col left">
+          <a class="nav-btn home" href="../">
+            <span class="sr-only">Home</span>
+          </a>
+          <h2>Justin Ziegler &nbsp;<span>Recent Work</span> </h2>
+        </div>
+        
+        <div class="nav-col right">
+          {#
             {% if p.nextPage !== undefined %}
               <a href="{{ p.nextPage }}">
                 {% if p.pageUrl == '/' %}
@@ -74,15 +70,28 @@
                 &nbsp;&raquo;
               </a>
             {% endif %}
-          </div>
+          #}
+          <a href="#" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+          <ul>
+            {% for x in p.navLinks %}
+              <li class="{{ x.class }}">
+                <a href="{{ x.link }}" 
+                  {% if x.target !== '' %}
+                    target="_blank" 
+                  {% endif %}
+                  tabindex="0">
+                  
+                  {{ x.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
         </div>
       </div>
-      {% if p.pageUrl !== '/' %}
-        <div class="header-content top">
-          <div class="case-study">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in hendrerit nisl, vitae pharetra ipsum. Sed varius interdum facilisis. Vivamus euismod eleifend neque. Etiam rhoncus sem a vulputate dapibus. Ut posuere arcu in ligula lobortis rutrum. Vestibulum pretium leo dui, id accumsan arcu cursus quis. Maecenas at massa gravida, sodales tortor tincidunt, rutrum lectus. Maecenas egestas placerat sem vitae tempor. Pellentesque efficitur dignissim accumsan. Integer hendrerit nisi enim, sed aliquam mauris viverra eget. Proin in nisl fringilla, sollicitudin mi vel, vehicula libero.</p>
-          </div>
-        </div>
 
         <div class="header-content bottom">
           <div class="case-study-nav">
@@ -95,16 +104,18 @@
                 {% endif %}
               </div>
   
-              <div class="header-collapse">
-                <a href="#" class="toggle-description">
-                  &nbsp;<span class="arrow">&raquo;</span>
-                </a>
-              </div>
-              
+              {% if p.pageUrl !== '/' %}
+                <div class="expand">
+                  <a href="#" class="toggle-description">
+                    &nbsp;<span class="arrow">&raquo;</span>
+                  </a>
+                </div>
+              {% endif %}
+
               <div class="next">
                 {% if p.nextPage !== undefined %}
                   <a href="{{ p.nextPage }}">
-                    {% if p.pageUrl == '/' %}
+                    {% if collapsed %}
                       <span>Start</span>
                     {% else %}
                       <span>Next</span>
@@ -115,39 +126,46 @@
               </div>
             </div>
             <div>
-              <h2>
-                <span>
-                  {% if p.pageId < 10 -%}0{% endif %}
-                  {{- p.pageId -}}. 
-                </span>
-                {{ p.headerTitle }}
-              </h2>
+              <h3>
+                {% if collapsed %}
+                  &nbsp;
+                {% else %}
+                  <span>
+                    {% if p.pageId < 10 -%}0{% endif %}
+                    {{- p.pageId -}}. 
+                  </span>
+                  {{ p.headerTitle }}
+                {% endif %}
+              </h3>
             </div>
           </div>
           
           <div class="case-study">
             
             <div class="case-study-content">
-              <p>{{ p.headerIntro | safe }}</p>
-              <ul class="project-details">
-                {% for bullet in p.headerBullets %}
-                  <li>{{ bullet | safe }}</li>
-                {% endfor %}
-              </ul>
-              {% if p.toggleLinks.length %}
-                <ul class="toggle-links">
-                  {% for item in p.toggleLinks %}
-                    <li><a href="#" data-target="{{ item.link }}">
-                      <span>{{ item.title }}</span>
-                    </a></li>
+              {% if not collapsed %}
+                <p>{{ p.headerIntro | safe }}</p>
+                <ul class="project-details">
+                  {% for bullet in p.headerBullets %}
+                    <li>{{ bullet | safe }}</li>
                   {% endfor %}
                 </ul>
+                {% if p.toggleLinks.length %}
+                  <ul class="toggle-links">
+                    {% for item in p.toggleLinks %}
+                      {% set active = loop.index === 1 %}
+
+                      <li><a href="#" data-active="{{ active }}" data-target="{{ item.link }}">
+                        <span>{{ item.title }}</span>
+                      </a></li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
               {% endif %}
             </div>
           </div>
           
         </div>
-      {% endif %}
     </nav>
     
   {% endif %}
@@ -161,13 +179,6 @@
           <h1>Justin Ziegler</h1>
           <h2>Recent Work</h2>
         </div>
-      </div>
-      <div class="nav-links">
-        <ul>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Promotions</a></li>
-          <li><a href="#">Checkout</a></li>
-        </ul>
       </div>
     </div>
   </nav>

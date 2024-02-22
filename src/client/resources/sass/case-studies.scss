@@ -9,15 +9,245 @@
 @import "partials/mixins";
 @import 'partials/layout';
 
+%dot-gradient {
+  @include dot-gradient(#000);
+}
+%filterCat1 {
+  filter: invert(18%) sepia(86%) saturate(2685%) hue-rotate(180deg) brightness(95%) contrast(85%);
+}
+%filterNavy {
+  filter: invert(11%) sepia(9%) saturate(5091%) hue-rotate(159deg) brightness(98%) contrast(93%); // navy
+}
+%filterTeal {
+  filter: invert(73%) sepia(16%) saturate(1283%) hue-rotate(129deg) brightness(86%) contrast(91%);
+}
+
 main {
   // padding-top: 30px;
-  background-color: tint($navy, 90%);
+  // background-color: tint($navy, 90%);
+  background-color: $white;
   // @include mq(md) {
   //   padding-top: 100px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
   // }
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 15px;
+    z-index: 0;
+    @extend %dot-gradient;
+    background-size:  30px;
+    background-repeat: repeat-x;
+    // @extend %filterPurple;
+    // filter: invert(78%) sepia(36%) saturate(618%) hue-rotate(123deg) brightness(93%) contrast(90%);
+    // filter: invert(20%) sepia(63%) saturate(314%) hue-rotate(153deg) brightness(92%) contrast(96%);
+    // filter: invert(100%) sepia(5%) saturate(0%) hue-rotate(288deg) brightness(106%) contrast(104%); // white
+    // filter: invert(100%) sepia(69%) saturate(124%) hue-rotate(169deg) brightness(96%) contrast(92%);
+    // filter: invert(11%) sepia(9%) saturate(5091%) hue-rotate(159deg) brightness(98%) contrast(93%); // navy
+    // filter: invert(73%) sepia(16%) saturate(1283%) hue-rotate(129deg) brightness(86%) contrast(91%);
+    filter: invert(97%) sepia(6%) saturate(68%) hue-rotate(149deg) brightness(95%) contrast(95%); // light grey
+    @include mq(xs) {
+      background-size: 36px;
+    }
+    @include mq(md) {
+      background-size:  40px;
+    }
+  }
+  &::before {
+    background-position: 50% 0%;
+  }
+  &::after {
+    // background-position: 50% 100%;
+    transform: rotate(180deg);
+    background-size: 24px;
+  }
 }
-body {
-  font-family: 'Cabin Condensed', sans-serif;
+// body {
+//   font-family: 'Cabin Condensed', sans-serif;
+// }
+
+.intro {
+  // background-color: $navy;
+  // background-color: tint($navy, 10%);
+  color: $white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h1 {
+    font-family: 'Boogaloo', sans;
+    color: $navy;
+    font-size: 30px;
+    margin: 0;
+    line-height: 1.2;
+    font-weight: normal;
+    @include mq(lg) {
+      font-size: 36px;
+    }
+    span {
+      color: shade($teal, 15%);
+    }
+  }
+  p {
+    color: $navy;
+    font-size: 14px;
+  }
+}
+
+$x: 240px;
+$y: 158px; // width of purple column
+$z: $x + $y;
+$bg: transparent;
+.intro {
+  $bg: transparent;
+  position: relative;
+  // width: 100%;
+  // height: 30vh;
+  // bottom: calc(50% + 15vw);
+  $bgh: tint($cat4, 30%);
+  $bgh: $cat2;
+  $gap: 2px;
+  $base: 40px;
+  $int: 4;
+  z-index: 0;
+  // background-color: $eggplant;
+  $xx: 15px;
+  $xxx: 320px;
+  // background-image: linear-gradient(to bottom, 
+  //   $cat1 0%,
+  //   $cat1 calc(100% - 214px),
+  //   $eggplant calc(100% - 214px),
+  //   $eggplant calc(100% - $xx),
+  //   $white calc(100% - $xx),
+  //   $white 100%);
+  // @include mq(xs) {
+  //   background-image: linear-gradient(to bottom, 
+  //   $cat1 0%,
+  //   $cat1 calc(100% - 250px),
+  //   $eggplant calc(100% - 250px),
+  //   $eggplant calc(100% - $xx),
+  //   $white calc(100% - $xx),
+  //   $white 100%);
+  // }
+  // @include mq(md) {
+  //   height: auto;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: calc(50vh + 70px);
+  //   background-image: linear-gradient(to bottom, 
+  //   $cat1 0%,
+  //   $cat1 calc(100% - $xxx),
+  //   $white calc(100% - $xxx),
+  //   $white calc(100% - $xx),
+  //   $white calc(100% - $xx),
+  //   $white 100%);
+  // }
+  
+  // &::after {
+  //   content: '';
+  //   position: absolute;
+  //   left: 8px;
+  //   right: 8px;
+  //   top: 13px;
+  //   bottom: 5px;
+  //   z-index: -1;
+  //   border-bottom: 8px solid tint($cat1, 27%);
+  // }
+  span {
+    &.arrow {
+      @include mq(xmd) {
+        display: none;
+      }
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: -70px;
+      z-index: 0;  
+      background-image: linear-gradient(to right, 
+      $bg 0%,
+      $bg calc(50% + $x),
+      $cat1 calc(50% + $x), 
+      $cat1 calc(50% + $x + 2px), 
+
+      tint($cat1, 15%) calc(50% + $x + 2px), // first stripe from left
+      tint($cat1, 15%) calc(50% + $x + 4px), 
+
+      $cat1 calc(50% + $x + 4px), // purple
+      $cat1 calc(50% + $x + 6px), 
+
+      tint($cat1, 15%) calc(50% + $x + 6px), // second stripe
+
+      $cat1 calc(50% + $x + 7px), // back to purple
+
+      // $cat1 calc(50% + ($x + (($y / 2) - 20px))),
+      // tint($cat1, 10%) calc(50% + ($x + (($y / 2) - 20px))),
+      // tint($cat1, 10%) calc(50% + ($x + (($y / 2) - 18px))),
+      // $cat1 calc(50% + ($x + (($y / 2) - 18px))),
+
+      $cat1 calc(50% + ($z - 7px)), // right side
+
+      tint($cat1, 15%) calc(50% + ($z - 7px)), // left stripe on right
+      // tint($cat1, 65%) calc(50% + ($z - 6px)), 
+
+      $cat1 calc(50% + ($z - 6px)), // purple
+      $cat1 calc(50% + ($z - 5px)), 
+
+      tint($cat1, 15%) calc(50% + ($z - 5px)), 
+      tint($cat1, 15%) calc(50% + ($z - 3px)), 
+      $cat1 calc(50% + ($z - 3px)),
+
+      $cat1 calc(50% + $z),
+      $bg calc(50% + $z),
+      $bg 100%);
+      @include mq(lg) { 
+        bottom: -90px;        
+        $x: 300px;
+        $z: 487px;
+        background-image: linear-gradient(to right, 
+          $bg 0%,
+          $bg calc(50% + ($x - 10px)),
+          $white calc(50% + ($x - 10px)),
+          $white calc(50% + $x),
+          $cat1 calc(50% + $x), 
+          $cat1 calc(50% + ($x + 2px)), 
+    
+          tint($cat1, 15%) calc(50% + ($x + 2px)), // first stripe from left
+          tint($cat1, 15%) calc(50% + ($x + 4px)), 
+    
+          $cat1 calc(50% + ($x + 4px)), // purple
+          $cat1 calc(50% + ($x + 6px)), 
+    
+          tint($cat1, 15%) calc(50% + ($x + 6px)), // second stripe
+    
+          $cat1 calc(50% + ($x + 7px)), // back to purple    
+          $cat1 calc(50% + ($z - 7px)), // right side
+    
+          tint($cat1, 15%) calc(50% + ($z - 7px)), // left stripe on right
+    
+          $cat1 calc(50% + ($z - 6px)), // purple
+          $cat1 calc(50% + ($z - 5px)), 
+    
+          tint($cat1, 15%) calc(50% + ($z - 5px)), 
+          tint($cat1, 15%) calc(50% + ($z - 3px)), 
+          $cat1 calc(50% + ($z - 3px)),
+    
+          $cat1 calc(50% + $z),
+          $white calc(50% + $z),
+          $white calc(50% + ($z + 10px)),
+          $bg calc(50% + ($z + 10px)),
+          $bg 100%);
+      }
+    }
+  }
 }
 
 .case-study {
@@ -29,12 +259,13 @@ body {
   // border-top: solid 1px tint($teal, 30%);
   // border-bottom: solid 1px tint($teal, 30%);
   // margin-bottom: vwp(30px);
-  height: 100vh;
+  // height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
   width: 100%;
+  z-index: 1;
   // @include mq(xssm) {
   //   padding: 30px calc((100% - 390px) / 2);
   //   margin-bottom: 30px;
@@ -68,16 +299,21 @@ body {
   //     bottom: -8px;
   //   }
   // }
+  .row {
+    @include mq(md) {
+      display: flex;
+    }
+  }
 }
 .case {
   // background-image: url('./luxe-vp-couple-md.jpg');
   // background-size: 100%;
   // padding: 30px;
-  min-height: 620px;
+  // min-height: 620px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 30px 45px;
+  // padding: 30px 45px;
   position: relative;
   
   
@@ -383,16 +619,15 @@ body {
 .item {
   height: 0;
   // padding-bottom: 33.333333%;
-  padding-bottom: 20%;
-  border: solid 3px $cat2;
+  padding-bottom: 22%;
   position: relative;
-  background-size: cover;
+  background-size: 100%;
   background-position: 50% 50%;
   float: none;
   display: flex;
   flex: 1 1 calc((100% / 3) - 3rem);
-  margin: 1.5rem;
-  border-radius: 6px;
+  margin: 1rem;
+  // border-radius: 6px;
   // flex: 1;
   // &::before {
   //   content: '';
@@ -404,6 +639,35 @@ body {
   //   transform: translateX(0%) translateY(0%);
   //   transition: .2s;
   // }
+  &:last-of-type {
+    a {
+      &:before, &::after {
+        content: '';
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: 20%;
+        @include chevron(#000);
+        @extend %filterNavy;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: .75;
+        transition: .2s;
+      }
+      &:before {
+        background-position: 40% 50%;
+      }
+      &:after {
+        background-position: 60% 50%;
+      }
+      &:hover {
+        &:before, &::after {
+          @extend %filterTeal;
+        }
+      }
+    }
+  }
   h2 {
 
   }
@@ -413,26 +677,44 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+    border: solid 4px rgba($navy, .8);
+    transition: .2s;
+    &:hover {
+      border: solid 4px shade($teal, 10%);
+// box-shadow:inset 0 0 0 2px rgba($navy,.6);
+      .case-number {
+        background-color: shade($teal, 10%);
+        // text-shadow: rgba($navy, .2) 2px 2px 0;
+        color: $white;
+      }
+      .case-title {
+        
+        background-color: rgba(shade($teal, 10%), 1);
+      }
+    }
     span {
       display: block;
-      font-family: 'Boogaloo', sans-serif;
+      // font-family: 'Boogaloo', sans-serif;
     }
     .case-number {
-      background-color: $cat1;
-      color: $white;
+      background-color: rgba($navy, .8);
+      color: $teal;
       width: 3.5rem;
       height: 3.5rem;
-      border-radius: 50%;
+      line-height: 1;
+      // border-radius: 50%;
       text-align: center;
       font-size: 2rem;
       position: absolute;
-      bottom: 1rem;
-      left: 1rem;
+      top: 0;
+      left: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: solid 2px white;
+      font-weight: 700;
+      // border: solid 2px white;
       z-index: 2;
+      transition: .2s;
     }
     .case-title {
       width: 100%;
@@ -440,14 +722,17 @@ body {
       left: 0;
       right: 0;
       bottom: 0;
-      height: 25%;
-      background-color: rgba($white, .6);
-      padding: 0 1.5rem .5rem 1.5rem;
-      font-size: 1.8rem;
+      // height: 25%;
+      background-color: rgba($navy, .8);
+      padding: .5rem 1rem 0rem 1rem;
+      font-size: 1.6rem;
+      color: $white;
+      font-weight: 500;
       display: flex;
-      align-items: flex-end;
+      align-items: flex-start;
       justify-content: flex-end;
       flex-direction: column;
+
     }
   }
 }

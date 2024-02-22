@@ -5,7 +5,6 @@
 {% import "./src/client/views/_modules.html" as _modules %}
 
 {% block styles %}
-  {{ _css.common() }}
   {{ _css.home() }}
 {% endblock %}
 
@@ -16,19 +15,45 @@
 {% endblock %}
 
 {% block content %}
-  {{ _modules.pageNav() }}
+
+  <!-- <section class="intro">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>Justin Ziegler <span>Recent Work</span></h1>
+          <p>I'm a <strong>front-end developer</strong> with an eye for detail and <br />
+            a knack for building eye-catching user experiences.
+                <br />
+                Keep scrolling to view some recent projects, or<br /> 
+                visit my  <a href="https://github.com/justinziegler" rel="noreferrer" target="_blank">Github</a> for code examples.
+        </p>
+        </div>
+      </div>
+    </div>
+  </section> -->
 
 
   {% set caseNumber = 1 %}
   <section class="case-study">
     <div class="container">
       <div class="row">
-        <div class="case col-xs-12 col-sm-8 col-sm-offset-3">
+        <div class="intro col-xs-12 col-md-4">
+          <h1>Justin Ziegler&nbsp;<span>Recent Work</span></h1>
+          <p>I'm a <strong>front-end developer</strong> with an eye for detail and <br />
+            a knack for building eye-catching user experiences.
+                <br />
+                Keep scrolling to view some recent projects, or<br /> 
+                visit my  <a href="https://github.com/justinziegler" rel="noreferrer" target="_blank">Github</a> for code examples.
+        </p>
+        </div>
+        <div class="case col-xs-12 col-md-8">
           <div class="case-studies row">
             {% for cs in caseStudies %}
               <div class="item" {% if cs.background.length %}style="background-image: url('{{ cs.background }}')"{% endif %}>
                 <a href="{{ cs.url }}" title="{{ cs.title }}">
-                  <span class="case-number">0{{- cs.pageId -}}</span>
+                  {% if loop.index !== caseStudies.length %}
+                    <span class="case-number">0{{- cs.pageId -}}.</span>
+                  {% endif %}
                   <span class="case-title">{{ cs.title }}</span>
                 </a>
                 

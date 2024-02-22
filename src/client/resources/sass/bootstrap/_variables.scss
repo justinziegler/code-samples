@@ -10,10 +10,12 @@ $lipstick: #932755;
 $flame: #C93B30;
 $orange: #FF7132;
 
-$color1: $purple;
-$color2: #781b58;
-$color3: $lipstick;
-$color4: #ae3143;
+$teal: #56dbd6;
+
+$color1: shade($teal, 10%);
+$color2: shade($teal, 20%);
+$color3:  shade($teal, 30%);
+$color4:  shade($teal, 40%);
 $color5: $flame;
 $color6: #e45631;
 $color7: $orange;

@@ -26,25 +26,11 @@
     {% endif %}
   </main>
   
-  {{ _js.headerScripts() }}
-  <script src="../assets/nav.js"></script>
+  {{ _js.headerScripts(p) }}
+  <!-- <script src="../assets/nav.js"></script> -->
   {%- for script in scripts -%}
     <script src="../assets/{{ script }}.js"></script>
   {%- endfor -%}
-  <script>
-    $('#header-nav').autoHidingNavbar();
-    {% if p.toggleLinks.length %}
-      const toggleLinks = document.querySelectorAll('.toggle-links a');
-      const iframe = document.querySelector('iframe');
-      toggleLinks.forEach(link => {
-        link.addEventListener('click', event => {
-          event.preventDefault();
-          const target = link.dataset.target;
-          iframe.setAttribute('src', target);
-        })
-      });
-    {% endif %}
-  </script>
   {% block scripts %}
   {% endblock %}
 </body>

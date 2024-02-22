@@ -35,6 +35,7 @@ async function home(ctx, next) {
 
   const directory = await utils.getDirectory();
   const pageDetails = await content.getPageDetails(ctx);
+  const navLinks = await content.getNavLinks(ctx);
   let caseStudies = [];
   let pageId = -1;
   let startHereUrl;
@@ -58,7 +59,8 @@ async function home(ctx, next) {
   })
   const startHere = {
     url: startHereUrl,
-    title: 'Start Here'
+    title: 'Start from Beginning »',
+    background: '../assets/holiday-promotion/collage01.jpg'
   }
   caseStudies.push(startHere);
   ctx.body = await render('index', {
@@ -67,6 +69,7 @@ async function home(ctx, next) {
       header: true,
       pageUrl: pageUrl,
       nextPage: nextPage,
+      navLinks: navLinks
     },
     caseStudies: caseStudies,
     scripts: [
@@ -82,6 +85,7 @@ async function holidayMode(ctx, next) {
   const pageId = await utils.getPageId(pageUrl);
   const prevPage = await utils.getPrevPage(pageUrl);
   const nextPage = await utils.getNextPage(pageUrl);
+  const navLinks = await content.getNavLinks(ctx);
   ctx.body = await render('01_holiday_mode', {
     title: title,
     p: {
@@ -90,18 +94,17 @@ async function holidayMode(ctx, next) {
       pageId: pageId,
       prevPage: prevPage,
       nextPage: nextPage,
+      navLinks: navLinks,
       headerTitle: 'Holiday Mode',
-      headerIntro: `Holiday promotions were an important part of this company’s business, and several times a year we would theme the website for a variety of holidays. This eventually became too time-consuming, and in response I developed Holiday Mode for the site, which enabled reverting back to the regular site by updating one variable. Use the buttons below to toggle between the two versions.`,
-      headerBullets: [
-      ],
+      headerIntro: 'Several times a year we would theme key pages on the site for different holiday sales, then return them to normal after the holiday. In an effort to make this process less time-consuming, I developed Holiday Mode for the site. With Holiday Mode, we were able to switch between regular and holiday content by simply updating one variable. Use the links below to toggle between the two versions.',
       toggleLinks: [
         {
           link: 'holiday-mode-enabled',
-          title: 'Enabled',
+          title: 'Holiday Mode On',
         },
         {
           link: 'holiday-mode-disabled',
-          title: 'Disabled',
+          title: 'Holiday Mode Off',
         }
       ]
     }
@@ -167,6 +170,7 @@ async function valueProps(ctx, next) {
   const pageId = await utils.getPageId(pageUrl);
   const prevPage = await utils.getPrevPage(pageUrl);
   const nextPage = await utils.getNextPage(pageUrl);
+  const navLinks = await content.getNavLinks(ctx);
   ctx.body = await render('02_value_propositions', {
     title: title,
     p: {
@@ -175,13 +179,9 @@ async function valueProps(ctx, next) {
       pageId: pageId,
       prevPage: prevPage,
       nextPage: nextPage,
-      headerTitle: 'Lightweight Multi-use Slideshow',
-      headerIntro: 'This example illustrates one of the more common use cases that lead me to develop this script. In addition, I did the Photoshop work required to provide a suitable backdrop to the text content. Features on display here include:',
-      headerBullets: [
-        'An auto-playing swipe-able slideshow on mobile screens',
-        'A content accordion on larger screens',
-        '<a href="https://lull.com/luxe-hybrid" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
-      ]
+      navLinks: navLinks,
+      headerTitle: 'Value Propositions',
+      headerIntro: 'I would often be tasked with developing page sections that looked and functioned differently depending on device type. This project came about from a desire to build something lightweight that allowed for alternate functionality on different devices. This page features a swipe-able slideshow on mobile and a content accordion on larger screens. Check out the <a href="mattress-animation">following page</a> for another example. '
     },
     items: items
   });
@@ -194,6 +194,7 @@ async function mattressAnimation(ctx, next) {
   const pageId = await utils.getPageId(pageUrl);
   const prevPage = await utils.getPrevPage(pageUrl);
   const nextPage = await utils.getNextPage(pageUrl);
+  const navLinks = await content.getNavLinks(ctx);
   ctx.body = await render('03_mattress_animation', {
     title: title,
     p: {
@@ -202,14 +203,9 @@ async function mattressAnimation(ctx, next) {
       pageId: pageId,
       prevPage: prevPage,
       nextPage: nextPage,
-      headerTitle: 'Lightweight Multi-use Slideshow',
-      headerIntro: 'This is another example of the slideshow script highlighted on the previous page. In this instance, . Features on display here include:',
-      headerBullets: [
-        'Swipe-able slideshow of text content',
-        'Navigating between slides also steps through an animation that showcases each layer of a mattress',
-        'Alternate mobile layout',
-        '<a href="https://lull.com/original-premium-mattress" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
-      ]
+      navLinks: navLinks,
+      headerTitle: 'Exploded Product View',
+      headerIntro: 'This is another example utilizing the slideshow script from the <a href="value-props">previous page</a>. On display here is a swipe-able slideshow of text content with a corresponding animation of mattress layers.'
     },
     layers: layers
   });
@@ -223,6 +219,7 @@ async function tiktok(ctx, next) {
   const pageId = await utils.getPageId(pageUrl);
   const prevPage = await utils.getPrevPage(pageUrl);
   const nextPage = await utils.getNextPage(pageUrl);
+  const navLinks = await content.getNavLinks(ctx);
   ctx.body = await render('04_tiktok', {
     title: title,
     p: {
@@ -231,13 +228,13 @@ async function tiktok(ctx, next) {
       pageId: pageId,
       prevPage: prevPage,
       nextPage: nextPage,
+      navLinks: navLinks,
       headerTitle: 'Tiktok Mimic',
-      headerIntro: 'Most marketing campaigns I\'ve worked on would get refined over time to increase their overall chances of success, but that wasn\'t the case here. Very early after this page launched, engagement and sales data showed that the campaign was a hit. The features on display include:',
+      headerIntro: 'This promotion was created to engage social media users, and it turned out to be a hit. Features on display include:',
       headerBullets: [
         'Slideshow of a dozen short videos that auto-advance when complete',
         'Popup overlays of user reviews and FAQs',
-        'Email capture redirect to main website',
-        '<a href="https://lull.com/tksale" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
+        'Email capture redirect to main website'
       ]
     },
     slides: slides,
@@ -258,7 +255,7 @@ async function productDisplay(ctx, next) {
   const pageId = await utils.getPageId(pageUrl);
   const prevPage = await utils.getPrevPage(pageUrl);
   const nextPage = await utils.getNextPage(pageUrl);
-  console.log('prevPage!', prevPage);
+  const navLinks = await content.getNavLinks(ctx);
   ctx.body = await render('05_product_display', {
     title: 'Product Display Template',
     p: {
@@ -267,8 +264,9 @@ async function productDisplay(ctx, next) {
       pageId: pageId,
       prevPage: prevPage,
       nextPage: nextPage,
+      navLinks: navLinks,
       headerTitle: 'Product Display Template',
-      headerIntro: ``,
+      headerIntro: `The links below highlight the features of a Product Display module that I developed to support a line of bedding products. <span data-target="product-display-mattress">Mattress: This is the basic configuration, which allows users to add a product to cart and optionally add an upsell.</span> <span data-target="product-display-frame" style="display: none;">Bed Frame: This configuration offers a choice between fabric colors and product lines.</span><span data-target="product-display-sheets" style="display: none;">Sheets: This configuration sorts through 42 product skus and over 100 upsell skus from 6 product lines. The upsells update their currently offered product size when the main product size selection changes.</span> Toggle between product display configurations with the links below.`,
       toggleLinks: [
         {
           link: 'product-display-mattress',
@@ -363,6 +361,7 @@ async function bedFrame(ctx, next) {
   const pageId = await utils.getPageId(pageUrl);
   const prevPage = await utils.getPrevPage(pageUrl);
   const nextPage = await utils.getNextPage(pageUrl);
+  const navLinks = await content.getNavLinks(ctx);
   const discountActual = 200;
   ctx.discountActual = discountActual;
   const upholsteredSkus = await utils.getProductSkus(ctx, 40, discountActual);
@@ -375,6 +374,7 @@ async function bedFrame(ctx, next) {
       pageUrl: pageUrl,
       prevPage: prevPage,
       nextPage: nextPage,
+      navLinks: navLinks,
       headerTitle: '!!!!!!!!!!!!!!!',
       headerIntro: 'Most marketing campaigns I\'ve worked on would get refined over time to increase their overall chances of success, but that wasn\'t the case here. Very early after this page launched, engagement and sales data showed that the campaign was a hit. The features on display include:',
       headerBullets: [
@@ -416,6 +416,7 @@ async function bedFrame(ctx, next) {
 async function sheets(ctx, next) {
   const pageUrl = 'sheets';
   const pageId = await utils.getPageId(pageUrl);
+  const navLinks = await content.getNavLinks(ctx);
   const discountActual = 70;
   const valueProps = await content.valuePropsSheets(ctx);
   const reviews = await content.reviewsSheets(ctx);
@@ -429,6 +430,7 @@ async function sheets(ctx, next) {
       pageUrl: pageUrl,
       prevPage: 'bed-frame',
       nextPage: 'cart',
+      navLinks: navLinks,
       headerTitle: 'Full Product Display Template',
       headerIntro: 'This configuration sorts through 42 product skus and over 100 upsell skus from 6 product lines. The features on display here include:',
       headerBullets: [
@@ -456,6 +458,7 @@ async function sheets(ctx, next) {
 async function cart(ctx, next) {
   const pageUrl = 'cart';
   const pageId = await utils.getPageId(pageUrl);
+  const navLinks = await content.getNavLinks(ctx);
   let cartItems = [];
   const mattressSkus = await utils.getProductSkus(ctx, 1, 300);
   cartItems.push(mattressSkus[5]);
@@ -475,6 +478,7 @@ async function cart(ctx, next) {
       pageUrl: pageUrl,
       pageId: pageId,
       prevPage: 'sheets',
+      navLinks: navLinks,
       headerTitle: 'Shopping Cart',
       headerIntro: 'This page was A/B tested against our existing page for over a year. While it was ultimately shelved, some of the features developed here were later ported over to the existing cart. Features on display here include:',
       headerBullets: [

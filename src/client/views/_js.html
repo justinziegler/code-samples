@@ -434,44 +434,74 @@
 </script>
 {% endmacro %}
 
-{% macro headerScripts() %}
-  <script>
-    let headerCollapsed = false;
-    const nav = document.querySelector('nav');
-    const content = document.querySelector('.case-study-content');
-    const overlay = document.querySelector('.header-overlay');
-    function setCollapsed() {
-      headerCollapsed = !headerCollapsed;
-      nav.setAttribute('data-collapsed', headerCollapsed);
-      $(content).slideToggle(200);
-      $(overlay).fadeToggle(200);
-    }
-    const collapseBtns = document.querySelectorAll('.toggle-description');
-    collapseBtns.forEach(btn => {
-      btn.addEventListener('click', event => {
+{% macro headerScripts(p) %}
+  {% if p.header %}
+    <script>
+      const main = document.querySelector('main');
+      let caseStudyCollapsed = false;
+      const nav = document.querySelector('#nav');
+      const content = nav.querySelector('.case-study-content');
+      const navOverlay = main.querySelector('.header-overlay');
+      const mobile = window.innerWidth < 768;
+      const hamburger = nav.querySelector('.hamburger');
+      const navLinks = nav.querySelector('ul');
+      const leftCol = nav.querySelector('.nav-col.left');
+
+      function setCollapsed() {
+        caseStudyCollapsed = !caseStudyCollapsed;
+        nav.setAttribute('data-collapsed', caseStudyCollapsed);
+        $(content).slideToggle(200);
+        $(navOverlay).fadeOut(200);
+      }
+      function collapseHamburger() {
+        // const visible = hamburger.getAttribute('style');
+        const style = window.getComputedStyle(navLinks);
+        const display = style.getPropertyValue('display');
+        console.log('display', display);
+        if (display === 'block') {
+          $(navLinks).slideUp(200);
+        }
+      }
+      const collapseBtn = nav.querySelector('.toggle-description');
+      collapseBtn.addEventListener('click', event => {
         event.preventDefault();
         setCollapsed();
       });
-    })
-    const main = document.querySelector('main');
-    main.addEventListener('click', event => {
-      if (!headerCollapsed) {
-        setCollapsed();
-      }
-    })
+      main.addEventListener('click', event => {
+        if (!caseStudyCollapsed) {
+          setCollapsed();
+        }
+        collapseHamburger();
+      })
 
-    let aboutCollapsed = true;
-    const about = document.querySelector('.header-content.top');
-    const aboutBtn = document.querySelector('nav .about');
-    function toggleAbout() {
-      aboutCollapsed = !aboutCollapsed;
-      $(about).slideToggle(200);
-    }
-    aboutBtn.addEventListener('click', event => {
-      event.preventDefault();
-      toggleAbout();
-    });
-  </script>
+
+
+      hamburger.addEventListener('click', event => {
+        event.preventDefault();
+        $(navLinks).slideToggle(200)
+      });
+      leftCol.addEventListener('click', event => {
+        collapseHamburger();
+      })
+
+      {% if p.toggleLinks.length %}
+        const toggleLinks = document.querySelectorAll('.toggle-links a');
+        const iframe = document.querySelector('iframe');
+        toggleLinks.forEach(link => {
+          link.addEventListener('click', event => {
+            event.preventDefault();
+            const target = link.dataset.target;
+            iframe.setAttribute('src', target);
+            $(navOverlay).fadeOut(200);
+            toggleLinks.forEach(item => {
+              item.setAttribute('data-active', false);
+            });
+            link.setAttribute('data-active', true);
+          })
+        });
+      {% endif %}
+    </script>
+  {% endif %}
 {% endmacro %}
 
 {% macro addToCart() %}
