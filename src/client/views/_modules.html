@@ -112,8 +112,8 @@
                 </div>
               {% endif %}
 
-              <div class="next">
-                {% if p.nextPage !== undefined %}
+              {% if p.nextPage !== undefined %}
+                <div class="next">
                   <a href="{{ p.nextPage }}">
                     {% if collapsed %}
                       <span>Start</span>
@@ -122,8 +122,8 @@
                     {% endif %}
                     &raquo;
                   </a>
-                {% endif %}
-              </div>
+                </div>
+              {% endif %}
             </div>
             <div>
               <h3>
@@ -144,7 +144,9 @@
             
             <div class="case-study-content">
               {% if not collapsed %}
-                <p>{{ p.headerIntro | safe }}</p>
+                {% for item in p.headerIntro %}
+                  <p>{{ item | safe }}</p>
+                {% endfor %}
                 <ul class="project-details">
                   {% for bullet in p.headerBullets %}
                     <li>{{ bullet | safe }}</li>

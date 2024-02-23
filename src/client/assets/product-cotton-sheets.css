@@ -1475,11 +1475,6 @@ main[data-active-size=FL] .delivery-window .pillowcase::after, main[data-active-
   }
 }
 @media (min-width: 1200px) {
-  .photo-module.photo-left.sustainable {
-    padding-top: 15px;
-  }
-}
-@media (min-width: 1200px) {
   .photo-module.photo-left.sustainable .content {
     padding-right: 75px;
   }

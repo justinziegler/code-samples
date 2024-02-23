@@ -1054,9 +1054,9 @@ main {
       }
     }
     &.sustainable {
-      @include mq(lg) {
-        padding-top: 15px;
-      }
+      // @include mq(lg) {
+      //   padding-top: 15px;
+      // }
       .content {
         @include mq(lg) {
           padding-right: 75px;

@@ -486,6 +486,7 @@
 
       {% if p.toggleLinks.length %}
         const toggleLinks = document.querySelectorAll('.toggle-links a');
+        const toggleBlurbs = document.querySelectorAll('.toggle-blurb');
         const iframe = document.querySelector('iframe');
         toggleLinks.forEach(link => {
           link.addEventListener('click', event => {
@@ -497,8 +498,15 @@
               item.setAttribute('data-active', false);
             });
             link.setAttribute('data-active', true);
+            toggleBlurbs.forEach(blurb => {
+              blurb.style.display = 'none';
+              console.log('got here')
+            })
+            const currentBlurb = document.querySelector(`.toggle-blurb[data-target="${target}"]`);
+            currentBlurb.style.display = 'block';
           })
         });
+        console.log('toggleBlurbs', toggleBlurbs.length)
       {% endif %}
     </script>
   {% endif %}

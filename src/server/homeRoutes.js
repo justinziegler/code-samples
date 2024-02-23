@@ -96,7 +96,10 @@ async function holidayMode(ctx, next) {
       nextPage: nextPage,
       navLinks: navLinks,
       headerTitle: 'Holiday Mode',
-      headerIntro: 'Several times a year we would theme key pages on the site for different holiday sales, then return them to normal after the holiday. In an effort to make this process less time-consuming, I developed Holiday Mode for the site. With Holiday Mode, we were able to switch between regular and holiday content by simply updating one variable. Use the links below to toggle between the two versions.',
+      headerIntro: [
+        'Several times a year we would theme key pages on the site for different holiday sales, then return them to normal after the holiday. In an effort to make this process less time-consuming, I developed Holiday Mode for the site. With Holiday Mode, we were able to switch between regular and holiday content by simply updating one variable.',
+        'Use the links below to toggle between the two versions.'
+      ],
       toggleLinks: [
         {
           link: 'holiday-mode-enabled',
@@ -181,7 +184,9 @@ async function valueProps(ctx, next) {
       nextPage: nextPage,
       navLinks: navLinks,
       headerTitle: 'Value Propositions',
-      headerIntro: 'I would often be tasked with developing page sections that looked and functioned differently depending on device type. This project came about from a desire to build something lightweight that allowed for alternate functionality on different devices. This page features a swipe-able slideshow on mobile and a content accordion on larger screens. Check out the <a href="mattress-animation">following page</a> for another example. '
+      headerIntro: [
+        'I would often be tasked with developing page sections that looked and functioned differently depending on device type. This project came about from a desire to build something lightweight that allowed for alternate functionality on different devices. This page features a swipe-able slideshow on mobile and a content accordion on larger screens. Check out the <a href="mattress-animation">following page</a> for another example. '
+      ]
     },
     items: items
   });
@@ -205,7 +210,9 @@ async function mattressAnimation(ctx, next) {
       nextPage: nextPage,
       navLinks: navLinks,
       headerTitle: 'Exploded Product View',
-      headerIntro: 'This is another example utilizing the slideshow script from the <a href="value-props">previous page</a>. On display here is a swipe-able slideshow of text content with a corresponding animation of mattress layers.'
+      headerIntro: [
+        'This is another example utilizing the slideshow script from the <a href="value-props">previous page</a>. On display here is a swipe-able slideshow of text content with a corresponding animation of mattress layers.'
+      ]
     },
     layers: layers
   });
@@ -230,7 +237,9 @@ async function tiktok(ctx, next) {
       nextPage: nextPage,
       navLinks: navLinks,
       headerTitle: 'Tiktok Mimic',
-      headerIntro: 'This promotion was created to engage social media users, and it turned out to be a hit. Features on display include:',
+      headerIntro: [
+        'This promotion was created to engage social media users, and it turned out to be a hit. Features on display include:'
+      ],
       headerBullets: [
         'Slideshow of a dozen short videos that auto-advance when complete',
         'Popup overlays of user reviews and FAQs',
@@ -266,7 +275,13 @@ async function productDisplay(ctx, next) {
       nextPage: nextPage,
       navLinks: navLinks,
       headerTitle: 'Product Display Template',
-      headerIntro: `The links below highlight the features of a Product Display module that I developed to support a line of bedding products. <span data-target="product-display-mattress">Mattress: This is the basic configuration, which allows users to add a product to cart and optionally add an upsell.</span> <span data-target="product-display-frame" style="display: none;">Bed Frame: This configuration offers a choice between fabric colors and product lines.</span><span data-target="product-display-sheets" style="display: none;">Sheets: This configuration sorts through 42 product skus and over 100 upsell skus from 6 product lines. The upsells update their currently offered product size when the main product size selection changes.</span> Toggle between product display configurations with the links below.`,
+      headerIntro: [
+        'The links below highlight the features of a Product Display module that I developed to support a line of bedding products.',
+        '<span class="toggle-blurb" data-target="product-display-mattress"><strong>Mattress:</strong> This is the basic configuration, which allows users to add a product to cart and optionally add an upsell from resulting modal.</span>', 
+        '<span class="toggle-blurb" data-target="product-display-frame" style="display: none;"><strong>Bed Frame:</strong> This configuration offers a choice between fabric colors and product lines.</span>',
+        '<span class="toggle-blurb" data-target="product-display-sheets" style="display: none;"><strong>Sheets:</strong> This configuration sorts through 42 product skus and over 100 upsell skus from 6 product lines. The upsells update their currently offered product size when the main product size selection changes.</span>',
+        'Toggle between different configurations with the links below.'
+      ],
       toggleLinks: [
         {
           link: 'product-display-mattress',
@@ -308,18 +323,6 @@ async function productDisplayFrame(ctx, next) {
   const upholsteredSkus = await utils.getProductSkus(ctx, 40, discountActual);
   const tuftedSkus = await utils.getProductSkus(ctx, 41, discountActual);
 	ctx.skus = upholsteredSkus.concat(tuftedSkus);
-  ctx.q = [
-    {
-      headerTitle: '!!!!!!!!!!!!!!!',
-      headerIntro: 'Most marketing campaigns I\'ve worked on would get refined over time to increase their overall chances of success, but that wasn\'t the case here. Very early after this page launched, engagement and sales data showed that the campaign was a hit. The features on display include:',
-      headerBullets: [
-        'Slideshow of a dozen short videos that auto-advance when complete',
-        'Popup overlays of user reviews and FAQs',
-        'Email capture redirect to main website',
-        '<a href="https://lull.com/tksale" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
-      ]
-    }
-  ]
   const p = await pageConfig.frame(ctx);
 
   ctx.body = await render('05c_product_display_frame', {
@@ -336,7 +339,9 @@ async function productDisplaySheets(ctx, next) {
     {
       header: false,
       headerTitle: 'Product Display Template',
-      headerIntro: 'This configuration sorts through 42 product skus and over 100 upsell skus from 6 product lines. The features on display here include:',
+      headerIntro: [
+        'This configuration sorts through 42 product skus and over 100 upsell skus from 6 product lines. The features on display here include:'
+      ],
       headerBullets: [
         'The upsells update their currently offered product size when the main product size selection changes. In this case, all 3 product groups have differing numbers of corresponding sizes that all need to be matched. Users can then select the upsell item\'s color and fabric type. Upsell color and fabric selections persist if the user changes the main product size selection',
         'Each upsell has an associated modal containing product details and a gallery of product images.',
@@ -375,13 +380,9 @@ async function bedFrame(ctx, next) {
       prevPage: prevPage,
       nextPage: nextPage,
       navLinks: navLinks,
-      headerTitle: '!!!!!!!!!!!!!!!',
-      headerIntro: 'Most marketing campaigns I\'ve worked on would get refined over time to increase their overall chances of success, but that wasn\'t the case here. Very early after this page launched, engagement and sales data showed that the campaign was a hit. The features on display include:',
-      headerBullets: [
-        'Slideshow of a dozen short videos that auto-advance when complete',
-        'Popup overlays of user reviews and FAQs',
-        'Email capture redirect to main website',
-        '<a href="https://lull.com/tksale" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
+      headerTitle: 'Bed Frame PDP',
+      headerIntro: [
+        'This product detail page features a number of interactive elements, including a slide-able product comparison module that I also developed the photography for.'
       ]
     }
   ]
@@ -431,13 +432,9 @@ async function sheets(ctx, next) {
       prevPage: 'bed-frame',
       nextPage: 'cart',
       navLinks: navLinks,
-      headerTitle: 'Full Product Display Template',
-      headerIntro: 'This configuration sorts through 42 product skus and over 100 upsell skus from 6 product lines. The features on display here include:',
-      headerBullets: [
-        'The upsells update their currently offered product size when the main product size selection changes. In this case, all 3 product groups have differing numbers of corresponding sizes that all need to be matched. Users can then select the upsell item\'s color and fabric type. Upsell color and fabric selections persist if the user changes the main product size selection',
-        'Each upsell has an associated modal containing product details and a gallery of product images.',
-        'The financing modal (accessible by hovering over the question mark icon below the color swatches) updates with each product selection change, including adding upsells.',
-        '<a href="https://lull.com/organic-cotton-sheets" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
+      headerTitle: 'Sheets PDP',
+      headerIntro: [
+        'This product detail page allows users to easily add a custom combination of sheets, duvet cover and pillowcases.'
       ]
     }
   ]
@@ -480,7 +477,9 @@ async function cart(ctx, next) {
       prevPage: 'sheets',
       navLinks: navLinks,
       headerTitle: 'Shopping Cart',
-      headerIntro: 'This page was A/B tested against our existing page for over a year. While it was ultimately shelved, some of the features developed here were later ported over to the existing cart. Features on display here include:',
+      headerIntro: [
+        'This page was A/B tested against our existing page for over a year. While it was ultimately shelved, some of the features developed here were later ported over to the existing cart. Features on display here include:'
+      ],
       headerBullets: [
         'Upsells are preset to the same size as the primary cart item, but users can select another size if desired.',
         'Upsells each have a corresponding modal with an image gallery and product details.',

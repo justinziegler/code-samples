@@ -14,10 +14,9 @@
 
 {% block content %}
 
-
-
-
-
+<div style="position: relative;">
+  <a id="content-top" class="anchor" name="content-top" style="top: 100px;"></a>
+</div>
 
 {{ _modules.contentAccordion(valueProps) }}
 
@@ -160,7 +159,7 @@
 {{ _modules.suggestedItems(suggestedItems) }}
 {{- _modules.faq(faqs) -}}
 {{ _modules.footer(currentYear) }}
-
+<div class="header-overlay"></div>
 {% endblock %}
 
 {% block scripts %}

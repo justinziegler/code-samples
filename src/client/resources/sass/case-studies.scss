@@ -28,10 +28,12 @@ main {
   background-color: $white;
   // @include mq(md) {
   //   padding-top: 100px;
-  height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
+  @include mq(sm) {
+    height: 100vh;
+  }
   // }
   &::before, &::after {
     content: '';
@@ -619,26 +621,19 @@ $bg: transparent;
 .item {
   height: 0;
   // padding-bottom: 33.333333%;
-  padding-bottom: 22%;
   position: relative;
   background-size: 100%;
   background-position: 50% 50%;
+  background-repeat: no-repeat;
   float: none;
   display: flex;
-  flex: 1 1 calc((100% / 3) - 3rem);
   margin: 1rem;
-  // border-radius: 6px;
-  // flex: 1;
-  // &::before {
-  //   content: '';
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   transform: translateX(0%) translateY(0%);
-  //   transition: .2s;
-  // }
+  padding-bottom: 100%;
+  flex: 1 1 calc(50% - 2rem);
+  @include mq(sm) {
+    padding-bottom: 22%;
+    flex: 1 1 calc((100% / 3) - 3rem);
+  }
   &:last-of-type {
     a {
       &:before, &::after {
@@ -725,14 +720,16 @@ $bg: transparent;
       // height: 25%;
       background-color: rgba($navy, .8);
       padding: .5rem 1rem 0rem 1rem;
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       color: $white;
       font-weight: 500;
       display: flex;
       align-items: flex-start;
       justify-content: flex-end;
       flex-direction: column;
-
+      @include mq(lg) {
+        font-size: 1.6rem;
+      }
     }
   }
 }
