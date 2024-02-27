@@ -75,7 +75,9 @@ $height: 50px;
     // }
     span {
       font-weight: 500;
-      font-size: 85%;
+      &.number {
+        font-size: 85%;
+      }
     }
   }
   p, li {
@@ -89,10 +91,10 @@ $height: 50px;
       font-weight: 500;
       color: shade($teal, 20%);
       transition: .2s;
-      border-bottom: solid 1px transparent;
+      border-bottom: solid 1px $teal;
       &:hover, &:focus {
+        border-bottom: solid 1px transparent;
         color: shade($teal, 40%);
-        border-bottom: solid 1px $teal;
       }
     }
   }
@@ -191,13 +193,29 @@ $height: 50px;
         }
       }
     }
-    
+  }
+  &[data-current-page="/"] {
+    // .case-study-nav {
+    //   > div {
+    //      &:last-of-type {
+    //       justify-content: center;
+    //      }
+    //   }
+    // }
+    .nav-col {
+      &.left {
+        @include mq(xsm) {
+          padding-left: 50px;
+          justify-content: center;
+        }
+      }
+    }
   }
   .nav-container {
     display: flex !important;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     height: 100%;
     position: relative;
     // z-index: 2;
@@ -207,6 +225,7 @@ $height: 50px;
     // padding-right: 15px;
     @include mq(sm) {
       width: 750px;
+      justify-content: space-between;
     }
     @include mq(md) {
       width: 970px;
@@ -244,11 +263,11 @@ $height: 50px;
         position: absolute;
         top: 100%;
         background-color: $navy;
-        width: 50%;
+        width: 33%;
         padding: 0 1rem 1rem 1rem;
       }
-      @include mq(xs) {
-        padding: 5px 0 vwl(20px) 0;
+      @include mq(xxs) {
+        width: 50%;
       }
       @include mq(sm) {
         padding: 0;
@@ -275,25 +294,18 @@ $height: 50px;
       a, button {
         color: #fff;
         border: none;
-        border-bottom: solid 2px $cat1;
-        padding: vwp(12px) vwp(6px) vwp(6px) vwp(6px);
+        border-bottom: solid 2px $color1;
         flex: 1;
         position: relative;
         display: flex;
         flex-direction: row;
         background: none;
         // font-family: "Boogaloo", sans;
-        font-size: vwp(12px);
+        font-size: 14px;
+        padding: 11px 6px 1px 6px;
         line-height: 1.4;
         cursor: pointer;
-        @include mq(xs) {
-          padding: vwl(6px);
-          font-size: vwl(12px);
-        }
-        @include mq(sm) {
-          font-size: 14px;
-          padding: 11px 6px 1px 6px;
-        }
+   
         &::before {
           content: '';
           position: absolute;
@@ -308,8 +320,10 @@ $height: 50px;
           text-decoration: none;
           outline: none;
           text-shadow: shade($teal, 50%) 1px 1px 3px;
+          background-color: $color1;
           &::before {
             top: 0;
+            background-color: $color1;
             @include mq(sm) {
               top: -10px;
             }
@@ -336,50 +350,7 @@ $height: 50px;
           padding: 0 5px;
         }
       }
-      &.gh {
-        a {
-          border-bottom-color: $color1;
-          &:hover {
-            background-color: $color1;
-          }
-          &::before {
-            background-color: $color1;
-          }
-        }
-      }
-      &.resume {
-        a {
-          border-bottom-color: $color2;
-          &:hover {
-            background-color: $color2;
-          }
-          &::before {
-            background-color: $color2;
-          }
-        }
-      }
-      &.li {
-        a {
-          border-bottom-color: $color3;
-          &:hover {
-            background: $color3;
-          }
-          &::before {
-            background-color: $color3;
-          }
-        }
-      }
-      &.email {
-        a {
-          border-bottom-color: $color4;
-          &::before {
-            background-color: $color4;
-          }
-          &:hover, &:focus {
-            background: $color4;
-          }
-        }
-      }
+      
     }
   }
   
@@ -416,8 +387,11 @@ $height: 50px;
       }
       > div {
         display: flex;
-        padding: 1rem 0 .5rem 0;
         position: relative;
+        // padding: vwp(10px) 0 vwp(5px) 0;
+        padding: 1rem 0 .5rem 0;
+        // @include mq(sm) {
+        // }
         &::after {
           content: '';
           position: absolute;
@@ -443,16 +417,21 @@ $height: 50px;
       }
     }
     a {
-      padding: .5rem 2rem;
       color: $white;
       font-weight: 500;
-      font-size: 1.5rem;
       color: $white;
       font-weight: 500;
       position: relative;
-      @include mq(xxs) {
-        padding: .5rem 1.5rem;
-      }
+      font-size: 1.5rem;
+      padding: .5rem 2rem;
+      // @include mq(xs) {
+      //   font-size: vwl(12px);
+      //   padding: vwl(6px) vwl(12px);
+      // }
+      // @include mq(sm) {
+      //   font-size: 1.5rem;
+      //   padding: .5rem 2rem;
+      // }
       &:focus {
         outline: none;
       }

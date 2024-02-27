@@ -67,7 +67,13 @@ async function home(ctx, next) {
     title: title,
     p: {
       header: true,
+      headerTitle: 'Home',
+      headerIntro: [
+        'I am a web developer who spent the last few years building and refining the web presence of a bedding startup. After joining the company in its first year, I worked on every corner of the website as the product catalog slowly grew from one line to more than fifteen.',
+        'The links included here contain a few of my favorite recent projects. Code samples for everything on this site can be found on <a href="https://github.com/justinziegler" target="_blank" tabindex="0">my Github</a>. Thanks for visiting!'
+      ],
       pageUrl: pageUrl,
+      pageId: 0,
       nextPage: nextPage,
       navLinks: navLinks
     },

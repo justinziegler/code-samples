@@ -48,15 +48,16 @@
 
 {% macro header(p) %}
   {% if p.header %}
-    {% set collapsed = p.pageUrl == '/' %}
-    <nav id="nav" data-collapsed="{{ collapsed }}">
+    <nav id="nav" data-collapsed="false" data-current-page="{{ p.pageUrl }}">
       <div class="nav-container">
         <div class="nav-col left">
-          <a class="nav-btn home" href="../">
-            <span class="sr-only">Home</span>
-          </a>
-          <h2>Justin Ziegler &nbsp;<span>Recent Work</span> </h2>
-        </div>
+            {% if p.pageUrl !== '/' %}
+              <a class="nav-btn home" href="../">
+                <span class="sr-only">Home</span>
+              </a>
+            {% endif %}
+            <h2 class="visible-xs">Justin Ziegler &nbsp;<span>Recent Work</span> </h2>
+          </div>
         
         <div class="nav-col right">
           {#
@@ -96,26 +97,24 @@
         <div class="header-content bottom">
           <div class="case-study-nav">
             <div>
-              <div class="prev">
-                {% if p.pageUrl !== '/' %}
+              {% if p.pageUrl !== '/' %}
+                <div class="prev">
                   <a href="{{ p.prevPage }}">
                     &laquo; Back
                   </a>
-                {% endif %}
-              </div>
-  
-              {% if p.pageUrl !== '/' %}
-                <div class="expand">
-                  <a href="#" class="toggle-description">
-                    &nbsp;<span class="arrow">&raquo;</span>
-                  </a>
                 </div>
               {% endif %}
+  
+              <div class="expand">
+                <a href="#" class="toggle-description">
+                  &nbsp;<span class="arrow">&raquo;</span>
+                </a>
+              </div>
 
               {% if p.nextPage !== undefined %}
                 <div class="next">
                   <a href="{{ p.nextPage }}">
-                    {% if collapsed %}
+                    {% if p.pageUrl == '/' %}
                       <span>Start</span>
                     {% else %}
                       <span>Next</span>
@@ -127,15 +126,11 @@
             </div>
             <div>
               <h3>
-                {% if collapsed %}
-                  &nbsp;
-                {% else %}
-                  <span>
-                    {% if p.pageId < 10 -%}0{% endif %}
-                    {{- p.pageId -}}. 
-                  </span>
-                  {{ p.headerTitle }}
-                {% endif %}
+                <span class="number">
+                  {%- if p.pageId < 10 -%}0{% endif -%}
+                  {{- p.pageId -}}.
+                </span>
+                {{- p.headerTitle | safe -}}
               </h3>
             </div>
           </div>
@@ -143,26 +138,24 @@
           <div class="case-study">
             
             <div class="case-study-content">
-              {% if not collapsed %}
-                {% for item in p.headerIntro %}
-                  <p>{{ item | safe }}</p>
+              {% for item in p.headerIntro %}
+                <p>{{ item | safe }}</p>
+              {% endfor %}
+              <ul class="project-details">
+                {% for bullet in p.headerBullets %}
+                  <li>{{ bullet | safe }}</li>
                 {% endfor %}
-                <ul class="project-details">
-                  {% for bullet in p.headerBullets %}
-                    <li>{{ bullet | safe }}</li>
+              </ul>
+              {% if p.toggleLinks.length %}
+                <ul class="toggle-links">
+                  {% for item in p.toggleLinks %}
+                    {% set active = loop.index === 1 %}
+
+                    <li><a href="#" data-active="{{ active }}" data-target="{{ item.link }}">
+                      <span>{{ item.title }}</span>
+                    </a></li>
                   {% endfor %}
                 </ul>
-                {% if p.toggleLinks.length %}
-                  <ul class="toggle-links">
-                    {% for item in p.toggleLinks %}
-                      {% set active = loop.index === 1 %}
-
-                      <li><a href="#" data-active="{{ active }}" data-target="{{ item.link }}">
-                        <span>{{ item.title }}</span>
-                      </a></li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
               {% endif %}
             </div>
           </div>

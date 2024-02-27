@@ -135,6 +135,12 @@ main {
           align-items: center;
   position: relative;
 }
+@media (max-width: 767px) {
+  main {
+    padding-top: 90px;
+    padding-bottom: 65vw;
+  }
+}
 @media (min-width: 768px) {
   main {
     height: 100vh;
@@ -146,7 +152,7 @@ main::before, main::after {
   left: 0;
   right: 0;
   top: 0;
-  bottom: 15px;
+  bottom: 0;
   z-index: 0;
   background-size: 30px;
   background-repeat: repeat-x;
@@ -161,6 +167,7 @@ main::before, main::after {
 @media (min-width: 992px) {
   main::before, main::after {
     background-size: 40px;
+    bottom: 15px;
   }
 }
 main::before {
@@ -185,22 +192,49 @@ main::after {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .intro {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .intro {
+    width: 33.333333%;
+  }
 }
 .intro h1 {
   font-family: "Boogaloo", sans;
   color: #0b2836;
   font-size: 30px;
-  margin: 0;
-  line-height: 1.2;
+  margin: 0 0 15px 0;
+  line-height: 1;
   font-weight: normal;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .intro h1 {
+    font-size: 50px;
+  }
+}
+@media (min-width: 992px) {
+  .intro h1 {
+    margin: 0;
+  }
 }
 @media (min-width: 1200px) {
   .intro h1 {
-    font-size: 36px;
+    font-size: 58px;
   }
 }
 .intro h1 span {
   color: #49bab6;
+}
+@media (max-width: 991px) {
+  .intro h1 span {
+    margin-left: 15px;
+  }
 }
 .intro p {
   color: #0b2836;
@@ -247,12 +281,28 @@ main::after {
   position: relative;
   width: 100%;
   z-index: 1;
+  padding: 0 30px;
+}
+@media (max-width: 767px) {
+  .case-study .container {
+    margin: 0;
+  }
+}
+.case-study .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 @media (min-width: 992px) {
   .case-study .row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 
@@ -631,26 +681,35 @@ main::after {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-column-gap: 1.5rem;
+     -moz-column-gap: 1.5rem;
+          column-gap: 1.5rem;
+  row-gap: 1.5rem;
+}
+@media (min-width: 992px) {
+  .case-studies {
+    width: 66.66666667%;
+  }
 }
 
 .item {
   height: 0;
   position: relative;
-  background-size: 100%;
+  background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   float: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 1rem;
-  padding-bottom: 100%;
+  padding-bottom: 30%;
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 calc(50% - 2rem);
-          flex: 1 1 calc(50% - 2rem);
+      -ms-flex: 1 1 calc(50% - 1.5rem);
+          flex: 1 1 calc(50% - 1.5rem);
 }
-@media (min-width: 768px) {
+@media (min-width: 544px) {
   .item {
+    background-size: 100%;
     padding-bottom: 22%;
     -webkit-box-flex: 1;
         -ms-flex: 1 1 calc(33.3333333333% - 3rem);
@@ -703,11 +762,11 @@ main::after {
 .item a .case-number {
   background-color: rgba(11, 40, 54, 0.8);
   color: #56dbd6;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 7.5vw;
+  height: 7.5vw;
+  font-size: 3.75vw;
   line-height: 1;
   text-align: center;
-  font-size: 2rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -725,6 +784,20 @@ main::after {
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
+@media (min-width: 544px) {
+  .item a .case-number {
+    width: 4.2253521127vw;
+    height: 4.2253521127vw;
+    font-size: 2.1126760563vw;
+  }
+}
+@media (min-width: 768px) {
+  .item a .case-number {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 2rem;
+  }
+}
 .item a .case-title {
   width: 100%;
   position: absolute;
@@ -732,8 +805,6 @@ main::after {
   right: 0;
   bottom: 0;
   background-color: rgba(11, 40, 54, 0.8);
-  padding: 0.5rem 1rem 0rem 1rem;
-  font-size: 1.5rem;
   color: #ffffff;
   font-weight: 500;
   display: -webkit-box;
@@ -749,6 +820,20 @@ main::after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  font-size: 3.4375vw;
+  padding: 1.5625vw 1.25vw 0 1.25vw;
+}
+@media (min-width: 544px) {
+  .item a .case-title {
+    font-size: 1.9366197183vw;
+    padding: 0.8802816901vw 1.25vw 0 1.25vw;
+  }
+}
+@media (min-width: 768px) {
+  .item a .case-title {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem 0rem 1rem;
+  }
 }
 @media (min-width: 1200px) {
   .item a .case-title {

@@ -62,6 +62,8 @@
 }
 #nav h3 span {
   font-weight: 500;
+}
+#nav h3 span.number {
   font-size: 85%;
 }
 #nav p, #nav li {
@@ -77,11 +79,11 @@
   color: #45afab;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  border-bottom: solid 1px transparent;
+  border-bottom: solid 1px #56dbd6;
 }
 #nav p a:hover, #nav p a:focus {
+  border-bottom: solid 1px transparent;
   color: #348380;
-  border-bottom: solid 1px #56dbd6;
 }
 #nav ul {
   padding: 0;
@@ -197,6 +199,14 @@
 #nav ul.toggle-links a[data-active=true]::after {
   content: "";
 }
+@media (max-width: 767px) {
+  #nav[data-current-page="/"] .nav-col.left {
+    padding-left: 50px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
 #nav .nav-container {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
@@ -208,9 +218,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   height: 100%;
   position: relative;
   margin-right: auto;
@@ -219,6 +229,9 @@
 @media (min-width: 768px) {
   #nav .nav-container {
     width: 750px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 @media (min-width: 992px) {
@@ -277,13 +290,13 @@
     position: absolute;
     top: 100%;
     background-color: #0b2836;
-    width: 50%;
+    width: 33%;
     padding: 0 1rem 1rem 1rem;
   }
 }
-@media (min-width: 544px) {
+@media (max-width: 543px) {
   #nav .nav-col ul {
-    padding: 5px 0 3.5211267606vw 0;
+    width: 50%;
   }
 }
 @media (min-width: 768px) {
@@ -321,8 +334,7 @@
 #nav .nav-col li a, #nav .nav-col li button {
   color: #fff;
   border: none;
-  border-bottom: solid 2px #932755;
-  padding: 3.75vw 1.875vw 1.875vw 1.875vw;
+  border-bottom: solid 2px #4dc5c1;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -335,21 +347,10 @@
       -ms-flex-direction: row;
           flex-direction: row;
   background: none;
-  font-size: 3.75vw;
+  font-size: 14px;
+  padding: 11px 6px 1px 6px;
   line-height: 1.4;
   cursor: pointer;
-}
-@media (min-width: 544px) {
-  #nav .nav-col li a, #nav .nav-col li button {
-    padding: 1.0563380282vw;
-    font-size: 2.1126760563vw;
-  }
-}
-@media (min-width: 768px) {
-  #nav .nav-col li a, #nav .nav-col li button {
-    font-size: 14px;
-    padding: 11px 6px 1px 6px;
-  }
 }
 #nav .nav-col li a::before, #nav .nav-col li button::before {
   content: "";
@@ -366,9 +367,11 @@
   text-decoration: none;
   outline: none;
   text-shadow: #2b6e6b 1px 1px 3px;
+  background-color: #4dc5c1;
 }
 #nav .nav-col li a:hover::before, #nav .nav-col li a:focus::before, #nav .nav-col li button:hover::before, #nav .nav-col li button:focus::before {
   top: 0;
+  background-color: #4dc5c1;
 }
 @media (min-width: 768px) {
   #nav .nav-col li a:hover::before, #nav .nav-col li a:focus::before, #nav .nav-col li button:hover::before, #nav .nav-col li button:focus::before {
@@ -399,42 +402,6 @@
 #nav .nav-col li.title .bullet {
   color: #932755;
   padding: 0 5px;
-}
-#nav .nav-col li.gh a {
-  border-bottom-color: #4dc5c1;
-}
-#nav .nav-col li.gh a:hover {
-  background-color: #4dc5c1;
-}
-#nav .nav-col li.gh a::before {
-  background-color: #4dc5c1;
-}
-#nav .nav-col li.resume a {
-  border-bottom-color: #45afab;
-}
-#nav .nav-col li.resume a:hover {
-  background-color: #45afab;
-}
-#nav .nav-col li.resume a::before {
-  background-color: #45afab;
-}
-#nav .nav-col li.li a {
-  border-bottom-color: #3c9996;
-}
-#nav .nav-col li.li a:hover {
-  background: #3c9996;
-}
-#nav .nav-col li.li a::before {
-  background-color: #3c9996;
-}
-#nav .nav-col li.email a {
-  border-bottom-color: #348380;
-}
-#nav .nav-col li.email a::before {
-  background-color: #348380;
-}
-#nav .nav-col li.email a:hover, #nav .nav-col li.email a:focus {
-  background: #348380;
 }
 #nav .case-study-nav {
   background: #0b2836;
@@ -481,8 +448,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 1rem 0 0.5rem 0;
   position: relative;
+  padding: 1rem 0 0.5rem 0;
 }
 #nav .case-study-nav > div > div::after {
   content: "";
@@ -504,18 +471,13 @@
   border-right: none;
 }
 #nav .case-study-nav a {
-  padding: 0.5rem 2rem;
   color: #ffffff;
   font-weight: 500;
-  font-size: 1.5rem;
   color: #ffffff;
   font-weight: 500;
   position: relative;
-}
-@media (max-width: 543px) {
-  #nav .case-study-nav a {
-    padding: 0.5rem 1.5rem;
-  }
+  font-size: 1.5rem;
+  padding: 0.5rem 2rem;
 }
 #nav .case-study-nav a:focus {
   outline: none;

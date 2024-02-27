@@ -16,51 +16,31 @@
 
 {% block content %}
 
-  <!-- <section class="intro">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <h1>Justin Ziegler <span>Recent Work</span></h1>
-          <p>I'm a <strong>front-end developer</strong> with an eye for detail and <br />
-            a knack for building eye-catching user experiences.
-                <br />
-                Keep scrolling to view some recent projects, or<br /> 
-                visit my  <a href="https://github.com/justinziegler" rel="noreferrer" target="_blank">Github</a> for code examples.
-        </p>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-
   {% set caseNumber = 1 %}
   <section class="case-study">
     <div class="container">
       <div class="row">
-        <div class="intro col-xs-12 col-md-4">
-          <h1>Justin Ziegler&nbsp;<span>Recent Work</span></h1>
-          <p>I'm a <strong>front-end developer</strong> with an eye for detail and <br />
+        <div class="intro">
+          <h1>Justin Ziegler<br class="hidden-sm"><span>Recent Work</span></h1>
+          <!-- <p>I'm a <strong>front-end developer</strong> with an eye for detail and <br />
             a knack for building eye-catching user experiences.
                 <br />
                 Keep scrolling to view some recent projects, or<br /> 
                 visit my  <a href="https://github.com/justinziegler" rel="noreferrer" target="_blank">Github</a> for code examples.
-        </p>
+        </p> -->
         </div>
-        <div class="case col-xs-12 col-md-8">
-          <div class="case-studies row">
-            {% for cs in caseStudies %}
-              <div class="item" {% if cs.background.length %}style="background-image: url('{{ cs.background }}')"{% endif %}>
-                <a href="{{ cs.url }}" title="{{ cs.title }}">
-                  {% if loop.index !== caseStudies.length %}
-                    <span class="case-number">0{{- cs.pageId -}}.</span>
-                  {% endif %}
-                  <span class="case-title">{{ cs.title }}</span>
-                </a>
-                
-                <!-- <p>{{ cs.intro }}</p> -->
-              </div>
-            {% endfor %}
-          </div>
+        <div class="case-studies">
+          {% for cs in caseStudies %}
+            <div class="item" {% if cs.background.length %}style="background-image: url('{{ cs.background }}')"{% endif %}>
+              <a href="{{ cs.url }}" title="{{ cs.title }}">
+                {% if loop.index !== caseStudies.length %}
+                  <span class="case-number">0{{- cs.pageId -}}.</span>
+                {% endif %}
+                <span class="case-title">{{ cs.title }}</span>
+              </a>
+              
+            </div>
+          {% endfor %}
         </div>
         
       </div>
@@ -68,51 +48,5 @@
   </section>
 {% endblock %}
 
-{% block scripts %}
-<script>
-  var winHeight = window.innerHeight,
-      pages = document.querySelectorAll('section'),
-      navLinks = document.querySelectorAll('#menu-nav a'),
-      currentPage = 0;
-
-  window.addEventListener('mousewheel', function(e){
-    scrollPages(e.wheelDelta);
-  });
-  window.addEventListener('DOMMouseScroll', function(e){
-    scrollPages(-1 * e.detail);
-  });
-
-  function scrollPages(delta){
-    var direction = (delta > 0) ? 'up' : 'down',
-      currentPageOffset = currentPage * winHeight;
-    
-    if(direction == 'down' && currentPage <= pages.length - 2) {
-      window.scrollTo({
-        top: currentPageOffset + winHeight,
-        behavior: 'smooth',
-      });
-      currentPage++;
-    } else if(direction == 'up' && currentPage > 0) {
-      window.scrollTo({
-        top: currentPageOffset - winHeight,
-        behavior: 'smooth'
-      });
-      currentPage--;
-    }
-  }
-
-  // for(var i = 0; i < navLinks.length; i++){
-  //   navLinks[i].addEventListener('click', updateNav(i));
-  // }
-
-  // function updateNav(i){
-  //   return function(){
-  //     for(var j=0 ; j < navLinks.length; j++) {
-  //       navLinks[j].parentNode.classList.remove('current');
-  //     }
-  //     navLinks[i].parentNode.classList.add('current');
-  //     currentPage = i;
-  // }
-  // }
-</script>
+{% block scripts %}  
 {% endblock %}
