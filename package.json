@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "build": "gulp"
   },
   "author": "algofields",
   "license": "ISC",
@@ -16,5 +17,11 @@
     "nodemon": "^1.18.7",
     "nunjucks": "^3.2.4",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-cache-bust": "^1.4.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-useref": "^5.0.0"
   }
 }
