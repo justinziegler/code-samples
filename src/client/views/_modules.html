@@ -42,93 +42,141 @@
   </script>
 {%- endmacro -%}
 
+{% macro navLinks() %}
+
+{% endmacro %}
+
 {% macro header(p) %}
-	<nav data-collapsed="false">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="header-nav prev">
-          {% if p.pageUrl !== '/' %}
-            <a href="{{ p.prevPage }}">
-              <span>Back</span>
-            </a>
-          {% endif %}
-        </div>
-        <div class="header-title">
-          {%- if p.pageUrl !== '/' -%}
-            <div class="header-nav collapse">
-              <a href="#" class="toggle-description">
-                &nbsp;<span class="hidden-xs">Description</span>&nbsp;
-              </a>
-              <a class="home" href="../">
+  {% if p.header %}
+    <nav id="nav" data-collapsed="false" data-current-page="{{ p.pageUrl }}">
+      <div class="nav-container">
+        <div class="nav-col left">
+            {% if p.pageUrl !== '/' %}
+              <a class="nav-btn home" href="../">
                 <span class="sr-only">Home</span>
               </a>
-            </div>
-          {%- endif -%}
-        </div>
+            {% endif %}
+            <h2 class="visible-xs">Justin Ziegler &nbsp;<span>Recent Work</span> </h2>
+          </div>
         
-        <div class="header-nav next">
-          {% if p.nextPage !== undefined %}
-            <a href="{{ p.nextPage }}">
-              {% if p.pageUrl == '/' %}
-                <span>Start</span>
-              {% else %}
-                <span>Next</span>
-              {% endif %}
-            </a>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-    {% if p.pageUrl !== '/' %}
-      <div class="header-content">
-        <div>
-          <h2>
-            <span>Case Study</span><br>
-            {%- if p.pageId < 10 -%}0{% endif %}
-            {{- p.pageId -}}. {{ p.headerTitle }}
-          </h2>
-          <p>{{ p.headerIntro | safe }}</p>
+        <div class="nav-col right">
+          {#
+            {% if p.nextPage !== undefined %}
+              <a href="{{ p.nextPage }}">
+                {% if p.pageUrl == '/' %}
+                  <span>Start</span>
+                {% else %}
+                  <span>Next</span>
+                {% endif %}
+                &nbsp;&raquo;
+              </a>
+            {% endif %}
+          #}
+          <a href="#" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
           <ul>
-            {% for bullet in p.headerBullets %}
-              <li>{{ bullet | safe }}</li>
+            {% for x in p.navLinks %}
+              <li class="{{ x.class }}">
+                <a href="{{ x.link }}" 
+                  {% if x.target !== '' %}
+                    target="_blank" 
+                  {% endif %}
+                  tabindex="0">
+                  
+                  {{ x.title }}
+                </a>
+              </li>
             {% endfor %}
           </ul>
-          <div class="case-study-nav container-fluid">
-            <div class="row">
-              <div class="header-nav prev">
-                {% if p.pageUrl !== '/' %}
+        </div>
+      </div>
+
+        <div class="header-content bottom">
+          <div class="case-study-nav">
+            <div>
+              {% if p.pageUrl !== '/' %}
+                <div class="prev">
                   <a href="{{ p.prevPage }}">
-                    <span>Back</span>
+                    &laquo; Back
                   </a>
-                {% endif %}
+                </div>
+              {% endif %}
+  
+              <div class="expand">
+                <a href="#" class="toggle-description">
+                  &nbsp;<span class="arrow">&raquo;</span>
+                </a>
               </div>
-              <div class="header-title">
-                {%- if p.pageUrl !== '/' -%}
-                  <div class="header-nav collapse">
-                    <a href="#" class="toggle-description">
-                      &nbsp;<span>This</span>&nbsp;
-                    </a>
-                  </div>
-                {%- endif -%}
-              </div>
-              
-              <div class="header-nav next">
-                {% if p.nextPage !== undefined %}
+
+              {% if p.nextPage !== undefined %}
+                <div class="next">
                   <a href="{{ p.nextPage }}">
                     {% if p.pageUrl == '/' %}
                       <span>Start</span>
                     {% else %}
                       <span>Next</span>
                     {% endif %}
+                    &raquo;
                   </a>
-                {% endif %}
-              </div>
+                </div>
+              {% endif %}
+            </div>
+            <div>
+              <h3>
+                <span class="number">
+                  {%- if p.pageId < 10 -%}0{% endif -%}
+                  {{- p.pageId -}}.
+                </span>
+                {{- p.headerTitle | safe -}}
+              </h3>
             </div>
           </div>
+          
+          <div class="case-study">
+            
+            <div class="case-study-content">
+              {% for item in p.headerIntro %}
+                <p>{{ item | safe }}</p>
+              {% endfor %}
+              <ul class="project-details">
+                {% for bullet in p.headerBullets %}
+                  <li>{{ bullet | safe }}</li>
+                {% endfor %}
+              </ul>
+              {% if p.toggleLinks.length %}
+                <ul class="toggle-links">
+                  {% for item in p.toggleLinks %}
+                    {% set active = loop.index === 1 %}
+
+                    <li><a href="#" data-active="{{ active }}" data-target="{{ item.link }}">
+                      <span>{{ item.title }}</span>
+                    </a></li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          </div>
+          
+        </div>
+    </nav>
+    
+  {% endif %}
+{% endmacro %}
+
+{% macro pageNav() %}
+  <nav id="page-nav">
+    <div class="nav-content">
+      <div class="logo-container">
+        <div class="logo">
+          <h1>Justin Ziegler</h1>
+          <h2>Recent Work</h2>
         </div>
       </div>
-    {% endif %}
-	</nav>
+    </div>
+  </nav>
 {% endmacro %}
 
 {% macro specs(products, product, specs) %}
@@ -311,5 +359,734 @@
       {% endfor %}
     </div>
   </section>
+  {% endfor %}
+{% endmacro %}
+
+{% macro reviewsCarousel(reviews) %}
+  {% for items in reviews %}
+    <section class="reviews-carousel{{- items.containerClassnameExtension }} {% if items.navyBackground %}navy{% endif %}">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            {% if items.heading !== '' %}
+              <h2>{{ items.heading | safe }}</h2>
+            {% endif %}
+            {% if items.subheading !== '' %}
+              {% if items.subheading == 'bbb' %}
+                <div class="bbb-logo"></div>
+              {% else %}
+                <h3>{{ items.subheading | safe }}</h3>
+              {% endif %}
+            {% endif %}
+          </div>
+          <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-12 col-md-offset-0">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                
+                {% for reviews in items.reviews %}
+                <div class="swiper-slide">
+                  <div class="item">
+                    {%- if items.socialMediaSources -%}
+                      <h4 data-source-type="social" data-source="{{ reviews.source }}" data-reviewer="{{ reviews.name | safe }}" class="lazyload">{{ reviews.name | safe }}</h4>
+                      <div class="review">
+                        <p>{{ reviews.review | safe }}</p>
+                      </div>
+                    {% else %}
+                      <div class="star-gauge">
+                        <div class="stars" style="width: {{ reviews.stars * 20 }}%;"></div>
+                      </div>
+                      {% if reviews.reviewTitle !== '' %}
+                        <div class="review-title">
+                          <h4 data-source-type="reviews">{{ reviews.reviewTitle | safe }}</h4>
+                        </div>
+                      {% endif %}
+                      <div class="review">
+                        <p>{{ reviews.review | safe }}</p>
+                      </div>
+                      <p class="reviewer">&mdash; {{ reviews.name | safe }}</p>
+                    {%- endif -%}
+                  </div>
+                </div>
+                {% endfor %}
+                
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="col-xs-12">
+            {% if items.cta !== undefined %}
+              {% for cta in items.cta %}
+                <a href="{{ cta.link }}" class="btn btn-{{ cta.buttonType }}">{{ cta.text }}</a>
+              {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endfor %}
+{% endmacro %}
+
+{% macro reviewsCarouselScript(options) %}
+  {% set socialMediaSources = false %}
+  {% set containerClassnameExtension = '' %}
+  {% for item in options %}
+    {% if item.socialMediaSources %}
+      {% set socialMediaSources = true %}
+    {% endif %}
+    {% if item.containerClassnameExtension !== '' %}
+      {% set containerClassnameExtension = item.containerClassnameExtension %}
+    {% endif %}
+  {% endfor %}
+  <script type="text/javascript">
+    var reviewsCarousel = new Swiper ('.reviews-carousel{{- containerClassnameExtension }} .swiper-container', {
+      loop: true,
+      grabCursor: true,
+      breakpointsInverse: true,
+      centeredSlides: true,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 30
+        },
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 7.5
+        },
+      },
+      pagination: {
+        el: '.reviews-carousel{{- containerClassnameExtension }} .swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.reviews-carousel{{- containerClassnameExtension }} .swiper-button-next',
+        prevEl: '.reviews-carousel{{- containerClassnameExtension }} .swiper-button-prev',
+      }
+    });
+  </script>
+{% endmacro %}
+
+{% macro suggestedItems(suggestedItems) %}
+<section class="suggestions">
+  <div class="container">
+    <div class="row">
+      {% for si in suggestedItems %}
+      <div class="col-xs-12">
+        <h2>{{ si.title | safe }}</h2>
+        {% if si.subtitle.length %}
+          <h3>{{ si.subtitle | safe }}</h3>
+        {% endif %}
+      </div>
+      <div id="suggested-items" class="swiper-container">
+        <div class="swiper-wrapper">
+          {% for item in si.items %}
+            <div class="suggested swiper-slide">
+              <div class="item {{ item.shortName }} lazyload" role="img" aria-label="Image: {{ item.itemName }}"></div>
+              <h3>{{ item.itemName }}</h3>
+              <p>{{ item.description | safe }}</p>
+              <a href="../{{- item.url }}" class="btn btn-transparent" tabindex="-1">See the {{ item.linkName | title }}</a>
+            </div>
+          {% endfor %}					
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endmacro %}
+
+{% macro suggestedItemsScripts() %}
+  <script type="text/javascript">
+    const breakpoint = window.matchMedia( '(min-width: 768px)' );
+    const totalItems = $('#suggested-items .suggested').length;
+    let suggestedItems;
+    const breakpointChecker = function() {
+      if ((breakpoint.matches === true ) && (totalItems < 4)) {
+        if (suggestedItems !== undefined) {
+          suggestedItems.destroy( true, true );
+        }
+        return disableSwiper();
+      } else if ((breakpoint.matches === false ) || (totalItems > 3)) {
+        return enableSwiper();
+      }
+    };
+    const enableSwiper = function() {
+      var suggestedItems = new Swiper ('#suggested-items', {
+        loop: true,
+        grabCursor: true,
+        breakpointsInverse: true,
+        centeredSlides: true,
+        breakpoints: {
+          0: {
+              slidesPerView: 1,
+              spaceBetween: 15
+          },
+          544: {
+              slidesPerView: 1.5,
+              spaceBetween: 15
+          },
+          768: {
+              slidesPerView: 3,
+              spaceBetween: 7.5
+          }
+        },
+        pagination: { 
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }
+      });
+    };
+    const disableSwiper = function() {
+      var b = '#suggested-items'; 
+      $(b).removeClass('swiper-container').addClass('col-xs-12');
+      $(b).find('> div:first-of-type').removeClass('swiper-wrapper').addClass('row');
+      $(b).find('> div:first-of-type > .suggested').removeClass('swiper-slide').addClass('col-xs-4');
+      $(b).find('.swiper-pagination, .swiper-button-next, .swiper-button-prev').remove();
+      $(b).find('.suggested a').attr('tabIndex', 0);
+    }
+    // keep an eye on viewport size changes
+    breakpoint.addListener(breakpointChecker);
+    // kickstart
+    breakpointChecker();
+  </script>
+{% endmacro %}
+
+{% macro faq(faq) %}
+  <section class="faq">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Top Questions</h2>
+        </div>
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+          <div class="panel-group" id="faqs" role="tablist" aria-multiselectable="true">
+            {% for q in faq %}
+              <div class="panel panel-default" 
+                {% if q.productType !== undefined -%}
+                  data-toggle-visibility="true" data-product-id="{{ q.productType }}"
+                {%- endif -%}>
+                <div class="panel-heading" role="tab" id="faqHeading{{ loop.index }}">
+                  <h3 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#faqs" href="#faq{{ loop.index }}" aria-expanded="false" aria-controls="faq{{ loop.index }}" tabindex="0">
+                      {{ q.question }}
+                    </a>
+                  </h3>
+                </div>
+                <div id="faq{{ loop.index }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faqHeading{{ loop.index }}">
+                  <div class="panel-body">
+                    <p>{{ q.answer | safe }}</p>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}						
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endmacro %}
+
+{% macro footer(currentYear) %}
+<footer>
+	<div class="container">
+	 	<div class="row">
+			<div class="footer-contact col-xs-12 col-md-4">
+				<div class="row">
+					<div class="footer-here-to-help col-xs-12 col-sm-5 col-sm-offset-1 col-md-12 col-md-offset-0">
+						<h4>We're Here to Help</h4>
+						<p>Monday–Saturday, 6am to 6pm PST</p>
+					</div>
+					<div class="footer-call-email col-xs-12 col-sm-5 col-md-12">
+						<div class="row">
+							<div class="col-xs-6">
+								<a href="tel:+18005015845" class="text" tabindex="0" rel="nooopener noreferrer">
+									<h5>Call or Text</h5>
+									<p>1-800-501-5845</p>
+								</a>
+							</div>
+							<div class="col-xs-6">
+								<a href="" tabindex="0">
+									<h5>Email</h5>
+									<p>support@lull.com</p>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="footer-social col-xs-7 col-sm-5 col-sm-offset-1 col-md-12 col-md-offset-0">
+						<ul>
+							<li><a href="https://instagram.com/lullbed" class="footer-instagram" aria-label="instagram" target="_blank" rel="noreferrer" tabindex="0">Instagram</a></li><!--
+						--><li><a href="https://www.facebook.com/lullbed" aria-label="facebook" class="footer-facebook" target="_blank" rel="noreferrer" tabindex="0">Facebook</a></li><!--
+						--><li><a href="https://www.pinterest.com/lullbed/" aria-label="pinterest" class="footer-pinterest" target="_blank" rel="noreferrer" tabindex="0">pinterest</a></li><!--
+						--><li><a href="https://twitter.com/LullBed" aria-label="twitter" class="footer-twitter" target="_blank" rel="noreferrer" tabindex="0">Twitter</a></li><br class="hidden-lg"><!--
+						--><li><a href="https://www.youtube.com/c/LullBed/featured" aria-label="youtube" class="footer-youtube" target="_blank" rel="noreferrer" tabindex="0">Youtube</a></li><!--
+						--><li><a href="https://www.tiktok.com/@lull" aria-label="tiktok" class="footer-tiktok" target="_blank" rel="noreferrer" tabindex="0">Tiktok</a></li>
+						</ul>
+					</div>
+					<div class="footer-brand col-xs-5 col-sm-5 col-md-12 col-md-offset-0">
+						<a href="https://lull.com" class="footer-logo-lull" role="img" aria-label="Lull home" tabindex="0">
+							<span class="sr-only">Lull</span>
+						</a>
+						<a href="http://www.bbb.org/santa-barbara/business-reviews/mattresses/lull-in-santa-barbara-ca-92014258/" target="_blank" class="footer-bbb" rel="noreferrer" role="img" aria-label="Lull on the Better Business Bureau">
+							<span class="sr-only">Better Business Bureau</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-0">
+				<div class="row">
+					<div class="col-xs-6 col-sm-4">
+						<h6>Products</h6>
+						<ul class="products">
+							<li><a href="/mattresses" tabindex="0">Mattresses</a></li>
+							<li><a href="/mattress-protector" tabindex="0">Mattress Protector</a></li>
+							<li><a href="/pillows" tabindex="0">Pillows</a></li>
+							<li><a href="/bed-sheets" tabindex="0">Sheets</a></li>
+							<li><a href="/duvet-insert" tabindex="0">Original Lull Duvet</a></li>
+							<li><a href="/down-duvet-insert" tabindex="0">Down Duvet</a></li>
+							<li><a href="/bedding-bundle" tabindex="0">Bedding Bundle</a></li>
+							<li><a href="/bed-frames" tabindex="0">Bed Frames</a></li>
+							<li><a href="/mattress-foundation" tabindex="0">Mattress Foundation</a></li>
+						</ul>
+					</div>
+					<div class="center-col col-xs-6 col-sm-4">
+						<h6>Research</h6>
+						<ul class="research">
+							<li><a href="/trial" tabindex="0">365 Night Trial</a></li>
+							<li><a href="/reviews" tabindex="0">Reviews</a></li>                    
+							<li><a href="/videos" tabindex="0">Videos</a></li>
+							<li><a href="/memory-foam-mattress" tabindex="0">Memory Foam</a></li>
+							<li class="visible-xs"><a href="/how-a-bed-can-fit-into-a-small-box" tabindex="0">Mattress in a Box</a></li>
+							<li class="visible-xs"><a href="/mattress-sizes-dimensions" tabindex="0">Mattress Sizes</a></li>
+							<li class="visible-xs"><a href="/mattress-financing" tabindex="0">Mattress Financing</a></li>		
+							<li class="visible-xs"><a href="/mattress-buying-guide" tabindex="0">Mattress Buying Guide</a></li>
+							<li class="visible-xs"><a href="/mattress-disposal-guide" tabindex="0">Mattress Disposal Guide</a></li>				
+						</ul>
+						<h6 class="hidden-xs">Support</h6>
+						<ul class="hidden-xs">							
+							<li><a href="https://help.lull.com/hc/en-us" tabindex="0">FAQs</a></li>
+							<li><a href="/contact" tabindex="0">Contact Us</a></li>	
+							<li><a href="/warranty" tabindex="0">Lifetime Warranty</a></li>
+							<li><a href="/terms" tabindex="0">Terms</a></li>
+							<li><a href="/privacy" tabindex="0">Privacy</a></li>
+						</ul>
+					</div>
+					<div class="right-col hidden-xs col-sm-4">
+						<h6>Resources</h6>
+						<ul class="products">
+							<li><a href="/how-a-bed-can-fit-into-a-small-box" tabindex="0">Mattress in a Box</a></li>
+							<li><a href="/mattress-sizes-dimensions" tabindex="0">Mattress Sizes</a></li>
+							<li><a href="/mattress-financing" tabindex="0">Mattress Financing</a></li>
+							<li><a href="/mattress-buying-guide" tabindex="0">Mattress Buying Guide</a></li>
+							<li><a href="/mattress-disposal-guide" tabindex="0">Mattress Disposal Guide</a></li>
+						</ul>
+						<h6>Company</h6>
+						<ul>
+							<li><a href="/about" tabindex="0">About</a></li>
+							<li><a href="/blog" tabindex="0">Blog</a></li>
+							<li id="extole_zone_global_footer_1" tabindex="0"></li>
+							<li><a href="/stores" tabindex="0">Stores</a></li>
+							<li><a href="/corporate-sales" tabindex="0">Corporate Sales</a></li>	
+							<li><a href="/partnership" tabindex="0">Partnerships</a></li>
+							<li><a href="/jobs" tabindex="0">Careers</a></li>	
+						</ul>
+					</div>
+				</div>
+				<div class="footer-company row visible-xs">
+					<div class="col-xs-6 col-sm-4">
+						<h6>Support</h6>
+						<ul>
+							<li><a href="https://help.lull.com/hc/en-us" tabindex="0">FAQs</a></li>
+							<li><a href="/contact" tabindex="0">Contact Us</a></li>	
+							<li><a href="/warranty" tabindex="0">Lifetime Warranty</a></li>
+							<li><a href="/terms" tabindex="0">Terms</a></li>
+							<li><a href="/privacy" tabindex="0">Privacy</a></li>
+						</ul>
+					</div>
+					<div class="col-xs-6 col-sm-4">
+						<h6>Company</h6>
+						<ul>
+							<li><a href="/about" tabindex="0">About</a></li>
+							<li><a href="/blog" tabindex="0">Blog</a></li>
+							<li id="extole_zone_global_footer_2" tabindex="0"></li>
+							<li><a href="/stores" tabindex="0">Stores</a></li>
+							<li><a href="/corporate-sales" tabindex="0">Corporate Sales</a></li>	
+							<li><a href="/partnership" tabindex="0">Partnerships</a></li>
+							<li><a href="/jobs" tabindex="0">Careers</a></li>	
+						</ul>
+					</div>
+				</div>	
+			</div>
+		</div>
+		<div id="copyright">
+			&copy;<span id="year">{{ currentYear }}</span> Lull
+		</div>
+	</div>
+</footer>
+<script>
+  const footer = document.querySelector('footer');
+  const links = footer.querySelectorAll('a');
+  links.forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      console.log('Footer links are disabled');
+    })
+  })
+</script>
+{% endmacro %}
+
+{# July 4 Promotion - uses module-july4-promo.css #}
+{% macro july4promo(mattressDiscount, darkTheme) %}
+  <section class="july4-promo" {% if darkTheme %} data-theme="dark"{% endif %}>
+    <a name="july4-promo" class="anchor"></a>
+    <div class="container">
+      <div class="row">
+        <div class="box col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+          <div class="border">
+            <p>Labor Day Sale</p>
+            <div class="divider">
+              <span>UP TO</span>
+            </div>
+            <h2>${{ mattressDiscount }} OFF</h2>
+            <h3>Lull Mattresses</h3>
+            <div class="divider"></div>
+            <p class="promo-cta">Don't Sleep Through<br> This Sale!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <link rel="stylesheet" href="../assets/module-july4-promo.css">
+{% endmacro %}
+
+{% macro contentAccordion(content, product, products) %}
+  {% for content in content %}
+  <section class="{{ content.type }} accordion">
+    <div class="container">
+      <div class="row">
+        <div class="heading col-xs-12">
+          <h2>{{ content.heading | safe }}</h2>
+        </div>
+        
+        {% set classlist = 'col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2' %}
+        {% if content.productIdNavigation %}
+          {% set classlist = 'col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0 col-lg-5' %}
+        {% endif %}
+        <div class="panel-group col-xs-12 {{ classlist }}" id="{{ content.type }}-accordion" role="tablist" aria-multiselectable="true" data-active="true">
+          {% for item in content.items %}
+            {% set active = false %}
+            {% if loop.index == 1 %}
+              {% set active = true %}
+            {% endif %}
+            <div class="{{ item.className }} panel" data-active="{{ active }}">
+              <h5 role="tab">
+                <a href="#{{ item.className }}" data-toggle="collapse" 
+                data-parent="#{{ content.type }}-accordion" 
+                aria-expanded="{% if loop.index == 1 %}true{% else %}false{% endif %}" 
+                aria-controls="{{ item.className }}" 
+                class="collapsed {% if item.icon %}icon{% endif %}" 
+                role="button" tabindex="0">
+                  {{ item.title | safe }}
+                </a>
+              </h5>
+              <div class="panel-collapse collapse {% if loop.index == 1 %}in{% endif %}" id="{{ item.className }}" role="tabpanel" aria-expanded="{% if loop.index == 1 %}true{% else %}false{% endif %}">
+
+                {% if item.title == 'Product Dimensions' %}
+                  {% for p in product %}
+                  <div class="size-price-grid col-xs-12">
+                    <div class="grid-head row">						
+                      {% if p.productType == 'sheets' %}
+                      {# This section is unique for Sheets #}
+                        <div class="size col-xs-3">
+                          <label>Size</label>
+                        </div>
+                        <div class="fitted col-xs-5 col-sm-3">
+                          <label>Fitted Sheet</label>
+                        </div>
+                        <div class="flat col-xs-4 col-sm-3">
+                          <label>Flat Sheet</label>
+                        </div>
+                        <div class="pillowcase hidden-xs col-sm-3">
+                          <label>Pillowcase</label>
+                        </div>
+                      {% elif p.productType == 'foundation' %}
+                      {# This section is unique for Mattress Foundation #}
+                        <div class="size col-xs-4 col-sm-3">
+                          <label>Size</label>
+                        </div>
+                        <div class="dimensions col-xs-3 col-sm-4">
+                          <label>Dimensions</label>
+                        </div>
+                        <div class="leg-dimensions col-sm-2 hidden-xs">
+                          <label>Legs</label>
+                        </div>
+                        <div class="weight foundation-weight col-xs-5 col-sm-3">
+                          <label>Shipping <span class="hidden-xs hidden-sm">Weight</span><span class="visible-xs-inline visible-sm-inline">Wt.</span></label>
+                        </div>
+                      {% else %}
+                        <div class="size col-xs-4">
+                          <label>Size</label>
+                        </div>
+                        <div class="dimensions col-xs-3 col-sm-4">
+                          <label>Dimensions</label>
+                        </div>
+                        <div class="weight col-xs-5 col-sm-4">
+                          <label>Shipping <span class="hidden-xs">Weight</span><span class="visible-xs-inline">Wt.</span></label>
+                        </div>
+                      {% endif %}
+                    </div>
+                    {% if p.productType == 'sheets' %}
+                    {# This section is unique for Sheets #}
+                      {% for product in p.dimensions %}
+                        {% if product.size !== 'BOX' %}
+                          <div class="row">
+                            <div class="size col-xs-3">
+                              <p>{{ getSizeName(product.size) }}</p>
+                            </div>
+                            <div class="fitted col-xs-5 col-sm-3">
+                              <p>{{ product.fitted }}</p>
+                            </div>
+                            <div class="flat col-xs-4 col-sm-3">
+                              <p>{{ product.flat | safe }}</p>
+                            </div>
+                            <div class="pillowcase hidden-xs col-sm-3">
+                              <p>{{ product.pillowcase | safe }}</p>
+                            </div>
+                          </div>
+                        {% endif %}
+                      {% endfor %}
+                    {% elif p.productType == 'foundation' %}
+                    {# This section is unique for Mattress Foundation #}
+                      {% for product in p.dimensions %}
+                        {% if product.size !== 'BOX' %}
+                          <div class="row">
+                            <div class="size col-xs-4 col-sm-3">
+                              <p>{{ getSizeName(product.size) }}</p>
+                            </div>
+                            <div class="dimensions col-xs-4">
+                              <p>{{ product.w }} x {{ product.l }} {% if product.h !== '' %}x {{ product.h }}{% endif %}</p>
+                            </div>
+                            <div class="leg-dimensions col-sm-2 hidden-xs">
+                              <p>3" x 8"</p>
+                            </div>
+                            <div class="weight foundation-weight col-xs-4 col-sm-3">
+                              {% if product.weight !== '' %}
+                                <p>{{ product.weight }}</p>
+                              {% endif %}
+                            </div>
+                          </div>
+                        {% endif %}												
+                      {% endfor %}
+                    {% else %}
+                      {% for product in p.dimensions %}
+                        {% if product.size !== 'BOX' %}
+                          <div class="row" 
+                            {%- if product.size.length > 2 -%}
+                              {%- set visible = true -%}
+                              {%- set type = product.size.slice(3, -6) %}
+                              {%- if p.comboPage -%}
+                                {%- for c in p.comboProduct -%}
+                                  {%- if c.comboProductType == type -%}
+                                    {%- set visible = false -%}
+                                  {%- endif -%}
+                                {%- endfor -%}
+                              {%- endif -%}
+                              data-sku="{{ product.size }}"
+                              data-toggle-visibility="true" data-product-id="{{ type }}"
+                              {% if not visible %}style="display: none;"{%- endif -%}
+                            {% endif %}>
+                            <div class="size col-xs-4">
+                              <p>
+                                {%- if product.size.length > 2 -%}
+                                  {{- getSizeName(product.size.slice(9, limit)) -}}
+                                {% else %}
+                                  {{ getSizeName(product.size) }}
+                                {%- endif -%}
+                              </p>
+                            </div>
+                            <div class="dimensions col-xs-4">
+                              <p>{{ product.w }} x {{ product.l }} {% if product.h !== '' %}x {{ product.h }}{% endif %}</p>
+                            </div>
+                            <div class="weight col-xs-4">
+                              {% if product.weight !== '' %}
+                                <p>{{ product.weight }}</p>
+                              {% endif %}
+                            </div>
+                          </div>
+                        {% endif %}												
+                      {% endfor %}											
+                    {% endif %}			
+          
+                    {% for product in p.dimensions %}
+                      {% if product.size == 'BOX' %}
+                        <div class="row">
+                          <div class="size {% if p.productType == 'sheets' %}col-xs-3{% elif p.productType == 'foundation' %}col-xs-4 col-sm-3{% else %}col-xs-4{% endif %}">
+                            <p><strong>Box Size</strong></p>
+                          </div>
+                          {% if p.productType == 'sheets' %}
+                            <div class="col-xs-8">
+                              <p>{{ product.dimensions }}</p>
+                            </div>
+                          {% else %}
+                            <div class="dimensions {% if product.weight !== '' %}col-xs-4{% else %}col-xs-8{% endif %}">
+                              {% set x = product.w | truncate(1, true, '') %}
+                              {% set y = product.w | truncate(8, true, '') %}
+                              {% if (x == 'A') or (y == 'Standard') %}
+                                <p><strong>{{ product.w }}<br>{{ product.l }}</strong></p>
+                              {% else %}
+                                <p><strong>{{ product.w }} x {{ product.l }} {% if product.h !== '' %}x {{ product.h | safe }}{% endif %}</strong></p>
+                              {% endif %}
+                            </div>
+                          {% endif %}
+                          {% if product.weight !== '' %}
+                            <div class="weight col-xs-4">
+                              <p><strong>{{ product.weight | safe }}</strong></p>
+                            </div>
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+          
+                    {#<div class="notes row">
+                      <div class="col-xs-12">
+                        <p>*Dimensions and Weights are approximate</p>							
+                      </div>
+                      {% for sizeGuide in p.sizeGuide %}
+                        {% if sizeGuide.show %}
+                      <div class="right-col col-xs-3">
+                        <p><a data-toggle="modal" data-target="#size-guide-modal" role="button" tabindex="0" href="">Size Guide</a></p>
+                      </div>
+                        {% endif %}
+                      {% endfor %}
+                      {% if p.catId == 11 %}
+                        <div class="left-col col-xs-12">
+                          <p>*Please note: This item ships in two separate boxes.</p>
+                        </div>
+                      {% endif %}
+                    </div>#}
+                  </div>
+                  
+                  {#
+                  <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                    <div class="row">
+                      {% for details in items.details %}
+                        {% if details.item == 'clearfix' %}
+                          <div class="clearfix {{ details.classes }}"></div>
+                        {% else %}
+                        <div class="{{ details.classes }}">
+                          <h6>{{ details.item | safe }}</h6>
+                          <p class="details">{{ details.details | safe }}</p>
+                        </div>
+                        {% endif %}
+                      {% endfor %}
+                    </div>
+                  </div>
+                  #}
+                  {% endfor %}
+                {% elif item.title == 'Size Guide' %}
+                  {% for p in product %}
+                    <ul class="mattress-sizes">
+                      {% set sizes = [] %}
+                      {% for product in p.dimensions %}
+                        {% set size = product.size %}
+                        {% if product.size.length > 2 %}
+                          {% set size = product.size.slice(9, limit) %}
+                        {% endif %}
+                        {% set alreadyProcessed = false %}
+                        {% for processedSize in sizes %}
+                          {% if size == processedSize %}
+                            {% set alreadyProcessed = true %}
+                          {% endif %}
+                        {% endfor %}
+                        {% if not alreadyProcessed %}
+                          {% set sizes = (sizes.push(size),sizes) %}
+                          <li data-size="{{ size }}">
+                            <span class="title">
+                              {{- getSizeName(size) -}}
+                            </span>
+                            <span class="dimensions">{{ product.w }} x {{ product.l }}</span>
+                            <div class="bed" data-size="{{ size }}"></div>
+                          </li>
+                        {% endif %}
+                      {% endfor %}
+                    </ul>
+                  {% endfor %}
+                {% else %}
+                  {% if item.bullets %}
+                    <ul>
+                      {% for content in item.content %}
+                        <li>{{ content.item | safe }}</li>
+                      {% endfor %}
+                    </ul>
+                  {% else %}
+                    {% for content in item.content %}
+                      <p{% if item.footnote === undefined %} class="single"{% endif %}>{{ content.item | safe }}</p>
+                    {% endfor %}
+                    {% if item.footnote !== undefined %}
+                      <p class="footnote">{{ item.footnote }}</p>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        {% if content.productIdNavigation %}
+          <div class="cta col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0">
+            <div class="btn btn-container">
+              &nbsp;
+              <a data-product-id="MA" href="/shop" class="btn" role="button" tabindex="0">Shop The Original</a>
+              <a data-product-id="PM" href="/original-premium-mattress" class="btn" role="button" tabindex="0" style="display: none;">Shop The Original Premium</a>
+              <a data-product-id="HY" href="/shop-luxe" class="btn" role="button" tabindex="0" style="display: none;">Shop The Luxe Hybrid</a>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+  {% if content.productIdNavigation %}
+    <script>
+      $(document).ready(function(){
+        $('.accordion .product-nav li').on('keypress click', function(e) {
+          if (e.which === 13 || e.type === 'click') {
+            let id = $(this).data('product-id');
+            $(this).attr('data-active', true).siblings().attr('data-active', false);
+            $('.accordion .product-photo').attr('data-current', id);
+            $(`.accordion h5 span[data-product-id="${id}"]`).fadeIn(200).siblings().fadeOut(200);
+            $(`.accordion .panel ul ul:not([data-product-id="${id}"])`).slideUp(200);
+            $(`.accordion .panel ul[data-product-id="${id}"]`).slideDown(200);
+            $(`.accordion .btn-container .btn[data-product-id="${id}"]`).fadeIn(200).siblings().fadeOut(200);
+          }
+        });
+        $('.accordion .panel a').on('keypress click', function(e) {
+          if (e.which === 13 || e.type === 'click') {
+            let expanded = $(this).attr('aria-expanded') == 'true';
+            if (expanded) {
+              $(this).closest('.panel').attr('data-active', false);
+            } else {
+              $(this).closest('.panel').attr('data-active', true).siblings().attr('data-active', false);
+            }
+            {# adjust layout if all panels are closed #}
+            let active = false;
+            $('.accordion .panel').each(function() {
+              if (!active) {
+                active = $(this).attr('data-active') == 'true';
+              }
+            });
+            $('.accordion .product-nav, .accordion .panel-group').attr('data-active', active);
+          }
+        });
+      });
+    </script>
+  {% endif %}
   {% endfor %}
 {% endmacro %}

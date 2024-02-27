@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Boogaloo&family=Cabin+Condensed:wght@400;500&display=swap");
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+.fade.in {
+  opacity: 1;
+}
+
+.collapse {
+  display: none;
+}
+.collapse.in {
+  display: block;
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition-property: height, visibility;
+  transition-property: height, visibility;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+
+.faq .panel-body {
+  padding: 15px;
+  overflow: hidden;
+  *zoom: 1;
+}
+.faq .panel-heading {
+  padding: 10px 15px;
+}
+.faq .panel-heading > .dropdown .dropdown-toggle {
+  color: inherit;
+}
+.faq .panel-title {
+  margin: 0;
+  font-size: 16px;
+  color: inherit;
+  text-align: left;
+}
+.faq .panel-title > a,
+.faq .panel-title > small,
+.faq .panel-title > .small,
+.faq .panel-title > small > a,
+.faq .panel-title > .small > a {
+  color: inherit;
+}
+.faq .panel-group {
+  margin-bottom: 20px;
+}
+.faq .panel-group .panel {
+  margin-bottom: 0;
+}
+.faq .panel-group .panel + .panel {
+  margin-top: 5px;
+}
+.faq .panel-group .panel-heading {
+  border-bottom: 0;
+}
+
+.faq {
+  background-color: #124056;
+  padding: 15px 0;
+}
+@media (max-width: 767px) {
+  .faq {
+    padding: 2.6408450704vw 0;
+  }
+}
+@media (max-width: 543px) {
+  .faq {
+    padding: 4.6875vw 0;
+  }
+}
+@media (min-width: 1200px) {
+  .faq {
+    padding-top: 15px;
+    padding-bottom: 30px;
+  }
+}
+.faq h2 {
+  color: #ffffff;
+}
+.faq .panel-heading {
+  border-top: solid 1px #afc8d9;
+  padding: 10px 0 10px 15px;
+}
+@media (max-width: 767px) {
+  .faq .panel-heading {
+    padding: 1.7605633803vw 0 1.7605633803vw 2.6408450704vw;
+  }
+}
+@media (max-width: 543px) {
+  .faq .panel-heading {
+    padding: 3.125vw 0 3.125vw 4.6875vw;
+  }
+}
+.faq .panel:first-of-type .panel-heading {
+  border-top: none;
+}
+.faq .panel-title > a {
+  display: block;
+  color: #56dbd6;
+  font-weight: 500;
+  font-size: 1.5rem;
+  padding-right: 30px;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .faq .panel-title > a {
+    font-size: 2.6408450704vw;
+    padding-right: 5.2816901408vw;
+  }
+}
+@media (max-width: 543px) {
+  .faq .panel-title > a {
+    font-size: 4.6875vw;
+    padding-right: 9.375vw;
+  }
+}
+@media (min-width: 768px) {
+  .faq .panel-title > a {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 992px) {
+  .faq .panel-title > a {
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 1200px) {
+  .faq .panel-title > a {
+    font-size: 2rem;
+  }
+}
+.faq .panel-title > a::after {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2023.2%2013.15%22%3E%3Cpath%20d%3D%22M12.74%2C12.65a1.62%2C1.62%2C0%2C0%2C1-2.3%2C0L.47%2C2.74A1.61%2C1.61%2C0%2C0%2C1%2C.46.46h0a1.64%2C1.64%2C0%2C0%2C1%2C2.3%2C0l8.82%2C8.78L20.41.45a1.64%2C1.64%2C0%2C0%2C1%2C2.3%2C0%2C1.61%2C1.61%2C0%2C0%2C1%2C0%2C2.28h0Z%22%20transform%3D%22translate(0.01%200.02)%22%20fill%3D%22rgb(86%2C219%2C214)%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  position: absolute;
+  background-size: 10px;
+  width: 10px;
+  height: 8px;
+  right: 4px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+@media (max-width: 767px) {
+  .faq .panel-title > a::after {
+    background-size: 1.7605633803vw;
+    width: 1.7605633803vw;
+    height: 1.4084507042vw;
+    right: 0.7042253521vw;
+  }
+}
+@media (max-width: 543px) {
+  .faq .panel-title > a::after {
+    background-size: 3.125vw;
+    width: 3.125vw;
+    height: 2.5vw;
+    right: 1.25vw;
+  }
+}
+.faq .panel-title > a[aria-expanded=true]::after {
+  -webkit-transform: rotate(180deg) translateY(50%);
+          transform: rotate(180deg) translateY(50%);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.faq .panel-title > a:focus {
+  outline: none;
+  color: #ffffff;
+}
+.faq .panel-body {
+  padding: 0 15px 15px 15px;
+}
+@media (max-width: 767px) {
+  .faq .panel-body {
+    padding: 0 2.6408450704vw 2.6408450704vw 2.6408450704vw;
+  }
+}
+@media (max-width: 543px) {
+  .faq .panel-body {
+    padding: 0 4.6875vw 4.6875vw 4.6875vw;
+  }
+}
+.faq .panel-body p, .faq .panel-body li {
+  color: #fff;
+  margin: 0 0 0 15px;
+  text-align: left;
+}
+@media (max-width: 767px) {
+  .faq .panel-body p, .faq .panel-body li {
+    margin: 0 0 0 2.6408450704vw;
+  }
+}
+@media (max-width: 543px) {
+  .faq .panel-body p, .faq .panel-body li {
+    margin: 0 0 0 4.6875vw;
+  }
+}
+@media (min-width: 992px) {
+  .faq .panel-body p, .faq .panel-body li {
+    font-size: 1.6rem;
+  }
+}
+.faq .panel-body p a, .faq .panel-body li a {
+  color: #56dbd6;
+  border-bottom: solid 1px #56dbd6;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.faq .panel-body p a:hover, .faq .panel-body p a:focus, .faq .panel-body li a:hover, .faq .panel-body li a:focus {
+  border-bottom-color: transparent;
+}
+.faq .chart-head, .faq .chart-body {
+  padding: 0 15px;
+}
+@media (min-width: 768px) {
+  .faq .chart-head, .faq .chart-body {
+    padding: 0 60px;
+  }
+}
+@media (min-width: 1200px) {
+  .faq .chart-head, .faq .chart-body {
+    padding: 0 120px;
+  }
+}
+.faq .chart-head p, .faq .chart-body p {
+  margin: 0;
+  text-align: center;
+}
+.faq .chart-head div {
+  border-bottom: solid 2px #afc8d9;
+}
+.faq .chart-head p {
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+@media (max-width: 767px) {
+  .faq .chart-head p {
+    font-size: 2.8169014085vw;
+  }
+}
+@media (max-width: 543px) {
+  .faq .chart-head p {
+    font-size: 5vw;
+  }
+}
+@media (min-width: 992px) {
+  .faq .chart-head p {
+    font-size: 1.8rem;
+  }
+}
+.faq .chart-body {
+  margin-top: 5px;
+}
+.faq .chart-body div {
+  padding: 5px 15px;
+  border-bottom: dotted 1px #afc8d9;
+}
+.faq .chart-body div:last-of-type, .faq .chart-body div:nth-last-of-type(2) {
+  border-bottom: none;
+}

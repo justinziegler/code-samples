@@ -2,38 +2,69 @@
 const utils = require('./utils');
 
 module.exports.home = async function (ctx) {
-  const caseStudies = [
+  // const directory = await utils.getDirectory();
+  // const pageDetails = await content.getPageDetails(ctx);
+  // let caseStudies = [];
+  // let pageId = -1;
+  // directory.forEach(link => {
+  //   pageId++
+  //   pageDetails.forEach(page => {
+  //     if (link === page.link) {
+  //       const item = {
+  //         link: link,
+  //         pageId: pageId,
+  //         title: page.title,
+  //         intro: page.intro,
+  //         background: page.background
+  //       }
+  //       caseStudies.push(item);
+  //     }
+  //   })
+    
+  // })
+  console.log('caseStudies', caseStudies)
+  const caseStudiesXXX = [
     {
-      title: 'Lightweight Multi-use Slideshow',
+      title: 'Holiday Mode',
+      intro: 'Holiday promotions were an important part of this company’s business, and several times a year we would theme the website for a variety of holidays. This eventually became too time-consuming, and in response I developed Holiday Mode for the site, which enabled reverting back to the regular site by updating one variable. Click here to toggle between the two versions.',
+      background: [
+        '../assets/holiday-promotion/carousel01-mob-vp-lg.jpg'
+      ],
+      link: 'holiday-mode',
+    },
+    {
+      title: 'Value Propositions',
       intro: 'In my previous position, I would often be required to develop page sections that looked and functioned differently depending if users were on mobile vs. a larger screen. This project came about from a desire to:',
       bullets: [ 
         'Build a lightweight, barebones slider plugin replacement',
         'Allow for alternate functionality on different screen sizes while using the same markup'
       ],
-      thumbnails: [
-        {
-          title: 'Value Propositions',
-          link: '../value-props'
-        },
-        {
-          title: 'Mattress Animation',
-          link: '../mattress-animation'
-        }
-      ]
+      background: [
+        '../assets/luxe-vp-couple-md.jpg',
+      ],
+      link: '../value-props'
+    },
+    {
+      title: 'Mattress Layer Animation',
+      intro: 'In my previous position, I would often be required to develop page sections that looked and functioned different ly depending if users were on mobile vs. a larger screen. This project came about from a desire to:',
+      bullets: [ 
+        'Build a lightweight, barebones slider plugin replacement',
+        'Allow for alternate functionality on different screen sizes while using the same markup'
+      ],
+      background: [
+        '../assets/luxe-vp-couple-md.jpg',
+      ],
+      link: '../mattress-animation'
     },
     {
       title: 'Tiktok Mimic',
-      intro: 'This was a fun project developed for a social media marketing campaign. This project goals were to:',
-      bullets: [ 
-        'Mimic the look and feel of Tiktok for users that are referred from mobile-targeted links on social media',
-        'Provide an engaging experience that gathers sales leads'
+      intro: 'Tiktok-styled mobile promotional page for a social media-targeted marketing campaign. Videos advance manually or automatically.',
+      background: [
+        '../assets/promos/tiktok-01.jpg',
+        '../assets/promos/tiktok-02.jpg',
+        '../assets/promos/tiktok-03.jpg'
       ],
-      thumbnails: [
-        {
-          title: 'Tiktok Mimic',
-          link: '../tiktok'
-        }
-      ]
+      link: '../tiktok'
     },
     {
       title: 'Product Display Template',
@@ -44,20 +75,46 @@ module.exports.home = async function (ctx) {
         'Speed up development time for future product launches'
       ],
       details: 'The template was developed using the Nunjucks templating language, Sass and jQuery, though I\'ve converted some of the scripts to ES6 over time. Additionally, there are a number of node modules developed to aid in setting product details, like discounted prices and monthly payments.  It\'s made to be fully functional once the relevant variables are set, allowing more time for the development of page content.',
-      thumbnails: [
-        {
-          title: 'Default Config',
-          link: '../mattress'
-        },
-        {
-          title: 'Advanced Features',
-          link: '../frame'
-        },
-        {
-          title: 'Flexible Upsells',
-          link: '../sheets'
-        }
-      ]
+      background: [
+        '../assets/luxe-vp-couple-md.jpg',
+      ],
+      link: '../mattress',
+    },
+    {
+      title: 'Pr',
+      intro: '...',
+      details: '.................',
+      background: [
+        '../assets/luxe-vp-couple-md.jpg',
+      ],
+      link: '../frame',
+    },
+    {
+      title: 'Frame Full',
+      intro: '...',
+      details: '............',
+      background: [
+        '../assets/luxe-vp-couple-md.jpg',
+      ],
+      link: '../frame-full',
+    },
+    {
+      title: 'Sheets PD',
+      intro: '...',
+      details: '.................',
+      background: [
+        '../assets/luxe-vp-couple-md.jpg',
+      ],
+      link: '../sheets',
+    },
+    {
+      title: 'Sheets Full',
+      intro: '...',
+      details: '............',
+      background: [
+        '../assets/luxe-vp-couple-md.jpg',
+      ],
+      link: '../sheets-full',
     },
     {
       title: 'Shopping Cart',
@@ -73,185 +130,16 @@ module.exports.home = async function (ctx) {
           link: '../cart'
         }
       ]
+    }, 
+    {
+      title: 'Start',
+      link: '../holiday-mode',
     }
   ]
   return caseStudies;
 }
 
-module.exports.mattressAnimation = async function (ctx) {
-  const layers = [
-    {
-      title: 'Quilted Memory Foam Cover',
-      details: 'Easily concealed beneath the<br class="hidden-md hidden-lg"> sheets, this<br class="visible-md visible-lg"> high-quality cover<br class="visible-sm"> features quilted open-cell memory foam and a hexagonal, top-tick design for maximum airflow, keeping you comfortable both in and out of sleep.'
-    },
-    {
-      title: 'Cooling Comfort Layer',
-      details: '2" of cooling-gel bead infused memory<br class="visible-md"> foam promotes increased<br class="visible-xxs"> air circulation<br class="visible-md"> by redirecting and releasing heat away from your body. The contouring memory foam promotes proper spine alignment<br class="hidden-md hidden-lg"> for support<br class="visible-md"> all night long.'
-    },
-    {
-      title: 'Fast Response Transition Layer',
-      details: 'The 2" transitional layer is<br class="visible-xxs"> composed of proprietary high resilience, medium-firm foam and works hard to distribute motion and add additional support. <br class="visible-xssm">Rest easy with the perfect alignment <br class="visible-xssm">and <br class="visible-xxs">wake up feeling fully restored.'
-    },
-    {
-      title: 'Durable Base Layer',
-      details: 'The foundation for better sleep<br class="hidden-md hidden-lg"> starts here. <br class="visible-md visible-lg">7" of sink-resistant, <br class="hidden-md hidden-lg">high-density, foam maintains the appearance and feel of your mattress.  Unrivaled durability makes it the<br class="visible-md"> perfect foundation for the comfort layers above.'
-    }
-  ]
-  return layers;
-}
 
-module.exports.tkSlides = async function (ctx) {
-  slides = [
-    {
-      heading: 'Get Life-Changing Sleep',
-      content: 'Lull Original Mattresses are crafted with three layers of high-quality memory foam and are designed for all body types and sleeping positions.',
-      cta: true,
-      videoUrl: '../assets/1.mp4'
-    },
-    {
-      heading: 'Invest in Your Sleep',
-      content: 'Make The Original Lull Mattress your new secret weapon for a happier, healthier, more energetic day. Try it stress-free for 365 nights and feel the difference a Lull can make!',
-      cta: false,
-      videoUrl: '../assets/2.mp4'
-    },
-    {
-      heading: 'Flippin\' Out for Lull',
-      content: 'People are jumping for joy over the unbeatable comfort and support Lull provides. Experience the excitement of upgrading to a Lull mattress.',
-      cta: false,
-      videoUrl: '../assets/3.mp4'
-    },
-    {
-      heading: 'From Compressed to<br> <i>Impressed</i> in 5 min',
-      content: 'Get your new perfect mattress with free shipping right to your door in only 1-4 business days. Simply unroll, unpack, and watch it expand in just 5 minutes!',
-      cta: true,
-      videoUrl: '../assets/4.mp4'
-    },
-    {
-      heading: 'Namaste in Bed',
-      content: 'More stretching, less stressing. Studies show that a good night\'s sleep can improve your mood, reduce stress, boost your immune system, and help your brain fire on all cylinders.',
-      cta: false,
-      videoUrl: '../assets/5.mp4'
-    },
-    {
-      heading: 'Shop Day or Night from the Comfort of Home',
-      content: 'The Original Lull Mattress is more than just memory foam. Its a triple-layer paradise that\'ll change the way you sleep, forever!',
-      cta: true,
-      videoUrl: '../assets/6.mp4'
-    },
-    {
-      heading: 'Get Cozy Now, Pay Later',
-      content: 'Invest in your dreams. Literally. Get the Original Lull Mattress now and pay over time with easy financing for as low as $28/mo.<a class="question financing-modal-link" href="#" data-sku="LU-MA-WH-TW" data-quantity="1">?</a> No hidden fees.',
-      cta: true,
-      videoUrl: '../assets/7.mp4'
-    },
-    {
-      heading: 'Better Sleep = Better Days',
-      content: 'Made with the highest quality foam, the Original Lull Mattress is the perfect spot for “me” time. Great sleep reduces stress, boosts the immune system, & helps you stay happy.',
-      cta: true,
-      videoUrl: '../assets/8.mp4'
-    },
-    {
-      heading: 'The People Have Spoken',
-      content: 'Lull is the only mattress company with 4.5 stars & over 4,321 verified reviews! We never pay for or hide reviews & guarantee a full refund if you don\'t see yours on our site.',
-      cta: false,
-      videoUrl: '../assets/9.mp4'
-    },
-    {
-      heading: 'Lull Checks All the Boxes ✅',
-      content: 'Nobody likes buyer\'s remorse. That\'s why Lull offers a risk-free, 365 night trial! If you\'re not in love with your Lull mattress within a year, we\'ll arrange a quick and easy return.',
-      cta: false,
-      videoUrl: '../assets/10.mp4'
-    },
-    {
-      heading: 'Easy as 1, 2, <i>zzz</i>',
-      content: 'You\'re just a few clicks away from a Lull mattress being delivered right to your front door. Setup is a snap and you\'ll be drifting off to dreamland in no time.',
-      cta: false,
-      videoUrl: '../assets/11.mp4'
-    },
-    {
-      heading: 'Sleeping is Believing',
-      content: 'Try the Original Lull Mattress in your home for 365 nights. We know you\'re going to love it. If we\'re wrong, we\'ll arrange a quick and easy return.',
-      cta: true,
-      videoUrl: '../assets/12.mp4'
-    }
-  ]
-  return slides;
-}
-
-module.exports.tkTweets = async function (ctx) {
-  tweets = [
-    {
-      reviews: [
-        {
-          review: 'Big shoutout to <strong>@LullBed</strong> for helping our apartment feel more like home! It\'s only our first night using it, but I can assure you my body definitely feels the difference!',
-          name: '@taydempereira',
-          source: 'instagram'
-        },
-        {
-          review: 'I literally changed the way I sleep. Best investment!! The perfect mix of comfort and support. Bye bye back and neck pain, you\'ve been here for way too long! Loving my cooling gel-infused foam mattress with all my heart <strong>@LullBed</strong>',
-          name: '@mariapretelt',
-          source: 'instagram'
-        },
-        {
-          review: 'Got my new Lull mattress in. I\'m in heaven!!',
-          name: '@kyla.moravec',
-          source: 'facebook'
-        },
-        {
-          review: 'Look what came in the mail! I\'m super excited to finally have a full, good nights sleep on my new <strong>@LullBed</strong> mattress after a long exhausting week of relocating! The delivery is such a convenience and it comes right to your doorstep!!! You can catch me snoozing for the next few days.',
-          name: '@paigexalexandria',
-          source: 'instagram'
-        },
-        {
-          review: 'The new bed I got is so comfortable, I don\'t think I\'ve ever slept so good!! <strong>@LullBed</strong>',
-          name: '@sydneejaynexo',
-          source: 'twitter'
-        },
-        {
-          review: 'Wow I\'m in love with my new bed thank you <strong>@LullBed</strong>',
-          name: '@__Mel4',
-          source: 'twitter'
-        },
-        {
-          review: 'If any of y\'all are looking to buy a new mattress I can\'t recommend <strong>@LullBed</strong> enough. I haven\'t slept this well in my entire life.',
-          name: '@barfieldthecat',
-          source: 'twitter'
-        }
-      ]
-    }
-  ]
-  return tweets;
-}
-
-module.exports.tkFaqs = async function (ctx) {
-  faqs = [
-    {
-      username: 'lullfan_1',
-      question: 'How does the 365-Night Trial work for the Lull mattress?',
-      answer: 'After you order your Lull mattress, we\'ll ship it right to your doorstep for free. Try it out in your home for a full year. If you don\'t love it within the first 365 nights, arrange a quick and easy return. We\'ll even send a courier to pick up the mattress for free!',
-      date: '2021-01-31'
-    },
-    {
-      username: 'mr_sandman',
-      question: 'Does the mattress sleep hot like other memory foam mattresses?',
-      answer: 'The Lull mattress is designed to keep you comfortable all night long. The top layer of the mattress is made of 1.5” gel infused viscoelastic memory foam. This layer provides dramatically enhanced air flow and draws heat away from your body.',
-      date: '2021-02-01'
-    },
-    {
-      username: 'savy_snoozer',
-      question: 'How do I get the mattress back in the box?',
-      answer: 'You don\'t. We pick it up fully expanded. If you are not completely satisfied with your sleeping experience within the first 365 nights, we will arrange for a free pickup and removal of your Lull mattress in its expanded form. Lull makes every effort possible to donate returned trial mattresses to charities and organizations in need of beds.',
-      date: '2021-02-02'
-    },
-    {
-      username: 'dr_dreamzz',
-      question: 'How long before I receive my mattress?',
-      answer: 'Lull mattresses typically ships in 1-4 business days following your order. Once your mattress has shipped, we will provide you with information to track your order.',
-      date: '2021-02-03'
-    }
-  ]
-  return faqs;
-}
 
 module.exports.mattress = async function (ctx) {
   const pageUrl = 'mattress';
@@ -311,8 +199,8 @@ module.exports.mattress = async function (ctx) {
         'tippy',
         'lazysizes.min'
       ],
-      prevPage: '../tiktok',
-      nextPage: '../frame',
+      prevPage: 'tiktok',
+      nextPage: 'frame',
       headerTitle: 'Product Display Template',
       headerIntro: 'This is the default configuration of the template. The features on display here include:',
       headerBullets: [
@@ -325,31 +213,7 @@ module.exports.mattress = async function (ctx) {
   return p;
 }
 
-module.exports.valueProps = async function (ctx) {
-  const items = [
-    {
-      title: 'Free Shipping & Easy Returns',
-      details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultricies nisi a euismod bibendum. Sed congue sem at aliquet interdum.'
-    },
-    {
-      title: '365 Night Trial',
-      details: 'Donec vehicula porta metus, id malesuada massa ornare in. Vivamus vitae nisi aliquet, luctus urna sed, viverra leo.'
-    },
-    {
-      title: 'Lifetime Warranty',
-      details: 'Ut pellentesque id nisi vitae bibendum. Proin a consectetur magna. Nam sit amet metus ac metus condimentum aliquet.'
-    },
-    {
-      title: 'Easy Financing Available',
-      details: 'Aliquam erat volutpat. Suspendisse vitae lectus id massa tristique mattis. Nunc consectetur luctus augue sed'
-    }
-  ]
-  return items;
-}
-
 module.exports.frame = async function (ctx) {
-  const pageUrl = 'frame';
-  const pageId = await utils.getPageId(pageUrl);
   const p = [
     {
       skus: ctx.skus,
@@ -374,8 +238,6 @@ module.exports.frame = async function (ctx) {
           discount: ctx.discountActual
         }
       ],
-      pageUrl: pageUrl,
-      pageId: pageId,
       productType: 'frame',
       gallerySlides: 5,
       galleryDimensions: 5,
@@ -410,7 +272,7 @@ module.exports.frame = async function (ctx) {
       defaultColorName: utils.getColorName('CS'),
       qtySelection: false,
       maxQty: 1,
-      productImage: 'https://lull-media.imgix.net/upholstered-bed-frame/gallery-straighton-withluxe-TU-CS.jpg?auto=format,compress&w=1200',
+      productImage: '../assets/frame/gallery-straighton-withluxe-TU-CS.jpg',
       financingSection: true,
       scripts: [
         'nav',
@@ -419,40 +281,46 @@ module.exports.frame = async function (ctx) {
         'tippy',
         'lazysizes.min'
       ],
-      prevPage: '../mattress',
-      nextPage: '../sheets',
-      headerTitle: 'Product Display Template',
-      headerIntro: 'This configuration offers users choices between two product lines. The features on display here include:',
-      headerBullets: [
-        'The gallery displays images relevant to both the currently selected product color and the currently selected product line (Classic or Tufted).',
-        'Out of Stock conditions prevent customers from ordering items not currently in inventory',
-        'URL search parameters allow for complex marketing links that sort by size, color and product type (for example, <a href="?size=full&color=desert-sand&type=tufted">/frame?size=full&color=desert-sand&type=tufted)</a>.',
-        '<a href="https://lull.com/islay-upholstered-bed" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
-      ]
+      header: ctx.q[0].header,
+      pageId: ctx.q[0].pageId,
+      pageUrl: ctx.q[0].pageUrl,
+      prevPage: ctx.q[0].prevPage,
+      nextPage: ctx.q[0].nextPage,
+      headerTitle: ctx.q[0].headerTitle,
+      headerIntro: ctx.q[0].headerIntro,
+      headerBullets: ctx.q[0].headerBullets
   }]
   return p;
 }
 
+
 module.exports.sheets = async function (ctx) {
-  const pageUrl = 'sheets';
-  const pageId = await utils.getPageId(pageUrl);
+  const discountActual = 70;
+  const dcDiscountActual = 20;
+  const pcDiscountActual = 20;
+  const skus31 = await utils.getProductSkus(ctx, 31, dcDiscountActual);
+  const skus32 = await utils.getProductSkus(ctx, 32, dcDiscountActual);
+  const skus33 = await utils.getProductSkus(ctx, 33, dcDiscountActual);
+  const skus34 = await utils.getProductSkus(ctx, 34, pcDiscountActual);
+  const skus35 = await utils.getProductSkus(ctx, 35, pcDiscountActual);
+  const skus36 = await utils.getProductSkus(ctx, 36, pcDiscountActual);
+  const duvetCoverSkus = skus31.concat(skus32).concat(skus33);
+  const pillowcaseSkus = skus34.concat(skus35).concat(skus36);
   const p = [
     {
-      skus: ctx.skus,
+      skus: await utils.getProductSkus(ctx, 30, discountActual),
       catIds: [31],
       defaultCatId: 31,
       defaultProductType: 'OC',
       catSizes: 6,
-      pageUrl: pageUrl,
-      pageId: pageId,
       productType: 'sheets',
       gallerySlides: 5,
       galleryDimensions: 0,
       galleryVideo: true,
       galleryVideoSlide: 5,
       galleryVideoSource: '',
-      galleryVideoUrl: ['https://lull-media.imgix.net/sheets/organic-sheets-16x9-web.mp4?auto=format,compress'],
-      galleryVideoPoster: 'https://lull-media.imgix.net/sheets/organic-sheets-16x9-web.mp4?fm=jpg&w=840&frame=1',
+      galleryVideoUrl: ['../assets/sheets/organic-sheets-16x9-web.mp4?auto=format,compress'],
+      galleryVideoPoster: '../assets/sheets/organic-sheets-16x9-web.mp4?fm=jpg&w=840&frame=1',
       longTitle: false,
       heading: 'The Organic Cotton Sheets',
       subheading: '100% organic cotton sheets crafted with comfort, wellness, and luxury in mind.',
@@ -490,7 +358,7 @@ module.exports.sheets = async function (ctx) {
       defaultColorName: utils.getColorName('MB'),
       qtySelection: false,
       maxQty: 1,
-      productImage: 'https://lull-media.imgix.net/sheets/sheets-wh-01.jpg?auto=format,compress&w=1200',
+      productImage: '../assets/sheets-wh-01.jpg',
       financingSection: false,
       upsellModal: false,
       upsellModalCatId: 0,
@@ -500,7 +368,7 @@ module.exports.sheets = async function (ctx) {
       upsellMinimum: 1,
       upsells: [
         {
-          skus: ctx.duvetCoverSkus,
+          skus: duvetCoverSkus,
           catIds: [31, 32, 33],
           catSizes: 3,
           defaultCatId: 33,
@@ -540,7 +408,7 @@ module.exports.sheets = async function (ctx) {
           gallerySlides: 7 
         },
         {
-          skus: ctx.pillowcaseSkus,
+          skus: pillowcaseSkus,
           catIds: [34, 35, 36],
           catSizes: 2,
           defaultCatId: 35,
@@ -592,16 +460,14 @@ module.exports.sheets = async function (ctx) {
         'tippy',
         'lazysizes.min'
       ],
-      prevPage: '../frame',
-      nextPage: '../cart',
-      headerTitle: 'Product Display Template',
-      headerIntro: 'This configuration sorts through 42 product skus and over 100 upsell skus from 6 product lines. The features on display here include:',
-      headerBullets: [
-        'The upsells update their currently offered product size when the main product size selection changes. In this case, all 3 product groups have differing numbers of corresponding sizes that all need to be matched. Users can then select the upsell item\'s color and fabric type. Upsell color and fabric selections persist if the user changes the main product size selection',
-        'Each upsell has an associated modal containing product details and a gallery of product images.',
-        'The financing modal (accessible by hovering over the question mark icon below the color swatches) updates with each product selection change, including adding upsells.',
-        '<a href="https://lull.com/organic-cotton-sheets" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
-      ]
+      header: ctx.q[0].header,
+      pageId: ctx.q[0].pageId,
+      pageUrl: ctx.q[0].pageUrl,
+      prevPage: ctx.q[0].prevPage,
+      nextPage: ctx.q[0].nextPage,
+      headerTitle: ctx.q[0].headerTitle,
+      headerIntro: ctx.q[0].headerIntro,
+      headerBullets: ctx.q[0].headerBullets
     }]
   return p;
 }

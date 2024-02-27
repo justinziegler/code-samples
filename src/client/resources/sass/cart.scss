@@ -13,10 +13,6 @@
 // @import "partials/snippets/max-width-1920";
 //@import "partials/snippets/video-embed";
 
-$imgixUrl: 'https://lull-media.imgix.net/checkout';
-$imgixDefaults: '?auto=format,compress&q=50';
-$imgixCrop: '&fit=crop&crop=focalpoint';
-
 html {
   min-height: 100%;
   position: relative;

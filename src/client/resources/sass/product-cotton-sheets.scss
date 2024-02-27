@@ -10,9 +10,7 @@
 @import 'partials/layout';
 @import 'partials/svg';
 
-$imgixUrl: 'https://lull-media.imgix.net/sheets';
-$imgixDefaults: '?auto=format,compress&q=50';
-$imgixCrop: '&fit=crop&crop=focalpoint';
+$imgixCrop: 'fit=crop&crop=focalpoint';
 
 video {
   width: 100%;
@@ -31,127 +29,127 @@ video {
   }
   &[data-color='BW'] {
     .slide-1 {
-      background-image: url('#{$imgixUrl}/sheets-01-hero-BW.jpg#{$imgixDefaults}&w=840');
+      background-image: url('./sheets/sheets-01-hero-BW.jpg');
     }
     .slide-1,
     .swiper-pagination-bullet:nth-of-type(1) {
       @include mq(md) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-BW.jpg#{$imgixDefaults}&w=1200');
+        background-image: url('./sheets/sheets-01-hero-BW.jpg');
       }
       @include mq(lg) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-BW.jpg#{$imgixDefaults}&w=720');
+        background-image: url('./sheets/sheets-01-hero-BW.jpg');
       }
       @media (min-width: 1440px) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-BW.jpg#{$imgixDefaults}&w=800');
+        background-image: url('./sheets/sheets-01-hero-BW.jpg');
       }
       @media (min-width: 1600px) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-BW.jpg#{$imgixDefaults}&w=960');
+        background-image: url('./sheets/sheets-01-hero-BW.jpg');
       }
       @include retina {
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/sheets-01-hero-BW.jpg#{$imgixDefaults}&w=1440');
+          background-image: url('./sheets/sheets-01-hero-BW.jpg');
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/sheets-01-hero-BW.jpg#{$imgixDefaults}&w=1600');
+          background-image: url('./sheets/sheets-01-hero-BW.jpg');
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/sheets-01-hero-BW.jpg#{$imgixDefaults}&w=1920');
+          background-image: url('./sheets/sheets-01-hero-BW.jpg');
         }
       }
     }
     .slide-2 {
       &.lazyloaded {
-        background-image: url('#{$imgixUrl}/sheets-duvet-BW.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./sheets/sheets-duvet-BW.jpg');
       }
     }
     .slide-2,
     .swiper-pagination-bullet:nth-of-type(2) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-BW.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./sheets/sheets-duvet-BW.jpg');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-BW.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./sheets/sheets-duvet-BW.jpg');
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-BW.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./sheets/sheets-duvet-BW.jpg');
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-BW.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./sheets/sheets-duvet-BW.jpg');
         }
         @include retina {
           @include mq(lg) {
-            background-image: url('#{$imgixUrl}/sheets-duvet-BW.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./sheets/sheets-duvet-BW.jpg');
           }
           @media (min-width: 1440px) {
-            background-image: url('#{$imgixUrl}/sheets-duvet-BW.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./sheets/sheets-duvet-BW.jpg');
           }
           @media (min-width: 1600px) {
-            background-image: url('#{$imgixUrl}/sheets-duvet-BW.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./sheets/sheets-duvet-BW.jpg');
           }
         }
       }
     }
     .slide-3 {
       &.lazyloaded {
-        background-image: url('#{$imgixUrl}/sheets-corner-BW.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./sheets/sheets-corner-BW.jpg');
       }
     }
     .slide-3,
     .swiper-pagination-bullet:nth-of-type(3) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/sheets-corner-BW.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./sheets/sheets-corner-BW.jpg');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/sheets-corner-BW.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./sheets/sheets-corner-BW.jpg');
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/sheets-corner-BW.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./sheets/sheets-corner-BW.jpg');
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/sheets-corner-BW.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./sheets/sheets-corner-BW.jpg');
         }
         @include retina {
           @include mq(lg) {
-            background-image: url('#{$imgixUrl}/sheets-corner-BW.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./sheets/sheets-corner-BW.jpg');
           }
           @media (min-width: 1440px) {
-            background-image: url('#{$imgixUrl}/sheets-corner-BW.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./sheets/sheets-corner-BW.jpg');
           }
           @media (min-width: 1600px) {
-            background-image: url('#{$imgixUrl}/sheets-corner-BW.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./sheets/sheets-corner-BW.jpg');
           }
         }
       }
     }
     .slide-4 {
       &.lazyloaded {
-        background-image: url('#{$imgixUrl}/sheets-detail-BW.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./sheets/sheets-detail-BW.jpg');
       }
     }
     .slide-4,
     .swiper-pagination-bullet:nth-of-type(4) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/sheets-detail-BW.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./sheets/sheets-detail-BW.jpg');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/sheets-detail-BW.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./sheets/sheets-detail-BW.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-detail-BW.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./sheets/sheets-detail-BW.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/sheets-detail-BW.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./sheets/sheets-detail-BW.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-detail-BW.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./sheets/sheets-detail-BW.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/sheets-detail-BW.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./sheets/sheets-detail-BW.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-detail-BW.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./sheets/sheets-detail-BW.jpg');
           }
         }
       }
@@ -159,121 +157,121 @@ video {
   }
   &[data-color='QG'] {
     .slide-1 {
-      background-image: url('#{$imgixUrl}/sheets-01-hero-QG.jpg#{$imgixDefaults}&w=840');
+      background-image: url('./sheets/sheets-01-hero-QG.jpg');
     }
     .slide-1,
     .swiper-pagination-bullet:nth-of-type(1) {
       @include mq(md) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-QG.jpg#{$imgixDefaults}&w=1200');
+        background-image: url('./sheets/sheets-01-hero-QG.jpg');
       }
       @include mq(lg) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-QG.jpg#{$imgixDefaults}&w=720');
+        background-image: url('./sheets/sheets-01-hero-QG.jpg');
         @include retina {
-          background-image: url('#{$imgixUrl}/sheets-01-hero-QG.jpg#{$imgixDefaults}&w=1440');
+          background-image: url('./sheets/sheets-01-hero-QG.jpg');
         }
       }
       @media (min-width: 1440px) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-QG.jpg#{$imgixDefaults}&w=800');
+        background-image: url('./sheets/sheets-01-hero-QG.jpg');
         @include retina {
-          background-image: url('#{$imgixUrl}/sheets-01-hero-QG.jpg#{$imgixDefaults}&w=1600');
+          background-image: url('./sheets/sheets-01-hero-QG.jpg');
         }
       }
       @media (min-width: 1600px) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-QG.jpg#{$imgixDefaults}&w=960');
+        background-image: url('./sheets/sheets-01-hero-QG.jpg');
         @include retina {
-          background-image: url('#{$imgixUrl}/sheets-01-hero-QG.jpg#{$imgixDefaults}&w=1920');
+          background-image: url('./sheets/sheets-01-hero-QG.jpg');
         }
       }
     }
     .slide-2 {
       &.lazyloaded {
-        background-image: url('#{$imgixUrl}/sheets-duvet-QG.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./sheets/sheets-duvet-QG.jpg');
       }
     }
     .slide-2,
     .swiper-pagination-bullet:nth-of-type(2) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-QG.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./sheets/sheets-duvet-QG.jpg');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-QG.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./sheets/sheets-duvet-QG.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-duvet-QG.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./sheets/sheets-duvet-QG.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-QG.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./sheets/sheets-duvet-QG.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-duvet-QG.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./sheets/sheets-duvet-QG.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-QG.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./sheets/sheets-duvet-QG.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-duvet-QG.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./sheets/sheets-duvet-QG.jpg');
           }
         }
       }
     }
     .slide-3 {
       &.lazyloaded {
-        background-image: url('#{$imgixUrl}/sheets-corner-QG.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./sheets/sheets-corner-QG.jpg');
       }
     }
     .slide-3,
     .swiper-pagination-bullet:nth-of-type(3) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/sheets-corner-QG.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./sheets/sheets-corner-QG.jpg');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/sheets-corner-QG.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./sheets/sheets-corner-QG.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-corner-QG.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./sheets/sheets-corner-QG.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/sheets-corner-QG.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./sheets/sheets-corner-QG.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-corner-QG.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./sheets/sheets-corner-QG.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/sheets-corner-QG.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./sheets/sheets-corner-QG.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-corner-QG.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./sheets/sheets-corner-QG.jpg');
           }
         }
       }
     }
     .slide-4 {
       &.lazyloaded {
-        background-image: url('#{$imgixUrl}/sheets-detail-QG.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./sheets/sheets-detail-QG.jpg');
       }
     }
     .slide-4,
     .swiper-pagination-bullet:nth-of-type(4) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/sheets-detail-QG.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./sheets/sheets-detail-QG.jpg');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/sheets-detail-QG.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./sheets/sheets-detail-QG.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-detail-QG.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./sheets/sheets-detail-QG.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/sheets-detail-QG.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./sheets/sheets-detail-QG.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-detail-QG.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./sheets/sheets-detail-QG.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/sheets-detail-QG.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./sheets/sheets-detail-QG.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-detail-QG.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./sheets/sheets-detail-QG.jpg');
           }
         }
       }
@@ -281,121 +279,121 @@ video {
   }
   &[data-color='GG'] {
     .slide-1 {
-      background-image: url('#{$imgixUrl}/sheets-01-hero-GG.jpg#{$imgixDefaults}&w=840');
+      background-image: url('./sheets/sheets-01-hero-GG.jpg');
     }
     .slide-1,
     .swiper-pagination-bullet:nth-of-type(1) {
       @include mq(md) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-GG.jpg#{$imgixDefaults}&w=1200');
+        background-image: url('./sheets/sheets-01-hero-GG.jpg');
       }
       @include mq(lg) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-GG.jpg#{$imgixDefaults}&w=720');
+        background-image: url('./sheets/sheets-01-hero-GG.jpg');
         @include retina {
-          background-image: url('#{$imgixUrl}/sheets-01-hero-GG.jpg#{$imgixDefaults}&w=1440');
+          background-image: url('./sheets/sheets-01-hero-GG.jpg');
         }
       }
       @media (min-width: 1440px) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-GG.jpg#{$imgixDefaults}&w=800');
+        background-image: url('./sheets/sheets-01-hero-GG.jpg');
         @include retina {
-          background-image: url('#{$imgixUrl}/sheets-01-hero-GG.jpg#{$imgixDefaults}&w=1600');
+          background-image: url('./sheets/sheets-01-hero-GG.jpg');
         }
       }
       @media (min-width: 1600px) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-GG.jpg#{$imgixDefaults}&w=960');
+        background-image: url('./sheets/sheets-01-hero-GG.jpg');
         @include retina {
-          background-image: url('#{$imgixUrl}/sheets-01-hero-GG.jpg#{$imgixDefaults}&w=1920');
+          background-image: url('./sheets/sheets-01-hero-GG.jpg');
         }
       }
     }
     .slide-2 {
       &.lazyloaded {
-        background-image: url('#{$imgixUrl}/sheets-duvet-GG.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./sheets/sheets-duvet-GG.jpg');
       }
     }
     .slide-2,
     .swiper-pagination-bullet:nth-of-type(2) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-GG.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./sheets/sheets-duvet-GG.jpg');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-GG.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./sheets/sheets-duvet-GG.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-duvet-GG.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./sheets/sheets-duvet-GG.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-GG.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./sheets/sheets-duvet-GG.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-duvet-GG.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./sheets/sheets-duvet-GG.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-GG.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./sheets/sheets-duvet-GG.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-duvet-GG.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./sheets/sheets-duvet-GG.jpg');
           }
         }
       }
     }
     .slide-3 {
       &.lazyloaded {
-        background-image: url('#{$imgixUrl}/sheets-corner-GG.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./sheets/sheets-corner-GG.jpg');
       }
     }
     .slide-3,
     .swiper-pagination-bullet:nth-of-type(3) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/sheets-corner-GG.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./sheets/sheets-corner-GG.jpg');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/sheets-corner-GG.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./sheets/sheets-corner-GG.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-corner-GG.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./sheets/sheets-corner-GG.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/sheets-corner-GG.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./sheets/sheets-corner-GG.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-corner-GG.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./sheets/sheets-corner-GG.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/sheets-corner-GG.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./sheets/sheets-corner-GG.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-corner-GG.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./sheets/sheets-corner-GG.jpg');
           }
         }
       }
     }
     .slide-4 {
       &.lazyloaded {
-        background-image: url('#{$imgixUrl}/sheets-detail-GG.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./sheets/sheets-detail-GG.jpg');
       }
     }
     .slide-4,
     .swiper-pagination-bullet:nth-of-type(4) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/sheets-detail-GG.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./sheets/sheets-detail-GG.jpg');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/sheets-detail-GG.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./sheets/sheets-detail-GG.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-detail-GG.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./sheets/sheets-detail-GG.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/sheets-detail-GG.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./sheets/sheets-detail-GG.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-detail-GG.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./sheets/sheets-detail-GG.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/sheets-detail-GG.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./sheets/sheets-detail-GG.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-detail-GG.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./sheets/sheets-detail-GG.jpg');
           }
         }
       }
@@ -403,121 +401,121 @@ video {
   }
   &[data-color='MB'] {
     .slide-1 {
-      background-image: url('#{$imgixUrl}/sheets-01-hero-MB.jpg#{$imgixDefaults}&w=840');
+      background-image: url('./sheets/sheets-01-hero-MB.jpg');
     }
     .slide-1,
     .swiper-pagination-bullet:nth-of-type(1) {
       @include mq(md) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-MB.jpg#{$imgixDefaults}&w=1200');
+        background-image: url('./sheets/sheets-01-hero-MB.jpg');
       }
       @include mq(lg) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-MB.jpg#{$imgixDefaults}&w=720');
+        background-image: url('./sheets/sheets-01-hero-MB.jpg');
         @include retina {
-          background-image: url('#{$imgixUrl}/sheets-01-hero-MB.jpg#{$imgixDefaults}&w=1440');
+          background-image: url('./sheets/sheets-01-hero-MB.jpg');
         }
       }
       @media (min-width: 1440px) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-MB.jpg#{$imgixDefaults}&w=800');
+        background-image: url('./sheets/sheets-01-hero-MB.jpg');
         @include retina {
-          background-image: url('#{$imgixUrl}/sheets-01-hero-MB.jpg#{$imgixDefaults}&w=1600');
+          background-image: url('./sheets/sheets-01-hero-MB.jpg');
         }
       }
       @media (min-width: 1600px) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-MB.jpg#{$imgixDefaults}&w=960');
+        background-image: url('./sheets/sheets-01-hero-MB.jpg');
         @include retina {
-          background-image: url('#{$imgixUrl}/sheets-01-hero-MB.jpg#{$imgixDefaults}&w=1920');
+          background-image: url('./sheets/sheets-01-hero-MB.jpg');
         }
       }
     }
     .slide-2 {
       &.lazyloaded {
-        background-image: url('#{$imgixUrl}/sheets-duvet-MB.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./sheets/sheets-duvet-MB.jpg');
       }
     }
     .slide-2,
     .swiper-pagination-bullet:nth-of-type(2) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-MB.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./sheets/sheets-duvet-MB.jpg');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-MB.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./sheets/sheets-duvet-MB.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-duvet-MB.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./sheets/sheets-duvet-MB.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-MB.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./sheets/sheets-duvet-MB.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-duvet-MB.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./sheets/sheets-duvet-MB.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-MB.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./sheets/sheets-duvet-MB.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-duvet-MB.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./sheets/sheets-duvet-MB.jpg');
           }
         }
       }
     }
     .slide-3 {
       &.lazyloaded {
-        background-image: url('#{$imgixUrl}/sheets-corner-MB.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./sheets/sheets-corner-MB.jpg');
       }
     }
     .slide-3,
     .swiper-pagination-bullet:nth-of-type(3) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/sheets-corner-MB.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./sheets/sheets-corner-MB.jpg');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/sheets-corner-MB.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./sheets/sheets-corner-MB.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-corner-MB.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./sheets/sheets-corner-MB.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/sheets-corner-MB.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./sheets/sheets-corner-MB.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-corner-MB.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./sheets/sheets-corner-MB.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/sheets-corner-MB.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./sheets/sheets-corner-MB.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-corner-MB.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./sheets/sheets-corner-MB.jpg');
           }
         }
       }
     }
     .slide-4 {
       &.lazyloaded {
-        background-image: url('#{$imgixUrl}/sheets-detail-MB.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./sheets/sheets-detail-MB.jpg');
       }
     }
     .slide-4,
     .swiper-pagination-bullet:nth-of-type(4) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/sheets-detail-MB.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./sheets/sheets-detail-MB.jpg');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/sheets-detail-MB.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./sheets/sheets-detail-MB.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-detail-MB.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./sheets/sheets-detail-MB.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/sheets-detail-MB.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./sheets/sheets-detail-MB.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-detail-MB.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./sheets/sheets-detail-MB.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/sheets-detail-MB.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./sheets/sheets-detail-MB.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-detail-MB.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./sheets/sheets-detail-MB.jpg');
           }
         }
       }
@@ -525,121 +523,121 @@ video {
   }
   &[data-color='PA'] {
     .slide-1 {
-      background-image: url('#{$imgixUrl}/sheets-01-hero-PA.jpg#{$imgixDefaults}&w=840');
+      background-image: url('./sheets/sheets-01-hero-PA.jpg');
     }
     .slide-1,
     .swiper-pagination-bullet:nth-of-type(1) {
       @include mq(md) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-PA.jpg#{$imgixDefaults}&w=1200');
+        background-image: url('./sheets/sheets-01-hero-PA.jpg');
       }
       @include mq(lg) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-PA.jpg#{$imgixDefaults}&w=720');
+        background-image: url('./sheets/sheets-01-hero-PA.jpg');
         @include retina {
-          background-image: url('#{$imgixUrl}/sheets-01-hero-PA.jpg#{$imgixDefaults}&w=1440');
+          background-image: url('./sheets/sheets-01-hero-PA.jpg');
         }
       }
       @media (min-width: 1440px) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-PA.jpg#{$imgixDefaults}&w=800');
+        background-image: url('./sheets/sheets-01-hero-PA.jpg');
         @include retina {
-          background-image: url('#{$imgixUrl}/sheets-01-hero-PA.jpg#{$imgixDefaults}&w=1600');
+          background-image: url('./sheets/sheets-01-hero-PA.jpg');
         }
       }
       @media (min-width: 1600px) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-PA.jpg#{$imgixDefaults}&w=960');
+        background-image: url('./sheets/sheets-01-hero-PA.jpg');
         @include retina {
-          background-image: url('#{$imgixUrl}/sheets-01-hero-PA.jpg#{$imgixDefaults}&w=1920');
+          background-image: url('./sheets/sheets-01-hero-PA.jpg');
         }
       }
     }
     .slide-2 {
       &.lazyloaded {
-        background-image: url('#{$imgixUrl}/sheets-duvet-PA.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./sheets/sheets-duvet-PA.jpg');
       }
     }
     .slide-2,
     .swiper-pagination-bullet:nth-of-type(2) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-PA.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./sheets/sheets-duvet-PA.jpg');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-PA.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./sheets/sheets-duvet-PA.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-duvet-PA.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./sheets/sheets-duvet-PA.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-PA.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./sheets/sheets-duvet-PA.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-duvet-PA.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./sheets/sheets-duvet-PA.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-PA.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./sheets/sheets-duvet-PA.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-duvet-PA.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./sheets/sheets-duvet-PA.jpg');
           }
         }
       }
     }
     .slide-3 {
       &.lazyloaded {
-        background-image: url('#{$imgixUrl}/sheets-corner-PA.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./sheets/sheets-corner-PA.jpg');
       }
     }
     .slide-3,
     .swiper-pagination-bullet:nth-of-type(3) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/sheets-corner-PA.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./sheets/sheets-corner-PA.jpg');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/sheets-corner-PA.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./sheets/sheets-corner-PA.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-corner-PA.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./sheets/sheets-corner-PA.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/sheets-corner-PA.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./sheets/sheets-corner-PA.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-corner-PA.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./sheets/sheets-corner-PA.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/sheets-corner-PA.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./sheets/sheets-corner-PA.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-corner-PA.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./sheets/sheets-corner-PA.jpg');
           }
         }
       }
     }
     .slide-4 {
       &.lazyloaded {
-        background-image: url('#{$imgixUrl}/sheets-detail-PA.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./sheets/sheets-detail-PA.jpg');
       }
     }
     .slide-4,
     .swiper-pagination-bullet:nth-of-type(4) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/sheets-detail-PA.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./sheets/sheets-detail-PA.jpg');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/sheets-detail-PA.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./sheets/sheets-detail-PA.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-detail-PA.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./sheets/sheets-detail-PA.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/sheets-detail-PA.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./sheets/sheets-detail-PA.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-detail-PA.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./sheets/sheets-detail-PA.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/sheets-detail-PA.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./sheets/sheets-detail-PA.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-detail-PA.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./sheets/sheets-detail-PA.jpg');
           }
         }
       }
@@ -647,121 +645,121 @@ video {
   }
   &[data-color='WP'] {
     .slide-1 {
-      background-image: url('#{$imgixUrl}/sheets-01-hero-WP.jpg#{$imgixDefaults}&w=840');
+      background-image: url('./sheets/sheets-01-hero-WP.jpg');
     }
     .slide-1,
     .swiper-pagination-bullet:nth-of-type(1) {
       @include mq(md) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-WP.jpg#{$imgixDefaults}&w=1200');
+        background-image: url('./sheets/sheets-01-hero-WP.jpg');
       }
       @include mq(lg) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-WP.jpg#{$imgixDefaults}&w=720');
+        background-image: url('./sheets/sheets-01-hero-WP.jpg');
         @include retina {
-          background-image: url('#{$imgixUrl}/sheets-01-hero-WP.jpg#{$imgixDefaults}&w=1440');
+          background-image: url('./sheets/sheets-01-hero-WP.jpg');
         }
       }
       @media (min-width: 1440px) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-WP.jpg#{$imgixDefaults}&w=800');
+        background-image: url('./sheets/sheets-01-hero-WP.jpg');
         @include retina {
-          background-image: url('#{$imgixUrl}/sheets-01-hero-WP.jpg#{$imgixDefaults}&w=1600');
+          background-image: url('./sheets/sheets-01-hero-WP.jpg');
         }
       }
       @media (min-width: 1600px) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-WP.jpg#{$imgixDefaults}&w=960');
+        background-image: url('./sheets/sheets-01-hero-WP.jpg');
         @include retina {
-          background-image: url('#{$imgixUrl}/sheets-01-hero-WP.jpg#{$imgixDefaults}&w=1920');
+          background-image: url('./sheets/sheets-01-hero-WP.jpg');
         }
       }
     }
     .slide-2 {
       &.lazyloaded {
-        background-image: url('#{$imgixUrl}/sheets-duvet-WP.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./sheets/sheets-duvet-WP.jpg');
       }
     }
     .slide-2,
     .swiper-pagination-bullet:nth-of-type(2) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-WP.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./sheets/sheets-duvet-WP.jpg');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-WP.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./sheets/sheets-duvet-WP.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-duvet-WP.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./sheets/sheets-duvet-WP.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-WP.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./sheets/sheets-duvet-WP.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-duvet-WP.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./sheets/sheets-duvet-WP.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-WP.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./sheets/sheets-duvet-WP.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-duvet-WP.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./sheets/sheets-duvet-WP.jpg');
           }
         }
       }
     }
     .slide-3 {
       &.lazyloaded {
-        background-image: url('#{$imgixUrl}/sheets-corner-WP.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./sheets/sheets-corner-WP.jpg');
       }
     }
     .slide-3,
     .swiper-pagination-bullet:nth-of-type(3) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/sheets-corner-WP.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./sheets/sheets-corner-WP.jpg');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/sheets-corner-WP.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./sheets/sheets-corner-WP.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-corner-WP.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./sheets/sheets-corner-WP.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/sheets-corner-WP.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./sheets/sheets-corner-WP.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-corner-WP.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./sheets/sheets-corner-WP.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/sheets-corner-WP.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./sheets/sheets-corner-WP.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-corner-WP.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./sheets/sheets-corner-WP.jpg');
           }
         }
       }
     }
     .slide-4 {
       &.lazyloaded {
-        background-image: url('#{$imgixUrl}/sheets-detail-WP.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./sheets/sheets-detail-WP.jpg');
       }
     }
     .slide-4,
     .swiper-pagination-bullet:nth-of-type(4) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/sheets-detail-WP.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./sheets/sheets-detail-WP.jpg');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/sheets-detail-WP.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./sheets/sheets-detail-WP.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-detail-WP.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./sheets/sheets-detail-WP.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/sheets-detail-WP.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./sheets/sheets-detail-WP.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-detail-WP.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./sheets/sheets-detail-WP.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/sheets-detail-WP.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./sheets/sheets-detail-WP.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-detail-WP.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./sheets/sheets-detail-WP.jpg');
           }
         }
       }
@@ -769,121 +767,121 @@ video {
   }
   &[data-color='CD'] {
     .slide-1 {
-      background-image: url('#{$imgixUrl}/sheets-01-hero-CD.jpg#{$imgixDefaults}&w=840');
+      background-image: url('./sheets/sheets-01-hero-CD.jpg');
     }
     .slide-1,
     .swiper-pagination-bullet:nth-of-type(1) {
       @include mq(md) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-CD.jpg#{$imgixDefaults}&w=1200');
+        background-image: url('./sheets/sheets-01-hero-CD.jpg');
       }
       @include mq(lg) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-CD.jpg#{$imgixDefaults}&w=720');
+        background-image: url('./sheets/sheets-01-hero-CD.jpg');
         @include retina {
-          background-image: url('#{$imgixUrl}/sheets-01-hero-CD.jpg#{$imgixDefaults}&w=1440');
+          background-image: url('./sheets/sheets-01-hero-CD.jpg');
         }
       }
       @media (min-width: 1440px) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-CD.jpg#{$imgixDefaults}&w=800');
+        background-image: url('./sheets/sheets-01-hero-CD.jpg');
         @include retina {
-          background-image: url('#{$imgixUrl}/sheets-01-hero-CD.jpg#{$imgixDefaults}&w=1600');
+          background-image: url('./sheets/sheets-01-hero-CD.jpg');
         }
       }
       @media (min-width: 1600px) {
-        background-image: url('#{$imgixUrl}/sheets-01-hero-CD.jpg#{$imgixDefaults}&w=960');
+        background-image: url('./sheets/sheets-01-hero-CD.jpg');
         @include retina {
-          background-image: url('#{$imgixUrl}/sheets-01-hero-CD.jpg#{$imgixDefaults}&w=1920');
+          background-image: url('./sheets/sheets-01-hero-CD.jpg');
         }
       }
     }
     .slide-2 {
       &.lazyloaded {
-        background-image: url('#{$imgixUrl}/sheets-duvet-CD.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./sheets/sheets-duvet-CD.jpg');
       }
     }
     .slide-2,
     .swiper-pagination-bullet:nth-of-type(2) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-CD.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./sheets/sheets-duvet-CD.jpg');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-CD.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./sheets/sheets-duvet-CD.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-duvet-CD.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./sheets/sheets-duvet-CD.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-CD.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./sheets/sheets-duvet-CD.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-duvet-CD.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./sheets/sheets-duvet-CD.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/sheets-duvet-CD.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./sheets/sheets-duvet-CD.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-duvet-CD.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./sheets/sheets-duvet-CD.jpg');
           }
         }
       }
     }
     .slide-3 {
       &.lazyloaded {
-        background-image: url('#{$imgixUrl}/sheets-corner-CD.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./sheets/sheets-corner-CD.jpg');
       }
     }
     .slide-3,
     .swiper-pagination-bullet:nth-of-type(3) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/sheets-corner-CD.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./sheets/sheets-corner-CD.jpg');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/sheets-corner-CD.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./sheets/sheets-corner-CD.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-corner-CD.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./sheets/sheets-corner-CD.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/sheets-corner-CD.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./sheets/sheets-corner-CD.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-corner-CD.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./sheets/sheets-corner-CD.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/sheets-corner-CD.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./sheets/sheets-corner-CD.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-corner-CD.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./sheets/sheets-corner-CD.jpg');
           }
         }
       }
     }
     .slide-4 {
       &.lazyloaded {
-        background-image: url('#{$imgixUrl}/sheets-detail-CD.jpg#{$imgixDefaults}&w=840');
+        background-image: url('./sheets/sheets-detail-CD.jpg');
       }
     }
     .slide-4,
     .swiper-pagination-bullet:nth-of-type(4) {
       &.lazyloaded {
         @include mq(md) {
-          background-image: url('#{$imgixUrl}/sheets-detail-CD.jpg#{$imgixDefaults}&w=1200');
+          background-image: url('./sheets/sheets-detail-CD.jpg');
         }
         @include mq(lg) {
-          background-image: url('#{$imgixUrl}/sheets-detail-CD.jpg#{$imgixDefaults}&w=720');
+          background-image: url('./sheets/sheets-detail-CD.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-detail-CD.jpg#{$imgixDefaults}&w=1440');
+            background-image: url('./sheets/sheets-detail-CD.jpg');
           }
         }
         @media (min-width: 1440px) {
-          background-image: url('#{$imgixUrl}/sheets-detail-CD.jpg#{$imgixDefaults}&w=800');
+          background-image: url('./sheets/sheets-detail-CD.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-detail-CD.jpg#{$imgixDefaults}&w=1600');
+            background-image: url('./sheets/sheets-detail-CD.jpg');
           }
         }
         @media (min-width: 1600px) {
-          background-image: url('#{$imgixUrl}/sheets-detail-CD.jpg#{$imgixDefaults}&w=960');
+          background-image: url('./sheets/sheets-detail-CD.jpg');
           @include retina {
-            background-image: url('#{$imgixUrl}/sheets-detail-CD.jpg#{$imgixDefaults}&w=1920');
+            background-image: url('./sheets/sheets-detail-CD.jpg');
           }
         }
       }
@@ -906,7 +904,7 @@ video {
     }
     &.lazyloaded {
       @include mq(md) {
-        background-image: url('#{$imgixUrl}/photo-bedroom-windowpane.jpg#{$imgixDefaults}&w=120');
+        background-image: url('./sheets/photo-bedroom-windowpane.jpg?w=120');
       }
     }
   }
@@ -1056,9 +1054,9 @@ main {
       }
     }
     &.sustainable {
-      @include mq(lg) {
-        padding-top: 15px;
-      }
+      // @include mq(lg) {
+      //   padding-top: 15px;
+      // }
       .content {
         @include mq(lg) {
           padding-right: 75px;
@@ -1109,33 +1107,33 @@ main {
   }
   .photo {
     &.lazyloaded {
-      background-image: url('#{$imgixUrl}/photo-parachute.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=694');
+      background-image: url('./sheets/photo-parachute.jpg');
       background-size: cover;
       @include mq(xs) {
-        background-image: url('#{$imgixUrl}/photo-parachute.jpg#{$imgixDefaults}#{$imgixCrop}&w=1534&h=690&fp-x=.42&fp-y=.5');
+        background-image: url('./sheets/photo-parachute-xs.jpg');
       }
       @include mq(sm) {
-        background-image: url('#{$imgixUrl}/photo-parachute.jpg#{$imgixDefaults}#{$imgixCrop}&w=1984&h=800&fp-x=.42&fp-y=.5');
+        background-image: url('./sheets/photo-parachute-sm.jpg');
         background-size: 992px;
         background-position: 50% 50%;
         background-repeat: no-repeat;
       }
       @include mq(md) {
-        background-image: url('#{$imgixUrl}/photo-parachute.jpg#{$imgixDefaults}#{$imgixCrop}&w=1200&h=960&fp-x=.38&fp-y=.5');
+        background-image: url('./sheets/photo-parachute-md.jpg');
         background-size: 600px;
         background-position: 100% 50%;
         background-repeat: no-repeat;
       }
       @include mq(lg) {
-        background-image: url('#{$imgixUrl}/photo-parachute.jpg#{$imgixDefaults}#{$imgixCrop}&w=1440&h=1100&fp-x=0.38&fp-y=.5');
+        background-image: url('./sheets/photo-parachute-lg.jpg');
         background-size: 720px;
       }
       @media (min-width: 1440px) {
-        background-image: url('#{$imgixUrl}/photo-parachute.jpg#{$imgixDefaults}#{$imgixCrop}&w=1660&h=1100&fp-x=.38&fp-y=.5');
+        background-image: url('./sheets/photo-parachute-xl.jpg');
         background-size: 830px;
       }
       @media (min-width: 1660px) {
-        background-image: url('#{$imgixUrl}/photo-parachute.jpg#{$imgixDefaults}#{$imgixCrop}&w=1880&h=1080&fp-x=.55&fp-y=.5');
+        background-image: url('./sheets/photo-parachute-xxl.jpg');
         background-size: 960px;
       }
     }
@@ -1189,33 +1187,33 @@ main {
   }
   .photo {
     &.lazyloaded {
-      background-image: url('#{$imgixUrl}/closeup-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=694');
+      background-image: url('./sheets/closeup-making-bed.jpg');
       background-size: cover;
       @include mq(xs) {
-        background-image: url('#{$imgixUrl}/closeup-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1534&h=690&fp-x=.42&fp-y=.5');
+        background-image: url('./sheets/closeup-making-bed-xs.jpg');
       }
       @include mq(sm) {
-        background-image: url('#{$imgixUrl}/closeup-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1984&h=800&fp-x=1&fp-y=.4');
+        background-image: url('./sheets/closeup-making-bed-sm.jpg');
         background-size: 992px;
         background-position: 50% 50%;
         background-repeat: no-repeat;
       }
       @include mq(md) {
-        background-image: url('#{$imgixUrl}/closeup-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1140&h=800&fp-x=.55&fp-y=0');
+        background-image: url('./sheets/closeup-making-bed-md.jpg');
         background-size: 570px;
         background-position: 100% 50%;
         background-repeat: no-repeat;
       }
       @include mq(lg) {
-        background-image: url('#{$imgixUrl}/closeup-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1350&h=900&fp-x=.55&fp-y=0');
+        background-image: url('./sheets/closeup-making-bed-lg.jpg');
         background-size: 675px;
       }
       @media (min-width: 1440px) {
-        background-image: url('#{$imgixUrl}/closeup-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1560&h=900&fp-x=.55&fp-y=0');
+        background-image: url('./sheets/closeup-making-bed-xl.jpg');
         background-size: 830px;
       }
       @media (min-width: 1660px) {
-        background-image: url('#{$imgixUrl}/closeup-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1800&h=1000&fp-x=.55&fp-y=0');
+        background-image: url('./sheets/closeup-making-bed-xxl.jpg');
         background-size: 960px;
       }
     }
@@ -1255,33 +1253,33 @@ main {
   }
   .photo {
     &.lazyloaded {
-      background-image: url('#{$imgixUrl}/photo-clothesline.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=694');
+      background-image: url('./sheets/photo-clothesline.jpg');
       background-size: cover;
       @include mq(xs) {
-        background-image: url('#{$imgixUrl}/photo-clothesline.jpg#{$imgixDefaults}#{$imgixCrop}&w=1534&h=690&fp-x=.42&fp-y=.5');
+        background-image: url('./sheets/photo-clothesline-xs.jpg');
       }
       @include mq(sm) {
-        background-image: url('#{$imgixUrl}/photo-clothesline.jpg#{$imgixDefaults}#{$imgixCrop}&w=1984&h=800&fp-x=.42&fp-y=.5');
+        background-image: url('./sheets/photo-clothesline-sm.jpg');
         background-size: 992px;
         background-position: 50% 50%;
         background-repeat: no-repeat;
       }
       @include mq(md) {
-        background-image: url('#{$imgixUrl}/photo-clothesline.jpg#{$imgixDefaults}#{$imgixCrop}&w=1190&h=1060&fp-x=.55&fp-y=.5');
+        background-image: url('./sheets/photo-clothesline-md.jpg');
         background-size: 595px;
         background-position: 100% 50%;
         background-repeat: no-repeat;
       }
       @include mq(lg) {
-        background-image: url('#{$imgixUrl}/photo-clothesline.jpg#{$imgixDefaults}#{$imgixCrop}&w=1440&h=1240&fp-x=.55&fp-y=.5');
+        background-image: url('./sheets/photo-clothesline-lg.jpg');
         background-size: 720px;
       }
       @media (min-width: 1440px) {
-        background-image: url('#{$imgixUrl}/photo-clothesline.jpg#{$imgixDefaults}#{$imgixCrop}&w=1660&h=1240&fp-x=.55&fp-y=.5');
+        background-image: url('./sheets/photo-clothesline-xl.jpg');
         background-size: 830px;
       }
       @media (min-width: 1660px) {
-        background-image: url('#{$imgixUrl}/photo-clothesline.jpg#{$imgixDefaults}#{$imgixCrop}&w=1920&h=1240&fp-x=.55&fp-y=.5');
+        background-image: url('./sheets/photo-clothesline-xxl.jpg');
         background-size: 960px;
       }
     }
@@ -1402,32 +1400,32 @@ main {
   background-color: #f7f5f3;
   .photo {
     &.lazyloaded {
-      background-image: url('#{$imgixUrl}/sheets-field-mobile.jpeg#{$imgixDefaults}#{$imgixCrop}&w=840&h=694&fp-x=.5');
+      background-image: url('./sheets/sheets-field-mobile.jpg');
       background-size: cover;
       @include mq(xs) {
-        background-image: url('#{$imgixUrl}/sheets-field-mobile.jpeg#{$imgixDefaults}#{$imgixCrop}&w=1534&h=690&fp-x=.5&fp-y=.5');
+        background-image: url('./sheets/sheets-field-mobile-xs.jpg');
       }
       @include mq(sm) {
-        background-image: url('#{$imgixUrl}/sheets-field-mobile.jpeg#{$imgixDefaults}#{$imgixCrop}&w=1984&h=800');
+        background-image: url('./sheets/sheets-field-mobile-sm.jpg');
         background-size: 992px;
         background-position: 50% 50%;
         background-repeat: no-repeat;
       }
       @include mq(md) {
-        background-image: url('#{$imgixUrl}/sheets-field-mobile.jpeg#{$imgixDefaults}#{$imgixCrop}&w=1190&h=800');
+        background-image: url('./sheets/sheets-field-mobile-md.jpg');
         background-size: 595px;
         background-position: 100% 50%;
       }
       @include mq(lg) {
-        background-image: url('#{$imgixUrl}/sheets-field-mobile.jpeg#{$imgixDefaults}#{$imgixCrop}&w=1440&h=900');
+        background-image: url('./sheets/sheets-field-mobile-lg.jpg');
         background-size: 720px;
       }
       @media (min-width: 1440px) {
-        background-image: url('#{$imgixUrl}/sheets-field-mobile.jpeg#{$imgixDefaults}#{$imgixCrop}&w=1660&h=900');
+        background-image: url('./sheets/sheets-field-mobile-xl.jpg');
         background-size: 830px;
       }
       @media (min-width: 1660px) {
-        background-image: url('#{$imgixUrl}/sheets-field-mobile.jpeg#{$imgixDefaults}#{$imgixCrop}&w=1920&h=1000');
+        background-image: url('./sheets/sheets-field-mobile-xxl.jpg');
         background-size: 960px;
       }
     }
@@ -1462,17 +1460,17 @@ main {
     padding: vwp(30px) 0;
   }
   &.lazyloaded {
-    background-image: url('#{$imgixUrl}/sheets-texture.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=1200&fp-x=0&fp-y=0');
+    background-image: url('./sheets/sheets-texture.jpg?#{$imgixCrop}&w=840&h=1200&fp-x=0&fp-y=0');
     @include mq(sm) {
-      background-image: url('#{$imgixUrl}/sheets-texture.jpg#{$imgixDefaults}#{$imgixCrop}&w=992&h=750&fp-x=0&fp-y=0');
+      background-image: url('./sheets/sheets-texture.jpg?#{$imgixCrop}&w=992&h=750&fp-x=0&fp-y=0');
       background-size: 992px;
     }
     @include mq(md) {
-      background-image: url('#{$imgixUrl}/sheets-texture.jpg#{$imgixDefaults}#{$imgixCrop}&w=1200&h=800&fp-x=0&fp-y=0');
+      background-image: url('./sheets/sheets-texture.jpg?#{$imgixCrop}&w=1200&h=800&fp-x=0&fp-y=0');
       background-size: 1200px;
     }
     @include mq(lg) {
-      background-image: url('#{$imgixUrl}/sheets-texture.jpg#{$imgixDefaults}#{$imgixCrop}&w=1920&h=870&fp-x=0&fp-y=0');
+      background-image: url('./sheets/sheets-texture.jpg?#{$imgixCrop}&w=1920&h=870&fp-x=0&fp-y=0');
       background-size: 1920px;
       padding: 60px 0 75px 0;
     }
@@ -1550,31 +1548,31 @@ main {
   }
   .photo {
     &.lazyloaded {
-      background-image: url('#{$imgixUrl}/photo-bedroom-windowpane.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=694&fp-x=.42');
+      background-image: url('./sheets/photo-bedroom-windowpane.jpg?#{$imgixCrop}&w=840&h=694&fp-x=.42');
       background-size: cover;
       @include mq(xs) {
-        background-image: url('#{$imgixUrl}/photo-bedroom-windowpane.jpg#{$imgixDefaults}#{$imgixCrop}&w=1534&h=690&fp-x=.42&fp-y=.38');
+        background-image: url('./sheets/photo-bedroom-windowpane.jpg?#{$imgixCrop}&w=1534&h=690&fp-x=.42&fp-y=.38');
       }
       @include mq(sm) {
-        background-image: url('#{$imgixUrl}/photo-bedroom-windowpane.jpg#{$imgixDefaults}#{$imgixCrop}&w=1984&h=800&fp-x=.42&fp-y=.45');
+        background-image: url('./sheets/photo-bedroom-windowpane.jpg?#{$imgixCrop}&w=1984&h=800&fp-x=.42&fp-y=.45');
         background-size: 992px;
         background-position: 50% 50%;
         background-repeat: no-repeat;
       }
       @include mq(md) {
-        background-image: url('#{$imgixUrl}/photo-bedroom-windowpane.jpg#{$imgixDefaults}#{$imgixCrop}&w=1200&h=840&fp-x=0&fp-y=0');
+        background-image: url('./sheets/photo-bedroom-windowpane.jpg?#{$imgixCrop}&w=1200&h=840&fp-x=0&fp-y=0');
         background-size: 600px;
       }
       @include mq(lg) {
-        background-image: url('#{$imgixUrl}/photo-bedroom-windowpane.jpg#{$imgixDefaults}#{$imgixCrop}&w=1420&h=900&fp-x=0&fp-y=0&fp-z=1.05');
+        background-image: url('./sheets/photo-bedroom-windowpane.jpg?#{$imgixCrop}&w=1420&h=900&fp-x=0&fp-y=0&fp-z=1.05');
         background-size: 710px;
       }
       @media (min-width: 1440px) {
-        background-image: url('#{$imgixUrl}/photo-bedroom-windowpane.jpg#{$imgixDefaults}#{$imgixCrop}&w=1630&h=900&fp-x=0&fp-y=0.5');
+        background-image: url('./sheets/photo-bedroom-windowpane.jpg?#{$imgixCrop}&w=1630&h=900&fp-x=0&fp-y=0.5');
         background-size: 815px;
       }
       @media (min-width: 1660px) {
-        background-image: url('#{$imgixUrl}/photo-bedroom-windowpane.jpg#{$imgixDefaults}#{$imgixCrop}&w=1880&h=1000&fp-x=0&fp-y=.5');
+        background-image: url('./sheets/photo-bedroom-windowpane.jpg?#{$imgixCrop}&w=1880&h=1000&fp-x=0&fp-y=.5');
         background-size: 940px;
       }
     }
@@ -1594,31 +1592,31 @@ main {
   }
   .photo {
     &.lazyloaded {
-      background-image: url('#{$imgixUrl}/photo-couple-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=694&fp-x=.5');
+      background-image: url('./sheets/photo-couple-making-bed.jpg?#{$imgixCrop}&w=840&h=694&fp-x=.5');
       background-size: cover;
       @include mq(xs) {
-        background-image: url('#{$imgixUrl}/photo-couple-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1534&h=690&fp-x=.5&fp-y=.45');
+        background-image: url('./sheets/photo-couple-making-bed.jpg?#{$imgixCrop}&w=1534&h=690&fp-x=.5&fp-y=.45');
       }
       @include mq(sm) {
-        background-image: url('#{$imgixUrl}/photo-couple-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1984&h=800&fp-x=.5&fp-y=.5');
+        background-image: url('./sheets/photo-couple-making-bed.jpg?#{$imgixCrop}&w=1984&h=800&fp-x=.5&fp-y=.5');
         background-size: 992px;
         background-position: 50% 50%;
         background-repeat: no-repeat;
       }
       @include mq(md) {
-        background-image: url('#{$imgixUrl}/photo-couple-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1200&h=840&fp-x=0&fp-y=0');
+        background-image: url('./sheets/photo-couple-making-bed.jpg?#{$imgixCrop}&w=1200&h=840&fp-x=0&fp-y=0');
         background-size: 600px;
       }
       @include mq(lg) {
-        background-image: url('#{$imgixUrl}/photo-couple-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1320&h=900&fp-x=0&fp-y=0');
+        background-image: url('./sheets/photo-couple-making-bed.jpg?#{$imgixCrop}&w=1320&h=900&fp-x=0&fp-y=0');
         background-size: 660px;
       }
       @media (min-width: 1440px) {
-        background-image: url('#{$imgixUrl}/photo-couple-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1540&h=900&fp-x=0&fp-y=1');
+        background-image: url('./sheets/photo-couple-making-bed.jpg?#{$imgixCrop}&w=1540&h=900&fp-x=0&fp-y=1');
         background-size: 770px;
       }
       @media (min-width: 1660px) {
-        background-image: url('#{$imgixUrl}/photo-couple-making-bed.jpg#{$imgixDefaults}#{$imgixCrop}&w=1800&h=1000&fp-x=0.5&fp-y=.55');
+        background-image: url('./sheets/photo-couple-making-bed.jpg?#{$imgixCrop}&w=1800&h=1000&fp-x=0.5&fp-y=.55');
         background-size: 900px;
       }
     }
@@ -1638,31 +1636,31 @@ main {
   }
   .photo {
     &.lazyloaded {
-      background-image: url('#{$imgixUrl}/photo-couple-prone.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=694&fp-x=.5');
+      background-image: url('./sheets/photo-couple-prone.jpg?#{$imgixCrop}&w=840&h=694&fp-x=.5');
       background-size: cover;
       @include mq(xs) {
-        background-image: url('#{$imgixUrl}/photo-couple-prone.jpg#{$imgixDefaults}#{$imgixCrop}&w=1534&h=690&fp-x=.5&fp-y=.5');
+        background-image: url('./sheets/photo-couple-prone.jpg?#{$imgixCrop}&w=1534&h=690&fp-x=.5&fp-y=.5');
       }
       @include mq(sm) {
-        background-image: url('#{$imgixUrl}/photo-couple-prone.jpg#{$imgixDefaults}#{$imgixCrop}&w=1984&h=800&fp-x=.5&fp-y=.5');
+        background-image: url('./sheets/photo-couple-prone.jpg?#{$imgixCrop}&w=1984&h=800&fp-x=.5&fp-y=.5');
         background-size: 992px;
         background-position: 50% 50%;
         background-repeat: no-repeat;
       }
       @include mq(md) {
-        background-image: url('#{$imgixUrl}/photo-couple-prone.jpg#{$imgixDefaults}#{$imgixCrop}&w=1170&h=800&fp-x=0.5&fp-y=0.5');
+        background-image: url('./sheets/photo-couple-prone.jpg?#{$imgixCrop}&w=1170&h=800&fp-x=0.5&fp-y=0.5');
         background-size: 585px;
       }
       @include mq(lg) {
-        background-image: url('#{$imgixUrl}/photo-couple-prone.jpg#{$imgixDefaults}#{$imgixCrop}&w=1410&h=900&fp-x=0.5&fp-y=0.45');
+        background-image: url('./sheets/photo-couple-prone.jpg?#{$imgixCrop}&w=1410&h=900&fp-x=0.5&fp-y=0.45');
         background-size: 705px;
       }
       @media (min-width: 1440px) {
-        background-image: url('#{$imgixUrl}/photo-couple-prone.jpg#{$imgixDefaults}#{$imgixCrop}&w=1630&h=900&fp-x=0.5&fp-y=0.48');
+        background-image: url('./sheets/photo-couple-prone.jpg?#{$imgixCrop}&w=1630&h=900&fp-x=0.5&fp-y=0.48');
         background-size: 815px;
       }
       @media (min-width: 1660px) {
-        background-image: url('#{$imgixUrl}/photo-couple-prone.jpg#{$imgixDefaults}#{$imgixCrop}&w=1890&h=1000&fp-x=.5&fp-y=.45');
+        background-image: url('./sheets/photo-couple-prone.jpg?#{$imgixCrop}&w=1890&h=1000&fp-x=.5&fp-y=.45');
         background-size: 960px;
       }
     }
@@ -1681,32 +1679,32 @@ main {
   }
   .photo {
     &.lazyloaded {
-      background-image: url('#{$imgixUrl}/photo-clothesline-candid.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=694&fp-x=.7');
+      background-image: url('./sheets/photo-clothesline-candid.jpg?#{$imgixCrop}&w=840&h=694&fp-x=.7');
       background-size: cover;
       background-repeat: no-repeat;
       @include mq(xs) {
-        background-image: url('#{$imgixUrl}/photo-clothesline-candid.jpg#{$imgixDefaults}#{$imgixCrop}&w=1534&h=690&fp-x=.7&fp-y=.4');
+        background-image: url('./sheets/photo-clothesline-candid.jpg?#{$imgixCrop}&w=1534&h=690&fp-x=.7&fp-y=.4');
       }
       @include mq(sm) {
-        background-image: url('#{$imgixUrl}/photo-clothesline-candid.jpg#{$imgixDefaults}#{$imgixCrop}&w=1984&h=800&fp-x=.7&fp-y=.4');
+        background-image: url('./sheets/photo-clothesline-candid.jpg?#{$imgixCrop}&w=1984&h=800&fp-x=.7&fp-y=.4');
         background-size: 992px;
         background-position: 50% 50%;
       }
       @include mq(md) {
-        background-image: url('#{$imgixUrl}/photo-clothesline-candid.jpg#{$imgixDefaults}#{$imgixCrop}&w=1140&h=800&fp-x=0.7&fp-y=0.4');
+        background-image: url('./sheets/photo-clothesline-candid.jpg?#{$imgixCrop}&w=1140&h=800&fp-x=0.7&fp-y=0.4');
         background-size: 600px;
         background-position: 100% 50%;
       }
       @include mq(lg) {
-        background-image: url('#{$imgixUrl}/photo-clothesline-candid.jpg#{$imgixDefaults}#{$imgixCrop}&w=1440&h=1040&fp-x=0.7&fp-y=0.4');
+        background-image: url('./sheets/photo-clothesline-candid.jpg?#{$imgixCrop}&w=1440&h=1040&fp-x=0.7&fp-y=0.4');
         background-size: 720px;
       }
       @media (min-width: 1440px) {
-        background-image: url('#{$imgixUrl}/photo-clothesline-candid.jpg#{$imgixDefaults}#{$imgixCrop}&w=1540&h=900&fp-x=0.7&fp-y=0.4');
+        background-image: url('./sheets/photo-clothesline-candid.jpg?#{$imgixCrop}&w=1540&h=900&fp-x=0.7&fp-y=0.4');
         background-size: 770px;
       }
       @media (min-width: 1660px) {
-        background-image: url('#{$imgixUrl}/photo-clothesline-candid.jpg#{$imgixDefaults}#{$imgixCrop}&w=1800&h=1000&fp-x=0.7&fp-y=.4');
+        background-image: url('./sheets/photo-clothesline-candid.jpg?#{$imgixCrop}&w=1800&h=1000&fp-x=0.7&fp-y=.4');
         background-size: 960px;
       }
     }
@@ -1726,31 +1724,31 @@ main {
   }
   .photo {
     &.lazyloaded {
-      background-image: url('#{$imgixUrl}/photo-bedroom-grey.jpg#{$imgixDefaults}#{$imgixCrop}&w=840&h=694&fp-x=.5');
+      background-image: url('./sheets/photo-bedroom-grey.jpg?#{$imgixCrop}&w=840&h=694&fp-x=.5');
       background-size: cover;
       @include mq(xs) {
-        background-image: url('#{$imgixUrl}/photo-bedroom-grey.jpg#{$imgixDefaults}#{$imgixCrop}&w=1534&h=690&fp-x=.5&fp-y=.6');
+        background-image: url('./sheets/photo-bedroom-grey.jpg?#{$imgixCrop}&w=1534&h=690&fp-x=.5&fp-y=.6');
       }
       @include mq(sm) {
-        background-image: url('#{$imgixUrl}/photo-bedroom-grey.jpg#{$imgixDefaults}#{$imgixCrop}&w=1984&h=800&fp-x=.5&fp-y=.6');
+        background-image: url('./sheets/photo-bedroom-grey.jpg?#{$imgixCrop}&w=1984&h=800&fp-x=.5&fp-y=.6');
         background-size: 992px;
         background-position: 50% 50%;
         background-repeat: no-repeat;
       }
       @include mq(md) {
-        background-image: url('#{$imgixUrl}/photo-bedroom-grey.jpg#{$imgixDefaults}#{$imgixCrop}&w=1170&h=800&fp-x=.5&fp-y=.5');
+        background-image: url('./sheets/photo-bedroom-grey.jpg?#{$imgixCrop}&w=1170&h=800&fp-x=.5&fp-y=.5');
         background-size: 585px;
       }
       @include mq(lg) {
-        background-image: url('#{$imgixUrl}/photo-bedroom-grey.jpg#{$imgixDefaults}#{$imgixCrop}&w=1410&h=900&fp-x=.5&fp-y=.5');
+        background-image: url('./sheets/photo-bedroom-grey.jpg?#{$imgixCrop}&w=1410&h=900&fp-x=.5&fp-y=.5');
         background-size: 705px;
       }
       @media (min-width: 1440px) {
-        background-image: url('#{$imgixUrl}/photo-bedroom-grey.jpg#{$imgixDefaults}#{$imgixCrop}&w=1630&h=900&fp-x=.5&fp-y=.525');
+        background-image: url('./sheets/photo-bedroom-grey.jpg?#{$imgixCrop}&w=1630&h=900&fp-x=.5&fp-y=.525');
         background-size: 815px;
       }
       @media (min-width: 1660px) {
-        background-image: url('#{$imgixUrl}/photo-bedroom-grey.jpg#{$imgixDefaults}#{$imgixCrop}&w=1890&h=1040&fp-x=0.5&fp-y=.525');
+        background-image: url('./sheets/photo-bedroom-grey.jpg?#{$imgixCrop}&w=1890&h=1040&fp-x=0.5&fp-y=.525');
         background-size: 945px;
       }
     }

@@ -151,24 +151,52 @@ module.exports.numberWithCommas = function _numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 };
 
-module.exports.getPageId = async function (pageUrl) {
-  let id = 1;
+module.exports.getDirectory = async function () {
   const directory = [
-    { url: 'value-props', id: id++ },
-    { url: 'mattress-animation', id: id++ },
-    { url: 'tiktok', id: id++ },
-    { url: 'mattress', id: id++ },
-    { url: 'frame', id: id++ },
-    { url: 'sheets', id: id++ },
-    { url: 'cart', id: id++ },
+    '/',
+    'holiday-mode',
+    'value-props',
+    'mattress-animation',
+    'tiktok',
+    'product-display',
+    'bed-frame',
+    'sheets',
+    'cart'
   ]
+  return directory;
+}
+
+module.exports.getPageId = async function (pageUrl) {
   let pageId;
-  directory.forEach(page => {
-    if (pageUrl === page.url) {
-      pageId = page.id;
+  const directory = await module.exports.getDirectory();
+  directory.forEach(item => {
+    if (pageUrl === item) {
+      pageId = directory.indexOf(item);
     }
   })
   return pageId;
+}
+
+module.exports.getPrevPage = async function (pageUrl) {
+  const directory = await module.exports.getDirectory();
+  let prevPage;
+  directory.forEach(item => {
+    if (pageUrl === item) {
+      prevPage = directory[(directory.indexOf(item)) - 1];
+    }
+  })
+  return prevPage;
+}
+
+module.exports.getNextPage = async function (pageUrl) {
+  const directory = await module.exports.getDirectory();
+  let nextPage;
+  directory.forEach(item => {
+    if (pageUrl === item) {
+      nextPage = directory[(directory.indexOf(item)) + 1];
+    }
+  })
+  return nextPage;
 }
 
 module.exports.setDisplayColor = function setDisplayColor(type) {

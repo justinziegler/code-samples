@@ -1,0 +1,759 @@
+/* When editing, use the source file for this page in client/resources/sass */
+/* Minify output before re-uploading */
+@import "compass";
+
+// Core variables and mixins
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+// Reset and dependencies
+// @import "bootstrap/normalize";
+//@import "bootstrap/print";
+//@import "bootstrap/glyphicons";
+
+// Core CSS
+// @import "bootstrap/scaffolding";
+//@import "bootstrap/type"; CONFIGURE THIS
+//@import "bootstrap/code";
+// @import "bootstrap/grid";
+//@import "bootstrap/tables";
+//@import "bootstrap/forms";
+//@import "bootstrap/buttons"; CONFIGURE THIS
+
+// Components
+//@import "bootstrap/component-animations";
+//@import "bootstrap/dropdowns";
+//@import "bootstrap/button-groups";
+//@import "bootstrap/input-groups";
+//@import "bootstrap/navs";
+//@import "bootstrap/navbar";
+//@import "bootstrap/breadcrumbs";
+//@import "bootstrap/pagination";
+//@import "bootstrap/pager";
+//@import "bootstrap/labels";
+//@import "bootstrap/badges";
+//@import "bootstrap/jumbotron";
+//@import "bootstrap/thumbnails";
+//@import "bootstrap/alerts";
+//@import "bootstrap/progress-bars";
+//@import "bootstrap/media";
+//@import "bootstrap/list-group";
+//@import "bootstrap/panels";
+//@import "bootstrap/responsive-embed";
+//@import "bootstrap/wells";
+//@import "bootstrap/close";
+
+// Components w/ JavaScript
+//@import "bootstrap/modals";
+//@import "bootstrap/modals-custom";
+//@import "bootstrap/tooltip";
+//@import "bootstrap/popovers";
+//@import "bootstrap/carousel";
+
+// Utility classes
+//@import "bootstrap/utilities";
+//@import "bootstrap/responsive-utilities";
+
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/svg";
+//@import "partials/bootstrap-hacks"; // contains a few duplicate classes from partials/base
+//@import "partials/base";
+@import "partials/layout";
+//@import "partials/snippets/video-embed";
+// @import "partials/snippets/lull-button-new";
+
+// Scaffolding - delete this if we ever finish the full Bootstrap conversion
+footer {
+  .container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+  .row {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .col-sm-4, .col-md-4, .col-xs-5, .col-sm-5, .col-xs-6, .col-xs-7, .col-md-7, .col-md-8, .col-sm-10, .col-xs-12, .col-md-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-12 {
+    float: left;
+  }
+  .col-xs-12 {
+    width: 100%;
+  }
+  .col-xs-7 {
+    width: 58.33333333%;
+  }
+  .col-xs-6 {
+    width: 50%;
+  }
+  .col-xs-5 {
+    width: 41.66666667%;
+  }
+  @media (min-width: 768px) {
+    .col-sm-4, .col-sm-5, .col-sm-10 {
+      float: left;
+    }
+    .col-sm-10 {
+      width: 83.33333333%;
+    }
+    .col-sm-5 {
+      width: 41.66666667%;
+    }
+    .col-sm-4 {
+      width: 33.33333333%;
+    }
+    .col-sm-offset-1 {
+      margin-left: 8.33333333%;
+    }
+  }
+  @media (min-width: 992px) {
+    .col-md-4, .col-md-7, .col-md-12 {
+      float: left;
+    }
+    .col-md-12 {
+      width: 100%;
+    }
+    .col-md-7 {
+      width: 58.33333333%;
+    }
+    .col-md-8 {
+      width: 66.66666667%;
+    }
+    .col-md-4 {
+      width: 33.33333333%;
+    }
+    .col-md-offset-0 {
+      margin-left: 0%;
+    }
+  }
+
+  .clearfix:before,
+  .clearfix:after,
+  .container:before,
+  .container:after,
+  .container-fluid:before,
+  .container-fluid:after,
+  .row:before,
+  .row:after {
+    content: " ";
+    display: table;
+  }
+  .clearfix:after,
+  .container:after,
+  .container-fluid:after,
+  .row:after {
+    clear: both;
+  }
+  .visible-xs {
+    display: none !important;
+  }
+  @media (max-width: 767px) {
+    .visible-xs {
+      display: block !important;
+    }
+  }
+  @media (max-width: 767px) {
+    .hidden-xs {
+      display: none !important;
+    }
+  }
+}
+
+footer {
+  background: #fff;
+  color: $navy;
+  background: $white;
+  text-align: left;
+  font-size: 10px;
+  a {
+    text-decoration: none;
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+  }
+  .container {
+    position: relative;
+    padding-top: 45px;
+    padding-bottom: 30px;
+    @include mq(mdlg) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    @include mq(md) {
+      padding-top: 60px;
+      padding-bottom: 15px;
+    }
+  }
+  h4 {
+    text-transform: none;
+    color: $navy;
+    font-size: 22.5px;
+    font-weight: 900;
+    margin: 0 0 5px 0;
+    line-height: 1;
+    @include mq(sm) {
+      margin: 0 0 7px 0;
+    }
+    @include mq(md) {
+      margin: 0 0 14px 0;
+    }
+    @include mq(lg) {
+      font-size: 24px;
+      margin: 0 0 13px 0;
+    }
+  }
+  h5 {
+    font-size: 17.5px;
+    font-weight: 900;
+    color: $navy;
+    margin: 25px 0 5px 0;
+    text-transform: none;
+    line-height: 1;
+    @include mq(sm) {
+      margin: 4px 0 8px 0;
+    }
+    @include mq(lg) {
+      font-size: 22px;
+    }
+  }
+  h6 {
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 1;
+    margin: 0 0 15px 0;
+    text-transform: none;
+    @include mq(sm) {
+      font-size: 21px;
+    }
+    @include mq(md) {
+      font-size: 22px;
+    }
+    @include mq(lg) {
+      font-size: 24px;
+    }
+  }
+  p {
+    color: $grey;
+    font-weight: 500;
+    font-size: 15px;
+    margin: 0;
+    @include mq(sm) {
+      margin: 0 0 5px 0;
+    }
+    @include mq(lg) {
+      font-size: 18px;
+    }
+  }
+  ul {
+    padding: 0;
+    list-style: none;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    &.research {
+      @include mq(sm) {
+        margin-bottom: 63px;
+      }
+      @include mq(lg) {
+        margin-bottom: 67px;
+      }
+    }
+    &.products {
+      @include mq(sm) {
+        margin-bottom: 30px;
+      }
+    }
+    li {
+      color: $grey;
+      text-transform: none;
+      font-weight: 400;
+      width: 100%;
+      margin-bottom: 15px;
+      line-height: 1.2;
+      a {
+        padding: 10px 0 0 0;
+        font-size: 12px;
+        color: inherit;
+        border-bottom: solid 1px transparent;
+        transition: .2s;
+        @media (min-width: 360px) {
+          font-size: 13px;
+        }
+        @media (min-width: 375px) {
+          font-size: 14px;
+        }
+        @include mq(sm) {
+          font-size: 15px;  
+        }
+        @include mq(lg) {
+          font-size: 18px;
+        }
+        &:hover, &:focus {
+          color: $navy;
+          border-bottom-color: $navy;
+          outline: none;
+        }
+      }
+    }
+  }
+  .footer-contact {
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    &::after {
+      @include mq(xmd) {
+        content: '';
+        height: 1px;
+        background-color: $ltgrey;
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+        right: 15px;
+      }
+      @include mq(sm) {
+        left: 8.33333%;
+        right: 8.33333%;
+      }
+    }
+  }
+  .footer-call-email {
+    padding-bottom: 15px;
+    @include mq(md) {
+      padding-top: 15px;
+      padding-bottom: 35px;
+      position: relative;
+    }
+    &::after {
+      @include mq(md) {
+        content: '';
+        height: 1px;
+        background-color: $ltgrey;
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+        right: 15px;
+      }
+    }
+    p {
+      display: inline-block;
+      border-bottom: solid 1px transparent;
+      transition: .2s;
+    }
+    a {
+      display: block;
+      &:focus {
+        outline: none;
+        p {
+          border-bottom: solid 1px $navy;
+        }
+      }
+    }
+  }
+  .footer-social {
+    padding-right: 0;
+    @include mq(md) {
+      margin-top: 45px;
+      margin-bottom: 15px;
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+      li {
+        width: 28px;
+        padding: 0;
+        margin: 0 8px 0 0;
+        display: inline-block;
+        list-style-type: none;
+        line-height: 0;
+        @include mq(xs) {
+          width: 40px;
+        }
+        @include mq(sm) {
+          width: 45px;
+        }
+        &:last-of-type {
+          margin: 0;
+        }
+        a {
+          background-color: $navy;
+          margin: 0;
+          @extend %svg;
+          display: inline-block;
+          transition: .2s;
+          font-size: 0;
+          overflow: hidden;
+          width: 100%;
+          height: 28px;
+          @include mq(xs) {
+            height: 40px;
+          }
+          @include mq(sm) {
+            height: 45px;
+          }
+          @include mq(sm) {
+            margin: 0 6px 0 0;
+          }
+          @include mq(md) {
+            margin: 0 10px 0 0;
+          }
+          &:hover, &:focus {
+            transform: scale(1.2);
+            outline: none;		
+          }
+          &.footer-instagram {
+            background-size: 66%;
+          }
+          &.footer-youtube {
+            background-size: 75%;
+            @include mq(xlg) {
+              margin-top: 4px;
+            }
+          }
+          &.footer-tiktok {
+            background-size: 55%;
+            @include mq(xlg) {
+              margin-top: 4px;
+            }
+          }
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .footer-brand {
+    @include mq(xmd) {
+      text-align: right;
+      padding-left: 0;
+    }
+    a {
+      margin: 0;
+      @extend %svg;
+      display: inline-block;
+      transition: .2s;
+      width: 28px;
+      height: 28px;
+      font-size: 0;
+      overflow: hidden;
+      @include mq(xs) {
+        width: 40px;
+        height: 40px;
+      }
+      @include mq(sm) {
+        width: 45px;
+        height: 45px;
+      }
+      @include mq(lg) {
+        width: 66px;
+        height: 66px;
+      }
+      &.logo-lull {
+        width: 30px;
+        @include mq(xs) {
+          width: 44px;
+        }
+        @include mq(sm) {
+          width: 49px;
+        }
+        @include mq(lg) {
+          width: 72px;
+          margin-right: 9px;
+        }
+      }
+      &:focus {
+        outline: 1px dotted $navy;
+        outline-offset: 1px;
+      }
+    }
+  }
+  .center-col {
+    @include mq(xsm) {
+      padding-right: 0;
+    }
+  }
+  .right-col {
+    padding-right: 0;
+  }
+  .footer-company {
+    @include mq(sm) {
+      margin-top: 15px;
+    }
+    @include mq(md) {
+      margin-top: 30px;
+    }
+  }
+  #copyright {
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+    text-align: center;
+    line-height: 1;
+    position: absolute;
+    bottom: 5px;
+    left: 15px;
+    right: 15px;
+    @include mq(md) {
+      font-size: 14px;
+      left: 30px;
+      right: auto;
+      bottom: 30px;
+    }
+    @include mq(lg) {
+      left: 15px;
+    }
+  }
+}
+.friends {
+  padding: 15px 0 0 0;
+  text-align: center;
+  background-color: #0e3142;
+  z-index: 2;
+  position: relative;
+  @include mq(xsm) {
+    padding: vwl(15px) 0 0 0;
+  }
+  @include mq(xxs) {
+    padding: vwp(15px) 0 0 0;
+  }
+  @include mq(md) {
+    padding: 30px 0 0 0;
+  }
+  h3 {
+    font-size: 2.4rem;
+    color: $white;
+    font-weight: 900;
+    margin: 0;
+    text-align: left;
+    @include mq(xsm) {
+      font-size: vwl(24px);
+    }
+    @include mq(xxs) {
+      font-size: vwp(24px);
+    }
+    @include mq(sm) {
+      font-size: 3rem;
+      margin-top: 25px;
+    }
+    @include mq(md) {
+      font-size: 4rem;
+    }
+    @include mq(lg) {
+      margin-top: 20px;
+    }
+  }
+  p {
+    color: #b8dae9;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    margin: 15px 0 0 0;
+    text-align: left;
+    @include mq(xsm) {
+      font-size: vwl(13px);
+    }
+    @include mq(xxs) {
+      font-size: vwp(13px);
+    }
+    @include mq(sm) {
+      font-size: 1.4rem;
+    }
+    @include mq(md) {
+      font-size: 1.8rem;
+      margin: 20px 0 0 0;
+    }
+    @include mq(lg) {
+      font-size: 2rem;
+    }
+    &#email-success {
+      @include mq(sm) {
+        margin-left: 65px;
+      }
+      @include mq(md) {
+        margin-left: 45px;
+      }
+      @include mq(lg) {
+        margin-left: 95px;
+      }
+    }
+  }
+  form {
+    @include mq(xsm) {
+      text-align: left;
+    }
+  }
+  .email-form {
+    font-size: 1.5rem;
+    color: #0e3142;
+    margin: 20px 0 0 0;
+    @include mq(xsm) {
+      margin: vwl(20px) 0 0 0;
+    }
+    @include mq(xxs) {
+      margin: vwp(20px) 0 0 0;
+    }
+    @include mq(md) {
+      font-size: 2rem;
+    }
+    input {
+      padding: 15px;
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px;
+      border: none;
+      @include mq(xsm) {
+        width: 45%;
+      }
+      @include mq(xxs) {
+        width: 85%;
+      }
+      @include mq(sm) {
+        padding: 15px 30px 15px 15px;
+      }
+      @include mq(md) {
+        padding: 15px 105px 15px 30px;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    button {
+      display: inline;
+      margin: 0 0 0 -5px;
+      background-color: $teal;
+      padding: 15px 20px;
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+      border: none;
+      position: absolute;
+      @include mq(md) {
+        padding: 15px 30px;
+        margin: 0 0 0 -10px;
+      }
+      &:after {
+        @extend %svg;
+        @include arrow-thin($white);
+        content: '';
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        top: 37%;
+        right: 30%;
+        transform: rotate(270deg);
+        @include mq(md) {
+          right: 35%;
+        }
+      }
+    }
+  }
+  .at-hashtag {
+    margin: 0;
+    padding: 10px 0 35px 0;
+    font-weight: 400;
+    color: #b8dae9;
+    text-align: center;
+    @include mq(xsm) {
+      text-align: left;
+      padding: vwl(10px) 0 vwl(35px) 0;
+    }
+    @include mq(xxs) {
+      padding: vwp(10px) 0 vwp(35px) 0;
+    }
+    @include mq(md) {
+      padding: 15px 0 60px 0;
+    }
+    @include mq(lg) {
+      padding: 15px 0 45px 0;
+    }
+    span {
+      margin: 0 7.5px;
+      @include mq(xsm) {
+        margin: 0 1.2rem;
+      }
+      @include mq(md) {
+        margin: 0 45px;
+      }
+      &:first-of-type {
+        @include mq(xsm) {
+          margin-left: 0;
+        }
+      }
+    }
+    a:hover, a:focus {
+      color: #b8dae9;
+    }
+  }
+  .hashtag {
+    &:before {
+      content: '/';
+      position: relative;
+      display: inline-block;
+      left: -10px;
+      top: 2px;
+      font-size: 2rem;
+      font-weight: 400;
+      @include mq(md) {
+        left: -40px;
+      }
+    }
+  }
+}
+// svg
+.footer-facebook {
+  @include logo-facebook($white);
+}
+.footer-pinterest {
+  @include logo-pinterest($white);
+}
+.footer-twitter {
+  @include logo-twitter($white);
+}
+.footer-instagram {
+  @include logo-instagram($white);
+}
+.footer-youtube {
+  @include logo-youtube($white);
+}
+.footer-tiktok {
+  @include logo-tiktok($white);
+}
+.footer-logo-lull {
+  @include logo-lull($navy);
+}
+.footer-bbb {
+  @include logo-bbb($navy);
+}
+
+#extole-6771509732781607602 .extole-widget-view .extole-widget-wrapper .extole-footer__links {
+  display: block!important;
+  text-align: right!important;
+}
+#extole-6771509732781607602 .extole-widget-view li {
+  display: inline-block!important;
+  width: auto!important;
+}
+#extole-6771509732781607602 .extole-widget-view li a:hover,
+#extole-6771509732781607602 .extole-widget-view li a:focus {
+  border-bottom: none!important;
+}

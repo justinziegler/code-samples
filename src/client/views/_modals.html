@@ -350,3 +350,34 @@
   </script>
 {% endmacro %}
 
+{% macro galleryModal() %}
+<div role="dialog" aria-modal="true" class="modal fade content-modal fullscreen" id="gallery-modal" tabindex="-1" aria-labelledby="">
+  <div class="modal-dialog modal-lg " role="document">
+    <div class="modal-content">
+      <!-- <div class="modal-header">
+      </div> -->
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>
+        <iframe src="#"></iframe>
+      </div>
+      <!-- <div class="modal-footer">
+        
+      </div> -->
+    </div>
+  </div>
+</div>
+<script>
+  function showGallery(event) {
+    event.preventDefault;
+    const galleryModal = document.querySelector('#gallery-modal');
+    const iframe = galleryModal.querySelector('iframe');
+    console.log('iframe', iframe)
+    console.log('target', event.target)
+    const target = event.target.getAttribute('data-src');
+    console.log('target', target)
+    iframe.setAttribute('src', target);
+    $(galleryModal).modal('show');
+    
+  }
+</script>
+{% endmacro %}

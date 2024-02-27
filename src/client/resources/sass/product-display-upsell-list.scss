@@ -6,8 +6,6 @@
 @import 'partials/svg';
 @import 'partials/layout';
 
-$imgixDefaults: '?auto=format,compress&q=50';
-
 .upsell-list {
   position: relative;
   margin: 15px 0;
@@ -943,6 +941,7 @@ $imgixDefaults: '?auto=format,compress&q=50';
     }
   }
   .swiper-slide {
+    background-repeat: no-repeat;
     @include mq(sm) {
       padding-bottom: 0;
       height: 100%;
@@ -956,76 +955,6 @@ $imgixDefaults: '?auto=format,compress&q=50';
   .swiper-pagination-bullets {
     @include mq(sm) {
       bottom: 15px;
-    }
-  }
-}
-$imgixUrl: 'https://lull-media.imgix.net/platform-bed-frame';
-$imgixDefaults: '?auto=format,compress&q=50';
-$imgixCrop: '&fit=crop&crop=focalpoint';
-div[id^='upsell-modal-WF'] {
-  .slide-1.lazyloaded {
-    background-image: url('#{$imgixUrl}/wood-frame-1.jpg#{$imgixDefaults}&w=840');
-  }
-  .slide-2.lazyloaded {
-    background-image: url('#{$imgixUrl}/wood-frame-2.jpg#{$imgixDefaults}&w=840');
-  }
-  .slide-3.lazyloaded {
-    background-image: url('#{$imgixUrl}/wood-frame-3.jpg#{$imgixDefaults}&w=840');
-  }
-  .slide-4.lazyloaded {
-    background-image: url('#{$imgixUrl}/wood-frame-4.jpg#{$imgixDefaults}&w=840');
-  }
-  .slide-5.lazyloaded {
-    background-image: url('#{$imgixUrl}/wood-frame-5.jpg#{$imgixDefaults}&w=840');
-  }
-  @include mq(sm) {
-    .slide-1.lazyloaded {
-      background-image: url('#{$imgixUrl}/wood-frame-1.jpg#{$imgixDefaults}#{$imgixCrop}&w=640&h=950&fp-x=0');
-    }
-    .slide-2.lazyloaded {
-      background-image: url('#{$imgixUrl}/wood-frame-2.jpg#{$imgixDefaults}#{$imgixCrop}&w=640&h=950&fp-x=.25');
-    }
-    .slide-3.lazyloaded {
-      background-image: url('#{$imgixUrl}/wood-frame-3.jpg#{$imgixDefaults}#{$imgixCrop}&w=640&h=950&fp-x=.25');
-    }
-    .slide-4.lazyloaded {
-      background-image: url('#{$imgixUrl}/wood-frame-4.jpg#{$imgixDefaults}#{$imgixCrop}&w=640&h=950&fp-x=.3');
-    }
-    .slide-5.lazyloaded {
-      background-image: url('#{$imgixUrl}/wood-frame-5.jpg#{$imgixDefaults}#{$imgixCrop}&w=640&h=950&fp-x=.475');
-    }
-  }
-}
-$imgixUrl: 'https://lull-media.imgix.net/foundation';
-div[id^='upsell-modal-FO'] {
-  &[data-x-bundle='true'] {
-    .slide-1.lazyloaded {
-      background-image: url('#{$imgixUrl}/foundation-1b.jpg#{$imgixDefaults}&w=840');
-    }
-    .slide-2.lazyloaded {
-      background-image: url('#{$imgixUrl}/foundation-2b.jpg#{$imgixDefaults}&w=840');
-    }
-    .slide-3.lazyloaded {
-      background-image: url('#{$imgixUrl}/foundation-3b.jpg#{$imgixDefaults}&w=840');
-    }
-    .slide-4.lazyloaded {
-      background-image: url('#{$imgixUrl}/foundation-4.jpg#{$imgixDefaults}&w=840');
-    }
-  }
-  @include mq(sm) {
-    &[data-x-bundle='true'] {
-      .slide-1.lazyloaded {
-        background-image: url('#{$imgixUrl}/foundation-1b.jpg#{$imgixDefaults}#{$imgixCrop}&w=640&h=950&fp-x=.27&fp-y=1&fp-z=1.05');
-      }
-      .slide-2.lazyloaded {
-        background-image: url('#{$imgixUrl}/foundation-2b.jpg#{$imgixDefaults}#{$imgixCrop}&w=640&h=950&fp-x=.725');
-      }
-      .slide-3.lazyloaded {
-        background-image: url('#{$imgixUrl}/foundation-3b.jpg#{$imgixDefaults}#{$imgixCrop}&w=640&h=950&fp-x=.5');
-      }
-      .slide-4.lazyloaded {
-        background-image: url('#{$imgixUrl}/foundation-4.jpg#{$imgixDefaults}#{$imgixCrop}&w=640&h=950&fp-x=0');
-      }
     }
   }
 }
@@ -1138,35 +1067,33 @@ div[id^='upsell-modal-OP'] {
     }
   }
 }
-$imgixUrl: 'https://lull-media.imgix.net/checkout';
 div[id^='upsell-modal-BD'],
 div[id^='upsell-modal-CD'],
 div[id^='upsell-modal-OD'] {
   .swiper-slide {
     background-size: 80%;
     background-position: 50% 55%;
-    background-repeat: no-repeat;
   }
   .slide-1.lazyloaded {
-    background-image: url('#{$imgixUrl}/duvet-cover-BW.png#{$imgixDefaults}&w=672');
+    background-image: url('./sheets/duvet-cover-BW.png?&w=672');
   }
   .slide-2.lazyloaded {
-    background-image: url('#{$imgixUrl}/duvet-cover-QG.png#{$imgixDefaults}&w=672');
+    background-image: url('./sheets/duvet-cover-QG.png?&w=672');
   }
   .slide-3.lazyloaded {
-    background-image: url('#{$imgixUrl}/duvet-cover-GG.png#{$imgixDefaults}&w=672');
+    background-image: url('./sheets/duvet-cover-GG.png?&w=672');
   }
   .slide-4.lazyloaded {
-    background-image: url('#{$imgixUrl}/duvet-cover-MB.png#{$imgixDefaults}&w=672');
+    background-image: url('./sheets/duvet-cover-MB.png?&w=672');
   }
   .slide-5.lazyloaded {
-    background-image: url('#{$imgixUrl}/duvet-cover-PA.png#{$imgixDefaults}&w=672');
+    background-image: url('./sheets/duvet-cover-PA.png?&w=672');
   }
   .slide-6.lazyloaded {
-    background-image: url('#{$imgixUrl}/duvet-cover-WP.png#{$imgixDefaults}&w=672');
+    background-image: url('./sheets/duvet-cover-WP.png?&w=672');
   }
   .slide-7.lazyloaded {
-    background-image: url('#{$imgixUrl}/duvet-cover-CD.png#{$imgixDefaults}&w=672');
+    background-image: url('./sheets/duvet-cover-CD.png?&w=672');
   }
 }
 div[id^='upsell-modal-BP'],
@@ -1180,24 +1107,24 @@ div[id^='upsell-modal-OP'] {
     }
   }
   .slide-1.lazyloaded {
-    background-image: url('#{$imgixUrl}/pillowcase-BW-horiz.png#{$imgixDefaults}&w=672');
+    background-image: url('./sheets/pillowcase-BW-horiz.png?&w=672');
   }
   .slide-2.lazyloaded {
-    background-image: url('#{$imgixUrl}/pillowcase-QG-horiz.png#{$imgixDefaults}&w=672');
+    background-image: url('./sheets/pillowcase-QG-horiz.png?&w=672');
   }
   .slide-3.lazyloaded {
-    background-image: url('#{$imgixUrl}/pillowcase-GG-horiz.png#{$imgixDefaults}&w=672');
+    background-image: url('./sheets/pillowcase-GG-horiz.png?&w=672');
   }
   .slide-4.lazyloaded {
-    background-image: url('#{$imgixUrl}/pillowcase-MB-horiz.png#{$imgixDefaults}&w=672');
+    background-image: url('./sheets/pillowcase-MB-horiz.png?&w=672');
   }
   .slide-5.lazyloaded {
-    background-image: url('#{$imgixUrl}/pillowcase-PA-horiz.png#{$imgixDefaults}&w=672');
+    background-image: url('./sheets/pillowcase-PA-horiz.png?&w=672');
   }
   .slide-6.lazyloaded {
-    background-image: url('#{$imgixUrl}/pillowcase-WP-horiz.png#{$imgixDefaults}&w=672');
+    background-image: url('./sheets/pillowcase-WP-horiz.png?&w=672');
   }
   .slide-7.lazyloaded {
-    background-image: url('#{$imgixUrl}/pillowcase-CD-horiz.png#{$imgixDefaults}&w=672');
+    background-image: url('./sheets/pillowcase-CD-horiz.png?&w=672');
   }
 }

@@ -1,4 +1,5 @@
 /* When editing, use the source file for this page in client/resources/sass */
+@import url("https://fonts.googleapis.com/css2?family=Boogaloo&family=Cabin+Condensed:wght@400;500&display=swap");
 .color[data-color=WP], .color[data-color=CD] {
   background-position: 50% 50%;
   background-size: contain;
@@ -26,16 +27,16 @@
 }
 @media (max-width: 767px) {
   .quantity-select,
-.color-select,
-.product-selection .type-select {
+  .color-select,
+  .product-selection .type-select {
     padding: 0 0 2.6408450704vw 0;
     margin: 0 0 3.5211267606vw 0;
   }
 }
 @media (max-width: 543px) {
   .quantity-select,
-.color-select,
-.product-selection .type-select {
+  .color-select,
+  .product-selection .type-select {
     padding: 0 0 4.6875vw 0;
     margin: 0 0 6.25vw 0;
   }
@@ -47,7 +48,6 @@
   bottom: -7px;
   left: 50%;
   -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
           transform: translateX(-50%);
   padding: 0;
   text-align: center;
@@ -59,16 +59,16 @@
 }
 @media (max-width: 767px) {
   .quantity-select::after,
-.color-select::after,
-.product-selection .type-select::after {
+  .color-select::after,
+  .product-selection .type-select::after {
     font-size: 2.2887323944vw;
     bottom: -1.2323943662vw;
   }
 }
 @media (max-width: 543px) {
   .quantity-select::after,
-.color-select::after,
-.product-selection .type-select::after {
+  .color-select::after,
+  .product-selection .type-select::after {
     font-size: 4.0625vw;
     bottom: -2.1875vw;
   }
@@ -111,7 +111,6 @@
   border-radius: 4px;
   border: solid 1px #dfdcd7;
   -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
   transition: 0.2s;
   position: relative;
 }
@@ -281,7 +280,6 @@ li.color::before,
   bottom: -3px;
   border: solid 2px #f7f5f3;
   -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
   transition: 0.2s;
 }
 li.color[data-active=true]::before, li.color:hover::before, li.color:focus::before,
@@ -467,58 +465,6 @@ li.color[data-active=true]::before, li.color:hover::before, li.color:focus::befo
     font-size: 1.4rem;
   }
 }
-.product-selection .type-select li[data-type=MA], .product-selection .type-select li[data-type=PM], .product-selection .type-select li[data-type=HY] {
-  background-size: 70%;
-  background-position: 50% 15px;
-  background-repeat: no-repeat;
-  padding: 65px 0 10px 0;
-  background-color: rgba(0, 0, 0, 0.025);
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
-}
-@media (max-width: 767px) {
-  .product-selection .type-select li[data-type=MA], .product-selection .type-select li[data-type=PM], .product-selection .type-select li[data-type=HY] {
-    background-position: 50% 2.6408450704vw;
-    padding: 10.5633802817vw 0 2.6408450704vw 0;
-  }
-}
-@media (max-width: 543px) {
-  .product-selection .type-select li[data-type=MA], .product-selection .type-select li[data-type=PM], .product-selection .type-select li[data-type=HY] {
-    background-position: 50% 4.6875vw;
-    padding: 18.75vw 0 4.6875vw 0;
-  }
-}
-@media (min-width: 992px) {
-  .product-selection .type-select li[data-type=MA], .product-selection .type-select li[data-type=PM], .product-selection .type-select li[data-type=HY] {
-    background-size: 60%;
-    padding: 70px 0 15px 0;
-  }
-}
-.product-selection .type-select li[data-type=MA][data-active=true]::before, .product-selection .type-select li[data-type=MA]:focus::before, .product-selection .type-select li[data-type=PM][data-active=true]::before, .product-selection .type-select li[data-type=PM]:focus::before, .product-selection .type-select li[data-type=HY][data-active=true]::before, .product-selection .type-select li[data-type=HY]:focus::before {
-  border-color: #0b2836;
-}
-.product-selection .type-select li[data-type=MA][data-active=true], .product-selection .type-select li[data-type=PM][data-active=true], .product-selection .type-select li[data-type=HY][data-active=true] {
-  background-color: #ffffff;
-  border-color: #0b2836;
-}
-.product-selection .type-select li[data-type=MA] {
-  background-image: url("https://lull-media.imgix.net/shop/mattress-no-shadow.png?auto=format,compress&q=50&w=350");
-  background-position: 50% 20px;
-}
-@media (max-width: 767px) {
-  .product-selection .type-select li[data-type=MA] {
-    background-position: 50% 3.1690140845vw;
-  }
-}
-@media (max-width: 543px) {
-  .product-selection .type-select li[data-type=MA] {
-    background-position: 50% 5.625vw;
-  }
-}
-.product-selection .type-select li[data-type=PM] {
-  background-image: url("https://lull-media.imgix.net/shop/original-premium-label-side-v2.png?auto=format,compress&q=50&w=350");
-}
 .product-selection .type-select.inline li {
   height: 30px;
 }
@@ -535,144 +481,6 @@ li.color[data-active=true]::before, li.color:hover::before, li.color:focus::befo
 @media (min-width: 768px) {
   .product-selection .type-select.inline li {
     height: 40px;
-  }
-}
-.product-selection .type-select[data-product-types="3"] {
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-.product-selection .type-select[data-product-types="3"] li {
-  width: 33.33333333%;
-}
-.product-selection .type-select[data-product-types="3"] li[data-type=MA], .product-selection .type-select[data-product-types="3"] li[data-type=PM], .product-selection .type-select[data-product-types="3"] li[data-type=HY] {
-  padding: 42.5px 0 5px 0;
-  background-position: 50% 10px;
-}
-@media (max-width: 767px) {
-  .product-selection .type-select[data-product-types="3"] li[data-type=MA], .product-selection .type-select[data-product-types="3"] li[data-type=PM], .product-selection .type-select[data-product-types="3"] li[data-type=HY] {
-    padding: 7.4823943662vw 0 0.8802816901vw 0;
-    background-position: 50% 1.7605633803vw;
-  }
-}
-@media (max-width: 543px) {
-  .product-selection .type-select[data-product-types="3"] li[data-type=MA], .product-selection .type-select[data-product-types="3"] li[data-type=PM], .product-selection .type-select[data-product-types="3"] li[data-type=HY] {
-    padding: 13.28125vw 0 1.5625vw 0;
-    background-position: 50% 3.125vw;
-  }
-}
-@media (min-width: 992px) {
-  .product-selection .type-select[data-product-types="3"] li[data-type=MA], .product-selection .type-select[data-product-types="3"] li[data-type=PM], .product-selection .type-select[data-product-types="3"] li[data-type=HY] {
-    padding: 50px 0 10px 0;
-    background-position: 50% 12.5px;
-  }
-}
-@media (min-width: 1200px) {
-  .product-selection .type-select[data-product-types="3"] li[data-type=MA], .product-selection .type-select[data-product-types="3"] li[data-type=PM], .product-selection .type-select[data-product-types="3"] li[data-type=HY] {
-    padding-top: 60px;
-    background-size: 73%;
-  }
-}
-.product-selection .type-select[data-product-types="3"] li[data-type=MA] {
-  background-position: 50% 13px;
-}
-@media (max-width: 767px) {
-  .product-selection .type-select[data-product-types="3"] li[data-type=MA] {
-    background-position: 50% 2.2887323944vw;
-  }
-}
-@media (max-width: 543px) {
-  .product-selection .type-select[data-product-types="3"] li[data-type=MA] {
-    background-position: 50% 4.0625vw;
-  }
-}
-@media (min-width: 992px) {
-  .product-selection .type-select[data-product-types="3"] li[data-type=MA] {
-    background-position: 50% 16px;
-  }
-}
-.product-selection .type-select[data-product-types="3"] li[data-type=HY] {
-  background-image: url("https://lull-media.imgix.net/checkout/luxe-hybrid-profile-logo-full.png?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=350&h=150");
-  background-size: 72.5%;
-  background-position: 50% 7px;
-}
-@media (max-width: 767px) {
-  .product-selection .type-select[data-product-types="3"] li[data-type=HY] {
-    background-position: 50% 1.2323943662vw;
-  }
-}
-@media (max-width: 543px) {
-  .product-selection .type-select[data-product-types="3"] li[data-type=HY] {
-    background-position: 50% 2.1875vw;
-  }
-}
-@media (min-width: 992px) {
-  .product-selection .type-select[data-product-types="3"] li[data-type=HY] {
-    background-position: 50% 10px;
-  }
-}
-.product-selection .type-select[data-product-types="3"] li::before {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 5px;
-}
-.product-selection .type-select[data-product-types="3"] li:first-of-type, .product-selection .type-select[data-product-types="3"] li:first-of-type::before {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.product-selection .type-select[data-product-types="3"] li:nth-of-type(even), .product-selection .type-select[data-product-types="3"] li:nth-of-type(even)::before {
-  border-radius: 0;
-}
-.product-selection .type-select[data-product-types="3"] li:last-of-type, .product-selection .type-select[data-product-types="3"] li:last-of-type::before {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.product-selection .type-select[data-product-types="3"] li span {
-  font-size: 1.1rem;
-}
-@media (max-width: 767px) {
-  .product-selection .type-select[data-product-types="3"] li span {
-    font-size: 1.7605633803vw;
-  }
-}
-@media (max-width: 543px) {
-  .product-selection .type-select[data-product-types="3"] li span {
-    font-size: 3.125vw;
-  }
-}
-@media (min-width: 992px) {
-  .product-selection .type-select[data-product-types="3"] li span {
-    font-size: 1.3rem;
-  }
-}
-@media (min-width: 1200px) {
-  .product-selection .type-select[data-product-types="3"] li span {
-    font-size: 1.4rem;
-  }
-}
-.product-selection .type-select[data-product-types="3"] li label {
-  font-size: 1rem;
-}
-@media (max-width: 767px) {
-  .product-selection .type-select[data-product-types="3"] li label {
-    font-size: 1.5845070423vw;
-  }
-}
-@media (max-width: 543px) {
-  .product-selection .type-select[data-product-types="3"] li label {
-    font-size: 2.8125vw;
-  }
-}
-@media (min-width: 992px) {
-  .product-selection .type-select[data-product-types="3"] li label {
-    font-size: 1.2rem;
-  }
-}
-@media (min-width: 1200px) {
-  .product-selection .type-select[data-product-types="3"] li label {
-    font-size: 1.3rem;
   }
 }
 .product-selection[data-order=reverse] .type-select {
@@ -709,11 +517,9 @@ li.color[data-active=true]::before, li.color:hover::before, li.color:focus::befo
   left: 50%;
   bottom: 5px;
   -webkit-transform: rotate(-45deg) translateX(-50%);
-      -ms-transform: rotate(-45deg) translateX(-50%);
           transform: rotate(-45deg) translateX(-50%);
   z-index: 1;
   -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
   transition: 0.2s;
 }
 .product-selection[data-order=reverse][data-comparison-accordion-active=true] .type-select li[data-active=true]::after {
@@ -737,16 +543,16 @@ li.color[data-active=true]::before, li.color:hover::before, li.color:focus::befo
 }
 
 .product-selection .color-select[data-active-color="Cold Stone"] + .type-select li[data-type=UU] {
-  background-image: url("https://lull-media.imgix.net/upholstered-bed-frame/swatch-UU-CS.jpg?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=286&h=84&fp-y=0");
+  background-image: url("./frame/swatch-UU-CS.jpg?w=286&h=84&fp-y=0");
 }
 .product-selection .color-select[data-active-color="Cold Stone"] + .type-select li[data-type=TU] {
-  background-image: url("https://lull-media.imgix.net/upholstered-bed-frame/swatch-TU-CS.jpg?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=286&h=84&fp-y=0");
+  background-image: url("./frame/swatch-TU-CS.jpg?w=286&h=84&fp-y=0");
 }
 .product-selection .color-select[data-active-color="Desert Sand"] + .type-select li[data-type=UU] {
-  background-image: url("https://lull-media.imgix.net/upholstered-bed-frame/swatch-UU-DS.jpg?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=286&h=84&fp-y=0");
+  background-image: url("./frame/swatch-UU-DS.jpg?w=286&h=84&fp-y=0");
 }
 .product-selection .color-select[data-active-color="Desert Sand"] + .type-select li[data-type=TU] {
-  background-image: url("https://lull-media.imgix.net/upholstered-bed-frame/swatch-TU-DS.jpg?auto=format,compress&q=50&fit=crop&crop=focalpoint&w=286&h=84&fp-y=0");
+  background-image: url("./frame/swatch-TU-DS.jpg?w=286&h=84&fp-y=0");
 }
 
 main[data-active-size=TW] .type-select label:not([data-active-size=TW]) {

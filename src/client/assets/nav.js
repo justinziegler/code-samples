@@ -698,9 +698,6 @@ $('#navbar-content').on('shown.bs.collapse', function() {
   $('#dropdown-mattress').dropdown('toggle');
 });
 
-// Flash sale banner
-var mobile = (window.innerWidth < 768);
-
 // Mattress page sticky button
 function stickyButton() {
   if ($('.buy-now').length) {
@@ -722,7 +719,8 @@ function stickyButton() {
     }(jQuery, window));
 
     $(topSection).inViewport(function(px) {
-      if (mobile) {
+      var mob = (window.innerWidth < 768);
+      if (mob) {
         if (px) {
           $('.buy-now').removeClass('active');
           $('body').removeClass('footer-margin');

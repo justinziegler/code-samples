@@ -1,0 +1,296 @@
+@import "compass";
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/svg";
+@import "partials/layout";
+
+.july4-promo {
+  background-color: $white;
+  padding: 30px 0;
+  position: relative;
+  @include mq(xsm) {
+    padding: vwl(30px);
+  }
+  @include mq(xxs) {
+    padding: vwp(30px);
+  }
+  @include mq(md) {
+    padding: 45px 0;
+  }
+  .anchor {
+    position: absolute;
+    top: 0px;
+    display: block;
+  }
+  .box,
+  .border,
+  .divider {
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      @include star(#000);
+      @extend %svg;
+    }
+  }
+  .box, .border {
+    z-index: 1;
+    &::before, &::after {
+      width: 40px;
+      height: 40px;
+      background-color: $white;
+      background-size: 55%;
+      z-index: 2;
+      @include mq(xsm) {
+        width: vwl(40px);
+        height: vwl(40px);
+      }
+      @include mq(xxs) {
+        width: vwp(40px);
+        height: vwp(40px);
+      }
+    }
+    &::before {
+      left: -15px;
+      @include mq(xsm) {
+        left: vwl(-15px);
+      }
+      @include mq(xxs) {
+        left: vwp(-15px);
+      }
+    }
+    &::after {
+      right: -15px;
+      @include mq(xsm) {
+        right: vwl(-15px);
+      }
+      @include mq(xxs) {
+        right: vwp(-15px);
+      }
+    }
+  }
+  .box {
+    border: $navy solid 2px;
+    display: flex;
+    padding: 0;
+    @include mq(xsm) {
+      border: $navy solid vwl(2px);
+    }
+    @include mq(xxs) {
+      border: $navy solid vwp(2px);
+    }
+    &::before, &::after {
+      top: -20px;
+      @include mq(xsm) {
+        top: vwl(-20px);
+      }
+      @include mq(xxs) {
+        top: vwp(-20px);
+      }
+    }
+  }
+  .border {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+    padding: 45px 0 40px 0;
+    @include mq(xsm) {
+      padding: vwl(45px) 0 vwl(40px) 0;
+    } 
+    @include mq(xxs) {
+      padding: vwp(45px) 0 vwp(40px) 0;
+    }
+    @include mq(md) {
+      padding: 60px 0 45px 0;
+    }
+    &::before, &::after {
+      bottom: -19px;
+      @include mq(xsm) {
+        bottom: vwl(-19px);
+      }
+      @include mq(xxs) {
+        bottom: vwp(-19px);
+      }
+    }
+  }
+  p {
+    color: $navy;
+    line-height: 1.2;
+    margin: 0;
+    font-size: 2.4rem;
+    font-weight: 700;
+    @include mq(xsm) {
+      font-size: vwl(18px);
+    }
+    @include mq(xxs) {
+      font-size: vwp(18px);
+    }
+    @include mq(md) {
+      font-size: 3rem;
+    }
+  }
+  h2 {
+    font-size: 4.5rem;
+    line-height: 1;
+    color: $navy;
+    margin: 0;
+    @include mq(xsm) {
+      font-size: vwl(34px);
+    }
+    @include mq(xxs) {
+      font-size: vwp(34px);
+    }
+    @include mq(md) {
+      font-size: 5.6rem;
+    }
+  }
+  h3 {
+    color: $navy;
+    font-size: 2.3rem;
+    margin: 0;
+    @include mq(xsm) {
+      font-size: vwl(17px);
+    }
+    @include mq(xxs) {
+      font-size: vwp(17px);
+    }
+    @include mq(md) {
+      font-size: 3rem;
+    }
+  }
+  .divider {
+    position: relative;
+    width: 270px;
+    height: 28px;
+    margin: 14px auto;
+    @include mq(xsm) {
+      width: vwl(200px);
+      height: vwl(20px);
+      margin: vwl(10px) auto;
+    }
+    @include mq(xxs) {
+      width: vwp(200px);
+      height: vwp(20px);
+      margin: vwp(10px) auto;
+    }
+    @include mq(md) {
+      width: 340px;
+      height: 36px;
+      margin: 18px auto;
+    }
+    &::before {
+      filter: brightness(0) saturate(100%) invert(33%) sepia(77%) saturate(5707%) hue-rotate(333deg) brightness(96%) contrast(101%);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-repeat: repeat-x;
+      background-size: 16px 12px;
+      z-index: 1;
+      @include mq(xsm) {
+        background-size: vwl(12px) vwl(9px);
+      }
+      @include mq(xxs) {
+        background-size: vwp(12px) vwp(9px);
+      }
+      @include mq(md) {
+        background-size: 20px 15px;
+      }
+    }
+    span {
+      color: $navy;
+      font-style: italic;
+      background-color: $white;
+      font-weight: 700;
+      line-height: 1;
+      font-size: 1.8rem;
+      height: 18px;
+      padding: 0 15px;
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+      top: 65%;
+      transform: translateY(-65%);
+      @include mq(xsm) {
+        font-size: vwl(14px);
+        height: vwl(14px);
+        padding: 0 vwl(10px);
+      }
+      @include mq(xxs) {
+        font-size: vwp(14px);
+        height: vwp(14px);
+        padding: 0 vwp(10px);
+      }
+      @include mq(md) {
+        font-size: 2.2rem;
+        height: 22px;
+        padding: 0 20px;
+      }
+    }
+  }
+  &[data-theme='dark'] {
+    background-color: $navy;
+    .box {
+      border-color: $white;
+    }
+    p, .divider span, h2, h3  {
+      color: $white;
+      background-color: $navy;
+    }
+    .box,
+    .border {
+      &::before, &::after {
+        @include star(#fff);
+        background-color: $navy;
+        filter: none;
+      }
+    }
+  }
+  
+}
+main {
+  &[data-canonical='google'] {
+    .july4-promo {
+      margin-top: vwp(480px);
+      box-shadow: 0 -5px 10px 0 rgba(11,40,54,.15);
+      z-index: 3;
+      @include mq(xs) {
+        margin-top: vwl(380px);
+      }
+      @include mq(sm) {
+        margin-top: 450px;
+      }
+      @include mq(md) {
+        margin-top: 510px;
+      }
+      @include mq(lg) {
+        margin-top: 610px;
+      }
+      @media (min-width: 1600px) {
+        margin-top: 720px;
+      }
+    }
+    .value-props {
+      margin-top: 0!important;
+    }
+  }
+  &[data-canonical='pinterest'] {
+    .july4-promo {
+      margin-top: 150%;
+      @include mq(xs) {
+        margin-top: 58%;
+      }
+      @include mq(sm) {
+        margin-top: 420px;
+      }
+      @include mq(md) {
+        margin-top: 550px;
+      }
+      @include mq(lg) {
+        margin-top: 650px;
+      }
+    }
+    .value-props {
+      margin-top: 0!important;
+    }
+  }
+}

@@ -1,10 +1,10 @@
 {% extends "./src/client/views/_layout_home.html" %}
 {% import "./src/client/views/_css.html" as _css %}
 {% import "./src/client/views/_js.html" as _js %}
+{% import "./src/client/views/_modals.html" as _modals %}
 {% import "./src/client/views/_modules.html" as _modules %}
 
 {% block styles %}
-  {{ _css.common() }}
   {{ _css.home() }}
 {% endblock %}
 
@@ -15,53 +15,38 @@
 {% endblock %}
 
 {% block content %}
-  {% macro getCaseStudies(caseStudies) %}
-    {% set caseNumber = 1 %}
-    {% for cs in caseStudies %}
-      <section class="case-studies">
-        <div class="container">
-          <div class="row">
-            <div class="case-study col-xs-12 col-sm-10 col-sm-offset-1">
-              <h2><span>Case Study:</span> {{ cs.title }}</h2>
-              <h3>{{ cs.intro }}</h3>
-              <ul>
-                {% for bullet in cs.bullets %}
-                  <li>{{ bullet }}</li>
-                {% endfor %}
-              </ul>
-              <p>{{ cs.details }}</p>
-              <div class="row">
-                <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-12">
-                  <div class="thumbnails row">
-                    {% for thumb in cs.thumbnails %}
-                      <div class="col-xs-6 col-sm-3">
-                        <div class="thumbnail">
-                          <a href="{{ thumb.link }}">
-                          <span data-number="0{{ caseNumber }}.">
-                            {{ thumb.title }}
-                          </span>
-                          </a>
-                        </div>
-                      </div>
-                      {%- set caseNumber = caseNumber + 1 -%}
-                    {% endfor %}
-                    <div class="header-nav next col-xs-6 col-sm-3 col-lg-2">
-                      <a href="{{ cs.thumbnails[0].link }}">
-                        <span>Start</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
+  {% set caseNumber = 1 %}
+  <section class="case-study">
+    <div class="container">
+      <div class="row">
+        <div class="intro">
+          <h1>Justin Ziegler<br class="hidden-sm"><span>Recent Work</span></h1>
+          <!-- <p>I'm a <strong>front-end developer</strong> with an eye for detail and <br />
+            a knack for building eye-catching user experiences.
+                <br />
+                Keep scrolling to view some recent projects, or<br /> 
+                visit my  <a href="https://github.com/justinziegler" rel="noreferrer" target="_blank">Github</a> for code examples.
+        </p> -->
         </div>
-      </section>
-    {% endfor %}
-  {% endmacro %}
-  {{ getCaseStudies(caseStudies) }}
+        <div class="case-studies">
+          {% for cs in caseStudies %}
+            <div class="item" {% if cs.background.length %}style="background-image: url('{{ cs.background }}')"{% endif %}>
+              <a href="{{ cs.url }}" title="{{ cs.title }}">
+                {% if loop.index !== caseStudies.length %}
+                  <span class="case-number">0{{- cs.pageId -}}.</span>
+                {% endif %}
+                <span class="case-title">{{ cs.title }}</span>
+              </a>
+              
+            </div>
+          {% endfor %}
+        </div>
+        
+      </div>
+    </div>
+  </section>
 {% endblock %}
 
-{% block scripts %}
-
+{% block scripts %}  
 {% endblock %}

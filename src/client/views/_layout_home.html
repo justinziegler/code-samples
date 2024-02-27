@@ -16,20 +16,21 @@
 
 <body>
   {{ _modules.header(p) }}
+  
   <main>	
     {% block content %}
       <p>Missing content block</p>
     {% endblock %}
+    {% if p.header and p.pageUrl !== '/' %}
+      <div class="header-overlay"></div>
+    {% endif %}
   </main>
   
-  {{ _js.headerScripts() }}
-  <script src="../assets/nav.js"></script>
+  {{ _js.headerScripts(p) }}
+  <!-- <script src="../assets/nav.js"></script> -->
   {%- for script in scripts -%}
     <script src="../assets/{{ script }}.js"></script>
   {%- endfor -%}
-  <script>
-    $('nav').autoHidingNavbar();
-  </script>
   {% block scripts %}
   {% endblock %}
 </body>

@@ -67,7 +67,7 @@
   background-color: #fff;
   padding: 15px 0;
   padding: 4.6875vw 0;
-  background-image: url("https://lull-media.imgix.net/luxe-hybrid-mattress/luxe-vp-couple.jpg?auto=format,compress&q=50,enhance&fit=crop&crop=focalpoint&w=840&h=950&fp-y=1&fp-z=1.16");
+  background-image: url("./luxe-vp-couple-portrait.jpg");
   background-size: 100%;
   background-position: 50% 0%;
   background-repeat: no-repeat;
@@ -79,7 +79,7 @@
   .made-simple {
     background-color: #f8f8f8;
     padding: 2.6408450704vw 0;
-    background-image: url("https://lull-media.imgix.net/luxe-hybrid-mattress/luxe-vp-couple.jpg?auto=format,compress&q=50,enhance&fit=crop&crop=focalpoint&w=840&h=750&fp-y=1&fp-x=0&fp-z=1.02");
+    background-image: url("./luxe-vp-couple-landscape.jpg");
     background-size: auto 100%;
     background-position: 100% 100%;
   }
@@ -87,7 +87,7 @@
 @media (min-width: 768px) {
   .made-simple {
     padding: 30px 0 45px 0;
-    background-image: url("https://lull-media.imgix.net/luxe-hybrid-mattress/luxe-vp-couple.jpg?auto=format,compress&q=50,enhance&fit=crop&crop=focalpoint&w=1000&h=900&fp-y=1&fp-x=0");
+    background-image: url("./luxe-vp-couple-md.jpg");
     background-size: 500px;
     background-position: calc(50% + 175px) 100%;
   }
@@ -96,7 +96,7 @@
   .made-simple {
     background-image: none;
     padding: 75px 0;
-    background-image: url("https://lull-media.imgix.net/luxe-hybrid-mattress/luxe-vp-couple.jpg?auto=format,compress&q=50,enhance&w=1400");
+    background-image: url("./luxe-vp-couple-lg.jpg");
     background-size: 700px;
     background-position: calc(50% + 230px) 100%;
   }
@@ -104,14 +104,8 @@
 @media (min-width: 1200px) {
   .made-simple {
     padding: 105px 0;
-    background-image: url("https://lull-media.imgix.net/luxe-hybrid-mattress/luxe-vp-couple.jpg?auto=format,compress&q=50,enhance&w=815");
     background-size: 815px;
     background-position: calc(50% + 300px) 100%;
-  }
-}
-@media (min-width: 1200px) and (min-device-pixel-ratio: 1.25), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi), (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25), (min-width: 1200px) and (min-resolution: 1.25dppx) {
-  .made-simple {
-    background-image: url("https://lull-media.imgix.net/luxe-hybrid-mattress/luxe-vp-couple.jpg?auto=format,compress&q=50,enhance&w=1630");
   }
 }
 @media (min-width: 544px) {

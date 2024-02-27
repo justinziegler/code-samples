@@ -287,16 +287,14 @@ $imgixDefaults: '?auto=format,compress&q=50';
     width: 100%;
     height: 0;
     padding-bottom: 45%;
-    background-image: url('https://lull-media.imgix.net/shop/mattress-protector-cta2x.png#{$imgixDefaults}&w=580');
+    background-image: url('./mattress-protector-cta2x.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     @include mq(xssm) {
-      background-image: url('https://lull-media.imgix.net/shop/mattress-protector.png#{$imgixDefaults}&w=328');
       padding-bottom: 48%;
     }
     @include mq(sm) {
-      background-image: url('https://lull-media.imgix.net/shop/mattress-protector-cta2x.png#{$imgixDefaults}&w=656');
       background-size: 328px;
     }
   }

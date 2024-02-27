@@ -434,28 +434,82 @@
 </script>
 {% endmacro %}
 
-{% macro headerScripts() %}
-  <script>
-    let headerCollapsed = false;
-    function setCollapsed() {
-      headerCollapsed = !headerCollapsed;
-      nav.setAttribute('data-collapsed', headerCollapsed);
-    }
-    const nav = document.querySelector('nav');
-    const collapseBtns = document.querySelectorAll('.toggle-description');
-    collapseBtns.forEach(btn => {
-      btn.addEventListener('click', event => {
+{% macro headerScripts(p) %}
+  {% if p.header %}
+    <script>
+      const main = document.querySelector('main');
+      let caseStudyCollapsed = false;
+      const nav = document.querySelector('#nav');
+      const content = nav.querySelector('.case-study-content');
+      const navOverlay = main.querySelector('.header-overlay');
+      const mobile = window.innerWidth < 768;
+      const hamburger = nav.querySelector('.hamburger');
+      const navLinks = nav.querySelector('ul');
+      const leftCol = nav.querySelector('.nav-col.left');
+
+      function setCollapsed() {
+        caseStudyCollapsed = !caseStudyCollapsed;
+        nav.setAttribute('data-collapsed', caseStudyCollapsed);
+        $(content).slideToggle(200);
+        $(navOverlay).fadeOut(200);
+      }
+      function collapseHamburger() {
+        // const visible = hamburger.getAttribute('style');
+        const style = window.getComputedStyle(navLinks);
+        const display = style.getPropertyValue('display');
+        console.log('display', display);
+        if (display === 'block') {
+          $(navLinks).slideUp(200);
+        }
+      }
+      const collapseBtn = nav.querySelector('.toggle-description');
+      collapseBtn.addEventListener('click', event => {
         event.preventDefault();
         setCollapsed();
       });
-    })
-    const main = document.querySelector('main');
-    main.addEventListener('click', event => {
-      if (!headerCollapsed) {
-        setCollapsed();
-      }
-    })
-  </script>
+      main.addEventListener('click', event => {
+        if (!caseStudyCollapsed) {
+          setCollapsed();
+        }
+        collapseHamburger();
+      })
+
+
+
+      hamburger.addEventListener('click', event => {
+        event.preventDefault();
+        $(navLinks).slideToggle(200)
+      });
+      leftCol.addEventListener('click', event => {
+        collapseHamburger();
+      })
+
+      {% if p.toggleLinks.length %}
+        const toggleLinks = document.querySelectorAll('.toggle-links a');
+        const toggleBlurbs = document.querySelectorAll('.toggle-blurb');
+        const iframe = document.querySelector('iframe');
+        toggleLinks.forEach(link => {
+          link.addEventListener('click', event => {
+            event.preventDefault();
+            const target = link.dataset.target;
+            iframe.setAttribute('src', target);
+            $(navOverlay).fadeOut(200);
+            toggleLinks.forEach(item => {
+              item.setAttribute('data-active', false);
+            });
+            link.setAttribute('data-active', true);
+            toggleBlurbs.forEach(blurb => {
+              blurb.style.display = 'none';
+              console.log('got here')
+            })
+            const currentBlurb = document.querySelector(`.toggle-blurb[data-target="${target}"]`);
+            currentBlurb.style.display = 'block';
+          })
+        });
+        console.log('toggleBlurbs', toggleBlurbs.length)
+      {% endif %}
+    </script>
+  {% endif %}
 {% endmacro %}
 
 {% macro addToCart() %}
@@ -624,6 +678,10 @@
 
 {% macro swipeIt() %}
   <script src="../assets/swipe-it.js"></script>
+{% endmacro %}
+
+{% macro holidayPromotion() %}
+  <script src="../assets/promotion-holiday.js"></script>
 {% endmacro %}
 
 {% macro inViewport() %}
