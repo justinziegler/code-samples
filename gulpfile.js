@@ -8,44 +8,44 @@ const package = require('./package.json');
 
 function copyStatic() {
     return gulp.src(['src/client/static/**/*'])
-        .pipe(gulp.dest('./build/client/static/'));
+        .pipe(gulp.dest('src/build/client/static/'));
 }
 
 function copyAssets() {
     return gulp.src(['src/client/assets/**/*'])
-        .pipe(gulp.dest('./build/client/assets/')) ;
+        .pipe(gulp.dest('src/build/client/assets/')) ;
 }
 
 function copyServer() {
     return gulp.src('src/server/**/*')
-        .pipe(gulp.dest('./build/server/'));
+        .pipe(gulp.dest('src/build/server/'));
 }
 
 function copyModules() {
     return gulp.src('./node_modules/**/*')
-        .pipe(gulp.dest('./build/node_modules/'));
+        .pipe(gulp.dest('src/build/node_modules/'));
 }
 
 function doUseref() {
     return gulp.src('src/client/views/*.html')
         .pipe(useref())
-        .pipe(gulp.dest('./build/client/views/'));
+        .pipe(gulp.dest('src/build/client/views/'));
 }
 
 function bustCache() {
-    return gulp.src('./build/client/views/*.html')
+    return gulp.src('src/build/client/views/*.html')
         .pipe(cachebust({
             type: 'timestamp'
         }))
-        .pipe(gulp.dest('./build/client/views/'));
+        .pipe(gulp.dest('src/build/client/views/'));
 }
 
 function copyPackageJson() {
-    return gulp.src("package.json").pipe(gulp.dest("./build"));
+    return gulp.src("package.json").pipe(gulp.dest("src/build"));
 }
 
 function moveAssetsCorrectly() {
-    return gulp.src('./build/client/views/assets/*').pipe(gulp.dest("./build/client/assets/"));
+    return gulp.src('src/build/client/views/assets/*').pipe(gulp.dest("src/build/client/assets/"));
 }
 
 function packageApp() {
