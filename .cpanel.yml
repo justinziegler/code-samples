@@ -1,8 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/justinz1/public_html/site/
-    - /bin/cp -R src $DEPLOYPATH
-    - /bin/cp index.js $DEPLOYPATH
-    - /bin/cp package-lock.json $DEPLOYPATH
-    - /bin/cp package.json $DEPLOYPATH
