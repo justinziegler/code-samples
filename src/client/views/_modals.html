@@ -371,10 +371,7 @@
     event.preventDefault;
     const galleryModal = document.querySelector('#gallery-modal');
     const iframe = galleryModal.querySelector('iframe');
-    console.log('iframe', iframe)
-    console.log('target', event.target)
     const target = event.target.getAttribute('data-src');
-    console.log('target', target)
     iframe.setAttribute('src', target);
     $(galleryModal).modal('show');
     

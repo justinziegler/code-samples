@@ -457,7 +457,6 @@
         // const visible = hamburger.getAttribute('style');
         const style = window.getComputedStyle(navLinks);
         const display = style.getPropertyValue('display');
-        console.log('display', display);
         if (display === 'block') {
           $(navLinks).slideUp(200);
         }
@@ -500,13 +499,11 @@
             link.setAttribute('data-active', true);
             toggleBlurbs.forEach(blurb => {
               blurb.style.display = 'none';
-              console.log('got here')
             })
             const currentBlurb = document.querySelector(`.toggle-blurb[data-target="${target}"]`);
             currentBlurb.style.display = 'block';
           })
         });
-        console.log('toggleBlurbs', toggleBlurbs.length)
       {% endif %}
     </script>
   {% endif %}

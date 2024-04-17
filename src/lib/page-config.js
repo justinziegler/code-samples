@@ -22,7 +22,6 @@ module.exports.home = async function (ctx) {
   //   })
     
   // })
-  console.log('caseStudies', caseStudies)
   const caseStudiesXXX = [
     {
       title: 'Holiday Mode',
