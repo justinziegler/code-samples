@@ -64,7 +64,7 @@ module.exports.getNavLinks = async function (ctx) {
     },
     {
       title: 'Resume',
-      link: '../pdf/JustinZiegler-Resume2023.pdf',
+      link: '../assets/resume-JustinZiegler-2024.pdf',
       target: '_blank',
       class: 'resume'
     },
