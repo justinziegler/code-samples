@@ -3,13 +3,16 @@ const utils = require('./../lib/utils');
 const content = require('../lib/content');
 const pageConfig = require('../lib/page-config');
 const biz = require('../lib/biz');
+const views = './src/client/views/'; 
+
+
 
 const render = function (path, params = {}) {
   return new Promise(function(resolve, reject) {
     const fs = require('fs');
-    const dir = './src/client/views/';
+    // const dir = './src/client/views/';
     const ext = '.html';
-    fs.readFile(dir + path + ext, 'utf8', function (error, content) {
+    fs.readFile(views + path + ext, 'utf8', function (error, content) {
         
       if (error) return reject(error);
       
