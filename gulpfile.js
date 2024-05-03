@@ -11,4 +11,4 @@ function html() {
     });
 }
 
-exports.build = series(html)
+exports.build = html()
