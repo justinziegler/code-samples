@@ -19,7 +19,7 @@ function html() {
 }
 
 function watchFiles() {
-    watch('src/html/**/*', html)
+    watch('src/client/**/*', html)
 }
 
 exports.build = series(html)
