@@ -1,5 +1,5 @@
 const { src, dest, series, watch } = require('gulp')
-const del = require('del')
+const del = import('del')
 const njk = require('gulp-nunjucks-render')
 const beautify = require('gulp-beautify')
 
