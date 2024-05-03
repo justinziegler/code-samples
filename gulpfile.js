@@ -1,26 +1,10 @@
-const { src, dest, series, watch } = require('gulp')
-// const del = require('del')
-const njk = require('gulp-nunjucks-render')
-const beautify = require('gulp-beautify')
+var gulp = require('gulp');
+var nunjucksRender = require('gulp-nunjucks-render');
 
-// function clean() {
-//     return del(['dist'])
-// }
-
-function html() {
-    return src('src/client/views/*.+(html|njk)')
-        .pipe(
-            njk({
-                path: ['src/html'],
-            })
-        )
-        .pipe(beautify.html({ indent_size: 4, preserve_newlines: false }))
-        .pipe(dest('dist'))
-}
-
-function watchFiles() {
-    watch('src/client/**/*', html)
-}
-
-exports.build = series(html)
-exports.default = series(html, watchFiles)
+gulp.task('default', function () {
+  return gulp.src('src/client/views/*.html')
+    .pipe(nunjucksRender({
+      path: ['src/client/views/'] // String or Array
+    }))
+    .pipe(gulp.dest('dist'));
+});
