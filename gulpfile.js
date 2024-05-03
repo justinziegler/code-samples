@@ -1,11 +1,11 @@
 const { src, dest, series, watch } = require('gulp')
-const del = import('del')
+// const del = require('del')
 const njk = require('gulp-nunjucks-render')
 const beautify = require('gulp-beautify')
 
-function clean() {
-    return del(['dist'])
-}
+// function clean() {
+//     return del(['dist'])
+// }
 
 function html() {
     return src('src/client/views/*.+(html|njk)')
