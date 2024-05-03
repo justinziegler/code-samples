@@ -22,5 +22,5 @@ function watchFiles() {
     watch('src/html/**/*', html)
 }
 
-exports.build = series(clean, html)
-exports.default = series(clean, html, watchFiles)
+exports.build = series(html)
+exports.default = series(html, watchFiles)
