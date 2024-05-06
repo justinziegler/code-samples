@@ -22,7 +22,7 @@ function copyModules() {
 }
 
 function copyViews() {
-    return src('src/client/views/*.html')
+    return gulp.src('src/client/views/*.html')
         .pipe(nunjucksRender({
             path: 'src/client/views/' // String or Array
         }))
