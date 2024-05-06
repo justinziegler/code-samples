@@ -16,10 +16,10 @@ function copyServer() {
         .pipe(gulp.dest('./build/server/'));
 }
 
-function copyModules() {
-    return gulp.src('./node_modules/**/*')
-        .pipe(gulp.dest('./build/node_modules/'));
-}
+// function copyModules() {
+//     return gulp.src('./node_modules/**/*')
+//         .pipe(gulp.dest('./build/node_modules/'));
+// }
 
 function copyViews() {
     return gulp.src('src/client/views/*.html')
@@ -48,4 +48,4 @@ function moveAssetsCorrectly() {
 // }
 
 
-exports.build = gulp.series(copyAssets, copyLib, copyServer, copyModules, copyViews, copyPackageJson, moveAssetsCorrectly);
+exports.build = gulp.series(copyAssets, copyLib, copyServer, copyViews, copyPackageJson, moveAssetsCorrectly);
