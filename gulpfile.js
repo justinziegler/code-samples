@@ -23,10 +23,10 @@ function copyModules() {
 
 function copyViews() {
     return gulp.src('src/client/views/*.html')
-        .pipe(nunjucksRender({
-            path: 'src/client/views/' // String or Array
-        }))
-        .pipe(gulp.dest('build/'));
+        // .pipe(nunjucksRender({
+        //     path: 'src/client/views/' // String or Array
+        // }))
+        .pipe(gulp.dest('.build/client/views/'));
 }
 
 function copyPackageJson() {
