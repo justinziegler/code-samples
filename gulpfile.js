@@ -22,11 +22,11 @@ function copyModules() {
 }
 
 function copyViews() {
-    return gulp.src('src/client/views/*.html')
+    return src('src/client/views/*.html')
         .pipe(nunjucksRender({
-            path: ['src/client/views/'] // String or Array
+            path: 'src/client/views/' // String or Array
         }))
-        .pipe(gulp.dest('build'));
+        .pipe(gulp.dest('build/'));
 }
 
 function copyPackageJson() {
