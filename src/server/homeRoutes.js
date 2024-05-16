@@ -329,6 +329,11 @@ async function productDisplayFrame(ctx, next) {
   const upholsteredSkus = await utils.getProductSkus(ctx, 40, discountActual);
   const tuftedSkus = await utils.getProductSkus(ctx, 41, discountActual);
 	ctx.skus = upholsteredSkus.concat(tuftedSkus);
+  ctx.q = [
+    {
+      header: false
+    }
+  ]
   const p = await pageConfig.frame(ctx);
 
   ctx.body = await render('05c_product_display_frame', {
@@ -343,17 +348,7 @@ async function productDisplaySheets(ctx, next) {
   const discountActual = 70;
   ctx.q = [
     {
-      header: false,
-      headerTitle: 'Product Display Template',
-      headerIntro: [
-        'This configuration sorts through 42 product skus and over 100 upsell skus from 6 product lines. The features on display here include:'
-      ],
-      headerBullets: [
-        'The upsells update their currently offered product size when the main product size selection changes. In this case, all 3 product groups have differing numbers of corresponding sizes that all need to be matched. Users can then select the upsell item\'s color and fabric type. Upsell color and fabric selections persist if the user changes the main product size selection',
-        'Each upsell has an associated modal containing product details and a gallery of product images.',
-        'The financing modal (accessible by hovering over the question mark icon below the color swatches) updates with each product selection change, including adding upsells.',
-        '<a href="https://lull.com/organic-cotton-sheets" target="_blank" rel="noopener noreferrer">See it live</a> &raquo;'
-      ]
+      header: false
     }
   ]
   const p = await pageConfig.sheets(ctx);
