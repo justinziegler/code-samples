@@ -635,36 +635,23 @@ $bg: transparent;
 
 ///////////////////////
 .case-studies {
-  // > .row {
-    // flex: 1;
-    // height: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    column-gap: 1.5rem;
-    row-gap: 1.5rem;
-    // padding: 0;
-    // justify-items: center;
-    // flex-grow: 1;
-    // justify-content: space-between;
-  // gap: 1rem;
-  // column-gap: 1rem;
-  // }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 1.5rem;
+  row-gap: 1.5rem;
   @include mq(md) {
     width: 66.66666667%;
-    // margin-left: 16.66666667%;
   }
 }
 .item {
   height: 0;
-  // padding-bottom: 33.333333%;
   position: relative;
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   float: none;
   display: flex;
-  // margin: 1rem;
   padding-bottom: 30%;
   flex: 1 1 calc(50% - 1.5rem);
   @include mq(xs) {
@@ -711,10 +698,8 @@ $bg: transparent;
     transition: .2s;
     &:hover {
       border: solid 4px shade($teal, 10%);
-// box-shadow:inset 0 0 0 2px rgba($navy,.6);
       .case-number {
         background-color: shade($teal, 10%);
-        // text-shadow: rgba($navy, .2) 2px 2px 0;
         color: $white;
       }
       .case-title {
@@ -724,7 +709,6 @@ $bg: transparent;
     }
     span {
       display: block;
-      // font-family: 'Boogaloo', sans-serif;
     }
     .case-number {
       background-color: rgba($navy, .8);
@@ -733,7 +717,6 @@ $bg: transparent;
       height: vwp(24px);
       font-size: vwp(12px);
       line-height: 1;
-      // border-radius: 50%;
       text-align: center;
       position: absolute;
       top: 0;
@@ -742,7 +725,6 @@ $bg: transparent;
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      // border: solid 2px white;
       z-index: 2;
       transition: .2s;
       @include mq(xs) {
@@ -762,7 +744,6 @@ $bg: transparent;
       left: 0;
       right: 0;
       bottom: 0;
-      // height: 25%;
       background-color: rgba($navy, .8);
       color: $white;
       font-weight: 500;
